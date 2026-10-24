@@ -1,0 +1,324 @@
+{
+  "id": "gb",
+  "name": "United Kingdom",
+  "oneLiner": "The public sector has written iterate, open, and blameless into its standards, yet the Horizon scandal is a heavy counterexample.",
+  "intro": "This page summarizes tendencies in UK software engineering from published government standards (GDS), company blogs, and survey data. These are country-level tendencies, and practice varies widely within the country, for example between London fintech and legacy public-sector IT. Because the government publishes its own development principles and incident procedures, primary evidence on the public sector is unusually rich.",
+  "themes": {
+    "design": [
+      {
+        "id": "gb-design-1",
+        "text": "The GDS Government Design Principles (published 2012, updated 2025) include \"Start with user needs,\" \"Do less,\" and \"Iterate. Then iterate again.\" Iterative development is an official principle of the public sector.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GOV.UK: Government design principles",
+            "url": "https://www.gov.uk/guidance/government-design-principles",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "gb-design-2",
+        "text": "Point 8 of the GOV.UK Service Standard is \"Iterate and improve frequently.\" It states that a service is never finished and that maintenance such as bug fixes is not enough.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "DfE: Service Standard 8 Iterate and improve frequently",
+            "url": "https://apply-the-service-standard.education.gov.uk/service-standard/8-iterate-and-improve-frequently"
+          }
+        ]
+      },
+      {
+        "id": "gb-design-3",
+        "text": "According to a 2023 NAO report, there have been 11 cross-government digital strategies in the past 25 years. The Police National Computer, introduced in 1974, is still in use.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "NAO: Digital transformation in government",
+            "url": "https://www.nao.org.uk/wp-content/uploads/2023/03/digital-transformation-in-government.pdf",
+            "year": 2023
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "gb-failure-1",
+        "text": "The GDS Way incident management standard requires incident reviews to follow a blameless post mortem culture.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "The GDS Way: How to manage technical incidents",
+            "url": "https://gds-way.digital.cabinet-office.gov.uk/standards/incident-management.html"
+          }
+        ]
+      },
+      {
+        "id": "gb-failure-2",
+        "text": "GOV.UK publishes incident reports, such as one on increased error rates on 5 January 2022. A former GDS staff member wrote in 2018 that publishing them builds trust and an atmosphere where people can learn safely.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Inside GOV.UK: Incident report, 5 January 2022",
+            "url": "https://insidegovuk.blog.gov.uk/2022/02/25/incident-report-increased-error-rate-on-gov-uk-on-5-january-2022/",
+            "year": 2022
+          },
+          {
+            "title": "24 ways: What I Learned in Six Years at GDS",
+            "url": "https://24ways.org/2018/what-i-learned-in-six-years-at-gds/",
+            "year": 2018
+          }
+        ]
+      },
+      {
+        "id": "gb-failure-3",
+        "text": "In a 2019 blog post, the London fintech Monzo explained that it runs on-call with two people and records every incident. The Pragmatic Engineer warns against \"blameless buck-passing,\" where blame is shifted while claiming to be blameless.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Monzo: How we respond to incidents",
+            "url": "https://monzo.com/blog/2019/07/08/how-we-respond-to-incidents",
+            "year": 2019
+          },
+          {
+            "title": "The Pragmatic Engineer: Incident Review and Postmortem Best Practices",
+            "url": "https://blog.pragmaticengineer.com/postmortem-best-practices/"
+          }
+        ]
+      },
+      {
+        "id": "gb-failure-4",
+        "text": "In the Post Office Horizon scandal, testimony that Horizon was \"robust\" was used despite bugs in the Fujitsu system, and more than 900 people were wrongly convicted. The Court of Appeal found that the Post Office had in effect reversed the burden of proof.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Wikipedia: British Post Office scandal",
+            "url": "https://en.wikipedia.org/wiki/British_Post_Office_scandal"
+          },
+          {
+            "title": "Computer Weekly: Fujitsu's role in the Post Office scandal",
+            "url": "https://www.computerweekly.com/feature/Fujitsus-role-in-the-Post-Office-scandal-Everything-you-need-to-know"
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "gb-feedback-1",
+        "text": "Meyer writes that the British deliver negative feedback less directly than Americans and far less directly than the Dutch. She describes frequent understatement using downgraders such as \"a bit\" and \"slightly.\"",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer: How To Say \"This Is Crap\" In Different Cultures",
+            "url": "https://erinmeyer.com/how-to-say-this-is-crap-in-different-cultures/",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "gb-feedback-2",
+        "text": "The Anglo-Dutch translation guide that Meyer cites reads \"With all due respect\" as \"I think you are wrong\" and \"Very interesting\" as \"I don't like it.\" The guide is half a joke, and its authorship is disputed.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Erin Meyer: How To Say \"This Is Crap\" In Different Cultures",
+            "url": "https://erinmeyer.com/how-to-say-this-is-crap-in-different-cultures/",
+            "year": 2014
+          },
+          {
+            "title": "Nannette Ripmeester: We all speak English, don't we?",
+            "url": "https://www.linkedin.com/pulse/we-all-speak-english-dont-nannette-ripmeester"
+          }
+        ]
+      },
+      {
+        "id": "gb-feedback-3",
+        "text": "A study of 44,000 pull requests across 20 projects that compared acceptance rates with the developer's country HDI (Furtado et al., 2020) placed UK developers in the group with the highest acceptance rates.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Furtado et al.: How Successful Are Open Source Contributions From Countries with Different Levels of Human Development?",
+            "url": "https://arxiv.org/pdf/2012.03716",
+            "year": 2020
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "gb-hierarchy-1",
+        "text": "In Meyer's 2017 HBR chart, the United Kingdom sits in the same egalitarian and top-down quadrant as the United States, Canada, and Australia.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer: Being the Boss in Brussels, Boston, and Beijing (HBR)",
+            "url": "https://erinmeyer.com/wp-content/uploads/2019/11/Being-the-Boss-HBR.pdf",
+            "year": 2017
+          }
+        ]
+      },
+      {
+        "id": "gb-hierarchy-2",
+        "text": "In the public sector, the service assessment against the Service Standard acts as a de facto gate. According to DfE guidance, a service can fail its assessment if it does not publish new source code without a good reason.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "DfE: Service Standard 12 Make new source code open",
+            "url": "https://apply-the-service-standard.education.gov.uk/service-standard/12-make-new-source-code-open.html"
+          }
+        ]
+      },
+      {
+        "id": "gb-hierarchy-3",
+        "text": "The NAO (2023) identifies as a problem that many digital decisions in government are made by generalist leaders without technical expertise.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "NAO: Digital transformation in government",
+            "url": "https://www.nao.org.uk/wp-content/uploads/2023/03/digital-transformation-in-government.pdf",
+            "year": 2023
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "gb-communication-1",
+        "text": "According to a book summary, the United Kingdom is on the low-context side of Meyer's Communicating scale but relies on context more than the United States, Canada, Australia, the Netherlands, and Germany.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "lifeclub: The Culture Map Summary",
+            "url": "https://lifeclub.org/books/the-culture-map-erin-meyer-review-summary"
+          }
+        ]
+      },
+      {
+        "id": "gb-communication-2",
+        "text": "\"Make things open: it makes things better\" is one of the government design principles, and publishing new source code is point 12 of the Service Standard. GDS explained the benefits of coding in the open in a 2017 blog post.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GDS blog: The benefits of coding in the open",
+            "url": "https://gds.blog.gov.uk/2017/09/04/the-benefits-of-coding-in-the-open",
+            "year": 2017
+          },
+          {
+            "title": "DfE: Service Standard 12 Make new source code open",
+            "url": "https://apply-the-service-standard.education.gov.uk/service-standard/12-make-new-source-code-open.html"
+          }
+        ]
+      },
+      {
+        "id": "gb-communication-3",
+        "text": "In 2015, Inside GOV.UK published a blog post describing what happens when something goes wrong on GOV.UK.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Inside GOV.UK: What happens when things go wrong on GOV.UK",
+            "url": "https://insidegovuk.blog.gov.uk/2015/11/18/what-happens-when-things-go-wrong-on-gov-uk/",
+            "year": 2015
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "gb-work-1",
+        "text": "According to the ONS, full-time workers averaged 36.6 actual hours per week in 2024. The figure covers all occupations, not only engineers.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "ONS: Average actual weekly hours of work for full-time workers (YBUY)",
+            "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/timeseries/ybuy/lms",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "gb-work-2",
+        "text": "In the Stack Overflow Developer Survey 2025, 31.9% of UK respondents work fully remote and 25.8% work hybrid leaning flexible. Median salaries were $136,141 for engineering managers and $108,913 for back-end developers, about 60 to 70% of US levels.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Stack Overflow Developer Survey 2025: Work",
+            "url": "https://survey.stackoverflow.co/2025/work",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "gb-work-3",
+        "text": "Making 20 or more people redundant requires collective consultation. Consultation must start at least 30 days before the first dismissal for 20 to 99 redundancies, and at least 45 days before for 100 or more.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GOV.UK: Redundancy: your rights — Consultation",
+            "url": "https://www.gov.uk/redundancy-your-rights/consultation"
+          }
+        ]
+      },
+      {
+        "id": "gb-work-4",
+        "text": "In a 2022 four-day week pilot (61 companies, about 2,900 employees), 56 companies continued afterward and 71% of employees reported less burnout. Most participants were small companies, and the pilot was not limited to tech.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Autonomy: The results are in: the UK's four-day week pilot",
+            "url": "https://autonomy.work/portfolio/uk4dwpilotresults/",
+            "year": 2023
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "gb-oss-1",
+        "text": "According to Octoverse 2024, the UK has more than 4 million developers on GitHub, up 19% year over year. Octoverse 2025 projects about 11 million by 2030.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2024",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-2024/",
+            "year": 2024
+          },
+          {
+            "title": "GitHub Octoverse 2025",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "gb-oss-2",
+        "text": "An estimate by the industry body OpenUK (2023) attributes 27% of the UK tech sector's gross value added in 2022 to open source.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "OpenUK: State of Open: The UK in 2023, Phase Two Part 1",
+            "url": "https://openuk.uk/report/state-of-open-the-uk-in-2023-phase-2-part-1/",
+            "year": 2023
+          }
+        ]
+      },
+      {
+        "id": "gb-oss-3",
+        "text": "The public sector has made publishing code the default. The Skills Funding Agency reused GOV.UK's Smart Answers code and finished in under a week work that would otherwise have taken at least two months.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GDS blog: The benefits of coding in the open",
+            "url": "https://gds.blog.gov.uk/2017/09/04/the-benefits-of-coding-in-the-open",
+            "year": 2017
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "There is a wide gap between the GDS ideals and the reality of public-sector IT burdened with legacy systems (NAO 2023).",
+    "The Post Office Horizon scandal is an extreme case of the opposite of blameless culture: software defects were turned into individual guilt.",
+    "Practices at London fintechs such as Monzo do not represent British companies as a whole.",
+    "Understatement is a well-known stereotype, but no empirical study of the tone of British code review was found."
+  ]
+}

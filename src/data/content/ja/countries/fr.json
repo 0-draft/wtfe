@@ -1,13 +1,13 @@
 {
   "id": "fr",
   "name": "フランス",
-  "oneLiner": "上下関係ははっきりしているが議論では遠慮なく反論し、批判は率直。国主導の OSS と ESN 構造が特徴。",
-  "intro": "フランスのソフトウェア開発者に見られる傾向を、Culture Map・Hofstede・統計・法制度から整理したページです。ここに書くのは国レベルの傾向で、個々のエンジニアの性格や働き方を言い当てるものではありません。Paris のスタートアップ、研究機関、ESN (IT サービス企業) の常駐開発では働き方が大きく違います。",
+  "oneLiner": "Meyer は階層的でも議論では率直に反論すると分類する。国主導の OSS と ESN の常駐構造が目立つ。",
+  "intro": "フランスのソフトウェア開発の傾向を、Culture Map・Hofstede・統計・法制度から整理したページです。あくまで国レベルの傾向で、Paris のスタートアップ、研究機関、ESN (IT サービス企業) の客先常駐では働き方が大きく違います。フランスは行政の OSS 政策や労働協約といった制度の一次資料が多い一方、開発現場のレビューや postmortem の慣行を調べたデータはほとんど見つかりませんでした。",
   "themes": {
     "design": [
       {
         "id": "fr-design-1",
-        "text": "Culture Map チャート (2014) でフランスは Persuading の principles-first (原理から入る演繹) 側に置かれ、Meyer は南欧・ゲルマン圏が演繹的な議論を好むと述べている。",
+        "text": "Culture Map (2014) はフランスを Persuading の principles-first 側に置いている。Meyer は、南欧やゲルマン圏では原理から結論を導く演繹的な議論が好まれると述べている。",
         "confidence": "medium",
         "sources": [
           {
@@ -19,7 +19,7 @@
       },
       {
         "id": "fr-design-2",
-        "text": "エンジニアは CTI (技術者資格委員会) 認定の diplôme d'ingénieur を軸に育成され、200 校超の認定校が年 4.4〜4.9 万人の技術者学位取得者を出している (CDEFI Panorama)。",
+        "text": "フランスのエンジニアは CTI 認定の diplôme d'ingénieur を軸に育成される。CDEFI の Panorama によると、200 を超える認定校が年 4.4〜4.9 万人の技術者学位取得者を出している。",
         "confidence": "strong",
         "sources": [
           {
@@ -35,7 +35,7 @@
       },
       {
         "id": "fr-design-3",
-        "text": "2024 年のデジタル市場 694 億ユーロのうち 50% (345 億ユーロ) を ESN が占める。多くの開発者は客先常駐の régie 方式で働き、ESN は成果ではなく手段 (工数) に責任を負う。",
+        "text": "Numeum によると、2024 年のデジタル市場 694 億ユーロのうち 50% (345 億ユーロ) を ESN が占める。多くの開発者は客先常駐の régie 方式で働き、この方式では ESN は成果物ではなく工数に責任を負う。",
         "confidence": "medium",
         "sources": [
           {
@@ -48,24 +48,13 @@
             "url": "https://philix.fr/regie-ou-forfait-quel-mode-de-facturation-choisir-pour-une-esn/"
           }
         ]
-      },
-      {
-        "id": "fr-design-4",
-        "text": "scikit-learn は 2010 年に Inria の研究者が主導して最初の公開リリースを出し、Inria が長く資金と人員を支えてきた。研究機関発の世界的な OSS の例。",
-        "confidence": "strong",
-        "sources": [
-          {
-            "title": "scikit-learn — About us",
-            "url": "https://scikit-learn.org/stable/about.html"
-          }
-        ]
       }
     ],
     "failure": [
       {
         "id": "fr-failure-1",
-        "text": "Hofstede の不確実性回避 (UAI) はフランス 86 で、ドイツ (65) より明確に高い。",
-        "confidence": "strong",
+        "text": "Hofstede の不確実性回避 (UAI) でフランスは 86 と、ドイツ (65) より高い。The Culture Factor はこの高さを、ルールや手続きで曖昧さを減らそうとする傾向と説明している。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "The Culture Factor — Country comparison tool",
@@ -76,7 +65,7 @@
       },
       {
         "id": "fr-failure-2",
-        "text": "GEM 2024 では、機会があると見ている人のうち 42.7% が失敗を恐れて起業しないと答えた。世界平均 (47%) より低く、ドイツ (約 40%、2025) とも大差ない。",
+        "text": "GEM 2024 では、起業の機会があると見ている人のうち 42.7% が、失敗への恐れを起業の障害に挙げた。GEM はドイツについて 2025 年に約 5 人に 2 人としており、大差はない。",
         "confidence": "strong",
         "sources": [
           {
@@ -93,7 +82,7 @@
       },
       {
         "id": "fr-failure-3",
-        "text": "CNIL は 2024 年に 87 件の制裁と計約 5,521 万ユーロの罰金を科した。制裁件数は 2022 年 21 件、2023 年 42 件から増えており、約 3 分の 1 がセキュリティ義務違反。",
+        "text": "CNIL は 2024 年に 87 件の制裁を科し、罰金の合計は約 5,521 万ユーロだった。制裁件数は 2022 年の 21 件、2023 年の 42 件から増えた。簡易手続による 69 件のうち 11 件はデータセキュリティ義務の違反だった。",
         "confidence": "strong",
         "sources": [
           {
@@ -107,7 +96,7 @@
     "feedback": [
       {
         "id": "fr-feedback-1",
-        "text": "Meyer は、フランス人は米国人より高文脈 (暗黙的) に話すのに、批判は米国人より直接的だと書いている。文脈依存と指摘の率直さは別の軸。",
+        "text": "Meyer は、フランス人は米国人より高文脈 (暗黙的) に話す一方、批判は米国人より直接的に伝えると書いている。文脈への依存と批判の率直さは別の軸だとしている。",
         "confidence": "medium",
         "sources": [
           {
@@ -119,7 +108,7 @@
       },
       {
         "id": "fr-feedback-2",
-        "text": "Meyer によると、米国・フランス・オランダは白熱した対立的な会議に比較的慣れている。",
+        "text": "Meyer のサイトは、米国・フランス・オランダの人は白熱した対立的な会議に比較的慣れていると書いている。",
         "confidence": "medium",
         "sources": [
           {
@@ -130,7 +119,7 @@
       },
       {
         "id": "fr-feedback-3",
-        "text": "フランスの反論は感情を表に出すスタイルで、感情を抑えるドイツとは違うと書評で解説されている。",
+        "text": "ある書評は、フランスの反論は感情を表に出すスタイルで、感情を抑えるドイツの反論とは違うと解説している。",
         "confidence": "weak",
         "sources": [
           {
@@ -138,35 +127,14 @@
             "url": "https://www.deployyourself.com/book-review/the-culture-map-erin-meyer-eight-scales/"
           }
         ]
-      },
-      {
-        "id": "fr-feedback-4",
-        "text": "「フランスは否定的フィードバックを間接的に伝える」とする要約サイトもあるが、Meyer 本人の記述と矛盾する。",
-        "confidence": "medium",
-        "sources": [
-          {
-            "title": "entiresummary — The Culture Map summary",
-            "url": "https://entiresummary.com/the-culture-map-summary/"
-          },
-          {
-            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
-            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
-            "year": 2014
-          }
-        ]
       }
     ],
     "hierarchy": [
       {
         "id": "fr-hierarchy-1",
-        "text": "Hofstede の権力格差 (PDI) はフランス 68 (ドイツ 35)。Culture Map でも Leading は階層寄り、Deciding はトップダウン寄りに置かれている。",
+        "text": "Culture Map はフランスを Leading で階層寄り、Deciding でトップダウン寄りに置く一方、Disagreeing では対立を許容する側に置いている。二つの軸を合わせると、上が決めるが、決まるまでは激しく議論する組み合わせと読める。",
         "confidence": "medium",
         "sources": [
-          {
-            "title": "The Culture Factor — Country comparison tool",
-            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=france%2Cgermany",
-            "year": 2026
-          },
           {
             "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
             "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
@@ -176,19 +144,7 @@
       },
       {
         "id": "fr-hierarchy-2",
-        "text": "Leading・Deciding で階層的でありながら、Disagreeing では対立を許容する側にある。上が決めるが、決まるまでは激しく議論するという組み合わせと読める (二つの軸からの推論)。",
-        "confidence": "medium",
-        "sources": [
-          {
-            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
-            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
-            "year": 2014
-          }
-        ]
-      },
-      {
-        "id": "fr-hierarchy-3",
-        "text": "つながらない権利 (Code du travail L2242-17、2017 年施行) の運用方法は企業内の団体交渉事項で、合意できなければ使用者が CSE の意見を聞いたうえで憲章を作る。",
+        "text": "つながらない権利 (Code du travail L2242-17、2017 年施行) の運用方法は、企業内の団体交渉で決める。合意できなければ、使用者が CSE の意見を聞いたうえで憲章を作る。",
         "confidence": "medium",
         "sources": [
           {
@@ -202,19 +158,7 @@
     "communication": [
       {
         "id": "fr-communication-1",
-        "text": "Culture Map チャートでフランスはドイツより高文脈寄り (ただし中国よりは低文脈) で、行間や前提の共有に頼る度合いが大きい。",
-        "confidence": "medium",
-        "sources": [
-          {
-            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
-            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
-            "year": 2014
-          }
-        ]
-      },
-      {
-        "id": "fr-communication-2",
-        "text": "Culture Map で Trusting はドイツより関係重視寄りに置かれ、信頼は仕事の実績だけでなく人間関係からも作られるとされる。",
+        "text": "Culture Map はフランスを、Communicating でドイツより高文脈 (中国よりは低文脈)、Trusting でドイツより関係重視寄りに置いている。Meyer の枠組みでは、行間や前提の共有に頼り、信頼を人間関係からも築く傾向を意味する。",
         "confidence": "medium",
         "sources": [
           {
@@ -228,8 +172,8 @@
     "work": [
       {
         "id": "fr-work-1",
-        "text": "法定労働時間は週 35 時間。IT 業界の Syntec 協約には 35 時間型 (modalité 1)、週 38.5 時間の包括型 (modalité 2、年 219 日上限)、年 218 日の日数制 forfait jours (modalité 3、原則残業代なし) がある。",
-        "confidence": "strong",
+        "text": "法定労働時間は週 35 時間だ。IT 業界の Syntec 協約には、35 時間型 (modalité 1)、週 38.5 時間の包括型 (modalité 2、年 219 日上限)、年 218 日の日数制 forfait jours (modalité 3、原則残業代なし) がある。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "LegalPlace — Forfait jours convention Syntec",
@@ -244,7 +188,7 @@
       },
       {
         "id": "fr-work-2",
-        "text": "Eurostat データに基づく報道では、フランスの平均実労働時間は約 36 時間で EU 平均並み、2014〜2024 年でほぼ横ばい。",
+        "text": "Euronews と Fortune が引く Eurostat データでは、フランスの平均実労働時間は約 36 時間で EU 平均並みだった。2014〜2024 年でほぼ横ばいである。",
         "confidence": "medium",
         "sources": [
           {
@@ -261,7 +205,7 @@
       },
       {
         "id": "fr-work-3",
-        "text": "デジタル部門の雇用は約 66.6 万人で、2024 年に約 7,000 人減った。2024 年の採用は 5.18 万人 (2023 年は 8.38 万人)、離職率は 16%。大手 ESN の採用減が目立ち、ソフトウェア企業は比較的堅調。",
+        "text": "Numeum によると、デジタル部門の雇用は約 66.6 万人だ。2024 年の採用は 5.18 万人で前年の 8.38 万人から減り、離職率は 22% から 16% に下がった。大手 ESN の採用減が目立ち、ソフトウェア企業は比較的堅調だった。",
         "confidence": "strong",
         "sources": [
           {
@@ -278,7 +222,7 @@
       },
       {
         "id": "fr-work-4",
-        "text": "ESN では案件の合間の待機期間 (intercontrat) が構造的に生じ、待機中のコンサルタントの疎外感や意欲の低下が業界内でも課題とされている。",
+        "text": "業界ブログや弁護士の記事によると、ESN では案件の合間の待機期間 (intercontrat) が構造的に生じる。待機中のコンサルタントの孤立感や意欲の低下が課題として挙げられている。",
         "confidence": "weak",
         "sources": [
           {
@@ -294,17 +238,13 @@
       },
       {
         "id": "fr-work-5",
-        "text": "通常在宅勤務する就業者の比率は 2025 年で約 11.3%。時々在宅を含めると 36% 程度とする二次情報もあるが、年が不明。",
+        "text": "Eurostat データをまとめたサイトによると、通常在宅で働く就業者の比率は 2025 年に約 11.3% だった。",
         "confidence": "medium",
         "sources": [
           {
             "title": "Apiar Data — EU usually works from home rate (Eurostat lfsa_ehomp)",
             "url": "https://apiardata.com/statistics/eu-usually-works-from-home-rate/",
             "year": 2026
-          },
-          {
-            "title": "Germanpedia — Which EU countries work from home the most?",
-            "url": "https://germanpedia.com/eu-working-from-home-share/"
           }
         ]
       }
@@ -313,7 +253,7 @@
       {
         "id": "fr-oss-1",
         "text": "République numérique 法 (2016 年) により、行政のソースコードは開示請求の対象となる行政文書になった。職員 50 人以上の機関には公開義務があり、第 16 条は自由ソフトウェアとオープンフォーマットの利用を奨励している。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Wikipedia — Loi pour une République numérique",
@@ -328,7 +268,7 @@
       },
       {
         "id": "fr-oss-2",
-        "text": "DINUM が運営する省庁横断の推奨自由ソフトウェア一覧 SILL は、2013 年の 32 本から 2024 年末に 500 本、2026 年に 600 本超へ増えた。",
+        "text": "DINUM が運営する省庁横断の推奨自由ソフトウェア一覧 SILL は 2012 年に始まり、2024 年 11 月に掲載数 500 本に達した。2026 年の告知では、これまでに掲載されたツールは 600 本を超える。",
         "confidence": "strong",
         "sources": [
           {
@@ -345,7 +285,7 @@
       },
       {
         "id": "fr-oss-3",
-        "text": "DINUM の La Suite numérique とドイツ ZenDiS の openDesk は 2024 年から協業しており、共同エディタ Docs は独仏の共同イニシアチブで、オランダも参加しつつある。",
+        "text": "DINUM の La Suite numérique とドイツ ZenDiS の openDesk は 2024 年から協業している。共同エディタ Docs は独仏の共同イニシアチブで、オランダも参加しつつある。",
         "confidence": "strong",
         "sources": [
           {
@@ -381,7 +321,7 @@
       },
       {
         "id": "fr-oss-5",
-        "text": "GitHub 上のフランスの開発者は Octoverse 2024 で 280 万超 (前年比 +20%)。Stack Overflow Developer Survey 2025 の回答者数は 5 位 (1,408 人、4%)。",
+        "text": "Octoverse 2024 によると、GitHub 上のフランスの開発者は 280 万人を超え、前年比 +20% だった。Stack Overflow Developer Survey 2025 の回答者数ではフランスは 5 位 (1,408 人、4%) である。",
         "confidence": "strong",
         "sources": [
           {
@@ -400,8 +340,9 @@
   },
   "variance": [
     "Paris のスタートアップ、Inria などの研究機関、ESN の客先常駐 (régie) では、品質への当事者意識や働き方が大きく異なる。",
-    "「フランスは失敗に不寛容」という通説に対し、GEM 2024 の失敗恐怖率 42.7% は世界平均 (47%) より低い。",
-    "法定 35 時間でも、Syntec 協約の forfait jours で働く管理職・専門職は日数管理で、実労働時間は EU 平均並み。",
-    "フランス固有の postmortem や設計文書の慣行については定量データが見つからず、この領域の記述はできない。"
+    "「フランスは失敗に不寛容」という通説がある。一方、GEM 2024 で失敗への恐れを挙げた人は 42.7% で、GEM が 2025 年のドイツについて示す約 5 人に 2 人と大差ない。",
+    "法定は週 35 時間だが、Syntec 協約の forfait jours で働く管理職・専門職は日数で管理される。全体の実労働時間は EU 平均並みだ。",
+    "フランス固有の postmortem や設計文書の慣行については定量データが見つからず、このページでは扱っていない。",
+    "「フランスは否定的フィードバックを間接的に伝える」とする要約サイト (entiresummary) もあるが、Meyer 本人のチャートと矛盾するため、このページでは採用していない。"
   ]
 }

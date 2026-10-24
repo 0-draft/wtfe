@@ -1,13 +1,13 @@
 {
   "id": "gb",
   "name": "イギリス",
-  "oneLiner": "公共部門が iterate・open・blameless を明文化する一方、Horizon 事件などの重い反例も抱える。",
-  "intro": "英国のソフトウェアエンジニアリング文化を、政府の公開標準（GDS）、企業ブログ、調査データから整理したページ。ここに書いてあるのは国としての傾向で、個々のエンジニアや組織がこうだという意味ではない。London の fintech と公共部門のレガシー IT では実態が大きく違う。",
+  "oneLiner": "公共部門は iterate・open・blameless を明文化している。一方で Horizon 事件のような重い反例もある。",
+  "intro": "英国のソフトウェア開発の傾向を、政府の公開標準 (GDS)、企業ブログ、調査データから整理したページです。あくまで国レベルの傾向で、London の fintech と公共部門のレガシー IT のように、国内でも実態は大きく違います。英国は政府自身が開発原則やインシデント対応を公開文書にしているため、公共部門についての一次資料が特に厚いのが特徴です。",
   "themes": {
     "design": [
       {
         "id": "gb-design-1",
-        "text": "GDS の Government Design Principles（2012 年公開、2025 年更新）は「Start with user needs」「Do less」「Iterate. Then iterate again」などを掲げ、公共部門の公式な原則として iterative な開発を求めている。",
+        "text": "GDS の Government Design Principles (2012 年公開、2025 年更新) は「Start with user needs」「Do less」「Iterate. Then iterate again」などを掲げる。公共部門が iterative な開発を公式の原則にしている。",
         "confidence": "strong",
         "sources": [
           {
@@ -19,7 +19,7 @@
       },
       {
         "id": "gb-design-2",
-        "text": "GOV.UK Service Standard の point 8 は「Iterate and improve frequently」で、サービスに完成はなく、バグ修正などの保守だけでは足りないとしている。",
+        "text": "GOV.UK Service Standard の point 8 は「Iterate and improve frequently」だ。サービスに完成はなく、バグ修正などの保守だけでは足りないとしている。",
         "confidence": "strong",
         "sources": [
           {
@@ -30,7 +30,7 @@
       },
       {
         "id": "gb-design-3",
-        "text": "NAO（2023）によると、過去 25 年で省庁横断のデジタル戦略が 11 回出され、1974 年導入の Police National Computer がいまも現役で使われている。",
+        "text": "NAO の 2023 年の報告によると、過去 25 年で省庁横断のデジタル戦略が 11 回出された。1974 年に導入された Police National Computer はいまも使われている。",
         "confidence": "strong",
         "sources": [
           {
@@ -44,7 +44,7 @@
     "failure": [
       {
         "id": "gb-failure-1",
-        "text": "GDS Way のインシデント標準は、blameless post mortem culture に従って incident review を行うよう明記している。",
+        "text": "GDS Way のインシデント管理標準は、blameless post mortem culture に沿って incident review を行うよう定めている。",
         "confidence": "strong",
         "sources": [
           {
@@ -55,7 +55,7 @@
       },
       {
         "id": "gb-failure-2",
-        "text": "GOV.UK はインシデントレポートを公開している。元 GDS の職員は、公開することで信頼と安全な学習の雰囲気が生まれると書いている。",
+        "text": "GOV.UK はインシデントレポートを公開している (例: 2022 年 1 月 5 日のエラー率上昇)。元 GDS 職員は 2018 年の記事で、公開することで信頼と安全に学べる雰囲気が生まれると書いている。",
         "confidence": "medium",
         "sources": [
           {
@@ -72,7 +72,7 @@
       },
       {
         "id": "gb-failure-3",
-        "text": "London の fintech である Monzo は on-call を 2 名体制にし、全インシデントを記録している（2019 年）。元社員は、blameless を装った責任の押し付け合い（blameless buck-passing）にも注意を促している。",
+        "text": "London の fintech である Monzo は 2019 年のブログで、on-call を 2 名体制にし、すべてのインシデントを記録していると説明した。The Pragmatic Engineer は、blameless を装った責任の押し付け合い (blameless buck-passing) にも注意を促している。",
         "confidence": "medium",
         "sources": [
           {
@@ -88,8 +88,8 @@
       },
       {
         "id": "gb-failure-4",
-        "text": "Post Office Horizon 事件では、Fujitsu 製システムのバグがあったにもかかわらず「Horizon は堅牢」とする証言が使われ、900 件を超える冤罪の有罪判決が出た。Court of Appeal は Post Office が事実上、立証責任を逆転させたと認定している。",
-        "confidence": "strong",
+        "text": "Post Office Horizon 事件では、Fujitsu 製システムにバグがあったにもかかわらず「Horizon は堅牢」とする証言が使われ、900 件を超える冤罪の有罪判決が出た。Court of Appeal は、Post Office が事実上立証責任を逆転させたと認定した。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Wikipedia: British Post Office scandal",
@@ -105,7 +105,7 @@
     "feedback": [
       {
         "id": "gb-feedback-1",
-        "text": "Meyer によると、英国人は米国人より直接的でなく、オランダ人よりはるかに直接的でない。understatement や downgrader（a bit、slightly など）の名手とされる。",
+        "text": "Meyer は、英国人の否定的フィードバックは米国人より間接的で、オランダ人よりはるかに間接的だと書いている。a bit や slightly のような downgrader を使った understatement が多いとする。",
         "confidence": "medium",
         "sources": [
           {
@@ -117,7 +117,7 @@
       },
       {
         "id": "gb-feedback-2",
-        "text": "Anglo-Dutch translation guide では、「With all due respect」は「あなたは間違っている」、「Very interesting」は「気に入らない」の意味だとされる。ただし半分ジョークの資料で、作者も匿名だったり Ripmeester が名乗ったりしている。",
+        "text": "Meyer が紹介する Anglo-Dutch translation guide では、「With all due respect」は「あなたは間違っている」、「Very interesting」は「気に入らない」の意味だとされる。半分ジョークの資料で、作者も定まっていない。",
         "confidence": "weak",
         "sources": [
           {
@@ -133,7 +133,7 @@
       },
       {
         "id": "gb-feedback-3",
-        "text": "PR 44,000 件（20 プロジェクト）で HDI と受理率の関係を見た研究では、英国の開発者は受理率が最も高いグループに入っていた。",
+        "text": "20 プロジェクト・4.4 万件の PR で、開発者の国の HDI と受理率の関係を見た研究 (Furtado et al., 2020) では、英国の開発者は受理率が最も高いグループに入っていた。",
         "confidence": "medium",
         "sources": [
           {
@@ -159,7 +159,7 @@
       },
       {
         "id": "gb-hierarchy-2",
-        "text": "公共部門では Service Standard に基づく service assessment が実質的なゲートになっていて、正当な理由なくコードを公開していないと不合格になりうる。",
+        "text": "公共部門では Service Standard に基づく service assessment が実質的なゲートになっている。DfE の解説によると、正当な理由なく新規コードを公開していないと assessment に通らないことがある。",
         "confidence": "medium",
         "sources": [
           {
@@ -170,7 +170,7 @@
       },
       {
         "id": "gb-hierarchy-3",
-        "text": "NAO は、政府のデジタル関連の意思決定の多くを、技術を専門としないジェネラリストのリーダーが下している点を問題として指摘している。",
+        "text": "NAO (2023) は、政府のデジタル関連の意思決定の多くを、技術を専門としないジェネラリストのリーダーが下している点を課題に挙げている。",
         "confidence": "strong",
         "sources": [
           {
@@ -184,8 +184,8 @@
     "communication": [
       {
         "id": "gb-communication-1",
-        "text": "Meyer の Communicating 軸で、英国は低文脈側にいるが、米国、カナダ、オーストラリア、オランダ、ドイツよりは文脈依存の度合いが高い。",
-        "confidence": "medium",
+        "text": "要約サイトによると、Meyer の Communicating 軸で英国は低文脈側にあるが、米国、カナダ、オーストラリア、オランダ、ドイツよりは文脈に頼る度合いが高い。",
+        "confidence": "weak",
         "sources": [
           {
             "title": "lifeclub: The Culture Map Summary",
@@ -195,7 +195,7 @@
       },
       {
         "id": "gb-communication-2",
-        "text": "「Make things open: it makes things better」は政府の design principle で、新規コードの公開は Service Standard の point 12 になっている。GDS は 2017 年に coding in the open の利点をブログで説明した。",
+        "text": "「Make things open: it makes things better」は政府の design principle の一つで、新規コードの公開は Service Standard の point 12 になっている。GDS は 2017 年に coding in the open の利点をブログで説明した。",
         "confidence": "strong",
         "sources": [
           {
@@ -211,7 +211,7 @@
       },
       {
         "id": "gb-communication-3",
-        "text": "Inside GOV.UK などの公開ブログで、障害対応の手順や経緯を説明する文化が公共部門にある。",
+        "text": "Inside GOV.UK は 2015 年、GOV.UK で障害が起きたときの対応手順をブログで公開した。",
         "confidence": "medium",
         "sources": [
           {
@@ -225,7 +225,7 @@
     "work": [
       {
         "id": "gb-work-1",
-        "text": "ONS によると、2024 年のフルタイム労働者の実労働時間は週平均 36.6 時間（全職種の数値）。",
+        "text": "ONS によると、2024 年のフルタイム労働者の実労働時間は週平均 36.6 時間だった。全職種の数値で、エンジニアに限ったものではない。",
         "confidence": "strong",
         "sources": [
           {
@@ -237,7 +237,7 @@
       },
       {
         "id": "gb-work-2",
-        "text": "Stack Overflow 2025 で英国はフルリモート 31.9%、柔軟寄りのハイブリッド 25.8%。給与の中央値は Engineering Manager が $136,141、back-end が $108,913 で、米国の 6〜7 割程度。",
+        "text": "Stack Overflow Developer Survey 2025 では、英国の回答者のフルリモート比率は 31.9%、柔軟寄りのハイブリッドは 25.8% だった。給与の中央値は Engineering Manager が $136,141、back-end が $108,913 で、米国の 6〜7 割程度である。",
         "confidence": "strong",
         "sources": [
           {
@@ -249,7 +249,7 @@
       },
       {
         "id": "gb-work-3",
-        "text": "20 人以上を整理解雇する場合は集団協議が必要で、100 人以上なら最初の解雇の 45 日前までに協議を始めなければならない。",
+        "text": "20 人以上を整理解雇する場合は集団協議が必要になる。協議は、20〜99 人なら最初の解雇の 30 日前まで、100 人以上なら 45 日前までに始めなければならない。",
         "confidence": "strong",
         "sources": [
           {
@@ -260,7 +260,7 @@
       },
       {
         "id": "gb-work-4",
-        "text": "2022 年の週 4 日勤務の試行（61 社、約 2,900 人）では 56 社が継続し、71% が燃え尽きの減少を報告した。小規模企業が中心で、テック業界に限った試行ではない。",
+        "text": "2022 年の週 4 日勤務の試行 (61 社、約 2,900 人) では、56 社が試行後も継続し、従業員の 71% が燃え尽きの減少を報告した。小規模企業が中心で、テック業界に限った試行ではない。",
         "confidence": "medium",
         "sources": [
           {
@@ -274,7 +274,7 @@
     "oss": [
       {
         "id": "gb-oss-1",
-        "text": "英国は GitHub の開発者数で上位 5 か国に入り、2024 年時点で 400 万人超（前年比 +19%）。2030 年には 1,100 万人になると予測されている。",
+        "text": "Octoverse 2024 によると、英国の GitHub 開発者は 400 万人を超え、前年比 +19% だった。Octoverse 2025 は 2030 年に約 1,100 万人になると予測している。",
         "confidence": "medium",
         "sources": [
           {
@@ -291,7 +291,7 @@
       },
       {
         "id": "gb-oss-2",
-        "text": "OpenUK（2023）の推計では、2022 年に OSS が £13.59bn の GVA を支え、英国テック部門の GVA の 27% にあたる。業界団体による推計である点に注意。",
+        "text": "業界団体 OpenUK の推計 (2023) では、2022 年に OSS が英国テック部門の GVA の 27% を支えた。",
         "confidence": "medium",
         "sources": [
           {
@@ -303,7 +303,7 @@
       },
       {
         "id": "gb-oss-3",
-        "text": "公共部門がコード公開をデフォルトとして制度化している。GOV.UK の Smart Answers のコードを別の機関が再利用し、2 か月かかる見込みだった開発を 1 週間未満で終えた例がある。",
+        "text": "公共部門はコード公開をデフォルトとして制度化している。Skills Funding Agency は GOV.UK の Smart Answers のコードを再利用し、少なくとも 2 か月かかる見込みだった開発を 1 週間未満で終えた。",
         "confidence": "strong",
         "sources": [
           {
@@ -316,9 +316,9 @@
     ]
   },
   "variance": [
-    "GDS の理想と、レガシーを抱える公共 IT の現実には大きな差がある（NAO 2023）。",
-    "Post Office Horizon 事件は、blameless 文化とは正反対に、ソフトウェアの欠陥を個人の責任にすり替えた極端な例。",
-    "London の fintech（Monzo など）の慣行は、英国企業全体を代表しているわけではない。",
+    "GDS の理想と、レガシーを抱える公共 IT の現実には大きな差がある (NAO 2023)。",
+    "Post Office Horizon 事件は、blameless 文化とは正反対に、ソフトウェアの欠陥を個人の責任にすり替えた極端な例だ。",
+    "London の fintech (Monzo など) の慣行は、英国企業全体を代表しているわけではない。",
     "understatement は有名なステレオタイプだが、英国のコードレビューの語調を実証的に調べた研究は見つからなかった。"
   ]
 }
