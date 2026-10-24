@@ -1,0 +1,383 @@
+{
+  "id": "nordics",
+  "name": "北欧",
+  "oneLiner": "平等で合意志向、ワークライフバランスは制度で担保。ただし率直なDK・寡黙なFI・根回しのSEと国差は大きい。",
+  "intro": "スウェーデン・フィンランド・デンマーク・ノルウェーをまとめて扱うが、国ごとの差が大きいので要所で国名を明記する。ここに書くのは調査・統計・事例から見える集団としての傾向であり、個々のエンジニアを説明するものではない。",
+  "themes": {
+    "design": [
+      {
+        "id": "nordics-design-1",
+        "text": "VTT（フィンランド国立技術研究センター）の Abrahamsson らによる 2002 年のレビュー（VTT Publications 478）は agile 手法を体系的に比較した初期の代表的文献で、Scopus 被引用は 200 件超。フィンランドが agile 研究の拠点として早くから存在感を持っていたことを示すが、国全体の開発文化を示すものではない。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "VTT — Agile software development methods: Review and analysis",
+            "url": "https://cris.vtt.fi/en/publications/agile-software-development-methods-review-and-analysis",
+            "year": 2002
+          }
+        ]
+      },
+      {
+        "id": "nordics-design-2",
+        "text": "Spotify の 2014 年の文化動画は「小さく頻繁なリリース」「loosely coupled, tightly aligned」を掲げ、Scrum の作法を任意にしていた。重い事前設計より反復を重んじる姿勢だが、本人たちも「完成形ではなく道の途中」と断っている。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Spotify engineering culture (part 1)",
+            "url": "https://engineering.atspotify.com/2014/03/spotify-engineering-culture-part-1",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "nordics-design-3",
+        "text": "Supercell（フィンランド）では 5〜15 人程度の「cell」がゲームのライフサイクル全体と開発中止の判断まで持ち、経営陣の承認会議（greenlight）はない。品質のゲートをトップのレビューではなくチームの自律に置いている。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "PocketGamer.biz — Slush 2024 transcript: Ilkka Paananen",
+            "url": "https://www.pocketgamer.biz/full-slush-2024-transcript-supercell-ceo-ilkka-paananen-on-the-clash-of-clans-developers-evolving-culture/",
+            "year": 2024
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "nordics-failure-1",
+        "text": "Spotify は 2014 年時点で自社を fail-friendly と称し、失敗回避より素早い回復を重視した。postmortem は「誰のせいか」ではなく「何が起き、何を学び、何を変えるか」を扱い、影響範囲を小さく抑える limited blast radius を前提にしていた（Kniberg）。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Spotify Engineering Culture (Henrik Kniberg, video)",
+            "url": "https://www.youtube.com/watch?v=4GK1NDTWbkY",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "nordics-failure-2",
+        "text": "Supercell は開発中止したゲームの「学び」をシャンパンで祝う。CEO の Ilkka Paananen は 2016 年の BAFTA 講演でこの慣行を語り、Slush 2024 でも継続していると述べた。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Daniel Scrivner — Ilkka Paananen BAFTA lecture",
+            "url": "https://www.danielscrivner.com/supercell-founder-ilkka-paananen-game-design-lecture-at-bafta/",
+            "year": 2016
+          },
+          {
+            "title": "PocketGamer.biz — Slush 2024 transcript: Ilkka Paananen",
+            "url": "https://www.pocketgamer.biz/full-slush-2024-transcript-supercell-ceo-ilkka-paananen-on-the-clash-of-clans-developers-evolving-culture/",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "nordics-failure-3",
+        "text": "Vuori & Huy（Administrative Science Quarterly, 2016）は、Nokia がスマートフォン競争に敗れた一因を組織内の恐怖とした。中間管理職が上層部や同僚を恐れて悪いニュースを上げず、経営陣は自社の技術力を過大評価した。ただし著者の前提が結論を誘導したという批判もある。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Vuori & Huy — Distributed Attention and Shared Emotions in the Innovation Process: How Nokia Lost the Smartphone Battle",
+            "url": "https://www.researchgate.net/publication/281965483_Distributed_Attention_and_Shared_Emotions_in_the_Innovation_Process_How_Nokia_Lost_the_Smartphone_Battle",
+            "year": 2016
+          }
+        ]
+      },
+      {
+        "id": "nordics-failure-4",
+        "text": "Hofstede の不確実性回避（UAI）はデンマーク 23、スウェーデン 29 と低い一方、フィンランド 59、ノルウェー 50 と中程度で、「北欧はリスクに寛容」と一括りにはできない。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=denmark%2Cfinland%2Cnetherlands%2Cnorway%2Csweden",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "nordics-feedback-1",
+        "text": "Erin Meyer の Evaluating スケールでは、デンマークはオランダやドイツと並んで、ネガティブフィードバックを率直に伝える側に置かれている。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Welcome to the Jungle — The 8 keys for managing multicultural teams (Erin Meyer)",
+            "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams"
+          }
+        ]
+      },
+      {
+        "id": "nordics-feedback-2",
+        "text": "Carbaugh ら（Journal of Language and Social Psychology, 2006）は、フィンランドで沈黙や静けさ（hiljaisuus）が肯定的で自然なあり方とされる文化コードを記述した。レビューで発言が少なくても反論がないとは限らない。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Carbaugh et al. — Silence and Quietude as a Finnish \"Natural Way of Being\"",
+            "url": "https://works.bepress.com/donal_carbaugh/7/",
+            "year": 2006
+          }
+        ]
+      },
+      {
+        "id": "nordics-feedback-3",
+        "text": "一方で「寡黙なフィンランド人」は部分的に神話だとする研究者側の注意もある（Berry 2011, CercleS）。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Berry — Finnish silence: myth or reality (CercleS)",
+            "url": "https://www.utu.fi/sites/default/files/media/KieVi/Berry-cercles-2011-0025-1.pdf",
+            "year": 2011
+          }
+        ]
+      },
+      {
+        "id": "nordics-feedback-4",
+        "text": "スウェーデンは対立を避けて合意を優先する傾向があると指摘されている（Lämsä 2010 が Ekwall & Karlsson 1999 を引用）。率直さでデンマークより穏当という見方を裏づける Meyer の一次資料は確認できていない。",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Lämsä — Leadership Styles and Decision-making in Finnish and Swedish Organizations",
+            "url": "https://www.rmci.ase.ro/no11vol1/Vol11_No1_Article13.pdf",
+            "year": 2010
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "nordics-hierarchy-1",
+        "text": "Hofstede の権力格差（PDI）は全般に低い（デンマーク 18、スウェーデン・ノルウェー 31、フィンランド 33）。Meyer の Leading スケールでもデンマークとスウェーデンは平等主義の典型として挙げられる。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=denmark%2Cfinland%2Cnetherlands%2Cnorway%2Csweden",
+            "year": 2026
+          },
+          {
+            "title": "Welcome to the Jungle — The 8 keys for managing multicultural teams (Erin Meyer)",
+            "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams"
+          }
+        ]
+      },
+      {
+        "id": "nordics-hierarchy-2",
+        "text": "Lämsä（Review of International Comparative Management, 2010）は、フィンランドの管理スタイルを速く権威的な「Management by perkele」、スウェーデンを合意志向で遅めの「Management by ack herreguuden」と対比した。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Lämsä — Leadership Styles and Decision-making in Finnish and Swedish Organizations",
+            "url": "https://www.rmci.ase.ro/no11vol1/Vol11_No1_Article13.pdf",
+            "year": 2010
+          }
+        ]
+      },
+      {
+        "id": "nordics-hierarchy-3",
+        "text": "スウェーデンには、事前の非公式な調整で合意を固める förankring という慣行がある。決定までは遅いが実行段階の抵抗が減るという説明が一般的だが、遅さを定量化した研究は見つからなかった。",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "John Alexander — Consensus: The Hidden Codes of Swedish Leadership",
+            "url": "https://johnalexandersweden.com/pdf/CONSENSUS.pdf"
+          }
+        ]
+      },
+      {
+        "id": "nordics-hierarchy-4",
+        "text": "元 Spotify PM の Jeremiah Lee（2020-04）は、Spotify モデルは社内でも完全には実装されなかった理想像で、チームごとに働き方を作り直す負担や、エンジニアリングの遂行に責任を持つ人の不在を生んだと書いた。agile コーチの Joakim Sundén も「part ambition, part approximation」だったと述べている。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Jeremiah Lee — Spotify's Failed #SquadGoals",
+            "url": "https://www.jeremiahlee.com/posts/failed-squad-goals/",
+            "year": 2020
+          }
+        ]
+      },
+      {
+        "id": "nordics-hierarchy-5",
+        "text": "Jante の掟（Sandemose, 1933）は平等主義の象徴とされる一方で起業を阻むとも言われるが、スタートアップへの影響を実証した研究は見つからず、論評とインタビューが中心。",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "The Next Web — Behind every successful Scandinavian startup is a jealous and unsupportive community",
+            "url": "https://thenextweb.com/news/1110732"
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "nordics-communication-1",
+        "text": "The Culture Map の要約では、フィンランドは低文脈（明示的）だが米国ほどではないとされる。",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Mindli — The Culture Map study guide",
+            "url": "https://mind.li/explore/37057-the-culture-map-by-erin-meyer-study-analysis-guide"
+          }
+        ]
+      },
+      {
+        "id": "nordics-communication-2",
+        "text": "Poutiainen（Wiley 百科事典, 2017）は、フィンランドのコミュニケーションに、沈黙、事実本位で用件だけを話す asiallinen スタイル、「フィンランド人らしさ」をめぐる語りの 3 つのモードがあるとした。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Poutiainen — Communication Modes, Finnish (Wiley)",
+            "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118783665.ieicc0132",
+            "year": 2017
+          }
+        ]
+      },
+      {
+        "id": "nordics-communication-3",
+        "text": "スウェーデンの合意形成は会議と非公式な事前調整に頼り、海外の管理職は決定までの会議ややり取りの多さに戸惑うとされる（The Culture Map の要約）。",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "LinkedIn — The Culture Map by Erin Meyer (summary)",
+            "url": "https://www.linkedin.com/pulse/culture-map-erin-meyer-8-minute-read-lars-christensen?trk=public_profile_article_view"
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "nordics-work-1",
+        "text": "Eurostat によると 2024 年の主たる仕事の週実労働時間はデンマークが 33.9 時間で、EU 平均 36.0 時間より短い。2025 年版ではフルタイム男性の労働時間が最も短いのはフィンランドとオランダ（いずれも 38.4 時間）。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Eurostat — People in the EU worked on average 36 hours per week",
+            "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250514-1",
+            "year": 2025
+          },
+          {
+            "title": "Eurostat — Actual and usual hours of work",
+            "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Actual_and_usual_hours_of_work",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "nordics-work-2",
+        "text": "育休はスウェーデンが計 480 日で各親に 90 日を割り当て、ノルウェーは 100% 支給なら 49 週で父親枠 15 週、フィンランドは 2022 年改革で各親 160 日。デンマークも 2022 年に父親枠を導入したが、週数は資料により 8・9・11 週と食い違う。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Nordic Council of Ministers — Parental leave in Finland (TemaNord 2025:547)",
+            "url": "https://pub.norden.org/temanord2025-547/parental-leave-in-finland.html",
+            "year": 2025
+          },
+          {
+            "title": "Nordic Labour Journal — Work and wage levels are obstacles to fathers' leave",
+            "url": "https://www.nordiclabourjournal.org/work-and-wage-levels-are-obstacles-to-fathers-leave/"
+          }
+        ]
+      },
+      {
+        "id": "nordics-work-3",
+        "text": "フィンランドは「普段から在宅勤務」の就業者が約 20% で EU 最高水準（EU 平均は約 9%）。数値は Eurostat lfsa_ehomp を集計した二次サイト経由。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Apiar Data — Finland usually works from home rate",
+            "url": "https://apiardata.com/statistics/fi-usually-works-from-home-rate/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "nordics-work-4",
+        "text": "デンマークのフレキシキュリティは、解雇しやすい代わりに手厚い失業給付と積極的な労働市場政策を組み合わせ、job の保障ではなく employment の保障を与える。IMF（2006）は手厚い給付が構造的失業を押し上げる副作用も指摘した。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "denmark.dk — The Danish labour market",
+            "url": "https://denmark.dk/society-and-business/the-danish-labour-market/"
+          },
+          {
+            "title": "IMF Survey — Danish Flexicurity Model Holds Lessons for Rest of Europe",
+            "url": "https://www.elibrary.imf.org/view/journals/023/0035/020/article-A009-en.xml?rskey=aDCGFc&result=5",
+            "year": 2006
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "nordics-oss-1",
+        "text": "Linux は 1991-08-25、ヘルシンキ大学の学生だった Linus Torvalds が comp.os.minix に「just a hobby, won't be big and professional like gnu」と投稿したのが始まり。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Wikipedia — Linux kernel",
+            "url": "https://en.wikipedia.org/wiki/Linux_kernel"
+          }
+        ]
+      },
+      {
+        "id": "nordics-oss-2",
+        "text": "MySQL AB は 1995 年にスウェーデン（ウプサラ）で設立された。創業者はフィンランド人の Michael Widenius とスウェーデン人の David Axmark・Allan Larsson。2008 年に Sun が約 10 億ドルで買収し、後に MariaDB が派生した。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Wikipedia — MySQL AB",
+            "url": "https://en.wikipedia.org/wiki/MySQL_AB"
+          }
+        ]
+      },
+      {
+        "id": "nordics-oss-3",
+        "text": "Erlang は 1986 年に Ericsson で生まれた。1998 年に Ericsson Radio が新規製品での使用を禁止したことが、かえって 1998-12-02 のオープンソース公開と社外への普及につながった（Armstrong, HOPL III 2007）。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Armstrong — A History of Erlang (HOPL III)",
+            "url": "https://lfe.io/papers/[2007]%20Armstrong%20-%20HOPL%20III%20A%20History%20of%20Erlang.pdf",
+            "year": 2007
+          }
+        ]
+      },
+      {
+        "id": "nordics-oss-4",
+        "text": "ノルウェーの Ole-Johan Dahl と Kristen Nygaard は Simula でオブジェクト指向の基本概念を生み、2001 年に Turing 賞を受けた。Qt はノルウェーの Trolltech（1994 年創業）から出て、現在の Qt Group の本社はフィンランドのエスポー。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "ACM — Kristen Nygaard, A.M. Turing Award",
+            "url": "https://awards.acm.org/award_winners/nygaard_5916220",
+            "year": 2001
+          },
+          {
+            "title": "Wikipedia — Qt (software)",
+            "url": "https://en.wikipedia.org/wiki/Qt_(software)"
+          }
+        ]
+      },
+      {
+        "id": "nordics-oss-5",
+        "text": "Ruby on Rails の作者 David Heinemeier Hansson はデンマーク人で、Rails は 2004 年に公開された。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Wikipedia — David Heinemeier Hansson",
+            "url": "https://en.wikipedia.org/wiki/David_Heinemeier_Hansson"
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "域内差が大きい: UAI はデンマーク 23 に対しフィンランド 59、意思決定はフィンランドが速く権威的、スウェーデンが合意志向と対比される（Lämsä 2010）。",
+    "「北欧のエンジニアは品質志向」を示す国レベルの比較データは見つからず、設計・品質の傾向は Spotify や Supercell など個社の事例に依存している。",
+    "Spotify モデルは Spotify 自身も完全には実装しなかった理想像で、北欧の典型として読むのは危うい（Jeremiah Lee 2020）。",
+    "Nokia の事例（Vuori & Huy 2016）のように、フラットで平等とされる文化でも大企業では恐怖による情報の握りつぶしが起こりうる。",
+    "DHH の Rails や Basecamp の働き方論は米国企業での実践であり、デンマークの開発文化の産物とは言いにくい。"
+  ]
+}

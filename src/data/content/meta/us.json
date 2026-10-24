@@ -1,0 +1,58 @@
+{
+  "id": "us",
+  "iso": [
+    "US"
+  ],
+  "hofstede": [
+    {
+      "country": "United States",
+      "scores": {
+        "pdi": 40,
+        "idv": 60,
+        "mas": null,
+        "uai": null,
+        "lto": 50,
+        "ivr": null
+      },
+      "source": {
+        "title": "The Culture Factor — Country comparison tool",
+        "url": "https://www.theculturefactor.com/country-comparison-tool?countries=united+states",
+        "year": 2026
+      }
+    }
+  ],
+  "cultureMap": {
+    "communicating": {
+      "step": -3,
+      "basis": "primary"
+    },
+    "evaluating": {
+      "step": 0,
+      "basis": "primary"
+    },
+    "persuading": {
+      "step": 3,
+      "basis": "primary"
+    },
+    "leading": {
+      "step": -1,
+      "basis": "primary"
+    },
+    "deciding": {
+      "step": 1,
+      "basis": "primary"
+    },
+    "trusting": {
+      "step": -3,
+      "basis": "primary"
+    },
+    "disagreeing": {
+      "step": 0,
+      "basis": "primary"
+    },
+    "scheduling": {
+      "step": -1,
+      "basis": "primary"
+    }
+  }
+}

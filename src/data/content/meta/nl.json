@@ -1,0 +1,58 @@
+{
+  "id": "nl",
+  "iso": [
+    "NL"
+  ],
+  "hofstede": [
+    {
+      "country": "Netherlands",
+      "scores": {
+        "pdi": 38,
+        "idv": 100,
+        "mas": 14,
+        "uai": 53,
+        "lto": 67,
+        "ivr": 68
+      },
+      "source": {
+        "title": "The Culture Factor — Country comparison tool",
+        "url": "https://www.theculturefactor.com/country-comparison-tool?countries=denmark%2Cfinland%2Cnetherlands%2Cnorway%2Csweden",
+        "year": 2026
+      }
+    }
+  ],
+  "cultureMap": {
+    "communicating": {
+      "step": -2,
+      "basis": "primary"
+    },
+    "evaluating": {
+      "step": -3,
+      "basis": "primary"
+    },
+    "persuading": {
+      "step": 1,
+      "basis": "primary"
+    },
+    "leading": {
+      "step": -3,
+      "basis": "primary"
+    },
+    "deciding": {
+      "step": -2,
+      "basis": "primary"
+    },
+    "trusting": {
+      "step": -2,
+      "basis": "primary"
+    },
+    "disagreeing": {
+      "step": -2,
+      "basis": "primary"
+    },
+    "scheduling": {
+      "step": -2,
+      "basis": "primary"
+    }
+  }
+}

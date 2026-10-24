@@ -1,0 +1,59 @@
+{
+  "id": "kr",
+  "iso": [
+    "KR"
+  ],
+  "hofstede": [
+    {
+      "country": "South Korea",
+      "scores": {
+        "pdi": 60,
+        "idv": 58,
+        "mas": 39,
+        "uai": 85,
+        "lto": 86,
+        "ivr": 29
+      },
+      "source": {
+        "title": "The Culture Factor — Country comparison tool",
+        "url": "https://www.theculturefactor.com/country-comparison-tool?countries=japan%2Csouth+korea",
+        "year": 2026
+      }
+    }
+  ],
+  "cultureMap": {
+    "communicating": {
+      "step": 2,
+      "basis": "primary"
+    },
+    "evaluating": {
+      "step": 2,
+      "basis": "primary"
+    },
+    "persuading": {
+      "step": null,
+      "basis": null,
+      "note": "holistic — outside the principles/applications axis"
+    },
+    "leading": {
+      "step": 2,
+      "basis": "primary"
+    },
+    "deciding": {
+      "step": null,
+      "basis": null
+    },
+    "trusting": {
+      "step": 2,
+      "basis": "secondary"
+    },
+    "disagreeing": {
+      "step": 2,
+      "basis": "primary"
+    },
+    "scheduling": {
+      "step": null,
+      "basis": null
+    }
+  }
+}
