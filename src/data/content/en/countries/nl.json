@@ -1,0 +1,218 @@
+{
+  "id": "nl",
+  "name": "Netherlands",
+  "oneLiner": "Direct feedback and consensus built through long consultation (the polder) are described side by side.",
+  "intro": "This page summarizes tendencies in the Netherlands seen in surveys and statistics. These are group-level tendencies with large individual variance, not descriptions of individual engineers. Working hours and remote work can be checked against official Eurostat and CBS statistics, while workplace directness rests mainly on Meyer's observations and practical guides, and engineering culture on single companies such as Booking.com and ING.",
+  "themes": {
+    "design": [
+      {
+        "id": "nl-design-1",
+        "text": "Guido van Rossum created Python at CWI in Amsterdam. He names his frustration with ABC's lack of extensibility and the system administration needs of the Amoeba distributed OS group as motives. He started over the 1989 Christmas holidays and released 0.9.0 on 1991-02-20.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Python FAQ — Why was Python created in the first place?",
+            "url": "https://docs.python.org/3/faq/general.html"
+          },
+          {
+            "title": "Guido van Rossum — A Brief Timeline of Python",
+            "url": "https://python-history.blogspot.com/2009/01/brief-timeline-of-python.html",
+            "year": 2009
+          }
+        ]
+      },
+      {
+        "id": "nl-design-2",
+        "text": "According to Thomke (HBR, 2020), Booking.com runs more than 1,000 experiments at once and over 25,000 a year. Its internal rule is that anyone can test anything without management's permission.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Thomke — Building a Culture of Experimentation (HBR)",
+            "url": "https://hbr.org/2020/03/building-a-culture-of-experimentation",
+            "year": 2020
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "nl-failure-1",
+        "text": "ING moved to a Spotify-style structure of squads and tribes in 2015. In a McKinsey interview (2017), it described each tribe writing down its results and biggest learnings every quarter and celebrating both successes and failures.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "McKinsey — ING's agile transformation",
+            "url": "https://www.mckinsey.com/industries/financial-services/our-insights/ings-agile-transformation",
+            "year": 2017
+          }
+        ]
+      },
+      {
+        "id": "nl-failure-2",
+        "text": "According to Thomke (HBR, 2020), only about 10% of Booking.com's experiments produce positive results; the other 90% or so do not support the hypothesis. The company runs its experiments on that assumption.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Thomke — Building a Culture of Experimentation (HBR)",
+            "url": "https://hbr.org/2020/03/building-a-culture-of-experimentation",
+            "year": 2020
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "nl-feedback-1",
+        "text": "Erin Meyer cites the Netherlands as an example of giving negative feedback directly on her Evaluating scale, and of open disagreement on her Disagreeing scale. Her book says \"the Dutch manager learns always to be honest and to give the message straight.\"",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Welcome to the Jungle — The 8 keys for managing multicultural teams (Erin Meyer)",
+            "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams"
+          }
+        ]
+      },
+      {
+        "id": "nl-feedback-2",
+        "text": "Some expat guides link Dutch directness to polder-model consensus building, explaining that speaking your mind freely is a precondition for reaching agreement.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "ExpatRepublic — How the Dutch Poldermodel Helps Expats Resolve Work & Social Conflict",
+            "url": "https://www.expatrepublic.com/poldermodel/"
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "nl-hierarchy-1",
+        "text": "Meyer cites the Netherlands, along with Denmark and Sweden, as an example of an egalitarian culture on her Leading scale. A study guide to The Culture Map places it on the consensual side of the Deciding scale, alongside Sweden and Japan.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Welcome to the Jungle — The 8 keys for managing multicultural teams (Erin Meyer)",
+            "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams"
+          },
+          {
+            "title": "Mindli — The Culture Map study guide",
+            "url": "https://mind.li/explore/37057-the-culture-map-by-erin-meyer-study-analysis-guide"
+          }
+        ]
+      },
+      {
+        "id": "nl-hierarchy-2",
+        "text": "A study in Contemporary Management Research (2018) analyzed data from 808 managers using structural equation modeling. It found that polder values, reaching pragmatic agreement through consultation and debate, strongly shape the leadership styles Dutch managers prefer.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Dutch Managerial Leadership Strategies within a Polder Framework (Contemporary Management Research)",
+            "url": "https://www.cmr-journal.org/article/download/18279/pdf",
+            "year": 2018
+          }
+        ]
+      },
+      {
+        "id": "nl-hierarchy-3",
+        "text": "Woldendorp and Keman (2007) reviewed Dutch corporatism from 1965 to 2000 and argue that the polder model has been overrated. Bargaining between the social partners was tough, and the rate of central agreements was low.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Woldendorp & Keman — The polder model reviewed: Dutch corporatism 1965-2000",
+            "url": "https://research.vu.nl/en/publications/the-polder-model-reviewed-dutch-corporatism-1965-2000/",
+            "year": 2007
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "nl-communication-1",
+        "text": "On her Communicating scale, Meyer lists the Netherlands with the United States, Canada and Australia as examples of low-context (explicit) cultures.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Welcome to the Jungle — The 8 keys for managing multicultural teams (Erin Meyer)",
+            "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams"
+          }
+        ]
+      },
+      {
+        "id": "nl-communication-2",
+        "text": "The practical guide NL Compass says that Dutch workplaces take meeting agendas seriously and that fixing schedules in advance is the norm.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "NL Compass — Dutch working culture",
+            "url": "https://www.nlcompass.com/guides/dutch-working-culture",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "nl-work-1",
+        "text": "Eurostat reports that actual weekly hours in the main job were 32.1 in 2024, the shortest in the EU (EU average 36.0). The main reason is the high share of part-time work; men in full-time work averaged 38.4 hours (2025).",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Eurostat — People in the EU worked on average 36 hours per week",
+            "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250514-1",
+            "year": 2025
+          },
+          {
+            "title": "Eurostat — Actual and usual hours of work",
+            "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Actual_and_usual_hours_of_work",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "nl-work-2",
+        "text": "CBS reports that 52% of employed people worked from home at least sometimes in 2023. In the 2022 EU comparison, 12.7% worked from home most of the time, lower than in Finland (23.1%) or Ireland (25.3%).",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "CBS — Over half of Dutch people work from home sometimes",
+            "url": "https://www.cbs.nl/en-gb/news/2024/11/over-half-of-dutch-people-work-from-home-sometimes",
+            "year": 2024
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "nl-oss-1",
+        "text": "On 2018-07-12, Guido van Rossum stepped down as Python's BDFL in a python-committers post titled \"Transfer of power.\" He named no successor and left it to the core developers to decide how the project would be governed.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Guido van Rossum — Transfer of power (python-committers)",
+            "url": "https://mail.python.org/pipermail/python-committers/2018-July/005664.html",
+            "year": 2018
+          }
+        ]
+      },
+      {
+        "id": "nl-oss-2",
+        "text": "ING brought the Spotify model to a large bank, organizing about 350 squads into 13 tribes (McKinsey, 2017).",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "McKinsey — ING's agile transformation",
+            "url": "https://www.mckinsey.com/industries/financial-services/our-insights/ings-agile-transformation",
+            "year": 2017
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "The EU's shortest working week comes mainly from the high share of part-time work; the gap narrows for full-time workers.",
+    "Some research argues that polder-model consensus building is overrated (Woldendorp & Keman 2007).",
+    "No peer-reviewed study was found that directly measures Dutch directness at work. The evidence is mainly Meyer's observations and expat guides, and claims about how meetings are run appear only in practical guides.",
+    "No data was found on a national attitude toward design or quality; what is said relies on single companies such as Booking.com and ING.",
+    "The Spotify model that ING copied has been criticized as an aspiration that Spotify itself never fully implemented (Jeremiah Lee 2020)."
+  ]
+}

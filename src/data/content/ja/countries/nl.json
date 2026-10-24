@@ -1,13 +1,13 @@
 {
   "id": "nl",
   "name": "オランダ",
-  "oneLiner": "個人主義が極めて強く率直で明示的。それでいて意思決定は協議を重ねて合意する（polder）。",
-  "intro": "オランダは率直なフィードバックと合意形成（polder）が同居する文化として語られることが多い。ここに書くのは調査・統計・事例から見える集団としての傾向であり、個々のエンジニアを説明するものではない。",
+  "oneLiner": "率直なフィードバックと、協議を重ねる合意形成（polder）が同時に語られる。",
+  "intro": "オランダについて、調査や統計から見える傾向をまとめたページです。あくまで集団としての傾向で、国内の個人差は大きく、個々のエンジニアを説明するものではありません。労働時間や在宅勤務は Eurostat や CBS の公的統計で確かめられる一方、職場での率直さは Meyer の観察と実務ガイドが主な根拠で、開発文化は Booking.com や ING などの個社事例に頼っています。",
   "themes": {
     "design": [
       {
         "id": "nl-design-1",
-        "text": "Python は Guido van Rossum が CWI（アムステルダム）で作った。本人によれば、ABC グループでの言語実装経験と ABC の拡張性のなさへの不満、Amoeba 分散 OS グループでのシステム管理の必要が動機で、1989 年のクリスマス休暇に実装を始めた。1991-02-20 に 0.9.0 を alt.sources で公開し、1994-01-26 に 1.0.0 を出した。",
+        "text": "Python は Guido van Rossum が CWI（アムステルダム）で作った。本人は、ABC の拡張性のなさへの不満と、Amoeba 分散 OS グループでのシステム管理の必要を動機に挙げている。1989 年のクリスマス休暇に実装を始め、1991-02-20 に 0.9.0 を公開した。",
         "confidence": "strong",
         "sources": [
           {
@@ -23,7 +23,7 @@
       },
       {
         "id": "nl-design-2",
-        "text": "Booking.com は同時に 1,000 件超、年間 2.5 万件以上の実験を回し、陽性結果が出るのは約 10%。社内ルールは「誰でも経営の許可なく何でもテストできる」（Thomke, HBR 2020）。事前に設計を固めるよりデータで反復するスタイル。",
+        "text": "Thomke（HBR, 2020）によると、Booking.com は同時に 1,000 件を超える実験を走らせ、年間では 2.5 万件以上になる。社内では、経営の許可なしに誰でも何でもテストしてよいとされている。",
         "confidence": "medium",
         "sources": [
           {
@@ -37,19 +37,7 @@
     "failure": [
       {
         "id": "nl-failure-1",
-        "text": "Hofstede の不確実性回避（UAI）は 53 で中程度。リスクに寛容とも慎重とも言い切れない。",
-        "confidence": "strong",
-        "sources": [
-          {
-            "title": "The Culture Factor — Country comparison tool",
-            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=denmark%2Cfinland%2Cnetherlands%2Cnorway%2Csweden",
-            "year": 2026
-          }
-        ]
-      },
-      {
-        "id": "nl-failure-2",
-        "text": "ING は 2015 年に Spotify 型の squad / tribe 体制へ移行し、各 tribe が四半期ごとに成果と「最大の学び」を書き出して成功も失敗も祝う運用にした（McKinsey インタビュー, 2017）。",
+        "text": "ING は 2015 年に Spotify 型の squad と tribe の体制へ移った。McKinsey のインタビュー（2017）によると、各 tribe は四半期ごとに成果と最大の学びを書き出し、成功も失敗も祝う。",
         "confidence": "medium",
         "sources": [
           {
@@ -60,8 +48,8 @@
         ]
       },
       {
-        "id": "nl-failure-3",
-        "text": "Booking.com では実験の約 9 割が陽性結果を出さないことが前提として組み込まれている。",
+        "id": "nl-failure-2",
+        "text": "Thomke（HBR, 2020）によると、Booking.com の実験で陽性の結果が出るのは約 1 割で、残りの約 9 割は仮説を支持しない。同社はこれを前提に実験を運用している。",
         "confidence": "medium",
         "sources": [
           {
@@ -75,7 +63,7 @@
     "feedback": [
       {
         "id": "nl-feedback-1",
-        "text": "Erin Meyer はオランダを、Evaluating ではネガティブフィードバックを直接伝える側、Disagreeing では公の場での反論を厭わない側の代表として挙げる。本の一節は「the Dutch manager learns always to be honest and to give the message straight」。",
+        "text": "Erin Meyer はオランダを、Evaluating ではネガティブフィードバックを直接伝える側、Disagreeing では公の場での反論を厭わない側の例に挙げる。本には「the Dutch manager learns always to be honest and to give the message straight」という一節がある。",
         "confidence": "medium",
         "sources": [
           {
@@ -86,7 +74,7 @@
       },
       {
         "id": "nl-feedback-2",
-        "text": "オランダ人の率直さと polder model の合意形成を結びつけて語るのは主に駐在員向けガイドで、職場での率直さを直接測った査読研究は見つからなかった。",
+        "text": "駐在員向けガイドの中には、オランダ人の率直さを polder model の合意形成と結びつけ、遠慮なく意見を出し合うことが合意の前提だと説明するものがある。",
         "confidence": "weak",
         "sources": [
           {
@@ -99,13 +87,12 @@
     "hierarchy": [
       {
         "id": "nl-hierarchy-1",
-        "text": "Hofstede の権力格差（PDI）は 38 で低い。The Culture Map の要約では、オランダは Leading で平等主義、Deciding で合意（スウェーデンや日本と同じ側）に置かれる。",
+        "text": "Meyer は Leading スケールでオランダをデンマークやスウェーデンと並ぶ平等主義の例に挙げている。The Culture Map の要約サイトによると、Deciding では合意型に置かれ、スウェーデンや日本と同じ側になる。",
         "confidence": "medium",
         "sources": [
           {
-            "title": "The Culture Factor — Country comparison tool",
-            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=denmark%2Cfinland%2Cnetherlands%2Cnorway%2Csweden",
-            "year": 2026
+            "title": "Welcome to the Jungle — The 8 keys for managing multicultural teams (Erin Meyer)",
+            "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams"
           },
           {
             "title": "Mindli — The Culture Map study guide",
@@ -115,7 +102,7 @@
       },
       {
         "id": "nl-hierarchy-2",
-        "text": "Contemporary Management Research（2018）の研究は管理職 808 人を構造方程式モデリングで分析し、協議と議論で実利的な合意に至る polder 的価値観がオランダの管理職の好むリーダーシップに強く影響しているとした。",
+        "text": "Contemporary Management Research（2018）の研究は管理職 808 人のデータを構造方程式モデリングで分析した。協議と議論で実利的な合意に至る polder 的な価値観が、管理職の好むリーダーシップに強く影響しているという。",
         "confidence": "medium",
         "sources": [
           {
@@ -127,7 +114,7 @@
       },
       {
         "id": "nl-hierarchy-3",
-        "text": "Woldendorp & Keman（2007）は polder model は過大評価されていると論じ、1980 年代に合意があった証拠は乏しいとしている。",
+        "text": "Woldendorp & Keman（2007）は 1965〜2000 年のオランダのコーポラティズムを検証し、polder model は過大評価されていると論じた。労使の交渉は厳しく、中央協約が結ばれた割合は低かったという。",
         "confidence": "medium",
         "sources": [
           {
@@ -141,7 +128,7 @@
     "communication": [
       {
         "id": "nl-communication-1",
-        "text": "Meyer の Communicating スケールでは、オランダは米国・カナダ・オーストラリアに次ぐ低文脈（明示的）な文化とされる。",
+        "text": "Meyer は Communicating スケールで、オランダを米国・カナダ・オーストラリアと並ぶ低文脈（明示的）な文化の例に挙げている。",
         "confidence": "medium",
         "sources": [
           {
@@ -152,7 +139,7 @@
       },
       {
         "id": "nl-communication-2",
-        "text": "会議の議題を重んじ予定を事前に固めるという言説は実務ガイドにしか見当たらない。",
+        "text": "実務ガイドの NL Compass は、オランダの職場では会議の議題が重んじられ、予定を事前に固めるのが普通だと説明している。",
         "confidence": "weak",
         "sources": [
           {
@@ -166,7 +153,7 @@
     "work": [
       {
         "id": "nl-work-1",
-        "text": "Eurostat によると 2024 年の主たる仕事の週実労働時間は 32.1 時間で EU 最短（EU 平均 36.0 時間）。主因はパートタイム比率の高さで、フルタイム男性に限ると 38.4 時間（2025 年）。",
+        "text": "Eurostat によると、2024 年の主たる仕事の週実労働時間は 32.1 時間で EU 最短だった（EU 平均 36.0 時間）。主因はパートタイム比率の高さで、フルタイム男性に限ると 38.4 時間（2025 年）になる。",
         "confidence": "strong",
         "sources": [
           {
@@ -183,24 +170,12 @@
       },
       {
         "id": "nl-work-2",
-        "text": "CBS（オランダ中央統計局）によると、時々在宅勤務する人まで含めると就業者の半数を超える。一方「普段から在宅」は 12〜13% 前後で、フィンランドやアイルランドより低い。",
-        "confidence": "medium",
+        "text": "CBS によると、2023 年に在宅勤務をした就業者は時々を含めて 52% だった。2022 年の EU 比較では、主に在宅で働く人は 12.7% で、フィンランド（23.1%）やアイルランド（25.3%）より低い。",
+        "confidence": "strong",
         "sources": [
           {
             "title": "CBS — Over half of Dutch people work from home sometimes",
             "url": "https://www.cbs.nl/en-gb/news/2024/11/over-half-of-dutch-people-work-from-home-sometimes",
-            "year": 2024
-          }
-        ]
-      },
-      {
-        "id": "nl-work-3",
-        "text": "Stack Overflow 2024 年調査の分析では、オランダの開発者の職務満足度は給与水準にあまり左右されなかった（ブラジルやフランスとは対照的）。",
-        "confidence": "medium",
-        "sources": [
-          {
-            "title": "The New Stack — Salary Pressures, Not AI, Vex Developers, Says Stack Overflow",
-            "url": "https://thenewstack.io/salary-pressures-not-ai-vex-developers-says-stack-overflow/",
             "year": 2024
           }
         ]
@@ -209,7 +184,7 @@
     "oss": [
       {
         "id": "nl-oss-1",
-        "text": "Python の作者 Guido van Rossum は 2018-07-12、python-committers への投稿「Transfer of power」で BDFL を退いた。",
+        "text": "Guido van Rossum は 2018-07-12、python-committers への投稿「Transfer of power」で Python の BDFL を退いた。後継者は指名せず、運営の仕組みはコア開発者に委ねた。",
         "confidence": "strong",
         "sources": [
           {
@@ -221,30 +196,13 @@
       },
       {
         "id": "nl-oss-2",
-        "text": "Booking.com は大規模な実験基盤の文化で知られ、Thomke（HBR 2020）が実験文化の代表事例として取り上げている。",
-        "confidence": "medium",
-        "sources": [
-          {
-            "title": "Thomke — Building a Culture of Experimentation (HBR)",
-            "url": "https://hbr.org/2020/03/building-a-culture-of-experimentation",
-            "year": 2020
-          }
-        ]
-      },
-      {
-        "id": "nl-oss-3",
-        "text": "ING の squad / tribe 体制（約 350 squad・13 tribe）は Spotify モデルを金融大企業に移植した代表例。ただし Spotify 自身も完全には実装しなかったという Jeremiah Lee の批判は、こうした移植にもそのまま当てはまる。",
+        "text": "ING は Spotify モデルを大手銀行に取り入れ、約 350 の squad を 13 の tribe にまとめた（McKinsey, 2017）。",
         "confidence": "medium",
         "sources": [
           {
             "title": "McKinsey — ING's agile transformation",
             "url": "https://www.mckinsey.com/industries/financial-services/our-insights/ings-agile-transformation",
             "year": 2017
-          },
-          {
-            "title": "Jeremiah Lee — Spotify's Failed #SquadGoals",
-            "url": "https://www.jeremiahlee.com/posts/failed-squad-goals/",
-            "year": 2020
           }
         ]
       }
@@ -253,7 +211,8 @@
   "variance": [
     "週労働時間が EU 最短なのは主にパートタイム比率の高さによるもので、フルタイムに限ると差は縮む。",
     "polder model による合意形成は過大評価だとする研究がある（Woldendorp & Keman 2007）。",
-    "オランダ人の率直さを職場で直接測った査読研究は見つからず、根拠は Meyer の観察と実務ガイドが中心。",
-    "設計・品質に対する国全体の姿勢を示すデータは見つからず、Booking.com や ING など個社事例に依存している。"
+    "オランダ人の率直さを職場で直接測った査読研究は見つからなかった。根拠は Meyer の観察と駐在員向けガイドが中心で、会議の進め方についての記述も実務ガイドにしか見当たらない。",
+    "設計や品質に対する国全体の姿勢を示すデータは見つからず、記述は Booking.com や ING などの個社事例に頼っている。",
+    "ING が手本にした Spotify モデルは、Spotify 自身も完全には実装しなかった理想像だという批判がある（Jeremiah Lee 2020）。"
   ]
 }

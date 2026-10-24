@@ -1,0 +1,296 @@
+{
+  "id": "il",
+  "name": "Israel",
+  "oneLiner": "Very low power distance and a well-studied plain-speaking style, but high-tech skews toward an elite.",
+  "intro": "This page summarizes tendencies in Israel's software industry drawn from surveys, news reports and research. Variation within the country is large, and none of this predicts how an individual engineer thinks or works. Employment and exports can be tracked through Israel Innovation Authority statistics, while the cultural evidence rests mostly on Katriel's linguistic research and promotional books, and high-tech itself is a world skewed toward the country's elite.",
+  "themes": {
+    "design": [
+      {
+        "id": "il-design-1",
+        "text": "In Chutzpah (2019), Inbal Arieli argues in chapters such as \"Failure Is an Option,\" \"Certain Uncertainty\" and \"Resourcefulness\" that growing up amid chaos (balagan) builds improvisation and resourcefulness. The argument is not based on quantitative data.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Publishers Weekly: Chutzpah (Inbal Arieli)",
+            "url": "https://www.publishersweekly.com/9780062883032",
+            "year": 2019
+          }
+        ]
+      },
+      {
+        "id": "il-design-2",
+        "text": "Hofstede's uncertainty avoidance (UAI) is high at 81. The Culture Factor describes a culture that wants rules, punctuality and precision, yet is good at improvising under pressure.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=israel",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "il-design-3",
+        "text": "According to Haaretz (2012), rosh gadol (\"big head\") started out as an Israeli army term. It is praise for someone who sees the wider picture, takes responsibility and acts on their own initiative beyond their role.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Haaretz: Word of the Day Rosh Gadol",
+            "url": "https://www.haaretz.com/2012-09-07/ty-article/word-of-the-day-rosh-gadol/0000017f-e66d-dc7e-adff-f6ed883b0000",
+            "year": 2012
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "il-failure-1",
+        "text": "Arieli argues that Israel is a society that does not shy away from risk and that children are raised to accept failure as part of learning. The Publishers Weekly review criticized the book for being unsure whether it is a parenting guide or a cultural analysis.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Publishers Weekly: Chutzpah (Inbal Arieli)",
+            "url": "https://www.publishersweekly.com/9780062883032",
+            "year": 2019
+          }
+        ]
+      },
+      {
+        "id": "il-failure-2",
+        "text": "After October 7, 2023, an estimated 15% to 20% of tech employees were mobilized for reserve duty, and in the war's third week about 70% of tech firms reported disruptions. Even so, the sector raised $3.1 billion in 220 rounds by spring 2024.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Times of Israel: About 70% of tech firms face operating difficulties amid reservists' call-up",
+            "url": "https://www.timesofisrael.com/about-70-of-tech-firms-face-operating-difficulties-amid-reservists-call-up/",
+            "year": 2023
+          },
+          {
+            "title": "Ynetnews: Israeli high-tech raises $3.1 billion since beginning of war",
+            "url": "https://www.ynetnews.com/business/article/sk7ityv1r",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "il-failure-3",
+        "text": "According to Calcalist, reserve duty delayed Wix's AI design product by one quarter, and Intel moved some work to teams in India.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Calcalist: A quiet shift is underway in the startup nation",
+            "url": "https://www.calcalistech.com/ctechnews/article/cmaxfpvrq"
+          }
+        ]
+      },
+      {
+        "id": "il-failure-4",
+        "text": "2025 brought a series of large acquisitions: Wiz ($32 billion, Google), CyberArk ($25 billion, Palo Alto Networks) and Armis ($7.75 billion, ServiceNow). Calcalist estimates the total value of acquisitions of Israeli-founded companies at about $80 billion.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Calcalist: The $80 billion year: Israel's biggest tech exits of 2025",
+            "url": "https://www.calcalistech.com/ctechnews/article/hkzohvfnbx",
+            "year": 2025
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "il-feedback-1",
+        "text": "Dugri (\"straight talk\") is a language ideology that treats bluntness as a sign of courage and sincerity, studied by Tamar Katriel in a 1986 book. Katriel says dugri presupposes mutual trust.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Tamar Katriel on her book, Defiant Discourse",
+            "url": "https://campanthropology.org/2021/12/27/tamar-katriel-defiant-discourse/",
+            "year": 2021
+          }
+        ]
+      },
+      {
+        "id": "il-feedback-2",
+        "text": "Katriel describes dugri as the speech style of the European-origin Sabra generation of the 1940s and 1950s, in contrast to musayara, an indirect Arab style. In 1999 she herself noted that dugri was in decline.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Katriel: Dugri (ResearchGate)",
+            "url": "https://www.researchgate.net/publication/316364500_Dugri"
+          }
+        ]
+      },
+      {
+        "id": "il-feedback-3",
+        "text": "On her Disagreeing scale, Meyer cites Israel as an example of a culture comfortable with open disagreement. A review of The Culture Map also places it among countries that give negative feedback directly.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Welcome to the Jungle — The 8 keys for managing multicultural teams (Erin Meyer)",
+            "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams"
+          },
+          {
+            "title": "Kathryn Read: The Culture Map by Erin Meyer — a summary and review",
+            "url": "https://kathrynread.com/the-culture-map-by-erin-meyer-a-summary-and-review/"
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "il-hierarchy-1",
+        "text": "Hofstede's power distance (PDI) is 13, among the lowest in the world. The Culture Factor describes bosses as easy to approach and managers as relying on their team's expertise. A Culture Map review also puts Israel at the most egalitarian end of the Leading scale.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=israel",
+            "year": 2026
+          },
+          {
+            "title": "Kathryn Read: The Culture Map by Erin Meyer — a summary and review",
+            "url": "https://kathrynread.com/the-culture-map-by-erin-meyer-a-summary-and-review/"
+          }
+        ]
+      },
+      {
+        "id": "il-hierarchy-2",
+        "text": "Unit 8200 screens conscripts for math and programming aptitude and gives young soldiers difficult tasks with little supervision. The founders of Check Point, Palo Alto Networks, CyberArk, Wix and Wiz include alumni of the unit.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "SecurityWeek: From IDF to Inc",
+            "url": "https://www.securityweek.com/idf-inc-israeli-cybersecurity-startup-conveyor-belt/"
+          },
+          {
+            "title": "Calcalist: From Unit 8200 to Wiz's $32B exit",
+            "url": "https://www.calcalistech.com/ctechnews/article/sjltwsk2kg",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "il-hierarchy-3",
+        "text": "Drop Site News has reported critically on the 8200 alumni network as a closed club and on the export of surveillance technology by firms such as NSO.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Drop Site News: Hundreds of former Israeli spies are working in Big Tech",
+            "url": "https://www.dropsitenews.com/p/israel-technology-palo-alto-networks-microsoft-unit-8200"
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "il-communication-1",
+        "text": "A review of The Culture Map classifies Israel as an unusual combination: high-context, yet direct with criticism.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Kathryn Read: The Culture Map by Erin Meyer — a summary and review",
+            "url": "https://kathrynread.com/the-culture-map-by-erin-meyer-a-summary-and-review/"
+          }
+        ]
+      },
+      {
+        "id": "il-communication-2",
+        "text": "The share of private high-tech company employees working in Israel fell from 69% in 2019 to 62% in March 2026. Most of the rest work at overseas sites, mainly in the United States.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Ynetnews: High-tech brain drain grows as thousands of developers leave Israel",
+            "url": "https://www.ynetnews.com/business/article/bkjjywylge",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "il-work-1",
+        "text": "High-tech employed about 400,000 people in 2025, 11.4% of the employed workforce. Exports hit a record $85 billion, 58% of all exports. Employment grew 2.5%, well below the roughly 6% annual average of the previous decade.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Ynetnews: High-tech brain drain grows as thousands of developers leave Israel",
+            "url": "https://www.ynetnews.com/business/article/bkjjywylge",
+            "year": 2026
+          },
+          {
+            "title": "Israel Innovation Authority: 2025 High-Tech Report",
+            "url": "https://innovationisrael.org.il/en/press_release/innovation-report-2025/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "il-work-2",
+        "text": "R&D headcount fell by about 3,500 in 2025. According to the Israel Innovation Authority (2025), Israeli companies employ about 440,000 people abroad on top of the roughly 400,000 in Israel, and private companies keep about half of their R&D staff overseas.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Ynetnews: High-tech brain drain grows as thousands of developers leave Israel",
+            "url": "https://www.ynetnews.com/business/article/bkjjywylge",
+            "year": 2026
+          },
+          {
+            "title": "Israel Innovation Authority: 2025 High-Tech Employment Status Report",
+            "url": "https://innovationisrael.org.il/en/wp-content/uploads/sites/3/2025/04/Innovation-Authority-High-Tech-Employment-Report-English-Final.pdf",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "il-work-3",
+        "text": "The Adva Center criticizes the \"Start-up Nation\" image, noting that high-tech then employed no more than 8% of the workforce. It reports that 65% of high-tech employees are men and that they come disproportionately from top high schools, elite military units and leading universities.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Adva Center: Not Exactly a Start-Up Nation",
+            "url": "https://adva.org/en/not-exactly-a-start-up-nation/"
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "il-oss-1",
+        "text": "Company-led open source includes Wix's Detox, an end-to-end testing framework for mobile apps with about 12,000 GitHub stars, and monday.com's design system Vibe.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "GitHub: wix/Detox",
+            "url": "https://github.com/wix/Detox",
+            "year": 2026
+          },
+          {
+            "title": "GitHub: mondaycom/vibe",
+            "url": "https://github.com/mondaycom/vibe",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "il-oss-2",
+        "text": "According to SecurityWeek, VCs with 8200 alumni such as Team8 and Cyberstarts invest in startups founded by fellow alumni, and money from exits flows back into new investments.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "SecurityWeek: From IDF to Inc",
+            "url": "https://www.securityweek.com/idf-inc-israeli-cybersecurity-startup-conveyor-belt/"
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "Dugri is the style of the European-origin Sabra generation, and speech varies within the country, including the indirect Arab style musayara. Katriel herself has noted dugri's decline.",
+    "High-tech skews toward men and graduates of top schools and elite units, and Arab and ultra-Orthodox participation is low. A startup temperament cannot be generalized to the whole country.",
+    "Improvisation and tolerance of failure are often cited, yet Hofstede's uncertainty avoidance (UAI) is high at 81.",
+    "War and reserve mobilization are pushing R&D abroad, so the pre-2023 picture is going out of date.",
+    "Arieli and Senor & Singer wrote promotional books with weak quantitative support.",
+    "Israel's positions on Meyer's Communicating, Persuading and Deciding scales could not be confirmed from her own charts. No quantitative study of documentation culture was found either.",
+    "GitHub Octoverse does not provide country-level open-source contribution figures for Israel, so the open-source picture is limited to individual company projects."
+  ]
+}
