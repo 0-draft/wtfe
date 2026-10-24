@@ -1,0 +1,37 @@
+---
+import Claim from "../components/Claim.astro";
+import type { ThemeId } from "../data/schema.ts";
+import { dict, themeNames } from "../i18n/dict.ts";
+import { type Lang, localePath } from "../i18n/ui.ts";
+import Base from "../layouts/Base.astro";
+import { claimsByTheme, isTranslated } from "../lib/content.ts";
+
+interface Props {
+  lang: Lang;
+  theme: ThemeId;
+}
+const { lang, theme } = Astro.props;
+const t = dict[lang];
+const name = themeNames[lang][theme];
+---
+
+<Base lang={lang} title={name}>
+  <header class="page-head">
+    <h1>{name}</h1>
+    <p class="lead">{t["theme.lead"](name)}</p>
+  </header>
+  {
+    claimsByTheme(lang, theme).map(({ country, claims }) => (
+      <section id={country.id} aria-labelledby={`h-${country.id}`} lang={isTranslated(lang, country.id) ? lang : "ja"}>
+        <h2 id={`h-${country.id}`}>
+          <a href={localePath(lang, `/countries/${country.id}/#${theme}`)}>{country.name}</a>
+        </h2>
+        <ul class="claims">
+          {claims.map((claim) => (
+            <Claim claim={claim} lang={lang} />
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</Base>

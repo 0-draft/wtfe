@@ -1,0 +1,51 @@
+---
+import "../styles/global.css";
+import { dict } from "../i18n/dict.ts";
+import { type Lang, localePath, stripLocale } from "../i18n/ui.ts";
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+}
+
+const { lang, title, description } = Astro.props;
+const t = dict[lang];
+const here = stripLocale(Astro.url.pathname);
+const other: Lang = lang === "en" ? "ja" : "en";
+const fullTitle = title ? `${title} — ${t["site.title"]}` : `${t["site.title"]} — ${t["site.expansion"]}`;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description ?? t["site.desc"]} />
+    <link rel="alternate" hreflang="en" href={new URL(localePath("en", here), Astro.site).href} />
+    <link rel="alternate" hreflang="ja" href={new URL(localePath("ja", here), Astro.site).href} />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip" href="#main">{t["nav.skip"]}</a>
+    <header class="site-head">
+      <a class="brand" href={localePath(lang, "/")}>
+        <span class="brand-mark">{t["site.title"]}</span>
+        <span class="brand-sub">{t["site.expansion"]}</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href={`${localePath(lang, "/")}#countries`}>{t["nav.countries"]}</a>
+        <a href={`${localePath(lang, "/")}#themes`}>{t["nav.themes"]}</a>
+        <a href={localePath(lang, "/method/")}>{t["nav.method"]}</a>
+        <a href={localePath(other, here)} hreflang={other} lang={other}>{t["nav.lang"]}</a>
+      </nav>
+    </header>
+    <main id="main" data-pagefind-body>
+      <slot />
+    </main>
+    <footer class="site-foot">
+      <p>{t["foot.license"]} · <a href="https://github.com/0-draft/wtfe">{t["foot.repo"]}</a></p>
+    </footer>
+  </body>
+</html>

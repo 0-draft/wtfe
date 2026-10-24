@@ -1,0 +1,12 @@
+---
+import { THEME_IDS, type ThemeId } from "../../data/schema.ts";
+import Theme from "../../views/Theme.astro";
+
+export function getStaticPaths() {
+  return THEME_IDS.map((theme) => ({ params: { theme } }));
+}
+
+const theme = Astro.params.theme as ThemeId;
+---
+
+<Theme lang="en" theme={theme} />

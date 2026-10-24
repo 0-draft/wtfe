@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 // The site is served under the GitHub Pages project path; tests navigate relative to it.
-const origin = "http://127.0.0.1:4322";
+const origin = "http://127.0.0.1:4471";
 
 export default defineConfig({
   testDir: "tests/e2e",
@@ -15,7 +15,7 @@ export default defineConfig({
     { name: "mobile", use: { ...devices["Pixel 7"] } },
   ],
   webServer: {
-    command: "pnpm exec astro preview --port 4322 --host 127.0.0.1",
+    command: "pnpm exec astro preview --port 4471 --host 127.0.0.1",
     url: `${origin}/wtfe/`,
     reuseExistingServer: !process.env.CI,
   },

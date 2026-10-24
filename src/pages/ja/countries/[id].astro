@@ -1,0 +1,13 @@
+---
+import { COUNTRY_IDS, type CountryId } from "../../../data/schema.ts";
+import { country } from "../../../lib/content.ts";
+import Country from "../../../views/Country.astro";
+
+export function getStaticPaths() {
+  return COUNTRY_IDS.filter((id) => country("ja", id)).map((id) => ({ params: { id } }));
+}
+
+const id = Astro.params.id as CountryId;
+---
+
+<Country lang="ja" id={id} />

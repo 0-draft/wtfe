@@ -1,0 +1,28 @@
+---
+import type { Claim } from "../data/schema.ts";
+import { confidenceNames, dict } from "../i18n/dict.ts";
+import type { Lang } from "../i18n/ui.ts";
+
+interface Props {
+  claim: Claim;
+  lang: Lang;
+}
+const { claim, lang } = Astro.props;
+---
+
+<li class="claim" id={claim.id} data-confidence={claim.confidence}>
+  <p class="claim-text">{claim.text}</p>
+  <p class="claim-meta">
+    <span class="conf" data-level={claim.confidence}>
+      <span class="sr-only">{dict[lang]["confidence.label"]}: </span>{confidenceNames[lang][claim.confidence]}
+    </span>
+    {
+      claim.sources.map((s) => (
+        <a class="src" href={s.url} rel="noopener">
+          {s.title}
+          {s.year ? ` (${s.year})` : ""}
+        </a>
+      ))
+    }
+  </p>
+</li>
