@@ -1,0 +1,421 @@
+{
+  "id": "de",
+  "name": "ドイツ",
+  "oneLiner": "階層は中程度でも合意を取ってから決め、指摘は率直。品質は気質より制度で担保される。",
+  "intro": "ドイツのソフトウェア開発者に見られる傾向を、Culture Map・Hofstede・統計・法制度から整理したページです。ここに書くのは国レベルの傾向で、個々のエンジニアの性格や働き方を言い当てるものではありません。規制産業 (自動車など) と Berlin のスタートアップでは文化がかなり違う点にも注意してください。",
+  "themes": {
+    "design": [
+      {
+        "id": "de-design-1",
+        "text": "Erin Meyer の Culture Map チャート (2014) では、ドイツは Persuading で principles-first (原理から入る演繹)、Scheduling で最も linear-time (予定厳守) 側に置かれている。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "de-design-2",
+        "text": "自動車業界では VDA QMC が保守する Automotive SPICE が事実上の取引条件で、OEM はサプライヤーに Level 2〜3 を求め、V 字モデルと要求・設計・テスト間の双方向トレーサビリティを要求する。これは法規制ではなく顧客要求。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "itemis — What is Automotive SPICE?",
+            "url": "https://www.itemis.com/en/glossary/automotive-spice/"
+          },
+          {
+            "title": "VDA QMC — Automotive SPICE PAM v4.0",
+            "url": "https://vda-qmc.de/wp-content/uploads/2023/12/Automotive-SPICE-PAM-v40.pdf",
+            "year": 2023
+          }
+        ]
+      },
+      {
+        "id": "de-design-3",
+        "text": "Berlin の VC 系スタートアップは英語で働く国際チームが多く、規制産業の上流設計重視とは別の文化として見るべきで、「ドイツは全員ウォーターフォール」は言い過ぎ。",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Migaku — English-speaking jobs in Berlin tech startups",
+            "url": "https://migaku.com/blog/language-fun/how-to-find-english-speaking-jobs-in-berlins-tech-scene",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "de-design-4",
+        "text": "Hofstede の不確実性回避 (UAI) はドイツ 65 で「やや回避」の水準にとどまり、フランス (86) より低い。「ドイツは極端にリスク回避」という通説はこの数字からは支持されない。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=germany",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "de-failure-1",
+        "text": "Randstad-ifo の HR 調査 (2026 年 Q3、469 社) では、ミスが率直に話されるのは従業員 500 人以上の大企業で 28%、49 人以下の小企業で 62%。大企業の 34% が失敗文化をイノベーションの阻害要因とみる一方、全体の 56% は影響なしと答えた。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Randstad-ifo-Studie: Fehlerkultur in Unternehmen (presseportal)",
+            "url": "https://www.presseportal.de/pm/13588/6367865",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "de-failure-2",
+        "text": "AXA/YouGov 調査 (2024 年 5 月、2,132 人) では、職場のミスを認められない人は全体で 25%、25 歳未満では 44%。開示すると悪い結果になると予想する人は 23%。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "AXA Studie zur Fehlerkultur im Job",
+            "url": "https://www.axa.de/presse/axa-studie-fehlerkultur-im-job",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "de-failure-3",
+        "text": "EY の調査 (2023 年頃、機械・自動車・金融など約 1,000 人) では、管理職の 64% が過去 2 年の自分のミスを認めなかったか、一部しか認めなかった。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "EY-Studie zur Fehlerkultur (dashoefer)",
+            "url": "https://www.dashoefer.de/newsletter/artikel/ey-studie-zur-fehlerkultur-zwei-drittel-der-fuehrungskraefte-sprechen-nicht-ueber-eigene-fehler.html",
+            "year": 2023
+          }
+        ]
+      },
+      {
+        "id": "de-failure-4",
+        "text": "Bitkom の調査 (2024 年 10 月) では、企業の 70% がデータ保護がデジタル化を阻害していると答え、63% でデータ保護規定のために革新プロジェクトが頓挫または未着手になった。後続調査では 77% に上昇。業界団体の調査である点に注意。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Bitkom — Datenschutz: Aufwand für Unternehmen nimmt zu",
+            "url": "https://www.bitkom.org/Presse/Presseinformation/Datenschutz-Aufwand-Unternehmen-nimmt-zu",
+            "year": 2024
+          },
+          {
+            "title": "Bitkom — Datenschutz wird immer öfter zur Innovations-Bremse",
+            "url": "https://www.bitkom.org/Presse/Presseinformation/Datenschutz-Innovations-Bremse"
+          }
+        ]
+      },
+      {
+        "id": "de-failure-5",
+        "text": "GDPR 報道を独仏英米で比較した研究 (2021) では、独仏の報道はプライバシーを基本権として扱う傾向が強く、英米は法令遵守や商業の観点が中心だった。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Sanford & Yasseri — The Kaleidoscope of Privacy (arXiv 2104.04074)",
+            "url": "https://arxiv.org/abs/2104.04074",
+            "year": 2021
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "de-feedback-1",
+        "text": "Culture Map チャートで、ドイツは Evaluating (否定的フィードバック) で直接的な側、Communicating で低文脈側にあり、ネガティブな指摘を和らげずに伝える傾向とされる。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "de-feedback-2",
+        "text": "Disagreeing では対立を許容する側だが、ドイツの反論は感情を抑えた客観的なスタイルで、表現豊かなフランスの対立とは違うと書評で解説されている。",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Deploy Yourself — The Culture Map book review",
+            "url": "https://www.deployyourself.com/book-review/the-culture-map-erin-meyer-eight-scales/"
+          }
+        ]
+      },
+      {
+        "id": "de-feedback-3",
+        "text": "国民文化とコードレビューの行動を直接結びつけた SE 研究は見当たらない。近いものとして、提出者とレビュアーが同じ国だと PR が受理されやすいという研究 (Rastogi et al., ESEM 2018) がある。",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Pull Request Decision Explained: An Empirical Overview (arXiv 2105.13970)",
+            "url": "https://arxiv.org/pdf/2105.13970",
+            "year": 2021
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "de-hierarchy-1",
+        "text": "Meyer は、ドイツ人は米国人より階層的だが、決定前に合意を形成する傾向は米国より強いと書いている。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "de-hierarchy-2",
+        "text": "事業所組織法 (BetrVG) §87 Abs.1 Nr.6 により、従業員の行動や成績を監視できる技術的設備の導入には事業所委員会 (Betriebsrat) の共同決定が必要。連邦労働裁判所は 2022 年 3 月 8 日 (1 ABR 20/21) に Microsoft Office 365 も対象と判断しており、実際に監視するかではなく、監視に使えるかどうかで決まる。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "hensche.de — BAG, Beschluss vom 08.03.2022, 1 ABR 20/21",
+            "url": "https://www.hensche.de/bag-beschluss-vom-08.03.2022-1-abr-20-21-zustaendigkeit-des-gesamtbetriebsrats-bei-unternehmenseinheitlicher-nutzung-von-microsoft-office-365.html",
+            "year": 2022
+          },
+          {
+            "title": "lulius.ai — § 87 BetrVG: Mitbestimmung bei Software und KI",
+            "url": "https://www.lulius.ai/blog/mitbestimmung-87-betrvg",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "de-hierarchy-3",
+        "text": "Berlin の N26 では 2020 年、創業者が Betriebsrat 選挙に反対して裁判所の差止めまで争ったが、同年 11〜12 月に選出された (投票率約 30%)。スタートアップでは共同決定が当然ではなく争点になる。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "CNBC — German digital bank N26 faces outcry from staff over management",
+            "url": "https://www.cnbc.com/2020/08/13/german-digital-bank-n26-faces-outcry-from-staff-over-management.html",
+            "year": 2020
+          },
+          {
+            "title": "Wikipedia — N26",
+            "url": "https://en.wikipedia.org/wiki/N26"
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "de-communication-1",
+        "text": "Culture Map チャートでドイツは低文脈側に置かれる。明示的に伝え、繰り返しは確認のためで、書面に残すことを好むとされる。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "de-communication-2",
+        "text": "Automotive SPICE の SUP.10 は、変更要求を関連成果物に紐づけて事前に分析することを求める。規制産業では文書化が文化というより契約上の要件になっている。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "VDA QMC — Automotive SPICE PAM v4.0",
+            "url": "https://vda-qmc.de/wp-content/uploads/2023/12/Automotive-SPICE-PAM-v40.pdf",
+            "year": 2023
+          }
+        ]
+      },
+      {
+        "id": "de-communication-3",
+        "text": "Berlin のスタートアップでは英語が主な業務言語になっている。外国籍社員の比率は出典により 30〜49% とばらつく。",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "startuprad.io — The rise of Berlin startups",
+            "url": "https://www.startuprad.io/post/the-rise-of-berlin-startups-germany-s-startup-powerhouse",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "de-work-1",
+        "text": "Eurostat によると 2024 年の週あたり実労働時間 (20〜64 歳、フルタイムとパートタイムの合計) はドイツ 33.9 時間で、EU 平均 36.0 時間を下回る。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Eurostat — People in the EU worked on average 36 hours per week",
+            "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250514-1",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "de-work-2",
+        "text": "連邦労働裁判所は 2022 年 9 月 13 日 (1 ABR 22/21) に使用者の労働時間記録義務を認めた。時間管理を本人に任せる信頼労働時間制 (Vertrauensarbeitszeit) 自体は引き続き合法。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "KAV-NW — BAG, Beschluss vom 13.09.2022, 1 ABR 22/21",
+            "url": "https://www.kav-nw.de/de/Aktuelles/Rechtsprechung-Rechtsfragen/Rechtsprechung-Rechtsfragen1/BAG-Beschluss-vom-13.09.2022-1-ABR-22-21-Arbeitszeiterfassungspflicht-des-Arbeitgebers-.html",
+            "year": 2022
+          },
+          {
+            "title": "KPMG Law — Das Ende der Vertrauensarbeitszeit?",
+            "url": "https://kpmg-law.de/das-ende-der-vertrauensarbeitszeit-das-stechuhr-urteil-des-eugh-und-die-gesetzliche-verpflichtung-zur-einfuehrung-eines-zeiterfassungssystems-nach-dem-bag/"
+          }
+        ]
+      },
+      {
+        "id": "de-work-3",
+        "text": "EU 定義の中小企業は 2024 年に全企業の 99.3%、就業者の 54% を占める (Destatis)。Mittelstand は規模ではなく所有と経営の一致で定義される別概念 (IfM Bonn)。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Destatis — Small and medium-sized enterprises",
+            "url": "https://www.destatis.de/EN/Themes/Economic-Sectors-Enterprises/Enterprises/Small-Sized-Enterprises-Medium-Sized-Enterprises/_node.html",
+            "year": 2024
+          },
+          {
+            "title": "IfM Bonn — Key indicators: Germany",
+            "url": "https://www.ifm-bonn.org/en/statistics/overview-mittelstand/key-indicators-based-on-sme-definition-by-ifm-bonn/germany",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "de-work-4",
+        "text": "通常在宅勤務する就業者の比率は 2025 年で約 13.2% と EU 平均を上回る。時々在宅を含めると 2024 年に約 24% (Destatis)。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Apiar Data — EU usually works from home rate (Eurostat lfsa_ehomp)",
+            "url": "https://apiardata.com/statistics/eu-usually-works-from-home-rate/",
+            "year": 2026
+          },
+          {
+            "title": "Euronews — Working from home in Europe",
+            "url": "https://www.euronews.com/2026/06/12/working-from-home-in-europe-why-your-chances-vary-so-much-depending-on-where-you-live",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "de-work-5",
+        "text": "OECD の 2019 年データでは、従業員 10 人以下の事業所は通常の解雇規制の適用外で、解雇前には Betriebsrat への通知が必要。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "OECD EPL Database, update 2019 — Germany",
+            "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/10/employment-protection-information-2019-country-notes_c421e786/germany_f22c31fc/68e58f6d-en.pdf",
+            "year": 2019
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "de-oss-1",
+        "text": "GitHub 上のドイツの開発者は Octoverse 2024 で 350 万超 (前年比 +21%)。Octoverse 2025 では 2020〜2025 年に 3 倍超に増えたとされる。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2024",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-2024/",
+            "year": 2024
+          },
+          {
+            "title": "GitHub Octoverse 2025",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "de-oss-2",
+        "text": "Stack Overflow Developer Survey 2025 の回答者数はドイツが米国に次ぐ 2 位 (3,022 人、8.6%)。回答の多さを示す指標で、人口あたりの開発者数ではない。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Stack Overflow Developer Survey 2025 — Developers",
+            "url": "https://survey.stackoverflow.co/2025/developers",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "de-oss-3",
+        "text": "Sovereign Tech Fund (現 Sovereign Tech Agency) は 2022〜2024 年に 60 を超える OSS プロジェクトへ約 2,350 万ユーロを投資した (curl、OpenSSH、systemd、PHP、FFmpeg など)。年間予算は 350 万、1,150 万、1,700 万ユーロと増えている。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Wikipedia — Sovereign Tech Agency",
+            "url": "https://en.wikipedia.org/wiki/Sovereign_Tech_Agency"
+          },
+          {
+            "title": "Slashdot — Germany's Sovereign Tech Fund has invested over $24.9M in open source",
+            "url": "https://news.slashdot.org/story/24/10/18/2326255/germanys-sovereign-tech-fund-has-invested-over-249m-in-open-source-in-two-years",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "de-oss-4",
+        "text": "CCC の Chaos Communication Congress は 38C3 (2024 年 12 月、Hamburg) に約 1.5 万人が参加した。KDE e.V. は 1997 年に Tübingen で登録され本部は Berlin、SUSE は 1992 年創業で Nuremberg が拠点。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "scip.ch — Chaos Communication Congress 38C3",
+            "url": "https://www.scip.ch/en/?labs.20250123=",
+            "year": 2025
+          },
+          {
+            "title": "KDE e.V. — Articles of Association",
+            "url": "https://ev.kde.org/corporate/statutes/"
+          },
+          {
+            "title": "Wikipedia — SUSE S.A.",
+            "url": "https://en.wikipedia.org/wiki/SUSE_S.A."
+          }
+        ]
+      },
+      {
+        "id": "de-oss-5",
+        "text": "Schleswig-Holstein 州は 2024 年に行政の PC 3 万台を LibreOffice と Linux へ移行すると表明し、LibreOffice は 2025 年末に約 80% 完了した。連邦は ZenDiS を通じて openDesk を開発し、2024 年 10 月に 1.0 をリリースした。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "TDF Blog — German state moving 30,000 PCs to LibreOffice",
+            "url": "https://blog.documentfoundation.org/blog/2024/04/04/german-state-moving-30000-pcs-to-libreoffice/",
+            "year": 2024
+          },
+          {
+            "title": "Cybernews — German state replaces Microsoft with open source",
+            "url": "https://cybernews.com/news/schleswig-holstein-germany-microsoft-open-source/",
+            "year": 2025
+          },
+          {
+            "title": "Wikipedia — ZenDiS",
+            "url": "https://en.wikipedia.org/wiki/ZenDiS"
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "自動車などの規制産業は ASPICE や ISO 26262 による上流設計と文書化が契約要件になっている一方、Berlin の VC 系スタートアップは英語の国際チームで、別の文化として見るべき。",
+    "失敗の開示しやすさは企業規模で大きく違い、Randstad-ifo 調査 (2026) では率直に話せるのが大企業 28% に対し小企業 62%。",
+    "共同決定 (Betriebsrat) は伝統企業では当然の制度だが、N26 の 2020 年の事例のようにスタートアップでは争点になる。",
+    "Hofstede の UAI は 65 で、「ドイツは極端にリスク回避」という通説ほど高くない。",
+    "国民文化とコードレビューや postmortem の慣行を直接結びつけた研究はなく、この領域の記述は推論の比重が大きい。"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "cn",
+  "iso": ["CN"],
+  "hofstede": [
+    {
+      "country": "China",
+      "scores": { "pdi": 80, "idv": 43, "mas": 66, "uai": 30, "lto": 77, "ivr": 24 },
+      "source": { "title": "The Culture Factor — Country comparison tool", "url": "https://www.theculturefactor.com/country-comparison-tool?countries=china", "year": 2026 }
+    }
+  ],
+  "cultureMap": {
+    "communicating": { "step": 2, "basis": "primary" },
+    "evaluating": { "step": 1, "basis": "primary" },
+    "persuading": { "step": null, "basis": null, "note": "holistic — outside the principles/applications axis" },
+    "leading": { "step": 2, "basis": "primary" },
+    "deciding": { "step": 2, "basis": "primary" },
+    "trusting": { "step": 2, "basis": "primary" },
+    "disagreeing": { "step": 2, "basis": "primary" },
+    "scheduling": { "step": null, "basis": null }
+  }
+}

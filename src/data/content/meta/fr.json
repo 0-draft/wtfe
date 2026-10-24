@@ -1,0 +1,58 @@
+{
+  "id": "fr",
+  "iso": [
+    "FR"
+  ],
+  "hofstede": [
+    {
+      "country": "France",
+      "scores": {
+        "pdi": 68,
+        "idv": 74,
+        "mas": 43,
+        "uai": 86,
+        "lto": 60,
+        "ivr": 48
+      },
+      "source": {
+        "title": "The Culture Factor — Country comparison tool",
+        "url": "https://www.theculturefactor.com/country-comparison-tool?countries=france%2Cgermany",
+        "year": 2026
+      }
+    }
+  ],
+  "cultureMap": {
+    "communicating": {
+      "step": 1,
+      "basis": "primary"
+    },
+    "evaluating": {
+      "step": -1,
+      "basis": "primary"
+    },
+    "persuading": {
+      "step": -3,
+      "basis": "primary"
+    },
+    "leading": {
+      "step": 1,
+      "basis": "primary"
+    },
+    "deciding": {
+      "step": 1,
+      "basis": "primary"
+    },
+    "trusting": {
+      "step": 0,
+      "basis": "primary"
+    },
+    "disagreeing": {
+      "step": -2,
+      "basis": "primary"
+    },
+    "scheduling": {
+      "step": 0,
+      "basis": "primary"
+    }
+  }
+}

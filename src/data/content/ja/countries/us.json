@@ -1,0 +1,288 @@
+{
+  "id": "us",
+  "name": "アメリカ",
+  "oneLiner": "フラットに見えて決定はトップダウンで速い。書面文化と blameless な振り返りが速さを支える。",
+  "intro": "米国のソフトウェアエンジニアリング文化を、公開資料と調査データから整理したページ。ここに書いてあるのは国としての傾向で、個々のエンジニアや組織がこうだという意味ではない。根拠の多くは大手テック企業の資料なので、業種や企業規模によって実態は大きく違いうる。",
+  "themes": {
+    "design": [
+      {
+        "id": "us-design-1",
+        "text": "Google ではコードを書く前に比較的インフォーマルな design doc を書く。重視するのは網羅的な仕様ではなく、検討したトレードオフと代替案を記録すること（2020 年の解説）。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Design Docs at Google (Malte Ubl)",
+            "url": "https://www.industrialempathy.com/posts/design-docs-at-google/",
+            "year": 2020
+          }
+        ]
+      },
+      {
+        "id": "us-design-2",
+        "text": "design doc は「必要な分だけ長く、できるだけ短く」が理想とされていて、重いウォーターフォール型の仕様書とは別物として扱われる。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Design docs - A design doc (Malte Ubl)",
+            "url": "https://www.industrialempathy.com/posts/design-doc-a-design-doc/",
+            "year": 2015
+          }
+        ]
+      },
+      {
+        "id": "us-design-3",
+        "text": "Meyer の Persuading 軸で米国は applications-first（結論と事例から入る）側にあり、why より how を重視する。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Investor's Podcast: The Culture Map Summary",
+            "url": "https://www.theinvestorspodcast.com/billionaire-book-club-executive-summary/the-culture-map/"
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "us-failure-1",
+        "text": "Google SRE は blameless postmortem を明文化している。個人やチームを責めずに寄与要因を特定し、関係者は善意で動いていたと仮定する。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Google SRE Book: Postmortem Culture",
+            "url": "https://sre.google/sre-book/postmortem-culture/",
+            "year": 2016
+          }
+        ]
+      },
+      {
+        "id": "us-failure-2",
+        "text": "「Move fast and break things」は Facebook が 2012 年の S-1 に載せたスローガンだが、2014 年の F8 で Zuckerberg 自身が「Move fast with stable infra」に変更した。規模が大きくなると、壊れたものを直すコストが速さの利益を上回るというのが理由。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "TechCrunch: Facebook Themes f8 Around A Stable Mobile Platform",
+            "url": "https://techcrunch.com/2014/04/30/facebook-api-guarantee",
+            "year": 2014
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "us-feedback-1",
+        "text": "Meyer によると、米国人は否定的なメッセージを肯定的なメッセージで包むように訓練されている（feedback sandwich）。全体のコミュニケーションは直接的だが、否定的な評価の伝え方では中位に位置する。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer: How To Say \"This Is Crap\" In Different Cultures",
+            "url": "https://erinmeyer.com/how-to-say-this-is-crap-in-different-cultures/",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "us-feedback-2",
+        "text": "その結果「言い方はポジティブだが要求は明確」になりやすい。オランダやドイツの人は米国式の褒め言葉を額面どおりに受け取り、米国人はオランダやドイツの直接的な批判を強すぎると感じる、というズレが典型例。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "4squareviews: The Evaluation Scale on the Cultural Map",
+            "url": "https://4squareviews.com/2016/09/15/the-evaluation-scale-on-the-cultural-map/",
+            "year": 2016
+          }
+        ]
+      },
+      {
+        "id": "us-feedback-3",
+        "text": "GitHub の PR 70,000 件超（17 か国）を分析した研究では、レビュアーと提出者が同じ国だと受理されやすい傾向があった。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Rastogi et al.: Relationship between geographical location and evaluation of developer contributions in GitHub",
+            "url": "https://www.microsoft.com/en-us/research/publication/relationship-between-geographical-location-and-evaluation-of-developer-contributions-in-github/",
+            "year": 2018
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "us-hierarchy-1",
+        "text": "Meyer は米国を「egalitarian だが top-down」に分類している。ファーストネームで呼び合い、発言も促されるが、決定はボスが速く下す。その決定は仮置きで、新しい論拠が出れば変わりうる（HBR 2017）。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer: Being the Boss in Brussels, Boston, and Beijing (HBR)",
+            "url": "https://erinmeyer.com/wp-content/uploads/2019/11/Being-the-Boss-HBR.pdf",
+            "year": 2017
+          }
+        ]
+      },
+      {
+        "id": "us-hierarchy-2",
+        "text": "日本人から見ると、米国のボスは表面上はフラットなのに、決め方は極めて独裁的に映るとされる。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer: Being the Boss in Brussels, Boston, and Beijing (HBR)",
+            "url": "https://erinmeyer.com/wp-content/uploads/2019/11/Being-the-Boss-HBR.pdf",
+            "year": 2017
+          }
+        ]
+      },
+      {
+        "id": "us-hierarchy-3",
+        "text": "The Culture Factor の Hofstede スコアでは、米国の Power Distance は 40 で低い。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=united+states",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "us-communication-1",
+        "text": "Meyer の Communicating 軸で、米国は最も低文脈な極に位置する。明示的に言い、繰り返しや要約を好む。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "lifeclub: The Culture Map Summary",
+            "url": "https://lifeclub.org/books/the-culture-map-erin-meyer-review-summary"
+          }
+        ]
+      },
+      {
+        "id": "us-communication-2",
+        "text": "Amazon では PowerPoint を使わず、6 ページのナラティブ memo を会議の冒頭に全員で黙読する。memo に著者名は載せず、チームのものとして扱う（Bezos、2017 年の株主書簡）。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Amazon 2017 Letter to Shareholders",
+            "url": "https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders",
+            "year": 2018
+          }
+        ]
+      },
+      {
+        "id": "us-communication-3",
+        "text": "memo 文化の起源は 2004 年の Bezos のメール。良い 4 ページの memo は 20 ページのスライドより書くのが難しい、ナラティブ構造が思考を強制するから、と説明している。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "CNBC: Why Jeff Bezos makes Amazon execs read 6-page memos",
+            "url": "https://www.cnbc.com/2018/04/23/what-jeff-bezos-learned-from-requiring-6-page-memos-at-amazon.html",
+            "year": 2018
+          }
+        ]
+      },
+      {
+        "id": "us-communication-4",
+        "text": "Stripe もスライドをほぼ使わない memo 文化で、会議の冒頭に黙読してドキュメント上でコメントする。創業者はアイルランド出身なので、米国文化そのものというより米国テック界の文化と見るべき。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Slab: How Stripe Built a Writing Culture",
+            "url": "https://slab.com/blog/stripe-writing-culture/"
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "us-work-1",
+        "text": "BLS によると、2024 年 1 月時点の勤続年数の中央値は全体で 3.9 年（2002 年以来の最低）、民間部門では 3.5 年。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "BLS: Employee Tenure in 2024",
+            "url": "https://www.bls.gov/news.release/archives/tenure_09262024.htm",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "us-work-2",
+        "text": "Montana を除く全州で at-will employment がデフォルト。違法な理由でない限り、雇用主も従業員もいつでも雇用を終了できる。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "USA.gov: Termination guidance for employers",
+            "url": "https://www.usa.gov/termination-for-employers"
+          }
+        ]
+      },
+      {
+        "id": "us-work-3",
+        "text": "layoffs.fyi の集計では、テック業界の layoff は 2024 年に 549 社で 15 万人を超えた（ピークは 2023 年の約 26 万人）。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "TechCrunch: A comprehensive archive of 2024 tech layoffs",
+            "url": "https://techcrunch.com/2024/12/31/a-comprehensive-archive-of-2024-tech-layoffs/",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "us-work-4",
+        "text": "Stack Overflow 2025 で米国のフルリモート比率は 45% と、上位回答国の中で最も高い。給与の中央値は Engineering Manager が $200k、back-end が $175k、full-stack が $138k。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Stack Overflow Developer Survey 2025: Work",
+            "url": "https://survey.stackoverflow.co/2025/work",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "us-work-5",
+        "text": "マネージャーにならない Staff+ の IC トラックが確立していて、Will Larson は Tech Lead・Architect・Solver・Right Hand の 4 類型を示している（2021）。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Will Larson: Staff Engineer",
+            "url": "https://staffeng.com/book/",
+            "year": 2021
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "us-oss-1",
+        "text": "Octoverse 2025 で米国は GitHub の開発者数 1 位（2020 年 1,020 万 → 2025 年 2,800 万）。OSS コントリビューター数はインドに次ぐ 2 位だが、総コントリビューション数では 1 位。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2025",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "us-oss-2",
+        "text": "2020〜2025 年の年平均成長率 20.96% は上位 5 か国で最も遅く、2030 年には開発者数でインドに抜かれる予測になっている。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2025",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/",
+            "year": 2025
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "根拠の多くは Google・Amazon・Facebook など大手テック企業のもの。規制業種や大企業の IT 部門で design doc 文化や blameless 文化がどこまで広がっているかを示すデータは見つからなかった。",
+    "「move fast」は米国テック界の看板だが、Facebook 自身が 2014 年に「stable infra」へ方針を改めている。",
+    "layoff の件数はトラッカーによって 2 倍近く違う（layoffs.fyi と TrueUp など）。",
+    "Stripe の memo 文化のように「米国企業の慣行」とされるものの中には、創業者の出身国が米国ではない例もある。"
+  ]
+}

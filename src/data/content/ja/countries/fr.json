@@ -1,0 +1,407 @@
+{
+  "id": "fr",
+  "name": "フランス",
+  "oneLiner": "上下関係ははっきりしているが議論では遠慮なく反論し、批判は率直。国主導の OSS と ESN 構造が特徴。",
+  "intro": "フランスのソフトウェア開発者に見られる傾向を、Culture Map・Hofstede・統計・法制度から整理したページです。ここに書くのは国レベルの傾向で、個々のエンジニアの性格や働き方を言い当てるものではありません。Paris のスタートアップ、研究機関、ESN (IT サービス企業) の常駐開発では働き方が大きく違います。",
+  "themes": {
+    "design": [
+      {
+        "id": "fr-design-1",
+        "text": "Culture Map チャート (2014) でフランスは Persuading の principles-first (原理から入る演繹) 側に置かれ、Meyer は南欧・ゲルマン圏が演繹的な議論を好むと述べている。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "fr-design-2",
+        "text": "エンジニアは CTI (技術者資格委員会) 認定の diplôme d'ingénieur を軸に育成され、200 校超の認定校が年 4.4〜4.9 万人の技術者学位取得者を出している (CDEFI Panorama)。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "CDEFI — Panorama des écoles françaises d'ingénieurs 2023",
+            "url": "https://www.cti-commission.fr/wp-content/uploads/2023/07/2023_CDEFI_Panorama_ecoles_ingenieurs.pdf",
+            "year": 2023
+          },
+          {
+            "title": "Wikipedia — Commission des Titres d'Ingénieur",
+            "url": "https://en.wikipedia.org/wiki/Commission_des_Titres_d%27Ing%C3%A9nieur"
+          }
+        ]
+      },
+      {
+        "id": "fr-design-3",
+        "text": "2024 年のデジタル市場 694 億ユーロのうち 50% (345 億ユーロ) を ESN が占める。多くの開発者は客先常駐の régie 方式で働き、ESN は成果ではなく手段 (工数) に責任を負う。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Numeum — Conférence semestrielle S2 2024",
+            "url": "https://numeum.fr/wp-content/uploads/2025/03/CP20Numeum_ConfC3A9rence20semestrielle20S2-2024.pdf.pdf",
+            "year": 2024
+          },
+          {
+            "title": "philix — Régie ou forfait ESN",
+            "url": "https://philix.fr/regie-ou-forfait-quel-mode-de-facturation-choisir-pour-une-esn/"
+          }
+        ]
+      },
+      {
+        "id": "fr-design-4",
+        "text": "scikit-learn は 2010 年に Inria の研究者が主導して最初の公開リリースを出し、Inria が長く資金と人員を支えてきた。研究機関発の世界的な OSS の例。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "scikit-learn — About us",
+            "url": "https://scikit-learn.org/stable/about.html"
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "fr-failure-1",
+        "text": "Hofstede の不確実性回避 (UAI) はフランス 86 で、ドイツ (65) より明確に高い。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=france%2Cgermany",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "fr-failure-2",
+        "text": "GEM 2024 では、機会があると見ている人のうち 42.7% が失敗を恐れて起業しないと答えた。世界平均 (47%) より低く、ドイツ (約 40%、2025) とも大差ない。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GEM — A year of contrast for entrepreneurship in France",
+            "url": "https://www.gemconsortium.org/news/a-year-of-contrast-for-entrepreneurship-in-france",
+            "year": 2025
+          },
+          {
+            "title": "GEM — Entrepreneurship in Germany",
+            "url": "https://www.gemconsortium.org/country-profile/64",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "fr-failure-3",
+        "text": "CNIL は 2024 年に 87 件の制裁と計約 5,521 万ユーロの罰金を科した。制裁件数は 2022 年 21 件、2023 年 42 件から増えており、約 3 分の 1 がセキュリティ義務違反。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "CNIL — Sanctions et mesures correctrices : bilan 2024",
+            "url": "https://www.cnil.fr/fr/sanctions-et-mesures-correctrices-bilan-2024-de-laction-de-la-cnil",
+            "year": 2025
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "fr-feedback-1",
+        "text": "Meyer は、フランス人は米国人より高文脈 (暗黙的) に話すのに、批判は米国人より直接的だと書いている。文脈依存と指摘の率直さは別の軸。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "fr-feedback-2",
+        "text": "Meyer によると、米国・フランス・オランダは白熱した対立的な会議に比較的慣れている。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Team Mapping Tool Report",
+            "url": "https://erinmeyer.com/team-culture-mapping-report/"
+          }
+        ]
+      },
+      {
+        "id": "fr-feedback-3",
+        "text": "フランスの反論は感情を表に出すスタイルで、感情を抑えるドイツとは違うと書評で解説されている。",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Deploy Yourself — The Culture Map book review",
+            "url": "https://www.deployyourself.com/book-review/the-culture-map-erin-meyer-eight-scales/"
+          }
+        ]
+      },
+      {
+        "id": "fr-feedback-4",
+        "text": "「フランスは否定的フィードバックを間接的に伝える」とする要約サイトもあるが、Meyer 本人の記述と矛盾する。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "entiresummary — The Culture Map summary",
+            "url": "https://entiresummary.com/the-culture-map-summary/"
+          },
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "fr-hierarchy-1",
+        "text": "Hofstede の権力格差 (PDI) はフランス 68 (ドイツ 35)。Culture Map でも Leading は階層寄り、Deciding はトップダウン寄りに置かれている。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=france%2Cgermany",
+            "year": 2026
+          },
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "fr-hierarchy-2",
+        "text": "Leading・Deciding で階層的でありながら、Disagreeing では対立を許容する側にある。上が決めるが、決まるまでは激しく議論するという組み合わせと読める (二つの軸からの推論)。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "fr-hierarchy-3",
+        "text": "つながらない権利 (Code du travail L2242-17、2017 年施行) の運用方法は企業内の団体交渉事項で、合意できなければ使用者が CSE の意見を聞いたうえで憲章を作る。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "naxis — Droit à la déconnexion : ce que dit vraiment la loi",
+            "url": "https://www.naxis.fr/blog/droit-deconnexion-ce-que-dit-la-loi-2026-03-08",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "fr-communication-1",
+        "text": "Culture Map チャートでフランスはドイツより高文脈寄り (ただし中国よりは低文脈) で、行間や前提の共有に頼る度合いが大きい。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "fr-communication-2",
+        "text": "Culture Map で Trusting はドイツより関係重視寄りに置かれ、信頼は仕事の実績だけでなく人間関係からも作られるとされる。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "fr-work-1",
+        "text": "法定労働時間は週 35 時間。IT 業界の Syntec 協約には 35 時間型 (modalité 1)、週 38.5 時間の包括型 (modalité 2、年 219 日上限)、年 218 日の日数制 forfait jours (modalité 3、原則残業代なし) がある。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "LegalPlace — Forfait jours convention Syntec",
+            "url": "https://www.legalplace.fr/guides/forfait-jours-convention-syntec/",
+            "year": 2026
+          },
+          {
+            "title": "PayFit — Forfait jours sous Syntec",
+            "url": "https://payfit.com/fr/fiches-pratiques/syntec-forfait-jour/"
+          }
+        ]
+      },
+      {
+        "id": "fr-work-2",
+        "text": "Eurostat データに基づく報道では、フランスの平均実労働時間は約 36 時間で EU 平均並み、2014〜2024 年でほぼ横ばい。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Euronews — Why and where are weekly working hours dropping in Europe?",
+            "url": "https://www.euronews.com/2025/06/13/why-and-where-are-weekly-working-hours-dropping-in-europe",
+            "year": 2025
+          },
+          {
+            "title": "Fortune — Does Germany need to work harder?",
+            "url": "https://fortune.com/2025/09/07/germany-workweek-hours-labor-productivity-gdp-friedrich-merz/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "fr-work-3",
+        "text": "デジタル部門の雇用は約 66.6 万人で、2024 年に約 7,000 人減った。2024 年の採用は 5.18 万人 (2023 年は 8.38 万人)、離職率は 16%。大手 ESN の採用減が目立ち、ソフトウェア企業は比較的堅調。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Numeum — Le syndicat",
+            "url": "https://numeum.fr/le-syndicat/",
+            "year": 2025
+          },
+          {
+            "title": "Numeum — Emploi et rémunérations dans le numérique 2024",
+            "url": "https://numeum.fr/social/emploi-et-remunerations-dans-le-numerique-les-grandes-tendances-2024/",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "fr-work-4",
+        "text": "ESN では案件の合間の待機期間 (intercontrat) が構造的に生じ、待機中のコンサルタントの疎外感や意欲の低下が業界内でも課題とされている。",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Le Cercle Tech — L'intercontrat en ESN",
+            "url": "https://www.lecercletech.com/intercontrat-definition/"
+          },
+          {
+            "title": "Village de la Justice — Consultants des cabinets de conseil et ESN",
+            "url": "https://www.village-justice.com/articles/consultants-des-cabinets-conseil-ssii-les-points-sensibles-relation-travail,41346.html",
+            "year": 2022
+          }
+        ]
+      },
+      {
+        "id": "fr-work-5",
+        "text": "通常在宅勤務する就業者の比率は 2025 年で約 11.3%。時々在宅を含めると 36% 程度とする二次情報もあるが、年が不明。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Apiar Data — EU usually works from home rate (Eurostat lfsa_ehomp)",
+            "url": "https://apiardata.com/statistics/eu-usually-works-from-home-rate/",
+            "year": 2026
+          },
+          {
+            "title": "Germanpedia — Which EU countries work from home the most?",
+            "url": "https://germanpedia.com/eu-working-from-home-share/"
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "fr-oss-1",
+        "text": "République numérique 法 (2016 年) により、行政のソースコードは開示請求の対象となる行政文書になった。職員 50 人以上の機関には公開義務があり、第 16 条は自由ソフトウェアとオープンフォーマットの利用を奨励している。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Wikipedia — Loi pour une République numérique",
+            "url": "https://en.wikipedia.org/wiki/Loi_pour_une_R%C3%A9publique_num%C3%A9rique"
+          },
+          {
+            "title": "S.I.Lex — Les logiciels produits par les administrations sont passés en Open Source par défaut",
+            "url": "https://scinfolex.com/2017/12/08/les-logiciels-produits-par-les-administrations-sont-passes-en-open-source-par-defaut-et-voici-pourquoi/",
+            "year": 2017
+          }
+        ]
+      },
+      {
+        "id": "fr-oss-2",
+        "text": "DINUM が運営する省庁横断の推奨自由ソフトウェア一覧 SILL は、2013 年の 32 本から 2024 年末に 500 本、2026 年に 600 本超へ増えた。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "code.gouv.fr — 500 logiciels libres au SILL",
+            "url": "https://code.gouv.fr/fr/blog/500-logiciels-libres-au-sill/",
+            "year": 2024
+          },
+          {
+            "title": "Portail du numérique ouvert — SILL : évolutions à venir",
+            "url": "https://www.ouvert.numerique.gouv.fr/actualites/socle-interministeriel-logiciels-libres-sill-evolutions-2026/",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "fr-oss-3",
+        "text": "DINUM の La Suite numérique とドイツ ZenDiS の openDesk は 2024 年から協業しており、共同エディタ Docs は独仏の共同イニシアチブで、オランダも参加しつつある。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub — suitenumerique/docs",
+            "url": "https://github.com/suitenumerique/docs",
+            "year": 2026
+          },
+          {
+            "title": "FOSS Backstage 2025 — How FR and DE are developing their digital sovereignty",
+            "url": "https://program.foss-backstage.de/fossback25/talk/XPGWX8/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "fr-oss-4",
+        "text": "VLC は 1996 年に École Centrale Paris の学生プロジェクトとして始まり、2001 年に GPL で公開され、2009 年以降は独立した非営利団体が運営している。scikit-learn は Inria が 2010 年から支え、2023 年にスピンオフ企業 Probabl へ移った。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "VideoLAN — About",
+            "url": "https://www.videolan.org/videolan/"
+          },
+          {
+            "title": "Jean-Baptiste Kempf — 15 years of VLC and VideoLAN",
+            "url": "https://jbkempf.com/blog/15-years-of-VLC/"
+          },
+          {
+            "title": "scikit-learn — About us",
+            "url": "https://scikit-learn.org/stable/about.html"
+          }
+        ]
+      },
+      {
+        "id": "fr-oss-5",
+        "text": "GitHub 上のフランスの開発者は Octoverse 2024 で 280 万超 (前年比 +20%)。Stack Overflow Developer Survey 2025 の回答者数は 5 位 (1,408 人、4%)。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2024",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-2024/",
+            "year": 2024
+          },
+          {
+            "title": "Stack Overflow Developer Survey 2025 — Developers",
+            "url": "https://survey.stackoverflow.co/2025/developers",
+            "year": 2025
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "Paris のスタートアップ、Inria などの研究機関、ESN の客先常駐 (régie) では、品質への当事者意識や働き方が大きく異なる。",
+    "「フランスは失敗に不寛容」という通説に対し、GEM 2024 の失敗恐怖率 42.7% は世界平均 (47%) より低い。",
+    "法定 35 時間でも、Syntec 協約の forfait jours で働く管理職・専門職は日数管理で、実労働時間は EU 平均並み。",
+    "フランス固有の postmortem や設計文書の慣行については定量データが見つからず、この領域の記述はできない。"
+  ]
+}

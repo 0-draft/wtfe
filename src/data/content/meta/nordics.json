@@ -1,0 +1,117 @@
+{
+  "id": "nordics",
+  "iso": [
+    "SE",
+    "FI",
+    "DK",
+    "NO"
+  ],
+  "hofstede": [
+    {
+      "country": "Sweden",
+      "scores": {
+        "pdi": 31,
+        "idv": 87,
+        "mas": 5,
+        "uai": 29,
+        "lto": 52,
+        "ivr": 78
+      },
+      "source": {
+        "title": "The Culture Factor — Country comparison tool",
+        "url": "https://www.theculturefactor.com/country-comparison-tool?countries=denmark%2Cfinland%2Cnetherlands%2Cnorway%2Csweden",
+        "year": 2026
+      }
+    },
+    {
+      "country": "Finland",
+      "scores": {
+        "pdi": 33,
+        "idv": 75,
+        "mas": 26,
+        "uai": 59,
+        "lto": 63,
+        "ivr": 57
+      },
+      "source": {
+        "title": "The Culture Factor — Country comparison tool",
+        "url": "https://www.theculturefactor.com/country-comparison-tool?countries=denmark%2Cfinland%2Cnetherlands%2Cnorway%2Csweden",
+        "year": 2026
+      }
+    },
+    {
+      "country": "Denmark",
+      "scores": {
+        "pdi": 18,
+        "idv": 89,
+        "mas": 16,
+        "uai": 23,
+        "lto": 59,
+        "ivr": 70
+      },
+      "source": {
+        "title": "The Culture Factor — Country comparison tool",
+        "url": "https://www.theculturefactor.com/country-comparison-tool?countries=denmark%2Cfinland%2Cnetherlands%2Cnorway%2Csweden",
+        "year": 2026
+      }
+    },
+    {
+      "country": "Norway",
+      "scores": {
+        "pdi": 31,
+        "idv": 81,
+        "mas": 8,
+        "uai": 50,
+        "lto": 55,
+        "ivr": 55
+      },
+      "source": {
+        "title": "The Culture Factor — Country comparison tool",
+        "url": "https://www.theculturefactor.com/country-comparison-tool?countries=denmark%2Cfinland%2Cnetherlands%2Cnorway%2Csweden",
+        "year": 2026
+      }
+    }
+  ],
+  "cultureMap": {
+    "communicating": {
+      "step": -2,
+      "basis": "primary",
+      "note": "DK -2 / SE -1 / FI -1"
+    },
+    "evaluating": {
+      "step": -1,
+      "basis": "primary",
+      "note": "DK -1 / FI -1"
+    },
+    "persuading": {
+      "step": 1,
+      "basis": "primary",
+      "note": "DK +1 / NO +1"
+    },
+    "leading": {
+      "step": -3,
+      "basis": "primary",
+      "note": "DK -3 / SE -3 / FI -2"
+    },
+    "deciding": {
+      "step": -2,
+      "basis": "primary",
+      "note": "DK -2 / SE -2"
+    },
+    "trusting": {
+      "step": -2,
+      "basis": "primary",
+      "note": "DK -2"
+    },
+    "disagreeing": {
+      "step": -1,
+      "basis": "primary",
+      "note": "DK -1 / SE +1"
+    },
+    "scheduling": {
+      "step": -2,
+      "basis": "primary",
+      "note": "DK -2 / SE -2 / NO -2"
+    }
+  }
+}

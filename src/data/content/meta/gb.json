@@ -1,0 +1,60 @@
+{
+  "id": "gb",
+  "iso": [
+    "GB"
+  ],
+  "hofstede": [
+    {
+      "country": "United Kingdom",
+      "scores": {
+        "pdi": null,
+        "idv": null,
+        "mas": null,
+        "uai": null,
+        "lto": null,
+        "ivr": null
+      },
+      "source": {
+        "title": "The Culture Factor — Country comparison tool",
+        "url": "https://www.theculturefactor.com/country-comparison-tool?countries=united+kingdom",
+        "year": 2026
+      }
+    }
+  ],
+  "cultureMap": {
+    "communicating": {
+      "step": -1,
+      "basis": "primary",
+      "note": "表では「低〜中」。低文脈寄りとして扱う"
+    },
+    "evaluating": {
+      "step": 0,
+      "basis": "primary",
+      "note": "米国よりやや間接的"
+    },
+    "persuading": {
+      "step": 2,
+      "basis": "primary"
+    },
+    "leading": {
+      "step": -1,
+      "basis": "primary"
+    },
+    "deciding": {
+      "step": 0,
+      "basis": "primary"
+    },
+    "trusting": {
+      "step": -2,
+      "basis": "primary"
+    },
+    "disagreeing": {
+      "step": 0,
+      "basis": "primary"
+    },
+    "scheduling": {
+      "step": -1,
+      "basis": "primary"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "de",
+  "iso": [
+    "DE"
+  ],
+  "hofstede": [
+    {
+      "country": "Germany",
+      "scores": {
+        "pdi": 35,
+        "idv": 79,
+        "mas": 66,
+        "uai": 65,
+        "lto": 57,
+        "ivr": 40
+      },
+      "source": {
+        "title": "The Culture Factor — Country comparison tool",
+        "url": "https://www.theculturefactor.com/country-comparison-tool?countries=germany",
+        "year": 2026
+      }
+    }
+  ],
+  "cultureMap": {
+    "communicating": {
+      "step": -2,
+      "basis": "primary"
+    },
+    "evaluating": {
+      "step": -2,
+      "basis": "primary"
+    },
+    "persuading": {
+      "step": -1,
+      "basis": "primary"
+    },
+    "leading": {
+      "step": 0,
+      "basis": "primary"
+    },
+    "deciding": {
+      "step": -1,
+      "basis": "primary"
+    },
+    "trusting": {
+      "step": -2,
+      "basis": "primary"
+    },
+    "disagreeing": {
+      "step": -2,
+      "basis": "primary"
+    },
+    "scheduling": {
+      "step": -3,
+      "basis": "primary"
+    }
+  }
+}

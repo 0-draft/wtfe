@@ -1,0 +1,21 @@
+{
+  "id": "in",
+  "iso": ["IN"],
+  "hofstede": [
+    {
+      "country": "India",
+      "scores": { "pdi": 77, "idv": 24, "mas": 56, "uai": 40, "lto": 51, "ivr": 26 },
+      "source": { "title": "The Culture Factor — Country comparison tool", "url": "https://www.theculturefactor.com/country-comparison-tool?countries=india", "year": 2026 }
+    }
+  ],
+  "cultureMap": {
+    "communicating": { "step": 1, "basis": "primary" },
+    "evaluating": { "step": 1, "basis": "primary" },
+    "persuading": { "step": null, "basis": null },
+    "leading": { "step": null, "basis": null },
+    "deciding": { "step": 1, "basis": "primary" },
+    "trusting": { "step": 2, "basis": "primary" },
+    "disagreeing": { "step": 1, "basis": "primary" },
+    "scheduling": { "step": 2, "basis": "primary" }
+  }
+}

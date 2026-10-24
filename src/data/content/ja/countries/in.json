@@ -1,0 +1,204 @@
+{
+  "id": "in",
+  "name": "インド",
+  "oneLiner": "階層的でトップダウンだが決定は仮置きで柔軟。巨大な開発者人口と、業態ごとに分かれた文化を持つ",
+  "intro": "インドのソフトウェア開発は、IT サービス大手、外資の GCC、プロダクト系スタートアップの 3 つで文化が大きく違う。ここに書くのは国レベルで観測される傾向で、個々のエンジニアを説明するものではない。",
+  "themes": {
+    "design": [
+      {
+        "id": "in-design-1",
+        "text": "大手 IT サービス企業は、プロセス成熟度の認証で品質を担保してきた。TCS は 2011 年に CMMI-DEV と CMMI-SVC の両方で全社 Level 5 の評価を受け、SVC の Level 5 では世界初とされる。",
+        "confidence": "medium",
+        "sources": [{ "title": "TCS: First software firm assessed at Level 5 enterprise-wide in software services and development", "url": "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-level-5-cmmi-svc", "year": 2011 }]
+      },
+      {
+        "id": "in-design-2",
+        "text": "業界記事では、サービス企業は「specs are king、process-heavy、ticket-driven」、プロダクト企業は「design docs、code review、CI/CD」と対比されている。どちらもベンダー記事で、研究の裏付けはない。",
+        "confidence": "weak",
+        "sources": [
+          { "title": "Uplers: Product vs Service-Background Engineers", "url": "https://www.uplers.com/article/product-vs-service-background-engineers-startup-hiring/" },
+          { "title": "ProductBased.in: Product Based vs Service Based Companies in India", "url": "https://www.productbased.in/guides/product-vs-service" }
+        ]
+      },
+      {
+        "id": "in-design-3",
+        "text": "jugaad (制約下の即興解決) をソフトウェア開発の美徳とする見方は、インド人エンジニア自身の間ではむしろ否定的。一方で、2G 回線でも動く設計のような frugal engineering として擁護する意見もある。",
+        "confidence": "weak",
+        "sources": [
+          { "title": "Hacker News: Jugaad takes agile to the extreme", "url": "https://news.ycombinator.com/item?id=34025360" },
+          { "title": "Sujay Pan: The Cult of Jugaad", "url": "https://sujaypan.substack.com/p/the-cult-of-jugaad" },
+          { "title": "Why India's Jugaad Coding Culture Might Save Bloated Software", "url": "https://medium.com/@devlinktips/why-indias-jugaad-coding-culture-might-save-bloated-software-71806b738aa2" }
+        ]
+      },
+      {
+        "id": "in-design-4",
+        "text": "Zerodha はインド最大の証券会社だが、tech チームは 33〜35 人で全スタックを self-host している。CTO の Kailash Nadh は「チームの人数がユーザー数に比例して増えるというのは誤解だ」と述べている。",
+        "confidence": "medium",
+        "sources": [
+          { "title": "Software Misadventures: Kailash Nadh", "url": "https://softwaremisadventures.com/p/kailash-nadh-on-being-an-absurdist", "year": 2023 },
+          { "title": "Indian Startup News: Zerodha hired only 5 employees for its tech team in 4 years", "url": "https://indianstartupnews.com/news/zerodha-hired-only-5-employees-for-its-tech-team-in-4-years-says-cto-kailash-nadh-7238408", "year": 2024 }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "in-failure-1",
+        "text": "Hofstede の不確実性回避 (UAI) は 40 で、曖昧さを避けたがる傾向は中〜低程度とされる。",
+        "confidence": "strong",
+        "sources": [{ "title": "The Culture Factor — Country comparison tool", "url": "https://www.theculturefactor.com/country-comparison-tool?countries=india", "year": 2026 }]
+      },
+      {
+        "id": "in-failure-2",
+        "text": "Meyer によると、インドを含むトップダウン型の文化では決定は速いが、新しい情報が入ると変わりうる。決定は確約ではなく仮置き (small d) として扱われる。",
+        "confidence": "strong",
+        "sources": [{ "title": "Erin Meyer, Being the Boss in Brussels, Boston, and Beijing (HBR)", "url": "https://erinmeyer.com/wp-content/uploads/2019/11/Being-the-Boss-HBR.pdf", "year": 2017 }]
+      },
+      {
+        "id": "in-failure-3",
+        "text": "Meyer の Scheduling 尺度でインドは柔軟な時間側に置かれる。複数のことを並行して進め、割り込みも受け入れ、適応を重視する。",
+        "confidence": "medium",
+        "sources": [{ "title": "Welcome to the Jungle: The 8 keys for managing multicultural teams by Erin Meyer", "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams" }]
+      },
+      {
+        "id": "in-failure-4",
+        "text": "「オフショアチームは悪い知らせを上げない」という話は体験談にとどまる。米国側のマネージャーが反論を想定していない構造のせいでもある、という反論もある。",
+        "confidence": "weak",
+        "sources": [
+          { "title": "Ask HN: What challenges are you facing offshoring development to India?", "url": "https://news.ycombinator.com/item?id=36119709", "year": 2023 },
+          { "title": "Hacker News discussion on pushback", "url": "https://news.ycombinator.com/item?id=38952256", "year": 2024 }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "in-feedback-1",
+        "text": "Meyer の 8 尺度の要約では、インドは高文脈寄りで、対立を避ける側に置かれている。",
+        "confidence": "medium",
+        "sources": [{ "title": "Welcome to the Jungle: The 8 keys for managing multicultural teams by Erin Meyer", "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams" }]
+      },
+      {
+        "id": "in-feedback-2",
+        "text": "GitHub の PR 約 7 万件を分析した Rastogi et al. (ESEM 2018) では、17 カ国中 16 カ国でレビュアーと同じ国の投稿者の PR が通りやすかった。インドだけは逆で、同国のメンテナが相手だと受理率が下がった (-7.4%)。",
+        "confidence": "medium",
+        "sources": [{ "title": "Relationship between Geographical Location and Evaluation of Developer Contributions in GitHub (summary, WWS2019)", "url": "https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf", "year": 2019 }]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "in-hierarchy-1",
+        "text": "Meyer の HBR 2017 のマップで、インドは「トップダウンかつ階層的」な象限にいる。同じ象限には中国、インドネシア、サウジアラビア、ロシアが並ぶ。",
+        "confidence": "strong",
+        "sources": [{ "title": "Erin Meyer, Being the Boss in Brussels, Boston, and Beijing (HBR)", "url": "https://erinmeyer.com/wp-content/uploads/2019/11/Being-the-Boss-HBR.pdf", "year": 2017 }]
+      },
+      {
+        "id": "in-hierarchy-2",
+        "text": "Hofstede の権力格差 (PDI) は 77 で 6 次元の中で最も高い。階層とトップダウン構造を受け入れる傾向と説明されている。",
+        "confidence": "strong",
+        "sources": [{ "title": "The Culture Factor — Country comparison tool", "url": "https://www.theculturefactor.com/country-comparison-tool?countries=india", "year": 2026 }]
+      },
+      {
+        "id": "in-hierarchy-3",
+        "text": "業態による差が大きい。サービス企業は承認チェーンと階層で動き、プロダクト系スタートアップは創業者に直接話せて判断が速い、と対比されている。",
+        "confidence": "weak",
+        "sources": [{ "title": "Uplers: Product vs Service-Background Engineers", "url": "https://www.uplers.com/article/product-vs-service-background-engineers-startup-hiring/" }]
+      }
+    ],
+    "communication": [
+      {
+        "id": "in-communication-1",
+        "text": "英語は業務言語として普及しているが、EF EPI 2024 の順位は 116 カ国中 69 位。英語ネイティブ並みと前提するのは危うい。",
+        "confidence": "medium",
+        "sources": [{ "title": "Nippon.com: Japan Slides Further in English Proficiency Ranking", "url": "https://www.nippon.com/en/japan-data/h02199/", "year": 2024 }]
+      },
+      {
+        "id": "in-communication-2",
+        "text": "Meyer の Trusting 尺度で、インドは関係ベースの側に置かれる。仕事を始める前に人間関係による信頼が要る。",
+        "confidence": "medium",
+        "sources": [{ "title": "The Erin Meyer Culture Map Explained", "url": "https://numinoscoaching.com/erin-meyer-culture-map-explained" }]
+      }
+    ],
+    "work": [
+      {
+        "id": "in-work-1",
+        "text": "NASSCOM の FY2025 推計では、業界の売上は約 2,826 億ドル、従業員は 580 万人、純増は 12.6 万人。2026 年の改訂で 2,970 億ドル、582 万人に上方修正された。",
+        "confidence": "strong",
+        "sources": [
+          { "title": "Business Today: Indian tech industry to reach $300 billion revenue milestone in FY26", "url": "https://www.businesstoday.in/technology/news/story/indian-tech-industry-to-reach-300-billion-revenue-milestone-in-fy26-nasscom-465747-2025-02-24", "year": 2025 },
+          { "title": "DQIndia: Nasscom outlook FY26", "url": "https://www.dqindia.com/news/nasscom-outlook-indias-tech-industry-to-grow-61-to-315-bn-in-fy26-11151228", "year": 2026 }
+        ]
+      },
+      {
+        "id": "in-work-2",
+        "text": "外資の GCC (グローバル・ケイパビリティ・センター) は FY2024 時点で 1,700 拠点超、従業員 190 万人超 (NASSCOM-Zinnov)。tier-2 都市への分散も進んでいる。",
+        "confidence": "strong",
+        "sources": [
+          { "title": "NASSCOM: India GCC Landscape Report — The 5-year Journey", "url": "https://community.nasscom.in/communities/nasscom-insights/india-gcc-landscape-report-5-year-journey", "year": 2024 },
+          { "title": "NASSCOM: Beyond the Metros", "url": "https://community.nasscom.in/communities/gcc/beyond-metros-indias-next-gcc-frontier" }
+        ]
+      },
+      {
+        "id": "in-work-3",
+        "text": "離職率は景気で大きく振れる。FY23 Q2 は Infosys 27.1%、Wipro 23%、TCS 21.5% だったが、FY24 Q4 には TCS 12.5%、Infosys 12.6% まで下がった。",
+        "confidence": "strong",
+        "sources": [
+          { "title": "Business Today: TCS, Infosys, Wipro — How HR issues plague IT sector", "url": "https://www.businesstoday.in/interactive/longread/tcs-infosys-wipro-how-hr-issues-plague-it-sector-227-29-12-2022", "year": 2022 },
+          { "title": "Business Standard: TCS, Infosys, Wipro see exit of 64,000 employees in FY24", "url": "https://www.business-standard.com/companies/news/tcs-infosys-wipro-see-exit-of-64-000-employees-in-fy24-amid-low-demand-124041901226_1.html", "year": 2024 }
+        ]
+      },
+      {
+        "id": "in-work-4",
+        "text": "FY2023 に承認された H-1B のうち 72% がインド生まれ (中国生まれは 12%)。米国への移住ルートが太い。",
+        "confidence": "strong",
+        "sources": [
+          { "title": "USCIS: Characteristics of H-1B Specialty Occupation Workers FY2023", "url": "https://www.uscis.gov/sites/default/files/document/reports/OLA_Signed_H-1B_Characteristics_Congressional_Report_FY2023.pdf", "year": 2024 },
+          { "title": "Pew Research: What we know about the U.S. H-1B visa program", "url": "https://www.pewresearch.org/short-reads/2025/03/04/what-we-know-about-the-us-h-1b-visa-program/", "year": 2025 }
+        ]
+      },
+      {
+        "id": "in-work-5",
+        "text": "2023 年、Infosys 創業者の Narayana Murthy が「若者は週 70 時間働くべきだ」と発言した。SNS では強い反発を受けたが、経営者層には支持もあり、世論は割れた。",
+        "confidence": "medium",
+        "sources": [
+          { "title": "CNBC: India debate on 70-hour workweek", "url": "https://www.cnbc.com/2023/11/07/india-debate-on-70-hour-workweek-illegal-or-road-to-greatness.html", "year": 2023 },
+          { "title": "Business Today: Narayana Murthy's remark leaves internet divided", "url": "https://www.businesstoday.in/latest/in-focus/story/indias-youth-should-work-70-hours-a-week-narayana-murthys-remark-on-productivity-leaves-internet-divided-403427-2023-10-26", "year": 2023 }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "in-oss-1",
+        "text": "GitHub Octoverse 2025 によると、インドの開発者は 2,190 万人で世界 2 位 (2020 年は 450 万人)。2025 年の新規開発者は 520 万人超。OSS コントリビュータ数ではすでに世界 1 位で、2030 年には 5,750 万人となり米国を抜くと予測されている。",
+        "confidence": "strong",
+        "sources": [{ "title": "GitHub Octoverse 2025", "url": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/", "year": 2025 }]
+      },
+      {
+        "id": "in-oss-2",
+        "text": "Stack Overflow Developer Survey 2024 では、回答者の 7.2% がインドからで、国別 3 位だった。",
+        "confidence": "strong",
+        "sources": [{ "title": "Stack Overflow Developer Survey 2024: Developer Profile", "url": "https://survey.stackoverflow.co/2024/developer-profile", "year": 2024 }]
+      },
+      {
+        "id": "in-oss-3",
+        "text": "Zerodha は 2024 年 10 月に FLOSS/fund を立ち上げ、年 100 万ドルを世界の OSS に拠出している。2025 年には Blender、FFmpeg、OpenSSL などに合計 100 万ドルを支払った。",
+        "confidence": "strong",
+        "sources": [
+          { "title": "Entrepreneur: Zerodha launches USD 1 Mn annual fund", "url": "https://www.entrepreneur.com/en-in/news-and-trends/zerodha-launches-usd-1-mn-annual-fund-to-support-open/481437", "year": 2024 },
+          { "title": "Open Source For You: Zerodha announces final $675,000 tranche", "url": "https://www.opensourceforu.com/2025/10/zerodha-announces-final-675000-tranche-for-global-open-source-projects-advocates-sovereign-foss-fund/", "year": 2025 }
+        ]
+      },
+      {
+        "id": "in-oss-4",
+        "text": "Zerodha CTO の Kailash Nadh は「インドは FOSS を大量に使っているが、貢献はほぼ無視できる程度」と述べ、政府による sovereign FOSS fund を提案している。",
+        "confidence": "medium",
+        "sources": [{ "title": "Analytics India Magazine: India's FOSS contributions remain negligible", "url": "https://analyticsindiamag.com/global-tech/indias-foss-contributions-remain-negligible-despite-heavy-adoption-says-zerodha-cto" }]
+      }
+    ]
+  },
+  "variance": [
+    "IT サービス大手 (TCS / Infosys / Wipro)、外資の GCC、プロダクト系スタートアップで、プロセス・階層・速度が大きく違う。サービス企業から GCC への転職が定番ルート。",
+    "Zerodha のように少人数で巨大なシステムを運用する例があり、「人海戦術の国」という像の反例になっている。",
+    "「インド人の yes は同意を意味しない」という定番の言説は、体験談以外に裏付けが見つからなかった。ステレオタイプとして扱うべき。",
+    "開発者の人数は世界最大級だが、OSS への貢献の深さは人数ほどではない、という自己批判がインド国内から出ている。",
+    "postmortem 文化について、体系的なデータは見つからなかった。"
+  ]
+}
