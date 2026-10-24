@@ -1,221 +1,391 @@
 {
   "id": "cn",
   "name": "中国",
-  "oneLiner": "最もトップダウンで曖昧さに強い速度の文化。996 や 35 歳問題への反発が制度を動かしている",
-  "intro": "中国本土のソフトウェア開発は、大手テック企業、Huawei のようなプロセス重視の大企業、中小やスタートアップで実態がかなり違う。ここに書くのは国レベルで観測される傾向で、個々のエンジニアを説明するものではない。",
+  "oneLiner": "Meyer の分類では最もトップダウン寄り。996 や 35 歳問題への反発が制度を動かしてきた",
+  "intro": "中国本土のソフトウェアエンジニアの働き方を、裁判例や行政が公表した事例、報道、研究論文から整理しています。示すのは国レベルの傾向で、大手テック企業、Huawei のようなプロセス重視の大企業、中小やスタートアップの間で実態はかなり違います。Gitee などの国内プラットフォーム上の活動や中国語の資料は国際調査に反映されにくい点にも注意してください。",
   "themes": {
     "design": [
       {
         "id": "cn-design-1",
-        "text": "Kai-Fu Lee は『AI Superpowers』(2018) で、速度が絶対でコピーも当然という熾烈な競争 (gladiator) が中国スタートアップの高速な iteration を生んだと論じた。模倣を美化しているという批判もある。",
+        "text": "Kai-Fu Lee は『AI Superpowers』(2018) で、速度を最優先し模倣も辞さない熾烈な競争が、中国スタートアップの高速な改良サイクルを生んだと論じた。模倣を美化しているという批判もある。",
         "confidence": "medium",
         "sources": [
-          { "title": "TechCrunch: Can there be too much competition between startups?", "url": "https://techcrunch.com/2019/03/14/can-there-be-too-much-competition-between-startups/", "year": 2019 },
-          { "title": "Wikipedia: AI Superpowers", "url": "https://en.wikipedia.org/wiki/AI_Superpowers" }
+          {
+            "title": "TechCrunch: Can there be too much competition between startups?",
+            "url": "https://techcrunch.com/2019/03/14/can-there-be-too-much-competition-between-startups/",
+            "year": 2019
+          },
+          {
+            "title": "Wikipedia: AI Superpowers",
+            "url": "https://en.wikipedia.org/wiki/AI_Superpowers"
+          }
         ]
       },
       {
         "id": "cn-design-2",
-        "text": "反例として Huawei がある。1998〜99 年ごろから IBM の IPD (Integrated Product Development) を導入し、テンプレートをそのまま真似ることを求めて、ゲート型の重いプロセスを徹底した。",
+        "text": "Huawei は 1998〜99 年ごろから IBM の IPD (Integrated Product Development) を導入し、テンプレートをそのまま守るよう求めて、ゲート型の重いプロセスを徹底した。",
         "confidence": "medium",
         "sources": [
-          { "title": "Transforming Product Development at Huawei: The IPD Initiative", "url": "https://www.researchgate.net/publication/340100855_Transforming_Product_Development_at_Huawei_The_IPD_Initiative" },
-          { "title": "Knowledge at Wharton: Huawei Technologies", "url": "https://knowledge.wharton.upenn.edu/article/huawei-technologies-a-chinese-trail-blazer-in-africa/" }
+          {
+            "title": "Transforming Product Development at Huawei: The IPD Initiative",
+            "url": "https://www.researchgate.net/publication/340100855_Transforming_Product_Development_at_Huawei_The_IPD_Initiative"
+          },
+          {
+            "title": "Knowledge at Wharton: Huawei Technologies",
+            "url": "https://knowledge.wharton.upenn.edu/article/huawei-technologies-a-chinese-trail-blazer-in-africa/"
+          }
         ]
       },
       {
         "id": "cn-design-3",
-        "text": "2023 年 11 月、Alibaba Cloud が 1 か月に 2 回の障害を起こし、Didi も大規模な障害で謝罪した。ただし、これだけで国全体の品質傾向は一般化できない。",
-        "confidence": "weak",
+        "text": "2023 年 11 月、Alibaba Cloud は 1 か月で 2 回目の大規模障害を起こし、同じ月に Didi も基盤ソフトウェアの障害によるサービス停止で謝罪した。",
+        "confidence": "medium",
         "sources": [
-          { "title": "DCD: Alibaba Cloud hit by outage, second in a month", "url": "https://www.datacenterdynamics.com/en/news/alibaba-cloud-hit-by-outage-second-in-a-month/", "year": 2023 },
-          { "title": "SCMP: Didi blames underlying software failure for breakdown", "url": "https://www.scmp.com/tech/article/3243246/chinas-ride-hailing-giant-didi-blames-underlying-software-failure-breakdown-plunged-service-disarray", "year": 2023 }
+          {
+            "title": "DCD: Alibaba Cloud hit by outage, second in a month",
+            "url": "https://www.datacenterdynamics.com/en/news/alibaba-cloud-hit-by-outage-second-in-a-month/",
+            "year": 2023
+          },
+          {
+            "title": "SCMP: Didi blames underlying software failure for breakdown",
+            "url": "https://www.scmp.com/tech/article/3243246/chinas-ride-hailing-giant-didi-blames-underlying-software-failure-breakdown-plunged-service-disarray",
+            "year": 2023
+          }
         ]
       }
     ],
     "failure": [
       {
         "id": "cn-failure-1",
-        "text": "Hofstede の不確実性回避 (UAI) は 30 とかなり低く、曖昧さへの耐性が高い。",
-        "confidence": "strong",
-        "sources": [{ "title": "The Culture Factor — Country comparison tool", "url": "https://www.theculturefactor.com/country-comparison-tool?countries=china", "year": 2026 }]
-      },
-      {
-        "id": "cn-failure-2",
-        "text": "中国に根付いた振り返りの手法に复盘 (fupan、語源は碁の打ち直し) がある。Lenovo の文化の柱とされ、「自分に情けをかけずに考え抜け」という柳传志の言葉が指針になっている。",
-        "confidence": "medium",
+        "text": "中国企業で使われる振り返りの手法に复盘 (fupan、碁の対局を並べ直して検討することが語源) がある。Lenovo の元幹部はこれを同社文化の柱とし、柳传志の「自分に情けをかけずに考え抜け」という言葉を指針に挙げている。",
+        "confidence": "weak",
         "sources": [
-          { "title": "Gina Qiao: Growing From Change — A 30-Year Career Viewed Through Fu Pan", "url": "https://www.linkedin.com/pulse/growing-from-change-30-year-career-viewed-through-fu-pan-gina-qiao" },
-          { "title": "Keep learning and keep growing with Fu pan", "url": "https://medium.com/@jessicalu/keep-learning-and-keep-growing-with-fu-pan-e21feffa6764" }
+          {
+            "title": "Gina Qiao: Growing From Change — A 30-Year Career Viewed Through Fu Pan",
+            "url": "https://www.linkedin.com/pulse/growing-from-change-30-year-career-viewed-through-fu-pan-gina-qiao"
+          },
+          {
+            "title": "Keep learning and keep growing with Fu pan",
+            "url": "https://medium.com/@jessicalu/keep-learning-and-keep-growing-with-fu-pan-e21feffa6764"
+          }
         ]
       },
       {
-        "id": "cn-failure-3",
-        "text": "Meyer は、中国の manager が同僚を公の場で批判しないことを学ぶ例を挙げている。面子への配慮から、失敗を公開して共有するには場の設計が要る。",
+        "id": "cn-failure-2",
+        "text": "Meyer は、中国の manager が同僚を公の場で批判しないことを学ぶ、という例を挙げている。",
         "confidence": "medium",
-        "sources": [{ "title": "Welcome to the Jungle: The 8 keys for managing multicultural teams by Erin Meyer", "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams" }]
+        "sources": [
+          {
+            "title": "Welcome to the Jungle: The 8 keys for managing multicultural teams by Erin Meyer",
+            "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams"
+          }
+        ]
       }
     ],
     "feedback": [
       {
         "id": "cn-feedback-1",
-        "text": "Meyer は中国を高文脈の側に置いている。否定的なフィードバックは間接的になりやすく、面子を潰すおそれがある場面では特にそうなる。",
+        "text": "Meyer の Culture Map の解説記事では、中国は高文脈の側に置かれ、否定的なフィードバックは間接的になりやすいとされる。面子を潰すおそれがある場面では特にそうだという。",
         "confidence": "medium",
         "sources": [
-          { "title": "The Erin Meyer Culture Map Explained", "url": "https://numinoscoaching.com/erin-meyer-culture-map-explained" },
-          { "title": "DMB Shanghai: The Culture Map by Erin Meyer", "url": "https://dmb-shanghai.com/language/culture-map-erin-meyer-cross-cultural-business-review/", "year": 2026 }
+          {
+            "title": "The Erin Meyer Culture Map Explained",
+            "url": "https://numinoscoaching.com/erin-meyer-culture-map-explained"
+          },
+          {
+            "title": "DMB Shanghai: The Culture Map by Erin Meyer",
+            "url": "https://dmb-shanghai.com/language/culture-map-erin-meyer-cross-cultural-business-review/",
+            "year": 2026
+          }
         ]
       },
       {
         "id": "cn-feedback-2",
-        "text": "中国のサンプルを使った実証研究では、上司の強制力を強く感じるほど、また権威主義的なリーダーシップの下ほど、部下が沈黙しやすい。面子・关系・中庸が発言を抑える要因として論じられている。",
-        "confidence": "medium",
+        "text": "中国の職場を対象にした実証研究では、上司の強制力を強く感じる部下ほど、また権威主義的なリーダーの下にいる部下ほど沈黙しやすかった。面子・关系・中庸が発言を抑える要因として論じられている。",
+        "confidence": "strong",
         "sources": [
-          { "title": "Perceived Supervisor Power and Employee Silence: A Field Study in China", "url": "https://econtent.hogrefe.com/doi/10.1027/1866-5888/a000357", "year": 2025 },
-          { "title": "Authoritarian Leadership and Employee Silence in China", "url": "https://www.cambridge.org/core/journals/journal-of-management-and-organization/article/abs/authoritarian-leadership-and-employee-silence-in-china/7BA708133A7360F1BA41CDE596F2E16C" },
-          { "title": "The Patterns of Employee Voice in China", "url": "https://link.springer.com/chapter/10.1007/978-3-031-31127-7_5", "year": 2023 }
+          {
+            "title": "Perceived Supervisor Power and Employee Silence: A Field Study in China",
+            "url": "https://econtent.hogrefe.com/doi/10.1027/1866-5888/a000357",
+            "year": 2025
+          },
+          {
+            "title": "Authoritarian Leadership and Employee Silence in China",
+            "url": "https://www.cambridge.org/core/journals/journal-of-management-and-organization/article/abs/authoritarian-leadership-and-employee-silence-in-china/7BA708133A7360F1BA41CDE596F2E16C"
+          },
+          {
+            "title": "The Patterns of Employee Voice in China",
+            "url": "https://link.springer.com/chapter/10.1007/978-3-031-31127-7_5",
+            "year": 2023
+          }
         ]
       },
       {
         "id": "cn-feedback-3",
-        "text": "GitHub の PR 受理率を分析した Rastogi et al. (ESEM 2018) で、中国からの PR は受理率が低い側に入った。文化だけでなく、国籍バイアスや英語の要因が混ざっている可能性がある。",
+        "text": "GitHub の PR 受理率を国別に分析した Rastogi et al. (ESEM 2018) では、中国からの PR は受理率が低い側に入った。差の要因は特定されておらず、国籍によるバイアスや英語力の影響も考えられる。",
         "confidence": "medium",
-        "sources": [{ "title": "Relationship between Geographical Location and Evaluation of Developer Contributions in GitHub (summary, WWS2019)", "url": "https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf", "year": 2019 }]
+        "sources": [
+          {
+            "title": "Relationship between Geographical Location and Evaluation of Developer Contributions in GitHub (summary, WWS2019)",
+            "url": "https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf",
+            "year": 2019
+          }
+        ]
       }
     ],
     "hierarchy": [
       {
         "id": "cn-hierarchy-1",
-        "text": "Meyer の HBR 2017 のマップで、中国は最もトップダウンかつ階層的な国の 1 つ。ある米企業の事例では、中国人スタッフが「上司が丁寧に詳しく指示しない」ことを「傲慢で無能」と受け取っていた。",
-        "confidence": "strong",
-        "sources": [{ "title": "Erin Meyer, Being the Boss in Brussels, Boston, and Beijing (HBR)", "url": "https://erinmeyer.com/wp-content/uploads/2019/11/Being-the-Boss-HBR.pdf", "year": 2017 }]
+        "text": "Meyer の HBR 2017 年の論文は、中国をトップダウンかつ階層的な象限に置いている。中国に進出した米企業の事例では、中国人スタッフが、詳しく指示を出さない米国人上司を「無能なだけでなく傲慢」と受け取っていた。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer, Being the Boss in Brussels, Boston, and Beijing (HBR)",
+            "url": "https://erinmeyer.com/wp-content/uploads/2019/11/Being-the-Boss-HBR.pdf",
+            "year": 2017
+          }
+        ]
       },
       {
         "id": "cn-hierarchy-2",
-        "text": "Hofstede の権力格差 (PDI) は 80。",
-        "confidence": "strong",
-        "sources": [{ "title": "The Culture Factor — Country comparison tool", "url": "https://www.theculturefactor.com/country-comparison-tool?countries=china", "year": 2026 }]
-      },
-      {
-        "id": "cn-hierarchy-3",
-        "text": "ByteDance は張一鳴の「Context, not Control」を掲げ、社内文書のデフォルト公開、2 か月周期の OKR、Feishu (Lark) による透明化を進めたとされる。ただし出典は二次情報。",
+        "text": "ByteDance は張一鳴の「Context, not Control」を掲げ、社内文書のデフォルト公開、2 か月周期の OKR、Feishu (Lark) による情報共有を進めたとされる。",
         "confidence": "weak",
         "sources": [
-          { "title": "Baidu Baike: ByteDance Values", "url": "https://baike.baidu.com/en/item/ByteDance%20Values/3212121" },
-          { "title": "Wikipedia: Lark (software)", "url": "https://en.wikipedia.org/wiki/Lark_(software)" }
+          {
+            "title": "Baidu Baike: ByteDance Values",
+            "url": "https://baike.baidu.com/en/item/ByteDance%20Values/3212121"
+          },
+          {
+            "title": "Wikipedia: Lark (software)",
+            "url": "https://en.wikipedia.org/wiki/Lark_(software)"
+          }
         ]
       }
     ],
     "communication": [
       {
         "id": "cn-communication-1",
-        "text": "業務連絡は WeChat などのチャットが中心。勤務時間外の WeChat 対応を「隠れ残業」と認め、北京の裁判所が 2022 年に 3 万元の支払いを命じた。2024 年には最高人民法院もこの種の事案をモデルケースとして公表した。",
+        "text": "北京市第三中級人民法院は 2022 年、勤務時間外の WeChat での業務対応を残業と認め、元雇用主に 3 万元の支払いを命じた。2024 年 1 月には最高人民法院などが、同種の事案をモデルケースとして公表した。",
         "confidence": "strong",
         "sources": [
-          { "title": "Sixth Tone: Chinese Netizens Celebrate Court Ruling Exposing 'WeChat Overtime'", "url": "https://www.sixthtone.com/news/1012704", "year": 2023 },
-          { "title": "Sixth Tone: China's Top Court Continues Campaign Against 'WeChat Overtime'", "url": "https://www.sixthtone.com/news/1014551", "year": 2024 }
+          {
+            "title": "Sixth Tone: Chinese Netizens Celebrate Court Ruling Exposing 'WeChat Overtime'",
+            "url": "https://www.sixthtone.com/news/1012704",
+            "year": 2023
+          },
+          {
+            "title": "Sixth Tone: China's Top Court Continues Campaign Against 'WeChat Overtime'",
+            "url": "https://www.sixthtone.com/news/1014551",
+            "year": 2024
+          }
         ]
       },
       {
         "id": "cn-communication-2",
-        "text": "Feishu (Lark) は文書・会議・IM・OKR を一体化し、「組織 OS」として外部企業に販売された。",
+        "text": "ByteDance の Feishu (Lark) は文書・会議・チャット・OKR を一体化したツールで、「組織 OS」として社外の企業にも販売されている。",
         "confidence": "medium",
-        "sources": [{ "title": "Dao Insights: How does ByteDance's enterprise collaboration platform create the future of work?", "url": "https://daoinsights.com/works/how-does-bytedances-enterprise-collaboration-platform-create-the-future-of-work/" }]
+        "sources": [
+          {
+            "title": "Dao Insights: How does ByteDance's enterprise collaboration platform create the future of work?",
+            "url": "https://daoinsights.com/works/how-does-bytedances-enterprise-collaboration-platform-create-the-future-of-work/"
+          }
+        ]
       },
       {
         "id": "cn-communication-3",
-        "text": "EF EPI 2024 で中国の英語力は 116 カ国中 91 位。ただし都市差が大きく、北京は 518、上海は 511。BAT の OSS 調査では、国際化の取り組みとして最も多いのが英語の README を用意することだった。",
-        "confidence": "strong",
+        "text": "EF EPI 2024 で中国は 116 か国・地域中 91 位（スコア 455）だったが、都市別では北京 518、上海 511 と全国値を大きく上回る。",
+        "confidence": "medium",
         "sources": [
-          { "title": "EF EPI 2024 fact sheet: China", "url": "https://www.ef.com/assetscdn/WIBIwq6RdJvcD9bc8RMd/cefcom-epi-site/fact-sheets/2024/ef-epi-fact-sheet-china-english.pdf", "year": 2024 },
-          { "title": "An Empirical Study of the Landscape of Open Source Projects in Baidu, Alibaba, and Tencent", "url": "https://arxiv.org/pdf/2103.01590", "year": 2021 }
+          {
+            "title": "EF EPI 2024 fact sheet: China",
+            "url": "https://www.ef.com/assetscdn/WIBIwq6RdJvcD9bc8RMd/cefcom-epi-site/fact-sheets/2024/ef-epi-fact-sheet-china-english.pdf",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "cn-communication-4",
+        "text": "Baidu・Alibaba・Tencent の OSS を分析した 2021 年の研究では、国際化の取り組みとして最も多かったのは英語の README を用意することだった。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "An Empirical Study of the Landscape of Open Source Projects in Baidu, Alibaba, and Tencent",
+            "url": "https://arxiv.org/pdf/2103.01590",
+            "year": 2021
+          }
         ]
       }
     ],
     "work": [
       {
         "id": "cn-work-1",
-        "text": "2019 年 3 月に GitHub リポジトリ 996.ICU が立ち上がり、数週間で 20 万スターを超えた。2021 年 8 月には最高人民法院と人社部が典型事例を公表し、996 が違法だと明示した。",
+        "text": "2019 年 3 月、長時間労働に抗議する GitHub リポジトリ 996.ICU が公開され、最初の 1 時間で 1,000 スターを超えた。2021 年 8 月には最高人民法院と人力資源社会保障部が典型事例を公表し、996 勤務を違法と明示した。",
         "confidence": "strong",
         "sources": [
-          { "title": "Sixth Tone: Chinese Developers Protest Overwork on GitHub", "url": "https://www.sixthtone.com/news/1003771/chinese-developers-protest-overwork-on-github", "year": 2019 },
-          { "title": "Quartz: How GitHub became a bulletin board for Chinese tech worker complaints", "url": "https://qz.com/1589309/996-icu-github-hosts-chinese-tech-worker-complaints", "year": 2019 },
-          { "title": "Sixth Tone: China's Top Court Says Grueling '996' Work Schedule Illegal", "url": "https://www.sixthtone.com/news/1008375", "year": 2021 }
+          {
+            "title": "Sixth Tone: Chinese Developers Protest Overwork on GitHub",
+            "url": "https://www.sixthtone.com/news/1003771/chinese-developers-protest-overwork-on-github",
+            "year": 2019
+          },
+          {
+            "title": "Quartz: How GitHub became a bulletin board for Chinese tech worker complaints",
+            "url": "https://qz.com/1589309/996-icu-github-hosts-chinese-tech-worker-complaints",
+            "year": 2019
+          },
+          {
+            "title": "Sixth Tone: China's Top Court Says Grueling '996' Work Schedule Illegal",
+            "url": "https://www.sixthtone.com/news/1008375",
+            "year": 2021
+          }
         ]
       },
       {
         "id": "cn-work-2",
-        "text": "2021 年に Kuaishou と ByteDance が隔週の日曜出勤 (大小周) を廃止した。ByteDance では平均 17% の実質減給になり、社内投票では約 30% が長時間労働の継続を望んでいた。",
+        "text": "2021 年に Kuaishou と ByteDance は隔週の日曜出勤（大小周）を廃止した。ByteDance では残業代がなくなって平均 17% の実質減収となり、社内投票では約 30% が従来の勤務の継続を望んでいたと報じられた。",
         "confidence": "medium",
         "sources": [
-          { "title": "TechNode: ByteDance to end weekend work in blow to 996 culture", "url": "https://technode.com/2021/07/09/bytedance-to-end-weekend-work-in-blow-to-996-culture/", "year": 2021 },
-          { "title": "Dao Insights: ByteDance cuts pay after abandoning six-day working week", "url": "https://daoinsights.com/news/bytedance-cuts-pay-after-abandoing-six-day-working-week/", "year": 2021 }
+          {
+            "title": "TechNode: ByteDance to end weekend work in blow to 996 culture",
+            "url": "https://technode.com/2021/07/09/bytedance-to-end-weekend-work-in-blow-to-996-culture/",
+            "year": 2021
+          },
+          {
+            "title": "Dao Insights: ByteDance cuts pay after abandoning six-day working week",
+            "url": "https://daoinsights.com/news/bytedance-cuts-pay-after-abandoing-six-day-working-week/",
+            "year": 2021
+          }
         ]
       },
       {
         "id": "cn-work-3",
-        "text": "「35 歳の呪い」: 35 歳を超えた人がリストラや採用で狙われやすい。採用プラットフォームの調査では、プログラマーの 87% が 35 歳以降の失職や再就職に不安を抱いていた。中国の労働法は年齢差別を明示的には禁じていない。",
+        "text": "35 歳を超えた人がリストラや採用で不利になる「35 歳の呪い」が報じられている。採用プラットフォームの調査では、プログラマーの 87% が 35 歳以降の失職や再就職に不安を抱いていた。中国の労働法は年齢差別を明示的には禁じていない。",
         "confidence": "medium",
         "sources": [
-          { "title": "SCMP: Why turning 35 feels like a career death sentence for some Chinese tech workers", "url": "https://www.scmp.com/tech/article/3308921/why-turning-35-feels-career-death-sentence-some-chinese-tech-workers", "year": 2025 },
-          { "title": "Slashdot (FT): China's Ageing Tech Workers Hit By 'Curse of 35'", "url": "https://slashdot.org/story/24/04/23/154206/chinas-ageing-tech-workers-hit-by-curse-of-35", "year": 2024 },
-          { "title": "RFA: The 'Curse of 35' in China", "url": "https://www.rfa.org/english/news/china/china-ageism-07052023161538.html", "year": 2023 }
+          {
+            "title": "SCMP: Why turning 35 feels like a career death sentence for some Chinese tech workers",
+            "url": "https://www.scmp.com/tech/article/3308921/why-turning-35-feels-career-death-sentence-some-chinese-tech-workers",
+            "year": 2025
+          },
+          {
+            "title": "Slashdot (FT): China's Ageing Tech Workers Hit By 'Curse of 35'",
+            "url": "https://slashdot.org/story/24/04/23/154206/chinas-ageing-tech-workers-hit-by-curse-of-35",
+            "year": 2024
+          },
+          {
+            "title": "RFA: The 'Curse of 35' in China",
+            "url": "https://www.rfa.org/english/news/china/china-ageism-07052023161538.html",
+            "year": 2023
+          }
         ]
       },
       {
         "id": "cn-work-4",
-        "text": "内卷 (involution) への反動として、躺平 (lying flat) や、高給職を離れて 1065 勤務を選ぶ動き、润学 (国外脱出) が語られている。大手テック企業の人員削減を受けて、新卒の公務員志向も強まっている。",
+        "text": "内卷 (involution) への反動として、躺平 (lying flat)、高給職を離れて 1065 勤務を選ぶ動き、润学 (国外脱出) が報じられている。大手テック企業の人員削減を受けて、新卒の公務員志向も強まっているという。",
         "confidence": "medium",
         "sources": [
-          { "title": "Dissent: Tech Workers Lie Flat", "url": "https://dissentmagazine.org/article/tech-workers-lie-flat/" },
-          { "title": "Taipei Times: What is 'neijuan,' and why is China worried about it?", "url": "https://www.taipeitimes.com/News/feat/archives/2024/12/25/2003829068", "year": 2024 },
-          { "title": "Caixin Global: China's Tech Giants Spook a Generation of Workers With Job Cuts", "url": "https://www.caixinglobal.com/2025-08-01/chinas-tech-giants-spook-a-generation-of-workers-with-job-cuts-102347727.html", "year": 2025 }
+          {
+            "title": "Dissent: Tech Workers Lie Flat",
+            "url": "https://dissentmagazine.org/article/tech-workers-lie-flat/"
+          },
+          {
+            "title": "Taipei Times: What is 'neijuan,' and why is China worried about it?",
+            "url": "https://www.taipeitimes.com/News/feat/archives/2024/12/25/2003829068",
+            "year": 2024
+          },
+          {
+            "title": "Caixin Global: China's Tech Giants Spook a Generation of Workers With Job Cuts",
+            "url": "https://www.caixinglobal.com/2025-08-01/chinas-tech-giants-spook-a-generation-of-workers-with-job-cuts-102347727.html",
+            "year": 2025
+          }
         ]
       }
     ],
     "oss": [
       {
         "id": "cn-oss-1",
-        "text": "OSS Compass の推計では、中国のアクティブな OSS 開発者は 220 万人超で世界最大 (インドは約 200 万人)。GitHub のアカウント数だけで見ると、中国は過小評価される。",
+        "text": "OSS Compass の推計では、中国のアクティブな OSS 開発者は 220 万人超で世界最多だった（インドは約 200 万人）。",
         "confidence": "medium",
-        "sources": [{ "title": "SCMP: China tops India, US and EU with growing pool of open-source developers", "url": "https://www.scmp.com/tech/article/3319280/china-tops-india-us-and-eu-growing-pool-open-source-developers-experts-say", "year": 2025 }]
+        "sources": [
+          {
+            "title": "SCMP: China tops India, US and EU with growing pool of open-source developers",
+            "url": "https://www.scmp.com/tech/article/3319280/china-tops-india-us-and-eu-growing-pool-open-source-developers-experts-say",
+            "year": 2025
+          }
+        ]
       },
       {
         "id": "cn-oss-2",
-        "text": "Gitee は 2020 年に MIIT から国産 OSS ホスティング基盤に選ばれた。2022 年 5 月に公開コードを事前審査制にして大量のリポジトリをロックし、CUHK の研究ではその後コミットが急減した。",
+        "text": "2020 年、MIIT は Gitee が率いる企業・大学のコンソーシアムに、国産 OSS ホスティング基盤の整備を委託した。2022 年 5 月、Gitee は公開コードを事前審査制にし、多数のリポジトリを予告なく非公開にした。",
         "confidence": "strong",
         "sources": [
-          { "title": "MIT Technology Review: How censoring China's open-source coders might backfire", "url": "https://www.technologyreview.com/2022/05/30/1052879/censoring-china-open-source-backfire/", "year": 2022 },
-          { "title": "The Register: Gitee code review", "url": "https://www.theregister.com/2022/05/20/gitee_code_review/", "year": 2022 },
-          { "title": "CUHK: The Impact of Regulation on Open Source Development: Evidence from Gitee", "url": "https://cssl.socsc.cuhk.edu.hk/2025/05/02/the-impact-of-regulation-on-open-source-development-evidence-from-gitee/", "year": 2025 }
+          {
+            "title": "MIT Technology Review: How censoring China's open-source coders might backfire",
+            "url": "https://www.technologyreview.com/2022/05/30/1052879/censoring-china-open-source-backfire/",
+            "year": 2022
+          },
+          {
+            "title": "The Register: Gitee code review",
+            "url": "https://www.theregister.com/2022/05/20/gitee_code_review/",
+            "year": 2022
+          }
         ]
       },
       {
         "id": "cn-oss-3",
-        "text": "ASF の incubating プロジェクト 28 件のうち 10 件が中国企業発。TiDB (PingCAP、2015 年北京創業) は GitHub スター約 4 万、コントリビュータ 1,200 人超。",
-        "confidence": "medium",
+        "text": "CUHK の研究によると、Gitee が公開コードの事前審査制を導入した後、同プラットフォームでのコミットは急減した。",
+        "confidence": "strong",
         "sources": [
-          { "title": "The Stack: Why China is forging closer ties with open-source foundations", "url": "https://www.thestack.technology/why-china-is-forging-closer-ties-with-open-source-foundations/" },
-          { "title": "The Stack: Introducing 6 new Top Level open source ASF projects", "url": "https://www.thestack.technology/new-top-level-asf-projects-open-source-chinese/", "year": 2023 },
-          { "title": "GitHub: pingcap/tidb", "url": "https://github.com/pingcap/tidb" }
+          {
+            "title": "CUHK: The Impact of Regulation on Open Source Development: Evidence from Gitee",
+            "url": "https://cssl.socsc.cuhk.edu.hk/2025/05/02/the-impact-of-regulation-on-open-source-development-evidence-from-gitee/",
+            "year": 2025
+          }
         ]
       },
       {
         "id": "cn-oss-4",
-        "text": "OpenHarmony は Huawei が 2020〜21 年に OpenAtom 財団へ寄贈したコードが元になっている。2025 年 1 月時点でエコシステムパートナーは 401 社だが、主要コントリビュータは Huawei 系に偏っている。",
+        "text": "ASF でインキュベーション中のプロジェクト 28 件のうち 10 件が中国企業発だった。TiDB (PingCAP、2015 年北京創業) は GitHub スター約 4 万、コントリビュータ 1,200 人超を持つ。",
         "confidence": "medium",
         "sources": [
-          { "title": "Wikipedia: OpenAtom Foundation", "url": "https://en.wikipedia.org/wiki/OpenAtom_Foundation" },
-          { "title": "OpenHarmony Community: ecosystem partners grown to 401", "url": "https://www.harmony-developers.com/p/openharmony-community-as-of-january", "year": 2025 }
+          {
+            "title": "The Stack: Why China is forging closer ties with open-source foundations",
+            "url": "https://www.thestack.technology/why-china-is-forging-closer-ties-with-open-source-foundations/"
+          },
+          {
+            "title": "The Stack: Introducing 6 new Top Level open source ASF projects",
+            "url": "https://www.thestack.technology/new-top-level-asf-projects-open-source-chinese/",
+            "year": 2023
+          },
+          {
+            "title": "GitHub: pingcap/tidb",
+            "url": "https://github.com/pingcap/tidb"
+          }
+        ]
+      },
+      {
+        "id": "cn-oss-5",
+        "text": "OpenHarmony は、Huawei が 2020〜21 年に OpenAtom 財団へ寄贈したコードが元になっている。2025 年 1 月時点でエコシステムパートナーは 401 社だが、主要コントリビュータは Huawei 系に偏っている。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Wikipedia: OpenAtom Foundation",
+            "url": "https://en.wikipedia.org/wiki/OpenAtom_Foundation"
+          },
+          {
+            "title": "OpenHarmony Community: ecosystem partners grown to 401",
+            "url": "https://www.harmony-developers.com/p/openharmony-community-as-of-january",
+            "year": 2025
+          }
         ]
       }
     ]
   },
   "variance": [
     "速度重視のインターネット企業と、IBM の IPD を徹底した Huawei のようなプロセス重視の大企業が共存している。",
-    "大小周の廃止で残業代が消えて減収になり、ByteDance 社員の約 30% は長時間労働の継続を望んだ。働き方への態度は一枚岩ではない。",
-    "英語力は全国平均では低いが、北京・上海は大きく上回る。都市間の差が大きい。",
-    "開発者数は数え方で順位が変わる。GitHub だけで見ると、Gitee や AtomGit など国内プラットフォーム上の活動が抜け落ちる。",
-    "2023 年の大規模障害の後に問責・処分があったかは、公開情報では確認できなかった。"
+    "大小周の廃止で残業代がなくなり減収になったため、ByteDance 社員の約 30% は長時間労働の継続を望んだ。働き方への態度は一枚岩ではない。",
+    "英語力は全国平均では低いが、北京・上海は全国値を大きく上回り、都市間の差が大きい。",
+    "開発者数は数え方で順位が変わる。GitHub のアカウント数だけで見ると、Gitee や AtomGit など国内プラットフォーム上の活動が抜け落ち、中国は過小評価される。",
+    "2023 年の大規模障害の後に問責・処分があったかは、公開情報では確認できなかった。",
+    "2023 年の Alibaba Cloud や Didi の障害は個別の事例で、そこから国全体の品質の傾向は一般化できない。"
   ]
 }
