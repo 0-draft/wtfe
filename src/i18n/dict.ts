@@ -1,0 +1,94 @@
+import type { Confidence, ThemeId } from "../data/schema.ts";
+import type { Lang } from "./ui.ts";
+
+const en = {
+  "site.title": "wtfe",
+  "site.expansion": "Ways They Frame Engineering",
+  "site.desc":
+    "How software engineers in different countries tend to think and work — every claim sourced and rated for confidence.",
+  "nav.skip": "Skip to content",
+  "nav.countries": "Countries",
+  "nav.themes": "Themes",
+  "nav.method": "Method",
+  "nav.lang": "日本語",
+  "nav.langLabel": "Switch to Japanese",
+  "home.lead":
+    "Fourteen countries and regions, seven themes, one rule: every statement points to a public source and says how strong that source is.",
+  "home.caveat":
+    "These are tendencies, not traits. Most of the variation in cultural values lies within countries, not between them.",
+  "home.countries": "Countries",
+  "home.themes": "Themes",
+  "home.claims": (n: number) => `${n} claims`,
+  "country.intro": "About this page",
+  "country.variance": "Within-country variance and counter-evidence",
+  "country.hofstede": "Hofstede dimensions",
+  "country.cultureMap": "Culture Map positions",
+  "country.untranslated": "This page has not been translated yet; showing the Japanese original.",
+  "theme.lead": (theme: string) => `${theme}: what the sources say, country by country.`,
+  sources: "Sources",
+  "confidence.label": "Confidence",
+  "method.title": "Method",
+  "foot.license": "Content CC BY 4.0 · Code MIT",
+  "foot.repo": "Source and corrections on GitHub",
+} as const;
+
+type Dict = { [K in keyof typeof en]: (typeof en)[K] extends (...a: infer A) => string ? (...a: A) => string : string };
+
+const ja: Dict = {
+  "site.title": "wtfe",
+  "site.expansion": "Ways They Frame Engineering",
+  "site.desc":
+    "世界各国のソフトウェアエンジニアがどう考え、どう働く傾向にあるか。すべての記述に出典と信頼度を付けています。",
+  "nav.skip": "本文へ移動",
+  "nav.countries": "国",
+  "nav.themes": "テーマ",
+  "nav.method": "読み方",
+  "nav.lang": "English",
+  "nav.langLabel": "英語に切り替える",
+  "home.lead":
+    "14 の国と地域、7 つのテーマ。どの記述にも公開された出典があり、その出典がどれだけ確かかを示しています。",
+  "home.caveat":
+    "ここにあるのは傾向で、その国の人の性質ではありません。文化的価値のばらつきの大半は、国と国の間ではなく国の内部にあります。",
+  "home.countries": "国と地域",
+  "home.themes": "テーマ",
+  "home.claims": (n: number) => `${n} 件の記述`,
+  "country.intro": "このページについて",
+  "country.variance": "国内のばらつきと反証",
+  "country.hofstede": "Hofstede の 6 次元",
+  "country.cultureMap": "Culture Map 上の位置",
+  "country.untranslated": "このページはまだ翻訳されていません。日本語の原文を表示しています。",
+  "theme.lead": (theme: string) => `${theme}について、各国の出典が示していること。`,
+  sources: "出典",
+  "confidence.label": "信頼度",
+  "method.title": "読み方",
+  "foot.license": "コンテンツ CC BY 4.0 · コード MIT",
+  "foot.repo": "ソースと訂正は GitHub へ",
+};
+
+export const dict: Record<Lang, Dict> = { en: en as unknown as Dict, ja };
+
+export const themeNames: Record<Lang, Record<ThemeId, string>> = {
+  en: {
+    design: "Design & quality",
+    failure: "Failure & risk",
+    feedback: "Feedback & code review",
+    hierarchy: "Hierarchy & decisions",
+    communication: "Communication & docs",
+    work: "Work & careers",
+    oss: "Open source & community",
+  },
+  ja: {
+    design: "設計と品質",
+    failure: "失敗とリスク",
+    feedback: "フィードバックとコードレビュー",
+    hierarchy: "階層と意思決定",
+    communication: "コミュニケーションとドキュメント",
+    work: "働き方とキャリア",
+    oss: "OSS とコミュニティ",
+  },
+};
+
+export const confidenceNames: Record<Lang, Record<Confidence, string>> = {
+  en: { strong: "Strong", medium: "Medium", weak: "Weak" },
+  ja: { strong: "強", medium: "中", weak: "弱" },
+};

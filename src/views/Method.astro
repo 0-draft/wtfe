@@ -1,0 +1,98 @@
+---
+import { dict } from "../i18n/dict.ts";
+import type { Lang } from "../i18n/ui.ts";
+import Base from "../layouts/Base.astro";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = dict[lang];
+---
+
+<Base lang={lang} title={t["method.title"]}>
+  <article class="prose">
+    <h1>{t["method.title"]}</h1>
+    {
+      lang === "en" ? (
+        <>
+          <p>
+            Each country page collects findings from public sources: national statistics, large surveys, primary
+            documents, peer-reviewed studies, and engineering blogs. Every finding carries one or more sources and a
+            confidence level.
+          </p>
+          <h2>Confidence</h2>
+          <ul>
+            <li><strong>Strong</strong>: official statistics, large surveys, primary documents, quantitative studies.</li>
+            <li><strong>Medium</strong>: several qualitative sources, a single reputable report, or a framework such as Erin Meyer's Culture Map.</li>
+            <li><strong>Weak</strong>: blogs, forums, vendor material or a single anecdote, kept only when nothing better exists.</li>
+          </ul>
+          <h2>How not to read this site</h2>
+          <ul>
+            <li>
+              About 80% of the variance in cultural values lies within countries (
+              <a href="https://link.springer.com/article/10.1007/s11575-016-0283-x">Taras, Steel &amp; Kirkman 2016</a>
+              ). A country average does not predict an individual.
+            </li>
+            <li>
+              Applying country scores to individuals is the ecological fallacy (
+              <a href="https://journals.sagepub.com/doi/10.1177/0170840613517602">Brewer &amp; Venaik 2014</a>).
+            </li>
+            <li>
+              Team and company culture often dominate: Japanese and German agile teams did not match their national
+              profiles (<a href="https://arxiv.org/abs/2404.17009">Neumann et al. 2024</a>).
+            </li>
+            <li>
+              Positions are relative. Younger cohorts are more individualist with lower power distance, but countries
+              keep their relative order (<a href="https://sms.onlinelibrary.wiley.com/doi/abs/10.1002/gsj.1098">Beugelsdijk et al. 2015</a>).
+            </li>
+          </ul>
+          <h2>Scores</h2>
+          <p>
+            Hofstede scores are The Culture Factor's current values, revised around 2023; older tables differ (for
+            example Japan's individualism moved from 46 to 62). Culture Map positions are read off Erin Meyer's charts
+            on a coarse seven-step grid, because the book publishes no numbers.
+          </p>
+        </>
+      ) : (
+        <>
+          <p>
+            各国のページには、公開された出典から集めた知見を載せています。出典は国の統計、大規模調査、一次資料、査読論文、エンジニアのブログなどです。どの記述にも
+            1 件以上の出典と信頼度が付いています。
+          </p>
+          <h2>信頼度</h2>
+          <ul>
+            <li><strong>強</strong>: 公的統計、大規模調査、一次資料、定量研究。</li>
+            <li><strong>中</strong>: 複数の定性的な資料、信頼できる単独のレポート、Erin Meyer の Culture Map のような枠組み。</li>
+            <li><strong>弱</strong>: ブログ、掲示板、ベンダー資料、単独の逸話。ほかに根拠がない場合に限って載せています。</li>
+          </ul>
+          <h2>このサイトの読み方</h2>
+          <ul>
+            <li>
+              文化的価値のばらつきの約 8 割は国の内部にあります（
+              <a href="https://link.springer.com/article/10.1007/s11575-016-0283-x">Taras, Steel &amp; Kirkman 2016</a>
+              ）。国の平均から個人は予測できません。
+            </li>
+            <li>
+              国のスコアを個人に当てはめるのは生態学的誤謬です（
+              <a href="https://journals.sagepub.com/doi/10.1177/0170840613517602">Brewer &amp; Venaik 2014</a>）。
+            </li>
+            <li>
+              チームや会社の文化のほうが強く出ることがよくあります。日本とドイツのアジャイルチームは、国の典型像と一致しませんでした（
+              <a href="https://arxiv.org/abs/2404.17009">Neumann ほか 2024</a>）。
+            </li>
+            <li>
+              位置づけは相対的なものです。若い世代ほど個人主義的で権力格差が小さい一方、国同士の順位はほぼ変わっていません（
+              <a href="https://sms.onlinelibrary.wiley.com/doi/abs/10.1002/gsj.1098">Beugelsdijk ほか 2015</a>）。
+            </li>
+          </ul>
+          <h2>スコアについて</h2>
+          <p>
+            Hofstede のスコアは The Culture Factor の現行値で、2023 年ごろに改訂されています。古い表とは値が違います（たとえば日本の個人主義は
+            46 から 62 に変わりました）。Culture Map の位置は Erin Meyer の図から読み取ったもので、書籍に数値が載っていないため粗い 7 段階で示しています。
+          </p>
+        </>
+      )
+    }
+  </article>
+</Base>

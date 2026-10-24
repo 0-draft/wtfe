@@ -1,0 +1,53 @@
+---
+import { THEME_IDS } from "../data/schema.ts";
+import { dict, themeNames } from "../i18n/dict.ts";
+import { type Lang, localePath } from "../i18n/ui.ts";
+import Base from "../layouts/Base.astro";
+import { countries } from "../lib/content.ts";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = dict[lang];
+const list = countries(lang);
+const count = (c: (typeof list)[number]) => THEME_IDS.reduce((n, th) => n + c.themes[th].length, 0);
+---
+
+<Base lang={lang}>
+  <section class="hero">
+    <h1>{t["site.expansion"]}</h1>
+    <p class="lead">{t["home.lead"]}</p>
+    <p class="caveat">{t["home.caveat"]}</p>
+  </section>
+
+  <section id="countries" aria-labelledby="h-countries">
+    <h2 id="h-countries">{t["home.countries"]}</h2>
+    <ul class="country-grid">
+      {
+        list.map((c) => (
+          <li>
+            <a href={localePath(lang, `/countries/${c.id}/`)}>
+              <span class="cg-name">{c.name}</span>
+              <span class="cg-line">{c.oneLiner}</span>
+              <span class="cg-count">{t["home.claims"](count(c))}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section id="themes" aria-labelledby="h-themes">
+    <h2 id="h-themes">{t["home.themes"]}</h2>
+    <ul class="theme-list">
+      {
+        THEME_IDS.map((th) => (
+          <li>
+            <a href={localePath(lang, `/themes/${th}/`)}>{themeNames[lang][th]}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>
