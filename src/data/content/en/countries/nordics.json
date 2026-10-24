@@ -1,0 +1,378 @@
+{
+  "id": "nordics",
+  "name": "The Nordics",
+  "oneLiner": "Low power distance, with working hours and parental leave backed by policy. Directness and decision speed differ by country.",
+  "intro": "This page summarizes tendencies seen in surveys and statistics for four countries: Sweden, Finland, Denmark and Norway. Differences between these countries and between individuals are large, so key points name the country. Working hours and parental leave are backed by official statistics, but much of what is said about engineering culture rests on single companies such as Spotify, Supercell and Nokia.",
+  "themes": {
+    "design": [
+      {
+        "id": "nordics-design-1",
+        "text": "Abrahamsson et al. at VTT, the Technical Research Centre of Finland (2002, VTT Publications 478), wrote an early systematic review comparing agile methods, cited more than 200 times in Scopus. It shows that Finland had an early presence in agile research.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "VTT — Agile software development methods: Review and analysis",
+            "url": "https://cris.vtt.fi/en/publications/agile-software-development-methods-review-and-analysis",
+            "year": 2002
+          }
+        ]
+      },
+      {
+        "id": "nordics-design-2",
+        "text": "In its 2014 culture write-up, Spotify promoted small, frequent releases and being \"loosely coupled, tightly aligned,\" and made Scrum practices optional. The company itself said this was a journey in progress, not a finished model.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Spotify engineering culture (part 1)",
+            "url": "https://engineering.atspotify.com/2014/03/spotify-engineering-culture-part-1",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "nordics-design-3",
+        "text": "At Supercell (Finland), cells of roughly 5 to 15 people own a game's whole life cycle, including the decision to kill it. CEO Ilkka Paananen said at Slush 2024 that there is no management greenlight meeting.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "PocketGamer.biz — Slush 2024 transcript: Ilkka Paananen",
+            "url": "https://www.pocketgamer.biz/full-slush-2024-transcript-supercell-ceo-ilkka-paananen-on-the-clash-of-clans-developers-evolving-culture/",
+            "year": 2024
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "nordics-failure-1",
+        "text": "In Kniberg's 2014 video, Spotify called itself fail-friendly and valued fast recovery over failure avoidance. Postmortems dealt with what happened and what to change rather than who was to blame, and systems were designed to keep the blast radius small.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Spotify Engineering Culture (Henrik Kniberg, video)",
+            "url": "https://www.youtube.com/watch?v=4GK1NDTWbkY",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "nordics-failure-2",
+        "text": "Supercell celebrates the lessons from killed games with champagne. Paananen described the practice in his 2016 BAFTA lecture and said at Slush 2024 that it continues.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Daniel Scrivner — Ilkka Paananen BAFTA lecture",
+            "url": "https://www.danielscrivner.com/supercell-founder-ilkka-paananen-game-design-lecture-at-bafta/",
+            "year": 2016
+          },
+          {
+            "title": "PocketGamer.biz — Slush 2024 transcript: Ilkka Paananen",
+            "url": "https://www.pocketgamer.biz/full-slush-2024-transcript-supercell-ceo-ilkka-paananen-on-the-clash-of-clans-developers-evolving-culture/",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "nordics-failure-3",
+        "text": "Vuori and Huy (Administrative Science Quarterly, 2016) attribute part of Nokia's loss in the smartphone race to fear inside the organization. Middle managers, afraid of top management and peers, held back bad news, and top managers overestimated the company's technical capabilities.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Vuori & Huy — Distributed Attention and Shared Emotions in the Innovation Process: How Nokia Lost the Smartphone Battle",
+            "url": "https://www.researchgate.net/publication/281965483_Distributed_Attention_and_Shared_Emotions_in_the_Innovation_Process_How_Nokia_Lost_the_Smartphone_Battle",
+            "year": 2016
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "nordics-feedback-1",
+        "text": "On her Evaluating scale, Erin Meyer lists Denmark, alongside the Netherlands and Germany, as an example of a country that gives negative feedback directly.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Welcome to the Jungle — The 8 keys for managing multicultural teams (Erin Meyer)",
+            "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams"
+          }
+        ]
+      },
+      {
+        "id": "nordics-feedback-2",
+        "text": "Carbaugh et al. (Journal of Language and Social Psychology, 2006) describe a Finnish cultural code in which silence and quietude (hiljaisuus) are a positive, natural way of being. Read this way, saying little in a review does not signal agreement.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Carbaugh et al. — Silence and Quietude as a Finnish \"Natural Way of Being\"",
+            "url": "https://works.bepress.com/donal_carbaugh/7/",
+            "year": 2006
+          }
+        ]
+      },
+      {
+        "id": "nordics-feedback-3",
+        "text": "Berry (2011, CercleS) argues that the image of the silent Finn is partly a myth.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Berry — Finnish silence: myth or reality (CercleS)",
+            "url": "https://www.utu.fi/sites/default/files/media/KieVi/Berry-cercles-2011-0025-1.pdf",
+            "year": 2011
+          }
+        ]
+      },
+      {
+        "id": "nordics-feedback-4",
+        "text": "Lämsä (2010), citing Ekwall and Karlsson (1999), reports that Swedish organizations have been described as avoiding conflict and putting consensus first.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Lämsä — Leadership Styles and Decision-making in Finnish and Swedish Organizations",
+            "url": "https://www.rmci.ase.ro/no11vol1/Vol11_No1_Article13.pdf",
+            "year": 2010
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "nordics-hierarchy-1",
+        "text": "Hofstede's power distance (PDI) is low in all four countries, lowest in Denmark at 18. Meyer also cites Denmark and Sweden as examples of egalitarian cultures on her Leading scale.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=denmark%2Cfinland%2Cnetherlands%2Cnorway%2Csweden",
+            "year": 2026
+          },
+          {
+            "title": "Welcome to the Jungle — The 8 keys for managing multicultural teams (Erin Meyer)",
+            "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams"
+          }
+        ]
+      },
+      {
+        "id": "nordics-hierarchy-2",
+        "text": "Lämsä (Review of International Comparative Management, 2010) contrasts the fast, authoritarian Finnish management style, \"Management by perkele,\" with the slower, consensus-seeking Swedish \"Management by ack herreguuden.\"",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Lämsä — Leadership Styles and Decision-making in Finnish and Swedish Organizations",
+            "url": "https://www.rmci.ase.ro/no11vol1/Vol11_No1_Article13.pdf",
+            "year": 2010
+          }
+        ]
+      },
+      {
+        "id": "nordics-hierarchy-3",
+        "text": "Sweden has a practice called förankring: building agreement through informal groundwork before a decision is made. It is often said to slow decisions down but reduce resistance during implementation.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "John Alexander — Consensus: The Hidden Codes of Swedish Leadership",
+            "url": "https://johnalexandersweden.com/pdf/CONSENSUS.pdf"
+          }
+        ]
+      },
+      {
+        "id": "nordics-hierarchy-4",
+        "text": "Former Spotify PM Jeremiah Lee (2020) wrote that the squad model was an aspiration never fully implemented inside Spotify, and that no single person was accountable for engineering delivery. Former agile coach Joakim Sundén called it \"part ambition, part approximation.\"",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Jeremiah Lee — Spotify's Failed #SquadGoals",
+            "url": "https://www.jeremiahlee.com/posts/failed-squad-goals/",
+            "year": 2020
+          }
+        ]
+      },
+      {
+        "id": "nordics-hierarchy-5",
+        "text": "The Law of Jante (Sandemose, 1933) is treated as a symbol of Nordic egalitarianism, while some commentators argue that it holds back entrepreneurship.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "The Next Web — Behind every successful Scandinavian startup is a jealous and unsupportive community",
+            "url": "https://thenextweb.com/news/1110732"
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "nordics-communication-1",
+        "text": "A study guide to The Culture Map describes Finland as a low-context (explicit) culture, though less so than the United States.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Mindli — The Culture Map study guide",
+            "url": "https://mind.li/explore/37057-the-culture-map-by-erin-meyer-study-analysis-guide"
+          }
+        ]
+      },
+      {
+        "id": "nordics-communication-2",
+        "text": "Poutiainen (Wiley encyclopedia, 2017) identifies three modes of Finnish communication: silence, a matter-of-fact asiallinen style that sticks to the business at hand, and talk about what it means to be Finnish.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Poutiainen — Communication Modes, Finnish (Wiley)",
+            "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118783665.ieicc0132",
+            "year": 2017
+          }
+        ]
+      },
+      {
+        "id": "nordics-communication-3",
+        "text": "According to a summary of The Culture Map, Swedish consensus building relies on meetings and informal groundwork, and foreign managers can be puzzled by how much back-and-forth precedes a decision.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "LinkedIn — The Culture Map by Erin Meyer (summary)",
+            "url": "https://www.linkedin.com/pulse/culture-map-erin-meyer-8-minute-read-lars-christensen?trk=public_profile_article_view"
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "nordics-work-1",
+        "text": "Eurostat reports that actual weekly hours in the main job in Denmark were 33.9 in 2024, below the EU average of 36.0. Among men in full-time work in 2025, Finland and the Netherlands had the shortest weeks at 38.4 hours, followed by Sweden at 38.5.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Eurostat — People in the EU worked on average 36 hours per week",
+            "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250514-1",
+            "year": 2025
+          },
+          {
+            "title": "Eurostat — Actual and usual hours of work",
+            "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Actual_and_usual_hours_of_work",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "nordics-work-2",
+        "text": "Swedish parental leave totals 480 days, with 90 days reserved for each parent. Norway offers 49 weeks at full pay with a 15-week father's quota, and Finland's 2022 reform gives each parent 160 days.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Nordic Council of Ministers — Parental leave in Finland (TemaNord 2025:547)",
+            "url": "https://pub.norden.org/temanord2025-547/parental-leave-in-finland.html",
+            "year": 2025
+          },
+          {
+            "title": "Nordic Labour Journal — Work and wage levels are obstacles to fathers' leave",
+            "url": "https://www.nordiclabourjournal.org/work-and-wage-levels-are-obstacles-to-fathers-leave/"
+          }
+        ]
+      },
+      {
+        "id": "nordics-work-3",
+        "text": "A secondary site that aggregates Eurostat's lfsa_ehomp data puts the share of employed people in Finland who usually work from home at 21.1% in 2025.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Apiar Data — Finland usually works from home rate",
+            "url": "https://apiardata.com/statistics/fi-usually-works-from-home-rate/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "nordics-work-4",
+        "text": "Danish flexicurity combines easy dismissal with generous unemployment benefits and active labor market policy, protecting employment rather than any particular job. The IMF (2006) noted a side effect: generous benefits can push up structural unemployment.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "denmark.dk — The Danish labour market",
+            "url": "https://denmark.dk/society-and-business/the-danish-labour-market/"
+          },
+          {
+            "title": "IMF Survey — Danish Flexicurity Model Holds Lessons for Rest of Europe",
+            "url": "https://www.elibrary.imf.org/view/journals/023/0035/020/article-A009-en.xml?rskey=aDCGFc&result=5",
+            "year": 2006
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "nordics-oss-1",
+        "text": "Linux began on 1991-08-25, when Linus Torvalds, then a student at the University of Helsinki, posted to comp.os.minix that it was \"just a hobby, won't be big and professional like gnu.\"",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Wikipedia — Linux kernel",
+            "url": "https://en.wikipedia.org/wiki/Linux_kernel"
+          }
+        ]
+      },
+      {
+        "id": "nordics-oss-2",
+        "text": "MySQL AB was a Swedish company founded in 1995, with one of its headquarters in Uppsala. Co-founder and main MySQL author Michael Widenius is Finnish, born in Helsinki. Sun bought the company in 2008 for about $1 billion, and MariaDB later forked from MySQL.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Wikipedia — MySQL AB",
+            "url": "https://en.wikipedia.org/wiki/MySQL_AB"
+          },
+          {
+            "title": "Wikipedia — Michael Widenius",
+            "url": "https://en.wikipedia.org/wiki/Michael_Widenius"
+          }
+        ]
+      },
+      {
+        "id": "nordics-oss-3",
+        "text": "Erlang was created at Ericsson in 1986. According to Armstrong (HOPL III, 2007), Ericsson Radio's 1998 ban on using it in new products led to its open-source release on December 2 of that year.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Armstrong — A History of Erlang (HOPL III)",
+            "url": "https://lfe.io/papers/[2007]%20Armstrong%20-%20HOPL%20III%20A%20History%20of%20Erlang.pdf",
+            "year": 2007
+          }
+        ]
+      },
+      {
+        "id": "nordics-oss-4",
+        "text": "Norwegians Ole-Johan Dahl and Kristen Nygaard laid the foundations of object orientation with Simula and received the Turing Award in 2001. Qt came out of Norway's Trolltech (founded 1994), and today's Qt Group is headquartered in Espoo, Finland.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "ACM — Kristen Nygaard, A.M. Turing Award",
+            "url": "https://awards.acm.org/award_winners/nygaard_5916220",
+            "year": 2001
+          },
+          {
+            "title": "Wikipedia — Qt (software)",
+            "url": "https://en.wikipedia.org/wiki/Qt_(software)"
+          }
+        ]
+      },
+      {
+        "id": "nordics-oss-5",
+        "text": "David Heinemeier Hansson, the creator of Ruby on Rails, is Danish. Rails was released in 2004.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Wikipedia — David Heinemeier Hansson",
+            "url": "https://en.wikipedia.org/wiki/David_Heinemeier_Hansson"
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "Differences within the region are large. Hofstede's uncertainty avoidance (UAI) is 23 in Denmark and 29 in Sweden but 50 in Norway and 59 in Finland, so \"the Nordics are risk-tolerant\" does not hold across the board. In decision-making, Finland's fast, authoritarian style is contrasted with Swedish consensus seeking (Lämsä 2010).",
+    "No country-level comparative data was found to support \"Nordic engineers are quality-minded.\" What is said about design and quality relies on single companies such as Spotify and Supercell.",
+    "Spotify itself never fully implemented the Spotify model, so reading it as typically Nordic is risky (Jeremiah Lee 2020).",
+    "The Nokia case (Vuori & Huy 2016) shows that even in a culture described as egalitarian, fear can stop bad news from reaching the top of a large company. Some critics say the authors' assumptions steered the conclusion.",
+    "No primary Meyer source was found for the view that Sweden is less direct than Denmark. Finland's and Norway's positions on the Culture Map could not be confirmed from summary sites either.",
+    "No study was found that quantifies how much förankring slows decisions, or that tests the effect of the Law of Jante on entrepreneurship. The evidence is mostly commentary and interviews.",
+    "Denmark introduced a father's leave quota in 2022, but sources disagree on its length: 8, 9 or 11 weeks.",
+    "DHH's Rails and Basecamp's views on work came out of a US company and are hard to read as products of Danish development culture."
+  ]
+}
