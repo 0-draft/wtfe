@@ -1,0 +1,25 @@
+name: Source links
+
+# Every claim on the site cites an external source. Publishers move or delete pages,
+# so check the cited URLs weekly instead of on every push (external hosts are flaky).
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lychee:
+    name: Check cited source URLs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          # Paywalled and bot-hostile publishers answer 403/429 to CI runners; those are not dead links.
+          args: --no-progress --accept 200..=299,403,429 --max-concurrency 4 --timeout 30 'src/data/content/**/*.json' 'research/**/*.md'
+          fail: true
