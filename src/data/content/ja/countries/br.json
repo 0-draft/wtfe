@@ -1,13 +1,13 @@
 {
   "id": "br",
   "name": "ブラジル",
-  "oneLiner": "階層的で関係重視、フィードバックは柔らかい一方、OSS 人口は急拡大し Lua と Elixir を生んだ。",
-  "intro": "ブラジルのソフトウェア業界にみられる傾向を、調査・研究・業界団体の統計からまとめたページです。ここに書かれているのは国全体や業界の傾向であり、個々のエンジニアがどう考え、どう働くかを決めつけるものではありません。スタートアップと伝統的な大企業・政府系とでは文化がかなり違います。",
+  "oneLiner": "Lua と Elixir を生み、GitHub の開発者数は世界 4 位。関係重視の職場文化が報告されている。",
+  "intro": "ブラジルのソフトウェア業界について、調査・研究・業界団体の統計で報告されている傾向をまとめたページです。国内の差は大きく、スタートアップや多国籍企業と、家族経営や政府系の組織とでは働き方がかなり違います。OSS や人材市場には GitHub や Brasscom の定量データがある一方、フィードバックや階層についての記述は研修会社の観察が中心です。",
   "themes": {
     "design": [
       {
         "id": "br-design-1",
-        "text": "Lua は 1993 年に PUC-Rio の Tecgraf で、Petrobras 向けの業務から生まれた。1977〜92 年の「市場留保」政策で輸入ソフトが高価で入手しにくかったことが、自前で言語を作る背景になった。",
+        "text": "Lua は 1993 年、PUC-Rio の Tecgraf で Petrobras 向けの業務から生まれた。開発者たちは、1977〜92 年の「市場留保」政策で輸入ソフトが高く入手しにくかったことを、自前で言語を作った背景に挙げている。",
         "confidence": "strong",
         "sources": [
           {
@@ -19,7 +19,7 @@
       },
       {
         "id": "br-design-2",
-        "text": "ブラジルのアジャイル導入は、世界的にはトップダウンが多いのに対し、開発者やチームリーダーが主導するボトムアップ型だったという調査がある（2013 年頃のデータ）。",
+        "text": "2013 年頃のデータを扱った調査では、ブラジルのアジャイル導入は開発者やチームリーダーが主導するボトムアップ型が多かった。トップダウン型が多い世界の傾向とは異なる。",
         "confidence": "medium",
         "sources": [
           {
@@ -33,19 +33,7 @@
     "failure": [
       {
         "id": "br-failure-1",
-        "text": "Hofstede の不確実性回避（UAI）は 76 と高めだが、エンジニアリング組織での失敗やポストモーテムの扱いを直接扱った研究は見つからなかった。",
-        "confidence": "weak",
-        "sources": [
-          {
-            "title": "The Culture Factor — Country comparison tool",
-            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=brazil",
-            "year": 2026
-          }
-        ]
-      },
-      {
-        "id": "br-failure-2",
-        "text": "Nubank は 2020 年 1 月に Plataformatec（Elixir の母体）を、同年 7 月に Cognitect（Clojure/Datomic）を買収した。買収時点で約 600 人の Clojure 開発者が 500 のマイクロサービスを運用していた。",
+        "text": "Nubank は 2020 年 1 月に Plataformatec（Elixir の母体）を、同年 7 月に Cognitect（Clojure/Datomic）を買収し、自社の技術基盤を担う企業を取り込んだ。Cognitect によれば、当時 Nubank では 600 人の Clojure 開発者が 500 のマイクロサービスを動かしていた。",
         "confidence": "strong",
         "sources": [
           {
@@ -64,8 +52,8 @@
     "feedback": [
       {
         "id": "br-feedback-1",
-        "text": "否定的なフィードバックは間接的で、温かさで包み、個別に伝える傾向があり、公の場での批判は関係を傷つけやすいとされる。根拠は Meyer の引用と研修会社の観察が中心。",
-        "confidence": "medium",
+        "text": "研修会社 Talaera は Meyer を引きつつ、否定的なフィードバックは温かさで包んで個別に伝える傾向があり、公の場での批判は関係を傷つけやすいと書いている。行動面の記述は著者の観察が中心だ。",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Talaera: Brazilian Work Culture",
@@ -76,7 +64,7 @@
       },
       {
         "id": "br-feedback-2",
-        "text": "Erin Meyer 本人も、ラテンアメリカを否定的フィードバックが「really indirect」な地域の一つとして挙げている。",
+        "text": "Erin Meyer は HR 誌のインタビューで、ラテンアメリカを否定的フィードバックが「really indirect」な地域の一つに挙げている。",
         "confidence": "medium",
         "sources": [
           {
@@ -88,7 +76,7 @@
       },
       {
         "id": "br-feedback-3",
-        "text": "はっきり「No」と言わず、「we can try」や「I'll do my best」が実質的な懸念や拒否のサインになることがあるとされる。",
+        "text": "Talaera は、はっきり「No」と言う代わりに「we can try」や「I'll do my best」が懸念や拒否のサインになることがあるとしている。",
         "confidence": "weak",
         "sources": [
           {
@@ -102,20 +90,8 @@
     "hierarchy": [
       {
         "id": "br-hierarchy-1",
-        "text": "Hofstede の権力格差（PDI）は 69 で、階層的な社会に分類される。",
-        "confidence": "strong",
-        "sources": [
-          {
-            "title": "The Culture Factor — Country comparison tool",
-            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=brazil",
-            "year": 2026
-          }
-        ]
-      },
-      {
-        "id": "br-hierarchy-2",
-        "text": "意思決定はトップダウンで、ジュニアは発言を促されるまで待つ傾向があるとされる。一方で tech スタートアップや多国籍企業はフラットで、家族経営や政府系の組織ほど階層的とされる。",
-        "confidence": "medium",
+        "text": "Talaera は、意思決定はトップダウンで、ジュニアは発言を促されるまで待つ傾向があるとしている。根拠は研修会社としての観察である。",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Talaera: Brazilian Work Culture",
@@ -125,14 +101,19 @@
         ]
       },
       {
-        "id": "br-hierarchy-3",
-        "text": "リオデジャネイロの金融系アジャイル 2 チームを調べた研究（SBQS '24）では、高い権力格差の影響はほとんど見られなかった。ただし小規模な予備的研究である。",
+        "id": "br-hierarchy-2",
+        "text": "Hofstede の権力格差（PDI）は 69 と高い。ただしリオデジャネイロの金融系アジャイル 2 チームを調べた研究（SBQS '24）では、高い権力格差の影響はほとんど見られなかった。小規模な予備的研究である。",
         "confidence": "medium",
         "sources": [
           {
             "title": "Mattos, Dutra & Santos: An Instrument for Assessing Power Distance in Agile Organizations (SBQS '24)",
             "url": "https://dl.acm.org/doi/10.1145/3701625.3701653",
             "year": 2024
+          },
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=brazil",
+            "year": 2026
           }
         ]
       }
@@ -140,8 +121,8 @@
     "communication": [
       {
         "id": "br-communication-1",
-        "text": "Culture Map の Trusting 尺度で、ブラジルは中国やサウジアラビアと同じ関係ベースの側に置かれ、信頼は個人的な関係を通じて築かれるとされる。",
-        "confidence": "medium",
+        "text": "Meyer の Culture Map の要約によれば、ブラジルは信頼を個人的な関係を通じて築く側にあり、中国やサウジアラビアと近い。会議冒頭の雑談も仕事の一部とされる。",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Mindli: The Culture Map study guide",
@@ -151,7 +132,7 @@
       },
       {
         "id": "br-communication-2",
-        "text": "英語で書くときはフォーマル寄りで、非同期の返信は長く温かい傾向があり、音声のみより映像通話が勧められるとされる。",
+        "text": "Talaera は、英語で書くときはフォーマル寄りで、非同期の返信は長く温かくなりやすいとし、音声のみより映像通話を勧めている。",
         "confidence": "weak",
         "sources": [
           {
@@ -165,8 +146,8 @@
     "work": [
       {
         "id": "br-work-1",
-        "text": "PJ（法人としての業務委託契約）は CLT（雇用契約）より 30〜40% 高い報酬で提示されることが多い。ただし PJ と CLT の比率を示す調査値は見つからず、実態が雇用なら裁判で雇用契約と再認定されるリスクもある。",
-        "confidence": "medium",
+        "text": "給与ガイドを出す Talenlio によれば、PJ（法人としての業務委託契約）は CLT（雇用契約）より 30〜40% 高い報酬で提示されることが多い。実態が雇用であれば、裁判で雇用契約と再認定されるリスクがある。",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Talenlio: Brazil Tech Salary Guide 2026 (PJ vs CLT)",
@@ -177,8 +158,8 @@
       },
       {
         "id": "br-work-2",
-        "text": "2026 年の Código Fonte TV 給与調査（回答 17,046 人、自己選択サンプル）では、CLT の平均報酬が前年比 14.4% 増えたのに対し、PJ は 0.7% 増にとどまった。",
-        "confidence": "medium",
+        "text": "2026 年の Código Fonte TV 給与調査（回答 17,046 人、自己選択サンプル）では、CLT の平均報酬が前年比 14.4% 増えたのに対し、PJ は 0.7% 増だった。数値は Talenlio の要約による。",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Talenlio: Brazil Tech Salary Guide 2026 (PJ vs CLT)",
@@ -189,7 +170,7 @@
       },
       {
         "id": "br-work-3",
-        "text": "Brasscom（2021）は 2021〜25 年の ICT 人材需要を 79.7 万人と見積もった。年間の育成は約 5.3 万人で、年約 10.6 万人が不足する計算になる。",
+        "text": "Brasscom（2021）は、2021〜25 年の技術人材の需要を 79.7 万人と見積もった。関連課程の卒業者は年約 5.3 万人で、年約 10.6 万人が不足する計算になる。",
         "confidence": "strong",
         "sources": [
           {
@@ -201,8 +182,8 @@
       },
       {
         "id": "br-work-4",
-        "text": "海外企業でリモートで働くブラジルの開発者の報酬は、現地平均の約 1.84 万ドルから約 5.63 万ドルへと約 3 倍になり、その海外雇用主の 70% が米英の企業である（採用プラットフォームのデータ）。",
-        "confidence": "medium",
+        "text": "採用プラットフォーム Arc.dev のデータでは、海外企業でリモートで働くブラジルの開発者の報酬の中央値は 5.63 万ドルで、国内の 1.84 万ドルの約 3 倍だった。海外雇用主の 70% は米英の企業である。",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Arc.dev: Latin American developers 2.2X their income via global remote work",
@@ -215,7 +196,7 @@
     "oss": [
       {
         "id": "br-oss-1",
-        "text": "Octoverse 2025 でブラジルの開発者は 689 万人で世界 4 位。2020〜25 年に 4 倍以上に増え、OSS のコントリビューター数・貢献量はともに世界 3 位、2030 年には 1,960 万人と予測されている。",
+        "text": "Octoverse 2025 では、ブラジルの GitHub 開発者は 689 万人で世界 4 位だった。2020〜25 年に 4 倍以上に増え、OSS のコントリビューター数は世界 3 位。GitHub は 2030 年に 1,960 万人に達すると予測している。",
         "confidence": "strong",
         "sources": [
           {
@@ -227,9 +208,14 @@
       },
       {
         "id": "br-oss-2",
-        "text": "2024 年の開発者数の伸びは前年比 27% で、その一部は GitHub Education 経由の学生によるものとされる。",
+        "text": "Octoverse 2024 では、ブラジルの開発者は 540 万人超で前年比 27% 増えた。GitHub はこの伸びの一部を学生によるものとしている。",
         "confidence": "strong",
         "sources": [
+          {
+            "title": "GitHub Octoverse 2024",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-2024/",
+            "year": 2024
+          },
           {
             "title": "InfoQ: GitHub Octoverse 2024",
             "url": "https://www.infoq.com/news/2024/11/github-octoverse-2024",
@@ -239,7 +225,7 @@
       },
       {
         "id": "br-oss-3",
-        "text": "Elixir は José Valim（USP 卒、元 Rails Core Team）が 2011 年に作り始め、2012 年からブラジルの Plataformatec が支援した。",
+        "text": "Elixir は José Valim（USP 卒、元 Rails Core Team）が 2011 年に作り始めた言語で、2012 年からブラジルの Plataformatec が開発を支援した。",
         "confidence": "strong",
         "sources": [
           {
@@ -257,8 +243,10 @@
   },
   "variance": [
     "「gambiarra / jeitinho（その場しのぎ）」で開発文化を説明する言説には実証研究が見つからず、ステレオタイプの域を出ない。",
-    "tech スタートアップや多国籍企業はフラットで、家族経営や政府系の組織ほど階層的とされる。",
-    "OSS 人口の急増には学生の参加が含まれており、人数の伸びがそのまま熟練度の伸びを意味するわけではない。",
+    "tech スタートアップや多国籍企業はフラットで、家族経営や政府系の組織ほど階層的だと Talaera は書いている。",
+    "フィードバックやコミュニケーションについての記述の多くは研修会社 Talaera の観察で、定量データではない。",
+    "エンジニアリング組織での失敗やポストモーテムの扱いを直接調べた研究は見つからなかった。Hofstede の不確実性回避（UAI）は 76 と高めだが、それだけで失敗への態度はわからない。",
+    "開発者数の急増には学生の参加が含まれており、人数の伸びがそのまま熟練度の伸びを意味するわけではない。",
     "PJ と CLT の比率、海外企業向けに働く開発者の比率は、信頼できる調査値が見つからなかった。"
   ]
 }

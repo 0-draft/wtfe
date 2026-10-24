@@ -1,13 +1,13 @@
 {
   "id": "ua",
   "name": "ウクライナ",
-  "oneLiner": "権力格差と不確実性回避は極めて高いが、IT は欧米向け受託とリモートが前提。戦時下でも輸出を維持してきた。",
-  "intro": "ウクライナのソフトウェア業界にみられる傾向を、業界団体・開発者コミュニティの調査や報道からまとめたページです。ここに書かれているのは国全体や業界の傾向であり、個々のエンジニアがどう考え、どう働くかを決めつけるものではありません。フィードバックや階層についての資料は受託企業・採用業者の記事が多く、互いに矛盾する点にも注意してください。",
+  "oneLiner": "欧米向けの受託とリモートが中心で、戦時下でも IT サービス輸出を保ってきた。",
+  "intro": "ウクライナのソフトウェア業界について、業界団体・開発者コミュニティの調査や報道で報告されている傾向をまとめたページです。受託企業と製品企業、国内在住者と国外から働く人とで実態は大きく異なります。契約形態や輸出には DOU や中央銀行の数字がある一方、フィードバックや階層についての資料は受託企業・採用業者の記事が多く、互いに矛盾しています。",
   "themes": {
     "design": [
       {
         "id": "ua-design-1",
-        "text": "ICPC 世界大会では、リヴィウ国立大学が 2008 年に、キーウ国立大学（タラス・シェフチェンコ）が 2010 年に、いずれも 4 位で金メダルを獲得している。",
+        "text": "ICPC 世界大会では、リヴィウ国立大学が 2008 年に、キーウ国立大学（タラス・シェフチェンコ）が 2010 年に、いずれも 4 位で金メダルを獲得した。",
         "confidence": "strong",
         "sources": [
           {
@@ -19,7 +19,7 @@
       },
       {
         "id": "ua-design-2",
-        "text": "Hofstede の不確実性回避（UAI）は 95 と極めて高い。受託企業 N-iX（2019）はこれを、詳細な計画と背景説明を求める傾向に結びつけているが、売り手側の記事である。",
+        "text": "Hofstede の不確実性回避（UAI）は 95 と極めて高い。受託企業 N-iX（2019）はこれを、詳細な計画と背景説明を求める傾向に結びつけている。売り手側の記事である。",
         "confidence": "weak",
         "sources": [
           {
@@ -38,14 +38,21 @@
     "failure": [
       {
         "id": "ua-failure-1",
-        "text": "Deloitte と AmCham の 2024 年 9 月の調査では、76% の企業が長時間の停電の影響を受けつつ、88% が停電への備えがあると答え、94% が事業継続計画を持つか策定中だった。IT 企業は発電機や Starlink を備えたコワーキングや、社員の電源確保の補助で対応した。",
+        "text": "Deloitte と AmCham が 2024 年 7〜8 月に会員企業の経営層 139 人に行った調査では、76% が長時間の停電が事業に影響すると答えた。一方で 88% が停電への備えがあり、94% が事業継続計画を持つか策定中だった。",
         "confidence": "medium",
         "sources": [
           {
             "title": "Deloitte Ukraine: Winter resilience strategy survey",
             "url": "https://www.deloitte.com/ua/en/about/press-room/deloitte-acc-winter-resilience-strategy.html",
             "year": 2024
-          },
+          }
+        ]
+      },
+      {
+        "id": "ua-failure-2",
+        "text": "IT 企業は、発電機や Starlink を備えたコワーキングの用意や、社員の電源確保の補助で停電に対応したと報告されている。",
+        "confidence": "weak",
+        "sources": [
           {
             "title": "IT-Dimension: Ukraine IT Industry During Blackouts",
             "url": "https://it-dimension.com/blog/ukraine-it-blackouts/"
@@ -53,8 +60,8 @@
         ]
       },
       {
-        "id": "ua-failure-2",
-        "text": "IT サービス輸出は 2022 年の 73 億ドルをピークに 2024 年は約 64 億ドル（前年比 4.3% 減）まで減ったが、急落ではなかった。2025 年は約 66.6 億ドルと小幅に回復したとされる（Lviv IT Cluster の集計）。",
+        "id": "ua-failure-3",
+        "text": "中央銀行の統計（AIN.UA の報道）では、IT サービス輸出は 2022 年の 73 億ドルをピークに、2024 年は約 64 億ドル（前年比 4.2% 減）まで減った。dev.ua によれば、2025 年は約 66.6 億ドルと小幅に回復した。",
         "confidence": "strong",
         "sources": [
           {
@@ -70,9 +77,9 @@
         ]
       },
       {
-        "id": "ua-failure-3",
-        "text": "DOU の調査（Alcor による引用）では、IT 従事者の 38% が燃え尽きを感じており、従軍中の IT 人材の 30% が雇用主から給与を受け取っている。",
-        "confidence": "medium",
+        "id": "ua-failure-4",
+        "text": "DOU の調査を引く受託企業 Alcor の記事によれば、IT 従事者の 38% が仕事で燃え尽きを感じている。従軍中の IT 人材の 30% は IT 雇用主から支払いを受けている。",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Alcor: IT and Software Outsourcing to Ukraine",
@@ -97,17 +104,12 @@
       },
       {
         "id": "ua-feedback-2",
-        "text": "採用ガイドでも見方が割れており、unicrew（2026）は期待を明示しないと悪い技術判断に強く反論しないとし、employsome（2026）は技術的な反対に抵抗がなくオーナーシップ志向が強いとする。",
+        "text": "採用支援の unicrew（2026）は、期待を明示しないと、悪い技術判断に強く反論しないことがあると書いている。",
         "confidence": "weak",
         "sources": [
           {
             "title": "unicrew: How to Hire Developers in Ukraine (2026 Guide)",
             "url": "https://unicrew.com/blog/hire-developers-in-ukraine/",
-            "year": 2026
-          },
-          {
-            "title": "employsome: Hire Developers in Ukraine",
-            "url": "https://employsome.com/hire/ukraine/hire-developers-in-ukraine/",
             "year": 2026
           }
         ]
@@ -116,40 +118,29 @@
     "hierarchy": [
       {
         "id": "ua-hierarchy-1",
-        "text": "Hofstede の権力格差（PDI）は 92 で、非常に高い水準にある。",
-        "confidence": "strong",
+        "text": "Hofstede の権力格差（PDI）は 92、不確実性回避（UAI）は 95 と、どちらも高い。Edge Executive Services（2024）はこれを、何層にも重なる組織階層やルールの多さと結びつけて説明している。",
+        "confidence": "weak",
         "sources": [
           {
             "title": "The Culture Factor — Country comparison tool",
             "url": "https://www.theculturefactor.com/country-comparison-tool?countries=ukraine",
             "year": 2026
+          },
+          {
+            "title": "Edge Executive Services: Hofstede's Six Dimensions — Ukrainian-Nordic Business Relations",
+            "url": "https://edge-executive-services.medium.com/hofstedes-six-dimensions-a-guide-to-ukrainian-nordic-business-relations-4ccd0cd127d1",
+            "year": 2024
           }
         ]
       },
       {
         "id": "ua-hierarchy-2",
-        "text": "IT 企業は厳格な階層と形式的なコミュニケーションをいち早く捨てたという主張（Jappware）がある一方、形式的な階層は守るという記述（nCube）もあり、受託企業側の資料でも見方が一致しない。",
+        "text": "受託企業 Jappware は、ウクライナの IT 企業は厳格な階層と形式的なコミュニケーションをいち早く捨てたと主張している。",
         "confidence": "weak",
         "sources": [
           {
             "title": "Jappware: 12 Reasons to Hire Ukrainian Software Developers",
             "url": "https://www.jappware.com/insights/12-reasons-to-hire-ukrainian-software-developers-for-it-outsourcing/"
-          },
-          {
-            "title": "nCube: Top 8 Influences on the Ukrainian Work Ethic",
-            "url": "https://ncube.com/top-8-things-that-influence-the-ukrainian-work-ethic"
-          }
-        ]
-      },
-      {
-        "id": "ua-hierarchy-3",
-        "text": "UAI 95 の高さは、何層にも重なる組織階層や多くのルールと結びつけて説明されることがある。",
-        "confidence": "weak",
-        "sources": [
-          {
-            "title": "Edge Executive Services: Hofstede's Six Dimensions — Ukrainian-Nordic Business Relations",
-            "url": "https://edge-executive-services.medium.com/hofstedes-six-dimensions-a-guide-to-ukrainian-nordic-business-relations-4ccd0cd127d1",
-            "year": 2024
           }
         ]
       }
@@ -157,8 +148,8 @@
     "communication": [
       {
         "id": "ua-communication-1",
-        "text": "DOU の調査（Alcor による引用）では IT 従事者の 66% が完全リモートで働いており、海外クライアントや分散チームとの文書・非同期のやり取りが前提になっている。",
-        "confidence": "medium",
+        "text": "DOU の調査を引く Alcor の記事によれば、IT 従事者の 66% が完全リモートで働いている。",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Alcor: IT and Software Outsourcing to Ukraine",
@@ -183,7 +174,7 @@
     "work": [
       {
         "id": "ua-work-1",
-        "text": "DOU の調査では、FOP（個人事業主）として働く IT 従事者の比率が 87%（2022）、70%（2024）、57%（2025）、49%（2026）と下がり、Diia.City の gig 契約や雇用契約への移行が進んでいる。",
+        "text": "DOU の調査では、FOP（個人事業主）として働く IT 従事者の比率が 87%（2022）、70%（2024）、57%（2025）、49%（2026）と下がった。Diia.City の gig 契約や雇用契約への移行が進んでいる。",
         "confidence": "strong",
         "sources": [
           {
@@ -200,7 +191,7 @@
       },
       {
         "id": "ua-work-2",
-        "text": "2022 年に始まった Diia.City の gig 契約は所得税 5%、軍事税 5%、社会保険料は最低賃金の 22% で、2026 年 10 月時点で居住企業は 4,600 社超、対象は約 21.7 万人に達する。",
+        "text": "2022 年に始まった Diia.City の gig 契約は所得税 5%、軍事税 5%、社会保険料は最低賃金の 22% だ。2026 年 10 月時点で居住企業は 4,600 社超、対象は約 21.7 万人に達する。",
         "confidence": "strong",
         "sources": [
           {
@@ -217,7 +208,7 @@
       },
       {
         "id": "ua-work-3",
-        "text": "開発者の手取り中央値は 3,450 ドル（DOU、2025 年 12 月）。移住を考える人は 2 年で 51% から 40% に減ったが、国外から働く IT 人材は約 20% いる。",
+        "text": "DOU の 2025 年 12 月の調査（回答 4,522 件）では、開発者の手取り中央値は 3,450 ドルだった。法律事務所 Juscutum と Diia.City Union の調査では、IT 人材の約 20% が国外から働いている。",
         "confidence": "medium",
         "sources": [
           {
@@ -248,7 +239,7 @@
       },
       {
         "id": "ua-oss-2",
-        "text": "Grammarly（OSS ではなくプロダクト）は Max Lytvyn、Alex Shevchenko、Dmytro Lider が 2009 年にキーウで創業し、最大の開発拠点は現在もキーウにある。",
+        "text": "Grammarly（OSS ではなくプロダクト）は Max Lytvyn、Alex Shevchenko、Dmytro Lider が 2009 年にキーウで創業した。最大の開発拠点は現在もキーウにある。",
         "confidence": "strong",
         "sources": [
           {
@@ -264,7 +255,7 @@
       },
       {
         "id": "ua-oss-3",
-        "text": "開発者コミュニティ DOU.ua の年次調査「Портрет айтівця 2026」には 14,631 人が回答しており、給与や契約形態をコミュニティ自身が継続的に可視化している。",
+        "text": "開発者コミュニティ DOU.ua の年次調査「Портрет айтівця 2026」には 14,631 人が回答した。給与や契約形態を、コミュニティ自身が毎年公開している。",
         "confidence": "medium",
         "sources": [
           {
@@ -277,7 +268,8 @@
     ]
   },
   "variance": [
-    "フィードバックや階層についての資料の多くは受託企業や採用業者の記事で、互いに矛盾しており、一次研究は見つからなかった。",
+    "フィードバックや階層についての資料の多くは受託企業や採用業者の記事で、一次研究は見つからなかった。",
+    "受託企業・採用業者の記事は互いに矛盾する。employsome（2026）は unicrew とは逆に技術的な反対に抵抗がないとし、nCube は Jappware とは逆に形式的な階層は守られるとする。",
     "Hofstede の個人主義（IDV）は旧版の 25 から現行値 55 へ大きく改訂されており、古い資料は旧値を使っている。",
     "IT 従事者の約 20% は国外から働いており、「ウクライナの開発者」には国内在住者と移住者の両方が含まれる。",
     "アウトスタッフ企業や中小企業では FOP が 65% 超（2025）で、製品企業とは契約形態も文化も異なる。",

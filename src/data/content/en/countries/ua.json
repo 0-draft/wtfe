@@ -1,0 +1,278 @@
+{
+  "id": "ua",
+  "name": "Ukraine",
+  "oneLiner": "Built around outsourcing and remote work for Western clients, and kept IT service exports going through the war.",
+  "intro": "This page collects tendencies reported for Ukraine's software industry in surveys by industry bodies and the developer community, and in news coverage. Practice differs a lot between outsourcing and product companies, and between people living in Ukraine and those working from abroad. Contracts and exports have figures from DOU and the central bank, while material on feedback and hierarchy comes mostly from outsourcing vendors and recruiters and often contradicts itself.",
+  "themes": {
+    "design": [
+      {
+        "id": "ua-design-1",
+        "text": "At the ICPC World Finals, Lviv National University placed fourth in 2008 and Taras Shevchenko National University of Kyiv placed fourth in 2010, both winning gold medals.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Competitive Programming Hall Of Fame: ICPC World Finals standings",
+            "url": "https://cphof.org/contest/icpc",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "ua-design-2",
+        "text": "Ukraine's Hofstede uncertainty avoidance (UAI) score is extremely high at 95. The outsourcing firm N-iX (2019) links this to a preference for detailed plans and background explanations. The article is written from the seller's side.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=ukraine",
+            "year": 2026
+          },
+          {
+            "title": "N-iX: An honest look at Ukrainian software developers",
+            "url": "https://www.n-ix.com/ukrainian-software-developers-culture-communication-outsourcing/",
+            "year": 2019
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "ua-failure-1",
+        "text": "In a July-August 2024 Deloitte and AmCham survey of 139 executives at member companies, 76% said prolonged blackouts affect their operations. At the same time, 88% said they were prepared for outages and 94% had or were developing a business continuity plan.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Deloitte Ukraine: Winter resilience strategy survey",
+            "url": "https://www.deloitte.com/ua/en/about/press-room/deloitte-acc-winter-resilience-strategy.html",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "ua-failure-2",
+        "text": "IT companies are reported to have handled blackouts by setting up coworking spaces with generators and Starlink and by subsidizing employees' backup power.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "IT-Dimension: Ukraine IT Industry During Blackouts",
+            "url": "https://it-dimension.com/blog/ukraine-it-blackouts/"
+          }
+        ]
+      },
+      {
+        "id": "ua-failure-3",
+        "text": "Central bank figures reported by AIN.UA show IT service exports peaking at $7.3 billion in 2022 and falling to about $6.4 billion in 2024 (down 4.2% year on year). According to dev.ua, exports recovered slightly to about $6.66 billion in 2025.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "AIN: Ukraine's IT services exports decreased 4.2% to $6.4B in 2024",
+            "url": "https://en.ain.ua/2025/01/31/ukraines-it-services-exports-decreased-42-to-64b-in-2024/",
+            "year": 2025
+          },
+          {
+            "title": "dev.ua: 10 countries that provided 80% of Ukraine's IT exports in 2025",
+            "url": "https://dev.ua/en/news/yaki-10-krain-zabezpechyly-80-it-eksportu-ukrainy-u-2025-rotsi-1771584442",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "ua-failure-4",
+        "text": "An article by the outsourcing firm Alcor, citing DOU surveys, says 38% of IT workers feel burned out at work. Thirty percent of IT specialists serving in the army receive payments from their IT employer.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Alcor: IT and Software Outsourcing to Ukraine",
+            "url": "https://alcor.com/outsourcing-to-ukraine/",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "ua-feedback-1",
+        "text": "The outsourcing firm N-iX (2019) writes that Ukrainian engineers speak their minds on important technical decisions. This is a seller's claim, and no independent study was found.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "N-iX: An honest look at Ukrainian software developers",
+            "url": "https://www.n-ix.com/ukrainian-software-developers-culture-communication-outsourcing/",
+            "year": 2019
+          }
+        ]
+      },
+      {
+        "id": "ua-feedback-2",
+        "text": "The recruiting firm unicrew (2026) writes that unless expectations are made explicit, developers may not push back hard on poor technical decisions.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "unicrew: How to Hire Developers in Ukraine (2026 Guide)",
+            "url": "https://unicrew.com/blog/hire-developers-in-ukraine/",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "ua-hierarchy-1",
+        "text": "Ukraine scores high on both Hofstede power distance (PDI 92) and uncertainty avoidance (UAI 95). Edge Executive Services (2024) links this to multi-layered organizational hierarchies and a large number of rules.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=ukraine",
+            "year": 2026
+          },
+          {
+            "title": "Edge Executive Services: Hofstede's Six Dimensions — Ukrainian-Nordic Business Relations",
+            "url": "https://edge-executive-services.medium.com/hofstedes-six-dimensions-a-guide-to-ukrainian-nordic-business-relations-4ccd0cd127d1",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "ua-hierarchy-2",
+        "text": "The outsourcing firm Jappware claims that Ukrainian IT companies were early to drop rigid hierarchy and formal communication.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Jappware: 12 Reasons to Hire Ukrainian Software Developers",
+            "url": "https://www.jappware.com/insights/12-reasons-to-hire-ukrainian-software-developers-for-it-outsourcing/"
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "ua-communication-1",
+        "text": "An Alcor article citing DOU surveys says 66% of IT workers work fully remotely.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Alcor: IT and Software Outsourcing to Ukraine",
+            "url": "https://alcor.com/outsourcing-to-ukraine/",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "ua-communication-2",
+        "text": "N-iX (2019) says formality at first meetings is a sign of respect, and that the one-to-two-hour time difference with Europe makes it easy to overlap working hours. This is a seller's description.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "N-iX: An honest look at Ukrainian software developers",
+            "url": "https://www.n-ix.com/ukrainian-software-developers-culture-communication-outsourcing/",
+            "year": 2019
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "ua-work-1",
+        "text": "In DOU surveys, the share of IT workers registered as FOP (sole proprietors) fell from 87% (2022) to 70% (2024), 57% (2025) and 49% (2026). Workers are moving to Diia.City gig contracts and employment contracts.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "DOU: Портрет айтівця 2026",
+            "url": "https://dou.ua/lenta/articles/portrait-2026/",
+            "year": 2026
+          },
+          {
+            "title": "DOU: Портрет українського айтівця 2025",
+            "url": "https://dou.ua/lenta/articles/portrait-2025/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "ua-work-2",
+        "text": "Diia.City gig contracts, introduced in 2022, carry 5% personal income tax, a 5% military levy and social contributions of 22% of the minimum wage. As of October 2026 the regime had more than 4,600 resident companies covering about 217,000 specialists.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "dev.ua: The number of residents of Diia.City exceeded 4,600",
+            "url": "https://dev.ua/en/news/kilkist-rezydentiv-diiacity-1790954165",
+            "year": 2026
+          },
+          {
+            "title": "Chambers: Changes to Diia City Taxation and Legislation (from 2025)",
+            "url": "https://chambers.com/articles/changes-to-diia-city-taxation-and-legislation-for-it-and-digital-economy-from-2025",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "ua-work-3",
+        "text": "In DOU's December 2025 survey (4,522 responses), the median developer take-home pay was $3,450. A study by the law firm Juscutum and the Diia.City Union found that about 20% of IT professionals work from abroad.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "dev.ua: The median salary of developers in Ukraine remained at $3,450",
+            "url": "https://dev.ua/en/news/medianna-zarplata-rozrobnykiv-v-ukraini-vtrymalas-na-3450-ale-dzhuny-i-seniory-prosily-doslidzhennia-dou-1768210252",
+            "year": 2026
+          },
+          {
+            "title": "dev.ua: About 20% of Ukrainian IT professionals already work from abroad",
+            "url": "https://dev.ua/en/news/blyzko-20-ukrainskykh-it-fakhivtsiv-uzhe-pratsiuiut-z-za-kordonu-yaki-shche-nespodivani-tsyfry-opublikovani-u-novomu-doslidzhenni-1780479183",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "ua-oss-1",
+        "text": "GitLab is an open source project that Dmitriy Zaporozhets started at his home in Ukraine in 2011. In 2014 he turned it into a company with Sytse Sijbrandij from the Netherlands.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "CNBC: Ukraine looks to technology to help rebuild its economy",
+            "url": "https://www.cnbc.com/amp/2022/11/07/ukraine-looks-to-tech-to-rebuild-economy-after-russia-invasion-.html",
+            "year": 2022
+          }
+        ]
+      },
+      {
+        "id": "ua-oss-2",
+        "text": "Grammarly (a product, not open source) was founded in Kyiv in 2009 by Max Lytvyn, Alex Shevchenko and Dmytro Lider. Its largest engineering hub is still in Kyiv.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Wikipedia: Max Lytvyn",
+            "url": "https://en.wikipedia.org/wiki/Max_Lytvyn"
+          },
+          {
+            "title": "CNBC: Ukraine looks to technology to help rebuild its economy",
+            "url": "https://www.cnbc.com/amp/2022/11/07/ukraine-looks-to-tech-to-rebuild-economy-after-russia-invasion-.html",
+            "year": 2022
+          }
+        ]
+      },
+      {
+        "id": "ua-oss-3",
+        "text": "The developer community DOU.ua's annual survey \"Портрет айтівця 2026\" (Portrait of an IT specialist) drew 14,631 respondents. The community publishes its own pay and contract data every year.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "DOU: Портрет айтівця 2026",
+            "url": "https://dou.ua/lenta/articles/portrait-2026/",
+            "year": 2026
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "Most material on feedback and hierarchy comes from outsourcing vendors and recruiters, and no primary research was found.",
+    "Vendor and recruiter articles contradict each other. employsome (2026), unlike unicrew, says developers are comfortable with technical disagreement, and nCube, unlike Jappware, says formal hierarchy is respected.",
+    "Hofstede's individualism (IDV) score was revised sharply from 25 in the older edition to 55 today, and older material still uses the old value.",
+    "About 20% of IT workers work from abroad, so \"Ukrainian developers\" includes both residents and emigrants.",
+    "At outstaffing companies and small and medium firms, more than 65% of workers were FOP (2025), and both contracts and culture differ from product companies.",
+    "Erin Meyer's Culture Map does not place Ukraine."
+  ]
+}
