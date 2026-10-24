@@ -9,10 +9,10 @@
       "scores": {
         "pdi": 40,
         "idv": 60,
-        "mas": null,
-        "uai": null,
+        "mas": 62,
+        "uai": 46,
         "lto": 50,
-        "ivr": null
+        "ivr": 68
       },
       "source": {
         "title": "The Culture Factor — Country comparison tool",

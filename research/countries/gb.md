@@ -4,7 +4,7 @@ _調査日: 2026-10-25_
 
 ## Hofstede
 
-- The Culture Factor の現行値は未確認。ページが 70 万字を超えていて WebFetch では UK 節まで届かず、検索の予算も切れたため。meta はすべて null にしている ([The Culture Factor](https://www.theculturefactor.com/country-comparison-tool?countries=united+kingdom))
+- The Culture Factor 現行値：PDI 35 / IDV 76 / MAS 66 / UAI 35 / LTO 60 / IVR 69（比較ツールをブラウザで描画して確認）([The Culture Factor](https://www.theculturefactor.com/country-comparison-tool?countries=united+kingdom))
 - 参考（2010 年系の旧値、meta には使わない）：PDI 35 / IDV 89 / MAS 66 / UAI 35 / LTO 51 / IVR 69 ([cyborlink UK](https://www.cyborlink.com/besite/united_kingdom.htm), [ultimate-leadership-training](https://www.ultimate-leadership-training.co.uk/hofstedes-cultural-dimensions.html))
 
 ## 設計と品質
@@ -12,7 +12,7 @@ _調査日: 2026-10-25_
 - GDS の Government Design Principles（2012 年公開、2025 年更新）は「Start with user needs」「Do less」「Iterate. Then iterate again」などを掲げている。公共部門が iterative な開発を公式の原則にしている [強] ([source](https://www.gov.uk/guidance/government-design-principles))
 - GOV.UK Service Standard の point 8 は「Iterate and improve frequently」。サービスに「完成はない」とし、バグ修正などの保守だけでは足りないとしている [強] ([source](https://apply-the-service-standard.education.gov.uk/service-standard/8-iterate-and-improve-frequently))
 - 反証と国内差：NAO（2023）によると、過去 25 年で省庁横断のデジタル戦略が 11 回出され、1974 年導入の Police National Computer がいまも現役。デジタル関連の意思決定の多くは、技術を専門としないジェネラリストのリーダーが行っている。GDS の理想とレガシーを抱えた公共 IT の現実には大きな差がある [強] ([source](https://www.nao.org.uk/wp-content/uploads/2023/03/digital-transformation-in-government.pdf))
-- Hofstede の UAI は低く、曖昧さや「まず試す」ことへの許容度が高い（国全体の値からの推論。旧値 35、現行値は未確認）[中] ([source](https://www.cyborlink.com/besite/united_kingdom.htm))
+- Hofstede の UAI は低く、曖昧さや「まず試す」ことへの許容度が高い（UAI 35。国全体の値からの推論）[中] ([source](https://www.theculturefactor.com/country-comparison-tool?countries=united+kingdom))
 
 ## 失敗とリスク
 
@@ -31,7 +31,7 @@ _調査日: 2026-10-25_
 ## 階層と意思決定
 
 - Meyer の HBR 2017 の図で、UK は US・Canada・Australia と同じ「egalitarian かつ top-down」の象限に置かれている [中] ([source](https://erinmeyer.com/wp-content/uploads/2019/11/Being-the-Boss-HBR.pdf))
-- Hofstede の PDI は低い（旧値 35、現行値は未確認）[中] ([source](https://www.cyborlink.com/besite/united_kingdom.htm))
+- Hofstede の PDI は低い（PDI 35）[強] ([source](https://www.theculturefactor.com/country-comparison-tool?countries=united+kingdom))
 - 公共部門では、GDS の Service Standard に基づく service assessment が実質的なゲートになっている。正当な理由なくコードを公開していないと assessment に落ちうる。一方で NAO は、意思決定者の技術的な専門性が足りないことを問題視している [中] ([source](https://apply-the-service-standard.education.gov.uk/service-standard/12-make-new-source-code-open.html), [source](https://www.nao.org.uk/wp-content/uploads/2023/03/digital-transformation-in-government.pdf))
 
 ## コミュニケーションとドキュメント

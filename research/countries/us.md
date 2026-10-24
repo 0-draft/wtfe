@@ -4,7 +4,7 @@ _調査日: 2026-10-25_
 
 ## Hofstede
 
-- The Culture Factor 現行値（2023 年に IDV・LTO 改訂）：PDI 40 / IDV 60 / LTO 50 は theculturefactor.com の本文（検索インデックス経由）で確認。MAS / UAI / IVR は現行ページを WebFetch で読み切れず未確認（ページが 70 万字超で US 節まで届かない）([The Culture Factor](https://www.theculturefactor.com/country-comparison-tool?countries=united+states))
+- The Culture Factor 現行値（2023 年に IDV・LTO 改訂）：PDI 40 / IDV 60 / MAS 62 / UAI 46 / LTO 50 / IVR 68（比較ツールをブラウザで描画して確認）([The Culture Factor](https://www.theculturefactor.com/country-comparison-tool?countries=united+states))
 - 参考（2010 年系の旧値、meta には使わない）：PDI 40 / IDV 91 / MAS 62 / UAI 46 / LTO 26 / IVR 68 ([clearlycultural](https://clearlycultural.com/geert-hofstede-cultural-dimensions/power-distance-index/), [cyborlink](https://www.cyborlink.com/besite/hofstede.htm))
 
 ## 設計と品質
@@ -18,7 +18,7 @@ _調査日: 2026-10-25_
 
 - Google SRE は blameless postmortem を明文化している。「個人やチームを責めずに寄与要因を特定する」「関係者は善意で動いていたと仮定する」「人は直せないがシステムとプロセスは直せる」[強] ([source](https://sre.google/sre-book/postmortem-culture/))
 - 「Move fast and break things」は Facebook の 2012 年 S-1 に載ったスローガンだが、2014 年の F8 で Zuckerberg 自身が「Move fast with stable infra」に変えた。規模が大きくなると、壊れたものを直すコストが速さの利益を上回るのが理由。「US = 雑に速い」への反証になる [強] ([source](https://techcrunch.com/2014/04/30/facebook-api-guarantee))
-- Hofstede の UAI は中位よりやや低く、不確実性を比較的許容する。ただし国全体の値なので、エンジニアのリスク行動に直結させるのは推論（旧値 46。現行値は未確認）[中] ([source](https://www.cyborlink.com/besite/hofstede.htm))
+- Hofstede の UAI は中位よりやや低く、不確実性を比較的許容する。ただし国全体の値なので、エンジニアのリスク行動に直結させるのは推論（UAI 46）[中] ([source](https://www.theculturefactor.com/country-comparison-tool?countries=united+states))
 
 ## フィードバックとコードレビュー
 
