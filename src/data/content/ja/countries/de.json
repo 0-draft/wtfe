@@ -1,13 +1,13 @@
 {
   "id": "de",
   "name": "ドイツ",
-  "oneLiner": "階層は中程度でも合意を取ってから決め、指摘は率直。品質は気質より制度で担保される。",
-  "intro": "ドイツのソフトウェア開発者に見られる傾向を、Culture Map・Hofstede・統計・法制度から整理したページです。ここに書くのは国レベルの傾向で、個々のエンジニアの性格や働き方を言い当てるものではありません。規制産業 (自動車など) と Berlin のスタートアップでは文化がかなり違う点にも注意してください。",
+  "oneLiner": "Meyer は合意重視で指摘は率直と分類する。品質は ASPICE や共同決定などの制度が支えている。",
+  "intro": "ドイツのソフトウェア開発の傾向を、Culture Map・Hofstede・統計・法制度から整理したページです。あくまで国レベルの傾向で、自動車などの規制産業と Berlin のスタートアップでは文化がかなり違うように、国内のばらつきは大きいです。ドイツでは失敗文化に関する全国調査や、開発現場に関わる労働法の判例が豊富な一方、コードレビューの文化を直接調べた研究は見つかりませんでした。",
   "themes": {
     "design": [
       {
         "id": "de-design-1",
-        "text": "Erin Meyer の Culture Map チャート (2014) では、ドイツは Persuading で principles-first (原理から入る演繹)、Scheduling で最も linear-time (予定厳守) 側に置かれている。",
+        "text": "Meyer の Culture Map (2014) はドイツを Persuading で principles-first、Scheduling で linear-time の端近くに置いている。Meyer はこれを、原理から結論を導く説明と予定どおりの進行が好まれる傾向として描いている。",
         "confidence": "medium",
         "sources": [
           {
@@ -19,8 +19,8 @@
       },
       {
         "id": "de-design-2",
-        "text": "自動車業界では VDA QMC が保守する Automotive SPICE が事実上の取引条件で、OEM はサプライヤーに Level 2〜3 を求め、V 字モデルと要求・設計・テスト間の双方向トレーサビリティを要求する。これは法規制ではなく顧客要求。",
-        "confidence": "strong",
+        "text": "自動車業界では VDA QMC が保守する Automotive SPICE が事実上の取引条件になっている。itemis の解説によると、OEM はサプライヤーに Level 2〜3 を求め、要求・設計・テスト間の双方向トレーサビリティを要求する。法規制ではなく顧客要求である。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "itemis — What is Automotive SPICE?",
@@ -32,36 +32,12 @@
             "year": 2023
           }
         ]
-      },
-      {
-        "id": "de-design-3",
-        "text": "Berlin の VC 系スタートアップは英語で働く国際チームが多く、規制産業の上流設計重視とは別の文化として見るべきで、「ドイツは全員ウォーターフォール」は言い過ぎ。",
-        "confidence": "weak",
-        "sources": [
-          {
-            "title": "Migaku — English-speaking jobs in Berlin tech startups",
-            "url": "https://migaku.com/blog/language-fun/how-to-find-english-speaking-jobs-in-berlins-tech-scene",
-            "year": 2026
-          }
-        ]
-      },
-      {
-        "id": "de-design-4",
-        "text": "Hofstede の不確実性回避 (UAI) はドイツ 65 で「やや回避」の水準にとどまり、フランス (86) より低い。「ドイツは極端にリスク回避」という通説はこの数字からは支持されない。",
-        "confidence": "strong",
-        "sources": [
-          {
-            "title": "The Culture Factor — Country comparison tool",
-            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=germany",
-            "year": 2026
-          }
-        ]
       }
     ],
     "failure": [
       {
         "id": "de-failure-1",
-        "text": "Randstad-ifo の HR 調査 (2026 年 Q3、469 社) では、ミスが率直に話されるのは従業員 500 人以上の大企業で 28%、49 人以下の小企業で 62%。大企業の 34% が失敗文化をイノベーションの阻害要因とみる一方、全体の 56% は影響なしと答えた。",
+        "text": "Randstad-ifo の人事調査 (2026 年 Q3、469 社) では、ミスが率直に話されると答えた企業は従業員 500 人以上で 28%、49 人以下で 62% だった。大企業の 34% は失敗文化をイノベーションの阻害要因とみているが、全体の 56% は影響なしと答えた。",
         "confidence": "strong",
         "sources": [
           {
@@ -73,7 +49,7 @@
       },
       {
         "id": "de-failure-2",
-        "text": "AXA/YouGov 調査 (2024 年 5 月、2,132 人) では、職場のミスを認められない人は全体で 25%、25 歳未満では 44%。開示すると悪い結果になると予想する人は 23%。",
+        "text": "AXA が YouGov に委託した調査 (2024 年 5 月、2,132 人) では、職場のミスを認められない人は全体で 25%、25 歳未満では 44% だった。ミスを開示すると悪い結果になると予想する人は 23% だった。",
         "confidence": "strong",
         "sources": [
           {
@@ -85,7 +61,7 @@
       },
       {
         "id": "de-failure-3",
-        "text": "EY の調査 (2023 年頃、機械・自動車・金融など約 1,000 人) では、管理職の 64% が過去 2 年の自分のミスを認めなかったか、一部しか認めなかった。",
+        "text": "EY の調査 (2023 年頃、機械・自動車・金融などの約 1,000 人) を紹介する記事によると、管理職の 64% が過去 2 年の自分のミスを認めなかったか、一部しか認めなかった。",
         "confidence": "medium",
         "sources": [
           {
@@ -97,8 +73,8 @@
       },
       {
         "id": "de-failure-4",
-        "text": "Bitkom の調査 (2024 年 10 月) では、企業の 70% がデータ保護がデジタル化を阻害していると答え、63% でデータ保護規定のために革新プロジェクトが頓挫または未着手になった。後続調査では 77% に上昇。業界団体の調査である点に注意。",
-        "confidence": "strong",
+        "text": "業界団体 Bitkom の調査 (2024 年 10 月) では、企業の 70% がデータ保護がデジタル化を阻害していると答えた。63% ではデータ保護規定のために革新プロジェクトが頓挫したか、始められなかった。後続調査ではこの割合が 77% に上がった。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Bitkom — Datenschutz: Aufwand für Unternehmen nimmt zu",
@@ -113,7 +89,7 @@
       },
       {
         "id": "de-failure-5",
-        "text": "GDPR 報道を独仏英米で比較した研究 (2021) では、独仏の報道はプライバシーを基本権として扱う傾向が強く、英米は法令遵守や商業の観点が中心だった。",
+        "text": "GDPR 報道を独仏英米で比較した研究 (Sanford & Yasseri, 2021) では、独仏の報道はプライバシーを基本権として扱う傾向が強く、英米の報道は法令遵守や商業の観点が中心だった。",
         "confidence": "medium",
         "sources": [
           {
@@ -127,7 +103,7 @@
     "feedback": [
       {
         "id": "de-feedback-1",
-        "text": "Culture Map チャートで、ドイツは Evaluating (否定的フィードバック) で直接的な側、Communicating で低文脈側にあり、ネガティブな指摘を和らげずに伝える傾向とされる。",
+        "text": "Culture Map (2014) はドイツを Evaluating で直接的な側に置いている。Meyer はこれを、否定的なフィードバックを和らげずに伝える傾向として描いている。",
         "confidence": "medium",
         "sources": [
           {
@@ -139,7 +115,7 @@
       },
       {
         "id": "de-feedback-2",
-        "text": "Disagreeing では対立を許容する側だが、ドイツの反論は感情を抑えた客観的なスタイルで、表現豊かなフランスの対立とは違うと書評で解説されている。",
+        "text": "ある書評は、ドイツは Disagreeing で対立を許容する側にあるが、その反論は感情を抑えた客観的なスタイルで、表現豊かなフランスの対立とは違うと解説している。",
         "confidence": "weak",
         "sources": [
           {
@@ -150,8 +126,8 @@
       },
       {
         "id": "de-feedback-3",
-        "text": "国民文化とコードレビューの行動を直接結びつけた SE 研究は見当たらない。近いものとして、提出者とレビュアーが同じ国だと PR が受理されやすいという研究 (Rastogi et al., ESEM 2018) がある。",
-        "confidence": "weak",
+        "text": "PR の受理要因を整理したレビュー論文 (2021) は、提出者とレビュアーが同じ国だと PR が受理されやすいという研究 (Rastogi et al., ESEM 2018) を挙げている。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Pull Request Decision Explained: An Empirical Overview (arXiv 2105.13970)",
@@ -164,7 +140,7 @@
     "hierarchy": [
       {
         "id": "de-hierarchy-1",
-        "text": "Meyer は、ドイツ人は米国人より階層的だが、決定前に合意を形成する傾向は米国より強いと書いている。",
+        "text": "Meyer は、ドイツは米国より階層的だが、決定前に合意を形成する傾向は米国より強いと分類している。",
         "confidence": "medium",
         "sources": [
           {
@@ -176,8 +152,8 @@
       },
       {
         "id": "de-hierarchy-2",
-        "text": "事業所組織法 (BetrVG) §87 Abs.1 Nr.6 により、従業員の行動や成績を監視できる技術的設備の導入には事業所委員会 (Betriebsrat) の共同決定が必要。連邦労働裁判所は 2022 年 3 月 8 日 (1 ABR 20/21) に Microsoft Office 365 も対象と判断しており、実際に監視するかではなく、監視に使えるかどうかで決まる。",
-        "confidence": "strong",
+        "text": "BetrVG §87 Abs.1 Nr.6 により、従業員の行動や成績を監視できる技術的設備の導入には Betriebsrat の共同決定が必要だ。基準は監視に使えるかどうかで、連邦労働裁判所は 2022 年 (1 ABR 20/21) に Microsoft Office 365 もその対象とした。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "hensche.de — BAG, Beschluss vom 08.03.2022, 1 ABR 20/21",
@@ -193,8 +169,8 @@
       },
       {
         "id": "de-hierarchy-3",
-        "text": "Berlin の N26 では 2020 年、創業者が Betriebsrat 選挙に反対して裁判所の差止めまで争ったが、同年 11〜12 月に選出された (投票率約 30%)。スタートアップでは共同決定が当然ではなく争点になる。",
-        "confidence": "strong",
+        "text": "Berlin の N26 では 2020 年、経営陣が Betriebsrat の選挙に反対し、裁判所の差止めまで争った。それでも同年 11〜12 月に Betriebsrat が選出された (投票率約 30%)。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "CNBC — German digital bank N26 faces outcry from staff over management",
@@ -211,7 +187,7 @@
     "communication": [
       {
         "id": "de-communication-1",
-        "text": "Culture Map チャートでドイツは低文脈側に置かれる。明示的に伝え、繰り返しは確認のためで、書面に残すことを好むとされる。",
+        "text": "Culture Map はドイツを Communicating の低文脈側に置いている。Meyer の説明では、明示的に伝え、繰り返しは確認のためで、書面に残すことが好まれる。",
         "confidence": "medium",
         "sources": [
           {
@@ -223,7 +199,7 @@
       },
       {
         "id": "de-communication-2",
-        "text": "Automotive SPICE の SUP.10 は、変更要求を関連成果物に紐づけて事前に分析することを求める。規制産業では文書化が文化というより契約上の要件になっている。",
+        "text": "Automotive SPICE の SUP.10 は、変更要求を関連する成果物に紐づけ、事前に分析することを求めている。規制産業では文書化が契約上の要件にもなっていることがわかる。",
         "confidence": "strong",
         "sources": [
           {
@@ -235,7 +211,7 @@
       },
       {
         "id": "de-communication-3",
-        "text": "Berlin のスタートアップでは英語が主な業務言語になっている。外国籍社員の比率は出典により 30〜49% とばらつく。",
+        "text": "startuprad.io によると、Berlin のスタートアップでは英語が主な業務言語になっている。外国籍社員の比率は出典により 30〜49% とばらつく。",
         "confidence": "weak",
         "sources": [
           {
@@ -249,7 +225,7 @@
     "work": [
       {
         "id": "de-work-1",
-        "text": "Eurostat によると 2024 年の週あたり実労働時間 (20〜64 歳、フルタイムとパートタイムの合計) はドイツ 33.9 時間で、EU 平均 36.0 時間を下回る。",
+        "text": "Eurostat によると、2024 年の週あたり実労働時間 (20〜64 歳、フルタイムとパートタイムの合計) はドイツが 33.9 時間で、EU 平均の 36.0 時間を下回る。",
         "confidence": "strong",
         "sources": [
           {
@@ -261,8 +237,8 @@
       },
       {
         "id": "de-work-2",
-        "text": "連邦労働裁判所は 2022 年 9 月 13 日 (1 ABR 22/21) に使用者の労働時間記録義務を認めた。時間管理を本人に任せる信頼労働時間制 (Vertrauensarbeitszeit) 自体は引き続き合法。",
-        "confidence": "strong",
+        "text": "連邦労働裁判所は 2022 年 9 月 13 日の決定 (1 ABR 22/21) で、使用者に労働時間の記録義務があると認めた。時間管理を本人に任せる信頼労働時間制 (Vertrauensarbeitszeit) 自体は引き続き合法とされる。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "KAV-NW — BAG, Beschluss vom 13.09.2022, 1 ABR 22/21",
@@ -277,7 +253,7 @@
       },
       {
         "id": "de-work-3",
-        "text": "EU 定義の中小企業は 2024 年に全企業の 99.3%、就業者の 54% を占める (Destatis)。Mittelstand は規模ではなく所有と経営の一致で定義される別概念 (IfM Bonn)。",
+        "text": "Destatis によると、EU 定義の中小企業は 2024 年に全企業の 99.3%、就業者の 54% を占める。IfM Bonn は Mittelstand を規模ではなく所有と経営の一致で定義しており、中小企業とは別の概念だ。",
         "confidence": "strong",
         "sources": [
           {
@@ -294,7 +270,7 @@
       },
       {
         "id": "de-work-4",
-        "text": "通常在宅勤務する就業者の比率は 2025 年で約 13.2% と EU 平均を上回る。時々在宅を含めると 2024 年に約 24% (Destatis)。",
+        "text": "Eurostat データをまとめたサイトによると、通常在宅で働く就業者の比率は 2025 年に約 13.2% で、EU 平均を上回る。Euronews が引く Destatis の数字では、時々在宅を含めると 2024 年に約 24% だった。",
         "confidence": "medium",
         "sources": [
           {
@@ -311,7 +287,7 @@
       },
       {
         "id": "de-work-5",
-        "text": "OECD の 2019 年データでは、従業員 10 人以下の事業所は通常の解雇規制の適用外で、解雇前には Betriebsrat への通知が必要。",
+        "text": "OECD の 2019 年の資料によると、従業員 10 人以下の事業所には通常の解雇規制が適用されない。また、解雇の前には Betriebsrat への通知が必要とされる。",
         "confidence": "strong",
         "sources": [
           {
@@ -325,7 +301,7 @@
     "oss": [
       {
         "id": "de-oss-1",
-        "text": "GitHub 上のドイツの開発者は Octoverse 2024 で 350 万超 (前年比 +21%)。Octoverse 2025 では 2020〜2025 年に 3 倍超に増えたとされる。",
+        "text": "Octoverse 2024 によると、GitHub 上のドイツの開発者は 350 万人を超え、前年比 +21% だった。Octoverse 2025 は、2020〜2025 年にドイツの開発者数が 3 倍超に増えたとしている。",
         "confidence": "strong",
         "sources": [
           {
@@ -342,7 +318,7 @@
       },
       {
         "id": "de-oss-2",
-        "text": "Stack Overflow Developer Survey 2025 の回答者数はドイツが米国に次ぐ 2 位 (3,022 人、8.6%)。回答の多さを示す指標で、人口あたりの開発者数ではない。",
+        "text": "Stack Overflow Developer Survey 2025 の回答者数は、ドイツが米国に次ぐ 2 位 (3,022 人、8.6%) だった。回答の多さを示す指標で、人口あたりの開発者数ではない。",
         "confidence": "strong",
         "sources": [
           {
@@ -354,8 +330,8 @@
       },
       {
         "id": "de-oss-3",
-        "text": "Sovereign Tech Fund (現 Sovereign Tech Agency) は 2022〜2024 年に 60 を超える OSS プロジェクトへ約 2,350 万ユーロを投資した (curl、OpenSSH、systemd、PHP、FFmpeg など)。年間予算は 350 万、1,150 万、1,700 万ユーロと増えている。",
-        "confidence": "strong",
+        "text": "Sovereign Tech Fund (現 Sovereign Tech Agency) は、設立から 2 年となる 2024 年 10 月までに 60 の OSS 技術へ 2,490 万ドル超を投資した。支援先には curl、OpenSSH、systemd、PHP、FFmpeg などがある。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Wikipedia — Sovereign Tech Agency",
@@ -370,8 +346,8 @@
       },
       {
         "id": "de-oss-4",
-        "text": "CCC の Chaos Communication Congress は 38C3 (2024 年 12 月、Hamburg) に約 1.5 万人が参加した。KDE e.V. は 1997 年に Tübingen で登録され本部は Berlin、SUSE は 1992 年創業で Nuremberg が拠点。",
-        "confidence": "strong",
+        "text": "CCC の Chaos Communication Congress は、38C3 (2024 年 12 月、Hamburg) に約 1.5 万人が参加した。KDE e.V. は 1997 年に Tübingen で登録され、本部は Berlin にある。SUSE は 1992 年創業で Nuremberg が拠点だ。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "scip.ch — Chaos Communication Congress 38C3",
@@ -390,8 +366,8 @@
       },
       {
         "id": "de-oss-5",
-        "text": "Schleswig-Holstein 州は 2024 年に行政の PC 3 万台を LibreOffice と Linux へ移行すると表明し、LibreOffice は 2025 年末に約 80% 完了した。連邦は ZenDiS を通じて openDesk を開発し、2024 年 10 月に 1.0 をリリースした。",
-        "confidence": "strong",
+        "text": "Schleswig-Holstein 州は 2024 年、行政の PC 3 万台を LibreOffice と Linux へ移行すると表明し、LibreOffice への移行は 2025 年末に約 80% 進んだ。連邦は ZenDiS を通じて openDesk を開発し、2024 年 10 月に 1.0 を出した。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "TDF Blog — German state moving 30,000 PCs to LibreOffice",
@@ -412,10 +388,10 @@
     ]
   },
   "variance": [
-    "自動車などの規制産業は ASPICE や ISO 26262 による上流設計と文書化が契約要件になっている一方、Berlin の VC 系スタートアップは英語の国際チームで、別の文化として見るべき。",
-    "失敗の開示しやすさは企業規模で大きく違い、Randstad-ifo 調査 (2026) では率直に話せるのが大企業 28% に対し小企業 62%。",
+    "自動車などの規制産業では ASPICE や ISO 26262 による上流設計と文書化が契約要件になっている。一方、Berlin の VC 系スタートアップは英語で働く国際チームが多く、別の文化として見るべきだ。",
+    "失敗の開示しやすさは企業規模で大きく違う。Randstad-ifo 調査 (2026) では、ミスを率直に話せる企業は大企業で 28%、小企業で 62% だった。",
     "共同決定 (Betriebsrat) は伝統企業では当然の制度だが、N26 の 2020 年の事例のようにスタートアップでは争点になる。",
-    "Hofstede の UAI は 65 で、「ドイツは極端にリスク回避」という通説ほど高くない。",
-    "国民文化とコードレビューや postmortem の慣行を直接結びつけた研究はなく、この領域の記述は推論の比重が大きい。"
+    "Hofstede の UAI はドイツが 65 で、フランス (86) より低い。「ドイツは極端にリスク回避」という通説ほど高い数字ではない。",
+    "国民文化とコードレビューや postmortem の慣行を直接結びつけた研究は見つからなかった。この領域の記述は推論の比重が大きい。"
   ]
 }

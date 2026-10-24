@@ -1,0 +1,397 @@
+{
+  "id": "de",
+  "name": "Germany",
+  "oneLiner": "Meyer classes it as consensual with direct feedback. Institutions such as ASPICE and codetermination underpin quality.",
+  "intro": "This page summarizes tendencies in German software engineering from the Culture Map, Hofstede, statistics, and law. These are country-level tendencies with wide variance inside the country; regulated industries such as automotive and Berlin startups have quite different cultures. Germany has plenty of national surveys on error culture and labor-court rulings that reach into engineering work, but no study was found that examines code review culture directly.",
+  "themes": {
+    "design": [
+      {
+        "id": "de-design-1",
+        "text": "Meyer's Culture Map (2014) places Germany near the principles-first end of Persuading and the linear-time end of Scheduling. She describes this as a preference for reasoning from principles to conclusions and for keeping to the plan.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "de-design-2",
+        "text": "In the automotive industry, Automotive SPICE, maintained by VDA QMC, is a de facto condition of doing business. According to itemis, OEMs require suppliers to reach Level 2 to 3 with bidirectional traceability between requirements, design, and tests. This is a customer requirement, not a law.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "itemis — What is Automotive SPICE?",
+            "url": "https://www.itemis.com/en/glossary/automotive-spice/"
+          },
+          {
+            "title": "VDA QMC — Automotive SPICE PAM v4.0",
+            "url": "https://vda-qmc.de/wp-content/uploads/2023/12/Automotive-SPICE-PAM-v40.pdf",
+            "year": 2023
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "de-failure-1",
+        "text": "In the Randstad-ifo HR survey (Q3 2026, 469 companies), 28% of firms with 500 or more employees said mistakes are discussed openly, against 62% of firms with 49 or fewer. 34% of large firms see their error culture as a barrier to innovation, while 56% of all firms report no effect.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Randstad-ifo-Studie: Fehlerkultur in Unternehmen (presseportal)",
+            "url": "https://www.presseportal.de/pm/13588/6367865",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "de-failure-2",
+        "text": "In a YouGov survey commissioned by AXA (May 2024, 2,132 people), 25% said they cannot admit mistakes at work, rising to 44% among those under 25. 23% expect negative consequences if they disclose a mistake.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "AXA Studie zur Fehlerkultur im Job",
+            "url": "https://www.axa.de/presse/axa-studie-fehlerkultur-im-job",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "de-failure-3",
+        "text": "According to an article on an EY survey (around 2023, about 1,000 people in machinery, automotive, finance, and other sectors), 64% of managers did not admit, or only partly admitted, their own mistakes from the past two years.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "EY-Studie zur Fehlerkultur (dashoefer)",
+            "url": "https://www.dashoefer.de/newsletter/artikel/ey-studie-zur-fehlerkultur-zwei-drittel-der-fuehrungskraefte-sprechen-nicht-ueber-eigene-fehler.html",
+            "year": 2023
+          }
+        ]
+      },
+      {
+        "id": "de-failure-4",
+        "text": "In a survey by the industry association Bitkom (October 2024), 70% of companies said data protection hinders digitalization. At 63%, innovation projects failed or never started because of data protection rules. A follow-up survey put that share at 77%.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Bitkom — Datenschutz: Aufwand für Unternehmen nimmt zu",
+            "url": "https://www.bitkom.org/Presse/Presseinformation/Datenschutz-Aufwand-Unternehmen-nimmt-zu",
+            "year": 2024
+          },
+          {
+            "title": "Bitkom — Datenschutz wird immer öfter zur Innovations-Bremse",
+            "url": "https://www.bitkom.org/Presse/Presseinformation/Datenschutz-Innovations-Bremse"
+          }
+        ]
+      },
+      {
+        "id": "de-failure-5",
+        "text": "A study comparing GDPR coverage in Germany, France, the UK, and the US (Sanford & Yasseri, 2021) found that German and French media tend to frame privacy as a fundamental right, while British and American media focus on compliance and commerce.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Sanford & Yasseri — The Kaleidoscope of Privacy (arXiv 2104.04074)",
+            "url": "https://arxiv.org/abs/2104.04074",
+            "year": 2021
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "de-feedback-1",
+        "text": "The Culture Map (2014) places Germany on the direct side of Evaluating. Meyer describes this as a tendency to deliver negative feedback without softening it.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "de-feedback-2",
+        "text": "One book review explains that Germany is on the confrontational side of Disagreeing, but that German disagreement is objective and emotionally restrained, unlike the expressive confrontation found in France.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Deploy Yourself — The Culture Map book review",
+            "url": "https://www.deployyourself.com/book-review/the-culture-map-erin-meyer-eight-scales/"
+          }
+        ]
+      },
+      {
+        "id": "de-feedback-3",
+        "text": "A 2021 review of factors behind pull request decisions cites a study (Rastogi et al., ESEM 2018) finding that pull requests are more likely to be accepted when the submitter and reviewer are in the same country.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Pull Request Decision Explained: An Empirical Overview (arXiv 2105.13970)",
+            "url": "https://arxiv.org/pdf/2105.13970",
+            "year": 2021
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "de-hierarchy-1",
+        "text": "Meyer classifies Germany as more hierarchical than the United States but also more inclined to build consensus before deciding.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "de-hierarchy-2",
+        "text": "Under BetrVG §87(1) no. 6, introducing technical equipment that can monitor employees' behavior or performance requires codetermination by the works council (Betriebsrat). The test is whether it can be used for monitoring, and in 2022 the Federal Labor Court (1 ABR 20/21) treated Microsoft Office 365 as covered.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "hensche.de — BAG, Beschluss vom 08.03.2022, 1 ABR 20/21",
+            "url": "https://www.hensche.de/bag-beschluss-vom-08.03.2022-1-abr-20-21-zustaendigkeit-des-gesamtbetriebsrats-bei-unternehmenseinheitlicher-nutzung-von-microsoft-office-365.html",
+            "year": 2022
+          },
+          {
+            "title": "lulius.ai — § 87 BetrVG: Mitbestimmung bei Software und KI",
+            "url": "https://www.lulius.ai/blog/mitbestimmung-87-betrvg",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "de-hierarchy-3",
+        "text": "At N26 in Berlin, management opposed a works council election in 2020 and fought it as far as a court injunction. A works council was still elected in November and December that year, with turnout of about 30%.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "CNBC — German digital bank N26 faces outcry from staff over management",
+            "url": "https://www.cnbc.com/2020/08/13/german-digital-bank-n26-faces-outcry-from-staff-over-management.html",
+            "year": 2020
+          },
+          {
+            "title": "Wikipedia — N26",
+            "url": "https://en.wikipedia.org/wiki/N26"
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "de-communication-1",
+        "text": "The Culture Map places Germany on the low-context side of Communicating. In Meyer's description, people say things explicitly, repeat points to confirm them, and prefer to put things in writing.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "de-communication-2",
+        "text": "SUP.10 in Automotive SPICE requires change requests to be linked to the affected work products and analyzed in advance. In regulated industries, documentation is also a contractual requirement.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "VDA QMC — Automotive SPICE PAM v4.0",
+            "url": "https://vda-qmc.de/wp-content/uploads/2023/12/Automotive-SPICE-PAM-v40.pdf",
+            "year": 2023
+          }
+        ]
+      },
+      {
+        "id": "de-communication-3",
+        "text": "According to startuprad.io, English is the main working language at Berlin startups. Estimates of the share of foreign employees range from 30% to 49% depending on the source.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "startuprad.io — The rise of Berlin startups",
+            "url": "https://www.startuprad.io/post/the-rise-of-berlin-startups-germany-s-startup-powerhouse",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "de-work-1",
+        "text": "According to Eurostat, average actual weekly hours in 2024 (ages 20 to 64, full-time and part-time combined) were 33.9 in Germany, below the EU average of 36.0.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Eurostat — People in the EU worked on average 36 hours per week",
+            "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250514-1",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "de-work-2",
+        "text": "In its decision of 13 September 2022 (1 ABR 22/21), the Federal Labor Court held that employers must record working time. Trust-based working time (Vertrauensarbeitszeit), where employees manage their own hours, remains lawful.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "KAV-NW — BAG, Beschluss vom 13.09.2022, 1 ABR 22/21",
+            "url": "https://www.kav-nw.de/de/Aktuelles/Rechtsprechung-Rechtsfragen/Rechtsprechung-Rechtsfragen1/BAG-Beschluss-vom-13.09.2022-1-ABR-22-21-Arbeitszeiterfassungspflicht-des-Arbeitgebers-.html",
+            "year": 2022
+          },
+          {
+            "title": "KPMG Law — Das Ende der Vertrauensarbeitszeit?",
+            "url": "https://kpmg-law.de/das-ende-der-vertrauensarbeitszeit-das-stechuhr-urteil-des-eugh-und-die-gesetzliche-verpflichtung-zur-einfuehrung-eines-zeiterfassungssystems-nach-dem-bag/"
+          }
+        ]
+      },
+      {
+        "id": "de-work-3",
+        "text": "According to Destatis, SMEs as defined by the EU made up 99.3% of all enterprises and 54% of persons employed in 2024. IfM Bonn defines the Mittelstand by the unity of ownership and management rather than by size, so it is a separate concept.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Destatis — Small and medium-sized enterprises",
+            "url": "https://www.destatis.de/EN/Themes/Economic-Sectors-Enterprises/Enterprises/Small-Sized-Enterprises-Medium-Sized-Enterprises/_node.html",
+            "year": 2024
+          },
+          {
+            "title": "IfM Bonn — Key indicators: Germany",
+            "url": "https://www.ifm-bonn.org/en/statistics/overview-mittelstand/key-indicators-based-on-sme-definition-by-ifm-bonn/germany",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "de-work-4",
+        "text": "According to a site compiling Eurostat data, about 13.2% of employed people usually worked from home in 2025, above the EU average. Destatis figures cited by Euronews put the share at about 24% in 2024 when occasional home working is included.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Apiar Data — EU usually works from home rate (Eurostat lfsa_ehomp)",
+            "url": "https://apiardata.com/statistics/eu-usually-works-from-home-rate/",
+            "year": 2026
+          },
+          {
+            "title": "Euronews — Working from home in Europe",
+            "url": "https://www.euronews.com/2026/06/12/working-from-home-in-europe-why-your-chances-vary-so-much-depending-on-where-you-live",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "de-work-5",
+        "text": "According to OECD data for 2019, establishments with 10 or fewer employees are exempt from the standard dismissal protection rules. Dismissals must also be notified to the works council beforehand.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "OECD EPL Database, update 2019 — Germany",
+            "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/10/employment-protection-information-2019-country-notes_c421e786/germany_f22c31fc/68e58f6d-en.pdf",
+            "year": 2019
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "de-oss-1",
+        "text": "According to Octoverse 2024, Germany has more than 3.5 million developers on GitHub, up 21% year over year. Octoverse 2025 says the number of German developers more than tripled from 2020 to 2025.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2024",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-2024/",
+            "year": 2024
+          },
+          {
+            "title": "GitHub Octoverse 2025",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "de-oss-2",
+        "text": "Germany had the second-largest number of respondents to the Stack Overflow Developer Survey 2025 after the United States (3,022, or 8.6%). This measures participation in the survey, not developers per capita.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Stack Overflow Developer Survey 2025 — Developers",
+            "url": "https://survey.stackoverflow.co/2025/developers",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "de-oss-3",
+        "text": "By October 2024, two years after its launch, the Sovereign Tech Fund (now the Sovereign Tech Agency) had invested more than $24.9 million in 60 open source technologies. Recipients include curl, OpenSSH, systemd, PHP, and FFmpeg.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Wikipedia — Sovereign Tech Agency",
+            "url": "https://en.wikipedia.org/wiki/Sovereign_Tech_Agency"
+          },
+          {
+            "title": "Slashdot — Germany's Sovereign Tech Fund has invested over $24.9M in open source",
+            "url": "https://news.slashdot.org/story/24/10/18/2326255/germanys-sovereign-tech-fund-has-invested-over-249m-in-open-source-in-two-years",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "de-oss-4",
+        "text": "The CCC's Chaos Communication Congress drew about 15,000 people to 38C3 (December 2024, Hamburg). KDE e.V. was registered in Tübingen in 1997 and is headquartered in Berlin. SUSE was founded in 1992 and is based in Nuremberg.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "scip.ch — Chaos Communication Congress 38C3",
+            "url": "https://www.scip.ch/en/?labs.20250123=",
+            "year": 2025
+          },
+          {
+            "title": "KDE e.V. — Articles of Association",
+            "url": "https://ev.kde.org/corporate/statutes/"
+          },
+          {
+            "title": "Wikipedia — SUSE S.A.",
+            "url": "https://en.wikipedia.org/wiki/SUSE_S.A."
+          }
+        ]
+      },
+      {
+        "id": "de-oss-5",
+        "text": "In 2024, Schleswig-Holstein announced it would move 30,000 government PCs to LibreOffice and Linux, and the LibreOffice migration was about 80% complete by the end of 2025. The federal government develops openDesk through ZenDiS and released version 1.0 in October 2024.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "TDF Blog — German state moving 30,000 PCs to LibreOffice",
+            "url": "https://blog.documentfoundation.org/blog/2024/04/04/german-state-moving-30000-pcs-to-libreoffice/",
+            "year": 2024
+          },
+          {
+            "title": "Cybernews — German state replaces Microsoft with open source",
+            "url": "https://cybernews.com/news/schleswig-holstein-germany-microsoft-open-source/",
+            "year": 2025
+          },
+          {
+            "title": "Wikipedia — ZenDiS",
+            "url": "https://en.wikipedia.org/wiki/ZenDiS"
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "In regulated industries such as automotive, upfront design and documentation under ASPICE and ISO 26262 are contractual requirements. Berlin's VC-backed startups, by contrast, often run international teams that work in English and should be read as a different culture.",
+    "Openness about mistakes varies sharply with company size. In the Randstad-ifo survey (2026), 28% of large firms said mistakes are discussed openly, against 62% of small firms.",
+    "Codetermination through a works council is taken for granted at traditional companies but contested at startups, as the 2020 N26 case shows.",
+    "Germany's Hofstede UAI score is 65, lower than France's 86 and not as high as the common belief that Germans are extremely risk-averse would suggest.",
+    "No study was found that links national culture directly to code review or postmortem practice, so statements in this area rest heavily on inference."
+  ]
+}

@@ -1,0 +1,348 @@
+{
+  "id": "fr",
+  "name": "France",
+  "oneLiner": "Meyer classes it as hierarchical yet openly argumentative. State-led open source and IT-services staffing stand out.",
+  "intro": "This page summarizes tendencies in French software engineering from the Culture Map, Hofstede, statistics, and law. These are country-level tendencies, and work differs widely between Paris startups, research institutes, and developers placed at client sites by IT services firms (ESN). France has abundant primary sources on institutions such as government open source policy and collective agreements, but almost no data was found on review or postmortem practice in engineering teams.",
+  "themes": {
+    "design": [
+      {
+        "id": "fr-design-1",
+        "text": "The Culture Map (2014) places France on the principles-first side of Persuading. Meyer says that Latin European and Germanic cultures prefer deductive arguments that move from principles to conclusions.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "fr-design-2",
+        "text": "French engineers are trained mainly through the diplôme d'ingénieur accredited by the CTI. According to the CDEFI Panorama, more than 200 accredited schools award 44,000 to 49,000 engineering degrees a year.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "CDEFI — Panorama des écoles françaises d'ingénieurs 2023",
+            "url": "https://www.cti-commission.fr/wp-content/uploads/2023/07/2023_CDEFI_Panorama_ecoles_ingenieurs.pdf",
+            "year": 2023
+          },
+          {
+            "title": "Wikipedia — Commission des Titres d'Ingénieur",
+            "url": "https://en.wikipedia.org/wiki/Commission_des_Titres_d%27Ing%C3%A9nieur"
+          }
+        ]
+      },
+      {
+        "id": "fr-design-3",
+        "text": "According to Numeum, IT services firms (ESN) accounted for 50% (€34.5 billion) of the €69.4 billion digital market in 2024. Many developers work on client sites under the régie model, in which the ESN is accountable for effort rather than deliverables.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Numeum — Conférence semestrielle S2 2024",
+            "url": "https://numeum.fr/wp-content/uploads/2025/03/CP20Numeum_ConfC3A9rence20semestrielle20S2-2024.pdf.pdf",
+            "year": 2024
+          },
+          {
+            "title": "philix — Régie ou forfait ESN",
+            "url": "https://philix.fr/regie-ou-forfait-quel-mode-de-facturation-choisir-pour-une-esn/"
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "fr-failure-1",
+        "text": "France scores 86 on Hofstede's uncertainty avoidance (UAI), higher than Germany's 65. The Culture Factor explains a high score as a tendency to reduce ambiguity through rules and procedures.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=france%2Cgermany",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "fr-failure-2",
+        "text": "In GEM 2024, 42.7% of French adults who see business opportunities cited fear of failure as a barrier to starting a business. GEM puts the German figure at about two in five for 2025, so the gap is small.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GEM — A year of contrast for entrepreneurship in France",
+            "url": "https://www.gemconsortium.org/news/a-year-of-contrast-for-entrepreneurship-in-france",
+            "year": 2025
+          },
+          {
+            "title": "GEM — Entrepreneurship in Germany",
+            "url": "https://www.gemconsortium.org/country-profile/64",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "fr-failure-3",
+        "text": "The CNIL imposed 87 sanctions in 2024, with fines totaling about €55.21 million, up from 21 sanctions in 2022 and 42 in 2023. Of the 69 sanctions under the simplified procedure, 11 were for breaches of data security obligations.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "CNIL — Sanctions et mesures correctrices : bilan 2024",
+            "url": "https://www.cnil.fr/fr/sanctions-et-mesures-correctrices-bilan-2024-de-laction-de-la-cnil",
+            "year": 2025
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "fr-feedback-1",
+        "text": "Meyer writes that the French communicate in a more high-context, implicit way than Americans yet deliver criticism more directly. She treats reliance on context and directness of criticism as separate scales.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "fr-feedback-2",
+        "text": "Meyer's website says that people from the United States, France, and the Netherlands are relatively used to heated, confrontational meetings.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Team Mapping Tool Report",
+            "url": "https://erinmeyer.com/team-culture-mapping-report/"
+          }
+        ]
+      },
+      {
+        "id": "fr-feedback-3",
+        "text": "One book review explains that French disagreement is emotionally expressive, unlike the restrained style of German disagreement.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Deploy Yourself — The Culture Map book review",
+            "url": "https://www.deployyourself.com/book-review/the-culture-map-erin-meyer-eight-scales/"
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "fr-hierarchy-1",
+        "text": "The Culture Map places France toward the hierarchical end of Leading and the top-down end of Deciding, yet on the confrontational side of Disagreeing. Read together, the scales suggest that the boss decides, but only after vigorous debate.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "fr-hierarchy-2",
+        "text": "How the right to disconnect (Labor Code L2242-17, in force since 2017) is applied is a matter for collective bargaining within each company. If no agreement is reached, the employer drafts a charter after consulting the CSE, the staff representative body.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "naxis — Droit à la déconnexion : ce que dit vraiment la loi",
+            "url": "https://www.naxis.fr/blog/droit-deconnexion-ce-que-dit-la-loi-2026-03-08",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "fr-communication-1",
+        "text": "The Culture Map places France as more high-context than Germany (though less than China) on Communicating and more relationship-based than Germany on Trusting. In Meyer's framework, this means relying on shared context and building trust through relationships as well as work.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer — Eight-scale Tool for Mapping Cultural Differences (chart: The Culture Map, 2014)",
+            "url": "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+            "year": 2014
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "fr-work-1",
+        "text": "The statutory working week is 35 hours. The Syntec collective agreement for the IT sector provides a 35-hour arrangement (modalité 1), a 38.5-hour flat arrangement capped at 219 days a year (modalité 2), and forfait jours, a 218-day annual arrangement generally without overtime pay (modalité 3).",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "LegalPlace — Forfait jours convention Syntec",
+            "url": "https://www.legalplace.fr/guides/forfait-jours-convention-syntec/",
+            "year": 2026
+          },
+          {
+            "title": "PayFit — Forfait jours sous Syntec",
+            "url": "https://payfit.com/fr/fiches-pratiques/syntec-forfait-jour/"
+          }
+        ]
+      },
+      {
+        "id": "fr-work-2",
+        "text": "Eurostat data cited by Euronews and Fortune put average actual weekly hours in France at about 36, in line with the EU average and nearly flat from 2014 to 2024.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Euronews — Why and where are weekly working hours dropping in Europe?",
+            "url": "https://www.euronews.com/2025/06/13/why-and-where-are-weekly-working-hours-dropping-in-europe",
+            "year": 2025
+          },
+          {
+            "title": "Fortune — Does Germany need to work harder?",
+            "url": "https://fortune.com/2025/09/07/germany-workweek-hours-labor-productivity-gdp-friedrich-merz/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "fr-work-3",
+        "text": "According to Numeum, the digital sector employs about 666,000 people. Hiring fell from 83,800 in 2023 to 51,800 in 2024, and turnover dropped from 22% to 16%. The decline was sharpest at large ESNs, while software publishers held up better.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Numeum — Le syndicat",
+            "url": "https://numeum.fr/le-syndicat/",
+            "year": 2025
+          },
+          {
+            "title": "Numeum — Emploi et rémunérations dans le numérique 2024",
+            "url": "https://numeum.fr/social/emploi-et-remunerations-dans-le-numerique-les-grandes-tendances-2024/",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "fr-work-4",
+        "text": "According to industry blogs and a lawyer's article, ESNs structurally generate idle periods between assignments (intercontrat). Isolation and loss of motivation among consultants waiting for an assignment are cited as problems.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Le Cercle Tech — L'intercontrat en ESN",
+            "url": "https://www.lecercletech.com/intercontrat-definition/"
+          },
+          {
+            "title": "Village de la Justice — Consultants des cabinets de conseil et ESN",
+            "url": "https://www.village-justice.com/articles/consultants-des-cabinets-conseil-ssii-les-points-sensibles-relation-travail,41346.html",
+            "year": 2022
+          }
+        ]
+      },
+      {
+        "id": "fr-work-5",
+        "text": "According to a site compiling Eurostat data, about 11.3% of employed people in France usually worked from home in 2025.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Apiar Data — EU usually works from home rate (Eurostat lfsa_ehomp)",
+            "url": "https://apiardata.com/statistics/eu-usually-works-from-home-rate/",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "fr-oss-1",
+        "text": "Under the Digital Republic Act (2016), government source code became an administrative document subject to access requests. Bodies with 50 or more staff must publish it, and Article 16 encourages the use of free software and open formats.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Wikipedia — Loi pour une République numérique",
+            "url": "https://en.wikipedia.org/wiki/Loi_pour_une_R%C3%A9publique_num%C3%A9rique"
+          },
+          {
+            "title": "S.I.Lex — Les logiciels produits par les administrations sont passés en Open Source par défaut",
+            "url": "https://scinfolex.com/2017/12/08/les-logiciels-produits-par-les-administrations-sont-passes-en-open-source-par-defaut-et-voici-pourquoi/",
+            "year": 2017
+          }
+        ]
+      },
+      {
+        "id": "fr-oss-2",
+        "text": "The SILL, the interministerial catalog of recommended free software run by DINUM, began in 2012 and reached 500 entries in November 2024. A 2026 announcement says more than 600 tools have been listed over its history.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "code.gouv.fr — 500 logiciels libres au SILL",
+            "url": "https://code.gouv.fr/fr/blog/500-logiciels-libres-au-sill/",
+            "year": 2024
+          },
+          {
+            "title": "Portail du numérique ouvert — SILL : évolutions à venir",
+            "url": "https://www.ouvert.numerique.gouv.fr/actualites/socle-interministeriel-logiciels-libres-sill-evolutions-2026/",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "fr-oss-3",
+        "text": "DINUM's La Suite numérique and Germany's openDesk from ZenDiS have collaborated since 2024. The collaborative editor Docs is a joint Franco-German initiative that the Netherlands is also joining.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub — suitenumerique/docs",
+            "url": "https://github.com/suitenumerique/docs",
+            "year": 2026
+          },
+          {
+            "title": "FOSS Backstage 2025 — How FR and DE are developing their digital sovereignty",
+            "url": "https://program.foss-backstage.de/fossback25/talk/XPGWX8/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "fr-oss-4",
+        "text": "VLC began in 1996 as a student project at École Centrale Paris, was released under the GPL in 2001, and has been run by an independent nonprofit since 2009. scikit-learn was supported by Inria from 2010 and moved to the spin-off company Probabl in 2023.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "VideoLAN — About",
+            "url": "https://www.videolan.org/videolan/"
+          },
+          {
+            "title": "Jean-Baptiste Kempf — 15 years of VLC and VideoLAN",
+            "url": "https://jbkempf.com/blog/15-years-of-VLC/"
+          },
+          {
+            "title": "scikit-learn — About us",
+            "url": "https://scikit-learn.org/stable/about.html"
+          }
+        ]
+      },
+      {
+        "id": "fr-oss-5",
+        "text": "According to Octoverse 2024, France has more than 2.8 million developers on GitHub, up 20% year over year. France ranked fifth by respondents in the Stack Overflow Developer Survey 2025 (1,408, or 4%).",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2024",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-2024/",
+            "year": 2024
+          },
+          {
+            "title": "Stack Overflow Developer Survey 2025 — Developers",
+            "url": "https://survey.stackoverflow.co/2025/developers",
+            "year": 2025
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "Ownership of quality and ways of working differ greatly between Paris startups, research institutes such as Inria, and ESN consultants placed at client sites (régie).",
+    "There is a common belief that France is intolerant of failure. Yet 42.7% cited fear of failure in GEM 2024, close to the roughly two in five GEM reports for Germany in 2025.",
+    "The statutory week is 35 hours, but managers and professionals on Syntec forfait jours are tracked in days, and overall actual hours are in line with the EU average.",
+    "No quantitative data was found on postmortem or design-document practice specific to France, so this page does not cover it.",
+    "One summary site (entiresummary) says the French deliver negative feedback indirectly, but this contradicts Meyer's own chart, so this page does not use it."
+  ]
+}

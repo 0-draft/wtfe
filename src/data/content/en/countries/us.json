@@ -1,0 +1,277 @@
+{
+  "id": "us",
+  "name": "United States",
+  "oneLiner": "Meyer classes it as egalitarian in manner but quick and top-down in decisions. Written docs and blameless reviews stand out.",
+  "intro": "This page summarizes tendencies in US software engineering from public documents and survey data. These are country-level tendencies, and organizations and individuals within the country vary widely. Most of the evidence comes from primary documents published by large tech companies such as Google and Amazon, plus national statistics, so regulated industries and smaller companies are underrepresented.",
+  "themes": {
+    "design": [
+      {
+        "id": "us-design-1",
+        "text": "At Google, engineers write a relatively informal design doc before writing code. According to Malte Ubl (2020), the point is not an exhaustive specification but a record of the trade-offs and alternatives considered.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Design Docs at Google (Malte Ubl)",
+            "url": "https://www.industrialempathy.com/posts/design-docs-at-google/",
+            "year": 2020
+          }
+        ]
+      },
+      {
+        "id": "us-design-2",
+        "text": "Ubl says a design doc should be as long as necessary and as short as possible, and distinguishes it from a heavyweight waterfall-style specification.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Design docs - A design doc (Malte Ubl)",
+            "url": "https://www.industrialempathy.com/posts/design-doc-a-design-doc/",
+            "year": 2015
+          }
+        ]
+      },
+      {
+        "id": "us-design-3",
+        "text": "Meyer places the United States on the applications-first side of the Persuading scale. A book summary describes this as starting from conclusions and examples and favoring the practical how over the theoretical why.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "The Investor's Podcast: The Culture Map Summary",
+            "url": "https://www.theinvestorspodcast.com/billionaire-book-club-executive-summary/the-culture-map/"
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "us-failure-1",
+        "text": "The Google SRE Book (2016) codifies the blameless postmortem. It identifies contributing causes without blaming individuals or teams and assumes that everyone involved acted with good intentions.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Google SRE Book: Postmortem Culture",
+            "url": "https://sre.google/sre-book/postmortem-culture/",
+            "year": 2016
+          }
+        ]
+      },
+      {
+        "id": "us-failure-2",
+        "text": "At F8 in 2014, Zuckerberg changed Facebook's motto from \"Move fast and break things\" to \"Move fast with stable infra.\" His reason was that at Facebook's scale, the time spent fixing breakage outweighed the gain in speed.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "TechCrunch: Facebook Themes f8 Around A Stable Mobile Platform",
+            "url": "https://techcrunch.com/2014/04/30/facebook-api-guarantee",
+            "year": 2014
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "us-feedback-1",
+        "text": "According to Meyer, Americans are often taught to wrap negative messages in positive ones (the feedback sandwich). For this reason she places the United States in the middle of the scale for delivering negative feedback.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer: How To Say \"This Is Crap\" In Different Cultures",
+            "url": "https://erinmeyer.com/how-to-say-this-is-crap-in-different-cultures/",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "us-feedback-2",
+        "text": "A blog explainer on Meyer's evaluating scale notes a common mismatch: Dutch and German colleagues take American praise at face value, while Americans find Dutch and German criticism too harsh.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "4squareviews: The Evaluation Scale on the Cultural Map",
+            "url": "https://4squareviews.com/2016/09/15/the-evaluation-scale-on-the-cultural-map/",
+            "year": 2016
+          }
+        ]
+      },
+      {
+        "id": "us-feedback-3",
+        "text": "A study of more than 70,000 GitHub pull requests from 17 countries (Rastogi et al., 2018) found that pull requests were more likely to be accepted when the reviewer and the submitter were in the same country.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Rastogi et al.: Relationship between geographical location and evaluation of developer contributions in GitHub",
+            "url": "https://www.microsoft.com/en-us/research/publication/relationship-between-geographical-location-and-evaluation-of-developer-contributions-in-github/",
+            "year": 2018
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "us-hierarchy-1",
+        "text": "Meyer classifies the United States as egalitarian but top-down (HBR, 2017). People use first names and are encouraged to speak up, but the boss decides quickly, and the decision can be revisited when new arguments appear.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer: Being the Boss in Brussels, Boston, and Beijing (HBR)",
+            "url": "https://erinmeyer.com/wp-content/uploads/2019/11/Being-the-Boss-HBR.pdf",
+            "year": 2017
+          }
+        ]
+      },
+      {
+        "id": "us-hierarchy-2",
+        "text": "In the same article, Meyer reports that to Japanese managers an American boss can look flat on the surface yet highly autocratic in how decisions are made.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer: Being the Boss in Brussels, Boston, and Beijing (HBR)",
+            "url": "https://erinmeyer.com/wp-content/uploads/2019/11/Being-the-Boss-HBR.pdf",
+            "year": 2017
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "us-communication-1",
+        "text": "Meyer places the United States at the most low-context end of the Communicating scale. A book summary describes a preference for saying things explicitly and for repeating and summarizing key points.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "lifeclub: The Culture Map Summary",
+            "url": "https://lifeclub.org/books/the-culture-map-erin-meyer-review-summary"
+          }
+        ]
+      },
+      {
+        "id": "us-communication-2",
+        "text": "According to Bezos's 2017 shareholder letter, Amazon does not use PowerPoint. Meetings start with everyone silently reading a six-page narrative memo, and memos carry no author's name because they come from the whole team.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Amazon 2017 Letter to Shareholders",
+            "url": "https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders",
+            "year": 2018
+          }
+        ]
+      },
+      {
+        "id": "us-communication-3",
+        "text": "According to CNBC (2018), the practice began with a 2004 email from Bezos. He explained that a good four-page memo is harder to write than a 20-page slide deck because the narrative structure forces better thinking.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "CNBC: Why Jeff Bezos makes Amazon execs read 6-page memos",
+            "url": "https://www.cnbc.com/2018/04/23/what-jeff-bezos-learned-from-requiring-6-page-memos-at-amazon.html",
+            "year": 2018
+          }
+        ]
+      },
+      {
+        "id": "us-communication-4",
+        "text": "According to a blog post by Slab, Stripe also rarely uses slides. Meetings begin with silent reading of a memo, followed by comments on the document.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Slab: How Stripe Built a Writing Culture",
+            "url": "https://slab.com/blog/stripe-writing-culture/"
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "us-work-1",
+        "text": "According to the BLS, median employee tenure in January 2024 was 3.9 years overall, the lowest since January 2002. In the private sector it was 3.5 years.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "BLS: Employee Tenure in 2024",
+            "url": "https://www.bls.gov/news.release/archives/tenure_09262024.htm",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "us-work-2",
+        "text": "At-will employment is the default in every state except Montana. Unless the reason is illegal, either the employer or the employee can end the employment relationship at any time.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "USA.gov: Termination guidance for employers",
+            "url": "https://www.usa.gov/termination-for-employers"
+          }
+        ]
+      },
+      {
+        "id": "us-work-3",
+        "text": "According to layoffs.fyi figures cited by TechCrunch, tech layoffs in 2024 exceeded 150,000 people at 549 companies. The peak was 2023, with about 260,000.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "TechCrunch: A comprehensive archive of 2024 tech layoffs",
+            "url": "https://techcrunch.com/2024/12/31/a-comprehensive-archive-of-2024-tech-layoffs/",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "us-work-4",
+        "text": "In the Stack Overflow Developer Survey 2025, 45% of US respondents work fully remote, the highest share among the top responding countries. Median salaries were $200k for engineering managers, $175k for back-end developers, and $138k for full-stack developers.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Stack Overflow Developer Survey 2025: Work",
+            "url": "https://survey.stackoverflow.co/2025/work",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "us-work-5",
+        "text": "In Staff Engineer (2021), Will Larson sorts Staff+ individual-contributor roles, which do not require becoming a manager, into four archetypes: Tech Lead, Architect, Solver, and Right Hand.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Will Larson: Staff Engineer",
+            "url": "https://staffeng.com/book/",
+            "year": 2021
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "us-oss-1",
+        "text": "According to Octoverse 2025, the number of US developers on GitHub grew from 10.2 million in 2020 to 28 million in 2025, the most of any country. The US ranks second to India in open source contributors and first in total contributions.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2025",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "us-oss-2",
+        "text": "The same Octoverse 2025 report says the US, UK, and Canada more than doubled their developer counts from 2020 to 2025, while India and Brazil more than quadrupled. Its 2030 projection puts India ahead of the United States.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2025",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/",
+            "year": 2025
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "Most of the evidence comes from large tech companies such as Google, Amazon, and Facebook. No data was found on how far design docs or blameless postmortems have spread in regulated industries or in corporate IT departments.",
+    "\"Move fast\" is often treated as the banner of US tech, yet Facebook itself shifted to \"stable infra\" in 2014.",
+    "Layoff counts differ by nearly a factor of two between trackers such as layoffs.fyi and TrueUp.",
+    "Some practices described as American come from companies whose founders are not American, such as Stripe. The memo culture is better read as a practice of the US tech industry than of the country as a whole.",
+    "The Stack Overflow survey uses a self-selected sample, so its salary and work-arrangement figures depend on who chose to respond."
+  ]
+}
