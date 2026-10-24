@@ -1,0 +1,252 @@
+{
+  "id": "br",
+  "name": "Brazil",
+  "oneLiner": "Birthplace of Lua and Elixir, fourth on GitHub by developer count, with a reported relationship-first workplace culture.",
+  "intro": "This page collects tendencies reported for Brazil's software industry in surveys, research and industry-association statistics. Variance within the country is large: startups and multinationals work very differently from family-owned or state-linked organizations. Open source and the labor market have quantitative data from GitHub and Brasscom, while descriptions of feedback and hierarchy rest mostly on observations by a training company.",
+  "themes": {
+    "design": [
+      {
+        "id": "br-design-1",
+        "text": "Lua was created in 1993 at Tecgraf, PUC-Rio, out of work for Petrobras. Its designers cite the 1977-92 \"market reserve\" policy, which made imported software expensive and hard to obtain, as part of the reason they built their own language.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Ierusalimschy et al.: The Evolution of Lua (HOPL III)",
+            "url": "https://www.cs.tufts.edu/comp/250RTS/archive/roberto-ierusalimschy/lua-hopl-iii.pdf",
+            "year": 2007
+          }
+        ]
+      },
+      {
+        "id": "br-design-2",
+        "text": "A study using data from around 2013 found that agile adoption in Brazil was mostly bottom-up, led by developers and team leads. This differs from the global pattern, where top-down adoption was more common.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The evolution of agile software development in Brazil (JBCS)",
+            "url": "https://link.springer.com/article/10.1007/s13173-013-0114-x",
+            "year": 2013
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "br-failure-1",
+        "text": "Nubank acquired Plataformatec (the company behind Elixir) in January 2020 and Cognitect (Clojure/Datomic) in July 2020, bringing in the firms behind its own technology stack. According to Cognitect, Nubank then had 600 Clojure developers running 500 microservices.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Finextra: Nubank buys firm behind Clojure programming language",
+            "url": "https://www.finextra.com/newsarticle/36297/nubank-buys-firm-behind-clojure-programming-language",
+            "year": 2020
+          },
+          {
+            "title": "ClojureVerse: Cognitect joins Nubank",
+            "url": "https://clojureverse.org/t/cognitect-joins-nubank/6280",
+            "year": 2020
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "br-feedback-1",
+        "text": "The training company Talaera, citing Meyer, writes that negative feedback tends to be wrapped in warmth and delivered in private, and that public criticism easily damages relationships. The behavioral descriptions rest mainly on the authors' own observations.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Talaera: Brazilian Work Culture",
+            "url": "https://www.talaera.com/culture/brazilian-work-culture/",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "br-feedback-2",
+        "text": "In an HR magazine interview, Erin Meyer names Latin America as one of the \"really indirect\" parts of the world for negative feedback.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer: HR magazine interview (PDF)",
+            "url": "https://erinmeyer.com/wp-content/uploads/2014/05/034_HR_0217_Erin-Meyer1-1.pdf",
+            "year": 2014
+          }
+        ]
+      },
+      {
+        "id": "br-feedback-3",
+        "text": "Talaera says that instead of a plain \"no,\" phrases such as \"we can try\" or \"I'll do my best\" can signal concern or refusal.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Talaera: Brazilian Work Culture",
+            "url": "https://www.talaera.com/culture/brazilian-work-culture/",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "br-hierarchy-1",
+        "text": "Talaera says decisions tend to be made top-down and junior staff tend to wait until invited before speaking. The basis is the company's own observations as a trainer.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Talaera: Brazilian Work Culture",
+            "url": "https://www.talaera.com/culture/brazilian-work-culture/",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "br-hierarchy-2",
+        "text": "Brazil's Hofstede power distance (PDI) score is high at 69. Yet a study of two agile teams at financial firms in Rio de Janeiro (SBQS '24) found almost no effect of high power distance. It is a small, preliminary study.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Mattos, Dutra & Santos: An Instrument for Assessing Power Distance in Agile Organizations (SBQS '24)",
+            "url": "https://dl.acm.org/doi/10.1145/3701625.3701653",
+            "year": 2024
+          },
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=brazil",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "br-communication-1",
+        "text": "A summary of Meyer's Culture Map places Brazil on the side where trust is built through personal relationships, close to China and Saudi Arabia. Small talk at the start of a meeting is described as part of the work.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Mindli: The Culture Map study guide",
+            "url": "https://mind.li/explore/37057-the-culture-map-by-erin-meyer-study-analysis-guide"
+          }
+        ]
+      },
+      {
+        "id": "br-communication-2",
+        "text": "Talaera says written English tends to be on the formal side and asynchronous replies tend to be long and warm, and it recommends video calls over audio-only calls.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Talaera: Brazilian Work Culture",
+            "url": "https://www.talaera.com/culture/brazilian-work-culture/",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "br-work-1",
+        "text": "According to the salary-guide publisher Talenlio, PJ contracts (working as a company under a service contract) are often offered at 30-40% more than CLT employment contracts. If the work is in fact employment, courts can reclassify it as a CLT contract.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Talenlio: Brazil Tech Salary Guide 2026 (PJ vs CLT)",
+            "url": "https://talenlio.ai/blogs/brazil-tech-salary-guide-2026",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "br-work-2",
+        "text": "In the 2026 Código Fonte TV salary survey (17,046 respondents, self-selected sample), average CLT pay rose 14.4% year on year, while PJ pay rose 0.7%. The figures come from Talenlio's summary.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Talenlio: Brazil Tech Salary Guide 2026 (PJ vs CLT)",
+            "url": "https://talenlio.ai/blogs/brazil-tech-salary-guide-2026",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "br-work-3",
+        "text": "Brasscom (2021) estimated demand for 797,000 tech professionals over 2021-25. With about 53,000 graduates a year from relevant programs, that implies a shortfall of about 106,000 a year.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Brasscom: Estudo aponta demanda de 797 mil profissionais de tecnologia até 2025",
+            "url": "https://brasscom.org.br/estudo-da-brasscom-aponta-demanda-de-797-mil-profissionais-de-tecnologia-ate-2025/",
+            "year": 2021
+          }
+        ]
+      },
+      {
+        "id": "br-work-4",
+        "text": "Data from the hiring platform Arc.dev puts the median pay of Brazilian developers working remotely for foreign companies at $56,300, about three times the local median of $18,400. Seventy percent of those foreign employers are in the US or UK.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Arc.dev: Latin American developers 2.2X their income via global remote work",
+            "url": "https://arc.dev/talent-blog/remote-software-developer-salary-report-latin-america-2022/",
+            "year": 2022
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "br-oss-1",
+        "text": "Octoverse 2025 counts 6.89 million Brazilian developers on GitHub, fourth in the world. The number more than quadrupled over 2020-25, and Brazil ranks third for open source contributors. GitHub projects 19.6 million by 2030.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2025",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "br-oss-2",
+        "text": "Octoverse 2024 counts more than 5.4 million developers in Brazil, up 27% year on year. GitHub attributes part of this growth to students.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2024",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-2024/",
+            "year": 2024
+          },
+          {
+            "title": "InfoQ: GitHub Octoverse 2024",
+            "url": "https://www.infoq.com/news/2024/11/github-octoverse-2024",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "br-oss-3",
+        "text": "José Valim (a USP graduate and former Rails Core Team member) started Elixir in 2011, and the Brazilian company Plataformatec backed its development from 2012.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "The OSS History Newsletter: The Story of Elixir",
+            "url": "https://osshistory.org/p/elixir"
+          },
+          {
+            "title": "GitHub: josevalim",
+            "url": "https://github.com/josevalim",
+            "year": 2026
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "Accounts that explain Brazilian development culture through \"gambiarra\" or \"jeitinho\" (improvised workarounds) have no empirical research behind them and remain stereotypes.",
+    "Talaera writes that tech startups and multinationals are flat, while family-owned and state-linked organizations are more hierarchical.",
+    "Most descriptions of feedback and communication come from observations by the training company Talaera, not from quantitative data.",
+    "No study was found that directly examines how engineering organizations handle failure or postmortems. Brazil's Hofstede uncertainty avoidance (UAI) score is fairly high at 76, but that alone says little about attitudes to failure.",
+    "The surge in developer numbers includes students, so growth in headcount does not translate directly into growth in experience.",
+    "No reliable figures were found for the PJ-to-CLT ratio or for the share of developers working for foreign companies."
+  ]
+}

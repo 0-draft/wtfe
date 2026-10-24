@@ -1,0 +1,242 @@
+{
+  "id": "pl",
+  "name": "Poland",
+  "oneLiner": "A strong ICPC record, with B2B contracts and foreign-owned centers shaping how IT work is organized.",
+  "intro": "This page collects tendencies reported for Poland's software industry in statistics, surveys and industry reports. Practice differs a lot between foreign-owned centers and domestic companies, and between senior and junior staff. Contracts and employment have large-sample figures from Bulldogjob and ABSL, while descriptions of feedback and communication come mostly from training-company guides.",
+  "themes": {
+    "design": [
+      {
+        "id": "pl-design-1",
+        "text": "The University of Warsaw won the ICPC World Finals in 2003 and 2007, placed second in 2012 and 2017, and fourth in 2019. Jagiellonian University (Kraków) placed second in 2006.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Competitive Programming Hall Of Fame: ICPC World Finals standings",
+            "url": "https://cphof.org/contest/icpc",
+            "year": 2026
+          },
+          {
+            "title": "University of Warsaw: ACM ICPC",
+            "url": "https://en.uw.edu.pl/tag/acm-icpc/"
+          }
+        ]
+      },
+      {
+        "id": "pl-design-2",
+        "text": "In country scores HackerRank published in 2016, Poland scored about 98 and ranked third, behind China (100) and Russia (99.9). The United States ranked 28th (78).",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "HackerRank: Which Country Would Win in the Programming Olympics?",
+            "url": "https://www.hackerrank.com/blog/which-country-would-win-in-the-programming-olympics",
+            "year": 2016
+          }
+        ]
+      },
+      {
+        "id": "pl-design-3",
+        "text": "Poland's Hofstede uncertainty avoidance (UAI) score is very high at 93. The training company Talaera notes that reviews and approvals are expected to come with supporting documents, and proposals without them have a harder time.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=poland",
+            "year": 2026
+          },
+          {
+            "title": "Talaera: Polish Business Culture",
+            "url": "https://www.talaera.com/culture/polish-business-culture/",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "pl-failure-1",
+        "text": "In GEM data, 52% of people who saw a business opportunity held back from starting a business for fear of failure (2023), above the European average of 45%. Only 2.6% of non-entrepreneurs intend to start a business within three years, far below the European average of 12%.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GEM: Poles Cautious about Embracing Entrepreneurship as a Career",
+            "url": "https://www.gemconsortium.org/news/poles-cautious-about-embracing-entrepreneurship-as-a-career%C2%A0"
+          },
+          {
+            "title": "PARP: Global Entrepreneurship Monitor Poland 2024 Report",
+            "url": "https://en.parp.gov.pl/storage/publications/pdf/GEM-Poland-2024-Report_WCAG-22.11.2024.pdf",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "pl-failure-2",
+        "text": "In the same 2023 GEM survey, 3.4% of adults aged 18-64 had discontinued a business in the previous 12 months, close to the European average of 3.3%. The pandemic was the most common reason (36%), followed by lack of profitability (18%).",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "PARP: Global Entrepreneurship Monitor Poland 2024 Report",
+            "url": "https://en.parp.gov.pl/storage/publications/pdf/GEM-Poland-2024-Report_WCAG-22.11.2024.pdf",
+            "year": 2024
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "pl-feedback-1",
+        "text": "According to Talaera, Meyer's Culture Map places Poland on the direct side for negative feedback. The company says criticism that concerns a person's performance tends to be given one-on-one.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Talaera: Polish Business Culture",
+            "url": "https://www.talaera.com/culture/polish-business-culture/",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "pl-feedback-2",
+        "text": "English written by Polish speakers is said to use few softeners and many imperatives, so it can read as more direct than intended. The evidence comes mainly from studies of learners' English writing.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Talaera: Polish Business Culture",
+            "url": "https://www.talaera.com/culture/polish-business-culture/",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "pl-hierarchy-1",
+        "text": "Poland's Hofstede power distance (PDI) score is 68. Talaera says that in traditional organizations people avoid openly contradicting a manager in meetings, and approvals often need a senior signature. Differences by sector and ownership are large.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=poland",
+            "year": 2026
+          },
+          {
+            "title": "Talaera: Polish Business Culture",
+            "url": "https://www.talaera.com/culture/polish-business-culture/",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "pl-hierarchy-2",
+        "text": "Foreign-owned centers account for 84.3% of employment in the business services sector. Of the 61 centers opened between January 2024 and March 2025, 42.6% were in IT (ABSL 2025).",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "ABSL: Poland's business services sector grows in value and strategic importance",
+            "url": "https://absl.pl/en/news/p/absl-report-polands-business-services-sector-grows-value-and-strategic-importance",
+            "year": 2025
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "pl-communication-1",
+        "text": "Consultancy guides describe Polish business communication as relatively low-context and direct. They add that very blunt phrasing comes across as needlessly harsh, and that email tends to be more formal than chat.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Talaera: Polish Business Culture",
+            "url": "https://www.talaera.com/culture/polish-business-culture/",
+            "year": 2026
+          },
+          {
+            "title": "Friisberg: The Culture Factor — Polish Business Culture",
+            "url": "https://friisberg.com/the-culture-factor-2/"
+          }
+        ]
+      },
+      {
+        "id": "pl-communication-2",
+        "text": "In the EF English Proficiency Index 2025, Poland ranked 15th of 123 countries and regions (score 600), in the top \"Very high\" band. Test takers are self-selected volunteers.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "EF EPI 2025: Poland",
+            "url": "https://www.ef.com/wwen/epi/regions/europe/poland/",
+            "year": 2025
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "pl-work-1",
+        "text": "In Bulldogjob's 2024 survey, 50.3% of IT workers were on employment contracts and 37.4% on B2B contracts. Average monthly pay for full-time workers was 22,011 PLN on B2B (net on invoice) and 9,236 PLN on employment contracts (take-home).",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Bulldogjob: Polish IT Community Report 2024 — Salaries",
+            "url": "https://bulldogjob.com/it-report/2024/salaries",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "pl-work-2",
+        "text": "In No Fluff Jobs listings for the first half of 2024, 74% of senior offers included a B2B contract. Among junior offers, employment contracts were the majority at 56%.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Poland Insight: New regulations may force shift from B2B to employment contracts",
+            "url": "https://polandinsight.com/new-regulations-may-force-shift-from-b2b-to-employment-contracts-for-99-of-polish-it-companies-26946/",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "pl-work-3",
+        "text": "About 488,700 people worked in business service centers at the end of Q1 2025, up 6.2% year on year (ABSL 2025).",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "ABSL: Poland's business services sector grows in value and strategic importance",
+            "url": "https://absl.pl/en/news/p/absl-report-polands-business-services-sector-grows-value-and-strategic-importance",
+            "year": 2025
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "pl-oss-1",
+        "text": "GitHub's \"Made in Poland\" collection includes the headless commerce platform Saleor (about 23,000 stars), Software Mansion's react-native-reanimated and the data grid Handsontable (about 22,000).",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "GitHub Collection: Made in Poland",
+            "url": "https://github.com/collections/made-in-poland",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "pl-oss-2",
+        "text": "In the GitHub Innovation Graph, developer accounts located in Poland grew from about 530,000 in Q1 2020 to about 2.07 million in Q1 2026, roughly a fourfold increase.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub Innovation Graph: Poland",
+            "url": "https://innovationgraph.github.com/economies/pl",
+            "year": 2026
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "Even among 300 foreigners living in Poland, views on directness split 42% direct, 33% indirect and 26% neutral (Talaera).",
+    "The depth of approval chains varies widely by sector, ownership and type of decision, and foreign-owned centers differ from domestic companies.",
+    "B2B contracts dominate job listings, but employment contracts are the majority in actual employment, and the pattern reverses between senior and junior roles.",
+    "The HackerRank country comparison uses 2016 data and does not show current ability."
+  ]
+}

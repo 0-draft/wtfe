@@ -1,13 +1,13 @@
 {
   "id": "pl",
   "name": "ポーランド",
-  "oneLiner": "アルゴリズムに強くルールと根拠を重視し、直接的だが権力格差は高め。外資センターと B2B 契約が働き方を形づくる。",
-  "intro": "ポーランドのソフトウェア業界にみられる傾向を、調査・統計・業界レポートからまとめたページです。ここに書かれているのは国全体や業界の傾向であり、個々のエンジニアの性格や働き方を言い当てるものではありません。外資系センターと国内企業、シニアとジュニアで実態が大きく異なる点に注意してください。",
+  "oneLiner": "ICPC で実績を重ね、B2B 契約と外資系センターが IT の働き方を形づくる。",
+  "intro": "ポーランドのソフトウェア業界について、統計・調査・業界レポートで報告されている傾向をまとめたページです。外資系センターと国内企業、シニアとジュニアとで実態は大きく異なります。契約形態や雇用には Bulldogjob や ABSL の大規模な数字がある一方、フィードバックやコミュニケーションについての記述は研修会社のガイドが中心です。",
   "themes": {
     "design": [
       {
         "id": "pl-design-1",
-        "text": "ワルシャワ大学は ICPC 世界大会で 2003 年と 2007 年に優勝し、2012 年と 2017 年に 2 位、2019 年に 4 位。ヤギェウォ大学（クラクフ）も 2006 年に 2 位に入っている。",
+        "text": "ワルシャワ大学は ICPC 世界大会で 2003 年と 2007 年に優勝し、2012 年と 2017 年に 2 位、2019 年に 4 位に入った。ヤギェウォ大学（クラクフ）も 2006 年に 2 位だった。",
         "confidence": "strong",
         "sources": [
           {
@@ -23,7 +23,7 @@
       },
       {
         "id": "pl-design-2",
-        "text": "HackerRank の 2016 年の国別スコアでは、ポーランドは約 98 で上位 4 か国に入った（中国 100、ロシア 99.9、米国は 28 位で 78）。10 年近く前のデータである。",
+        "text": "HackerRank が 2016 年に公表した国別スコアでは、ポーランドは約 98 で、中国（100）とロシア（99.9）に次ぐ 3 位だった。米国は 28 位（78）である。",
         "confidence": "medium",
         "sources": [
           {
@@ -35,7 +35,7 @@
       },
       {
         "id": "pl-design-3",
-        "text": "Hofstede の不確実性回避（UAI）は 93 と非常に高い。レビューや承認の場では裏付けとなる資料が期待され、資料なしでは提案が弱くなるという指摘もある。",
+        "text": "Hofstede の不確実性回避（UAI）は 93 と非常に高い。研修会社 Talaera は、レビューや承認の場では裏付けとなる資料が期待され、資料のない提案は通りにくいと指摘している。",
         "confidence": "medium",
         "sources": [
           {
@@ -54,7 +54,7 @@
     "failure": [
       {
         "id": "pl-failure-1",
-        "text": "GEM の調査では、事業機会を認識しながら失敗を恐れて起業しないポーランド人は 52%（2023）で、欧州平均の 45% を上回る。3 年以内に起業するつもりの非起業家は 2.6% で、欧州平均の 12% を大きく下回る。",
+        "text": "GEM の調査では、事業機会を認識しながら失敗を恐れて起業しない人は 52%（2023）で、欧州平均の 45% を上回る。3 年以内に起業するつもりの非起業家は 2.6% で、欧州平均の 12% を大きく下回る。",
         "confidence": "strong",
         "sources": [
           {
@@ -67,13 +67,25 @@
             "year": 2024
           }
         ]
+      },
+      {
+        "id": "pl-failure-2",
+        "text": "同じ GEM の 2023 年調査では、過去 12 か月に事業をやめた 18〜64 歳は 3.4% で、欧州平均の 3.3% とほぼ同じだった。廃業の理由はパンデミック（36%）が最も多く、次いで不採算（18%）だった。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "PARP: Global Entrepreneurship Monitor Poland 2024 Report",
+            "url": "https://en.parp.gov.pl/storage/publications/pdf/GEM-Poland-2024-Report_WCAG-22.11.2024.pdf",
+            "year": 2024
+          }
+        ]
       }
     ],
     "feedback": [
       {
         "id": "pl-feedback-1",
-        "text": "Erin Meyer の Culture Map はポーランドを否定的フィードバックが直接的な側に置く。ただし在ポーランド外国人 300 人の調査では「直接的」42%、「間接的」33%、中立 26% と評価が割れており、個人の評価にかかわる指摘は 1on1 で伝える傾向があるとされる。",
-        "confidence": "medium",
+        "text": "Talaera によれば、Meyer の Culture Map はポーランドを否定的フィードバックが直接的な側に置く。同社は、個人の評価にかかわる指摘は 1on1 で伝える傾向があるとしている。",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Talaera: Polish Business Culture",
@@ -84,7 +96,7 @@
       },
       {
         "id": "pl-feedback-2",
-        "text": "ポーランド語話者の英文は緩衝表現が少なく命令形が多いため、意図より直接的に読まれやすいという指摘がある。根拠は主に学習者の英作文の研究である。",
+        "text": "ポーランド語話者の英文は緩衝表現が少なく命令形が多いため、意図より直接的に読まれやすいという指摘がある。根拠は主に学習者の英作文の研究だ。",
         "confidence": "weak",
         "sources": [
           {
@@ -98,7 +110,7 @@
     "hierarchy": [
       {
         "id": "pl-hierarchy-1",
-        "text": "Hofstede の権力格差（PDI）は 68。伝統的な組織では会議で上司に公然と反論するのは避けられ、承認に上位者のサインが必要なことも多いとされるが、業種や資本によって差が大きい。",
+        "text": "Hofstede の権力格差（PDI）は 68。Talaera は、伝統的な組織では会議で上司に公然と反論するのは避けられ、承認に上位者のサインが必要なことも多いとしている。業種や資本による差は大きい。",
         "confidence": "medium",
         "sources": [
           {
@@ -115,7 +127,7 @@
       },
       {
         "id": "pl-hierarchy-2",
-        "text": "ビジネスサービス部門では外資系センターが雇用の 84.3% を占め、2024 年〜2025 年 Q1 に新設されたセンターの 42.6% が IT である（ABSL 2025）。",
+        "text": "ビジネスサービス部門では外資系センターが雇用の 84.3% を占める。2024 年 1 月〜2025 年 3 月に新設された 61 センターのうち 42.6% が IT だった（ABSL 2025）。",
         "confidence": "strong",
         "sources": [
           {
@@ -129,8 +141,8 @@
     "communication": [
       {
         "id": "pl-communication-1",
-        "text": "ポーランドのビジネスコミュニケーションは比較的低コンテクストで直接的とされる。ただし極端にぶっきらぼうな言い方は不必要にきつく受け取られ、メールはチャットよりフォーマルになりやすい。",
-        "confidence": "medium",
+        "text": "コンサルティング系のガイドは、ポーランドのビジネスコミュニケーションを比較的低コンテクストで直接的だとする。ただし極端にぶっきらぼうな言い方はきつく受け取られ、メールはチャットよりフォーマルになりやすいという。",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Talaera: Polish Business Culture",
@@ -142,12 +154,24 @@
             "url": "https://friisberg.com/the-culture-factor-2/"
           }
         ]
+      },
+      {
+        "id": "pl-communication-2",
+        "text": "EF English Proficiency Index 2025 で、ポーランドは 123 か国・地域中 15 位（600 点）で、最上位の「Very high」帯に入った。受験者は自発的に参加した人に限られる。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "EF EPI 2025: Poland",
+            "url": "https://www.ef.com/wwen/epi/regions/europe/poland/",
+            "year": 2025
+          }
+        ]
       }
     ],
     "work": [
       {
         "id": "pl-work-1",
-        "text": "Bulldogjob の 2024 年調査では IT 従事者の 50.3% が雇用契約、37.4% が B2B 契約（2025 年は 53.8% と 38.5%）。手取り中央値は B2B が 22,011 PLN、雇用契約が 9,236 PLN だった。",
+        "text": "Bulldogjob の 2024 年調査では、IT 従事者の 50.3% が雇用契約、37.4% が B2B 契約だった。フルタイムの平均月収は B2B が 22,011 PLN（請求額ベース）、雇用契約が 9,236 PLN（手取り）である。",
         "confidence": "strong",
         "sources": [
           {
@@ -159,8 +183,8 @@
       },
       {
         "id": "pl-work-2",
-        "text": "No Fluff Jobs の 2024 年上半期の求人では、シニア向けの 74% が B2B 契約を提示した一方、ジュニア向けでは雇用契約が 56% で多数を占めた。",
-        "confidence": "strong",
+        "text": "No Fluff Jobs の 2024 年上半期の求人では、シニア向けの 74% が B2B 契約を提示した。ジュニア向けでは雇用契約が 56% で多数を占めた。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Poland Insight: New regulations may force shift from B2B to employment contracts",
@@ -171,7 +195,7 @@
       },
       {
         "id": "pl-work-3",
-        "text": "ビジネスサービスのセンターで働く人は約 48.9 万人（2025 年 Q1、前年比 6.2% 増）で、その 19.6% が外国人である。",
+        "text": "ビジネスサービスのセンターで働く人は 2025 年 Q1 末時点で約 48.9 万人で、前年比 6.2% 増えた（ABSL 2025）。",
         "confidence": "strong",
         "sources": [
           {
@@ -185,7 +209,7 @@
     "oss": [
       {
         "id": "pl-oss-1",
-        "text": "GitHub の「Made in Poland」コレクションには、headless コマースの Saleor（スター約 2.3 万）、Software Mansion の react-native-reanimated、データグリッドの Handsontable（約 2.2 万）などが並ぶ。国単位の OSS 統計は Octoverse 2025 で確認できなかった。",
+        "text": "GitHub の「Made in Poland」コレクションには、headless コマースの Saleor（スター約 2.3 万）、Software Mansion の react-native-reanimated、データグリッドの Handsontable（約 2.2 万）などが並ぶ。",
         "confidence": "medium",
         "sources": [
           {
@@ -194,11 +218,23 @@
             "year": 2026
           }
         ]
+      },
+      {
+        "id": "pl-oss-2",
+        "text": "GitHub Innovation Graph では、ポーランドに位置づけられる開発者アカウントは 2020 年 Q1 の約 53 万から 2026 年 Q1 の約 207 万へ、約 4 倍に増えた。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub Innovation Graph: Poland",
+            "url": "https://innovationgraph.github.com/economies/pl",
+            "year": 2026
+          }
+        ]
       }
     ]
   },
   "variance": [
-    "直接性の評価は在ポーランド外国人の間でも 42%（直接的）・33%（間接的）・26%（中立）と割れている。",
+    "直接性の評価は在ポーランド外国人 300 人の間でも 42%（直接的）・33%（間接的）・26%（中立）と割れている（Talaera）。",
     "承認階層の深さは業種・資本・意思決定の種類によって大きく変わり、外資系センターと国内企業では様子が違う。",
     "B2B 契約は求人では多数派だが、実際の就業形態では雇用契約が多数で、シニアとジュニアでも傾向が逆になる。",
     "HackerRank の国別比較は 2016 年のデータで、現在の実力を示すものではない。"
