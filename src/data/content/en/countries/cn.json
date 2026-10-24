@@ -1,0 +1,391 @@
+{
+  "id": "cn",
+  "name": "China",
+  "oneLiner": "Meyer rates it among the most top-down; pushback on 996 and the age-35 problem has moved policy",
+  "intro": "This page draws on court rulings and officially published cases, news reports and research papers to describe how software engineers in mainland China work. These are country-level tendencies, and practice differs widely between big tech firms, process-heavy companies such as Huawei, and smaller firms and startups. Activity on domestic platforms such as Gitee, and Chinese-language sources, are poorly captured by international surveys.",
+  "themes": {
+    "design": [
+      {
+        "id": "cn-design-1",
+        "text": "In AI Superpowers (2018), Kai-Fu Lee argued that a \"gladiator\" competition that puts speed first and accepts copying produced Chinese startups' rapid iteration. Critics say the book glorifies imitation.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "TechCrunch: Can there be too much competition between startups?",
+            "url": "https://techcrunch.com/2019/03/14/can-there-be-too-much-competition-between-startups/",
+            "year": 2019
+          },
+          {
+            "title": "Wikipedia: AI Superpowers",
+            "url": "https://en.wikipedia.org/wiki/AI_Superpowers"
+          }
+        ]
+      },
+      {
+        "id": "cn-design-2",
+        "text": "From around 1998–99, Huawei adopted IBM's IPD (Integrated Product Development), required teams to follow the templates exactly, and enforced a heavy stage-gate process.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Transforming Product Development at Huawei: The IPD Initiative",
+            "url": "https://www.researchgate.net/publication/340100855_Transforming_Product_Development_at_Huawei_The_IPD_Initiative"
+          },
+          {
+            "title": "Knowledge at Wharton: Huawei Technologies",
+            "url": "https://knowledge.wharton.upenn.edu/article/huawei-technologies-a-chinese-trail-blazer-in-africa/"
+          }
+        ]
+      },
+      {
+        "id": "cn-design-3",
+        "text": "In November 2023, Alibaba Cloud had its second major outage in a month, and in the same month Didi apologized for a service breakdown it blamed on a failure in underlying software.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "DCD: Alibaba Cloud hit by outage, second in a month",
+            "url": "https://www.datacenterdynamics.com/en/news/alibaba-cloud-hit-by-outage-second-in-a-month/",
+            "year": 2023
+          },
+          {
+            "title": "SCMP: Didi blames underlying software failure for breakdown",
+            "url": "https://www.scmp.com/tech/article/3243246/chinas-ride-hailing-giant-didi-blames-underlying-software-failure-breakdown-plunged-service-disarray",
+            "year": 2023
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "cn-failure-1",
+        "text": "Fupan, a review method named after replaying a game of Go move by move, is used in Chinese companies. A former Lenovo executive calls it a pillar of the company's culture and cites founder Liu Chuanzhi's instruction to think things through without sparing yourself.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Gina Qiao: Growing From Change — A 30-Year Career Viewed Through Fu Pan",
+            "url": "https://www.linkedin.com/pulse/growing-from-change-30-year-career-viewed-through-fu-pan-gina-qiao"
+          },
+          {
+            "title": "Keep learning and keep growing with Fu pan",
+            "url": "https://medium.com/@jessicalu/keep-learning-and-keep-growing-with-fu-pan-e21feffa6764"
+          }
+        ]
+      },
+      {
+        "id": "cn-failure-2",
+        "text": "Meyer gives the example of Chinese managers learning not to criticize colleagues in public.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Welcome to the Jungle: The 8 keys for managing multicultural teams by Erin Meyer",
+            "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams"
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "cn-feedback-1",
+        "text": "Explainers of Meyer's Culture Map place China on the high-context side and describe negative feedback as tending to be indirect, especially when it could cost someone face.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Erin Meyer Culture Map Explained",
+            "url": "https://numinoscoaching.com/erin-meyer-culture-map-explained"
+          },
+          {
+            "title": "DMB Shanghai: The Culture Map by Erin Meyer",
+            "url": "https://dmb-shanghai.com/language/culture-map-erin-meyer-cross-cultural-business-review/",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "cn-feedback-2",
+        "text": "Empirical studies of Chinese workplaces find that employees stay silent more when they perceive their supervisor's coercive power as strong and when they work under authoritarian leaders. Face (mianzi), guanxi and the doctrine of the mean (zhongyong) are discussed as factors that suppress speaking up.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Perceived Supervisor Power and Employee Silence: A Field Study in China",
+            "url": "https://econtent.hogrefe.com/doi/10.1027/1866-5888/a000357",
+            "year": 2025
+          },
+          {
+            "title": "Authoritarian Leadership and Employee Silence in China",
+            "url": "https://www.cambridge.org/core/journals/journal-of-management-and-organization/article/abs/authoritarian-leadership-and-employee-silence-in-china/7BA708133A7360F1BA41CDE596F2E16C"
+          },
+          {
+            "title": "The Patterns of Employee Voice in China",
+            "url": "https://link.springer.com/chapter/10.1007/978-3-031-31127-7_5",
+            "year": 2023
+          }
+        ]
+      },
+      {
+        "id": "cn-feedback-3",
+        "text": "In Rastogi et al. (ESEM 2018), which analyzed GitHub pull request acceptance by country, pull requests from China fell in the lower-acceptance group. The cause of the gap was not identified; nationality bias and English proficiency are possible factors.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Relationship between Geographical Location and Evaluation of Developer Contributions in GitHub (summary, WWS2019)",
+            "url": "https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf",
+            "year": 2019
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "cn-hierarchy-1",
+        "text": "Meyer's 2017 HBR article places China in the top-down, hierarchical quadrant. In the case of a US company that expanded to China, Chinese staff saw American managers who did not give detailed instructions as \"not just incompetent but arrogant\".",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer, Being the Boss in Brussels, Boston, and Beijing (HBR)",
+            "url": "https://erinmeyer.com/wp-content/uploads/2019/11/Being-the-Boss-HBR.pdf",
+            "year": 2017
+          }
+        ]
+      },
+      {
+        "id": "cn-hierarchy-2",
+        "text": "ByteDance is reported to have adopted Zhang Yiming's \"Context, not Control\", making internal documents open by default, running OKRs on a two-month cycle and sharing information through Feishu (Lark).",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Baidu Baike: ByteDance Values",
+            "url": "https://baike.baidu.com/en/item/ByteDance%20Values/3212121"
+          },
+          {
+            "title": "Wikipedia: Lark (software)",
+            "url": "https://en.wikipedia.org/wiki/Lark_(software)"
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "cn-communication-1",
+        "text": "In 2022, the Beijing No. 3 Intermediate People's Court ruled that handling work on WeChat outside working hours counted as overtime and ordered the former employer to pay 30,000 yuan. In January 2024, the Supreme People's Court and other bodies published a similar case as a model case.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Sixth Tone: Chinese Netizens Celebrate Court Ruling Exposing 'WeChat Overtime'",
+            "url": "https://www.sixthtone.com/news/1012704",
+            "year": 2023
+          },
+          {
+            "title": "Sixth Tone: China's Top Court Continues Campaign Against 'WeChat Overtime'",
+            "url": "https://www.sixthtone.com/news/1014551",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "cn-communication-2",
+        "text": "ByteDance's Feishu (Lark) combines documents, meetings, chat and OKRs in one tool and is sold to outside companies as an \"organizational operating system\".",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Dao Insights: How does ByteDance's enterprise collaboration platform create the future of work?",
+            "url": "https://daoinsights.com/works/how-does-bytedances-enterprise-collaboration-platform-create-the-future-of-work/"
+          }
+        ]
+      },
+      {
+        "id": "cn-communication-3",
+        "text": "In the EF EPI 2024, China ranked 91st of 116 countries and regions (score 455), but city scores such as Beijing (518) and Shanghai (511) are far above the national figure.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "EF EPI 2024 fact sheet: China",
+            "url": "https://www.ef.com/assetscdn/WIBIwq6RdJvcD9bc8RMd/cefcom-epi-site/fact-sheets/2024/ef-epi-fact-sheet-china-english.pdf",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "cn-communication-4",
+        "text": "A 2021 study of open source projects at Baidu, Alibaba and Tencent found that providing an English README was the most common internationalization measure.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "An Empirical Study of the Landscape of Open Source Projects in Baidu, Alibaba, and Tencent",
+            "url": "https://arxiv.org/pdf/2103.01590",
+            "year": 2021
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "cn-work-1",
+        "text": "In March 2019, the GitHub repository 996.ICU went up in protest against overwork and passed 1,000 stars within its first hour. In August 2021, the Supreme People's Court and the Ministry of Human Resources and Social Security published typical cases stating that the 996 schedule is illegal.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Sixth Tone: Chinese Developers Protest Overwork on GitHub",
+            "url": "https://www.sixthtone.com/news/1003771/chinese-developers-protest-overwork-on-github",
+            "year": 2019
+          },
+          {
+            "title": "Quartz: How GitHub became a bulletin board for Chinese tech worker complaints",
+            "url": "https://qz.com/1589309/996-icu-github-hosts-chinese-tech-worker-complaints",
+            "year": 2019
+          },
+          {
+            "title": "Sixth Tone: China's Top Court Says Grueling '996' Work Schedule Illegal",
+            "url": "https://www.sixthtone.com/news/1008375",
+            "year": 2021
+          }
+        ]
+      },
+      {
+        "id": "cn-work-2",
+        "text": "In 2021, Kuaishou and ByteDance ended the alternating six-day week (daxiaozhou). At ByteDance the loss of overtime pay cut take-home pay by 17% on average, and an internal poll reportedly found about 30% wanted to keep the old schedule.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "TechNode: ByteDance to end weekend work in blow to 996 culture",
+            "url": "https://technode.com/2021/07/09/bytedance-to-end-weekend-work-in-blow-to-996-culture/",
+            "year": 2021
+          },
+          {
+            "title": "Dao Insights: ByteDance cuts pay after abandoning six-day working week",
+            "url": "https://daoinsights.com/news/bytedance-cuts-pay-after-abandoing-six-day-working-week/",
+            "year": 2021
+          }
+        ]
+      },
+      {
+        "id": "cn-work-3",
+        "text": "News reports describe a \"curse of 35\" in which people over 35 are disadvantaged in layoffs and hiring. In a recruitment platform's survey, 87% of programmers were worried about losing their job or finding a new one after 35. Chinese labor law does not explicitly ban age discrimination.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "SCMP: Why turning 35 feels like a career death sentence for some Chinese tech workers",
+            "url": "https://www.scmp.com/tech/article/3308921/why-turning-35-feels-career-death-sentence-some-chinese-tech-workers",
+            "year": 2025
+          },
+          {
+            "title": "Slashdot (FT): China's Ageing Tech Workers Hit By 'Curse of 35'",
+            "url": "https://slashdot.org/story/24/04/23/154206/chinas-ageing-tech-workers-hit-by-curse-of-35",
+            "year": 2024
+          },
+          {
+            "title": "RFA: The 'Curse of 35' in China",
+            "url": "https://www.rfa.org/english/news/china/china-ageism-07052023161538.html",
+            "year": 2023
+          }
+        ]
+      },
+      {
+        "id": "cn-work-4",
+        "text": "As a reaction to neijuan (involution), reports describe tangping (lying flat), people leaving high-paying jobs for a 10-to-6, five-day schedule, and runxue (emigrating). Layoffs at big tech firms are also said to be pushing new graduates toward civil service jobs.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Dissent: Tech Workers Lie Flat",
+            "url": "https://dissentmagazine.org/article/tech-workers-lie-flat/"
+          },
+          {
+            "title": "Taipei Times: What is 'neijuan,' and why is China worried about it?",
+            "url": "https://www.taipeitimes.com/News/feat/archives/2024/12/25/2003829068",
+            "year": 2024
+          },
+          {
+            "title": "Caixin Global: China's Tech Giants Spook a Generation of Workers With Job Cuts",
+            "url": "https://www.caixinglobal.com/2025-08-01/chinas-tech-giants-spook-a-generation-of-workers-with-job-cuts-102347727.html",
+            "year": 2025
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "cn-oss-1",
+        "text": "OSS Compass estimates that China has more than 2.2 million active open source developers, the most of any country (India has about 2 million).",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "SCMP: China tops India, US and EU with growing pool of open-source developers",
+            "url": "https://www.scmp.com/tech/article/3319280/china-tops-india-us-and-eu-growing-pool-open-source-developers-experts-say",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "cn-oss-2",
+        "text": "In 2020, MIIT contracted a consortium of companies and universities led by Gitee to build a Chinese independent open source hosting platform. In May 2022, Gitee began reviewing all public code before publication and hid large numbers of repositories without notice.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "MIT Technology Review: How censoring China's open-source coders might backfire",
+            "url": "https://www.technologyreview.com/2022/05/30/1052879/censoring-china-open-source-backfire/",
+            "year": 2022
+          },
+          {
+            "title": "The Register: Gitee code review",
+            "url": "https://www.theregister.com/2022/05/20/gitee_code_review/",
+            "year": 2022
+          }
+        ]
+      },
+      {
+        "id": "cn-oss-3",
+        "text": "A CUHK study found that commits on Gitee dropped sharply after the platform introduced pre-publication review of public code.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "CUHK: The Impact of Regulation on Open Source Development: Evidence from Gitee",
+            "url": "https://cssl.socsc.cuhk.edu.hk/2025/05/02/the-impact-of-regulation-on-open-source-development-evidence-from-gitee/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "cn-oss-4",
+        "text": "Ten of 28 projects in the ASF incubator came from Chinese companies. TiDB, from PingCAP (founded in Beijing in 2015), has about 40,000 GitHub stars and more than 1,200 contributors.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Stack: Why China is forging closer ties with open-source foundations",
+            "url": "https://www.thestack.technology/why-china-is-forging-closer-ties-with-open-source-foundations/"
+          },
+          {
+            "title": "The Stack: Introducing 6 new Top Level open source ASF projects",
+            "url": "https://www.thestack.technology/new-top-level-asf-projects-open-source-chinese/",
+            "year": 2023
+          },
+          {
+            "title": "GitHub: pingcap/tidb",
+            "url": "https://github.com/pingcap/tidb"
+          }
+        ]
+      },
+      {
+        "id": "cn-oss-5",
+        "text": "OpenHarmony is based on code Huawei donated to the OpenAtom Foundation in 2020–21. As of January 2025 it had 401 ecosystem partners, but its leading contributors are concentrated in Huawei and its affiliates.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Wikipedia: OpenAtom Foundation",
+            "url": "https://en.wikipedia.org/wiki/OpenAtom_Foundation"
+          },
+          {
+            "title": "OpenHarmony Community: ecosystem partners grown to 401",
+            "url": "https://www.harmony-developers.com/p/openharmony-community-as-of-january",
+            "year": 2025
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "Speed-focused internet companies coexist with process-heavy large firms such as Huawei, which enforced IBM's IPD.",
+    "Ending the alternating six-day week removed overtime pay and cut income, and about 30% of ByteDance employees wanted to keep the long hours. Attitudes toward working hours are not uniform.",
+    "English proficiency is low on the national average, but Beijing and Shanghai score far higher, and the gap between cities is large.",
+    "Rankings of developer numbers depend on how developers are counted. Counting only GitHub accounts misses activity on domestic platforms such as Gitee and AtomGit and undercounts China.",
+    "Public sources did not show whether anyone was held accountable or disciplined after the major outages of 2023.",
+    "The 2023 Alibaba Cloud and Didi outages are individual incidents and do not support generalizing about software quality across the country."
+  ]
+}

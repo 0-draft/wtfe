@@ -1,0 +1,378 @@
+{
+  "id": "kr",
+  "name": "South Korea",
+  "oneLiner": "Rated hierarchical and high-context, with Toss-style delegation alongside chaebol and SI firms",
+  "intro": "This page draws on statistics, news reports and company engineering blogs to describe how software engineers in South Korea work. These are country-level tendencies with large variance inside the country; product companies such as Toss and chaebol or SI (system integration) firms have quite different cultures. Korean-language company blogs and news coverage are plentiful, but almost no quantitative data was found on blame culture or reporting practices inside companies.",
+  "themes": {
+    "design": [
+      {
+        "id": "kr-design-1",
+        "text": "A 2013 ZDNet Korea column argued that the ppalli-ppalli (\"hurry, hurry\") culture leads to poor knowledge sharing, architectures that do not scale and dependence on particular developers, and so ends up slowing software development.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "SW개발과 빨리빨리 문화의 저주 (ZDNet Korea)",
+            "url": "https://zdnet.co.kr/view/?no=20131031141615",
+            "year": 2013
+          }
+        ]
+      },
+      {
+        "id": "kr-design-2",
+        "text": "A columnist who worked with Korean teams as an outside partner observed that developers make up about 80% of a team and testers are few. He adds that this is not necessarily a weakness in an agile setting.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "정철환 칼럼: 개발자와 테스터 (CIO Korea)",
+            "url": "https://www.cio.com/article/3522776/%EC%A0%95%EC%B2%A0%ED%99%98-%EC%B9%BC%EB%9F%BC-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%99%80-%ED%85%8C%EC%8A%A4%ED%84%B0.html",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "kr-design-3",
+        "text": "SPRi (2014) and a ZDNet Korea op-ed (2023) argue that multi-tier subcontracting persists in public-sector SI projects, locking smaller firms into low-value coding so that they never build planning and design skills.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "국가 조달체계 개선 연구: 공공SW 분할발주를 중심으로 (SPRi)",
+            "url": "https://spri.kr/download/5378",
+            "year": 2014
+          },
+          {
+            "title": "[기고] 참담한 대한민국 SW산업···해법은 있다 (ZDNet Korea)",
+            "url": "https://zdnet.co.kr/view/?no=20231117094637",
+            "year": 2023
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "kr-failure-1",
+        "text": "Introducing its 2021 developer conference SLASH21, Toss presented a culture that values fast execution over fear of failure.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "토스가 처음 여는 개발자 컨퍼런스는 어떤 모습일까? : SLASH21 (토스피드)",
+            "url": "https://toss.im/tossfeed/article/toss-dev-conference-2021",
+            "year": 2021
+          }
+        ]
+      },
+      {
+        "id": "kr-failure-2",
+        "text": "After a fire at the Pangyo data center caused a major outage in October 2022, Kakao presented its root cause analysis and prevention measures at if(kakao) dev 2022 that December. The measures include data center redundancy and triple redundancy for operations tooling.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "카카오, 개발자 컨퍼런스 'if (kakao) dev 2022'에서 서비스 장애 재발방지 대책 발표",
+            "url": "https://www.kakaocorp.com/page/detail/9843?lang=ENG",
+            "year": 2022
+          },
+          {
+            "title": "[종합] 카카오가 스스로 돌아본 장애사태의 원인과 대책 (Byline Network)",
+            "url": "https://byline.network/2022/12/1208/",
+            "year": 2022
+          }
+        ]
+      },
+      {
+        "id": "kr-failure-3",
+        "text": "Woowa Brothers, the company behind Baemin, lists \"don't blame people\" among its principles for KPT retrospectives. An SK Devocean presentation says the hardest step in a postmortem is not holding the person responsible to account.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "팀 문화의 탄생 (우아한형제들 기술블로그)",
+            "url": "https://techblog.woowahan.com/2677/",
+            "year": 2021
+          },
+          {
+            "title": "Agile 조직 문화와 Postmortem (SK Devocean)",
+            "url": "https://devocean.sk.com/vlog/seminar/Postmortem.pdf"
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "kr-feedback-1",
+        "text": "The \"Pn rule\", which marks each review comment from P1 (must fix) to P5 (minor opinion), started at Banksalad and has been adopted by Woowa Brothers, Daangn and others.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "공통시스템개발팀 코드 리뷰 문화 개선 이야기 (우아한형제들 기술블로그)",
+            "url": "https://techblog.woowahan.com/7152/",
+            "year": 2022
+          },
+          {
+            "title": "우리, 이모지로 코드 리뷰 할까요?",
+            "url": "https://wormwlrm.github.io/2024/02/04/Code-Review-with-Emoji.html",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "kr-feedback-2",
+        "text": "One Woowa Brothers team has a rule that reviewers leave a comment praising the author even when they have nothing to correct.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "공통시스템개발팀 코드 리뷰 문화 개선 이야기 (우아한형제들 기술블로그)",
+            "url": "https://techblog.woowahan.com/7152/",
+            "year": 2022
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "kr-hierarchy-1",
+        "text": "On Meyer's Leading scale, South Korea is placed toward the hierarchical end. The evidence is a secondary excerpt from the book.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Culture Map: Navigating Global Business Boundaries (Studocu excerpt)",
+            "url": "https://www.studocu.com/row/document/international-university-of-monaco/managing-across-cultures/the-culture-map-navigating-global-business-boundaries-erin-meyer/138447169"
+          }
+        ]
+      },
+      {
+        "id": "kr-hierarchy-2",
+        "text": "A Substack essay argues that in chaebol such as Samsung, Hyundai and LG, decision rights are concentrated at the top to an unusual degree even by East Asian standards.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Who's Actually in Charge: The Organisational Hierarchy",
+            "url": "https://carolineklokmose.substack.com/p/whos-actually-in-charge",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "kr-hierarchy-3",
+        "text": "Under Toss's DRI system, discussion is open regardless of rank, but one directly responsible individual makes the final call. Information is shared on a \"100 inside, 0 outside\" principle.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "토스 문화 - 입사자만 볼 수 있는 문서를 공개합니다 (토스피드)",
+            "url": "https://toss.im/tossfeed/article/toss-team-culture"
+          },
+          {
+            "title": "토스에서 일하며 깨달은 성장과 리더십",
+            "url": "https://evan-moon.github.io/2022/05/07/toss-retrospective/",
+            "year": 2022
+          }
+        ]
+      },
+      {
+        "id": "kr-hierarchy-4",
+        "text": "Kakao has had staff call each other by English names since its founding in 2006, but its affiliate Kakao Games returned to the honorific \"-nim\" in 2024. News coverage also quotes industry voices saying many companies have flat forms of address but not a flat culture.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "카카오게임즈, 사내 '영어이름' 호칭 없앤다 (뉴시스)",
+            "url": "https://www.newsis.com/view/NISX20240421_0002707370",
+            "year": 2024
+          },
+          {
+            "title": "네이버·카카오, 쿠팡식 '레벨제' 도입…왜? (아이뉴스24)",
+            "url": "https://www.inews24.com/view/1323268"
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "kr-communication-1",
+        "text": "On Meyer's Communicating scale, South Korea sits with Japan and Indonesia at the most high-context end.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Culture Map Summary (Readingraphics)",
+            "url": "https://readingraphics.com/book-summary-the-culture-map-erin-meyer/"
+          }
+        ]
+      },
+      {
+        "id": "kr-communication-2",
+        "text": "One practitioner argues that when agile is imposed from the top while executives and middle managers keep their old thinking, the only result is a heavier load on the teams.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "#87 (흔하디 흔한) 애자일 이야기 (서울 에일리언)",
+            "url": "https://seoulalien.substack.com/p/87"
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "kr-work-1",
+        "text": "OECD data put South Korea's annual working hours in 2023 at 1,872, about 200 hours above the OECD average.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Visualizing Annual Working Hours in OECD Countries (Visual Capitalist)",
+            "url": "https://www.visualcapitalist.com/annual-working-hours-in-countries-2023/",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "kr-work-2",
+        "text": "News reports say working conditions in the IT and game industries improved substantially after the 52-hour workweek cap took effect in 2018.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "IT·게임업계, 주 최대 69시간 근로 추진에 \"과로사 재현될 것\" (서울파이낸스)",
+            "url": "https://www.seoulfn.com/news/articleView.html?idxno=481404",
+            "year": 2023
+          }
+        ]
+      },
+      {
+        "id": "kr-work-3",
+        "text": "In KOCCA's 2024 survey of game industry workers (n=1,510), 34.3% had experienced crunch and 69.9% were on an all-inclusive wage system, which bundles overtime into a fixed salary. At companies with fewer than 50 employees the share exceeded 90%.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "게임업계 포괄임금제, 2024년에도 70%였다 (디스이즈게임)",
+            "url": "https://www.thisisgame.com/articles/203826",
+            "year": 2025
+          },
+          {
+            "title": "퇴근 찍고 집에서 원격 근무…K-게임, 주52시간제에 그림자 노동 더 커졌다 (한국경제)",
+            "url": "https://www.hankyung.com/article/202509105494i",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "kr-work-4",
+        "text": "Remote work policies vary by company. Naver kept Connected Work, which lets staff choose fully remote or three office days a week every six months, while Kakao effectively returned everyone to the office from 2024.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "[단독] 네이버, '재택근무' 유지 (다음 뉴스)",
+            "url": "https://v.daum.net/v/20240307181837999",
+            "year": 2024
+          },
+          {
+            "title": "“재택근무 부활시켜라”…카카오 노사 갈등 (디지털데일리)",
+            "url": "https://www.ddaily.co.kr/page/view/2024103014225505515",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "kr-work-5",
+        "text": "After the scramble for developers in 2021, the market reversed: in a 2024 Grepp survey, 34% of companies said they would hire fewer developers.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "\"언제 잘릴지 몰라 무서워요\"…한때 '취업깡패'였는데 지금은 (한국경제)",
+            "url": "https://www.hankyung.com/article/202411293961g",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "kr-work-6",
+        "text": "In the 2021 Programmers developer survey, 63.1% of respondents worked at companies with 50 or fewer developers.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "2021 프로그래머스 개발자 설문조사",
+            "url": "https://programmers.co.kr/pages/2021-dev-survey",
+            "year": 2021
+          }
+        ]
+      },
+      {
+        "id": "kr-work-7",
+        "text": "Reports say that in multi-tier SI subcontracting, freelance developers at the bottom of the chain are especially exposed to unpaid fees when a project is halted or an intermediary goes bankrupt.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "‘갑을관계’? '갑을병정무기경신'이 일상화된 IT업계 (미디어오늘)",
+            "url": "https://www.mediatoday.co.kr/news/articleView.html?idxno=110753",
+            "year": 2013
+          },
+          {
+            "title": "공공기관 SI 용역개발 사업 (SPRi)",
+            "url": "https://spri.kr/post/22652",
+            "year": 2019
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "kr-oss-1",
+        "text": "In GitHub Octoverse 2023, South Korea had more than 1.9 million developers, up 22% year on year.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2023: The state of open source and rise of AI",
+            "url": "https://github.blog/news-insights/research/the-state-of-open-source-and-ai/",
+            "year": 2023
+          }
+        ]
+      },
+      {
+        "id": "kr-oss-2",
+        "text": "NIPA runs the Open Source Contribution Academy, which supports Korean developers in contributing to global open source projects. In 2024 it selected 282 participants from 931 applicants, and it held a launch ceremony again in 2026.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "[ZD SW 투데이] NIPA, 2026 오픈소스 아카데미 발대식 개최 (ZDNet Korea)",
+            "url": "https://zdnet.co.kr/view/?no=20260713162757",
+            "year": 2026
+          },
+          {
+            "title": "2025 오픈소스 컨트리뷰션 아카데미 멘티 모집 공고 (NIPA)",
+            "url": "https://www.nipa.kr/home/2-1/16130",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "kr-oss-3",
+        "text": "Open source projects from Korean companies include NAVER's APM tool Pinpoint (about 13.9k stars) and LINE's Armeria (about 5.1k stars).",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "pinpoint-apm/pinpoint (GitHub)",
+            "url": "https://github.com/pinpoint-apm/pinpoint"
+          },
+          {
+            "title": "line/armeria (GitHub)",
+            "url": "https://github.com/line/armeria"
+          }
+        ]
+      },
+      {
+        "id": "kr-oss-4",
+        "text": "In the EF EPI 2024, South Korea ranked 50th of 116 countries and regions, well ahead of Japan (92nd).",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Japan Slides Further in English Proficiency Ranking (Nippon.com)",
+            "url": "https://www.nippon.com/en/japan-data/h02199/",
+            "year": 2024
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "Some product companies build explicitness and delegation into their rules, as with Toss's DRI system and the Pn rule, while top-down management and multi-tier subcontracting persist in chaebol and public-sector SI.",
+    "Moves toward flatter, more flexible work, such as Kakao's English names and Naver's continued remote work, have seen reversals, such as Kakao's 2024 return to the office and Kakao Games' change in forms of address.",
+    "No reliable quantitative data was found on reporting (bogo) culture or on reliance on written versus spoken communication, so the communication section leans on general placements such as the Culture Map.",
+    "South Korea's Hofstede individualism score was revised from 18 in the old edition to 58 in the current one; the classic picture of Korea as strongly collectivist rests on the old value.",
+    "The 52-hour cap has reduced overall working hours, but reports say crunch and unpaid overtime persist in the game industry under all-inclusive wage contracts.",
+    "Primary data on blame culture inside companies is scarce, so the section on failure relies on a few companies' engineering blogs and presentations.",
+    "The Stack Overflow Developer Survey 2024 had only 144 responses from South Korea (199 including a separately listed variant of the country name), so it does not represent Korean developers."
+  ]
+}

@@ -1,13 +1,13 @@
 {
   "id": "kr",
   "name": "韓国",
-  "oneLiner": "階層的・高文脈な文化に「빨리빨리」の速度が乗り、Toss 型の権限委譲と財閥・SI 型が併存。",
-  "intro": "韓国のソフトウェアエンジニアの働き方と考え方を、統計・調査・企業の技術ブログから整理したページ。ここに書くのは国全体の傾向であって、個々のエンジニアや個別の会社がそうだという意味ではない。Toss のようなプロダクト企業と財閥系・SI では文化が大きく違う。",
+  "oneLiner": "階層的・高文脈とされる文化の中で、Toss 型の権限委譲と財閥・SI 型の組織が併存する",
+  "intro": "韓国のソフトウェアエンジニアの働き方を、統計・報道・企業の技術ブログから整理しています。示すのは国全体の傾向で、国内のばらつきは大きく、Toss のようなプロダクト企業と財閥系・SI では文化がかなり違います。韓国語の企業ブログや報道は豊富ですが、社内の非難文化や報告の慣行についての定量データはほとんど見つかっていません。",
   "themes": {
     "design": [
       {
         "id": "kr-design-1",
-        "text": "2013 年の ZDNet Korea のコラムは、「빨리빨리（早く早く）」文化が知識共有の欠如、拡張性に乏しいアーキテクチャ、特定開発者への依存を招き、SW 開発を逆に遅くしていると批判している。",
+        "text": "2013 年の ZDNet Korea のコラムは、「빨리빨리（早く早く）」文化が知識共有の不足、拡張性に乏しい設計、特定の開発者への依存を招き、結果として SW 開発を遅くしていると論じた。",
         "confidence": "weak",
         "sources": [
           {
@@ -19,7 +19,7 @@
       },
       {
         "id": "kr-design-2",
-        "text": "韓国のチームは開発者が約 8 割を占めテスターが少ないという外部パートナーの観察がある。ただし筆者はアジャイルの文脈では必ずしも欠点ではないとしている。",
+        "text": "外部パートナーとして韓国のチームと働いた筆者は、開発者が約 8 割を占めテスターが少ないと観察している。ただし、アジャイルの文脈では必ずしも欠点ではないとも書いている。",
         "confidence": "weak",
         "sources": [
           {
@@ -31,7 +31,7 @@
       },
       {
         "id": "kr-design-3",
-        "text": "公共 SW の SI では多段階下請け（甲乙丙丁）が続き、中小企業が低付加価値のコーディングに固定されて企画・設計能力が育たないと分析されている。",
+        "text": "SPRi（2014 年）や ZDNet Korea の寄稿（2023 年）は、公共 SW の SI で多段階下請け（甲乙丙丁）が続き、中小企業が低付加価値のコーディングに固定されて企画・設計能力が育たないと分析している。",
         "confidence": "medium",
         "sources": [
           {
@@ -50,19 +50,7 @@
     "failure": [
       {
         "id": "kr-failure-1",
-        "text": "Hofstede の不確実性回避 (UAI) は 85 で、世界でも上位の水準。",
-        "confidence": "strong",
-        "sources": [
-          {
-            "title": "The Culture Factor — Country comparison tool",
-            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=japan%2Csouth+korea",
-            "year": 2026
-          }
-        ]
-      },
-      {
-        "id": "kr-failure-2",
-        "text": "Toss は開発者カンファレンス SLASH21 の紹介で、失敗への恐れより速い実行を重視する文化を公式に掲げている。",
+        "text": "Toss は 2021 年の開発者カンファレンス SLASH21 の紹介で、失敗を恐れるより速く実行する文化を掲げた。",
         "confidence": "medium",
         "sources": [
           {
@@ -73,8 +61,8 @@
         ]
       },
       {
-        "id": "kr-failure-3",
-        "text": "2022 年 10 月の板橋データセンター火災による大規模障害について、Kakao は同年 12 月の if(kakao) dev 2022 で原因分析と再発防止策（データセンター三重化など）を公開した。",
+        "id": "kr-failure-2",
+        "text": "2022 年 10 月の板橋（판교）データセンター火災で大規模障害を起こした Kakao は、同年 12 月の if(kakao) dev 2022 で原因分析と再発防止策を公開した。対策にはデータセンターの二重化や運用管理ツールの三重化が含まれる。",
         "confidence": "strong",
         "sources": [
           {
@@ -90,8 +78,8 @@
         ]
       },
       {
-        "id": "kr-failure-4",
-        "text": "社内の非難文化について一次データは乏しく、手がかりは配達の民族（ウアハン兄弟）の KPT 振り返りの「人のせいにしない」原則や、SK Devocean の資料の「責任者を問責しない段階が最も難しい」という記述程度にとどまる。",
+        "id": "kr-failure-3",
+        "text": "配達の民族を運営するウアハン兄弟は、KPT 振り返りの原則に「人のせいにしない」を掲げている。SK Devocean の資料は、ポストモーテムで最も難しいのは責任者を問責しない段階だとしている。",
         "confidence": "weak",
         "sources": [
           {
@@ -109,7 +97,7 @@
     "feedback": [
       {
         "id": "kr-feedback-1",
-        "text": "レビューコメントに P1（必ず反映）から P5（些細な意見）までの強さを明示する「Pn ルール」が Banksalad 発祥で広まり、ウアハン兄弟や Daangn なども採用している。",
+        "text": "レビューコメントの強さを P1（必ず反映）から P5（些細な意見）で示す「Pn ルール」は Banksalad で始まり、ウアハン兄弟や Daangn なども採用した。",
         "confidence": "medium",
         "sources": [
           {
@@ -126,7 +114,7 @@
       },
       {
         "id": "kr-feedback-2",
-        "text": "ウアハン兄弟のチームの規則には、指摘がない場合でも作成者を称賛するコメントを残す、というものがある。",
+        "text": "ウアハン兄弟のあるチームの規則には、指摘がない場合でも作成者を称賛するコメントを残す、というものがある。",
         "confidence": "medium",
         "sources": [
           {
@@ -140,7 +128,7 @@
     "hierarchy": [
       {
         "id": "kr-hierarchy-1",
-        "text": "Meyer の Leading 尺度で、韓国は階層的な端の側に置かれている（書籍抜粋の二次資料）。",
+        "text": "Meyer の Leading 尺度で、韓国は階層的な端の側に置かれている。根拠は書籍抜粋の二次資料。",
         "confidence": "medium",
         "sources": [
           {
@@ -151,7 +139,7 @@
       },
       {
         "id": "kr-hierarchy-2",
-        "text": "Samsung・Hyundai・LG などの財閥では、決定権が東アジアの基準でも異例なほどトップに集中しているという論考がある。",
+        "text": "Substack の論考は、Samsung・Hyundai・LG などの財閥では決定権が東アジアの基準で見ても異例なほどトップに集中していると論じている。",
         "confidence": "weak",
         "sources": [
           {
@@ -163,7 +151,7 @@
       },
       {
         "id": "kr-hierarchy-3",
-        "text": "Toss の DRI 制度では、議論は職位に関係なく開かれているが最終決定は担当者 1 人が下し、情報は「社内 100、社外 0」の原則で共有される。",
+        "text": "Toss の DRI 制度では、議論は職位に関係なく開かれているが、最終決定は担当者 1 人が下す。情報は「社内 100、社外 0」の原則で共有される。",
         "confidence": "medium",
         "sources": [
           {
@@ -179,7 +167,7 @@
       },
       {
         "id": "kr-hierarchy-4",
-        "text": "Kakao は 2006 年の創業以来英語名で呼び合ってきたが、2024 年に Kakao Games が「〜님」呼称に戻した。「呼び方は水平でも組織文化はそうではない企業が多い」という業界の声もある。",
+        "text": "Kakao は 2006 年の創業以来、社内で英語名を使って呼び合ってきたが、系列の Kakao Games は 2024 年に「〜님」の呼称に戻した。「呼び方は水平でも組織文化はそうではない企業が多い」という業界の声も報じられている。",
         "confidence": "medium",
         "sources": [
           {
@@ -197,7 +185,7 @@
     "communication": [
       {
         "id": "kr-communication-1",
-        "text": "Meyer の Communicating 尺度で、韓国は日本・インドネシアと並ぶ最も高文脈な国とされる。",
+        "text": "Meyer の Communicating 尺度で、韓国は日本・インドネシアと並んで最も高文脈な側に置かれている。",
         "confidence": "medium",
         "sources": [
           {
@@ -221,14 +209,21 @@
     "work": [
       {
         "id": "kr-work-1",
-        "text": "OECD データでは 2023 年の年間労働時間は 1,872 時間で OECD 平均より約 200 時間長いが、2018 年の週 52 時間制導入以降、IT・ゲーム業界の労働環境は大きく改善したと報じられている。",
-        "confidence": "strong",
+        "text": "OECD のデータでは、2023 年の韓国の年間労働時間は 1,872 時間で、OECD 平均より約 200 時間長い。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Visualizing Annual Working Hours in OECD Countries (Visual Capitalist)",
             "url": "https://www.visualcapitalist.com/annual-working-hours-in-countries-2023/",
             "year": 2024
-          },
+          }
+        ]
+      },
+      {
+        "id": "kr-work-2",
+        "text": "2018 年に週 52 時間制が導入されて以降、IT・ゲーム業界の労働環境は大きく改善したと報じられている。",
+        "confidence": "medium",
+        "sources": [
           {
             "title": "IT·게임업계, 주 최대 69시간 근로 추진에 \"과로사 재현될 것\" (서울파이낸스)",
             "url": "https://www.seoulfn.com/news/articleView.html?idxno=481404",
@@ -237,8 +232,8 @@
         ]
       },
       {
-        "id": "kr-work-2",
-        "text": "KOCCA の 2024 年ゲーム産業従事者調査（n=1,510）では、クランチ経験 34.3%、包括賃金制の適用 69.9%（50 人未満の企業では 90% 超）だった。",
+        "id": "kr-work-3",
+        "text": "KOCCA の 2024 年のゲーム産業従事者調査（n=1,510）では、クランチの経験者は 34.3%、包括賃金制の適用は 69.9% で、50 人未満の企業では 90% を超えた。",
         "confidence": "strong",
         "sources": [
           {
@@ -254,8 +249,8 @@
         ]
       },
       {
-        "id": "kr-work-3",
-        "text": "リモートは企業で分かれ、Naver は完全リモートか週 3 日出社かを半年ごとに選べる Connected Work を続ける一方、Kakao は 2024 年から事実上の全面出社に切り替えた。",
+        "id": "kr-work-4",
+        "text": "リモート勤務の扱いは企業で分かれる。Naver は完全リモートか週 3 日出社かを半年ごとに選べる Connected Work を続けている一方、Kakao は 2024 年から事実上の全面出社に切り替えた。",
         "confidence": "medium",
         "sources": [
           {
@@ -271,15 +266,22 @@
         ]
       },
       {
-        "id": "kr-work-4",
-        "text": "2021 年の開発者争奪戦から一転し、2024 年の Grepp 調査では企業の 34% が開発者採用を減らすと答えた。2021 年のプログラマーズ調査では開発者の 63.1% が開発者 50 人以下の企業に勤めている。",
+        "id": "kr-work-5",
+        "text": "2021 年の開発者争奪戦から一転し、2024 年の Grepp の調査では企業の 34% が開発者の採用を減らすと答えた。",
         "confidence": "medium",
         "sources": [
           {
             "title": "\"언제 잘릴지 몰라 무서워요\"…한때 '취업깡패'였는데 지금은 (한국경제)",
             "url": "https://www.hankyung.com/article/202411293961g",
             "year": 2024
-          },
+          }
+        ]
+      },
+      {
+        "id": "kr-work-6",
+        "text": "2021 年のプログラマーズの開発者調査では、回答者の 63.1% が開発者 50 人以下の企業に勤めていた。",
+        "confidence": "medium",
+        "sources": [
           {
             "title": "2021 프로그래머스 개발자 설문조사",
             "url": "https://programmers.co.kr/pages/2021-dev-survey",
@@ -288,7 +290,7 @@
         ]
       },
       {
-        "id": "kr-work-5",
+        "id": "kr-work-7",
         "text": "SI の多段階下請けでは、末端のフリーランス開発者がプロジェクト中断や中間業者の倒産で報酬未払いの被害を受けやすいと報じられている。",
         "confidence": "medium",
         "sources": [
@@ -308,7 +310,7 @@
     "oss": [
       {
         "id": "kr-oss-1",
-        "text": "GitHub Octoverse 2023 で韓国の開発者は 190 万人超、前年比 22% 増だった。",
+        "text": "GitHub Octoverse 2023 で、韓国の開発者は 190 万人超、前年比 22% 増だった。",
         "confidence": "strong",
         "sources": [
           {
@@ -320,7 +322,7 @@
       },
       {
         "id": "kr-oss-2",
-        "text": "NIPA の「オープンソース・コントリビューション・アカデミー」は 2020 年に始まり、2026 年は 11 チーム・約 260 人が 13 週間グローバル OSS への貢献に取り組んでいる。",
+        "text": "NIPA は、国内開発者のグローバル OSS への貢献を支援する「オープンソース・コントリビューション・アカデミー」を運営している。2024 年は 931 人の応募から 282 人が選ばれ、2026 年も発足式が開かれた。",
         "confidence": "strong",
         "sources": [
           {
@@ -337,7 +339,7 @@
       },
       {
         "id": "kr-oss-3",
-        "text": "企業発の OSS には NAVER の APM ツール Pinpoint（約 13.9k stars）や LINE の Armeria（約 5.1k stars）がある。",
+        "text": "企業発の OSS には、NAVER の APM ツール Pinpoint（約 13.9k stars）や LINE の Armeria（約 5.1k stars）がある。",
         "confidence": "medium",
         "sources": [
           {
@@ -352,24 +354,12 @@
       },
       {
         "id": "kr-oss-4",
-        "text": "EF EPI 2024 で韓国の英語力は 50 位（Moderate）で、日本（92 位）を大きく上回る。",
-        "confidence": "strong",
+        "text": "EF EPI 2024 で韓国は 116 か国・地域中 50 位で、日本（92 位）を大きく上回った。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Japan Slides Further in English Proficiency Ranking (Nippon.com)",
             "url": "https://www.nippon.com/en/japan-data/h02199/",
-            "year": 2024
-          }
-        ]
-      },
-      {
-        "id": "kr-oss-5",
-        "text": "Stack Overflow Developer Survey 2024 の韓国からの回答は 144 件（表記揺れの別項目を合わせても約 199 件）しかなく、代表性がない。",
-        "confidence": "strong",
-        "sources": [
-          {
-            "title": "Stack Overflow Developer Survey 2024: Developer Profile",
-            "url": "https://survey.stackoverflow.co/2024/developer-profile",
             "year": 2024
           }
         ]
@@ -381,6 +371,8 @@
     "Kakao の英語名呼称や Naver のリモート継続のようなフラット化・柔軟化の試みには、2024 年の Kakao の全面出社や Kakao Games の呼称変更のような揺り戻しもある。",
     "報告（보고）文化や、書面と口頭のどちらに頼るかについては信頼できる定量データが見つからず、コミュニケーションの項目は Culture Map などの一般的な位置づけに依存している。",
     "Hofstede の個人主義スコアは旧版の 18 から現行の 58 に改訂されており、「韓国 = 強い集団主義」という古典的な像は旧版の値に基づく。",
-    "週 52 時間制で全体の労働時間は減ったが、ゲーム業界では包括賃金制の下でクランチや無給残業が残っていると報じられている。"
+    "週 52 時間制で全体の労働時間は減ったが、ゲーム業界では包括賃金制の下でクランチや無給残業が残っていると報じられている。",
+    "社内の非難文化について一次データは乏しく、失敗の扱いに関する項目は一部企業の技術ブログや資料に依存している。",
+    "Stack Overflow Developer Survey 2024 の韓国からの回答は 144 件（表記揺れの別項目を合わせても 199 件）しかなく、この調査は韓国の開発者を代表していない。"
   ]
 }

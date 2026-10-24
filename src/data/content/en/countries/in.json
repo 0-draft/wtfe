@@ -1,0 +1,351 @@
+{
+  "id": "in",
+  "name": "India",
+  "oneLiner": "Meyer rates it hierarchical and top-down with revisable decisions; culture splits by business type",
+  "intro": "This page draws on statistics from NASSCOM and USCIS, GitHub Octoverse and news reports to describe how software engineers in India work. These are country-level tendencies, and culture differs widely between the large IT services firms, foreign-owned global capability centers (GCCs) and product startups. Statistics on developer numbers and employment are rich, but sources on review and retrospective practices are mostly anecdotes and industry articles.",
+  "themes": {
+    "design": [
+      {
+        "id": "in-design-1",
+        "text": "TCS announced in 2011 that it had been assessed at CMMI Level 5 enterprise-wide for both CMMI-DEV and CMMI-SVC, and says it was the first company in the world to reach enterprise-wide Level 5 for SVC.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "TCS: First software firm assessed at Level 5 enterprise-wide in software services and development",
+            "url": "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-level-5-cmmi-svc",
+            "year": 2011
+          }
+        ]
+      },
+      {
+        "id": "in-design-2",
+        "text": "Hiring-industry articles contrast services firms (\"specs are king, process-heavy, ticket-driven\") with product companies (\"design docs, code review, CI/CD\"). Neither is backed by research.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Uplers: Product vs Service-Background Engineers",
+            "url": "https://www.uplers.com/article/product-vs-service-background-engineers-startup-hiring/"
+          },
+          {
+            "title": "ProductBased.in: Product Based vs Service Based Companies in India",
+            "url": "https://www.productbased.in/guides/product-vs-service"
+          }
+        ]
+      },
+      {
+        "id": "in-design-3",
+        "text": "The idea that jugaad (improvised fixes under constraints) is a virtue in software development draws criticism from Indian engineers themselves, on Hacker News and elsewhere. Others defend it as frugal engineering, such as designing apps that work on 2G connections.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Hacker News: Jugaad takes agile to the extreme",
+            "url": "https://news.ycombinator.com/item?id=34025360"
+          },
+          {
+            "title": "Sujay Pan: The Cult of Jugaad",
+            "url": "https://sujaypan.substack.com/p/the-cult-of-jugaad"
+          },
+          {
+            "title": "Why India's Jugaad Coding Culture Might Save Bloated Software",
+            "url": "https://medium.com/@devlinktips/why-indias-jugaad-coding-culture-might-save-bloated-software-71806b738aa2"
+          }
+        ]
+      },
+      {
+        "id": "in-design-4",
+        "text": "Zerodha is India's largest stockbroker, yet its tech team of 33–35 people self-hosts the entire stack. CTO Kailash Nadh says it is a misconception that team size must grow in proportion to the number of users.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Software Misadventures: Kailash Nadh",
+            "url": "https://softwaremisadventures.com/p/kailash-nadh-on-being-an-absurdist",
+            "year": 2023
+          },
+          {
+            "title": "Indian Startup News: Zerodha hired only 5 employees for its tech team in 4 years",
+            "url": "https://indianstartupnews.com/news/zerodha-hired-only-5-employees-for-its-tech-team-in-4-years-says-cto-kailash-nadh-7238408",
+            "year": 2024
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "in-failure-1",
+        "text": "According to Meyer's 2017 HBR article, in top-down decision-making cultures, India among them, decisions are made quickly but can change as new input or arguments arise. A decision is treated as a placeholder that can be adjusted later, not a firm commitment.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer, Being the Boss in Brussels, Boston, and Beijing (HBR)",
+            "url": "https://erinmeyer.com/wp-content/uploads/2019/11/Being-the-Boss-HBR.pdf",
+            "year": 2017
+          }
+        ]
+      },
+      {
+        "id": "in-failure-2",
+        "text": "On Meyer's Scheduling scale, India is on the flexible-time side, described as running several things in parallel, accepting interruptions and prioritizing adaptation.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Welcome to the Jungle: The 8 keys for managing multicultural teams by Erin Meyer",
+            "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams"
+          }
+        ]
+      },
+      {
+        "id": "in-failure-3",
+        "text": "The claim that offshore teams do not escalate bad news rests on anecdotes on Hacker News. Other HN commenters counter that US-side managers often have not built a structure that invites pushback.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Ask HN: What challenges are you facing offshoring development to India?",
+            "url": "https://news.ycombinator.com/item?id=36119709",
+            "year": 2023
+          },
+          {
+            "title": "Hacker News discussion on pushback",
+            "url": "https://news.ycombinator.com/item?id=38952256",
+            "year": 2024
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "in-feedback-1",
+        "text": "An article summarizing Meyer's eight scales places India toward the high-context end and on the side that avoids confrontation.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Welcome to the Jungle: The 8 keys for managing multicultural teams by Erin Meyer",
+            "url": "https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams"
+          }
+        ]
+      },
+      {
+        "id": "in-feedback-2",
+        "text": "Rastogi et al. (ESEM 2018), analyzing about 70,000 GitHub pull requests, found that in 16 of 17 countries, pull requests were more likely to be accepted when the submitter and reviewer were from the same country. India was the exception: acceptance fell by 7.4% when the maintainer was also from India.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Relationship between Geographical Location and Evaluation of Developer Contributions in GitHub (summary, WWS2019)",
+            "url": "https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf",
+            "year": 2019
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "in-hierarchy-1",
+        "text": "Meyer's 2017 HBR article places India in the top-down, hierarchical quadrant, together with Brazil, China, France, Indonesia, Mexico, Russia and Saudi Arabia.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer, Being the Boss in Brussels, Boston, and Beijing (HBR)",
+            "url": "https://erinmeyer.com/wp-content/uploads/2019/11/Being-the-Boss-HBR.pdf",
+            "year": 2017
+          }
+        ]
+      },
+      {
+        "id": "in-hierarchy-2",
+        "text": "India scores 77 on Hofstede's power distance (PDI), its highest of the six dimensions. The Culture Factor describes this as an appreciation of hierarchy and top-down structure.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=india",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "in-hierarchy-3",
+        "text": "A hiring-industry article contrasts services firms, which run on approval chains and hierarchy, with product startups, where engineers can talk to founders directly and decisions are fast.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Uplers: Product vs Service-Background Engineers",
+            "url": "https://www.uplers.com/article/product-vs-service-background-engineers-startup-hiring/"
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "in-communication-1",
+        "text": "In the EF EPI 2024, India ranked 69th of 116 countries and regions. English is widely used as a working language, but India's rank on this test is mid-table.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Nippon.com: Japan Slides Further in English Proficiency Ranking",
+            "url": "https://www.nippon.com/en/japan-data/h02199/",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "in-communication-2",
+        "text": "Explainers of Meyer's Trusting scale place India on the relationship-based side, where trust built through personal relationships is needed before work begins.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Erin Meyer Culture Map Explained",
+            "url": "https://numinoscoaching.com/erin-meyer-culture-map-explained"
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "in-work-1",
+        "text": "NASSCOM estimated India's tech industry revenue for FY2025 at about $282.6 billion, with 5.8 million employees (a net addition of 126,000). A 2026 revision raised these to $297 billion and 5.82 million.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Business Today: Indian tech industry to reach $300 billion revenue milestone in FY26",
+            "url": "https://www.businesstoday.in/technology/news/story/indian-tech-industry-to-reach-300-billion-revenue-milestone-in-fy26-nasscom-465747-2025-02-24",
+            "year": 2025
+          },
+          {
+            "title": "DQIndia: Nasscom outlook FY26",
+            "url": "https://www.dqindia.com/news/nasscom-outlook-indias-tech-industry-to-grow-61-to-315-bn-in-fy26-11151228",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "in-work-2",
+        "text": "According to NASSCOM and Zinnov, India had more than 1,700 global capability centers (GCCs) of foreign companies employing more than 1.9 million people as of FY2024. GCCs are also spreading to tier-2 cities.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "NASSCOM: India GCC Landscape Report — The 5-year Journey",
+            "url": "https://community.nasscom.in/communities/nasscom-insights/india-gcc-landscape-report-5-year-journey",
+            "year": 2024
+          },
+          {
+            "title": "NASSCOM: Beyond the Metros",
+            "url": "https://community.nasscom.in/communities/gcc/beyond-metros-indias-next-gcc-frontier"
+          }
+        ]
+      },
+      {
+        "id": "in-work-3",
+        "text": "Attrition at the large IT services firms swings with the business cycle. In Q2 FY23 it was 27.1% at Infosys, 23% at Wipro and 21.5% at TCS; by Q4 FY24 it had fallen to 12.5% at TCS and 12.6% at Infosys.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Business Today: TCS, Infosys, Wipro — How HR issues plague IT sector",
+            "url": "https://www.businesstoday.in/interactive/longread/tcs-infosys-wipro-how-hr-issues-plague-it-sector-227-29-12-2022",
+            "year": 2022
+          },
+          {
+            "title": "Business Standard: TCS, Infosys, Wipro see exit of 64,000 employees in FY24",
+            "url": "https://www.business-standard.com/companies/news/tcs-infosys-wipro-see-exit-of-64-000-employees-in-fy24-amid-low-demand-124041901226_1.html",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "in-work-4",
+        "text": "According to USCIS, 72.3% of H-1B petitions approved in FY2023 were for people born in India; 11.7% were for people born in China.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "USCIS: Characteristics of H-1B Specialty Occupation Workers FY2023",
+            "url": "https://www.uscis.gov/sites/default/files/document/reports/OLA_Signed_H-1B_Characteristics_Congressional_Report_FY2023.pdf",
+            "year": 2024
+          },
+          {
+            "title": "Pew Research: What we know about the U.S. H-1B visa program",
+            "url": "https://www.pewresearch.org/short-reads/2025/03/04/what-we-know-about-the-us-h-1b-visa-program/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "in-work-5",
+        "text": "In 2023, Infosys founder Narayana Murthy said young Indians should work 70 hours a week. The remark drew strong backlash on social media but support from some business leaders, and public opinion split.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "CNBC: India debate on 70-hour workweek",
+            "url": "https://www.cnbc.com/2023/11/07/india-debate-on-70-hour-workweek-illegal-or-road-to-greatness.html",
+            "year": 2023
+          },
+          {
+            "title": "Business Today: Narayana Murthy's remark leaves internet divided",
+            "url": "https://www.businesstoday.in/latest/in-focus/story/indias-youth-should-work-70-hours-a-week-narayana-murthys-remark-on-productivity-leaves-internet-divided-403427-2023-10-26",
+            "year": 2023
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "in-oss-1",
+        "text": "According to GitHub Octoverse 2025, India has 21.9 million developers, second only to the US (up from 4.5 million in 2020). More than 5 million joined in 2025 alone.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2025",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "in-oss-2",
+        "text": "The same Octoverse 2025 report says India has already overtaken the US to have the world's largest base of public and open source contributors, and projects 57.5 million developers in India by 2030.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2025",
+            "url": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "in-oss-3",
+        "text": "Zerodha launched FLOSS/fund in October 2024 to give $1 million a year to open source projects worldwide. In 2025 it paid out a total of $1 million to projects including Blender, FFmpeg and OpenSSL.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Entrepreneur: Zerodha launches USD 1 Mn annual fund",
+            "url": "https://www.entrepreneur.com/en-in/news-and-trends/zerodha-launches-usd-1-mn-annual-fund-to-support-open/481437",
+            "year": 2024
+          },
+          {
+            "title": "Open Source For You: Zerodha announces final $675,000 tranche",
+            "url": "https://www.opensourceforu.com/2025/10/zerodha-announces-final-675000-tranche-for-global-open-source-projects-advocates-sovereign-foss-fund/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "in-oss-4",
+        "text": "Zerodha CTO Kailash Nadh says India uses FOSS heavily but its contributions are negligible, and has proposed a government-backed sovereign FOSS fund.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Analytics India Magazine: India's FOSS contributions remain negligible",
+            "url": "https://analyticsindiamag.com/global-tech/indias-foss-contributions-remain-negligible-despite-heavy-adoption-says-zerodha-cto"
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "Process, hierarchy and pace differ greatly between the large IT services firms (TCS, Infosys, Wipro), foreign GCCs and product startups. Moving from a services firm to a GCC is described as a common career path.",
+    "Companies such as Zerodha run very large systems with small teams, a counterexample to the image of India as a country that throws headcount at problems.",
+    "The common claim that an Indian \"yes\" does not mean agreement found no support beyond anecdotes, so this page does not use it.",
+    "India has one of the largest developer populations, but voices within India say the depth of its open source contribution does not match its numbers.",
+    "No systematic data was found on postmortem culture.",
+    "In the Stack Overflow Developer Survey 2024, 7.2% of respondents were from India, the third-largest share, so India is far better represented in international surveys than Japan or South Korea.",
+    "Octoverse 2025's 2030 projection is inconsistent: its chart shows 54.7 million developers for the US and 57.5 million for India, while the text puts the US at \"more than 40 million\"."
+  ]
+}

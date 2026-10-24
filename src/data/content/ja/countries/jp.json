@@ -1,13 +1,13 @@
 {
   "id": "jp",
   "name": "日本",
-  "oneLiner": "不確実性回避と根回し型合意の高文脈文化。SIer 構造と Web 系の二極化が大きい。",
-  "intro": "日本のソフトウェアエンジニアの働き方と考え方を、統計・調査・現場の発信から整理したページ。ここに書くのは国全体の傾向であって、個々のエンジニアや個別の会社がそうだという意味ではない。特に SIer と Web 系ではほぼ別の国と言えるほど差がある。",
+  "oneLiner": "Hofstede と Meyer の枠組みでは不確実性回避が強く合意型。SIer と Web 系の差が大きい",
+  "intro": "日本のソフトウェアエンジニアの働き方を、IPA や公正取引委員会などの公的な統計・調査と、企業の技術ブログから整理しています。示すのは国全体の傾向で、国内のばらつきは大きく、特に SIer と Web 系では文化がかなり違います。日本語の公的資料は豊富な一方、Stack Overflow などの国際調査には日本の回答がわずかしか含まれていません。",
   "themes": {
     "design": [
       {
         "id": "jp-design-1",
-        "text": "IPA の DX 白書 2021 によると、アジャイル開発の活用率は日本企業 19.3% に対し米国 55.0%、DevOps は 10.9% 対 52.6%、デザイン思考は 14.7% 対 53.2% で、反復型の手法の普及は米国よりかなり遅い。",
+        "text": "IPA の DX 白書 2021 では、アジャイル開発を活用している企業は日本 19.3%、米国 55.0% だった。DevOps は 10.9% と 52.6%、デザイン思考は 14.7% と 53.2% で、反復型の手法の普及に大きな差がある。",
         "confidence": "strong",
         "sources": [
           {
@@ -19,7 +19,7 @@
       },
       {
         "id": "jp-design-2",
-        "text": "DX 白書 2023 でも、アジャイルの原則を組織ガバナンスに取り入れている日本企業はどの部門でも半数以下にとどまる。",
+        "text": "IPA の DX 白書 2023 でも、アジャイルの原則を組織ガバナンスに取り入れている日本企業は、どの部門でも半数以下だった。",
         "confidence": "medium",
         "sources": [
           {
@@ -31,7 +31,7 @@
       },
       {
         "id": "jp-design-3",
-        "text": "LF Research の 2025 年調査では、日本企業の約 9 割が無償の OSS にもトラブル時の「12 時間以内の応答」を期待しており、商用製品並みの品質・サポートを求める傾向が見える。",
+        "text": "LF Research の 2025 年の調査では、日本企業の約 9 割が無償の OSS にもトラブル時の「12 時間以内の応答」を期待していた。TechTarget ジャパンはこれを、OSS を商用製品のように扱う姿勢だと評している。",
         "confidence": "medium",
         "sources": [
           {
@@ -48,8 +48,8 @@
       },
       {
         "id": "jp-design-4",
-        "text": "公正取引委員会の 2022 年調査は、ソフトウェア業の多重下請構造で「仕様変更への無償対応要求」などが懸念されると指摘しており、受託開発では仕様が契約上の争点になりやすい。",
-        "confidence": "medium",
+        "text": "公正取引委員会の 2022 年の調査報告は、ソフトウェア業の多重下請構造について、買いたたきや「仕様変更への無償対応要求」といった下請法違反の存在が懸念されると指摘している。",
+        "confidence": "strong",
         "sources": [
           {
             "title": "ソフトウェア業の下請取引等に関する実態調査報告書について（公正取引委員会）",
@@ -62,7 +62,7 @@
     "failure": [
       {
         "id": "jp-failure-1",
-        "text": "DX 白書 2023 で「リスクを取り、チャレンジすることが尊敬される」と答えた企業は日本 15%、米国 42.5% だった（IPA 図 6 を引用した二次資料）。",
+        "text": "IPA の DX 白書 2023 で「リスクを取り、チャレンジすることが尊敬される」と答えた企業は、日本 15%、米国 42.5% だった。数字は同白書の図を引用した二次資料による。",
         "confidence": "medium",
         "sources": [
           {
@@ -74,19 +74,7 @@
       },
       {
         "id": "jp-failure-2",
-        "text": "Hofstede の不確実性回避 (UAI) は 92 で世界でも最上位級、達成志向 (MAS) も 95 と非常に高い。",
-        "confidence": "strong",
-        "sources": [
-          {
-            "title": "The Culture Factor — Country comparison tool",
-            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=japan%2Csouth+korea",
-            "year": 2026
-          }
-        ]
-      },
-      {
-        "id": "jp-failure-3",
-        "text": "メルカリは 2018 年の時点で、障害報告では批判をせず原因究明に集中するために「コードを主語として話す」方針を公開し、振り返りには職種を問わず全員で参加していた。",
+        "text": "メルカリは 2018 年の技術ブログで、障害報告では個人を批判せず原因究明に集中するため「コードを主語として話す」方針を公開した。振り返りには職種を問わず全員が参加していた。",
         "confidence": "medium",
         "sources": [
           {
@@ -97,7 +85,7 @@
         ]
       },
       {
-        "id": "jp-failure-4",
+        "id": "jp-failure-3",
         "text": "メルカリではポストモーテムを書けることがエンジニアラダー（評価基準）に含まれている、とイベントの LT で報告された。",
         "confidence": "weak",
         "sources": [
@@ -112,7 +100,7 @@
     "feedback": [
       {
         "id": "jp-feedback-1",
-        "text": "Erin Meyer の Culture Map では、日本は Evaluating で極めて間接的なネガティブフィードバック、Disagreeing で対立回避の側に置かれ、人前での批判は避けるのが基本とされる。",
+        "text": "Erin Meyer の Culture Map は、日本をネガティブフィードバックが極めて間接的で、対立を避ける側に分類している。人前での批判は避けるのが基本とされる。",
         "confidence": "medium",
         "sources": [
           {
@@ -127,7 +115,7 @@
       },
       {
         "id": "jp-feedback-2",
-        "text": "日本人開発者の体験談では、「なんか違和感がある」だけでレビューコメントとして成立し、規約は明文化されないままレビューで暗黙に強制されるという。",
+        "text": "ある日本人開発者は、「なんか違和感がある」だけでレビューコメントとして通り、規約が明文化されないままレビューで暗黙に強制されると書いている。",
         "confidence": "weak",
         "sources": [
           {
@@ -138,7 +126,7 @@
       },
       {
         "id": "jp-feedback-3",
-        "text": "一方でネット上には「マサカリを投げる」（鋭く強い技術的指摘）というスラングがあり、オンラインでは辛辣で直接的な指摘も珍しくない。日本特有かどうかには異論もある。",
+        "text": "日本語のネット上には「マサカリを投げる」（鋭く強い技術的指摘をする）という言い回しがあり、オンラインでは辛辣で直接的な指摘も見られる。これを日本特有と見るかには異論がある。",
         "confidence": "weak",
         "sources": [
           {
@@ -154,7 +142,7 @@
       },
       {
         "id": "jp-feedback-4",
-        "text": "must / imo / nits などのコメントタグで指摘の強さを明示し、心理的安全性を保とうとするレビュー実践が紹介されている。",
+        "text": "must / imo / nits などのタグでコメントの強さを明示し、心理的安全性を保とうとするレビュー実践が紹介されている。",
         "confidence": "weak",
         "sources": [
           {
@@ -167,7 +155,7 @@
     "hierarchy": [
       {
         "id": "jp-hierarchy-1",
-        "text": "Meyer は日本を、Leading では階層的、Deciding では合意型という例外として扱い、下位層で合意を作ってから上げる稟議・根回しが特に大企業で一般的だとしている。",
+        "text": "Meyer は日本を、Leading では階層的、Deciding では合意型という組み合わせの例に挙げている。HBR 2017 年の論文では、その合意形成を支える慣行として根回しと稟議を紹介している。",
         "confidence": "medium",
         "sources": [
           {
@@ -177,13 +165,18 @@
           {
             "title": "The Culture Map by Erin Meyer (Deploy Yourself)",
             "url": "https://www.deployyourself.com/book-review/the-culture-map-erin-meyer-eight-scales/"
+          },
+          {
+            "title": "Being the Boss in Brussels, Boston, and Beijing (HBR)",
+            "url": "https://hbr.org/2017/07/being-the-boss-in-brussels-boston-and-beijing",
+            "year": 2017
           }
         ]
       },
       {
         "id": "jp-hierarchy-2",
-        "text": "Hofstede の権力格差 (PDI) は 54 の中間値で、The Culture Factor は日本を、意思決定が各階層で確認される境界的な階層社会と説明している。",
-        "confidence": "strong",
+        "text": "Hofstede の権力格差 (PDI) は 54 の中間値だ。The Culture Factor は日本を、意思決定が各階層で確認される境界的な階層社会と説明している。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "The Culture Factor — Country comparison tool",
@@ -194,7 +187,7 @@
       },
       {
         "id": "jp-hierarchy-3",
-        "text": "Meyer は 2017 年の HBR で、日本人から見ると米国の上司は「外見は平等的だが、意思決定は極めて独裁的」に映ると書いている。",
+        "text": "Meyer は 2017 年の HBR 論文で、米国の上司は外見上は平等的でも、日本人からは意思決定が極めて独裁的に見えると書いている。",
         "confidence": "medium",
         "sources": [
           {
@@ -208,7 +201,7 @@
     "communication": [
       {
         "id": "jp-communication-1",
-        "text": "Meyer の Communicating 尺度で、日本は韓国・インドネシアと並ぶ最も高文脈な国の一つで、「空気を読む」が象徴的な表現とされる。",
+        "text": "Meyer の Communicating 尺度で、日本は韓国・インドネシアと並んで最も高文脈な側に置かれ、象徴的な表現として「空気を読む」が挙げられている。",
         "confidence": "medium",
         "sources": [
           {
@@ -223,7 +216,7 @@
       },
       {
         "id": "jp-communication-2",
-        "text": "DX 白書 2023 で「社内の風通しがよく、情報共有がうまくいっている」と答えた企業は日本 17.3%、米国 66.8% だった（二次引用）。",
+        "text": "IPA の DX 白書 2023 で「社内の風通しがよく、情報共有がうまくいっている」と答えた企業は、日本 17.3%、米国 66.8% だった。数字は二次資料による。",
         "confidence": "medium",
         "sources": [
           {
@@ -235,18 +228,7 @@
       },
       {
         "id": "jp-communication-3",
-        "text": "Meyer は日本を Scheduling で直線的な時間（時間厳守、アジェンダに従う）の側に置いている。",
-        "confidence": "medium",
-        "sources": [
-          {
-            "title": "Erin Meyer's Culture Map: Where Japan Actually Falls (Accent Language)",
-            "url": "https://accent-language.com/en/blog/erin-meyers-culture-map-japan"
-          }
-        ]
-      },
-      {
-        "id": "jp-communication-4",
-        "text": "エンジニアの外向きの情報発信は活発で、Qiita は 2025 年 3 月に会員 150 万人・月間 UU 800 万に達し、2024 年には良質記事の数で Zenn が Qiita を逆転したという個人分析もある。",
+        "text": "技術記事サイトの Qiita は 2025 年 3 月に会員 150 万人、月間 UU 800 万人に達した。2024 年には良質記事の数で Zenn が Qiita を上回ったという個人の分析もある。",
         "confidence": "medium",
         "sources": [
           {
@@ -265,7 +247,7 @@
     "work": [
       {
         "id": "jp-work-1",
-        "text": "日本の IT 人材の 73.6% が IT 企業（ベンダー）に所属している（2020 年国勢調査）。米国は 35.1% で、約 65% がユーザー企業側にいる。",
+        "text": "2020 年の国勢調査では、日本の IT 人材の 73.6% が IT 企業に所属していた。米国（2021 年）は 35.1% で、約 65% がユーザー企業など IT 企業以外にいる。",
         "confidence": "strong",
         "sources": [
           {
@@ -282,7 +264,7 @@
       },
       {
         "id": "jp-work-2",
-        "text": "公正取引委員会の 2022 年調査（法人 4,739 社、SE 2,316 人が回答）では、下請けの 25% が自社で作業せず利益を得る「中抜き」の存在を認識していた。",
+        "text": "公正取引委員会の 2022 年の調査では、「中抜き」事業者の存在を感じたことがあると答えた事業者は 25.9% で、最終下請けに限ると 33.5% だった。",
         "confidence": "strong",
         "sources": [
           {
@@ -299,8 +281,8 @@
       },
       {
         "id": "jp-work-3",
-        "text": "OECD データでは 2023 年の年間労働時間は日本 1,611 時間、韓国 1,872 時間で、全業種平均で見ると日本はもはや長時間労働国ではない。",
-        "confidence": "strong",
+        "text": "OECD のデータでは、2023 年の年間労働時間は日本 1,611 時間、韓国 1,872 時間だった。全業種の平均で見る限り、日本は OECD 諸国の中で突出した長時間労働国ではない。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Visualizing Annual Working Hours in OECD Countries (Visual Capitalist)",
@@ -311,8 +293,8 @@
       },
       {
         "id": "jp-work-4",
-        "text": "国交省の令和 5 年度調査では、雇用型テレワーカーの割合が最も高い業種は情報通信業で 72.8% だった。",
-        "confidence": "medium",
+        "text": "国土交通省の令和 5 年度テレワーク人口実態調査では、雇用型テレワーカーの割合が最も高い業種は情報通信業で、72.8% だった。",
+        "confidence": "strong",
         "sources": [
           {
             "title": "令和５年度 テレワーク人口実態調査 －調査結果－（国土交通省）",
@@ -323,7 +305,7 @@
       },
       {
         "id": "jp-work-5",
-        "text": "総務省は IT 人材について「雇用慣習の違いから人材の流動性が低い」と注記する一方、LAPRAS の 2024 年調査では「転職を考えているが動いていない」潜在層が拡大している。",
+        "text": "総務省の情報通信白書（平成 30 年版）は、日本の IT 人材は雇用慣習の違いから流動性が低いと注記している。一方、LAPRAS の 2024 年の調査では、転職を考えているが動いていない潜在層が増えていた。",
         "confidence": "medium",
         "sources": [
           {
@@ -342,7 +324,7 @@
     "oss": [
       {
         "id": "jp-oss-1",
-        "text": "GitHub Octoverse によると、日本の開発者は 2023 年に 280 万人超（前年比 31% 増）、2024 年に 350 万人超（前年比 23% 増）と急増している。",
+        "text": "GitHub Octoverse では、日本の開発者は 2023 年に 280 万人超（前年比 31% 増）、2024 年に 350 万人超（同 23% 増）だった。",
         "confidence": "strong",
         "sources": [
           {
@@ -359,25 +341,20 @@
       },
       {
         "id": "jp-oss-2",
-        "text": "LF Research の 2025 年調査では、日本企業の OSS 貢献の障壁は IP の懸念 52%、社内ポリシーの欠如 51%（世界平均 28%）で、OSPO の設置は 41% だった。IPA の 2024 年度調査では 8 割以上が OSS ガバナンス体制を持たず、両調査の数字は大きく食い違う。",
-        "confidence": "strong",
+        "text": "LF Research の 2025 年の調査では、日本企業が挙げた OSS 貢献の障壁は IP の懸念が 52%、社内ポリシーの欠如が 51%（世界平均 28%）だった。OSPO を設置している企業は 41% だった。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "LF Research「日本のオープンソースの現状 2025」（Think IT）",
             "url": "https://thinkit.co.jp/article/38820",
-            "year": 2025
-          },
-          {
-            "title": "IPAレポート(2024年度版)が示す日本のオープンソース戦略の課題（vonxai blog）",
-            "url": "https://blog.vonxai.co.jp/post/ipa-oss-report-2024-strategy/",
             "year": 2025
           }
         ]
       },
       {
         "id": "jp-oss-3",
-        "text": "EF EPI 2024 で日本は 116 か国中 92 位（Low）と過去最低で、IPA も OSS 貢献の障壁に英語への心理的バイアスを挙げている。",
-        "confidence": "strong",
+        "text": "EF EPI 2024 で日本は 116 か国・地域中 92 位で、5 段階の下から 2 番目の Low だった。IPA の 2024 年度の報告書も、OSS 貢献の障壁として英語への心理的なハードルを挙げている。",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Japan ranked 31st in digital competitiveness, 92nd for English skills (The Japan Times)",
@@ -393,33 +370,22 @@
       },
       {
         "id": "jp-oss-4",
-        "text": "日本発の代表的な OSS はまつもとゆきひろが作り 1995 年に公開した Ruby。",
-        "confidence": "medium",
+        "text": "日本発の代表的な OSS に、まつもとゆきひろが開発し 1995 年に公開した Ruby がある。",
+        "confidence": "strong",
         "sources": [
           {
             "title": "About Ruby",
             "url": "https://www.ruby-lang.org/en/about/"
           }
         ]
-      },
-      {
-        "id": "jp-oss-5",
-        "text": "Stack Overflow Developer Survey 2024 の日本からの回答は 286 件（0.5%）しかなく、この調査から日本の開発者像を語るのは難しい。",
-        "confidence": "strong",
-        "sources": [
-          {
-            "title": "Stack Overflow Developer Survey 2024: Developer Profile",
-            "url": "https://survey.stackoverflow.co/2024/developer-profile",
-            "year": 2024
-          }
-        ]
       }
     ]
   },
   "variance": [
-    "IT 人材の約 7 割がベンダー（SIer）側にいる一方、メルカリなどの Web 系では blameless なポストモーテムやフルリモートが標準で、同じ国の中でも文化が二極化している。",
-    "対立回避的という一般像に対し、オンラインでは「マサカリ」と呼ばれる辛辣な技術的指摘の文化もある。",
-    "Hofstede の個人主義スコアは旧版の 46 から現行の 62 に改訂されており、「日本 = 強い集団主義」という図式は版によって変わる。",
-    "Stack Overflow Survey の日本の回答は数百件しかなく、国際調査では日本の開発者が過小代表されている。"
+    "IT 人材の約 7 割が IT 企業側にいる一方、メルカリなどの Web 系企業では blameless なポストモーテムやリモート勤務が広く採られており、同じ国の中でも働き方の差が大きい。",
+    "対立回避的という一般像に対し、オンラインでは「マサカリ」と呼ばれる辛辣な技術的指摘も見られる。",
+    "Hofstede の個人主義スコアは旧版の 46 から現行の 62 に改訂されており、「日本 = 強い集団主義」という図式は参照する版によって変わる。",
+    "Stack Overflow Developer Survey 2024 の日本からの回答は 286 件（0.5%）しかなく、国際調査では日本の開発者が過小代表されている。",
+    "日本企業の OSS ガバナンスについて、LF Research（2025 年）では OSPO の設置が 41% だった一方、IPA の 2024 年度調査では 8 割以上がガバナンス体制を持たないとしており、調査によって数字が大きく食い違う。"
   ]
 }

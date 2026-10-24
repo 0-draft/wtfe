@@ -1,0 +1,391 @@
+{
+  "id": "jp",
+  "name": "Japan",
+  "oneLiner": "Frameworks rate it high on uncertainty avoidance and consensus; SIers and web firms differ sharply",
+  "intro": "This page draws on public statistics and surveys from bodies such as IPA and the Japan Fair Trade Commission, plus company engineering blogs, to describe how software engineers in Japan work. These are country-level tendencies with large variance inside the country; system integrators (SIers) and web companies in particular have quite different cultures. Japanese-language public data is plentiful, but international surveys such as Stack Overflow's include very few responses from Japan.",
+  "themes": {
+    "design": [
+      {
+        "id": "jp-design-1",
+        "text": "In IPA's DX White Paper 2021, 19.3% of Japanese companies used agile development, against 55.0% in the US. DevOps was 10.9% vs 52.6% and design thinking 14.7% vs 53.2%, a wide gap in the adoption of iterative methods.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Japan lags the US in DX: IPA publishes DX White Paper 2021 (@IT)",
+            "url": "https://atmarkit.itmedia.co.jp/ait/articles/2110/13/news036.html",
+            "year": 2021
+          }
+        ]
+      },
+      {
+        "id": "jp-design-2",
+        "text": "In IPA's DX White Paper 2023, fewer than half of Japanese companies applied agile principles to organizational governance, in every department surveyed.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Key points of DX White Paper 2023: the overwhelming gap between Japan and the US (Business+IT)",
+            "url": "https://www.sbbit.jp/article/cont1/73359",
+            "year": 2023
+          }
+        ]
+      },
+      {
+        "id": "jp-design-3",
+        "text": "In a 2025 LF Research survey, about 90% of Japanese companies expected a response within 12 hours when something goes wrong, even for free open source software. TechTarget Japan described this as treating OSS like a commercial product.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Japanese companies see value in OSS but struggle to build the organization for it (@IT)",
+            "url": "https://atmarkit.itmedia.co.jp/ait/articles/2601/06/news047.html",
+            "year": 2026
+          },
+          {
+            "title": "90% demand a response within 12 hours: the illusion of Japanese companies treating OSS as a commercial product (TechTarget Japan)",
+            "url": "https://techtarget.itmedia.co.jp/tt/article/2512/19/225121904/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "jp-design-4",
+        "text": "A 2022 Japan Fair Trade Commission report on the software industry's multi-tier subcontracting warned of suspected violations of the Subcontract Act, such as price squeezing and demands to absorb specification changes at no charge.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Report on the survey of subcontracting in the software industry (Japan Fair Trade Commission)",
+            "url": "https://www.jftc.go.jp/houdou/pressrelease/2022/jun/220629_software.html",
+            "year": 2022
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "jp-failure-1",
+        "text": "In IPA's DX White Paper 2023, 15% of Japanese companies said that taking risks and trying new things earns respect, against 42.5% in the US. The figures come from a secondary source quoting the white paper's chart.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Japan–US comparison of DX efforts (from IPA DX White Paper 2023), part 2",
+            "url": "https://dx.genetec.co.jp/column/0025-dx/",
+            "year": 2023
+          }
+        ]
+      },
+      {
+        "id": "jp-failure-2",
+        "text": "In a 2018 engineering blog post, Mercari published a rule to \"make the code the subject\" in incident reports, so that discussion stays on root causes rather than blaming people. Retrospectives were open to everyone regardless of role.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Incident response guided by Mercari's three values",
+            "url": "https://engineering.mercari.com/blog/entry/2018-04-10-090453/",
+            "year": 2018
+          }
+        ]
+      },
+      {
+        "id": "jp-failure-3",
+        "text": "A lightning talk at an industry event reported that Mercari's engineering ladder (its evaluation criteria) includes the ability to write postmortems.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Learning postmortems together: Lunch LT #LT_findy (Togetter)",
+            "url": "https://togetter.com/li/2073603?page=4",
+            "year": 2023
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "jp-feedback-1",
+        "text": "Erin Meyer's Culture Map places Japan at the very indirect end for negative feedback and on the side that avoids confrontation. Criticizing someone in front of others is generally avoided.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer's Culture Map: Where Japan Actually Falls (Accent Language)",
+            "url": "https://accent-language.com/en/blog/erin-meyers-culture-map-japan"
+          },
+          {
+            "title": "The Culture Map by Erin Meyer (Deploy Yourself)",
+            "url": "https://www.deployyourself.com/book-review/the-culture-map-erin-meyer-eight-scales/"
+          }
+        ]
+      },
+      {
+        "id": "jp-feedback-2",
+        "text": "One Japanese developer writes that \"something feels off\" can pass as a complete review comment, and that conventions are enforced implicitly in review without ever being written down.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Why High-Context Culture Makes AI Coding Harder — A Japanese Developer's Perspective (DEV Community)",
+            "url": "https://dev.to/yun_bow/why-high-context-culture-makes-ai-coding-harder-a-japanese-developers-perspective-123a"
+          }
+        ]
+      },
+      {
+        "id": "jp-feedback-3",
+        "text": "Japanese internet slang has a phrase, \"throwing an axe\" (masakari), for sharp, forceful technical criticism, and blunt, direct comments do appear online. Whether this is specific to Japan is disputed.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "When strangers pick on you online: how to handle masakari (FJORD BOOT CAMP)",
+            "url": "https://bootcamp.fjord.jp/articles/70"
+          },
+          {
+            "title": "Hatena Anonymous Diary: On masakari culture",
+            "url": "https://anond.hatelabo.jp/20200623222321",
+            "year": 2020
+          }
+        ]
+      },
+      {
+        "id": "jp-feedback-4",
+        "text": "Some teams describe labeling review comments with tags such as must, imo and nits to show how strong each point is and to protect psychological safety.",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Classifying feedback in code review and strengthening psychological safety (BuildersIO)",
+            "url": "https://build.yoku.co.jp/articles/lbh02jlffz"
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "jp-hierarchy-1",
+        "text": "Meyer cites Japan as a culture that is hierarchical on Leading yet consensual on Deciding. Her 2017 HBR article describes nemawashi and ringi as the practices that build that consensus.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Erin Meyer's Culture Map: Where Japan Actually Falls (Accent Language)",
+            "url": "https://accent-language.com/en/blog/erin-meyers-culture-map-japan"
+          },
+          {
+            "title": "The Culture Map by Erin Meyer (Deploy Yourself)",
+            "url": "https://www.deployyourself.com/book-review/the-culture-map-erin-meyer-eight-scales/"
+          },
+          {
+            "title": "Being the Boss in Brussels, Boston, and Beijing (HBR)",
+            "url": "https://hbr.org/2017/07/being-the-boss-in-brussels-boston-and-beijing",
+            "year": 2017
+          }
+        ]
+      },
+      {
+        "id": "jp-hierarchy-2",
+        "text": "Japan scores 54 on Hofstede's power distance (PDI), a middling value. The Culture Factor describes Japan as a borderline hierarchical society in which decisions are confirmed at each level.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=japan%2Csouth+korea",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "jp-hierarchy-3",
+        "text": "In her 2017 HBR article, Meyer writes that American bosses look egalitarian on the surface but seem extremely autocratic to Japanese colleagues in how they make decisions.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Being the Boss in Brussels, Boston, and Beijing (HBR)",
+            "url": "https://hbr.org/2017/07/being-the-boss-in-brussels-boston-and-beijing",
+            "year": 2017
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "jp-communication-1",
+        "text": "On Meyer's Communicating scale, Japan sits with South Korea and Indonesia at the most high-context end, and \"reading the air\" (kuuki wo yomu) is given as the emblematic phrase.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "The Culture Map Summary (Readingraphics)",
+            "url": "https://readingraphics.com/book-summary-the-culture-map-erin-meyer/"
+          },
+          {
+            "title": "The Culture Map by Erin Meyer (Deploy Yourself)",
+            "url": "https://www.deployyourself.com/book-review/the-culture-map-erin-meyer-eight-scales/"
+          }
+        ]
+      },
+      {
+        "id": "jp-communication-2",
+        "text": "In IPA's DX White Paper 2023, 17.3% of Japanese companies said internal communication was open and information was shared well, against 66.8% in the US. The figures come from a secondary source.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Japan–US comparison of DX efforts (from IPA DX White Paper 2023), part 2",
+            "url": "https://dx.genetec.co.jp/column/0025-dx/",
+            "year": 2023
+          }
+        ]
+      },
+      {
+        "id": "jp-communication-3",
+        "text": "The technical writing site Qiita reached 1.5 million members and 8 million monthly unique users in March 2025. One individual's analysis found that Zenn overtook Qiita in the number of high-quality articles in 2024.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Qiita, one of Japan's largest engineer communities, passes 1.5 million members",
+            "url": "https://corp.qiita.com/releases/2025/04/one-million-five-hundred-thousand/",
+            "year": 2025
+          },
+          {
+            "title": "Shall we tech blog? Comparing Qiita and Zenn with data",
+            "url": "https://zenn.dev/mima_ita/articles/f78dcbef2a81d3",
+            "year": 2025
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "jp-work-1",
+        "text": "In the 2020 census, 73.6% of Japan's IT workers were employed by IT companies. In the US (2021) the figure was 35.1%, with about 65% working outside IT companies, such as at user companies.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "IPA press release: DX White Paper 2023 print edition PDF (Japan–US comparison of IT workers)",
+            "url": "https://www.ipa.go.jp/archive/press/2022/press20230316-2.html",
+            "year": 2023
+          },
+          {
+            "title": "MIC White Paper on Information and Communications 2018: Comparing ICT workers in Japan and the US",
+            "url": "https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/h30/html/nd114140.html",
+            "year": 2018
+          }
+        ]
+      },
+      {
+        "id": "jp-work-2",
+        "text": "In a 2022 Japan Fair Trade Commission survey, 25.9% of responding companies said they had noticed middlemen that take a margin without doing any work (nakanuki); among companies at the bottom of the subcontracting chain the figure was 33.5%.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "JFTC investigates multi-tier subcontracting in information services (IT Leaders)",
+            "url": "https://it.impress.co.jp/articles/-/23838",
+            "year": 2022
+          },
+          {
+            "title": "Report on the survey of subcontracting in the software industry (Japan Fair Trade Commission)",
+            "url": "https://www.jftc.go.jp/houdou/pressrelease/2022/jun/220629_software.html",
+            "year": 2022
+          }
+        ]
+      },
+      {
+        "id": "jp-work-3",
+        "text": "OECD data put annual working hours in 2023 at 1,611 in Japan and 1,872 in South Korea. Averaged across all industries, Japan is no longer an outlier for long hours among OECD countries.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Visualizing Annual Working Hours in OECD Countries (Visual Capitalist)",
+            "url": "https://www.visualcapitalist.com/annual-working-hours-in-countries-2023/",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "jp-work-4",
+        "text": "In the Ministry of Land, Infrastructure, Transport and Tourism's FY2023 telework survey, information and communications had the highest share of employed teleworkers of any industry, at 72.8%.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "FY2023 survey of the teleworking population: results (Ministry of Land, Infrastructure, Transport and Tourism)",
+            "url": "https://www.mlit.go.jp/toshi/kankyo/content/001735166.pdf",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "jp-work-5",
+        "text": "The Ministry of Internal Affairs and Communications' 2018 white paper notes that Japan's IT workforce has low mobility because of differing employment practices. A 2024 LAPRAS survey, however, found a growing group of engineers who were considering a job change but had not acted on it.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "MIC White Paper on Information and Communications 2018: Comparing ICT workers in Japan and the US",
+            "url": "https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/h30/html/nd114140.html",
+            "year": 2018
+          },
+          {
+            "title": "IT engineer survey 2024: a growing share of latent job seekers (Mynavi News)",
+            "url": "https://news.mynavi.jp/techplus/article/20240529-2954780/",
+            "year": 2024
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "jp-oss-1",
+        "text": "According to GitHub Octoverse, Japan had more than 2.8 million developers in 2023 (up 31% year on year) and more than 3.5 million in 2024 (up 23%).",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "GitHub Octoverse 2023: The state of open source and rise of AI",
+            "url": "https://github.blog/news-insights/research/the-state-of-open-source-and-ai/",
+            "year": 2023
+          },
+          {
+            "title": "GitHub Octoverse 2024: AI leads Python to the top as the global developer population surges",
+            "url": "https://github.blog/jp/2024-12-17-octoverse-2024/",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "jp-oss-2",
+        "text": "In a 2025 LF Research survey, Japanese companies cited IP concerns (52%) and the lack of an internal policy (51%, against a global average of 28%) as barriers to contributing to open source. 41% had an OSPO.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "LF Research \"The State of Open Source in Japan 2025\" (Think IT)",
+            "url": "https://thinkit.co.jp/article/38820",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "jp-oss-3",
+        "text": "In the EF EPI 2024, Japan ranked 92nd of 116 countries and regions, in the \"Low\" band, the second lowest of five. IPA's FY2024 report also lists a psychological barrier around English as an obstacle to contributing to open source.",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Japan ranked 31st in digital competitiveness, 92nd for English skills (The Japan Times)",
+            "url": "https://www.japantimes.co.jp/business/2024/11/15/economy/japan-digital-competitiveness-english-ranking/",
+            "year": 2024
+          },
+          {
+            "title": "Challenges for Japan's open source strategy shown in the IPA report (FY2024 edition) (vonxai blog)",
+            "url": "https://blog.vonxai.co.jp/post/ipa-oss-report-2024-strategy/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "jp-oss-4",
+        "text": "Ruby, created by Yukihiro Matsumoto and released in 1995, is the best-known open source project from Japan.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "About Ruby",
+            "url": "https://www.ruby-lang.org/en/about/"
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "About 70% of IT workers are at IT vendors, yet web companies such as Mercari widely use blameless postmortems and remote work. Working styles differ greatly within the country.",
+    "Against the common image of confrontation avoidance, harsh online technical criticism known as \"masakari\" also exists.",
+    "Japan's Hofstede individualism score was revised from 46 in the old edition to 62 in the current one, so the picture of Japan as strongly collectivist depends on which edition is cited.",
+    "The Stack Overflow Developer Survey 2024 had only 286 responses from Japan (0.5%), so Japanese developers are underrepresented in international surveys.",
+    "Figures on OSS governance in Japanese companies conflict: LF Research (2025) found 41% had an OSPO, while IPA's FY2024 survey found more than 80% had no governance structure."
+  ]
+}
