@@ -1,0 +1,58 @@
+{
+  "id": "pl",
+  "iso": [
+    "PL"
+  ],
+  "hofstede": [
+    {
+      "country": "Poland",
+      "scores": {
+        "pdi": 68,
+        "idv": 47,
+        "mas": 64,
+        "uai": 93,
+        "lto": 49,
+        "ivr": 29
+      },
+      "source": {
+        "title": "The Culture Factor — Country comparison tool",
+        "url": "https://www.theculturefactor.com/country-comparison-tool?countries=poland",
+        "year": 2026
+      }
+    }
+  ],
+  "cultureMap": {
+    "communicating": {
+      "step": 0,
+      "basis": "primary"
+    },
+    "evaluating": {
+      "step": -1,
+      "basis": "primary"
+    },
+    "persuading": {
+      "step": -1,
+      "basis": "primary"
+    },
+    "leading": {
+      "step": 1,
+      "basis": "primary"
+    },
+    "deciding": {
+      "step": null,
+      "basis": null
+    },
+    "trusting": {
+      "step": -1,
+      "basis": "primary"
+    },
+    "disagreeing": {
+      "step": -1,
+      "basis": "primary"
+    },
+    "scheduling": {
+      "step": 0,
+      "basis": "primary"
+    }
+  }
+}

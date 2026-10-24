@@ -1,0 +1,58 @@
+{
+  "id": "il",
+  "iso": [
+    "IL"
+  ],
+  "hofstede": [
+    {
+      "country": "Israel",
+      "scores": {
+        "pdi": 13,
+        "idv": 56,
+        "mas": 47,
+        "uai": 81,
+        "lto": 47,
+        "ivr": null
+      },
+      "source": {
+        "title": "The Culture Factor — Country comparison tool",
+        "url": "https://www.theculturefactor.com/country-comparison-tool?countries=israel",
+        "year": 2026
+      }
+    }
+  ],
+  "cultureMap": {
+    "communicating": {
+      "step": null,
+      "basis": null
+    },
+    "evaluating": {
+      "step": -3,
+      "basis": "primary"
+    },
+    "persuading": {
+      "step": null,
+      "basis": null
+    },
+    "leading": {
+      "step": -2,
+      "basis": "primary"
+    },
+    "deciding": {
+      "step": null,
+      "basis": null
+    },
+    "trusting": {
+      "step": 1,
+      "basis": "secondary"
+    },
+    "disagreeing": {
+      "step": -3,
+      "basis": "primary"
+    },
+    "scheduling": {
+      "step": 1,
+      "basis": "secondary"
+    }
+  }
+}

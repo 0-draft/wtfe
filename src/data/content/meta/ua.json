@@ -1,0 +1,58 @@
+{
+  "id": "ua",
+  "iso": [
+    "UA"
+  ],
+  "hofstede": [
+    {
+      "country": "Ukraine",
+      "scores": {
+        "pdi": 92,
+        "idv": 55,
+        "mas": 27,
+        "uai": 95,
+        "lto": 51,
+        "ivr": 14
+      },
+      "source": {
+        "title": "The Culture Factor — Country comparison tool",
+        "url": "https://www.theculturefactor.com/country-comparison-tool?countries=ukraine",
+        "year": 2026
+      }
+    }
+  ],
+  "cultureMap": {
+    "communicating": {
+      "step": null,
+      "basis": null
+    },
+    "evaluating": {
+      "step": null,
+      "basis": null
+    },
+    "persuading": {
+      "step": null,
+      "basis": null
+    },
+    "leading": {
+      "step": null,
+      "basis": null
+    },
+    "deciding": {
+      "step": null,
+      "basis": null
+    },
+    "trusting": {
+      "step": null,
+      "basis": null
+    },
+    "disagreeing": {
+      "step": null,
+      "basis": null
+    },
+    "scheduling": {
+      "step": null,
+      "basis": null
+    }
+  }
+}

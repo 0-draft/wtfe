@@ -1,0 +1,301 @@
+{
+  "id": "il",
+  "name": "イスラエル",
+  "oneLiner": "フラットで率直（dugri）、失敗に寛容で即興に強いが、不確実性回避は意外に高い。",
+  "intro": "イスラエルのソフトウェア業界にみられる傾向を、調査・報道・研究からまとめたページです。ここに書かれているのは国全体や業界の傾向であり、個々のエンジニアの性格や働き方を言い当てるものではありません。とくに high-tech は国内でもエリート層に偏った世界である点に注意してください。",
+  "themes": {
+    "design": [
+      {
+        "id": "il-design-1",
+        "text": "Inbal Arieli『Chutzpah』（2019）は「Failure Is an Option」「Certain Uncertainty」「Resourcefulness」といった章で、混沌（balagan）の中で育つことが即興力と工夫する力を生むと論じる。ただし定量データに基づく主張ではない。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Publishers Weekly: Chutzpah (Inbal Arieli)",
+            "url": "https://www.publishersweekly.com/9780062883032",
+            "year": 2019
+          }
+        ]
+      },
+      {
+        "id": "il-design-2",
+        "text": "Hofstede の不確実性回避（UAI）は 81 と高く、ルール・時間厳守・精度を求める一方、プレッシャー下では即興に強いと説明されている。「雑に作る文化」という見方とは一致しない。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=israel",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "il-design-3",
+        "text": "仕様の外まで自分で考えて責任を持つ人を軍隊由来の言葉で「rosh gadol（大きな頭）」と呼んで褒め、指示を狭く解釈する「rosh katan」は蔑称になる。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Haaretz: Word of the Day Rosh Gadol",
+            "url": "https://www.haaretz.com/2012-09-07/ty-article/word-of-the-day-rosh-gadol/0000017f-e66d-dc7e-adff-f6ed883b0000",
+            "year": 2012
+          }
+        ]
+      }
+    ],
+    "failure": [
+      {
+        "id": "il-failure-1",
+        "text": "Arieli は、イスラエルはリスクを避けない社会で、失敗を学習の一部として受け入れるよう育てられると主張する。Publishers Weekly の書評は、子育て論なのか文化分析なのか焦点が定まっていないと批判している。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Publishers Weekly: Chutzpah (Inbal Arieli)",
+            "url": "https://www.publishersweekly.com/9780062883032",
+            "year": 2019
+          }
+        ]
+      },
+      {
+        "id": "il-failure-2",
+        "text": "2023 年 10 月 7 日以降、high-tech 従業員の約 15% が予備役に召集され、開戦 3 週目には約 70% の tech 企業が業務障害を報告した。それでも開戦から約半年で 31 億ドルを調達している。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Times of Israel: About 70% of tech firms face operating difficulties amid reservists' call-up",
+            "url": "https://www.timesofisrael.com/about-70-of-tech-firms-face-operating-difficulties-amid-reservists-call-up/",
+            "year": 2023
+          },
+          {
+            "title": "Ynetnews: Israeli high-tech raises $3.1 billion since beginning of war",
+            "url": "https://www.ynetnews.com/business/article/sk7ityv1r",
+            "year": 2024
+          }
+        ]
+      },
+      {
+        "id": "il-failure-3",
+        "text": "予備役による開発遅延の具体例として、Wix は AI デザイン製品の出荷が 1 四半期遅れ、Intel は一部の作業をインドのチームへ移した。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Calcalist: A quiet shift is underway in the startup nation",
+            "url": "https://www.calcalistech.com/ctechnews/article/cmaxfpvrq"
+          }
+        ]
+      },
+      {
+        "id": "il-failure-4",
+        "text": "2025 年は Wiz（320 億ドル、Google）、CyberArk（250 億ドル、Palo Alto Networks）、Armis（77.5 億ドル、ServiceNow）などで exit 額が過去最高だった。総額は集計方法により約 590 億ドル（PwC）から約 800 億ドル（Calcalist）まで開きがある。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Calcalist: The $80 billion year: Israel's biggest tech exits of 2025",
+            "url": "https://www.calcalistech.com/ctechnews/article/hkzohvfnbx",
+            "year": 2025
+          }
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "id": "il-feedback-1",
+        "text": "「dugri（まっすぐな話し方）」は、率直さやぶっきらぼうさを勇気と誠実さの証とみなす言語イデオロギーで、Tamar Katriel が 1986 年に研究した。Katriel は、これが相互の信頼を前提にしていると述べている。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Tamar Katriel on her book, Defiant Discourse",
+            "url": "https://campanthropology.org/2021/12/27/tamar-katriel-defiant-discourse/",
+            "year": 2021
+          }
+        ]
+      },
+      {
+        "id": "il-feedback-2",
+        "text": "dugri は 1940〜50 年代の欧州系 Sabra 世代の話し方で、アラブ系の間接的なスタイル musayara とは対照的とされる。Katriel 自身も 1999 年に dugri の衰退を指摘している。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Katriel: Dugri (ResearchGate)",
+            "url": "https://www.researchgate.net/publication/316364500_Dugri"
+          }
+        ]
+      },
+      {
+        "id": "il-feedback-3",
+        "text": "Erin Meyer の Culture Map の要約では、イスラエルは否定的フィードバックが直接的な国に入り、公の場での反論にも寛容とされる。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Kathryn Read: The Culture Map by Erin Meyer — a summary and review",
+            "url": "https://kathrynread.com/the-culture-map-by-erin-meyer-a-summary-and-review/"
+          }
+        ]
+      }
+    ],
+    "hierarchy": [
+      {
+        "id": "il-hierarchy-1",
+        "text": "Hofstede の権力格差（PDI）は 13 で世界でも最低水準。上司に近づきやすく、マネージャーはチームの専門性に頼るものとされる。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "The Culture Factor — Country comparison tool",
+            "url": "https://www.theculturefactor.com/country-comparison-tool?countries=israel",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "il-hierarchy-2",
+        "text": "Culture Map の Leading 尺度でも、イスラエルは北欧やオランダと並んで最も平等主義的な端に置かれている。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Kathryn Read: The Culture Map by Erin Meyer — a summary and review",
+            "url": "https://kathrynread.com/the-culture-map-by-erin-meyer-a-summary-and-review/"
+          }
+        ]
+      },
+      {
+        "id": "il-hierarchy-3",
+        "text": "Unit 8200 は徴集兵を数学やプログラミングでスクリーニングし、若い兵士に監督の薄い高難度タスクを任せる。Check Point、Palo Alto Networks、CyberArk、Wix、Wiz の創業者が出身者である。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "SecurityWeek: From IDF to Inc",
+            "url": "https://www.securityweek.com/idf-inc-israeli-cybersecurity-startup-conveyor-belt/"
+          },
+          {
+            "title": "Calcalist: From Unit 8200 to Wiz's $32B exit",
+            "url": "https://www.calcalistech.com/ctechnews/article/sjltwsk2kg",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "il-hierarchy-4",
+        "text": "一方で、8200 出身者のネットワークが閉じたクラブになっていることや、監視技術の輸出（NSO など）を問題視する批判的な報道もある。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Drop Site News: Hundreds of former Israeli spies are working in Big Tech",
+            "url": "https://www.dropsitenews.com/p/israel-technology-palo-alto-networks-microsoft-unit-8200"
+          }
+        ]
+      }
+    ],
+    "communication": [
+      {
+        "id": "il-communication-1",
+        "text": "Culture Map の書評はイスラエルを「高コンテクストなのに批判は直接的」という珍しい組み合わせに分類している。ただし Meyer 本人の図では Communicating の位置を確認できておらず、文書文化についての定量研究も見つからなかった。",
+        "confidence": "weak",
+        "sources": [
+          {
+            "title": "Kathryn Read: The Culture Map by Erin Meyer — a summary and review",
+            "url": "https://kathrynread.com/the-culture-map-by-erin-meyer-a-summary-and-review/"
+          }
+        ]
+      },
+      {
+        "id": "il-communication-2",
+        "text": "民間 high-tech 企業で国内に勤務する従業員の比率は 69%（2019）から 62%（2026 年 3 月）に下がり、海外拠点との非同期・文書ベースのやり取りが増える構造になっている。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Ynetnews: High-tech brain drain grows as thousands of developers leave Israel",
+            "url": "https://www.ynetnews.com/business/article/bkjjywylge",
+            "year": 2026
+          }
+        ]
+      }
+    ],
+    "work": [
+      {
+        "id": "il-work-1",
+        "text": "high-tech は国内雇用の約 11.4%（約 40 万人、2025）を占め、輸出の 58%（約 850 億ドル）を担う。雇用の伸びは年 2.5% で、過去 10 年平均の約 6% から鈍化している。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Ynetnews: High-tech brain drain grows as thousands of developers leave Israel",
+            "url": "https://www.ynetnews.com/business/article/bkjjywylge",
+            "year": 2026
+          },
+          {
+            "title": "Israel Innovation Authority: 2025 High-Tech Report",
+            "url": "https://innovationisrael.org.il/en/press_release/innovation-report-2025/",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "il-work-2",
+        "text": "R&D 人員は 2025 年に約 3,500 人減り、10 年以上ぶりの減少となった。R&D は東欧と米国へ移っており、イスラエル企業の国外雇用（約 44 万人）は国内（約 40 万人）を上回る。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Ynetnews: High-tech brain drain grows as thousands of developers leave Israel",
+            "url": "https://www.ynetnews.com/business/article/bkjjywylge",
+            "year": 2026
+          },
+          {
+            "title": "Israel Innovation Authority: 2025 High-Tech Employment Status Report",
+            "url": "https://innovationisrael.org.il/en/wp-content/uploads/sites/3/2025/04/Innovation-Authority-High-Tech-Employment-Report-English-Final.pdf",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "id": "il-work-3",
+        "text": "「Start-up Nation」には「二つの経済」という批判がある。Bank of Israel（2016）によれば労働生産性は先進国平均を 14% 下回り、high-tech の従業員に占めるアラブ系は約 2%、超正統派は約 2.2%（2023）にとどまる。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Adva Center: Not Exactly a Start-Up Nation",
+            "url": "https://adva.org/en/not-exactly-a-start-up-nation/"
+          },
+          {
+            "title": "NUS Middle East Institute: Book review — Dark Sides of the Startup Nation",
+            "url": "https://mei.nus.edu.sg/publication/book-review-dark-sides-of-the-startup-nation/"
+          }
+        ]
+      }
+    ],
+    "oss": [
+      {
+        "id": "il-oss-1",
+        "text": "企業発の OSS として、Wix の React Native 向け E2E テストツール Detox（GitHub スター約 1.2 万）や monday.com のデザインシステム Vibe がある。ただし国単位の OSS 貢献統計は Octoverse で確認できなかった。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "GitHub: wix/Detox",
+            "url": "https://github.com/wix/Detox",
+            "year": 2026
+          },
+          {
+            "title": "GitHub: mondaycom/vibe",
+            "url": "https://github.com/mondaycom/vibe",
+            "year": 2026
+          }
+        ]
+      },
+      {
+        "id": "il-oss-2",
+        "text": "強みは OSS よりも cyber と exit のエコシステムにあり、Team8 や Cyberstarts のような 8200 出身者の VC が再投資の循環を作っている。",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "SecurityWeek: From IDF to Inc",
+            "url": "https://www.securityweek.com/idf-inc-israeli-cybersecurity-startup-conveyor-belt/"
+          }
+        ]
+      }
+    ]
+  },
+  "variance": [
+    "dugri は欧州系 Sabra 世代の様式で、アラブ系の musayara（間接的なスタイル）など国内でも話し方は一様ではない。Katriel 自身も衰退を指摘している。",
+    "high-tech は男性・名門校・エリート部隊出身者に偏り、アラブ系や超正統派の参加は約 2% にとどまる。「イスラエル人＝スタートアップ気質」は国全体には当てはまらない。",
+    "即興や失敗への寛容が語られる一方で、Hofstede の不確実性回避は 81 と高い。",
+    "戦争と予備役によって R&D の国外移転が進んでおり、2023 年以前の像は古くなりつつある。",
+    "Arieli や Senor & Singer は推進側の書籍で、定量的な裏付けは弱い。"
+  ]
+}

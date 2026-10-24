@@ -1,0 +1,59 @@
+{
+  "id": "br",
+  "iso": [
+    "BR"
+  ],
+  "hofstede": [
+    {
+      "country": "Brazil",
+      "scores": {
+        "pdi": 69,
+        "idv": 36,
+        "mas": 49,
+        "uai": 76,
+        "lto": 28,
+        "ivr": 59
+      },
+      "source": {
+        "title": "The Culture Factor — Country comparison tool",
+        "url": "https://www.theculturefactor.com/country-comparison-tool?countries=brazil",
+        "year": 2026
+      }
+    }
+  ],
+  "cultureMap": {
+    "communicating": {
+      "step": 0,
+      "basis": "primary"
+    },
+    "evaluating": {
+      "step": 1,
+      "basis": "primary"
+    },
+    "persuading": {
+      "step": 0,
+      "basis": "primary"
+    },
+    "leading": {
+      "step": 1,
+      "basis": "primary"
+    },
+    "deciding": {
+      "step": 1,
+      "basis": "primary",
+      "note": "中〜トップダウン寄り"
+    },
+    "trusting": {
+      "step": 2,
+      "basis": "primary"
+    },
+    "disagreeing": {
+      "step": 1,
+      "basis": "primary"
+    },
+    "scheduling": {
+      "step": 2,
+      "basis": "primary"
+    }
+  }
+}
