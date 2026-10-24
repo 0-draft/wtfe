@@ -7,12 +7,12 @@
     {
       "country": "United Kingdom",
       "scores": {
-        "pdi": null,
-        "idv": null,
-        "mas": null,
-        "uai": null,
-        "lto": null,
-        "ivr": null
+        "pdi": 35,
+        "idv": 76,
+        "mas": 66,
+        "uai": 35,
+        "lto": 60,
+        "ivr": 69
       },
       "source": {
         "title": "The Culture Factor — Country comparison tool",
