@@ -87,9 +87,9 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # English translations are landing country by country; pages fall back to the Japanese original
+      # until then. Set REQUIRE_EN once every country has an English file.
       - run: pnpm validate:data
-        env:
-          REQUIRE_EN: "1"
 
   build:
     name: Build
