@@ -1,4 +1,5 @@
 ---
+import PairPicker from "../components/compare/PairPicker.astro";
 import { COUNTRY_IDS, type CountryId } from "../data/schema.ts";
 import { compareDict } from "../i18n/compare.ts";
 import { cultureMapText } from "../i18n/scales.ts";
@@ -18,7 +19,6 @@ const name = (id: CountryId) => country(lang, id)!.name;
 const obj = (id: CountryId) => noun(lang, id, name(id)).object;
 const subj = (id: CountryId) => noun(lang, id, name(id)).subject;
 const href = (p: Pair) => localePath(lang, `/compare/${pairSlug(p)}/`);
-const template = localePath(lang, "/compare/__A__-vs-__B__/");
 
 /** Pairs people often work across; each shown with its largest Culture Map gap. */
 const SUGGESTED: Pair[] = [
@@ -49,26 +49,9 @@ const suggested = SUGGESTED.map((p) => {
     <p class="lead measure">{t["index.lead"]}</p>
   </header>
 
-  <form class="picker" data-index-picker data-template={template} aria-labelledby="picker-h" hidden>
-    <h2 id="picker-h" class="sr-only">{t["index.pickerHeading"]}</h2>
-    <label class="field field-a">
-      <span class="field-label">{t["pick.from"]}</span>
-      <select name="from" data-pick="a">
-        <option value="">{t["index.choose"]}</option>
-        {COUNTRY_IDS.map((id) => <option value={id}>{name(id)}</option>)}
-      </select>
-    </label>
-    <span class="arrow" aria-hidden="true">→</span>
-    <label class="field field-b">
-      <span class="field-label">{t["pick.to"]}</span>
-      <select name="to" data-pick="b">
-        <option value="">{t["index.choose"]}</option>
-        {COUNTRY_IDS.map((id) => <option value={id}>{name(id)}</option>)}
-      </select>
-    </label>
-    <a class="go" href={localePath(lang, "/compare/")} data-go aria-disabled="true" aria-describedby="go-hint">{t["index.go"]}</a>
-    <p id="go-hint" class="go-hint" data-go-hint>{t["index.goHint"]}</p>
-  </form>
+  <div class="picker">
+    <PairPicker lang={lang} label={t["index.pickerHeading"]} id="index-picker" />
+  </div>
 
   <section class="section" aria-labelledby="suggested-h">
     <h2 id="suggested-h">{t["index.suggested"]}</h2>
@@ -130,37 +113,6 @@ const suggested = SUGGESTED.map((p) => {
   </section>
 </Base>
 
-<script>
-  // The form is revealed only with JS: without it the matrix below is the way in. The Go link follows the selects.
-  for (const form of document.querySelectorAll<HTMLFormElement>("[data-index-picker]")) {
-    const template = form.dataset.template ?? "";
-    const sa = form.querySelector<HTMLSelectElement>('[data-pick="a"]');
-    const sb = form.querySelector<HTMLSelectElement>('[data-pick="b"]');
-    const go = form.querySelector<HTMLAnchorElement>("[data-go]");
-    const hint = form.querySelector<HTMLElement>("[data-go-hint]");
-    if (!sa || !sb || !go) continue;
-    const fallback = go.href;
-    const ready = () => sa.value !== "" && sb.value !== "" && sa.value !== sb.value;
-    const sync = () => {
-      const ok = ready();
-      go.href = ok ? template.replace("__A__", sa.value).replace("__B__", sb.value) : fallback;
-      if (ok) go.removeAttribute("aria-disabled");
-      else go.setAttribute("aria-disabled", "true");
-      if (hint) hint.hidden = ok;
-    };
-    sa.addEventListener("change", sync);
-    sb.addEventListener("change", sync);
-    go.addEventListener("click", (e) => {
-      if (!ready()) e.preventDefault();
-    });
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (ready()) location.assign(go.href);
-    });
-    sync();
-    form.hidden = false;
-  }
-</script>
 
 <style>
   .page-head {
@@ -171,79 +123,21 @@ const suggested = SUGGESTED.map((p) => {
     margin-block-end: 0.75rem;
   }
   .picker {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: end;
-    gap: 0.75rem 1rem;
     padding-block: 1.25rem 0;
   }
-  .picker[hidden] {
-    display: none;
-  }
-  .field {
-    display: grid;
-    gap: 0.25rem;
-    min-inline-size: 0;
-  }
-  .field-label {
-    font-size: var(--s-14);
-    font-weight: 600;
-    color: var(--ink-2);
-  }
-  .field select {
-    font: inherit;
-    font-size: var(--s-17);
-    min-block-size: 44px;
-    min-inline-size: 12rem;
-    max-inline-size: 100%;
-    padding: 0.375rem 0.5rem;
-    color: var(--ink);
-    background: var(--raised);
-    border: 1px solid var(--axis);
-    border-block-end-width: 3px;
-    border-radius: 2px;
-  }
-  .field-a select {
-    border-block-end-color: var(--shu);
-  }
-  .field-b select {
-    border-block-end-color: var(--ai);
-  }
-  .arrow {
-    padding-block-end: 0.6rem;
-    color: var(--ink-2);
-  }
-  @media (max-width: 30rem) {
-    .arrow {
-      display: none;
-    }
-  }
+
+
+
+
+
+
+
   .matrix .mono {
     font-size: var(--s-14);
   }
-  .go {
-    display: inline-flex;
-    align-items: center;
-    min-block-size: 44px;
-    padding-inline: 1.25rem;
-    background: var(--ink);
-    color: var(--paper);
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 2px;
-  }
-  .go[aria-disabled="true"] {
-    background: transparent;
-    color: var(--ink-2);
-    border: 1px dashed var(--axis);
-    cursor: not-allowed;
-  }
-  .go-hint {
-    flex-basis: 100%;
-    margin: 0;
-    font-size: var(--s-14);
-    color: var(--ink-2);
-  }
+
+
+
   .suggested {
     list-style: none;
     padding: 0;
@@ -281,7 +175,7 @@ const suggested = SUGGESTED.map((p) => {
     color: var(--ai);
   }
   .matrix {
-    --m-label: 11rem;
+    --m-label: 13rem;
     font-size: var(--s-14);
   }
   .m-head,
@@ -333,9 +227,11 @@ const suggested = SUGGESTED.map((p) => {
   }
   .m-cells a {
     text-decoration: none;
-    color: var(--ai);
+    color: var(--ink-2);
   }
-  .m-cells a:hover {
+  .m-cells a:hover,
+  .m-cells a:focus-visible {
+    color: var(--ai);
     background: var(--raised);
     text-decoration: underline;
   }

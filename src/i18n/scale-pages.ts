@@ -1,4 +1,4 @@
-import type { CultureMapScale, HofstedeDimension, ThemeId } from "../data/schema.ts";
+import type { CultureMapScale, HofstedeDimension } from "../data/schema.ts";
 import type { Lang } from "./ui.ts";
 
 /** What each scale is built from: the observations (Meyer) or survey items (Hofstede) behind the axis. */
@@ -51,24 +51,6 @@ export const builtFrom: Record<Lang, Record<CultureMapScale | HofstedeDimension,
     lto: "あとから加わった次元です。はじめは Michael Bond の中国的価値観調査（倹約、粘り強さ、伝統の尊重）から作られ、のちに Michael Minkov が世界価値観調査の項目から推定し直しました。",
     ivr: "2010 年に加わった次元で、Michael Minkov が世界価値観調査の項目を分析して作りました。自分が幸せだと答えるか、自分の人生をどれだけ思いどおりにできると感じるか、余暇をどれだけ大切にするか。",
   },
-};
-
-/** Themes that a scale speaks to, for cross-links from scale pages (and back from theme pages). */
-export const SCALE_THEMES: Record<CultureMapScale | HofstedeDimension, readonly ThemeId[]> = {
-  communicating: ["communication"],
-  evaluating: ["feedback"],
-  persuading: ["design", "communication"],
-  leading: ["hierarchy"],
-  deciding: ["hierarchy"],
-  trusting: ["work", "oss"],
-  disagreeing: ["feedback", "hierarchy"],
-  scheduling: ["work"],
-  pdi: ["hierarchy"],
-  idv: ["oss", "work"],
-  mas: ["work"],
-  uai: ["design", "failure"],
-  lto: ["work"],
-  ivr: ["work"],
 };
 
 /** What each end of a scale means: [left pole, right pole]. Paraphrased from Meyer and Hofstede. */

@@ -11,7 +11,7 @@ import {
   type HofstedeDimension,
 } from "../data/schema.ts";
 import { DISPLAY_CODE } from "./codes.ts";
-import { hofstedeProfile } from "./compare.ts";
+import { hofstedeProfile, isRegion } from "./compare.ts";
 import { MEYER_RANGE, type StripItem, type StripKey, type StripMember, scaleKind } from "./strip.ts";
 
 export function isStripKey(key: string): key is StripKey {
@@ -59,8 +59,6 @@ export function parseMemberSteps(note: string | undefined, allowed?: readonly st
   }
   return out.sort(byMember);
 }
-
-const isRegion = (meta: CountryMeta) => meta.iso.length > 1;
 
 /** One item per country with meta, in canonical country order. */
 export function stripItems(key: StripKey, metas: readonly CountryMeta[]): StripItem[] {

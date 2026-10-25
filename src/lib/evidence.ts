@@ -7,8 +7,6 @@ import {
   type Confidence,
   type CountryContent,
   type CountryId,
-  type CultureMapScale,
-  type HofstedeDimension,
   THEME_IDS,
   type ThemeId,
 } from "../data/schema.ts";
@@ -94,16 +92,5 @@ export function countryCounts(country: CountryContent): Counts {
   return THEME_IDS.reduce((acc, t) => addCounts(acc, countConfidence(country.themes[t] ?? [])), emptyCounts());
 }
 
-/**
- * Scales that bear on each theme, linked from theme pages. Kept short on purpose: a scale is listed only when the
- * claims under the theme regularly cite it or describe the behaviour it measures.
- */
-export const THEME_SCALES: Record<ThemeId, { meyer: CultureMapScale[]; hofstede: HofstedeDimension[] }> = {
-  design: { meyer: ["persuading", "scheduling"], hofstede: ["uai"] },
-  failure: { meyer: [], hofstede: ["uai"] },
-  feedback: { meyer: ["evaluating", "disagreeing"], hofstede: [] },
-  hierarchy: { meyer: ["leading", "deciding"], hofstede: ["pdi"] },
-  communication: { meyer: ["communicating", "trusting"], hofstede: [] },
-  work: { meyer: ["scheduling"], hofstede: ["mas"] },
-  oss: { meyer: [], hofstede: [] },
-};
+/** Theme ↔ scale links live in theme-scales.ts; re-exported here for existing importers. */
+export { THEME_SCALES } from "./theme-scales.ts";

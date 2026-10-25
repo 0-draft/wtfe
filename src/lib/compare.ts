@@ -29,6 +29,9 @@ export function parsePairSlug(slug: string): Pair | undefined {
 
 export const mirror = ([a, b]: Pair): Pair => [b, a];
 
+/** A row that stands for several countries (the Nordics): its meta lists more than one ISO code. */
+export const isRegion = (meta: Pick<CountryMeta, "iso">): boolean => meta.iso.length > 1;
+
 export interface HofstedeProfile {
   scores: Record<HofstedeDimension, number | null>;
   /** True when a region's national scores were averaged (e.g. the Nordics). */
@@ -43,7 +46,7 @@ export function hofstedeProfile(meta: CountryMeta): HofstedeProfile {
       return [d, vals.length ? Math.round(vals.reduce((s, v) => s + v, 0) / vals.length) : null];
     }),
   ) as Record<HofstedeDimension, number | null>;
-  return { scores, aggregated: entries.length > 1 };
+  return { scores, aggregated: isRegion(meta) && entries.length > 1 };
 }
 
 export interface Delta<K extends string> {

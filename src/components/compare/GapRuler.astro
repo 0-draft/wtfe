@@ -6,20 +6,26 @@
  */
 import type { CultureMapScale, HofstedeDimension } from "../../data/schema.ts";
 import { compareDict } from "../../i18n/compare.ts";
-import { cultureMapText, hofstedeText, type ScaleText, scaleSlug } from "../../i18n/scales.ts";
+import { cultureMapText, hofstedeText, scaleSlug } from "../../i18n/scales.ts";
+import { stripText } from "../../i18n/strip.ts";
 import { type Lang, localePath } from "../../i18n/ui.ts";
 import { DISPLAY_CODE } from "../../lib/codes.ts";
-import { hofstedeMembers } from "../../lib/compare.ts";
+import { hofstedeMembers, isRegion } from "../../lib/compare.ts";
 import {
   type GapLine,
   groupLines,
   hofstedeLines,
   memberBreakdown,
   meyerLines,
+  noneGroups,
   positionsText,
   regionNote,
   type Side,
 } from "../../lib/compare-text.ts";
+import { formatSigned } from "../../lib/strip.ts";
+import { parseMemberSteps } from "../../lib/strip-items.ts";
+import RulerStrip from "./RulerStrip.astro";
+import { pct, type RulerRow } from "./ruler.ts";
 
 interface Props {
   lang: Lang;
@@ -34,38 +40,29 @@ const hofstede = hofstedeLines(lang, a, b);
 const hofScored = hofstede.filter((l) => l.group !== "none");
 const hofMissing = hofstede.filter((l) => l.group === "none");
 
-/** Percent position on the strip; the line runs from PAD% to (100 - PAD)% so end labels never clip. */
-const PAD = 7;
-const pct = (v: number, lo: number, hi: number) => PAD + ((v - lo) / (hi - lo)) * (100 - 2 * PAD);
-const hofMax = Math.max(100, ...hofstede.flatMap((l) => [l.a ?? 0, l.b ?? 0]));
-
-interface Strip {
-  key: string;
-  kind: "meyer" | "hofstede";
-  text: ScaleText;
-  line: GapLine<string>;
-  /** Mark positions in percent. */
-  xa: number | null;
-  xb: number | null;
-  /** Step ticks in percent. */
-  ticks: number[];
-  codeA: string;
-  codeB: string;
-  /** Member ticks of a region (Hofstede only): [percent, side]. */
-  members: [number, "a" | "b"][];
-  notes: string[];
-}
+/** The Hofstede line runs to 100, or to the next ten above the highest score drawn (members included). */
+const hofTop = Math.max(
+  100,
+  ...[a, b].flatMap((side) => side.meta.hofstede.flatMap((h) => Object.values(h.scores).map((v) => v ?? 0))),
+  ...hofstede.flatMap((l) => [l.a ?? 0, l.b ?? 0]),
+);
+const hofMax = hofTop > 100 ? Math.ceil(hofTop / 10) * 10 : 100;
+const fmtNum = (n: number) => new Intl.NumberFormat(lang === "ja" ? "ja" : "en-GB").format(n);
 
 const secondary = (side: Side, key: CultureMapScale) => side.meta.cultureMap[key].basis === "secondary";
-/** Nordic notes such as "DK -2 / SE -1" say which member a step refers to; free-text notes stay on the scale page. */
+/** A region's per-member steps ("DK −1, FI −1"), parsed the same way as on the vantage strip. */
 const memberNote = (side: Side, key: CultureMapScale) => {
-  const note = side.meta.cultureMap[key].note;
-  return note && /^[A-Z]{2} [+-]?\d/.test(note)
-    ? t["ruler.members"](DISPLAY_CODE[side.id], note.replaceAll("-", "−"))
+  if (!isRegion(side.meta) || side.meta.cultureMap[key].step === null) return null;
+  const members = parseMemberSteps(side.meta.cultureMap[key].note, side.meta.iso);
+  return members.length
+    ? t["ruler.members"](
+        DISPLAY_CODE[side.id],
+        members.map((m) => `${m.code} ${formatSigned(m.value, lang)}`).join(lang === "ja" ? "、" : ", "),
+      )
     : null;
 };
 
-function meyerStrip(line: GapLine<CultureMapScale>): Strip {
+function meyerStrip(line: GapLine<CultureMapScale>): RulerRow {
   const k = line.key;
   return {
     key: k,
@@ -75,6 +72,7 @@ function meyerStrip(line: GapLine<CultureMapScale>): Strip {
     xa: line.a === null ? null : pct(line.a, -3, 3),
     xb: line.b === null ? null : pct(line.b, -3, 3),
     ticks: [-3, -2, -1, 0, 1, 2, 3].map((s) => pct(s, -3, 3)),
+    ends: ["−3", "+3"],
     codeA: DISPLAY_CODE[a.id] + (secondary(a, k) ? "†" : ""),
     codeB: DISPLAY_CODE[b.id] + (secondary(b, k) ? "†" : ""),
     members: [],
@@ -82,10 +80,10 @@ function meyerStrip(line: GapLine<CultureMapScale>): Strip {
   };
 }
 
-function hofstedeStrip(line: GapLine<HofstedeDimension>): Strip {
+function hofstedeStrip(line: GapLine<HofstedeDimension>): RulerRow {
   const k = line.key;
   const regionTicks = (side: Side, which: "a" | "b"): [number, "a" | "b"][] =>
-    side.meta.hofstede.length > 1 ? hofstedeMembers(side.meta)[k].map((m) => [pct(m.score, 0, hofMax), which]) : [];
+    isRegion(side.meta) ? hofstedeMembers(side.meta)[k].map((m) => [pct(m.score, 0, hofMax), which]) : [];
   return {
     key: k,
     kind: "hofstede",
@@ -93,7 +91,8 @@ function hofstedeStrip(line: GapLine<HofstedeDimension>): Strip {
     line,
     xa: line.a === null ? null : pct(line.a, 0, hofMax),
     xb: line.b === null ? null : pct(line.b, 0, hofMax),
-    ticks: [0, 50, 100].map((v) => pct(v, 0, hofMax)),
+    ticks: [0, 50, 100, ...(hofMax > 100 ? [hofMax] : [])].map((v) => pct(v, 0, hofMax)),
+    ends: ["0", fmtNum(hofMax)],
     codeA: DISPLAY_CODE[a.id],
     codeB: DISPLAY_CODE[b.id],
     members: [...regionTicks(a, "a"), ...regionTicks(b, "b")],
@@ -108,12 +107,19 @@ const groups = [
 const hofStrips = hofScored.map(hofstedeStrip);
 const regionNotes = [regionNote(lang, a), regionNote(lang, b)].filter((n): n is string => n !== null);
 const hofSource = a.meta.hofstede[0]?.source ?? b.meta.hofstede[0]?.source;
-const scaleHref = (s: Strip) => localePath(lang, `/scales/${scaleSlug(s.key as CultureMapScale, s.kind)}/`);
-const scaleId = (s: Strip) => `gap-${s.kind}-${s.key}`;
-const polesOf = (s: Strip) =>
-  s.kind === "meyer" ? s.text : { left: `${s.text.left} (0)`, right: `${s.text.right} (100)` };
+const scaleHref = (s: RulerRow) => localePath(lang, `/scales/${scaleSlug(s.key as CultureMapScale, s.kind)}/`);
+const scaleId = (s: RulerRow) => `gap-${s.kind}-${s.key}`;
+const noneMeyer = noneGroups(lang, meyer.none, a, b);
+/** Hofstede rows without a score, merged when they say the same thing. */
+const noneHof: { keys: HofstedeDimension[]; sentence: string }[] = [];
+for (const l of hofMissing) {
+  const g = noneHof.find((x) => x.sentence === l.sentence);
+  if (g) g.keys.push(l.key);
+  else noneHof.push({ keys: [l.key], sentence: l.sentence });
+}
+const sepList = lang === "ja" ? "、" : ", ";
+const st = stripText[lang];
 ---
-
 <figure class="ruler" aria-labelledby="ruler-meyer" data-rh={t["ruler.heading"]}>
   <h2 id="ruler-meyer" class="ruler-h">{t["ruler.heading"]}</h2>
   <p class="section-lead">{t["ruler.lead"](a.noun.object, b.noun.object)}</p>
@@ -123,7 +129,7 @@ const polesOf = (s: Strip) =>
       <span>{t["ruler.legendA"](a.noun.object)}</span>
     </span>
     <span class="key">
-      <svg class="key-mark" width="24" height="20" aria-hidden="true"><circle class="m-b" cx="12" cy="10" r="7"></circle></svg>
+      <svg class="key-mark" width="20" height="20" aria-hidden="true"><circle class="m-b" cx="10" cy="10" r="7"></circle></svg>
       <span>{t["ruler.legendB"](b.noun.object)}</span>
     </span>
   </p>
@@ -134,7 +140,7 @@ const polesOf = (s: Strip) =>
           <section class="group" aria-labelledby={`g-${id}`} data-group={id}>
             <h3 id={`g-${id}`}>
               {heading}
-              <span class="h-count mono">{strips.length}</span>
+              <span class="h-count">{t["group.count"](strips.length)}</span>
             </h3>
             <ol class="rows">
               {strips.map((s) => (
@@ -145,43 +151,10 @@ const polesOf = (s: Strip) =>
                     </h4>
                     <p class="row-sentence">{s.line.sentence}</p>
                     {s.notes.map((n) => (
-                      <p class="row-note mono">{n}</p>
+                      <p class="row-note">{n}</p>
                     ))}
                   </div>
-                  <div class="row-strip">
-                    <p class="poles" aria-hidden="true">
-                      <span>{s.text.left}</span>
-                      <span>{s.text.right}</span>
-                    </p>
-                    <svg class="strip" width="100%" height="64" aria-hidden="true">
-                      <line class="axis" x1={`${PAD}%`} x2={`${100 - PAD}%`} y1="30" y2="30" />
-                      {s.ticks.map((x) => (
-                        <line class="tick" x1={`${x}%`} x2={`${x}%`} y1="25" y2="35" />
-                      ))}
-                      {s.xa !== null && s.xb !== null && s.xa !== s.xb && (
-                        <g class="bracket">
-                          <line x1={`${Math.min(s.xa, s.xb)}%`} x2={`${Math.max(s.xa, s.xb)}%`} y1="45" y2="45" />
-                          <line x1={`${s.xa}%`} x2={`${s.xa}%`} y1="40" y2="45" />
-                          <line x1={`${s.xb}%`} x2={`${s.xb}%`} y1="40" y2="45" />
-                        </g>
-                      )}
-                      {s.xb !== null && (
-                        <circle class="m-b" cx={`${s.xb}%`} cy="30" r={s.xa === s.xb ? 10 : 7} />
-                      )}
-                      {s.xa !== null && <circle class="m-a" cx={`${s.xa}%`} cy="30" r={s.xa === s.xb ? 5 : 7} />}
-                      {s.xa !== null && (
-                        <text class="c-a" x={`${s.xa}%`} y="15" text-anchor="middle">
-                          {s.codeA}
-                        </text>
-                      )}
-                      {s.xb !== null && (
-                        <text class="c-b" x={`${s.xb}%`} y="61" text-anchor="middle">
-                          {s.codeB}
-                        </text>
-                      )}
-                    </svg>
-                    <p class="sr-only">{positionsText(lang, "meyer", s.line, a, b, s.text)}</p>
-                  </div>
+                  <RulerStrip row={s} label={positionsText(lang, "meyer", s.line, a, b, s.text)} />
                 </li>
               ))}
             </ol>
@@ -190,18 +163,25 @@ const polesOf = (s: Strip) =>
     )
   }
   {
-    meyer.none.length > 0 && (
+    noneMeyer.length > 0 && (
       <section class="group" aria-labelledby="g-none" data-group="none">
         <h3 id="g-none">
           {t["group.none"]}
-          <span class="h-count mono">{meyer.none.length}</span>
+          <span class="h-count">{t["group.count"](meyer.none.length)}</span>
         </h3>
         <p class="group-lead">{t["group.noneLead"]}</p>
         <ul class="none-list">
-          {meyer.none.map((l) => (
+          {noneMeyer.map((g) => (
             <li>
-              <a href={localePath(lang, `/scales/${scaleSlug(l.key, "meyer")}/`)}>{cultureMapText[lang][l.key].name}</a>
-              <span class="none-sentence">{l.sentence}</span>
+              <span class="none-names">
+                {g.keys.map((k, i) => (
+                  <>
+                    {i > 0 && sepList}
+                    <a href={localePath(lang, `/scales/${scaleSlug(k, "meyer")}/`)}>{cultureMapText[lang][k].name}</a>
+                  </>
+                ))}
+              </span>
+              <span class="none-sentence">{g.sentence}</span>
             </li>
           ))}
         </ul>
@@ -221,8 +201,8 @@ const polesOf = (s: Strip) =>
 <figure class="ruler" aria-labelledby="ruler-hofstede" data-rh={t["hofstede.heading"]}>
   <h2 id="ruler-hofstede" class="ruler-h">{t["hofstede.heading"]}</h2>
   <p class="section-lead">{t["hofstede.lead"](a.noun.object, b.noun.object)}</p>
-  <p class="taras">{t["hofstede.caption"]}</p>
   {regionNotes.map((n) => <p class="region-note">{n}</p>)}
+  {hofMax > 100 && <p class="region-note">{st["strip.extended"](hofMax)}</p>}
   <ol class="rows">
     {
       hofStrips.map((s) => (
@@ -236,62 +216,32 @@ const polesOf = (s: Strip) =>
               <p class="row-note">{n}</p>
             ))}
           </div>
-          <div class="row-strip">
-            <p class="poles" aria-hidden="true">
-              <span>
-                <span class="mono">0</span> {s.text.left}
-              </span>
-              <span>
-                {s.text.right} <span class="mono">100</span>
-              </span>
-            </p>
-            <svg class="strip" width="100%" height="64" aria-hidden="true">
-              <line class="axis" x1={`${PAD}%`} x2={`${100 - PAD}%`} y1="30" y2="30" />
-              {s.ticks.map((x) => (
-                <line class="tick" x1={`${x}%`} x2={`${x}%`} y1="25" y2="35" />
-              ))}
-              {s.members.map(([x, which]) => (
-                <line class={`member member-${which}`} x1={`${x}%`} x2={`${x}%`} y1="22" y2="38" />
-              ))}
-              {s.xa !== null && s.xb !== null && s.xa !== s.xb && (
-                <g class="bracket">
-                  <line x1={`${Math.min(s.xa, s.xb)}%`} x2={`${Math.max(s.xa, s.xb)}%`} y1="45" y2="45" />
-                  <line x1={`${s.xa}%`} x2={`${s.xa}%`} y1="40" y2="45" />
-                  <line x1={`${s.xb}%`} x2={`${s.xb}%`} y1="40" y2="45" />
-                </g>
-              )}
-              {s.xb !== null && <circle class="m-b" cx={`${s.xb}%`} cy="30" r={s.xa === s.xb ? 10 : 7} />}
-              {s.xa !== null && <circle class="m-a" cx={`${s.xa}%`} cy="30" r={s.xa === s.xb ? 5 : 7} />}
-              {s.xa !== null && (
-                <text class="c-a" x={`${s.xa}%`} y="15" text-anchor="middle">
-                  {s.codeA}
-                </text>
-              )}
-              {s.xb !== null && (
-                <text class="c-b" x={`${s.xb}%`} y="61" text-anchor="middle">
-                  {s.codeB}
-                </text>
-              )}
-            </svg>
-            <p class="sr-only">{positionsText(lang, "hofstede", s.line, a, b, polesOf(s))}</p>
-          </div>
+          <RulerStrip row={s} label={positionsText(lang, "hofstede", s.line, a, b, s.text, hofMax)} />
         </li>
       ))
     }
   </ol>
   {
-    hofMissing.length > 0 && (
+    noneHof.length > 0 && (
       <ul class="none-list">
-        {hofMissing.map((l) => (
+        {noneHof.map((g) => (
           <li>
-            <a href={localePath(lang, `/scales/${scaleSlug(l.key, "hofstede")}/`)}>{hofstedeText[lang][l.key].name}</a>
-            <span class="none-sentence">{l.sentence}</span>
+            <span class="none-names">
+              {g.keys.map((k, i) => (
+                <>
+                  {i > 0 && sepList}
+                  <a href={localePath(lang, `/scales/${scaleSlug(k, "hofstede")}/`)}>{hofstedeText[lang][k].name}</a>
+                </>
+              ))}
+            </span>
+            <span class="none-sentence">{g.sentence}</span>
           </li>
         ))}
       </ul>
     )
   }
   <figcaption class="prov">
+    <span class="prov-line">{st["strip.taras"]}</span>
     {hofSource && <span class="prov-line">{t["hofstede.provenance"](hofSource.title, String(hofSource.year ?? ""))}</span>}
     <span class="prov-line"><a href={localePath(lang, "/method/#hofstede")}>{t["hofstede.how"]}</a></span>
   </figcaption>
@@ -332,9 +282,10 @@ const polesOf = (s: Strip) =>
     font-weight: 700;
   }
   .h-count {
+    font-family: var(--f-body);
     font-size: var(--s-14);
-    font-weight: 500;
-    color: var(--ink-3);
+    font-weight: 600;
+    color: var(--ink-2);
   }
   .group-lead {
     color: var(--ink-2);
@@ -384,56 +335,6 @@ const polesOf = (s: Strip) =>
     font-size: var(--s-14);
     color: var(--ink-2);
   }
-  .row-strip {
-    min-inline-size: 0;
-  }
-  .poles {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    margin: 0;
-    font-size: var(--s-14);
-    line-height: 1.35;
-    color: var(--ink-2);
-  }
-  .poles {
-    flex-wrap: wrap;
-    gap: 0 1rem;
-  }
-  .poles > span {
-    white-space: nowrap;
-  }
-  .poles > span:last-child {
-    margin-inline-start: auto;
-  }
-  .poles .mono {
-    font-size: inherit;
-  }
-  .strip {
-    display: block;
-    overflow: visible;
-  }
-  .axis {
-    stroke: var(--axis);
-    stroke-width: 1.5;
-  }
-  .tick {
-    stroke: var(--axis);
-    stroke-width: 1;
-  }
-  .member {
-    stroke-width: 1.5;
-  }
-  .member-a {
-    stroke: var(--shu);
-  }
-  .member-b {
-    stroke: var(--ai);
-  }
-  .bracket line {
-    stroke: var(--ink-2);
-    stroke-width: 1.5;
-  }
   .m-a {
     fill: var(--shu);
     stroke: var(--paper);
@@ -443,18 +344,6 @@ const polesOf = (s: Strip) =>
     fill: var(--paper);
     stroke: var(--ai);
     stroke-width: 2.5;
-  }
-  .c-a,
-  .c-b {
-    font-family: var(--f-mono);
-    font-size: 14px;
-    font-weight: 500;
-  }
-  .c-a {
-    fill: var(--shu);
-  }
-  .c-b {
-    fill: var(--ai);
   }
   .none-list {
     list-style: none;
@@ -476,19 +365,18 @@ const polesOf = (s: Strip) =>
     padding-block: 0.5rem;
     margin-block: -0.5rem;
   }
-  .taras,
   .region-note {
     max-inline-size: var(--measure);
     font-size: var(--s-15);
-    border-inline-start: 3px solid var(--axis);
-    padding-inline-start: 0.75rem;
     color: var(--ink-2);
+    margin-block: 0.25rem;
   }
   .prov {
     display: grid;
     gap: 0.25rem;
     margin-block-start: 1rem;
-    font-size: var(--s-14);
+    font-size: var(--s-15);
+    line-height: 1.6;
     color: var(--ink-2);
     max-inline-size: var(--measure);
   }

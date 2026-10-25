@@ -4,11 +4,12 @@ import { ALL_SCALES, countryNames, scaleHref, scaleItems, scaleText } from "../c
 import Strip from "../components/strip/Strip.astro";
 import VantageStrip from "../components/strip/VantageStrip.tsx";
 import { themeNames } from "../i18n/dict.ts";
-import { builtFrom, poleNotes, SCALE_THEMES } from "../i18n/scale-pages.ts";
+import { builtFrom, poleNotes } from "../i18n/scale-pages.ts";
 import { stripText } from "../i18n/strip.ts";
 import { type Lang, localePath } from "../i18n/ui.ts";
 import Base from "../layouts/Base.astro";
 import { type StripKey, scaleKind } from "../lib/strip.ts";
+import { SCALE_THEMES } from "../lib/theme-scales.ts";
 
 interface Props {
   lang: Lang;
@@ -24,6 +25,7 @@ const framework = kind === "meyer" ? t["scales.meyer"] : t["scales.hofstede"];
 const [leftNote, rightNote] = poleNotes[lang][scale];
 const siblings = ALL_SCALES.filter((k) => scaleKind(k) === kind);
 const staticId = `strip-${scale}`;
+const themes = SCALE_THEMES[scale];
 ---
 
 <Base lang={lang} title={text.name} description={text.gloss} section="scales">
@@ -76,17 +78,22 @@ const staticId = `strip-${scale}`;
       </div>
     </section>
 
-    <section class="section" id="related" data-rh={t["scale.related"]}>
-      <h2>{t["scale.related"]}</h2>
-      <ul class="links">
-        {
-          SCALE_THEMES[scale].map((th) => (
-            <li>
-              <a href={localePath(lang, `/themes/${th}/`)}>{themeNames[lang][th]}</a>
-            </li>
-          ))
-        }
-      </ul>
+    <section class="section" id="related" data-rh={t["scale.seeAlso"]}>
+      <h2>{t["scale.seeAlso"]}</h2>
+      {
+        themes.length > 0 && (
+          <>
+            <h3>{t["scale.related"]}</h3>
+            <ul class="links">
+              {themes.map((th) => (
+                <li>
+                  <a href={localePath(lang, `/themes/${th}/`)}>{themeNames[lang][th]}</a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )
+      }
       <h3>{framework}</h3>
       <ul class="links">
         {

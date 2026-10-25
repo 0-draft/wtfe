@@ -50,9 +50,13 @@ test("a pair with no Meyer data lists every scale under no source, and the Nordi
   page,
 }) => {
   await page.goto("compare/ua-vs-nordics/");
-  await expect(page.locator('[data-group="none"] li')).toHaveCount(8);
+  // Eight scales, one shared reason: one merged row, not eight copies of the same sentence.
+  const none = page.locator('[data-group="none"] li');
+  await expect(none).toHaveCount(1);
+  await expect(none.locator("a")).toHaveCount(8);
+  await expect(none).toContainText("No source places Ukraine on these scales");
   await expect(page.locator('[data-group="different"]')).toHaveCount(0);
-  await expect(page.getByText(/average of four \(Sweden, Finland, Denmark and Norway\)/)).toBeVisible();
+  await expect(page.getByText(/average of four national scores \(Sweden, Finland, Denmark and Norway\)/)).toBeVisible();
 });
 
 test("every strip has a text equivalent", async ({ page }) => {
@@ -78,18 +82,25 @@ test("swap link goes to the mirror page in both languages", async ({ page }) => 
   await expect(page).toHaveURL(/\/wtfe\/ja\/compare\/de-vs-jp\/$/);
 });
 
-test("the title selects navigate, and picking the other side swaps", async ({ page }) => {
+test("changing a pair select never navigates by itself; the Compare link does (WCAG 3.2.2)", async ({ page }) => {
   await page.goto("compare/jp-vs-de/");
   const from = page.getByRole("combobox", { name: "Seen from" });
   const to = page.getByRole("combobox", { name: "Compared with" });
-  await expect(from).toBeVisible();
+  const go = page.locator("[data-pair-picker] [data-go]");
+  await expect(from).toHaveValue("jp");
+  await expect(go).toHaveAttribute("aria-disabled", "true");
   await to.selectOption("fr");
+  await expect(page).toHaveURL(/\/wtfe\/compare\/jp-vs-de\/$/);
+  await expect(go).not.toHaveAttribute("aria-disabled");
+  await go.click();
   await expect(page).toHaveURL(/\/wtfe\/compare\/jp-vs-fr\/$/);
-  await page.getByRole("combobox", { name: "Seen from" }).selectOption("fr");
-  await expect(page).toHaveURL(/\/wtfe\/compare\/fr-vs-jp\/$/);
+  // Back/forward restores show this page's pair, not the last pick.
+  await page.goBack();
+  await expect(page.getByRole("combobox", { name: "Compared with" })).toHaveValue("de");
 
   await page.goto("ja/compare/jp-vs-de/");
   await page.getByRole("combobox", { name: "視点" }).selectOption("kr");
+  await page.locator("[data-pair-picker] [data-go]").click();
   await expect(page).toHaveURL(/\/wtfe\/ja\/compare\/kr-vs-de\/$/);
 });
 
@@ -98,11 +109,12 @@ test.describe("without JavaScript", () => {
   test("the title shows plain names and the index offers the link matrix", async ({ page }) => {
     await page.goto("compare/jp-vs-de/");
     await expect(page.getByRole("combobox")).toHaveCount(0);
-    await expect(page.locator("main h1 [data-pick-name]")).toHaveText(["Japan", "Germany"]);
+    await expect(page.locator("main h1")).toHaveAccessibleName("Japan vs Germany");
+    await expect(page.locator("[data-pair-picker]")).toBeHidden();
     await expect(page.locator("[data-swap]")).toHaveAttribute("href", /\/compare\/de-vs-jp\/$/);
 
     await page.goto("compare/");
-    await expect(page.locator("[data-index-picker]")).toBeHidden();
+    await expect(page.locator("[data-pair-picker]")).toBeHidden();
     await expect(page.locator(".m-cells a")).toHaveCount(182);
     await page.getByRole("link", { name: "Germany seen from Japan" }).first().click();
     await expect(page).toHaveURL(/\/wtfe\/compare\/jp-vs-de\/$/);

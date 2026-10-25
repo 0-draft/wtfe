@@ -1,0 +1,117 @@
+---
+/**
+ * One strip of the gap ruler: pole words with arrows (as on the vantage strip), the line with its step ticks and
+ * end numbers, A as a filled 朱 dot with its code above, B as a hollow 藍 ring with its code below, and a bracket
+ * spanning the gap. Decorative to assistive technology; `label` is the text equivalent.
+ */
+import { PAD, type RulerRow } from "./ruler.ts";
+
+interface Props {
+  row: RulerRow;
+  /** Text equivalent: both positions and what the ends mean. */
+  label: string;
+}
+const { row: s, label } = Astro.props;
+const same = s.xa !== null && s.xa === s.xb;
+---
+
+<div class="rs">
+  <p class="rs-poles" aria-hidden="true">
+    <span>←&nbsp;{s.text.left}</span>
+    <span>{s.text.right}&nbsp;→</span>
+  </p>
+  <svg class="rs-svg" width="100%" height="66" aria-hidden="true" focusable="false">
+    <line class="rs-axis" x1={`${PAD}%`} x2={`${100 - PAD}%`} y1="32" y2="32" />
+    {s.ticks.map((x) => <line class="rs-tick" x1={`${x}%`} x2={`${x}%`} y1="28" y2="36" />)}
+    <text class="rs-end" x={`${PAD}%`} dx="-8" y="37" text-anchor="end">{s.ends[0]}</text>
+    <text class="rs-end" x={`${100 - PAD}%`} dx="8" y="37" text-anchor="start">{s.ends[1]}</text>
+    {s.members.map(([x, which]) => <line class={`rs-member rs-member-${which}`} x1={`${x}%`} x2={`${x}%`} y1="24" y2="40" />)}
+    {
+      s.xa !== null && s.xb !== null && !same && (
+        <g class="rs-bracket">
+          <line x1={`${Math.min(s.xa, s.xb)}%`} x2={`${Math.max(s.xa, s.xb)}%`} y1="47" y2="47" />
+          <line x1={`${s.xa}%`} x2={`${s.xa}%`} y1="42" y2="47" />
+          <line x1={`${s.xb}%`} x2={`${s.xb}%`} y1="42" y2="47" />
+        </g>
+      )
+    }
+    {s.xb !== null && <circle class="rs-b" cx={`${s.xb}%`} cy="32" r={same ? 10 : 7} />}
+    {s.xa !== null && <circle class="rs-a" cx={`${s.xa}%`} cy="32" r={same ? 5 : 7} />}
+    {s.xa !== null && <text class="rs-code rs-code-a" x={`${s.xa}%`} y="17" text-anchor="middle">{s.codeA}</text>}
+    {s.xb !== null && <text class="rs-code rs-code-b" x={`${s.xb}%`} y="63" text-anchor="middle">{s.codeB}</text>}
+  </svg>
+  <p class="sr-only">{label}</p>
+</div>
+
+<style>
+  .rs {
+    min-inline-size: 0;
+  }
+  /* Same pole treatment as the vantage strip (strip.css .vs-poles). */
+  .rs-poles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 1rem;
+    margin: 0;
+    font-size: var(--s-14);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--ink-2);
+  }
+  .rs-poles > span:last-child {
+    margin-inline-start: auto;
+    text-align: end;
+  }
+  .rs-svg {
+    display: block;
+    overflow: visible;
+  }
+  .rs-axis {
+    stroke: var(--axis);
+    stroke-width: 1.5;
+  }
+  .rs-tick {
+    stroke: var(--axis);
+    stroke-width: 1;
+  }
+  .rs-end {
+    font-family: var(--f-mono);
+    font-size: 14px;
+    fill: var(--ink-3);
+  }
+  .rs-member {
+    stroke-width: 1.5;
+  }
+  .rs-member-a {
+    stroke: var(--shu);
+  }
+  .rs-member-b {
+    stroke: var(--ai);
+  }
+  .rs-bracket line {
+    stroke: var(--ink-2);
+    stroke-width: 1.5;
+  }
+  .rs-a {
+    fill: var(--shu);
+    stroke: var(--paper);
+    stroke-width: 1.5;
+  }
+  .rs-b {
+    fill: var(--paper);
+    stroke: var(--ai);
+    stroke-width: 2.5;
+  }
+  .rs-code {
+    font-family: var(--f-mono);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .rs-code-a {
+    fill: var(--shu);
+  }
+  .rs-code-b {
+    fill: var(--ai);
+  }
+</style>

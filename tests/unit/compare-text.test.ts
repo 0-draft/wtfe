@@ -7,6 +7,7 @@ import {
   hofstedeLines,
   memberBreakdown,
   meyerLines,
+  noneGroups,
   noun,
   positionsText,
   regionNote,
@@ -142,12 +143,12 @@ describe("meyer sentences", () => {
   it("tells 'outside the axis' apart from 'no source'", () => {
     const en = meyerLines("en", side("en", "jp"), side("en", "ua"));
     expect(en.find((l) => l.key === "persuading")?.sentence).toBe(
-      "Meyer places Japan outside this scale, as holistic thinking; no source places Ukraine on this scale",
+      "Meyer leaves Japan off this scale and describes its reasoning as holistic; no source places Ukraine on it",
     );
     expect(en.find((l) => l.key === "leading")?.sentence).toBe("No source places Ukraine on this scale");
     const ja = meyerLines("ja", side("ja", "de"), side("ja", "jp"));
     expect(ja.find((l) => l.key === "persuading")?.sentence).toBe(
-      "Meyer は日本を全体論的な思考としてこの尺度の外に置いている",
+      "Meyer は日本の考え方を全体論的として、この尺度に位置づけていない",
     );
   });
 });
@@ -176,27 +177,23 @@ describe("hofstede sentences", () => {
   it("names the dimension and both scores, never a 'more X culture'", () => {
     const en = hofstedeLines("en", side("en", "jp"), side("en", "de"));
     expect(en[0]?.key).toBe("lto");
-    expect(en.find((l) => l.key === "pdi")?.sentence).toBe(
-      "Germany scores 19 points lower than Japan on power distance (35 against 54)",
-    );
+    expect(en.find((l) => l.key === "pdi")?.sentence).toBe("Germany scores 19 points lower than Japan (35 against 54)");
     const ja = hofstedeLines("ja", side("ja", "jp"), side("ja", "de"));
-    expect(ja.find((l) => l.key === "pdi")?.sentence).toBe(
-      "権力格差のスコアはドイツ 35、日本 54 で、ドイツが 19 ポイント低い",
-    );
+    expect(ja.find((l) => l.key === "pdi")?.sentence).toBe("ドイツは日本より 19 ポイント低い（35 対 54）");
     for (const l of [...en, ...ja]) expect(l.sentence).not.toMatch(/culture|文化/);
   });
   it("handles ties and plural regions", () => {
     const en = hofstedeLines("en", side("en", "de"), side("en", "nordics"));
     expect(en.find((l) => l.key === "pdi")?.sentence).toBe(
-      "The Nordics score 7 points lower than Germany on power distance (28 against 35)",
+      "The Nordics score 7 points lower than Germany (28 against 35)",
     );
     const tie = { ...deMeta, hofstede: [{ ...deMeta.hofstede[0]!, scores: scores([54, 1, 1, 1, 1, 1]) }] };
     const t = hofstedeLines("ja", side("ja", "jp"), { ...side("ja", "de"), meta: tie });
-    expect(t.find((l) => l.key === "pdi")?.sentence).toBe("権力格差のスコアはドイツも日本も 54");
+    expect(t.find((l) => l.key === "pdi")?.sentence).toBe("ドイツと日本はどちらも 54");
   });
   it("notes when the Nordics are an average of four countries", () => {
     expect(regionNote("en", side("en", "nordics"))).toBe(
-      "The Nordics are not one country: their scores are the average of four (Sweden, Finland, Denmark and Norway).",
+      "The Nordics are not one country: each score is the average of four national scores (Sweden, Finland, Denmark and Norway).",
     );
     expect(regionNote("ja", side("ja", "nordics"))).toBe(
       "北欧は 1 つの国ではありません。スコアはスウェーデン、フィンランド、デンマーク、ノルウェーの 4 か国の平均です。",
@@ -215,7 +212,18 @@ describe("hofstede sentences", () => {
     };
     const s: Side = { id: "il", meta: il, noun: noun("en", "il", "Israel") };
     const en = hofstedeLines("en", side("en", "jp"), s);
-    expect(en.at(-1)).toMatchObject({ key: "ivr", group: "none", sentence: "No indulgence score for Israel" });
+    expect(en.at(-1)).toMatchObject({ key: "ivr", group: "none", sentence: "No score for Israel" });
+  });
+});
+
+describe("merged 'not placed' rows", () => {
+  it("writes one sentence for all eight scales when a side has no Meyer data", () => {
+    const a = side("en", "jp");
+    const b = side("en", "ua");
+    const g = noneGroups("en", groupLines(meyerLines("en", a, b)).none, a, b);
+    expect(g).toHaveLength(2);
+    expect(g.find((x) => x.keys.length === 7)?.sentence).toBe("No source places Ukraine on these scales");
+    expect(g.find((x) => x.keys.includes("persuading"))?.keys).toEqual(["persuading"]);
   });
 });
 

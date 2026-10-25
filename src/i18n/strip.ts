@@ -1,4 +1,4 @@
-import type { CountryId, CultureMapScale } from "../data/schema.ts";
+import type { CultureMapScale } from "../data/schema.ts";
 import type { Lang } from "./ui.ts";
 
 /** UI strings for the vantage strip (research/design.md, figure A) and the scale pages. */
@@ -30,7 +30,7 @@ const en = {
   "vantage.live": (name: string) => `Reading the scale from ${name}.`,
   "vantage.liveNone": "Showing every position.",
   "vantage.missing": (name: string) =>
-    `${name} has no source on this scale, so the strip cannot be read from there. Showing every position instead.`,
+    `No source places ${name} on this scale, so the strip cannot be read from there. Showing every position instead.`,
   "vantage.hint":
     "Pick the country you work from. The line re-centres on it and every other country is placed relative to you.",
   "vantage.listLabel": (name: string) => `Countries as seen from ${name}, furthest first`,
@@ -57,7 +57,8 @@ const en = {
   "scale.poles": "The two ends",
   "scale.builtFrom": "What it is built from",
   "scale.vantage": "Read it from a country",
-  "scale.related": "Related themes",
+  "scale.related": "Themes that draw on it",
+  "scale.seeAlso": "See also",
   "scale.framework": (name: string) => `Part of ${name}`,
   "scale.leftPole": "Left end",
   "scale.rightPole": "Right end",
@@ -118,7 +119,8 @@ const ja: Strings = {
   "scale.poles": "両端の意味",
   "scale.builtFrom": "何から作られているか",
   "scale.vantage": "ある国から見る",
-  "scale.related": "関連するテーマ",
+  "scale.related": "この尺度に関わるテーマ",
+  "scale.seeAlso": "関連項目",
   "scale.framework": (name: string) => `${name}の尺度`,
   "scale.leftPole": "左端",
   "scale.rightPole": "右端",
@@ -151,12 +153,4 @@ export const meyerComparatives: Record<Lang, Record<CultureMapScale, readonly [s
     disagreeing: ["反論をいとわない", "対立を避ける"],
     scheduling: ["直線的な時間感覚", "柔軟な時間感覚"],
   },
-};
-
-/** Country names as they read inside an English sentence ("than the Netherlands"). */
-export const sentenceNameEn: Partial<Record<CountryId, string>> = {
-  us: "the United States",
-  gb: "the United Kingdom",
-  nl: "the Netherlands",
-  nordics: "the Nordics",
 };

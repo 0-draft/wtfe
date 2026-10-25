@@ -136,7 +136,7 @@ test("from mode in Japanese, sorted by distance", async ({ page }) => {
 
 test("a vantage with no source on the scale falls back to the spread strip", async ({ page }) => {
   await page.goto("scales/evaluating/?from=ua");
-  await expect(page.getByRole("status")).toContainText("Ukraine has no source on this scale");
+  await expect(page.getByRole("status")).toContainText("No source places Ukraine on this scale");
   await expect(page.locator("#strip-evaluating")).toBeVisible();
 });
 
