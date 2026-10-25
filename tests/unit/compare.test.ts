@@ -5,6 +5,7 @@ import {
   biggestGaps,
   cultureMapDeltas,
   hofstedeDeltas,
+  hofstedeMembers,
   hofstedeProfile,
   mirror,
   pairSlug,
@@ -69,6 +70,15 @@ describe("hofstede", () => {
     expect(p.aggregated).toBe(true);
     expect(p.scores.pdi).toBe(25); // (31 + 18) / 2 = 24.5 → 25
     expect(p.scores.ivr).toBe(78);
+  });
+  it("lists the members behind each averaged dimension", () => {
+    const m = hofstedeMembers(nordics);
+    expect(m.pdi).toEqual([
+      { country: "Sweden", score: 31 },
+      { country: "Denmark", score: 18 },
+    ]);
+    expect(m.ivr).toEqual([{ country: "Sweden", score: 78 }]);
+    expect(hofstedeMembers(jp).mas).toEqual([{ country: "Japan", score: 95 }]);
   });
   it("computes b - a per dimension", () => {
     const d = hofstedeDeltas(jp, de);

@@ -83,3 +83,22 @@ export function biggestGaps<K extends string>(rows: Delta<K>[], n = 3): Delta<K>
     .filter((r) => r.delta !== null && r.delta !== 0)
     .slice(0, n);
 }
+
+export interface MemberScore {
+  /** Country name as recorded in the data (English). */
+  country: string;
+  score: number;
+}
+
+/**
+ * The national scores behind a profile, per dimension (nulls skipped). For a single country each list has one
+ * entry; for a region it shows exactly which members the average in `hofstedeProfile` was taken over.
+ */
+export function hofstedeMembers(meta: CountryMeta): Record<HofstedeDimension, MemberScore[]> {
+  return Object.fromEntries(
+    HOFSTEDE_DIMENSIONS.map((d) => [
+      d,
+      meta.hofstede.flatMap((e) => (e.scores[d] === null ? [] : [{ country: e.country, score: e.scores[d] }])),
+    ]),
+  ) as Record<HofstedeDimension, MemberScore[]>;
+}

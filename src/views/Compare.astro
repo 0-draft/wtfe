@@ -1,0 +1,283 @@
+---
+import Claim from "../components/Claim.astro";
+import GapRuler from "../components/compare/GapRuler.astro";
+import RunningHead from "../components/RunningHead.astro";
+import { COUNTRY_IDS, type CountryId, THEME_IDS } from "../data/schema.ts";
+import { compareDict } from "../i18n/compare.ts";
+import { dict, themeNames } from "../i18n/dict.ts";
+import { type Lang, localePath } from "../i18n/ui.ts";
+import Base from "../layouts/Base.astro";
+import { DISPLAY_CODE } from "../lib/codes.ts";
+import { mirror, type Pair, pairSlug } from "../lib/compare.ts";
+import { noun, type Side } from "../lib/compare-text.ts";
+import { country, countryMeta, isTranslated } from "../lib/content.ts";
+
+interface Props {
+  lang: Lang;
+  pair: Pair;
+}
+const { lang, pair } = Astro.props;
+const t = compareDict[lang];
+const d = dict[lang];
+const other: Lang = lang === "en" ? "ja" : "en";
+const [idA, idB] = pair;
+const ca = country(lang, idA)!;
+const cb = country(lang, idB)!;
+const side = (id: CountryId, name: string): Side => ({ id, meta: countryMeta(id)!, noun: noun(lang, id, name) });
+const a = side(idA, ca.name);
+const b = side(idB, cb.name);
+const pairTitle = (l: Lang) => {
+  const [na, nb] = [noun(l, idA, country(l, idA)!.name), noun(l, idB, country(l, idB)!.name)];
+  return l === "en" ? `${na.subject} vs ${nb.object}` : `${na.subject}と${nb.object}`;
+};
+const title = pairTitle(lang);
+const glossTitle = pairTitle(other);
+const swapHref = localePath(lang, `/compare/${pairSlug(mirror(pair))}/`);
+const template = localePath(lang, "/compare/__A__-vs-__B__/");
+const options = COUNTRY_IDS.map((id) => ({ id, name: country(lang, id)!.name }));
+const columns = [
+  { which: "a", id: idA, c: ca },
+  { which: "b", id: idB, c: cb },
+] as const;
+---
+
+<Base lang={lang} title={title} description={t.description(a.noun.object, b.noun.object)} section="compare">
+  <RunningHead slot="running-head" word={title} sub={t["ruler.heading"]} />
+  <article class="compare">
+    <header class="headword cmp-head">
+      <h1 class="cmp-title" aria-label={title} data-pair-picker data-template={template}>
+        <span class="pick pick-a">
+          <span class="pick-name" data-pick-name>{a.noun.subject}</span>
+          <select class="pick-select" data-pick="a" aria-label={t["pick.from"]} hidden>
+            {options.map((o) => <option value={o.id} selected={o.id === idA}>{o.name}</option>)}
+          </select>
+        </span>
+        <span class="join">{t["title.join"]}</span>
+        <span class="pick pick-b">
+          <span class="pick-name" data-pick-name>{b.noun.object}</span>
+          <select class="pick-select" data-pick="b" aria-label={t["pick.to"]} hidden>
+            {options.map((o) => <option value={o.id} selected={o.id === idB}>{o.name}</option>)}
+          </select>
+        </span>
+      </h1>
+      <p class="hw-gloss">
+        <span lang={other}>{glossTitle}</span>
+        <span class="hw-code">{DISPLAY_CODE[idA]}</span>
+        <span aria-hidden="true">→</span>
+        <span class="hw-code hw-code-b">{DISPLAY_CODE[idB]}</span>
+      </p>
+      <p class="lead seen">{t.seenFrom(a.noun.object, b.noun.object)}</p>
+      <p class="swap-line">
+        <a class="swap" href={swapHref} data-swap><span aria-hidden="true">⇄</span> {t.swap(a.noun.object, b.noun.object)}</a>
+      </p>
+    </header>
+
+    <GapRuler lang={lang} a={a} b={b} />
+
+    <section class="section themes" aria-labelledby="themes-h" data-rh={t["themes.heading"]}>
+      <h2 id="themes-h">{t["themes.heading"]}</h2>
+      <p class="section-lead">{t["themes.lead"](a.noun.object, b.noun.object)}</p>
+      <nav class="toc" aria-label={d["nav.themes"]}>
+        {THEME_IDS.map((th) => <a href={`#${th}`}>{themeNames[lang][th]}</a>)}
+      </nav>
+      {
+        THEME_IDS.map((th) => (
+          <section class="theme" id={th} aria-labelledby={`h-${th}`} data-rh={themeNames[lang][th]}>
+            <h3 id={`h-${th}`} class="theme-h">
+              {themeNames[lang][th]}
+            </h3>
+            <div class="cols">
+              {columns.map(({ which, id, c }) => (
+                <div class={`col col-${which}`} lang={isTranslated(lang, id) ? lang : "ja"}>
+                  <p class="col-label" lang={lang}>
+                    <span class={`col-mark mark-${which}`} aria-hidden="true" />
+                    <a href={localePath(lang, `/countries/${id}/#${th}`)}>{c.name}</a>
+                    <span class="col-count">{d["home.claims"](c.themes[th].length)}</span>
+                  </p>
+                  <ul class="entries">
+                    {c.themes[th].map((claim) => (
+                      <Claim claim={claim} lang={lang} />
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+        ))
+      }
+    </section>
+  </article>
+</Base>
+
+<script>
+  // Progressive enhancement: without JS the title shows plain names and the swap link; with JS each name becomes a
+  // native select that navigates to the chosen pair. Picking the country already on the other side swaps them.
+  for (const root of document.querySelectorAll<HTMLElement>("[data-pair-picker]")) {
+    const template = root.dataset.template ?? "";
+    const sa = root.querySelector<HTMLSelectElement>('[data-pick="a"]');
+    const sb = root.querySelector<HTMLSelectElement>('[data-pick="b"]');
+    if (!sa || !sb) continue;
+    const initial = { a: sa.value, b: sb.value };
+    for (const n of root.querySelectorAll<HTMLElement>("[data-pick-name]")) n.hidden = true;
+    sa.hidden = false;
+    sb.hidden = false;
+    const go = (changed: "a" | "b") => {
+      let [a, b] = [sa.value, sb.value];
+      if (a === b) [a, b] = changed === "a" ? [a, initial.a] : [initial.b, b];
+      location.assign(template.replace("__A__", a).replace("__B__", b));
+    };
+    sa.addEventListener("change", () => go("a"));
+    sb.addEventListener("change", () => go("b"));
+  }
+</script>
+
+<style>
+  .cmp-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 0.5em;
+    font-size: var(--s-44);
+  }
+  .cmp-title:lang(ja) {
+    gap: 0 0.25em;
+  }
+  .pick-a .pick-name,
+  .pick-a .pick-select {
+    color: var(--shu);
+  }
+  .pick-b .pick-name,
+  .pick-b .pick-select {
+    color: var(--ai);
+  }
+  .join {
+    font-size: 0.6em;
+    color: var(--ink-2);
+  }
+  .pick-select {
+    font: inherit;
+    letter-spacing: inherit;
+    field-sizing: content;
+    max-inline-size: 100%;
+    min-block-size: 44px;
+    padding: 0 1.1em 0 0.1em;
+    margin: 0;
+    background-color: transparent;
+    background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+      linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position:
+      right 0.45em center,
+      right 0.2em center;
+    background-size: 0.25em 0.25em;
+    background-repeat: no-repeat;
+    border: 0;
+    border-block-end: 3px solid currentColor;
+    border-radius: 0;
+    appearance: none;
+    cursor: pointer;
+  }
+  .pick-select:hover {
+    background-color: var(--raised);
+  }
+  .pick-select option {
+    color: var(--ink);
+    background: var(--raised);
+    font-size: var(--s-17);
+  }
+  .hw-code-b {
+    color: var(--ai);
+    border-color: var(--ai);
+  }
+  .seen {
+    margin-block-end: 0.5rem;
+  }
+  .swap {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    min-block-size: 44px;
+    font-weight: 600;
+  }
+  .themes {
+    margin-block-start: 4rem;
+  }
+  .theme {
+    margin-block-start: 2.5rem;
+  }
+  .theme-h {
+    font-family: var(--f-head);
+    font-weight: 700;
+    padding-block-end: 0.5rem;
+    border-block-end: 1px solid var(--rule);
+  }
+  .cols {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 2.5rem;
+    align-items: start;
+  }
+  .col-label {
+    position: sticky;
+    inset-block-start: 2rem;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.75rem;
+    align-items: baseline;
+    margin: 0;
+    padding-block: 0.5rem;
+    background: var(--paper);
+    font-family: var(--f-head);
+    font-weight: 800;
+    font-size: var(--s-20);
+  }
+  .col-label a {
+    text-decoration: none;
+    padding-block: 0.375rem;
+  }
+  .col-label a:hover {
+    text-decoration: underline;
+  }
+  .col-a .col-label a {
+    color: var(--shu);
+  }
+  .col-b .col-label a {
+    color: var(--ai);
+  }
+  .col-mark {
+    display: inline-block;
+    inline-size: 0.75rem;
+    block-size: 0.75rem;
+    border-radius: 50%;
+    align-self: center;
+  }
+  .mark-a {
+    background: var(--shu);
+  }
+  .mark-b {
+    border: 2.5px solid var(--ai);
+  }
+  .col-count {
+    font-family: var(--f-body);
+    font-weight: 600;
+    font-size: var(--s-14);
+    color: var(--ink-2);
+  }
+  .entries {
+    margin: 0.5rem 0 0;
+    padding: 0;
+  }
+  @media (max-width: 52rem) {
+    .cols {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .col-b {
+      margin-block-start: 1rem;
+    }
+  }
+  @media (max-width: 30rem) {
+    .cmp-title {
+      font-size: var(--s-34);
+    }
+  }
+</style>
