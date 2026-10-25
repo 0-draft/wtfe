@@ -73,6 +73,39 @@ test.describe("evidence map", () => {
     await expect(page).toHaveURL(/\/wtfe\/countries\/jp\/#feedback$/);
   });
 
+  test("clicking an open cell closes it; keyboard opens it and Escape returns focus", async ({ page }) => {
+    await page.goto("./");
+    const cell = page.locator("a[data-pop='em-kr-work']");
+    const pop = page.locator("#em-kr-work");
+    await cell.click();
+    await expect(pop).toBeVisible();
+    // Press the cell again, as a user would: it must close, not close and reopen. On a phone the bottom sheet can
+    // cover the cell, so there the press goes to the backdrop above the sheet.
+    const box = await cell.boundingBox();
+    const sheet = await pop.boundingBox();
+    if (!box || !sheet) throw new Error("no box");
+    const [x, y] = [box.x + box.width / 2, box.y + box.height / 2];
+    const covered = x >= sheet.x && x <= sheet.x + sheet.width && y >= sheet.y && y <= sheet.y + sheet.height;
+    await page.mouse.click(x, covered ? Math.max(4, sheet.y - 20) : y);
+    await expect(pop).toBeHidden();
+    await expect(cell).toHaveAttribute("aria-expanded", "false");
+    await cell.focus();
+    await page.keyboard.press("Enter");
+    await expect(pop).toBeVisible();
+    await expect(pop).toBeFocused();
+    await page.keyboard.press("Escape");
+    await expect(pop).toBeHidden();
+    await expect(cell).toBeFocused();
+    await page.keyboard.press(" ");
+    await expect(pop).toBeVisible();
+  });
+
+  test("popovers sit outside the figure so the caption stays its last child", async ({ page }) => {
+    await page.goto("./");
+    const last = await page.locator("figure.em").evaluate((f) => f.lastElementChild?.tagName);
+    expect(last).toBe("FIGCAPTION");
+  });
+
   test("without JavaScript a cell is a plain link to the country section", async ({ browser }) => {
     const ctx = await browser.newContext({ javaScriptEnabled: false });
     const page = await ctx.newPage();

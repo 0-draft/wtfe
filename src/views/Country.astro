@@ -5,8 +5,9 @@ import Headword from "../components/Headword.astro";
 import RunningHead from "../components/RunningHead.astro";
 import ThumbIndex from "../components/ThumbIndex.astro";
 import { type CountryId, THEME_IDS } from "../data/schema.ts";
+import { browse } from "../i18n/browse.ts";
 import { dict, themeNames } from "../i18n/dict.ts";
-import type { Lang } from "../i18n/ui.ts";
+import { type Lang, localePath } from "../i18n/ui.ts";
 import Base from "../layouts/Base.astro";
 import { country, isTranslated } from "../lib/content.ts";
 
@@ -16,6 +17,7 @@ interface Props {
 }
 const { lang, id } = Astro.props;
 const t = dict[lang];
+const b = browse[lang];
 const c = country(lang, id)!;
 const translated = isTranslated(lang, id);
 ---
@@ -53,6 +55,9 @@ const translated = isTranslated(lang, id);
                 <Claim claim={claim} lang={lang} />
               ))}
             </ul>
+            <p class="xref" lang={lang}>
+              → <a href={localePath(lang, `/themes/${th}/#${id}`)}>{b["country.compareTheme"](themeNames[lang][th])}</a>
+            </p>
           </section>
         ))
       }
@@ -70,6 +75,16 @@ const translated = isTranslated(lang, id);
   .entries {
     padding: 0;
     margin: 0;
+  }
+  .xref {
+    margin: 0;
+    font-size: var(--s-15);
+    color: var(--ink-2);
+  }
+  .xref a {
+    display: inline-block;
+    padding-block: 0.625rem;
+    color: var(--ink);
   }
   .variance {
     padding-inline-start: 1.25rem;

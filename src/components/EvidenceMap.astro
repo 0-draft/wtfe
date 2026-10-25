@@ -127,7 +127,9 @@ const snippet = (text: string) => {
       </dl>
     </div>
   </figcaption>
+</figure>
 
+<div class="em-pops" data-pagefind-ignore>
   {
     map.rows.flatMap((row) =>
       row.cells.map((cell) => (
@@ -138,7 +140,6 @@ const snippet = (text: string) => {
           role="dialog"
           aria-labelledby={`${popId(cell.country, cell.theme)}-h`}
           tabindex="-1"
-          data-pagefind-ignore
         >
           <div class="em-pop-head">
             <p class="em-pop-title" id={`${popId(cell.country, cell.theme)}-h`}>
@@ -168,11 +169,21 @@ const snippet = (text: string) => {
       )),
     )
   }
-</figure>
+</div>
 
 <script>
   // Progressive enhancement: with JS (and popover support) a cell opens its claim list instead of navigating.
   for (const root of document.querySelectorAll<HTMLElement>("[data-evidence-map]")) {
+    // The scroll container only needs a tab stop when it actually scrolls (narrow phones).
+    const scroller = root.querySelector<HTMLElement>(".em-scroll");
+    if (scroller) {
+      const syncStop = () => {
+        if (scroller.scrollWidth > scroller.clientWidth + 1) scroller.setAttribute("tabindex", "0");
+        else scroller.removeAttribute("tabindex");
+      };
+      syncStop();
+      addEventListener("resize", syncStop, { passive: true });
+    }
     const cells = root.querySelectorAll<HTMLAnchorElement>("a[data-pop]");
     if (!cells.length || !("showPopover" in HTMLElement.prototype)) continue;
     let trigger: HTMLAnchorElement | null = null;
@@ -183,14 +194,20 @@ const snippet = (text: string) => {
         pop.style.removeProperty("top");
         return;
       }
+      // Never cover the cell that opened it: go below or above, whichever has room, and shrink to fit if neither does.
+      pop.style.removeProperty("max-block-size");
       const r = cell.getBoundingClientRect();
       const w = pop.offsetWidth;
       const h = pop.offsetHeight;
       const left = Math.min(Math.max(8, r.left), innerWidth - w - 8);
-      const below = r.bottom + 6;
-      const top = below + h > innerHeight - 8 ? Math.max(8, r.top - h - 6) : below;
+      const roomBelow = innerHeight - r.bottom - 14;
+      const roomAbove = r.top - 14;
+      const goBelow = h <= roomBelow || (h > roomAbove && roomBelow >= roomAbove);
+      const room = goBelow ? roomBelow : roomAbove;
+      if (h > room) pop.style.maxBlockSize = `${Math.max(room, 160)}px`;
+      const top = goBelow ? r.bottom + 6 : r.top - Math.min(h, Math.max(room, 160)) - 6;
       pop.style.left = `${left}px`;
-      pop.style.top = `${top}px`;
+      pop.style.top = `${Math.max(8, top)}px`;
     };
 
     for (const cell of cells) {
@@ -200,10 +217,18 @@ const snippet = (text: string) => {
       cell.setAttribute("aria-haspopup", "dialog");
       cell.setAttribute("aria-expanded", "false");
       cell.setAttribute("aria-controls", pop.id);
+      // popover="auto" light-dismisses on pointerup, before the click lands: remember whether it was open
+      // when the press started, so a second tap on the same cell closes it instead of reopening it.
+      let openAtPress: boolean | null = null;
+      cell.addEventListener("pointerdown", () => {
+        openAtPress = pop.matches(":popover-open");
+      });
       const open = (e: Event) => {
         e.preventDefault();
-        if (pop.matches(":popover-open")) {
-          pop.hidePopover();
+        const wasOpen = openAtPress ?? pop.matches(":popover-open");
+        openAtPress = null;
+        if (wasOpen) {
+          if (pop.matches(":popover-open")) pop.hidePopover();
           return;
         }
         trigger = cell;
@@ -535,7 +560,13 @@ const snippet = (text: string) => {
       padding: 0.375rem 0.375rem 0.25rem;
     }
     .em-keys .em-codes {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 11rem), 1fr));
+      gap: 0.25rem 1rem;
+      inline-size: 100%;
+    }
+    .em-codes dt {
+      min-inline-size: 2.75rem;
     }
   }
   @media (max-width: 24.25rem) {
@@ -554,6 +585,11 @@ const snippet = (text: string) => {
       max-block-size: 75vh;
       border-inline: 0;
       border-block-end: 0;
+      padding-block-end: calc(1rem + env(safe-area-inset-bottom));
+    }
+    /* A bottom sheet needs the page behind it set back, or the two read as one surface. */
+    .em-pop::backdrop {
+      background: rgb(0 0 0 / 0.28);
     }
   }
 </style>

@@ -8,12 +8,13 @@ import type { Lang } from "./ui.ts";
 const en = {
   "home.premise":
     "wtfe describes how software engineers in fourteen countries and regions tend to design, review, decide and work, the way a usage dictionary describes how a language is used. Every statement points to a public source and carries a label for how well that source supports it. Read the entries as tendencies, not traits: about 80% of the variation in cultural values lies between people inside a country, not between countries.",
+  "home.title": "Ways They Frame Engineering",
   "home.premiseCite": "Taras, Steel & Kirkman 2016",
   "home.mapTitle": "How much we know",
   "home.mapLead":
     "Each cell stacks one rule per claim. A thick rule is well attested, a thin rule is attested, a dashed rule is thin. The map shows the weight of the evidence, not anything about the countries themselves.",
   "home.scalesTitle": "Read a scale from where you stand",
-  "home.scalesLink": "Open the Evaluating scale",
+  "home.scalesLink": (_name: string) => "Open the Evaluating scale",
   "home.compareTitle": "Compare two countries",
   "home.compareBody":
     "A comparison is read in one direction: “Germany as seen from Japan” lists where the gap is largest first, then the claims side by side, theme by theme.",
@@ -44,7 +45,7 @@ const en = {
   "countries.title": "Countries and regions",
   "countries.lead":
     "Fourteen entries, sorted alphabetically. The Nordics are one region entry; where a claim or a score applies to only one Nordic country, the entry says which.",
-  "countries.counts": (total: number) => `${total} claims`,
+  "countries.counts": (total: number) => (total === 1 ? "1 claim" : `${total} claims`),
   "themes.title": "Themes",
   "themes.lead":
     "The seven themes every country entry is organised by. Each theme page lists all countries' claims on it, followed by the scales that bear on it.",
@@ -59,6 +60,7 @@ const en = {
     "No Culture Map or Hofstede scale measures this theme closely enough to list here. The claims below rest on their own sources.",
   "theme.countryLink": (country: string) => `${country}: the full entry`,
   "theme.jump": "Jump to a country",
+  "country.compareTheme": (theme: string) => `Compare with other countries: ${theme}`,
 
   "sources.title": "Sources",
   "sources.lead": (n: number, claims: number) =>
@@ -86,12 +88,13 @@ type Dict = { [K in keyof typeof en]: (typeof en)[K] extends (...a: infer A) => 
 const ja: Dict = {
   "home.premise":
     "wtfe は、14 の国と地域のソフトウェアエンジニアが、どう設計し、どうレビューし、どう決め、どう働く傾向にあるかを記述します。用法辞典がことばの使われ方を記述するのと同じ書き方です。どの記述にも公開された出典があり、その出典がどこまで裏付けているかをラベルで示しています。書かれているのは傾向で、その国の人の性質ではありません。文化的価値のばらつきの約 8 割は、国と国の間ではなく、同じ国の人どうしの間にあります。",
+  "home.title": "エンジニアの作法を国ごとに引く",
   "home.premiseCite": "Taras, Steel & Kirkman 2016",
   "home.mapTitle": "どこまでわかっているか",
   "home.mapLead":
     "各マスには記述 1 件につき 1 本の線を引いています。太い実線は裏付け十分、細い実線は裏付けあり、破線は裏付け薄です。この図が示すのは根拠の厚さで、国そのものの評価ではありません。",
   "home.scalesTitle": "尺度は自分の立ち位置から読む",
-  "home.scalesLink": "Evaluating（指摘の伝え方）の尺度を開く",
+  "home.scalesLink": (name: string) => `Evaluating（${name}）の尺度を開く`,
   "home.compareTitle": "2 つの国を比べる",
   "home.compareBody":
     "比較には向きがあります。「日本から見たドイツ」では、差の大きい尺度から順に並べ、そのあとテーマごとに両国の記述を並べます。",
@@ -136,6 +139,7 @@ const ja: Dict = {
     "このテーマに十分近い Culture Map や Hofstede の尺度はないため、載せていません。下の記述はそれぞれの出典だけに基づいています。",
   "theme.countryLink": (country: string) => `${country}の項目をすべて読む`,
   "theme.jump": "国へ移動",
+  "country.compareTheme": (theme: string) => `ほかの国と比べる: ${theme}`,
 
   "sources.title": "出典",
   "sources.lead": (n: number, claims: number) =>

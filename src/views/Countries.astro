@@ -170,11 +170,12 @@ const levels = ["strong", "medium", "weak"] as const;
   }
   @media (max-width: 30rem) {
     .group {
-      grid-template-columns: minmax(0, 1fr);
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: 0 0.75rem;
     }
     .group-head {
       font-size: var(--s-24);
-      margin-block-end: 0.5rem;
+      line-height: 1.25;
     }
   }
 </style>

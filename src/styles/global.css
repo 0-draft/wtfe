@@ -106,6 +106,7 @@ h2:lang(ja),
 h3:lang(ja) {
   font-feature-settings: "palt";
   line-height: 1.3;
+  word-break: auto-phrase; /* break between bunsetsu, not mid-word (Chromium; others ignore it) */
 }
 h2 {
   font-weight: 700;
@@ -150,7 +151,7 @@ code,
 kbd,
 .mono {
   font-family: var(--f-mono);
-  font-size: 0.875em;
+  font-size: max(0.875em, var(--s-14)); /* never below the 14px floor, even inside 14px labels */
 }
 
 img,
@@ -186,7 +187,7 @@ svg text {
   inset-inline-start: 1rem;
   inset-block-start: 1rem;
   background: var(--raised);
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 1rem;
 }
 
 .frame {
@@ -199,18 +200,18 @@ svg text {
   border-block-end: 2px solid var(--ink);
 }
 .site-head .frame {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.5rem 1.5rem;
-  padding-block: 0.875rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0 1.5rem;
+  padding-block: 0.25rem;
 }
 .brand {
   display: flex;
   align-items: baseline;
   gap: 0.625rem;
   text-decoration: none;
+  padding-block: 0.5rem;
 }
 .brand-mark {
   font-family: var(--f-head);
@@ -225,37 +226,80 @@ svg text {
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.25rem 1.125rem;
+  justify-content: flex-end;
+  gap: 0 1.125rem;
   font-size: var(--s-15);
 }
-.site-nav a {
+.site-nav a,
+.tools a,
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 2.75rem;
+  min-inline-size: 2.75rem;
   text-decoration: none;
-  padding-block: 0.5rem;
 }
 .site-nav a:hover,
-.site-nav a[aria-current="page"] {
+.site-nav a[aria-current="page"],
+.tools a:hover {
   text-decoration: underline;
   text-decoration-color: var(--shu);
   text-decoration-thickness: 2px;
 }
-.site-nav .tools {
+.tools {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.25rem 1rem;
   align-items: center;
-  padding-inline-start: 0.75rem;
+  font-size: var(--s-15);
+  padding-inline-start: 1rem;
   border-inline-start: 1px solid var(--rule);
 }
 .theme-toggle {
   font: inherit;
-  font-size: var(--s-14);
   color: var(--ink-2);
   background: none;
-  border: 1px solid var(--axis);
-  border-radius: 2px;
-  padding: 0.25rem 0.5rem;
-  min-block-size: 2rem;
+  border: 0;
+  padding: 0;
   cursor: pointer;
+}
+.theme-toggle .tt-value {
+  color: var(--ink);
+  font-weight: 600;
+}
+.theme-toggle:hover .tt-value {
+  text-decoration: underline;
+  text-decoration-color: var(--shu);
+  text-decoration-thickness: 2px;
+}
+@media (max-width: 52rem) {
+  .site-head .frame {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .tools {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .site-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-between;
+    gap: 0 0.75rem;
+    border-block-start: 1px solid var(--rule);
+  }
+  .tools {
+    border-inline-start: 0;
+    padding-inline-start: 0;
+  }
+}
+@media (max-width: 30rem) {
+  .brand-sub {
+    display: none;
+  }
+  .site-nav {
+    font-size: var(--s-14);
+    gap: 0 0.5rem;
+  }
 }
 
 main {
@@ -321,10 +365,11 @@ main {
   font-size: var(--s-14);
 }
 .thumb-index a {
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 2.75rem;
   text-decoration: none;
-  padding-block: 0.3125rem;
   color: var(--ink-3);
   border-inline-start: 3px solid transparent;
 }
@@ -332,7 +377,7 @@ main {
   color: var(--ink);
   border-inline-start-color: var(--axis);
 }
-.thumb-index a[aria-current="page"] {
+.thumb-index a[aria-current] {
   color: var(--paper);
   background: var(--shu);
   border-inline-start-color: var(--shu);
@@ -340,16 +385,20 @@ main {
 @media (max-width: 52rem) {
   .with-thumb {
     grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
   }
   .thumb-index {
     position: static;
     grid-template-columns: repeat(7, minmax(0, 1fr));
     order: -1;
+    border-block-end: 1px solid var(--rule);
   }
   .thumb-index a {
     border-inline-start: 0;
     border-block-end: 3px solid transparent;
-    padding-block: 0.625rem;
+  }
+  .thumb-index a:hover {
+    border-block-end-color: var(--axis);
   }
 }
 
