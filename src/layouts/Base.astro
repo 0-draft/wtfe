@@ -102,16 +102,19 @@ const nav = [
       </div>
     </footer>
     <script>
-      // Keep the claim anchor when switching language: ids are identical in both languages.
+      // Keep the claim anchor and view state (e.g. ?from=jp) when switching language: ids are identical in both.
       const sw = document.querySelector<HTMLAnchorElement>("[data-lang-switch]");
       const syncHash = () => {
         if (!sw) return;
         const u = new URL(sw.href);
+        u.search = location.search;
         u.hash = location.hash;
         sw.href = u.href;
       };
       syncHash();
       addEventListener("hashchange", syncHash);
+      addEventListener("popstate", syncHash);
+      addEventListener("wtfe:statechange", syncHash);
 
       // Theme toggle cycles auto → light → dark; auto clears the stored choice.
       const btn = document.querySelector<HTMLButtonElement>("[data-theme-toggle]");
