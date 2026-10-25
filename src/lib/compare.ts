@@ -10,11 +10,12 @@ import {
 
 export type Pair = readonly [CountryId, CountryId];
 
-/** Every unordered pair once, in canonical COUNTRY_IDS order: jp-vs-kr, never kr-vs-jp. */
+/**
+ * Every ordered pair. Order is meaningful: `jp-vs-de` reads "Germany as seen from Japan" (the first id is the
+ * vantage), and `de-vs-jp` is its mirror.
+ */
 export function allPairs(ids: readonly CountryId[] = COUNTRY_IDS): Pair[] {
-  const out: Pair[] = [];
-  for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) out.push([ids[i]!, ids[j]!]);
-  return out;
+  return ids.flatMap((a) => ids.filter((b) => b !== a).map((b) => [a, b] as const));
 }
 
 export const pairSlug = ([a, b]: Pair) => `${a}-vs-${b}`;
@@ -23,16 +24,10 @@ export function parsePairSlug(slug: string): Pair | undefined {
   const m = /^([a-z]+)-vs-([a-z]+)$/.exec(slug);
   if (!m) return undefined;
   const [a, b] = [m[1] as CountryId, m[2] as CountryId];
-  const ia = COUNTRY_IDS.indexOf(a);
-  const ib = COUNTRY_IDS.indexOf(b);
-  return ia >= 0 && ib > ia ? [a, b] : undefined;
+  return a !== b && COUNTRY_IDS.includes(a) && COUNTRY_IDS.includes(b) ? [a, b] : undefined;
 }
 
-/** Canonical pair for any two distinct ids, so a picker can link `de` + `jp` to `jp-vs-de`. */
-export function canonicalPair(a: CountryId, b: CountryId): Pair | undefined {
-  if (a === b) return undefined;
-  return COUNTRY_IDS.indexOf(a) < COUNTRY_IDS.indexOf(b) ? [a, b] : [b, a];
-}
+export const mirror = ([a, b]: Pair): Pair => [b, a];
 
 export interface HofstedeProfile {
   scores: Record<HofstedeDimension, number | null>;

@@ -3,10 +3,10 @@ import type { CountryMeta } from "../../src/data/schema.ts";
 import {
   allPairs,
   biggestGaps,
-  canonicalPair,
   cultureMapDeltas,
   hofstedeDeltas,
   hofstedeProfile,
+  mirror,
   pairSlug,
   parsePairSlug,
 } from "../../src/lib/compare.ts";
@@ -44,21 +44,22 @@ const nordics: CountryMeta = {
 };
 
 describe("pairs", () => {
-  it("lists each unordered pair once", () => {
+  it("lists every ordered pair once", () => {
     const pairs = allPairs();
-    expect(pairs).toHaveLength((14 * 13) / 2);
+    expect(pairs).toHaveLength(14 * 13);
     expect(new Set(pairs.map(pairSlug)).size).toBe(pairs.length);
     expect(pairs[0]).toEqual(["jp", "kr"]);
+    expect(pairs.map(pairSlug)).toContain("de-vs-jp");
   });
-  it("parses only canonical slugs", () => {
+  it("parses slugs of two distinct known ids", () => {
     expect(parsePairSlug("jp-vs-de")).toEqual(["jp", "de"]);
-    expect(parsePairSlug("de-vs-jp")).toBeUndefined();
+    expect(parsePairSlug("de-vs-jp")).toEqual(["de", "jp"]);
     expect(parsePairSlug("jp-vs-jp")).toBeUndefined();
     expect(parsePairSlug("xx-vs-jp")).toBeUndefined();
+    expect(parsePairSlug("jp-de")).toBeUndefined();
   });
-  it("canonicalizes picker input", () => {
-    expect(canonicalPair("de", "jp")).toEqual(["jp", "de"]);
-    expect(canonicalPair("jp", "jp")).toBeUndefined();
+  it("mirrors a pair", () => {
+    expect(mirror(["jp", "de"])).toEqual(["de", "jp"]);
   });
 });
 
