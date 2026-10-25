@@ -1,0 +1,67 @@
+---
+import Strip from "../components/strip/Strip.astro";
+import { CULTURE_MAP_SCALES, HOFSTEDE_DIMENSIONS } from "../data/schema.ts";
+import { stripText } from "../i18n/strip.ts";
+import { type Lang, localePath } from "../i18n/ui.ts";
+import Base from "../layouts/Base.astro";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = stripText[lang];
+const groups = [
+  {
+    id: "meyer",
+    name: t["scales.meyer"],
+    intro: t["scales.meyerIntro"],
+    limits: t["scales.meyerLimits"],
+    keys: CULTURE_MAP_SCALES,
+  },
+  {
+    id: "hofstede",
+    name: t["scales.hofstede"],
+    intro: t["scales.hofstedeIntro"],
+    limits: t["scales.hofstedeLimits"],
+    keys: HOFSTEDE_DIMENSIONS,
+  },
+] as const;
+---
+
+<Base lang={lang} title={t["scales.title"]} description={t["scales.lead"]} section="scales">
+  <header class="headword">
+    <h1>{t["scales.title"]}</h1>
+    <p class="lead">{t["scales.lead"]}</p>
+  </header>
+
+  <nav class="toc" aria-label={t["scales.title"]}>
+    {groups.map((g) => <a href={`#${g.id}`}>{g.name}</a>)}
+    <a href={localePath(lang, "/method/")}>{t["scales.method"]}</a>
+  </nav>
+
+  {
+    groups.map((g) => (
+      <section class="section" id={g.id} aria-labelledby={`${g.id}-h`}>
+        <h2 id={`${g.id}-h`}>{g.name}</h2>
+        <div class="intro measure">
+          <p>{g.intro}</p>
+          <p>
+            {g.limits} <a href={localePath(lang, "/method/")}>{t["scales.method"]}</a>
+          </p>
+        </div>
+        {g.keys.map((k) => (
+          <Strip lang={lang} scale={k} heading="h3" id={`strip-${k}`} />
+        ))}
+      </section>
+    ))
+  }
+</Base>
+
+<style>
+  .intro {
+    margin-block-end: 2rem;
+  }
+  .intro p:last-child {
+    color: var(--ink-2);
+  }
+</style>

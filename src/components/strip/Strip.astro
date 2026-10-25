@@ -1,0 +1,149 @@
+---
+/**
+ * Vantage strip, spread mode (research/design.md, figure A): static SVG, no JavaScript.
+ * All 14 countries on one scale; the focus country is a taller 朱 tick with its name.
+ */
+import "./strip.css";
+import type { CountryId } from "../../data/schema.ts";
+import { stripText } from "../../i18n/strip.ts";
+import type { Lang } from "../../i18n/ui.ts";
+import {
+  formatValue,
+  layoutStrip,
+  noSource,
+  positionsText,
+  type StripKey,
+  scaleKind,
+  spreadDomain,
+} from "../../lib/strip.ts";
+import { countryNames, scaleHref, scaleItems, scaleText } from "./data.ts";
+import StripSvg from "./StripSvg.tsx";
+
+interface Props {
+  lang: Lang;
+  scale: StripKey;
+  focus?: CountryId;
+  /** "large" draws the wide version at 1040px (scale pages); "normal" at 760px. Narrow screens get 360px. */
+  size?: "normal" | "large";
+  /** Heading for the scale name (linked to its page); omit on the scale page itself. */
+  heading?: "h2" | "h3" | "h4";
+  /** Link to the scale page in the provenance line (off on the scale page itself). */
+  about?: boolean;
+  id?: string;
+}
+
+const { lang, scale, focus, size = "normal", heading, about = true, id } = Astro.props;
+const t = stripText[lang];
+const kind = scaleKind(scale);
+const text = scaleText(lang, scale);
+const items = scaleItems(scale);
+const names = countryNames(lang);
+const sep = lang === "ja" ? "、" : ", ";
+const focusLabel = focus ? names[focus] : undefined;
+const wide = layoutStrip(kind, items, { width: size === "large" ? 1040 : 760, focus, centreLabel: focusLabel });
+const narrow = layoutStrip(kind, items, { width: 360, focus, centreLabel: focusLabel });
+const missing = noSource(items);
+const region = items.find((i) => i.value !== null && i.members.length > 0);
+const hasSecondary = items.some((i) => i.secondary && i.value !== null);
+const dom = spreadDomain(kind, items);
+const summary = t["strip.summary"](text.name, positionsText(kind, items, lang));
+const rows = items.filter((i) => i.value !== null).sort((a, b) => a.value! - b.value!);
+const Heading = heading;
+const headId = id ? `${id}-h` : undefined;
+const fmt = (v: number) => formatValue(kind, v, lang);
+---
+
+<figure class="vs-fig" data-size={size} data-scale={scale} id={id} aria-labelledby={Heading ? headId : undefined}>
+  {
+    Heading && (
+      <Heading class="vs-title" id={headId}>
+        <a href={scaleHref(lang, scale)}>{text.name}</a>
+      </Heading>
+    )
+  }
+  <div class="vs-body">
+    <div class="vs-poles">
+      <span>← {text.left}</span>
+      <span>{text.right} →</span>
+    </div>
+    <div class="vs-draw">
+      <StripSvg geometry={wide} kind={kind} lang={lang} className="is-wide" />
+      <StripSvg geometry={narrow} kind={kind} lang={lang} className="is-narrow" />
+    </div>
+  </div>
+  <figcaption class="vs-cap">
+    <p class="sr-only">{summary}</p>
+    {
+      missing.length > 0 && (
+        <p class="vs-nosrc">
+          {t["strip.noSource"]}
+          {lang === "ja" ? "：" : ": "}
+          {missing.map((m, i) => (
+            <>
+              {i > 0 && sep}
+              {m === focus ? <span class="vs-focus-text">{names[m]}</span> : names[m]}
+            </>
+          ))}
+        </p>
+      )
+    }
+    {
+      region && (
+        <p>
+          {t["strip.region"](
+            region.code,
+            region.members.map((m) => `${m.code} ${fmt(m.value)}`).join(sep),
+          )}
+        </p>
+      )
+    }
+    {hasSecondary && <p>{t["strip.secondary"]}</p>}
+    {kind === "hofstede" && <p>{t["strip.taras"]}</p>}
+    {dom.extended && <p>{t["strip.extended"](dom.hi)}</p>}
+    <p>
+      {kind === "meyer" ? t["strip.provMeyer"] : t["strip.provHofstede"]}
+      {about && (
+        <>
+          {" "}
+          <a href={scaleHref(lang, scale)}>{t["strip.about"]}</a>
+        </>
+      )}
+    </p>
+    <details class="vs-text">
+      <summary>{t["strip.asText"]}</summary>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">{t["strip.colCountry"]}</th>
+            <th scope="col">{kind === "meyer" ? t["strip.colStep"] : t["strip.colScore"]}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            rows.map((r) => (
+              <tr>
+                <th scope="row">
+                  {r.id === focus ? <span class="vs-focus-text">{names[r.id]}</span> : names[r.id]}{" "}
+                  <span class="mono">{r.code}</span>
+                  {r.secondary && <span title={t["strip.secondaryShort"]}> †</span>}
+                </th>
+                <td class="num">
+                  {fmt(r.value!)}
+                  {r.members.length > 0 && (
+                    <span class="mono">
+                      {lang === "ja" ? "（" : " ("}
+                      {kind === "hofstede"
+                        ? t["strip.meanOf"](r.members.map((m) => `${m.code} ${fmt(m.value)}`).join(sep))
+                        : r.members.map((m) => `${m.code} ${fmt(m.value)}`).join(sep)}
+                      {lang === "ja" ? "）" : ")"}
+                    </span>
+                  )}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </details>
+  </figcaption>
+</figure>
