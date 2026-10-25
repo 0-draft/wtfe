@@ -95,9 +95,7 @@ for (const id of ja.keys()) if (!meta.has(id)) fail(`meta/${id}.json`, "missing 
 // Source titles may be translated, but urls and years must match: they drive "dated" labels and catalogue anchors.
 function shape(c: CountryContent) {
   return THEME_IDS.flatMap((t) =>
-    c.themes[t].map(
-      (cl) => `${cl.id} ${cl.confidence} ${cl.sources.map((s) => `${s.url}@${s.year ?? ""}`).join(",")}`,
-    ),
+    c.themes[t].map((cl) => `${cl.id} ${cl.confidence} ${cl.sources.map((s) => `${s.url}@${s.year ?? ""}`).join(",")}`),
   );
 }
 
