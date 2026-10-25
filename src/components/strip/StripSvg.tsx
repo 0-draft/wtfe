@@ -18,7 +18,6 @@ export default function StripSvg({ geometry: g, kind, lang, className }: Props) 
   const u = GEOM.unit;
   const fmtGrid = (v: number) =>
     g.mode === "from" || kind === "meyer" ? formatSigned(v, lang) : formatValue(kind, v, lang);
-  const centreX = (g.x0 + g.x1) / 2;
   return (
     <svg
       className={`vs-svg${className ? ` ${className}` : ""}`}
@@ -31,12 +30,16 @@ export default function StripSvg({ geometry: g, kind, lang, className }: Props) 
       {g.grid.map((m) => (
         <line key={`h${m.value}`} className="vs-hair" x1={m.x} x2={m.x} y1={GEOM.top} y2={g.height - 4} />
       ))}
-      {g.mode === "from" && <line className="vs-centre" x1={centreX} x2={centreX} y1={GEOM.top} y2={g.axisY + 8} />}
       <line className="vs-axis" x1={g.x0} x2={g.x1} y1={g.axisY} y2={g.axisY} />
       {g.grid.map((m) => (
         <g key={`g${m.value}`}>
           <line className="vs-step" x1={m.x} x2={m.x} y1={g.axisY - 4} y2={g.axisY + 6} />
-          <text className="vs-grid" x={m.x} y={g.gridLabelY} textAnchor="middle">
+          <text
+            className={`vs-grid${g.mode === "from" && m.value === 0 ? " is-centre" : ""}`}
+            x={m.x}
+            y={g.gridLabelY}
+            textAnchor="middle"
+          >
             {fmtGrid(m.value)}
           </text>
         </g>

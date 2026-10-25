@@ -35,11 +35,11 @@ export const meyerPhrases: Record<CultureMapScale, { left: PolePhrase; right: Po
   },
   persuading: {
     left: {
-      en: { verb: ["expects", "expect"], rest: "the theory before the conclusion more than" },
+      en: { verb: ["wants", "want"], rest: "the theory before the conclusion more than" },
       ja: "結論より先に理論や原則を求める",
     },
     right: {
-      en: { verb: ["expects", "expect"], rest: "the conclusion and examples before the theory more than" },
+      en: { verb: ["wants", "want"], rest: "examples and the conclusion before the theory more than" },
       ja: "理論より先に結論や事例を求める",
     },
   },
@@ -72,7 +72,7 @@ export const meyerPhrases: Record<CultureMapScale, { left: PolePhrase; right: Po
   },
   disagreeing: {
     left: {
-      en: { verb: ["disagrees", "disagree"], rest: "openly more readily than" },
+      en: { verb: ["is", "are"], rest: "more willing to disagree openly than" },
       ja: "ためらわずに公然と反論する",
     },
     right: { en: { verb: ["avoids", "avoid"], rest: "open disagreement more than" }, ja: "公然と反論するのを避ける" },
@@ -112,13 +112,13 @@ const en = {
   "ruler.members": (code: string, note: string) => `${code} by country: ${note}`,
   "group.different": "Where you will notice the difference",
   "group.close": "Where you are close",
-  "group.none": "No source",
-  "group.noneLead": "These scales are left unmarked: placing a country without a source would be guessing.",
+  "group.none": "Not placed",
+  "group.noneLead":
+    "These scales are left unmarked: either Meyer leaves a country off the scale or no source places it, and drawing it anyway would be guessing.",
+  "group.count": (n: number) => `${n} ${n === 1 ? "scale" : "scales"}`,
   "hofstede.heading": "Hofstede: six dimensions",
   "hofstede.lead": (a: string, b: string) =>
     `Scores from 0 to 100, sorted by the gap between ${a} and ${b}. They describe national averages, not either country's character.`,
-  "hofstede.caption":
-    "Country averages. About 80% of variation in values is between people inside a country (Taras et al. 2016).",
   "hofstede.provenance": (title: string, year: string) => `Source: ${title} (${year}).`,
   "hofstede.how": "About the Hofstede dimensions",
   description: (a: string, b: string) =>
@@ -133,6 +133,8 @@ const en = {
   "index.choose": "Choose…",
   "index.go": "Compare",
   "index.goHint": "Choose two different countries.",
+  "index.changeHint": "Pick another pair, then press Compare.",
+  "pick.change": "Change the pair",
   "index.suggested": "Pairs to start with",
   "index.biggest": (scale: string, steps: string) => `Largest gap: ${scale}, ${steps}`,
   "index.none": "No Culture Map gap on record",
@@ -161,13 +163,13 @@ const ja: Dict = {
   "ruler.members": (code: string, note: string) => `${code} の国別：${note}`,
   "group.different": "違いに気づくところ",
   "group.close": "近いところ",
-  "group.none": "出典なし",
-  "group.noneLead": "出典なしに国を置くのは推測になるため、これらの尺度には印を付けていません。",
+  "group.none": "位置のない尺度",
+  "group.noneLead":
+    "Meyer がその国を尺度に位置づけていないか、位置を示す出典がない尺度です。推測で置くことはせず、印を付けていません。",
+  "group.count": (n: number) => `${n} 尺度`,
   "hofstede.heading": "Hofstede の 6 次元",
   "hofstede.lead": (a: string, b: string) =>
     `0〜100 のスコアを、${a}と${b}の差が大きい順に並べています。国の平均値であり、どちらの国の性格を表すものでもありません。`,
-  "hofstede.caption":
-    "国の平均値です。価値観のばらつきの約 80% は、国と国の間ではなく国の内部の個人間にあります（Taras ほか 2016）。",
   "hofstede.provenance": (title: string, year: string) => `出典：${title}（${year}）。`,
   "hofstede.how": "Hofstede の次元について",
   description: (a: string, b: string) =>
@@ -182,6 +184,8 @@ const ja: Dict = {
   "index.choose": "選択…",
   "index.go": "比較する",
   "index.goHint": "異なる 2 つの国を選んでください。",
+  "index.changeHint": "別の組み合わせを選んでから「比較する」を押してください。",
+  "pick.change": "組み合わせを変える",
   "index.suggested": "まずはこの組み合わせから",
   "index.biggest": (scale: string, steps: string) => `最大の差：${scale}（${steps}）`,
   "index.none": "Culture Map 上の差の記録なし",

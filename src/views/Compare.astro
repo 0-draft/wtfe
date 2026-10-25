@@ -1,8 +1,9 @@
 ---
 import Claim from "../components/Claim.astro";
 import GapRuler from "../components/compare/GapRuler.astro";
+import PairPicker from "../components/compare/PairPicker.astro";
 import RunningHead from "../components/RunningHead.astro";
-import { COUNTRY_IDS, type CountryId, THEME_IDS } from "../data/schema.ts";
+import { type CountryId, THEME_IDS } from "../data/schema.ts";
 import { compareDict } from "../i18n/compare.ts";
 import { dict, themeNames } from "../i18n/dict.ts";
 import { type Lang, localePath } from "../i18n/ui.ts";
@@ -33,8 +34,6 @@ const pairTitle = (l: Lang) => {
 const title = pairTitle(lang);
 const glossTitle = pairTitle(other);
 const swapHref = localePath(lang, `/compare/${pairSlug(mirror(pair))}/`);
-const template = localePath(lang, "/compare/__A__-vs-__B__/");
-const options = COUNTRY_IDS.map((id) => ({ id, name: country(lang, id)!.name }));
 const columns = [
   { which: "a", id: idA, c: ca },
   { which: "b", id: idB, c: cb },
@@ -45,20 +44,10 @@ const columns = [
   <RunningHead slot="running-head" word={title} sub={t["ruler.heading"]} />
   <article class="compare">
     <header class="headword cmp-head">
-      <h1 class="cmp-title" aria-label={title} data-pair-picker data-template={template}>
-        <span class="pick pick-a">
-          <span class="pick-name" data-pick-name>{a.noun.subject}</span>
-          <select class="pick-select" data-pick="a" aria-label={t["pick.from"]} hidden>
-            {options.map((o) => <option value={o.id} selected={o.id === idA}>{o.name}</option>)}
-          </select>
-        </span>
+      <h1 class="cmp-title" aria-label={title}>
+        <span class="name-a">{a.noun.subject}</span>
         <span class="join">{t["title.join"]}</span>
-        <span class="pick pick-b">
-          <span class="pick-name" data-pick-name>{b.noun.object}</span>
-          <select class="pick-select" data-pick="b" aria-label={t["pick.to"]} hidden>
-            {options.map((o) => <option value={o.id} selected={o.id === idB}>{o.name}</option>)}
-          </select>
-        </span>
+        <span class="name-b">{b.noun.object}</span>
       </h1>
       <p class="hw-gloss">
         <span lang={other}>{glossTitle}</span>
@@ -70,6 +59,7 @@ const columns = [
       <p class="swap-line">
         <a class="swap" href={swapHref} data-swap><span aria-hidden="true">⇄</span> {t.swap(a.noun.object, b.noun.object)}</a>
       </p>
+      <PairPicker lang={lang} from={idA} to={idB} label={t["pick.change"]} id="pair-picker" />
     </header>
 
     <GapRuler lang={lang} a={a} b={b} />
@@ -109,28 +99,6 @@ const columns = [
   </article>
 </Base>
 
-<script>
-  // Progressive enhancement: without JS the title shows plain names and the swap link; with JS each name becomes a
-  // native select that navigates to the chosen pair. Picking the country already on the other side swaps them.
-  for (const root of document.querySelectorAll<HTMLElement>("[data-pair-picker]")) {
-    const template = root.dataset.template ?? "";
-    const sa = root.querySelector<HTMLSelectElement>('[data-pick="a"]');
-    const sb = root.querySelector<HTMLSelectElement>('[data-pick="b"]');
-    if (!sa || !sb) continue;
-    const initial = { a: sa.value, b: sb.value };
-    for (const n of root.querySelectorAll<HTMLElement>("[data-pick-name]")) n.hidden = true;
-    sa.hidden = false;
-    sb.hidden = false;
-    const go = (changed: "a" | "b") => {
-      let [a, b] = [sa.value, sb.value];
-      if (a === b) [a, b] = changed === "a" ? [a, initial.a] : [initial.b, b];
-      location.assign(template.replace("__A__", a).replace("__B__", b));
-    };
-    sa.addEventListener("change", () => go("a"));
-    sb.addEventListener("change", () => go("b"));
-  }
-</script>
-
 <style>
   .cmp-title {
     display: flex;
@@ -142,47 +110,15 @@ const columns = [
   .cmp-title:lang(ja) {
     gap: 0 0.25em;
   }
-  .pick-a .pick-name,
-  .pick-a .pick-select {
+  .name-a {
     color: var(--shu);
   }
-  .pick-b .pick-name,
-  .pick-b .pick-select {
+  .name-b {
     color: var(--ai);
   }
   .join {
     font-size: 0.6em;
     color: var(--ink-2);
-  }
-  .pick-select {
-    font: inherit;
-    letter-spacing: inherit;
-    field-sizing: content;
-    max-inline-size: 100%;
-    min-block-size: 44px;
-    padding: 0 1.1em 0 0.1em;
-    margin: 0;
-    background-color: transparent;
-    background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
-      linear-gradient(135deg, currentColor 50%, transparent 50%);
-    background-position:
-      right 0.45em center,
-      right 0.2em center;
-    background-size: 0.25em 0.25em;
-    background-repeat: no-repeat;
-    border: 0;
-    border-block-end: 3px solid currentColor;
-    border-radius: 0;
-    appearance: none;
-    cursor: pointer;
-  }
-  .pick-select:hover {
-    background-color: var(--raised);
-  }
-  .pick-select option {
-    color: var(--ink);
-    background: var(--raised);
-    font-size: var(--s-17);
   }
   .hw-code-b {
     color: var(--ai);
@@ -190,6 +126,9 @@ const columns = [
   }
   .seen {
     margin-block-end: 0.5rem;
+  }
+  .swap-line {
+    margin-block-end: 1.5rem;
   }
   .swap {
     display: inline-flex;

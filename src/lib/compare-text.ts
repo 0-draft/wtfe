@@ -4,9 +4,9 @@
  */
 import type { CountryId, CountryMeta, CultureMapScale, HofstedeDimension } from "../data/schema.ts";
 import { memberNamesJa, meyerPhrases } from "../i18n/compare.ts";
-import { hofstedeText } from "../i18n/scales.ts";
 import type { Lang } from "../i18n/ui.ts";
 import { cultureMapDeltas, type Delta, hofstedeDeltas, hofstedeMembers, hofstedeProfile } from "./compare.ts";
+import { isPluralName, nameInSentence } from "./names.ts";
 
 const LOCALE: Record<Lang, string> = { en: "en-GB", ja: "ja" };
 
@@ -20,18 +20,11 @@ export interface Noun {
   plural: boolean;
 }
 
-/** English names that take "the" (the data writes "Netherlands" but "The Nordics"). */
-const WITH_ARTICLE: ReadonlySet<CountryId> = new Set(["us", "gb", "nl", "nordics"]);
-const PLURAL: ReadonlySet<CountryId> = new Set(["nordics"]);
-
 export function noun(lang: Lang, id: CountryId, name: string): Noun {
-  if (lang === "ja") return { subject: name, object: name, plural: false };
-  const bare = name.replace(/^the\s+/i, "");
-  const article = WITH_ARTICLE.has(id);
   return {
-    subject: article ? `The ${bare}` : bare,
-    object: article ? `the ${bare}` : bare,
-    plural: PLURAL.has(id),
+    subject: nameInSentence(lang, id, name, { capitalize: true }),
+    object: nameInSentence(lang, id, name),
+    plural: isPluralName(lang, id),
   };
 }
 
@@ -51,10 +44,16 @@ export interface GapLine<K extends string> extends Delta<K> {
 }
 
 const fmt = (lang: Lang, n: number) => new Intl.NumberFormat(LOCALE[lang]).format(n);
-const list = (lang: Lang, items: string[], type: "conjunction" | "disjunction" = "conjunction") =>
-  new Intl.ListFormat(LOCALE[lang], { type }).format(items);
+/** "A and B" / "A or B" in English; "AとB" / "A、B、C" in Japanese (Intl's Japanese list uses "、" even for two). */
+export function list(
+  lang: Lang,
+  items: readonly string[],
+  type: "conjunction" | "disjunction" = "conjunction",
+): string {
+  if (lang === "ja") return items.length === 2 ? `${items[0]}と${items[1]}` : items.join("、");
+  return new Intl.ListFormat(LOCALE[lang], { type }).format(items);
+}
 const groupOf = (delta: number | null): Group => (delta === null ? "none" : delta === 0 ? "close" : "different");
-const lowerFirst = (s: string) => s.charAt(0).toLowerCase() + s.slice(1);
 
 export function stepsLabel(lang: Lang, n: number): string {
   if (lang === "ja") return `${fmt(lang, n)} 段階`;
@@ -64,51 +63,78 @@ export function stepsLabel(lang: Lang, n: number): string {
 /** Meyer leaves Japan, Korea and China off the persuading axis ("holistic"), which is not the same as no source. */
 const isHolistic = (side: Side, key: CultureMapScale) => /holistic/i.test(side.meta.cultureMap[key].note ?? "");
 
-function meyerMissing(lang: Lang, key: CultureMapScale, sides: Side[]): string {
-  const holistic = sides.filter((s) => isHolistic(s, key));
-  const unsourced = sides.filter((s) => !isHolistic(s, key));
+/** Why a scale has no marks: who Meyer leaves off as holistic thinkers, and who no source places. */
+export interface Missing {
+  holistic: Side[];
+  unsourced: Side[];
+}
+
+function missingOf(row: Delta<CultureMapScale>, a: Side, b: Side): Missing {
+  const sides = [row.a === null ? a : null, row.b === null ? b : null].filter((s): s is Side => s !== null);
+  return {
+    holistic: sides.filter((s) => isHolistic(s, row.key)),
+    unsourced: sides.filter((s) => !isHolistic(s, row.key)),
+  };
+}
+
+/**
+ * The reason a scale (or several, `count` > 1) carries no marks. Written so one sentence can stand for several
+ * scales: "No source places Ukraine on these scales".
+ */
+export function missingSentence(lang: Lang, m: Missing, count = 1): string {
+  const names = (sides: Side[]) => sides.map((s) => s.noun.object);
   const parts: string[] = [];
   if (lang === "en") {
-    if (holistic.length)
+    const these = count > 1 ? "these scales" : "this scale";
+    if (m.holistic.length) {
+      const their = m.holistic.length > 1 || m.holistic[0]!.noun.plural ? "their" : "its";
       parts.push(
-        `Meyer places ${list(
-          lang,
-          holistic.map((s) => s.noun.object),
-        )} outside this scale, as holistic thinking`,
+        `Meyer leaves ${list(lang, names(m.holistic))} off ${these} and describes ${their} reasoning as holistic`,
       );
-    if (unsourced.length)
+    }
+    if (m.unsourced.length) {
+      const where = parts.length ? "on it" : `on ${these}`;
       parts.push(
-        `${parts.length ? "no" : "No"} source places ${list(
-          lang,
-          unsourced.map((s) => s.noun.object),
-          "disjunction",
-        )} on this scale`,
+        `${parts.length ? "no" : "No"} source places ${list(lang, names(m.unsourced), "disjunction")} ${where}`,
       );
+    }
     return parts.join("; ");
   }
-  if (holistic.length)
+  const these = count > 1 ? "これらの尺度" : "この尺度";
+  if (m.holistic.length) {
+    parts.push(`Meyer は${list(lang, names(m.holistic))}の考え方を全体論的として、${these}に位置づけていない`);
+  }
+  if (m.unsourced.length) {
     parts.push(
-      `Meyer は${list(
-        lang,
-        holistic.map((s) => s.noun.object),
-      )}を全体論的な思考としてこの尺度の外に置いている`,
+      parts.length
+        ? `${list(lang, names(m.unsourced))}の位置を示す出典もない`
+        : `${these}で${list(lang, names(m.unsourced))}の位置を示す出典はない`,
     );
-  if (unsourced.length)
-    parts.push(
-      `この尺度で${list(
-        lang,
-        unsourced.map((s) => s.noun.object),
-      )}の位置を示す出典はない`,
-    );
+  }
   return parts.join("。");
+}
+
+/** Lines without marks, merged when they share a reason, so a pair with Ukraine reads one sentence, not eight. */
+export function noneGroups<K extends CultureMapScale>(
+  lang: Lang,
+  lines: readonly GapLine<K>[],
+  a: Side,
+  b: Side,
+): { keys: K[]; sentence: string }[] {
+  const groups = new Map<string, { keys: K[]; m: Missing }>();
+  for (const l of lines) {
+    const m = missingOf(l, a, b);
+    const id = `${m.holistic.map((s) => s.id).join()}|${m.unsourced.map((s) => s.id).join()}`;
+    const g = groups.get(id);
+    if (g) g.keys.push(l.key);
+    else groups.set(id, { keys: [l.key], m });
+  }
+  return [...groups.values()].map((g) => ({ keys: g.keys, sentence: missingSentence(lang, g.m, g.keys.length) }));
 }
 
 /** One sentence for one Meyer scale, written from A's point of view about B. */
 export function meyerSentence(lang: Lang, row: Delta<CultureMapScale>, a: Side, b: Side): string {
-  if (row.delta === null) {
-    const missing = [row.a === null ? a : null, row.b === null ? b : null].filter((s): s is Side => s !== null);
-    return meyerMissing(lang, row.key, missing);
-  }
+  if (row.delta === null) return missingSentence(lang, missingOf(row, a, b));
   if (row.delta === 0) {
     return lang === "en"
       ? `${a.noun.subject} and ${b.noun.object} sit on the same step`
@@ -123,36 +149,30 @@ export function meyerSentence(lang: Lang, row: Delta<CultureMapScale>, a: Side, 
   return `${b.noun.subject}は${a.noun.object}より${phrase.ja}（${stepsLabel(lang, n)}）`;
 }
 
-/** One sentence for one Hofstede dimension: its name and both scores, never "a more X culture". */
+/**
+ * One sentence for one Hofstede dimension: both scores and the gap, never "a more X culture". The dimension's name
+ * is the row heading, so the sentence does not repeat it.
+ */
 export function hofstedeSentence(lang: Lang, row: Delta<HofstedeDimension>, a: Side, b: Side): string {
-  const dim = hofstedeText[lang][row.key].name;
   if (row.a === null || row.b === null) {
     const missing = [row.a === null ? a : null, row.b === null ? b : null].filter((s): s is Side => s !== null);
-    return lang === "en"
-      ? `No ${lowerFirst(dim)} score for ${list(
-          lang,
-          missing.map((s) => s.noun.object),
-          "disjunction",
-        )}`
-      : `${list(
-          lang,
-          missing.map((s) => s.noun.object),
-        )}には${dim}のスコアがない`;
+    const names = missing.map((s) => s.noun.object);
+    return lang === "en" ? `No score for ${list(lang, names, "disjunction")}` : `${list(lang, names)}のスコアはない`;
   }
   const [sa, sb] = [fmt(lang, row.a), fmt(lang, row.b)];
   const d = row.b - row.a;
   if (d === 0) {
     return lang === "en"
-      ? `${b.noun.subject} and ${a.noun.object} both score ${sb} on ${lowerFirst(dim)}`
-      : `${dim}のスコアは${b.noun.subject}も${a.noun.object}も ${sb}`;
+      ? `${b.noun.subject} and ${a.noun.object} both score ${sb}`
+      : `${b.noun.subject}と${a.noun.object}はどちらも ${sb}`;
   }
   const n = Math.abs(d);
   if (lang === "en") {
     const pts = n === 1 ? "1 point" : `${fmt(lang, n)} points`;
     const verb = b.noun.plural ? "score" : "scores";
-    return `${b.noun.subject} ${verb} ${pts} ${d > 0 ? "higher" : "lower"} than ${a.noun.object} on ${lowerFirst(dim)} (${sb} against ${sa})`;
+    return `${b.noun.subject} ${verb} ${pts} ${d > 0 ? "higher" : "lower"} than ${a.noun.object} (${sb} against ${sa})`;
   }
-  return `${dim}のスコアは${b.noun.subject} ${sb}、${a.noun.object} ${sa} で、${b.noun.subject}が ${fmt(lang, n)} ポイント${d > 0 ? "高い" : "低い"}`;
+  return `${b.noun.subject}は${a.noun.object}より ${fmt(lang, n)} ポイント${d > 0 ? "高い" : "低い"}（${sb} 対 ${sa}）`;
 }
 
 /** Largest gap first; rows without a gap (unknown) last; ties keep the scale order. */
@@ -209,7 +229,7 @@ export function regionNote(lang: Lang, side: Side): string | null {
   const n = names.length;
   if (lang === "en") {
     const count = EN_COUNT[n] ?? String(n);
-    return `${side.noun.subject} ${side.noun.plural ? "are" : "is"} not one country: ${side.noun.plural ? "their" : "its"} scores are the average of ${count} (${list(lang, names)}).`;
+    return `${side.noun.subject} ${side.noun.plural ? "are" : "is"} not one country: each score is the average of ${count} national scores (${list(lang, names)}).`;
   }
   return `${side.noun.subject}は 1 つの国ではありません。スコアは${list(lang, names)}の ${n} か国の平均です。`;
 }
@@ -238,10 +258,12 @@ export function positionsText(
   a: Side,
   b: Side,
   poles: { left: string; right: string },
+  /** Top of the Hofstede line: 100, or more when a score goes past 100. */
+  hofMax = 100,
 ): string {
   const val = (v: number | null) =>
     v === null ? (lang === "en" ? "no source" : "出典なし") : kind === "meyer" ? signedStep(v) : fmt(lang, v);
-  const [lo, hi] = kind === "meyer" ? ["−3", "+3"] : ["0", "100"];
+  const [lo, hi] = kind === "meyer" ? ["−3", "+3"] : ["0", fmt(lang, hofMax)];
   return lang === "en"
     ? `${a.noun.subject} ${val(row.a)}, ${b.noun.object} ${val(row.b)}, on a line from ${lo} (${poles.left}) to ${hi} (${poles.right}).`
     : `${a.noun.subject} ${val(row.a)}、${b.noun.object} ${val(row.b)}（${lo}＝${poles.left}、${hi}＝${poles.right}）。`;

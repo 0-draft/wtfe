@@ -5,12 +5,14 @@
  */
 // Client-safe: imported by the VantageStrip island, so no value imports from schema.ts (zod) or content.
 import type { CountryId, CultureMapScale, HofstedeDimension } from "../data/schema.ts";
-import { meyerComparatives, sentenceNameEn, stripText } from "../i18n/strip.ts";
+import { meyerComparatives, stripText } from "../i18n/strip.ts";
 import type { Lang } from "../i18n/ui.ts";
 import { DISPLAY_CODE } from "./codes.ts";
+import { nameInSentence } from "./names.ts";
 
-/** Country ids in canonical order (same order as COUNTRY_IDS). */
-const IDS = Object.keys(DISPLAY_CODE) as CountryId[];
+/** Country ids in canonical order (same order as COUNTRY_IDS), without importing zod into client code. */
+export const COUNTRY_ORDER = Object.keys(DISPLAY_CODE) as readonly CountryId[];
+const IDS = COUNTRY_ORDER;
 const order = (id: CountryId) => IDS.indexOf(id);
 
 export type StripKind = "meyer" | "hofstede";
@@ -361,13 +363,13 @@ export function offsetsFrom(items: readonly StripItem[], vantage: CountryId): Fr
 export function parseVantage(raw: string | null | undefined): CountryId | undefined {
   if (!raw) return undefined;
   const s = raw.trim().toLowerCase();
-  if ((IDS as string[]).includes(s)) return s as CountryId;
+  if ((IDS as readonly string[]).includes(s)) return s as CountryId;
   return IDS.find((id) => DISPLAY_CODE[id].toLowerCase() === s);
 }
 
 /** A country name as it reads inside a sentence ("than the Netherlands", "日本より"). */
 export function sentenceName(lang: Lang, id: CountryId, name: string): string {
-  return lang === "en" ? (sentenceNameEn[id] ?? name) : name;
+  return nameInSentence(lang, id, name);
 }
 
 /** "2 steps more direct than Japan" / "日本より否定的フィードバックが直接的（2 段階）". */

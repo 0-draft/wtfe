@@ -1,0 +1,164 @@
+---
+/**
+ * Two selects ("seen from", "compared with") and a Compare link. Revealed only with JavaScript; without it the
+ * matrix on /compare/ and the swap link on a pair page are the way in. Changing a select never navigates by itself
+ * (WCAG 3.2.2): the link follows the selects and the reader activates it.
+ */
+import { COUNTRY_IDS, type CountryId } from "../../data/schema.ts";
+import { compareDict } from "../../i18n/compare.ts";
+import { type Lang, localePath } from "../../i18n/ui.ts";
+import { country } from "../../lib/content.ts";
+
+interface Props {
+  lang: Lang;
+  /** Pre-selected pair (on a pair page); empty on the index. */
+  from?: CountryId;
+  to?: CountryId;
+  /** Accessible name of the form. */
+  label: string;
+  id: string;
+}
+const { lang, from, to, label, id } = Astro.props;
+const t = compareDict[lang];
+const template = localePath(lang, "/compare/__A__-vs-__B__/");
+const options = COUNTRY_IDS.map((c) => ({ id: c, name: country(lang, c)!.name }));
+const fallback = from && to ? localePath(lang, `/compare/${from}-vs-${to}/`) : localePath(lang, "/compare/");
+---
+
+<form class="pp" data-pair-picker data-template={template} aria-label={label} autocomplete="off" hidden>
+  <label class="pp-field pp-a">
+    <span class="pp-label">{t["pick.from"]}</span>
+    <select name="from" data-pick="a" autocomplete="off">
+      {!from && <option value="">{t["index.choose"]}</option>}
+      {options.map((o) => <option value={o.id} selected={o.id === from}>{o.name}</option>)}
+    </select>
+  </label>
+  <span class="pp-arrow" aria-hidden="true">→</span>
+  <label class="pp-field pp-b">
+    <span class="pp-label">{t["pick.to"]}</span>
+    <select name="to" data-pick="b" autocomplete="off">
+      {!to && <option value="">{t["index.choose"]}</option>}
+      {options.map((o) => <option value={o.id} selected={o.id === to}>{o.name}</option>)}
+    </select>
+  </label>
+  <a class="pp-go" href={fallback} data-go aria-disabled="true" aria-describedby={`${id}-hint`}>{t["index.go"]}</a>
+  <p id={`${id}-hint`} class="pp-hint" data-go-hint>{from && to ? t["index.changeHint"] : t["index.goHint"]}</p>
+</form>
+
+<script>
+  for (const form of document.querySelectorAll<HTMLFormElement>("[data-pair-picker]")) {
+    const template = form.dataset.template ?? "";
+    const sa = form.querySelector<HTMLSelectElement>('[data-pick="a"]');
+    const sb = form.querySelector<HTMLSelectElement>('[data-pick="b"]');
+    const go = form.querySelector<HTMLAnchorElement>("[data-go]");
+    const hint = form.querySelector<HTMLElement>("[data-go-hint]");
+    if (!sa || !sb || !go) continue;
+    const fallback = go.getAttribute("href") ?? "";
+    // The pair this page shows (empty on the index): picking it again is not a change.
+    const initial = { a: sa.value, b: sb.value };
+    const ready = () =>
+      sa.value !== "" && sb.value !== "" && sa.value !== sb.value && (sa.value !== initial.a || sb.value !== initial.b);
+    const sync = () => {
+      const ok = ready();
+      go.href = ok ? template.replace("__A__", sa.value).replace("__B__", sb.value) : fallback;
+      if (ok) go.removeAttribute("aria-disabled");
+      else go.setAttribute("aria-disabled", "true");
+      if (hint) hint.hidden = ok;
+    };
+    sa.addEventListener("change", sync);
+    sb.addEventListener("change", sync);
+    go.addEventListener("click", (e) => {
+      if (!ready()) e.preventDefault();
+    });
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (ready()) location.assign(go.href);
+    });
+    // Back/forward cache restores the page with whatever was last picked; put the selects back to this page's pair.
+    addEventListener("pageshow", (e) => {
+      if (!e.persisted) return;
+      sa.value = initial.a;
+      sb.value = initial.b;
+      sync();
+    });
+    sync();
+    form.hidden = false;
+  }
+</script>
+
+<style>
+  .pp {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 0.75rem 1rem;
+  }
+  .pp[hidden] {
+    display: none;
+  }
+  .pp-field {
+    display: grid;
+    gap: 0.25rem;
+    min-inline-size: 0;
+  }
+  .pp-label {
+    font-size: var(--s-14);
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+  .pp select {
+    font: inherit;
+    font-size: var(--s-17);
+    min-block-size: 44px;
+    min-inline-size: 12rem;
+    max-inline-size: 100%;
+    padding: 0.375rem 0.5rem;
+    color: var(--ink);
+    background: var(--raised);
+    border: 1px solid var(--axis);
+    border-block-end-width: 3px;
+    border-radius: 2px;
+  }
+  .pp-a select {
+    border-block-end-color: var(--shu);
+  }
+  .pp-b select {
+    border-block-end-color: var(--ai);
+  }
+  .pp-arrow {
+    padding-block-end: 0.6rem;
+    color: var(--ink-2);
+  }
+  .pp-go {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 44px;
+    padding-inline: 1.25rem;
+    background: var(--ink);
+    color: var(--paper);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+  .pp-go[aria-disabled="true"] {
+    background: transparent;
+    color: var(--ink-2);
+    border: 1px dashed var(--axis);
+    cursor: not-allowed;
+  }
+  .pp-hint {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: var(--s-14);
+    color: var(--ink-2);
+  }
+  @media (max-width: 30rem) {
+    .pp-arrow {
+      display: none;
+    }
+    .pp-field,
+    .pp select {
+      inline-size: 100%;
+    }
+  }
+</style>

@@ -181,7 +181,9 @@ const fill = (n: number) => b["sources.shown"].replace("{n}", String(n)).replace
       else u.searchParams.delete("country");
       if (l) u.searchParams.set("confidence", l);
       else u.searchParams.delete("confidence");
-      history.replaceState(null, "", u);
+      history.replaceState(history.state, "", u);
+      // Lets the layout's language switch carry the filters across.
+      dispatchEvent(new Event("wtfe:statechange"));
     };
     form.addEventListener("change", apply);
     form.addEventListener("submit", (e) => e.preventDefault());

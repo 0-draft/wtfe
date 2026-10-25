@@ -120,8 +120,8 @@ export const hofstedeText: Record<Lang, Record<HofstedeDimension, ScaleText>> = 
   en: {
     pdi: {
       name: "Power distance",
-      left: "Low",
-      right: "High",
+      left: "Low power distance",
+      right: "High power distance",
       gloss: "How far less powerful members accept that power is distributed unequally.",
     },
     idv: {
@@ -159,8 +159,8 @@ export const hofstedeText: Record<Lang, Record<HofstedeDimension, ScaleText>> = 
   ja: {
     pdi: {
       name: "権力格差",
-      left: "小さい",
-      right: "大きい",
+      left: "権力格差が小さい",
+      right: "権力格差が大きい",
       gloss: "力の弱い人が、力の不平等な配分をどこまで受け入れるか。",
     },
     idv: {

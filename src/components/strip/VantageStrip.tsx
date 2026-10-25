@@ -1,9 +1,10 @@
 import { useEffect, useId, useMemo, useState } from "react";
-import { COUNTRY_IDS, type CountryId } from "../../data/schema.ts";
+import type { CountryId } from "../../data/schema.ts";
 import type { ScaleText } from "../../i18n/scales.ts";
 import { stripText } from "../../i18n/strip.ts";
 import type { Lang } from "../../i18n/ui.ts";
 import {
+  COUNTRY_ORDER,
   formatSigned,
   layoutStrip,
   MEYER_RANGE,
@@ -64,14 +65,14 @@ export default function VantageStrip({ lang, scale, text, items, names, staticId
     history.replaceState(history.state, "", u);
     // Lets the layout's language switch carry ?from= across.
     dispatchEvent(new Event("wtfe:statechange"));
-    setLive(v ? t["vantage.live"](names[v]) : t["vantage.liveNone"]);
+    setLive(v ? t["vantage.live"](sentenceName(lang, v, names[v])) : t["vantage.liveNone"]);
   }
 
   if (!mounted) return null;
 
   const valueById = new Map(items.map((i) => [i.id, i.value]));
   const vName = vantage ? sentenceName(lang, vantage, names[vantage]) : "";
-  const youLabel = vantage ? t["vantage.you"](names[vantage]) : "";
+  const youLabel = vName ? t["vantage.you"](vName) : "";
   const geometry = view
     ? layoutStrip(kind, items, { width: size === "large" ? 1040 : 760, vantage, centreLabel: youLabel })
     : null;
@@ -84,7 +85,7 @@ export default function VantageStrip({ lang, scale, text, items, names, staticId
         <label htmlFor={`${uid}-from`}>{t["vantage.label"]}</label>
         <select id={`${uid}-from`} value={view ? vantage : ""} onChange={(e) => choose(e.currentTarget.value)}>
           <option value="">{t["vantage.none"]}</option>
-          {COUNTRY_IDS.map((id) => {
+          {COUNTRY_ORDER.map((id) => {
             const none = valueById.get(id) === null || valueById.get(id) === undefined;
             return (
               <option key={id} value={id} disabled={none}>
@@ -101,21 +102,27 @@ export default function VantageStrip({ lang, scale, text, items, names, staticId
       </p>
       {vantage && !view && (
         <p className="notice" role="status">
-          {t["vantage.missing"](names[vantage])}
+          {t["vantage.missing"](vName)}
         </p>
       )}
       {view && geometry && (
         <figure className="vs-fig vs-from" data-size={size} data-vantage={vantage}>
           <div className="vs-body">
             <div className="vs-poles">
-              <span>← {text.left}</span>
-              <span>{text.right} →</span>
+              <span>
+                ←{"\u00a0"}
+                {text.left}
+              </span>
+              <span>
+                {text.right}
+                {"\u00a0"}→
+              </span>
             </div>
             <div className="vs-draw">
               <StripSvg geometry={geometry} kind={kind} lang={lang} className="is-wide" />
             </div>
           </div>
-          <ul className="vs-list" aria-label={t["vantage.listLabel"](names[view.vantage.id])}>
+          <ul className="vs-list" aria-label={t["vantage.listLabel"](vName)}>
             <li className="vs-row is-you">
               <span className="vs-row-name">
                 {youLabel}

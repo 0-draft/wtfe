@@ -106,13 +106,12 @@
   stroke: var(--axis);
   stroke-width: 1;
 }
-.vs-centre {
-  stroke: var(--shu);
-  stroke-width: 1;
-  stroke-dasharray: 3 3;
-}
 .vs-grid {
   fill: var(--ink-3);
+}
+.vs-svg text.vs-grid.is-centre {
+  fill: var(--shu);
+  font-weight: 500;
 }
 .vs-guide {
   stroke: var(--axis);
@@ -257,17 +256,17 @@
   padding: 0;
   margin: 0.75rem 0;
 }
+/* With room for the drawing, the list drops its bars (the drawing shows the positions) and keeps the sentences. */
 @container (min-width: 760px) {
   .vs-from[data-size="normal"] .vs-svg.is-wide {
     display: block;
   }
   .vs-from[data-size="normal"] .vs-list {
-    position: absolute;
-    inline-size: 1px;
-    block-size: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
+    columns: 2;
+    column-gap: 2.5rem;
+  }
+  .vs-from[data-size="normal"] .vs-bar {
+    display: none;
   }
 }
 @container (min-width: 1040px) {
@@ -275,15 +274,15 @@
     display: block;
   }
   .vs-from[data-size="large"] .vs-list {
-    position: absolute;
-    inline-size: 1px;
-    block-size: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
+    columns: 2;
+    column-gap: 2.5rem;
+  }
+  .vs-from[data-size="large"] .vs-bar {
+    display: none;
   }
 }
 .vs-row {
+  break-inside: avoid;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 0.125rem 0.75rem;
