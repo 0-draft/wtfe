@@ -2,6 +2,8 @@
 
 _調査日: 2026-10-25_
 
+_このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[弱]）と数値の最終版は `src/data/content/{ja,en}/countries/` の JSON が正で、校正で変えた数値は `_訂正_` 行で示している。_
+
 Hofstede (Culture Factor 現行値): PDI 35 / IDV 79 / MAS 66 / UAI 65 / LTO 57 / IVR 40 ([source](https://www.theculturefactor.com/country-comparison-tool?countries=germany))。IDV と LTO は旧版の値 (IDV 67 / LTO 83) から改訂されている。旧版の数字と混ぜて引用しないこと ([source](https://www.simplypsychology.org/hofstedes-cultural-dimensions-theory.html))。
 
 ## Design & quality

@@ -2,6 +2,8 @@
 
 _調査日: 2026-10-25_
 
+_このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[弱]）と数値の最終版は `src/data/content/{ja,en}/countries/` の JSON が正で、校正で変えた数値は `_訂正_` 行で示している。_
+
 Hofstede (Culture Factor 現行値): PDI 13 / IDV 56 / MAS 47 / UAI 81 / LTO 47 / IVR データなし ([source](https://www.theculturefactor.com/country-comparison-tool?countries=israel))。
 
 ## Design & quality

@@ -2,6 +2,8 @@
 
 _調査日: 2026-10-25_
 
+_このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[弱]）と数値の最終版は `src/data/content/{ja,en}/countries/` の JSON が正で、校正で変えた数値は `_訂正_` 行で示している。_
+
 Hofstede（The Culture Factor 現行値）: PDI 60 / IDV 58 / MAS 39 / UAI 85 / LTO 86 / IVR 29。旧版の値は IDV 18 / LTO 100 で、古典的な「強い集団主義」像は旧版の値に基づいている ([source](https://www.theculturefactor.com/country-comparison-tool?countries=japan%2Csouth+korea)) ([source](https://www.cyborlink.com/besite/korea_south.htm))
 
 ## Design & quality
