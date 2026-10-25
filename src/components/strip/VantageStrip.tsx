@@ -62,6 +62,8 @@ export default function VantageStrip({ lang, scale, text, items, names, staticId
     if (v) u.searchParams.set("from", v);
     else u.searchParams.delete("from");
     history.replaceState(history.state, "", u);
+    // Lets the layout's language switch carry ?from= across.
+    dispatchEvent(new Event("wtfe:statechange"));
     setLive(v ? t["vantage.live"](names[v]) : t["vantage.liveNone"]);
   }
 
