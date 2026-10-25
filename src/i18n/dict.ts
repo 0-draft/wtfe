@@ -9,7 +9,14 @@ const en = {
   "nav.skip": "Skip to content",
   "nav.countries": "Countries",
   "nav.themes": "Themes",
+  "nav.scales": "Scales",
+  "nav.compare": "Compare",
   "nav.method": "Method",
+  "nav.sources": "Sources",
+  "nav.theme": "Theme",
+  "nav.themeLight": "Light",
+  "nav.themeDark": "Dark",
+  "nav.themeAuto": "Auto",
   "nav.lang": "日本語",
   "nav.langLabel": "Switch to Japanese",
   "home.lead":
@@ -26,6 +33,8 @@ const en = {
   "country.untranslated": "This page has not been translated yet; showing the Japanese original.",
   "theme.lead": (theme: string) => `${theme}: what the sources say, country by country.`,
   sources: "Sources",
+  "claim.dated": "Dated",
+  "claim.sourceCount": (n: number) => (n === 1 ? "1 source" : `${n} sources`),
   "confidence.label": "Confidence",
   "method.title": "Method",
   "foot.license": "Content CC BY 4.0 · Code MIT",
@@ -42,7 +51,14 @@ const ja: Dict = {
   "nav.skip": "本文へ移動",
   "nav.countries": "国",
   "nav.themes": "テーマ",
+  "nav.scales": "尺度",
+  "nav.compare": "比較",
   "nav.method": "読み方",
+  "nav.sources": "出典",
+  "nav.theme": "表示",
+  "nav.themeLight": "明",
+  "nav.themeDark": "暗",
+  "nav.themeAuto": "自動",
   "nav.lang": "English",
   "nav.langLabel": "英語に切り替える",
   "home.lead":
@@ -59,6 +75,8 @@ const ja: Dict = {
   "country.untranslated": "このページはまだ翻訳されていません。日本語の原文を表示しています。",
   "theme.lead": (theme: string) => `${theme}について、各国の出典が示していること。`,
   sources: "出典",
+  "claim.dated": "【古い資料】",
+  "claim.sourceCount": (n: number) => `出典 ${n} 件`,
   "confidence.label": "信頼度",
   "method.title": "読み方",
   "foot.license": "コンテンツ CC BY 4.0 · コード MIT",
@@ -89,6 +107,6 @@ export const themeNames: Record<Lang, Record<ThemeId, string>> = {
 };
 
 export const confidenceNames: Record<Lang, Record<Confidence, string>> = {
-  en: { strong: "Strong", medium: "Medium", weak: "Weak" },
-  ja: { strong: "強", medium: "中", weak: "弱" },
+  en: { strong: "Well attested", medium: "Attested", weak: "Thin" },
+  ja: { strong: "【裏付け十分】", medium: "【裏付けあり】", weak: "【裏付け薄】" },
 };

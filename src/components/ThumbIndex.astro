@@ -1,0 +1,28 @@
+---
+import { COUNTRY_IDS, type CountryId } from "../data/schema.ts";
+import { type Lang, localePath } from "../i18n/ui.ts";
+import { DISPLAY_CODE } from "../lib/codes.ts";
+import { country } from "../lib/content.ts";
+
+interface Props {
+  lang: Lang;
+  current?: CountryId;
+  /** Path template; `{id}` is replaced. Defaults to the country page. */
+  href?: string;
+}
+const { lang, current, href = "/countries/{id}/" } = Astro.props;
+---
+
+<nav class="thumb-index" aria-label={lang === "ja" ? "国の索引" : "Country index"}>
+  {
+    COUNTRY_IDS.map((id) => (
+      <a
+        href={localePath(lang, href.replace("{id}", id))}
+        aria-current={id === current ? "page" : undefined}
+        title={country(lang, id)?.name}
+      >
+        {DISPLAY_CODE[id]}
+      </a>
+    ))
+  }
+</nav>

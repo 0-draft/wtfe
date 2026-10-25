@@ -1,0 +1,24 @@
+---
+import type { CountryId } from "../data/schema.ts";
+import type { Lang } from "../i18n/ui.ts";
+import { DISPLAY_CODE } from "../lib/codes.ts";
+import { country } from "../lib/content.ts";
+
+interface Props {
+  lang: Lang;
+  id: CountryId;
+}
+const { lang, id } = Astro.props;
+const other: Lang = lang === "en" ? "ja" : "en";
+const name = country(lang, id)!.name;
+const gloss = country(other, id)!.name;
+---
+
+<header class="headword">
+  <h1>{name}</h1>
+  <p class="hw-gloss">
+    <span lang={other}>{gloss}</span>
+    <span class="hw-code">{DISPLAY_CODE[id]}</span>
+  </p>
+  <slot />
+</header>

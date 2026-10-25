@@ -33,10 +33,10 @@ test("home lists all 14 countries in both languages", async ({ page }) => {
 
 test("every claim cites at least one source link", async ({ page }) => {
   await page.goto("countries/us/");
-  const claims = page.locator(".claim");
+  const claims = page.locator(".entry");
   const n = await claims.count();
   expect(n).toBeGreaterThan(10);
   for (let i = 0; i < n; i++) {
-    await expect(claims.nth(i).locator("a.src").first()).toHaveAttribute("href", /^https:\/\//);
+    await expect(claims.nth(i).locator(".citations a").first()).toHaveAttribute("href", /^https:\/\//);
   }
 });

@@ -2,27 +2,118 @@
 import type { Claim } from "../data/schema.ts";
 import { confidenceNames, dict } from "../i18n/dict.ts";
 import type { Lang } from "../i18n/ui.ts";
+import { DATED_BEFORE } from "../lib/codes.ts";
 
 interface Props {
   claim: Claim;
   lang: Lang;
+  /** Optional cross-reference shown under the sources ("→ compare: …"). */
+  compare?: { href: string; label: string };
 }
-const { claim, lang } = Astro.props;
+const { claim, lang, compare } = Astro.props;
+const t = dict[lang];
+const years = claim.sources.map((s) => s.year).filter((y): y is number => typeof y === "number");
+const newest = years.length ? Math.max(...years) : undefined;
+const dated = newest !== undefined && newest < DATED_BEFORE;
 ---
 
-<li class="claim" id={claim.id} data-confidence={claim.confidence}>
-  <p class="claim-text">{claim.text}</p>
-  <p class="claim-meta">
-    <span class="conf" data-level={claim.confidence}>
-      <span class="sr-only">{dict[lang]["confidence.label"]}: </span>{confidenceNames[lang][claim.confidence]}
-    </span>
+<li class="entry" id={claim.id} data-confidence={claim.confidence}>
+  <p class="entry-text">{claim.text}</p>
+  <p class="entry-label">
+    <span class="usage" data-level={claim.confidence}>{confidenceNames[lang][claim.confidence]}</span>
+    <span class="entry-count">{t["claim.sourceCount"](claim.sources.length)}</span>
+    {newest !== undefined && <span class="mono entry-year">{newest}</span>}
+    {dated && <span class="entry-dated">{t["claim.dated"]}</span>}
+    <a class="entry-id mono" href={`#${claim.id}`} aria-label={`${claim.id}`}>{claim.id}</a>
+  </p>
+  <ul class="citations">
     {
       claim.sources.map((s) => (
-        <a class="src" href={s.url} rel="noopener">
-          {s.title}
-          {s.year ? ` (${s.year})` : ""}
-        </a>
+        <li>
+          <a href={s.url} rel="noopener">
+            {s.title}
+          </a>
+          {s.year && <span class="mono"> ({s.year})</span>}
+        </li>
       ))
     }
-  </p>
+  </ul>
+  {
+    compare && (
+      <p class="entry-xref">
+        → <a href={compare.href}>{compare.label}</a>
+      </p>
+    )
+  }
 </li>
+
+<style>
+  .entry {
+    list-style: none;
+    padding-block: 0.875rem;
+    padding-inline-start: 1rem;
+    border-inline-start: 3px solid var(--ink);
+    margin-block-end: 1rem;
+    max-inline-size: var(--measure);
+  }
+  .entry[data-confidence="medium"] {
+    border-inline-start: 1.5px solid var(--ink-2);
+    padding-inline-start: calc(1rem + 1.5px);
+  }
+  .entry[data-confidence="weak"] {
+    border-inline-start: 0;
+    padding-inline-start: calc(1rem + 3px);
+    background-image: linear-gradient(var(--ink-3) 0 4px, transparent 4px 7px);
+    background-size: 1.5px 7px;
+    background-repeat: repeat-y;
+    background-position: 0 0;
+  }
+  .entry-text {
+    margin: 0 0 0.375rem;
+  }
+  .entry-label {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.125rem 0.75rem;
+    align-items: baseline;
+    margin: 0;
+    font-size: var(--s-14);
+    color: var(--ink-2);
+  }
+  .entry-dated {
+    color: var(--ink-2);
+    font-weight: 600;
+  }
+  .entry-id {
+    margin-inline-start: auto;
+    color: var(--ink-3);
+    text-decoration: none;
+    font-size: var(--s-14);
+  }
+  .entry-id:hover {
+    text-decoration: underline;
+  }
+  .citations {
+    list-style: none;
+    margin: 0.25rem 0 0;
+    padding: 0;
+    font-size: var(--s-14);
+    color: var(--ink-2);
+    line-height: 1.5;
+  }
+  .citations li {
+    padding-inline-start: 1rem;
+    text-indent: -1rem;
+  }
+  .citations li::before {
+    content: "↗ ";
+    color: var(--ink-3);
+  }
+  .entry-xref {
+    margin: 0.375rem 0 0;
+    font-size: var(--s-14);
+  }
+  .entry:target {
+    background-color: var(--selected);
+  }
+</style>

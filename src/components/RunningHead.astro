@@ -1,0 +1,31 @@
+---
+interface Props {
+  word: string;
+  /** Initial sub-heading; updated client-side as sections scroll past. */
+  sub?: string;
+}
+const { word, sub } = Astro.props;
+---
+
+<div class="running-head" aria-hidden="true">
+  <div class="frame">
+    <span class="rh-word">{word}</span>
+    <span>·</span>
+    <span data-rh-sub>{sub}</span>
+  </div>
+</div>
+
+<script>
+  // Show the heading of the section currently under the running head (dictionary 柱).
+  const sub = document.querySelector<HTMLElement>("[data-rh-sub]");
+  const heads = [...document.querySelectorAll<HTMLElement>("main [data-rh]")];
+  if (sub && heads.length && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) if (e.isIntersecting) sub.textContent = (e.target as HTMLElement).dataset.rh ?? "";
+      },
+      { rootMargin: "0px 0px -80% 0px" },
+    );
+    for (const h of heads) io.observe(h);
+  }
+</script>

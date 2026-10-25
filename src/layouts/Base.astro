@@ -1,4 +1,11 @@
 ---
+import "@fontsource/line-seed-jp/700.css";
+import "@fontsource/line-seed-jp/800.css";
+import "@fontsource/ibm-plex-sans-jp/400.css";
+import "@fontsource/ibm-plex-sans-jp/600.css";
+import "@fontsource/ibm-plex-sans-jp/700.css";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
 import "../styles/global.css";
 import { dict } from "../i18n/dict.ts";
 import { type Lang, localePath, stripLocale } from "../i18n/ui.ts";
@@ -7,13 +14,23 @@ interface Props {
   lang: Lang;
   title?: string;
   description?: string;
+  /** Top-level section this page belongs to, for aria-current in the nav. */
+  section?: "countries" | "themes" | "scales" | "compare" | "method" | "sources";
 }
 
-const { lang, title, description } = Astro.props;
+const { lang, title, description, section } = Astro.props;
 const t = dict[lang];
 const here = stripLocale(Astro.url.pathname);
 const other: Lang = lang === "en" ? "ja" : "en";
 const fullTitle = title ? `${title} — ${t["site.title"]}` : `${t["site.title"]} — ${t["site.expansion"]}`;
+const nav = [
+  ["countries", "/countries/", t["nav.countries"]],
+  ["themes", "/themes/", t["nav.themes"]],
+  ["scales", "/scales/", t["nav.scales"]],
+  ["compare", "/compare/", t["nav.compare"]],
+  ["method", "/method/", t["nav.method"]],
+  ["sources", "/sources/", t["nav.sources"]],
+] as const;
 ---
 
 <!doctype html>
@@ -25,27 +42,97 @@ const fullTitle = title ? `${title} — ${t["site.title"]}` : `${t["site.title"]
     <meta name="description" content={description ?? t["site.desc"]} />
     <link rel="alternate" hreflang="en" href={new URL(localePath("en", here), Astro.site).href} />
     <link rel="alternate" hreflang="ja" href={new URL(localePath("ja", here), Astro.site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(localePath("en", here), Astro.site).href} />
     <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description ?? t["site.desc"]} />
+    <meta property="og:locale" content={lang === "ja" ? "ja_JP" : "en_US"} />
+    <script is:inline>
+      // Apply the stored theme before first paint; "auto" (or nothing stored) follows the OS.
+      try {
+        const v = localStorage.getItem("wtfe-theme");
+        if (v === "light" || v === "dark") document.documentElement.dataset.theme = v;
+      } catch {}
+    </script>
   </head>
   <body>
     <a class="skip" href="#main">{t["nav.skip"]}</a>
     <header class="site-head">
-      <a class="brand" href={localePath(lang, "/")}>
-        <span class="brand-mark">{t["site.title"]}</span>
-        <span class="brand-sub">{t["site.expansion"]}</span>
-      </a>
-      <nav aria-label="Primary">
-        <a href={`${localePath(lang, "/")}#countries`}>{t["nav.countries"]}</a>
-        <a href={`${localePath(lang, "/")}#themes`}>{t["nav.themes"]}</a>
-        <a href={localePath(lang, "/method/")}>{t["nav.method"]}</a>
-        <a href={localePath(other, here)} hreflang={other} lang={other}>{t["nav.lang"]}</a>
-      </nav>
+      <div class="frame">
+        <a class="brand" href={localePath(lang, "/")}>
+          <span class="brand-mark">{t["site.title"]}</span>
+          <span class="brand-sub">{t["site.expansion"]}</span>
+        </a>
+        <nav class="site-nav" aria-label={lang === "ja" ? "メイン" : "Main"}>
+          {
+            nav.map(([key, path, label]) => (
+              <a href={localePath(lang, path)} aria-current={section === key ? "page" : undefined}>
+                {label}
+              </a>
+            ))
+          }
+          <span class="tools">
+            <a class="lang-switch" href={localePath(other, here)} hreflang={other} lang={other} data-lang-switch>
+              {t["nav.lang"]}
+            </a>
+            <button
+              class="theme-toggle"
+              type="button"
+              data-theme-toggle
+              data-labels={JSON.stringify({
+                auto: t["nav.themeAuto"],
+                light: t["nav.themeLight"],
+                dark: t["nav.themeDark"],
+              })}
+            >
+              <span>{t["nav.theme"]}</span>: <span data-theme-label>{t["nav.themeAuto"]}</span>
+            </button>
+          </span>
+        </nav>
+      </div>
     </header>
-    <main id="main" data-pagefind-body>
+    <slot name="running-head" />
+    <main id="main" class="frame" data-pagefind-body>
       <slot />
     </main>
     <footer class="site-foot">
-      <p>{t["foot.license"]} · <a href="https://github.com/0-draft/wtfe">{t["foot.repo"]}</a></p>
+      <div class="frame">
+        <p>{t["foot.license"]}</p>
+        <p><a href="https://github.com/0-draft/wtfe">{t["foot.repo"]}</a></p>
+      </div>
     </footer>
+    <script>
+      // Keep the claim anchor when switching language: ids are identical in both languages.
+      const sw = document.querySelector<HTMLAnchorElement>("[data-lang-switch]");
+      const syncHash = () => {
+        if (!sw) return;
+        const u = new URL(sw.href);
+        u.hash = location.hash;
+        sw.href = u.href;
+      };
+      syncHash();
+      addEventListener("hashchange", syncHash);
+
+      // Theme toggle cycles auto → light → dark; auto clears the stored choice.
+      const btn = document.querySelector<HTMLButtonElement>("[data-theme-toggle]");
+      const label = btn?.querySelector("[data-theme-label]");
+      const labels = JSON.parse(btn?.dataset.labels ?? "{}") as Record<string, string>;
+      const order = ["auto", "light", "dark"] as const;
+      const current = () => (document.documentElement.dataset.theme as (typeof order)[number] | undefined) ?? "auto";
+      const render = () => {
+        if (label) label.textContent = labels[current()] ?? current();
+      };
+      render();
+      btn?.addEventListener("click", () => {
+        const next = order[(order.indexOf(current()) + 1) % order.length]!;
+        if (next === "auto") delete document.documentElement.dataset.theme;
+        else document.documentElement.dataset.theme = next;
+        try {
+          if (next === "auto") localStorage.removeItem("wtfe-theme");
+          else localStorage.setItem("wtfe-theme", next);
+        } catch {}
+        render();
+      });
+    </script>
   </body>
 </html>
