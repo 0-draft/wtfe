@@ -34,7 +34,7 @@
       {
         "id": "br-failure-1",
         "text": "Nubank acquired Plataformatec (the company behind Elixir) in January 2020 and Cognitect (Clojure/Datomic) in July 2020, bringing in the firms behind its own technology stack. According to Cognitect, Nubank then had 600 Clojure developers running 500 microservices.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Finextra: Nubank buys firm behind Clojure programming language",
@@ -171,7 +171,7 @@
       {
         "id": "br-work-3",
         "text": "Brasscom (2021) estimated demand for 797,000 tech professionals over 2021-25. With about 53,000 graduates a year from relevant programs, that implies a shortfall of about 106,000 a year.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Brasscom: Estudo aponta demanda de 797 mil profissionais de tecnologia até 2025",
@@ -226,7 +226,7 @@
       {
         "id": "br-oss-3",
         "text": "José Valim (a USP graduate and former Rails Core Team member) started Elixir in 2011, and the Brazilian company Plataformatec backed its development from 2012.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "The OSS History Newsletter: The Story of Elixir",

@@ -44,7 +44,8 @@ Culture Factor 比較ツール（2026-10 取得）。PDI / IDV / MAS / UAI / LTO
 - 権力格差（PDI）は全般に低い（DK 18、SE・NO 31、FI 33）。Meyer の Leading スケールでもデンマークとスウェーデンは egalitarian の典型として挙げられている [強] ([source](https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams))
 - 域内の差もはっきりしている。Lämsä（2010, Review of International Comparative Management）は、フィンランドの管理スタイルを「Management by perkele」（速く権威的）、スウェーデンを「Management by ack herreguuden」（合意志向で遅め）と対比した。GLOBE データを使った研究でも「スウェーデン人の合意形成は遅い」という見方が出ている [中] ([source](https://www.rmci.ase.ro/no11vol1/Vol11_No1_Article13.pdf))
 - スウェーデンには「förankring」（事前の根回しで合意を固めること）という慣行がある。決定までは遅いが、実行段階での抵抗が減るという説明が一般的。ただしどれだけ遅いかを定量化した研究は見つからなかった [弱] ([source](https://johnalexandersweden.com/pdf/CONSENSUS.pdf))
-- 「Spotify モデル」への批判: Jeremiah Lee（元 Spotify PM、2020-04）は、このモデルが Spotify 社内でも完全には実装されなかった理想像だと書いた。チームごとに働き方を作り直すことになり、エンジニアリングの遂行に責任を持つ人がいなかった。共著者側の Joakim Sundén も「当時から part ambition, part approximation だった」と述べている [中] ([source](https://www.jeremiahlee.com/posts/failed-squad-goals/))
+- 「Spotify モデル」への批判: Jeremiah Lee（元 Spotify PM、2020-04）は、このモデルが Spotify 社内でも完全には実装されなかった理想像だと書いた。チームごとに働き方を作り直すことになり、エンジニアリングの遂行に責任を持つ人がいなかった。元 Spotify の agile コーチ Joakim Sundén も「当時から part ambition, part approximation だった」と述べている [中] ([source](https://www.jeremiahlee.com/posts/failed-squad-goals/))
+  _訂正 2026-10-25: Sundén の肩書き「共著者側」→「元 Spotify の agile コーチ」。Spotify モデルの資料の共著者は Kniberg と Ivarsson で、Sundén は含まれない_
 - Jante の掟（Sandemose, 1933）は平等主義の象徴とされる一方、起業を阻むとも言われる。ただしスタートアップへの影響を実証した研究は見つからず、論評とインタビューが中心 [弱] ([source](https://thenextweb.com/news/1110732))
 
 ## コミュニケーションとドキュメント
@@ -57,7 +58,8 @@ Culture Factor 比較ツール（2026-10 取得）。PDI / IDV / MAS / UAI / LTO
 
 - 2024 年の主たる仕事の週実労働時間は、デンマークが 33.9 時間で EU 平均 36.0 時間より短い（Eurostat）。2025 年版では、フルタイム男性の労働時間が最も短いのはフィンランドとオランダ（いずれも 38.4 時間）[強] ([source](https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250514-1)), ([source](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Actual_and_usual_hours_of_work))
 - 育休: スウェーデンは 480 日で、うち各親に 90 日を割り当て。ノルウェーは 100% 支給なら 49 週で、父親枠 15 週。フィンランドは 2022 年改革で各親 160 日。デンマークも 2022 年に父親枠を導入したが、週数は資料によって 8・9・11 週と食い違う [中] ([source](https://pub.norden.org/temanord2025-547/parental-leave-in-finland.html)), ([source](https://www.nordiclabourjournal.org/work-and-wage-levels-are-obstacles-to-fathers-leave/))
-- リモート: フィンランドは「普段から在宅勤務」の割合が約 20% で EU 最高水準（EU 平均約 9%）。この数字は Eurostat の lfsa_ehomp を集計した二次サイト経由 [中] ([source](https://apiardata.com/statistics/fi-usually-works-from-home-rate/))
+- リモート: フィンランドは「普段から在宅勤務」の割合が 2025 年に 21.1%。この数字は Eurostat の lfsa_ehomp を集計した二次サイト経由 [中] ([source](https://apiardata.com/statistics/fi-usually-works-from-home-rate/))
+  _訂正 2026-10-25: 「約 20%、EU 最高水準（EU 平均約 9%）」→「2025 年に 21.1%」。出典の値は 21.1%（2025 年）で、EU 平均約 9% と「最高水準」はこの出典では確認できない_
 - デンマークのフレキシキュリティ: 解雇しやすい代わりに手厚い失業給付と積極的な労働市場政策がある。「仕事（job）の保障」はないが「雇用（employment）の保障」はある、という考え方。IMF（2006）は、手厚い給付が構造的失業を押し上げるという副作用も指摘している [中] ([source](https://denmark.dk/society-and-business/the-danish-labour-market/)), ([source](https://www.elibrary.imf.org/view/journals/023/0035/020/article-A009-en.xml?rskey=aDCGFc&result=5))
 
 ## OSS とコミュニティ

@@ -8,7 +8,7 @@
       {
         "id": "ua-design-1",
         "text": "At the ICPC World Finals, Lviv National University placed fourth in 2008 and Taras Shevchenko National University of Kyiv placed fourth in 2010, both winning gold medals.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Competitive Programming Hall Of Fame: ICPC World Finals standings",
@@ -20,7 +20,7 @@
       {
         "id": "ua-design-2",
         "text": "Ukraine's Hofstede uncertainty avoidance (UAI) score is extremely high at 95. The outsourcing firm N-iX (2019) links this to a preference for detailed plans and background explanations. The article is written from the seller's side.",
-        "confidence": "weak",
+        "confidence": "medium",
         "sources": [
           {
             "title": "The Culture Factor — Country comparison tool",
@@ -62,7 +62,7 @@
       {
         "id": "ua-failure-3",
         "text": "Central bank figures reported by AIN.UA show IT service exports peaking at $7.3 billion in 2022 and falling to about $6.4 billion in 2024 (down 4.2% year on year). According to dev.ua, exports recovered slightly to about $6.66 billion in 2025.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "AIN: Ukraine's IT services exports decreased 4.2% to $6.4B in 2024",
@@ -119,7 +119,7 @@
       {
         "id": "ua-hierarchy-1",
         "text": "Ukraine scores high on both Hofstede power distance (PDI 92) and uncertainty avoidance (UAI 95). Edge Executive Services (2024) links this to multi-layered organizational hierarchies and a large number of rules.",
-        "confidence": "weak",
+        "confidence": "medium",
         "sources": [
           {
             "title": "The Culture Factor — Country comparison tool",
@@ -192,7 +192,7 @@
       {
         "id": "ua-work-2",
         "text": "Diia.City gig contracts, introduced in 2022, carry 5% personal income tax, a 5% military levy and social contributions of 22% of the minimum wage. As of October 2026 the regime had more than 4,600 resident companies covering about 217,000 specialists.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "dev.ua: The number of residents of Diia.City exceeded 4,600",
@@ -228,7 +228,7 @@
       {
         "id": "ua-oss-1",
         "text": "GitLab is an open source project that Dmitriy Zaporozhets started at his home in Ukraine in 2011. In 2014 he turned it into a company with Sytse Sijbrandij from the Netherlands.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "CNBC: Ukraine looks to technology to help rebuild its economy",
@@ -240,7 +240,7 @@
       {
         "id": "ua-oss-2",
         "text": "Grammarly (a product, not open source) was founded in Kyiv in 2009 by Max Lytvyn, Alex Shevchenko and Dmytro Lider. Its largest engineering hub is still in Kyiv.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Wikipedia: Max Lytvyn",
@@ -256,7 +256,7 @@
       {
         "id": "ua-oss-3",
         "text": "The developer community DOU.ua's annual survey \"Портрет айтівця 2026\" (Portrait of an IT specialist) drew 14,631 respondents. The community publishes its own pay and contract data every year.",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "DOU: Портрет айтівця 2026",

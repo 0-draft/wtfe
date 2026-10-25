@@ -86,7 +86,7 @@
       {
         "id": "cn-feedback-1",
         "text": "Explainers of Meyer's Culture Map place China on the high-context side and describe negative feedback as tending to be indirect, especially when it could cost someone face.",
-        "confidence": "medium",
+        "confidence": "weak",
         "sources": [
           {
             "title": "The Erin Meyer Culture Map Explained",
@@ -149,7 +149,7 @@
       {
         "id": "cn-hierarchy-2",
         "text": "ByteDance is reported to have adopted Zhang Yiming's \"Context, not Control\", making internal documents open by default, running OKRs on a two-month cycle and sharing information through Feishu (Lark).",
-        "confidence": "weak",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Baidu Baike: ByteDance Values",
@@ -166,7 +166,7 @@
       {
         "id": "cn-communication-1",
         "text": "In 2022, the Beijing No. 3 Intermediate People's Court ruled that handling work on WeChat outside working hours counted as overtime and ordered the former employer to pay 30,000 yuan. In January 2024, the Supreme People's Court and other bodies published a similar case as a model case.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Sixth Tone: Chinese Netizens Celebrate Court Ruling Exposing 'WeChat Overtime'",
@@ -220,7 +220,7 @@
       {
         "id": "cn-work-1",
         "text": "In March 2019, the GitHub repository 996.ICU went up in protest against overwork and passed 1,000 stars within its first hour. In August 2021, the Supreme People's Court and the Ministry of Human Resources and Social Security published typical cases stating that the 996 schedule is illegal.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Sixth Tone: Chinese Developers Protest Overwork on GitHub",
@@ -316,7 +316,7 @@
       {
         "id": "cn-oss-2",
         "text": "In 2020, MIIT contracted a consortium of companies and universities led by Gitee to build a Chinese independent open source hosting platform. In May 2022, Gitee began reviewing all public code before publication and hid large numbers of repositories without notice.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "MIT Technology Review: How censoring China's open-source coders might backfire",

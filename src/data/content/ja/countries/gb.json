@@ -56,7 +56,7 @@
       {
         "id": "gb-failure-2",
         "text": "GOV.UK はインシデントレポートを公開している (例: 2022 年 1 月 5 日のエラー率上昇)。元 GDS 職員は 2018 年の記事で、公開することで信頼と安全に学べる雰囲気が生まれると書いている。",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "Inside GOV.UK: Incident report, 5 January 2022",
@@ -73,7 +73,7 @@
       {
         "id": "gb-failure-3",
         "text": "London の fintech である Monzo は 2019 年のブログで、on-call を 2 名体制にし、すべてのインシデントを記録していると説明した。The Pragmatic Engineer は、blameless を装った責任の押し付け合い (blameless buck-passing) にも注意を促している。",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "Monzo: How we respond to incidents",
@@ -118,7 +118,7 @@
       {
         "id": "gb-feedback-2",
         "text": "Meyer が紹介する Anglo-Dutch translation guide では、「With all due respect」は「あなたは間違っている」、「Very interesting」は「気に入らない」の意味だとされる。半分ジョークの資料で、作者も定まっていない。",
-        "confidence": "weak",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Erin Meyer: How To Say \"This Is Crap\" In Different Cultures",
@@ -160,7 +160,7 @@
       {
         "id": "gb-hierarchy-2",
         "text": "公共部門では Service Standard に基づく service assessment が実質的なゲートになっている。DfE の解説によると、正当な理由なく新規コードを公開していないと assessment に通らないことがある。",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "DfE: Service Standard 12 Make new source code open",
@@ -212,7 +212,7 @@
       {
         "id": "gb-communication-3",
         "text": "Inside GOV.UK は 2015 年、GOV.UK で障害が起きたときの対応手順をブログで公開した。",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "Inside GOV.UK: What happens when things go wrong on GOV.UK",
@@ -275,7 +275,7 @@
       {
         "id": "gb-oss-1",
         "text": "Octoverse 2024 によると、英国の GitHub 開発者は 400 万人を超え、前年比 +19% だった。Octoverse 2025 は 2030 年に約 1,100 万人になると予測している。",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "GitHub Octoverse 2024",

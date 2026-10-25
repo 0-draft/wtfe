@@ -8,7 +8,7 @@
       {
         "id": "us-design-1",
         "text": "At Google, engineers write a relatively informal design doc before writing code. According to Malte Ubl (2020), the point is not an exhaustive specification but a record of the trade-offs and alternatives considered.",
-        "confidence": "medium",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Design Docs at Google (Malte Ubl)",
@@ -20,7 +20,7 @@
       {
         "id": "us-design-2",
         "text": "Ubl says a design doc should be as long as necessary and as short as possible, and distinguishes it from a heavyweight waterfall-style specification.",
-        "confidence": "medium",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Design docs - A design doc (Malte Ubl)",
@@ -256,7 +256,7 @@
       {
         "id": "us-oss-2",
         "text": "The same Octoverse 2025 report says the US, UK, and Canada more than doubled their developer counts from 2020 to 2025, while India and Brazil more than quadrupled. Its 2030 projection puts India ahead of the United States.",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "GitHub Octoverse 2025",

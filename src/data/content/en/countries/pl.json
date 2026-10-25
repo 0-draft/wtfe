@@ -128,7 +128,7 @@
       {
         "id": "pl-hierarchy-2",
         "text": "Foreign-owned centers account for 84.3% of employment in the business services sector. Of the 61 centers opened between January 2024 and March 2025, 42.6% were in IT (ABSL 2025).",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "ABSL: Poland's business services sector grows in value and strategic importance",
@@ -196,7 +196,7 @@
       {
         "id": "pl-work-3",
         "text": "About 488,700 people worked in business service centers at the end of Q1 2025, up 6.2% year on year (ABSL 2025).",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "ABSL: Poland's business services sector grows in value and strategic importance",

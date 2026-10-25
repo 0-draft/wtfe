@@ -8,7 +8,7 @@
       {
         "id": "jp-design-1",
         "text": "In IPA's DX White Paper 2021, 19.3% of Japanese companies used agile development, against 55.0% in the US. DevOps was 10.9% vs 52.6% and design thinking 14.7% vs 53.2%, a wide gap in the adoption of iterative methods.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Japan lags the US in DX: IPA publishes DX White Paper 2021 (@IT)",
@@ -75,7 +75,7 @@
       {
         "id": "jp-failure-2",
         "text": "In a 2018 engineering blog post, Mercari published a rule to \"make the code the subject\" in incident reports, so that discussion stays on root causes rather than blaming people. Retrospectives were open to everyone regardless of role.",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "Incident response guided by Mercari's three values",
@@ -101,7 +101,7 @@
       {
         "id": "jp-feedback-1",
         "text": "Erin Meyer's Culture Map places Japan at the very indirect end for negative feedback and on the side that avoids confrontation. Criticizing someone in front of others is generally avoided.",
-        "confidence": "medium",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Erin Meyer's Culture Map: Where Japan Actually Falls (Accent Language)",
@@ -202,7 +202,7 @@
       {
         "id": "jp-communication-1",
         "text": "On Meyer's Communicating scale, Japan sits with South Korea and Indonesia at the most high-context end, and \"reading the air\" (kuuki wo yomu) is given as the emblematic phrase.",
-        "confidence": "medium",
+        "confidence": "weak",
         "sources": [
           {
             "title": "The Culture Map Summary (Readingraphics)",

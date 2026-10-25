@@ -13,9 +13,11 @@ Hofstede (Culture Factor 現行値): PDI 13 / IDV 56 / MAS 47 / UAI 81 / LTO 47 
 ## Failure & risk
 
 - 失敗を学習の一部として受け入れ、リスクを避けない社会だというのが Arieli の主張。Publishers Weekly の書評は、主題が子育てなのか文化分析なのか定まっていないと批判している [中] ([source](https://www.publishersweekly.com/9780062883032))
-- 10/7 以降は従業員の約 15% が予備役に召集された (SNC)。開戦 3 週目には約 70% の tech 企業が業務障害を報告している。それでも開戦から約半年で $3.1B を調達した [強] ([source](https://www.timesofisrael.com/about-70-of-tech-firms-face-operating-difficulties-amid-reservists-call-up/), [source](https://www.ynetnews.com/business/article/sk7ityv1r))
+- 10/7 以降は従業員の推定 15〜20% が予備役に召集された (SNC)。開戦 3 週目には約 70% の tech 企業が業務障害を報告している。それでも開戦から約半年で $3.1B を調達した [強] ([source](https://www.timesofisrael.com/about-70-of-tech-firms-face-operating-difficulties-amid-reservists-call-up/), [source](https://www.ynetnews.com/business/article/sk7ityv1r))
+  _訂正 2026-10-25: 「約 15%」→「推定 15〜20%」。出典では 15〜20% の幅で示されている_
 - 予備役による開発遅延は具体例がある。Wix は AI デザイン製品の出荷が 1 四半期遅れ、Intel は一部作業をインドへ移した (Calcalist) [中] ([source](https://www.calcalistech.com/ctechnews/article/cmaxfpvrq))
-- リスクを取る文化は exit の規模にも表れる。2025 年は Wiz $32B (Google)、CyberArk $25B (Palo Alto)、Armis $7.75B で過去最高だった。ただし集計方法によって総額は $59B (PwC) から $80B (Calcalist) まで開きがある [強] ([source](https://www.calcalistech.com/ctechnews/article/hkzohvfnbx))
+- リスクを取る文化は exit の規模にも表れる。2025 年は Wiz $32B (Google)、CyberArk $25B (Palo Alto)、Armis $7.75B で過去最高だった。総額は Calcalist の推計で約 $80B [強] ([source](https://www.calcalistech.com/ctechnews/article/hkzohvfnbx))
+  _訂正 2026-10-25: 「$59B (PwC) から $80B まで開き」を削除。PwC の $59B は引用した出典 (Calcalist) に記載がなく、出典も付いていなかった_
 
 ## Feedback & code review
 
@@ -39,7 +41,8 @@ Hofstede (Culture Factor 現行値): PDI 13 / IDV 56 / MAS 47 / UAI 81 / LTO 47 
 
 - High-tech は国内雇用の約 11.4% (約 40 万人、2025) を占め、輸出の 58% (約 $85B) を担う。雇用の伸びは年 2.5% で、過去 10 年平均の約 6% から鈍化している [強] ([source](https://www.ynetnews.com/business/article/bkjjywylge), [source](https://innovationisrael.org.il/en/press_release/innovation-report-2025/))
 - R&D 人員は 2025 年に約 3,500 人減り、10 年以上ぶりの減少となった。R&D は東欧と米国へ移っており、国外の雇用 (約 44 万人) は国内 (約 40 万人) を上回る [強] ([source](https://www.ynetnews.com/business/article/bkjjywylge), [source](https://innovationisrael.org.il/en/wp-content/uploads/sites/3/2025/04/Innovation-Authority-High-Tech-Employment-Report-English-Final.pdf))
-- 「Start-up Nation」への批判として「二つの経済」論がある。Bank of Israel (2016) によれば労働生産性は先進国平均を 14% 下回る。tech は男性・名門校・エリート部隊出身者に偏り、アラブ系は約 2%、超正統派は約 2.2% (IIA 2023) にとどまる [強] ([source](https://adva.org/en/not-exactly-a-start-up-nation/), [source](https://mei.nus.edu.sg/publication/book-review-dark-sides-of-the-startup-nation/))
+- 「Start-up Nation」への批判として「二つの経済」論がある。Bank of Israel (2016) によれば労働生産性は先進国平均を 14% 下回る。tech は男性・名門校・エリート部隊出身者に偏り、アラブ系や超正統派の参加は少ない [強] ([source](https://adva.org/en/not-exactly-a-start-up-nation/), [source](https://mei.nus.edu.sg/publication/book-review-dark-sides-of-the-startup-nation/))
+  _訂正 2026-10-25: 「アラブ系約 2%、超正統派約 2.2% (IIA 2023)」を削除。引用した出典 (Adva・NUS MEI) に記載がなく、IIA 2023 の原典も確認できていない_
 
 ## OSS & community
 

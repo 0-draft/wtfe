@@ -8,7 +8,7 @@
       {
         "id": "in-design-1",
         "text": "TCS は 2011 年、CMMI-DEV と CMMI-SVC の両方で全社 Level 5 の評価を受けたと発表し、SVC での全社 Level 5 は世界初だとしている。",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "TCS: First software firm assessed at Level 5 enterprise-wide in software services and development",
@@ -189,7 +189,7 @@
       {
         "id": "in-communication-2",
         "text": "Meyer の Trusting 尺度の解説では、インドは関係ベースの側に置かれ、仕事の前に人間関係による信頼づくりが要るとされる。",
-        "confidence": "medium",
+        "confidence": "weak",
         "sources": [
           {
             "title": "The Erin Meyer Culture Map Explained",
@@ -202,7 +202,7 @@
       {
         "id": "in-work-1",
         "text": "NASSCOM の推計では、FY2025 のインドのテック産業の売上は約 2,826 億ドル、従業員は 580 万人（純増 12.6 万人）だった。2026 年の改訂で、それぞれ 2,970 億ドル、582 万人に上方修正された。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Business Today: Indian tech industry to reach $300 billion revenue milestone in FY26",
@@ -219,7 +219,7 @@
       {
         "id": "in-work-2",
         "text": "NASSCOM と Zinnov によると、外資の GCC（グローバル・ケイパビリティ・センター）は FY2024 時点で 1,700 拠点超、従業員 190 万人超だった。tier-2 都市への分散も進んでいる。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "NASSCOM: India GCC Landscape Report — The 5-year Journey",
@@ -235,7 +235,7 @@
       {
         "id": "in-work-3",
         "text": "大手 IT サービス企業の離職率は景気で大きく振れる。FY23 Q2 は Infosys 27.1%、Wipro 23%、TCS 21.5% だったが、FY24 Q4 には TCS 12.5%、Infosys 12.6% まで下がった。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Business Today: TCS, Infosys, Wipro — How HR issues plague IT sector",
@@ -312,7 +312,7 @@
       {
         "id": "in-oss-3",
         "text": "Zerodha は 2024 年 10 月に FLOSS/fund を立ち上げ、年 100 万ドルを世界の OSS に拠出している。2025 年には Blender、FFmpeg、OpenSSL などに合計 100 万ドルを支払った。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Entrepreneur: Zerodha launches USD 1 Mn annual fund",

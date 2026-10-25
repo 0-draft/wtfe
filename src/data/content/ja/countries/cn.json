@@ -86,7 +86,7 @@
       {
         "id": "cn-feedback-1",
         "text": "Meyer の Culture Map の解説記事では、中国は高文脈の側に置かれ、否定的なフィードバックは間接的になりやすいとされる。面子を潰すおそれがある場面では特にそうだという。",
-        "confidence": "medium",
+        "confidence": "weak",
         "sources": [
           {
             "title": "The Erin Meyer Culture Map Explained",
@@ -149,7 +149,7 @@
       {
         "id": "cn-hierarchy-2",
         "text": "ByteDance は張一鳴の「Context, not Control」を掲げ、社内文書のデフォルト公開、2 か月周期の OKR、Feishu (Lark) による情報共有を進めたとされる。",
-        "confidence": "weak",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Baidu Baike: ByteDance Values",
@@ -166,7 +166,7 @@
       {
         "id": "cn-communication-1",
         "text": "北京市第三中級人民法院は 2022 年、勤務時間外の WeChat での業務対応を残業と認め、元雇用主に 3 万元の支払いを命じた。2024 年 1 月には最高人民法院などが、同種の事案をモデルケースとして公表した。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Sixth Tone: Chinese Netizens Celebrate Court Ruling Exposing 'WeChat Overtime'",
@@ -220,7 +220,7 @@
       {
         "id": "cn-work-1",
         "text": "2019 年 3 月、長時間労働に抗議する GitHub リポジトリ 996.ICU が公開され、最初の 1 時間で 1,000 スターを超えた。2021 年 8 月には最高人民法院と人力資源社会保障部が典型事例を公表し、996 勤務を違法と明示した。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Sixth Tone: Chinese Developers Protest Overwork on GitHub",
@@ -316,7 +316,7 @@
       {
         "id": "cn-oss-2",
         "text": "2020 年、MIIT は Gitee が率いる企業・大学のコンソーシアムに、国産 OSS ホスティング基盤の整備を委託した。2022 年 5 月、Gitee は公開コードを事前審査制にし、多数のリポジトリを予告なく非公開にした。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "MIT Technology Review: How censoring China's open-source coders might backfire",

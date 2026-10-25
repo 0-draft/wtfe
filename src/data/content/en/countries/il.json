@@ -58,7 +58,7 @@
       {
         "id": "il-failure-2",
         "text": "After October 7, 2023, an estimated 15% to 20% of tech employees were mobilized for reserve duty, and in the war's third week about 70% of tech firms reported disruptions. Even so, the sector raised $3.1 billion in 220 rounds by spring 2024.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Times of Israel: About 70% of tech firms face operating difficulties amid reservists' call-up",
@@ -86,7 +86,7 @@
       {
         "id": "il-failure-4",
         "text": "2025 brought a series of large acquisitions: Wiz ($32 billion, Google), CyberArk ($25 billion, Palo Alto Networks) and Armis ($7.75 billion, ServiceNow). Calcalist estimates the total value of acquisitions of Israeli-founded companies at about $80 billion.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Calcalist: The $80 billion year: Israel's biggest tech exits of 2025",
@@ -196,7 +196,7 @@
       {
         "id": "il-communication-2",
         "text": "The share of private high-tech company employees working in Israel fell from 69% in 2019 to 62% in March 2026. Most of the rest work at overseas sites, mainly in the United States.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Ynetnews: High-tech brain drain grows as thousands of developers leave Israel",

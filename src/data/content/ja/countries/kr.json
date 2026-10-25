@@ -51,7 +51,7 @@
       {
         "id": "kr-failure-1",
         "text": "Toss は 2021 年の開発者カンファレンス SLASH21 の紹介で、失敗を恐れるより速く実行する文化を掲げた。",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "토스가 처음 여는 개발자 컨퍼런스는 어떤 모습일까? : SLASH21 (토스피드)",
@@ -80,7 +80,7 @@
       {
         "id": "kr-failure-3",
         "text": "配達の民族を運営するウアハン兄弟は、KPT 振り返りの原則に「人のせいにしない」を掲げている。SK Devocean の資料は、ポストモーテムで最も難しいのは責任者を問責しない段階だとしている。",
-        "confidence": "weak",
+        "confidence": "strong",
         "sources": [
           {
             "title": "팀 문화의 탄생 (우아한형제들 기술블로그)",
@@ -115,7 +115,7 @@
       {
         "id": "kr-feedback-2",
         "text": "ウアハン兄弟のあるチームの規則には、指摘がない場合でも作成者を称賛するコメントを残す、というものがある。",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "공통시스템개발팀 코드 리뷰 문화 개선 이야기 (우아한형제들 기술블로그)",
@@ -152,7 +152,7 @@
       {
         "id": "kr-hierarchy-3",
         "text": "Toss の DRI 制度では、議論は職位に関係なく開かれているが、最終決定は担当者 1 人が下す。情報は「社内 100、社外 0」の原則で共有される。",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "토스 문화 - 입사자만 볼 수 있는 문서를 공개합니다 (토스피드)",
@@ -186,7 +186,7 @@
       {
         "id": "kr-communication-1",
         "text": "Meyer の Communicating 尺度で、韓国は日本・インドネシアと並んで最も高文脈な側に置かれている。",
-        "confidence": "medium",
+        "confidence": "weak",
         "sources": [
           {
             "title": "The Culture Map Summary (Readingraphics)",
@@ -234,7 +234,7 @@
       {
         "id": "kr-work-3",
         "text": "KOCCA の 2024 年のゲーム産業従事者調査（n=1,510）では、クランチの経験者は 34.3%、包括賃金制の適用は 69.9% で、50 人未満の企業では 90% を超えた。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "게임업계 포괄임금제, 2024년에도 70%였다 (디스이즈게임)",
@@ -280,7 +280,7 @@
       {
         "id": "kr-work-6",
         "text": "2021 年のプログラマーズの開発者調査では、回答者の 63.1% が開発者 50 人以下の企業に勤めていた。",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "2021 프로그래머스 개발자 설문조사",

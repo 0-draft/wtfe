@@ -58,7 +58,7 @@
       {
         "id": "il-failure-2",
         "text": "2023 年 10 月 7 日以降、tech 業界の従業員の推定 15〜20% が予備役に動員され、開戦 3 週目には約 70% の tech 企業が業務の混乱を報告した。それでも 2024 年春までに 220 件の資金調達で計 31 億ドルを集めている。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Times of Israel: About 70% of tech firms face operating difficulties amid reservists' call-up",
@@ -86,7 +86,7 @@
       {
         "id": "il-failure-4",
         "text": "2025 年には Wiz（320 億ドル、Google）、CyberArk（250 億ドル、Palo Alto Networks）、Armis（77.5 億ドル、ServiceNow）の大型買収が続いた。Calcalist は、イスラエル系企業の買収総額を約 800 億ドルと推計している。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Calcalist: The $80 billion year: Israel's biggest tech exits of 2025",
@@ -196,7 +196,7 @@
       {
         "id": "il-communication-2",
         "text": "民間 high-tech 企業の従業員のうち国内で働く人の比率は、2019 年の 69% から 2026 年 3 月には 62% に下がった。残りの多くは米国を中心とする海外拠点で働いている。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Ynetnews: High-tech brain drain grows as thousands of developers leave Israel",

@@ -20,7 +20,7 @@
       {
         "id": "nordics-design-2",
         "text": "In its 2014 culture write-up, Spotify promoted small, frequent releases and being \"loosely coupled, tightly aligned,\" and made Scrum practices optional. The company itself said this was a journey in progress, not a finished model.",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "Spotify engineering culture (part 1)",

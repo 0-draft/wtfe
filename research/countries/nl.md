@@ -22,7 +22,8 @@ Culture Factor 比較ツール（2026-10 取得）: PDI 38 / IDV 100 / MAS 14 / 
 
 - UAI は 53 で中程度。リスクに寛容とも慎重とも言い切れない [強] ([source](https://www.theculturefactor.com/country-comparison-tool?countries=denmark%2Cfinland%2Cnetherlands%2Cnorway%2Csweden))
 - ING（オランダの銀行）は 2015 年に Spotify 型の squad / tribe 体制へ移行した。各 tribe は四半期ごとに成果と「最大の学び」を書き出し、成功も失敗も祝う運用にした（McKinsey インタビュー、2017-01）[中] ([source](https://www.mckinsey.com/industries/financial-services/our-insights/ings-agile-transformation))
-- Booking.com の HBR 記事でも、実験の約 9 割は失敗に終わることが前提として組み込まれている [中] ([source](https://hbr.org/2020/03/building-a-culture-of-experimentation))
+- Booking.com の HBR 記事でも、実験の約 9 割は仮説を支持しない結果に終わることが前提として組み込まれている [中] ([source](https://hbr.org/2020/03/building-a-culture-of-experimentation))
+  _訂正 2026-10-25: 「約 9 割は失敗」→「約 9 割は仮説を支持しない」。出典は陽性約 1 割・残りは仮説不支持と述べており、「失敗」とは書いていない_
 
 ## フィードバックとコードレビュー
 
@@ -33,17 +34,20 @@ Culture Factor 比較ツール（2026-10 取得）: PDI 38 / IDV 100 / MAS 14 / 
 
 - PDI は 38 で低い。Meyer の Leading スケールでは egalitarian、Deciding スケールでは consensual（スウェーデン・日本と同じ側）[中] ([source](https://mind.li/explore/37057-the-culture-map-by-erin-meyer-study-analysis-guide))
 - 協議と議論を重ねて実利的な合意に至る「polderen」の影響を、管理職 808 人を構造方程式モデリングで分析した研究がある（Contemporary Management Research, 2018）[中] ([source](https://www.cmr-journal.org/article/download/18279/pdf))
-- 反証として、polder model は過大評価されているという議論もある。Woldendorp & Keman（2007）は、1980 年代に合意があったことの証拠は乏しいとしている [中] ([source](https://research.vu.nl/en/publications/the-polder-model-reviewed-dutch-corporatism-1965-2000/))
+- 反証として、polder model は過大評価されているという議論もある。Woldendorp & Keman（2007）は 1965〜2000 年を検証し、労使の交渉は厳しく、中央協約が結ばれた割合は低かったとしている [中] ([source](https://research.vu.nl/en/publications/the-polder-model-reviewed-dutch-corporatism-1965-2000/))
+  _訂正 2026-10-25: 「1980 年代に合意があった証拠は乏しい」→ 1965〜2000 年の検証で中央協約の割合が低かった、に修正。サイト本文（出典の要旨）に合わせた_
 
 ## コミュニケーションとドキュメント
 
-- Meyer の Communicating スケールでは、オランダは米・加・豪に次ぐ low-context（明示的）文化 [中] ([source](https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams))
+- Meyer の Communicating スケールでは、オランダは米・加・豪と並ぶ low-context（明示的）文化の例 [中] ([source](https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams))
+  _訂正 2026-10-25: 「米・加・豪に次ぐ」→「並ぶ」。出典は同列の例として挙げており、順位は付けていない_
 - 「議題（agenda）は神聖」で事前の予定化を重んじる、という言説は実務ガイドにしか見当たらない [弱] ([source](https://www.nlcompass.com/guides/dutch-working-culture))
 
 ## 働き方とキャリア
 
 - 主たる仕事の週実労働時間は 2024 年に 32.1 時間で EU 最短（EU 平均 36.0）。主因はパートタイム比率の高さで、フルタイムに限れば EU 平均との差は縮む [強] ([source](https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250514-1)), ([source](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Actual_and_usual_hours_of_work))
-- 在宅勤務: 「時々在宅」まで含めると就業者の半数超で、2024 年の CBS（オランダ中央統計局）による。一方「普段から在宅」は 12〜13% 前後で、フィンランドやアイルランドより低い [中] ([source](https://www.cbs.nl/en-gb/news/2024/11/over-half-of-dutch-people-work-from-home-sometimes))
+- 在宅勤務: 「時々在宅」まで含めると 2023 年に就業者の 52%（CBS〔オランダ中央統計局〕、2024 年公表）。一方「主に在宅」は 2022 年の EU 比較で 12.7% で、フィンランド（23.1%）やアイルランド（25.3%）より低い [中] ([source](https://www.cbs.nl/en-gb/news/2024/11/over-half-of-dutch-people-work-from-home-sometimes))
+  _訂正 2026-10-25: 「2024 年」はデータ年ではなく公表年。出典ではデータは 2023 年で 52%、主に在宅は 2022 年の 12.7%_
 - Stack Overflow の 2024 年調査の分析では、オランダの開発者の職務満足度は給与水準にあまり左右されなかった（ブラジルやフランスとは対照的）。国別の数値の詳細は未確認 [中] ([source](https://thenewstack.io/salary-pressures-not-ai-vex-developers-says-stack-overflow/))
 - 育休制度は一次資料を取得できなかったため載せていない（要追加調査）
 

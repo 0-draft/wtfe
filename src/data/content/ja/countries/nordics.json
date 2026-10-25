@@ -20,7 +20,7 @@
       {
         "id": "nordics-design-2",
         "text": "Spotify は 2014 年の文化紹介で、小さく頻繁なリリースと「loosely coupled, tightly aligned」を掲げ、Scrum の作法は任意とした。同社自身、これは完成形ではなく途中経過だと断っている。",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "Spotify engineering culture (part 1)",

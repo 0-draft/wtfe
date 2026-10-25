@@ -128,7 +128,7 @@
       {
         "id": "pl-hierarchy-2",
         "text": "ビジネスサービス部門では外資系センターが雇用の 84.3% を占める。2024 年 1 月〜2025 年 3 月に新設された 61 センターのうち 42.6% が IT だった（ABSL 2025）。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "ABSL: Poland's business services sector grows in value and strategic importance",
@@ -196,7 +196,7 @@
       {
         "id": "pl-work-3",
         "text": "ビジネスサービスのセンターで働く人は 2025 年 Q1 末時点で約 48.9 万人で、前年比 6.2% 増えた（ABSL 2025）。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "ABSL: Poland's business services sector grows in value and strategic importance",

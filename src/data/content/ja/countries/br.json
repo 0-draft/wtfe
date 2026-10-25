@@ -34,7 +34,7 @@
       {
         "id": "br-failure-1",
         "text": "Nubank は 2020 年 1 月に Plataformatec（Elixir の母体）を、同年 7 月に Cognitect（Clojure/Datomic）を買収し、自社の技術基盤を担う企業を取り込んだ。Cognitect によれば、当時 Nubank では 600 人の Clojure 開発者が 500 のマイクロサービスを動かしていた。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Finextra: Nubank buys firm behind Clojure programming language",
@@ -171,7 +171,7 @@
       {
         "id": "br-work-3",
         "text": "Brasscom（2021）は、2021〜25 年の技術人材の需要を 79.7 万人と見積もった。関連課程の卒業者は年約 5.3 万人で、年約 10.6 万人が不足する計算になる。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Brasscom: Estudo aponta demanda de 797 mil profissionais de tecnologia até 2025",
@@ -226,7 +226,7 @@
       {
         "id": "br-oss-3",
         "text": "Elixir は José Valim（USP 卒、元 Rails Core Team）が 2011 年に作り始めた言語で、2012 年からブラジルの Plataformatec が開発を支援した。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "The OSS History Newsletter: The Story of Elixir",
