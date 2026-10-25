@@ -17,7 +17,7 @@ export default defineConfig({
     { name: "mobile", use: { ...devices["Pixel 7"] } },
   ],
   webServer: external
-    ? undefined
+    ? []
     : {
         command: "pnpm exec astro preview --port 4471 --host 127.0.0.1",
         url: `${origin}/wtfe/`,
