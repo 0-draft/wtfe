@@ -7,7 +7,7 @@ for (const path of pages) {
   test(`${path} renders, has no horizontal scroll, and passes axe`, async ({ page }) => {
     const res = await page.goto(path);
     expect(res?.status()).toBe(200);
-    await expect(page.locator("h1")).toBeVisible();
+    await expect(page.locator("main h1")).toBeVisible();
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     expect(overflow).toBeLessThanOrEqual(0);
     const axe = await new AxeBuilder({ page }).analyze();
