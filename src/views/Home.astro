@@ -1,53 +1,234 @@
 ---
+import EvidenceMap from "../components/EvidenceMap.astro";
 import { THEME_IDS } from "../data/schema.ts";
+import { browse, readings, themeCodes } from "../i18n/browse.ts";
 import { dict, themeNames } from "../i18n/dict.ts";
+import { cultureMapText } from "../i18n/scales.ts";
 import { type Lang, localePath } from "../i18n/ui.ts";
 import Base from "../layouts/Base.astro";
-import { countries } from "../lib/content.ts";
+import { DISPLAY_CODE } from "../lib/codes.ts";
+import { countries, country, countryMeta } from "../lib/content.ts";
+import { countryCounts, evidenceMap } from "../lib/evidence.ts";
+import { sortCountries } from "../lib/indexes.ts";
 
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = dict[lang];
-const list = countries(lang);
-const count = (c: (typeof list)[number]) => THEME_IDS.reduce((n, th) => n + c.themes[th].length, 0);
+const b = browse[lang];
+const list = sortCountries(lang, countries(lang), readings);
+const map = evidenceMap(countries(lang));
+type Id = Parameters<typeof country>[1];
+const name = (id: Id) => country(lang, id)!.name;
+/** Country name as it reads mid-sentence: English needs "the" before a few names ("the Netherlands"). */
+const inText = (id: Id) => (lang === "en" && ["nl", "gb", "us"].includes(id) ? `the ${name(id)}` : name(id));
+
+// Relativity teaser: one country in the middle of Evaluating, read from either end.
+const ev = cultureMapText[lang].evaluating;
+const step = (id: "jp" | "nl" | "gb") => countryMeta(id)?.cultureMap.evaluating.step ?? null;
+const [sJp, sNl, sGb] = [step("jp"), step("nl"), step("gb")];
+const relativity =
+  sJp !== null && sNl !== null && sGb !== null
+    ? lang === "ja"
+      ? `Meyer の Evaluating（${ev.name}）の尺度では、${name("nl")}は「${ev.left}」の端に、${name("jp")}は「${ev.right}」の端に置かれています。${name("gb")}はその中間です。${name("jp")}から見れば${name("gb")}の指摘は ${Math.abs(sJp - sGb)} 段階率直で、${name("nl")}から見れば ${Math.abs(sGb - sNl)} 段階遠回しです。同じ位置でも、どこから読むかで見え方が変わります。`
+      : `On Meyer's Evaluating scale, ${inText("nl")} sits at the “${ev.left.toLowerCase()}” end and ${name("jp")} at the “${ev.right.toLowerCase()}” end, with ${inText("gb")} in between. From Japan, British criticism reads ${Math.abs(sJp - sGb)} steps more direct; from the Netherlands, ${Math.abs(sGb - sNl)} steps more indirect. The position is the same; what changes is where you read it from.`
+    : "";
+const examples = [
+  ["jp", "de"],
+  ["de", "jp"],
+  ["us", "in"],
+] as const;
 ---
 
 <Base lang={lang}>
   <section class="hero">
     <h1>{t["site.expansion"]}</h1>
-    <p class="lead">{t["home.lead"]}</p>
-    <p class="caveat">{t["home.caveat"]}</p>
+    <p class="premise">
+      {b["home.premise"]}{lang === "ja" ? "（" : " ("}<a
+        href="https://link.springer.com/article/10.1007/s11575-016-0283-x"
+        rel="noopener">{b["home.premiseCite"]}</a
+      >{lang === "ja" ? "）" : ")"}
+    </p>
   </section>
 
-  <section id="countries" aria-labelledby="h-countries">
+  <section class="section" id="evidence" aria-labelledby="h-evidence">
+    <h2 id="h-evidence">{b["home.mapTitle"]}</h2>
+    <p class="section-lead">{b["home.mapLead"]}</p>
+    <EvidenceMap lang={lang} />
+  </section>
+
+  <div class="teasers">
+    <section class="teaser" aria-labelledby="h-scales">
+      <h2 id="h-scales">{b["home.scalesTitle"]}</h2>
+      <p>{relativity}</p>
+      <p class="more"><a href={localePath(lang, "/scales/evaluating/")}>{b["home.scalesLink"]} →</a></p>
+    </section>
+    <section class="teaser" aria-labelledby="h-compare">
+      <h2 id="h-compare">{b["home.compareTitle"]}</h2>
+      <p>{b["home.compareBody"]}</p>
+      <ul class="pairs">
+        {
+          examples.map(([from, to]) => (
+            <li>
+              <a href={localePath(lang, `/compare/${from}-vs-${to}/`)}>
+                <span class="mono pair-code" aria-hidden="true">
+                  {DISPLAY_CODE[from]} → {DISPLAY_CODE[to]}
+                </span>
+                {b["home.compareExample"](inText(from), inText(to))}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="more"><a href={localePath(lang, "/compare/")}>{b["home.compareLink"]} →</a></p>
+    </section>
+  </div>
+
+  <section class="section" id="countries" aria-labelledby="h-countries">
     <h2 id="h-countries">{t["home.countries"]}</h2>
     <ul class="country-grid">
       {
         list.map((c) => (
           <li>
             <a href={localePath(lang, `/countries/${c.id}/`)}>
+              <span class="cg-code mono">{DISPLAY_CODE[c.id]}</span>
               <span class="cg-name">{c.name}</span>
-              <span class="cg-line">{c.oneLiner}</span>
-              <span class="cg-count">{t["home.claims"](count(c))}</span>
+              <span class="cg-count">{t["home.claims"](countryCounts(c).total)}</span>
             </a>
           </li>
         ))
       }
     </ul>
+    <p class="more"><a href={localePath(lang, "/countries/")}>{b["home.allCountries"]} →</a></p>
   </section>
 
-  <section id="themes" aria-labelledby="h-themes">
+  <section class="section" id="themes" aria-labelledby="h-themes">
     <h2 id="h-themes">{t["home.themes"]}</h2>
     <ul class="theme-list">
       {
         THEME_IDS.map((th) => (
           <li>
-            <a href={localePath(lang, `/themes/${th}/`)}>{themeNames[lang][th]}</a>
+            <a href={localePath(lang, `/themes/${th}/`)}>
+              <span class={`tl-code${lang === "en" ? " mono" : ""}`} aria-hidden="true">
+                {themeCodes[lang][th]}
+              </span>
+              <span class="tl-name">{themeNames[lang][th]}</span>
+              <span class="cg-count">{t["home.claims"](map.themes[th].total)}</span>
+            </a>
           </li>
         ))
       }
     </ul>
+    <p class="more"><a href={localePath(lang, "/themes/")}>{b["home.allThemes"]} →</a></p>
   </section>
 </Base>
+
+<style>
+  .hero h1 {
+    font-size: var(--s-44);
+    letter-spacing: -0.01em;
+    margin-block-end: 1rem;
+  }
+  .premise {
+    font-size: var(--s-20);
+    line-height: 1.6;
+    max-inline-size: var(--measure);
+    margin: 0;
+  }
+  .premise:lang(ja) {
+    line-height: 1.8;
+  }
+  @media (max-width: 30rem) {
+    .hero h1 {
+      font-size: var(--s-34);
+    }
+    .premise {
+      font-size: var(--s-17);
+    }
+  }
+  .teasers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+    gap: 0 3rem;
+    margin-block-start: 3.5rem;
+  }
+  .teaser {
+    border-block-start: 1px solid var(--ink);
+    padding-block-start: 0.75rem;
+    max-inline-size: var(--measure);
+  }
+  .teaser h2 {
+    font-size: var(--s-20);
+    margin-block-end: 0.75rem;
+  }
+  .more {
+    font-weight: 600;
+    margin: 0.75rem 0 0;
+  }
+  .more a {
+    display: inline-block;
+    padding-block: 0.625rem;
+  }
+  .pairs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0;
+  }
+  .pairs a {
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+    min-block-size: 2.75rem;
+    padding-block: 0.5rem;
+  }
+  .pair-code {
+    flex: none;
+    min-inline-size: 5.5rem;
+    color: var(--ink-2);
+    font-size: var(--s-14);
+  }
+
+  .country-grid,
+  .theme-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+    gap: 0 2rem;
+  }
+  .country-grid a,
+  .theme-list a {
+    display: grid;
+    grid-template-columns: 3.25rem minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 0.5rem;
+    min-block-size: 2.75rem;
+    padding-block: 0.5rem;
+    border-block-end: 1px solid var(--rule);
+    text-decoration: none;
+  }
+  .country-grid a:hover .cg-name,
+  .theme-list a:hover .tl-name {
+    text-decoration: underline;
+  }
+  .cg-code,
+  .tl-code {
+    font-size: var(--s-14);
+    color: var(--ink-2);
+  }
+  .cg-name,
+  .tl-name {
+    font-weight: 600;
+  }
+  .cg-count {
+    font-size: var(--s-14);
+    color: var(--ink-3);
+  }
+  .theme-list {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  }
+</style>

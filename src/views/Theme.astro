@@ -1,10 +1,16 @@
 ---
 import Claim from "../components/Claim.astro";
+import RunningHead from "../components/RunningHead.astro";
+import ThumbIndex from "../components/ThumbIndex.astro";
 import type { ThemeId } from "../data/schema.ts";
-import { dict, themeNames } from "../i18n/dict.ts";
+import { browse, themeCodes, themeDefinitions } from "../i18n/browse.ts";
+import { confidenceNames, dict, themeNames } from "../i18n/dict.ts";
+import { cultureMapText, hofstedeText, scaleSlug } from "../i18n/scales.ts";
 import { type Lang, localePath } from "../i18n/ui.ts";
 import Base from "../layouts/Base.astro";
-import { claimsByTheme, isTranslated } from "../lib/content.ts";
+import { DISPLAY_CODE } from "../lib/codes.ts";
+import { claimsByTheme, country, isTranslated } from "../lib/content.ts";
+import { countConfidence, THEME_SCALES } from "../lib/evidence.ts";
 
 interface Props {
   lang: Lang;
@@ -12,26 +18,187 @@ interface Props {
 }
 const { lang, theme } = Astro.props;
 const t = dict[lang];
+const b = browse[lang];
+const other: Lang = lang === "en" ? "ja" : "en";
 const name = themeNames[lang][theme];
+const groups = claimsByTheme(lang, theme);
+const total = countConfidence(groups.flatMap((g) => g.claims));
+const levels = ["strong", "medium", "weak"] as const;
+const scales = [
+  ...THEME_SCALES[theme].meyer.map((s) => ({
+    kind: b["theme.meyer"],
+    href: `/scales/${scaleSlug(s, "meyer")}/`,
+    text: cultureMapText[lang][s],
+  })),
+  ...THEME_SCALES[theme].hofstede.map((d) => ({
+    kind: b["theme.hofstede"],
+    href: `/scales/${scaleSlug(d, "hofstede")}/`,
+    text: hofstedeText[lang][d],
+  })),
+];
 ---
 
-<Base lang={lang} title={name}>
-  <header class="page-head">
-    <h1>{name}</h1>
-    <p class="lead">{t["theme.lead"](name)}</p>
-  </header>
-  {
-    claimsByTheme(lang, theme).map(({ country, claims }) => (
-      <section id={country.id} aria-labelledby={`h-${country.id}`} lang={isTranslated(lang, country.id) ? lang : "ja"}>
-        <h2 id={`h-${country.id}`}>
-          <a href={localePath(lang, `/countries/${country.id}/#${theme}`)}>{country.name}</a>
-        </h2>
-        <ul class="claims">
-          {claims.map((claim) => (
-            <Claim claim={claim} lang={lang} />
-          ))}
-        </ul>
+<Base lang={lang} title={name} description={themeDefinitions[lang][theme]} section="themes">
+  <RunningHead slot="running-head" word={name} sub={b["theme.definition"]} />
+  <div class="with-thumb">
+    <article class="theme-page">
+      <header class="headword" data-rh={b["theme.definition"]}>
+        <h1>{name}</h1>
+        <p class="hw-gloss">
+          <span lang={other}>{themeNames[other][theme]}</span>
+          <span class={`hw-code${lang === "ja" ? " code-ja" : ""}`}>{themeCodes[lang][theme]}</span>
+        </p>
+        <p class="lead">{themeDefinitions[lang][theme]}</p>
+        <p class="totals">
+          <span>{t["home.claims"](total.total)}</span>
+          {
+            levels.map((lv) =>
+              total[lv] ? (
+                <span>
+                  <span class="usage" data-level={lv}>
+                    {confidenceNames[lang][lv]}
+                  </span>{" "}
+                  <span class="mono">{total[lv]}</span>
+                </span>
+              ) : null,
+            )
+          }
+        </p>
+      </header>
+
+      <section class="section" id="scales" data-rh={b["theme.scales"]} aria-labelledby="h-scales">
+        <h2 id="h-scales">{b["theme.scales"]}</h2>
+        {
+          scales.length ? (
+            <>
+              <p class="section-lead">{b["theme.scalesLead"]}</p>
+              <ul class="scale-list">
+                {scales.map((s) => (
+                  <li>
+                    <a href={localePath(lang, s.href)}>
+                      <span class="sl-kind">{s.kind}</span>
+                      <span class="sl-name">{s.text.name}</span>
+                    </a>
+                    <span class="sl-poles">
+                      {s.text.left} ↔ {s.text.right}
+                    </span>
+                    <span class="sl-gloss">{s.text.gloss}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <p class="section-lead">{b["theme.noScales"]}</p>
+          )
+        }
       </section>
-    ))
-  }
+
+      {
+        groups.map(({ country: c, claims }) => {
+          const n = countConfidence(claims);
+          const gloss = country(other, c.id)?.name;
+          return (
+            <section
+              class="section sub"
+              id={c.id}
+              data-rh={c.name}
+              aria-labelledby={`h-${c.id}`}
+              lang={isTranslated(lang, c.id) ? lang : "ja"}
+            >
+              <h2 id={`h-${c.id}`}>
+                {c.name}
+                <span class="h-aside">
+                  {gloss && <span lang={other}>{gloss}</span>}
+                  <span class="mono sub-code">{DISPLAY_CODE[c.id]}</span>
+                  <span>{t["home.claims"](n.total)}</span>
+                </span>
+              </h2>
+              <ul class="entries">
+                {claims.map((claim) => (
+                  <Claim claim={claim} lang={lang} />
+                ))}
+              </ul>
+              <p class="to-country">
+                <a href={localePath(lang, `/countries/${c.id}/#${theme}`)}>{b["theme.countryLink"](c.name)} →</a>
+              </p>
+            </section>
+          );
+        })
+      }
+    </article>
+    <ThumbIndex lang={lang} href={`/themes/${theme}/#{id}`} />
+  </div>
 </Base>
+
+<style>
+  .totals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.125rem 1rem;
+    align-items: baseline;
+    margin: 0;
+    font-size: var(--s-14);
+    color: var(--ink-2);
+  }
+  .code-ja {
+    font-family: var(--f-body);
+    font-weight: 600;
+  }
+  .scale-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    gap: 1rem 2rem;
+  }
+  .scale-list li {
+    display: grid;
+    gap: 0.125rem;
+    border-inline-start: 1px solid var(--axis);
+    padding-inline-start: 0.75rem;
+  }
+  .scale-list a {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.5rem;
+    align-items: baseline;
+    min-block-size: 2.75rem;
+    padding-block: 0.5rem 0;
+    font-weight: 700;
+  }
+  .sl-kind {
+    font-size: var(--s-14);
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+  .sl-poles {
+    font-size: var(--s-14);
+    color: var(--ink);
+  }
+  .sl-gloss {
+    font-size: var(--s-14);
+    color: var(--ink-2);
+  }
+  .sub > h2 .h-aside {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0 0.75rem;
+  }
+  .sub-code {
+    color: var(--ink);
+  }
+  .entries {
+    padding: 0;
+    margin: 0;
+  }
+  .to-country {
+    font-size: var(--s-15);
+    font-weight: 600;
+    margin: 0;
+  }
+  .to-country a {
+    display: inline-block;
+    padding-block: 0.625rem;
+  }
+</style>
