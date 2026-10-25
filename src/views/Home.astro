@@ -10,6 +10,7 @@ import { DISPLAY_CODE } from "../lib/codes.ts";
 import { countries, country, countryMeta } from "../lib/content.ts";
 import { countryCounts, evidenceMap } from "../lib/evidence.ts";
 import { sortCountries } from "../lib/indexes.ts";
+import { nameInSentence } from "../lib/names.ts";
 
 interface Props {
   lang: Lang;
@@ -17,12 +18,14 @@ interface Props {
 const { lang } = Astro.props;
 const t = dict[lang];
 const b = browse[lang];
+const other: Lang = lang === "en" ? "ja" : "en";
 const list = sortCountries(lang, countries(lang), readings);
 const map = evidenceMap(countries(lang));
 type Id = Parameters<typeof country>[1];
 const name = (id: Id) => country(lang, id)!.name;
-/** Country name as it reads mid-sentence: English needs "the" before a few names ("the Netherlands"). */
-const inText = (id: Id) => (lang === "en" && ["nl", "gb", "us"].includes(id) ? `the ${name(id)}` : name(id));
+/** Country name as it reads mid-sentence ("the Netherlands", "the Nordics"); see lib/names.ts. */
+const inText = (id: Id, capitalize = false) => nameInSentence(lang, id, name(id), { capitalize });
+const steps = (n: number) => (n === 1 ? "1 step" : `${n} steps`);
 
 // Relativity teaser: one country in the middle of Evaluating, read from either end.
 const ev = cultureMapText[lang].evaluating;
@@ -32,7 +35,7 @@ const relativity =
   sJp !== null && sNl !== null && sGb !== null
     ? lang === "ja"
       ? `Meyer の Evaluating（${ev.name}）の尺度では、${name("nl")}は「${ev.left}」の端に、${name("jp")}は「${ev.right}」の端に置かれています。${name("gb")}はその中間です。${name("jp")}から見れば${name("gb")}の指摘は ${Math.abs(sJp - sGb)} 段階率直で、${name("nl")}から見れば ${Math.abs(sGb - sNl)} 段階遠回しです。同じ位置でも、どこから読むかで見え方が変わります。`
-      : `On Meyer's Evaluating scale, ${inText("nl")} sits at the “${ev.left.toLowerCase()}” end and ${name("jp")} at the “${ev.right.toLowerCase()}” end, with ${inText("gb")} in between. From Japan, British criticism reads ${Math.abs(sJp - sGb)} steps more direct; from the Netherlands, ${Math.abs(sGb - sNl)} steps more indirect. The position is the same; what changes is where you read it from.`
+      : `On Meyer's Evaluating scale, ${inText("nl")} sits at the “${ev.left.toLowerCase()}” end and ${name("jp")} at the “${ev.right.toLowerCase()}” end, with ${inText("gb")} in between. From Japan, British criticism reads ${steps(Math.abs(sJp - sGb))} more direct; from the Netherlands, ${steps(Math.abs(sGb - sNl))} more indirect. The position is the same; what changes is where you read it from.`
     : "";
 const examples = [
   ["jp", "de"],
@@ -42,15 +45,19 @@ const examples = [
 ---
 
 <Base lang={lang}>
-  <section class="hero">
-    <h1>{t["site.expansion"]}</h1>
+  <header class="hero headword">
+    <h1>{b["home.title"]}</h1>
+    <p class="hw-gloss">
+      <span lang={other}>{browse[other]["home.title"]}</span>
+      <span class="hw-code">{t["site.title"]}</span>
+    </p>
     <p class="premise">
       {b["home.premise"]}{lang === "ja" ? "（" : " ("}<a
         href="https://link.springer.com/article/10.1007/s11575-016-0283-x"
         rel="noopener">{b["home.premiseCite"]}</a
       >{lang === "ja" ? "）" : ")"}
     </p>
-  </section>
+  </header>
 
   <section class="section" id="evidence" aria-labelledby="h-evidence">
     <h2 id="h-evidence">{b["home.mapTitle"]}</h2>
@@ -62,7 +69,7 @@ const examples = [
     <section class="teaser" aria-labelledby="h-scales">
       <h2 id="h-scales">{b["home.scalesTitle"]}</h2>
       <p>{relativity}</p>
-      <p class="more"><a href={localePath(lang, "/scales/evaluating/")}>{b["home.scalesLink"]} →</a></p>
+      <p class="more"><a href={localePath(lang, "/scales/evaluating/")}>{b["home.scalesLink"](ev.name)} →</a></p>
     </section>
     <section class="teaser" aria-labelledby="h-compare">
       <h2 id="h-compare">{b["home.compareTitle"]}</h2>
@@ -75,7 +82,7 @@ const examples = [
                 <span class="mono pair-code" aria-hidden="true">
                   {DISPLAY_CODE[from]} → {DISPLAY_CODE[to]}
                 </span>
-                {b["home.compareExample"](inText(from), inText(to))}
+                {b["home.compareExample"](inText(from), inText(to, true))}
               </a>
             </li>
           ))
@@ -125,11 +132,6 @@ const examples = [
 </Base>
 
 <style>
-  .hero h1 {
-    font-size: var(--s-44);
-    letter-spacing: -0.01em;
-    margin-block-end: 1rem;
-  }
   .premise {
     font-size: var(--s-20);
     line-height: 1.6;
@@ -139,10 +141,10 @@ const examples = [
   .premise:lang(ja) {
     line-height: 1.8;
   }
+  .hero {
+    margin-block-end: 0;
+  }
   @media (max-width: 30rem) {
-    .hero h1 {
-      font-size: var(--s-34);
-    }
     .premise {
       font-size: var(--s-17);
     }
@@ -197,7 +199,7 @@ const examples = [
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
     gap: 0 2rem;
   }
   .country-grid a,

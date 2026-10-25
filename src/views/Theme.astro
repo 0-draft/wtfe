@@ -10,7 +10,8 @@ import { type Lang, localePath } from "../i18n/ui.ts";
 import Base from "../layouts/Base.astro";
 import { DISPLAY_CODE } from "../lib/codes.ts";
 import { claimsByTheme, country, isTranslated } from "../lib/content.ts";
-import { countConfidence, THEME_SCALES } from "../lib/evidence.ts";
+import { countConfidence } from "../lib/evidence.ts";
+import { THEME_SCALES } from "../lib/theme-scales.ts";
 
 interface Props {
   lang: Lang;
@@ -187,6 +188,11 @@ const scales = [
   }
   .sub-code {
     color: var(--ink);
+    font-weight: 500;
+    border: 1px solid var(--ink);
+    padding: 0 0.375rem;
+    border-radius: 2px;
+    line-height: 1.4;
   }
   .entries {
     padding: 0;

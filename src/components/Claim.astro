@@ -80,9 +80,16 @@ const dated = newest !== undefined && newest < DATED_BEFORE;
     font-size: var(--s-14);
     color: var(--ink-2);
   }
+  /* Same look as the usage label, but not a .usage: it is a date flag, not a confidence level. */
   .entry-dated {
     color: var(--ink-2);
     font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .entry-dated:lang(ja) {
+    letter-spacing: 0;
+    text-transform: none;
   }
   .entry-id {
     margin-inline-start: auto;

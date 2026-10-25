@@ -71,24 +71,30 @@ const nav = [
               </a>
             ))
           }
-          <span class="tools">
-            <a class="lang-switch" href={localePath(other, here)} hreflang={other} lang={other} data-lang-switch>
-              {t["nav.lang"]}
-            </a>
-            <button
-              class="theme-toggle"
-              type="button"
-              data-theme-toggle
-              data-labels={JSON.stringify({
-                auto: t["nav.themeAuto"],
-                light: t["nav.themeLight"],
-                dark: t["nav.themeDark"],
-              })}
-            >
-              <span>{t["nav.theme"]}</span>: <span data-theme-label>{t["nav.themeAuto"]}</span>
-            </button>
-          </span>
         </nav>
+        <div class="tools">
+          <a
+            class="lang-switch"
+            href={localePath(other, here)}
+            hreflang={other}
+            lang={other}
+            data-lang-switch
+          >
+            {t["nav.lang"]}
+          </a>
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            data-labels={JSON.stringify({
+              auto: t["nav.themeAuto"],
+              light: t["nav.themeLight"],
+              dark: t["nav.themeDark"],
+            })}
+          >
+            {t["nav.theme"]}{lang === "ja" ? "：" : ": "}<span class="tt-value" data-theme-label>{t["nav.themeAuto"]}</span>
+          </button>
+        </div>
       </div>
     </header>
     <slot name="running-head" />
