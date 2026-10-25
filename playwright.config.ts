@@ -1,7 +1,9 @@
 import { defineConfig, devices } from "@playwright/test";
 
 // The site is served under the GitHub Pages project path; tests navigate relative to it.
-const origin = "http://127.0.0.1:4471";
+// PW_ORIGIN points the tests at an already-running server (e.g. `astro dev --port 4480`) and skips webServer.
+const external = process.env.PW_ORIGIN;
+const origin = external ?? "http://127.0.0.1:4471";
 
 export default defineConfig({
   testDir: "tests/e2e",
@@ -14,9 +16,11 @@ export default defineConfig({
     { name: "desktop", use: { ...devices["Desktop Chrome"] } },
     { name: "mobile", use: { ...devices["Pixel 7"] } },
   ],
-  webServer: {
-    command: "pnpm exec astro preview --port 4471 --host 127.0.0.1",
-    url: `${origin}/wtfe/`,
-    reuseExistingServer: !process.env.CI,
-  },
+  webServer: external
+    ? undefined
+    : {
+        command: "pnpm exec astro preview --port 4471 --host 127.0.0.1",
+        url: `${origin}/wtfe/`,
+        reuseExistingServer: !process.env.CI,
+      },
 });
