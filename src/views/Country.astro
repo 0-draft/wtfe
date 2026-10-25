@@ -1,10 +1,14 @@
 ---
 import Claim from "../components/Claim.astro";
-import { type CountryId, CULTURE_MAP_SCALES, HOFSTEDE_DIMENSIONS, THEME_IDS } from "../data/schema.ts";
+import CountryScales from "../components/CountryScales.astro";
+import Headword from "../components/Headword.astro";
+import RunningHead from "../components/RunningHead.astro";
+import ThumbIndex from "../components/ThumbIndex.astro";
+import { type CountryId, THEME_IDS } from "../data/schema.ts";
 import { dict, themeNames } from "../i18n/dict.ts";
 import type { Lang } from "../i18n/ui.ts";
 import Base from "../layouts/Base.astro";
-import { country, countryMeta, isTranslated } from "../lib/content.ts";
+import { country, isTranslated } from "../lib/content.ts";
 
 interface Props {
   lang: Lang;
@@ -13,83 +17,64 @@ interface Props {
 const { lang, id } = Astro.props;
 const t = dict[lang];
 const c = country(lang, id)!;
-const meta = countryMeta(id);
 const translated = isTranslated(lang, id);
 ---
 
-<Base lang={lang} title={c.name} description={c.oneLiner}>
-  <article class="country" lang={translated ? lang : "ja"}>
-    <header class="page-head">
-      <h1>{c.name}</h1>
-      <p class="lead">{c.oneLiner}</p>
-      {!translated && <p class="notice" lang={lang}>{t["country.untranslated"]}</p>}
-      <p>{c.intro}</p>
-    </header>
+<Base lang={lang} title={c.name} description={c.oneLiner} section="countries">
+  <RunningHead slot="running-head" word={c.name} sub={t["country.intro"]} />
+  <div class="with-thumb">
+    <article class="country" lang={translated ? lang : "ja"}>
+      <Headword lang={lang} id={id}>
+        <p class="lead">{c.oneLiner}</p>
+        {!translated && <p class="notice" lang={lang}>{t["country.untranslated"]}</p>}
+        <p class="measure">{c.intro}</p>
+      </Headword>
 
-    <nav class="toc" aria-label={t["nav.themes"]}>
-      {THEME_IDS.map((th) => <a href={`#${th}`}>{themeNames[lang][th]}</a>)}
-    </nav>
+      <nav class="toc" aria-label={t["nav.themes"]}>
+        <a href="#variance">{t["country.variance"]}</a>
+        {THEME_IDS.map((th) => <a href={`#${th}`}>{themeNames[lang][th]}</a>)}
+        <a href="#scales">{t["nav.scales"]}</a>
+      </nav>
 
-    {
-      THEME_IDS.map((th) => (
-        <section id={th} aria-labelledby={`h-${th}`}>
-          <h2 id={`h-${th}`}>{themeNames[lang][th]}</h2>
-          <ul class="claims">
-            {c.themes[th].map((claim) => (
-              <Claim claim={claim} lang={lang} />
-            ))}
-          </ul>
-        </section>
-      ))
-    }
-
-    <section aria-labelledby="h-variance">
-      <h2 id="h-variance">{t["country.variance"]}</h2>
-      <ul class="variance">{c.variance.map((v) => <li>{v}</li>)}</ul>
-    </section>
-  </article>
-
-  {
-    meta && (
-      <section class="scores" aria-labelledby="h-hofstede">
-        <h2 id="h-hofstede">{t["country.hofstede"]}</h2>
-        <div class="table-wrap" tabindex="0">
-          <table>
-            <thead>
-              <tr>
-                <td />
-                {HOFSTEDE_DIMENSIONS.map((d) => (
-                  <th scope="col">{d.toUpperCase()}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {meta.hofstede.map((h) => (
-                <tr>
-                  <th scope="row">{h.country}</th>
-                  {HOFSTEDE_DIMENSIONS.map((d) => (
-                    <td>{h.scores[d] ?? "—"}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <h2>{t["country.cultureMap"]}</h2>
-        <div class="table-wrap" tabindex="0">
-          <table>
-            <tbody>
-              {CULTURE_MAP_SCALES.map((s) => (
-                <tr>
-                  <th scope="row">{s}</th>
-                  <td>{meta.cultureMap[s].step ?? "—"}</td>
-                  <td>{meta.cultureMap[s].note ?? ""}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+      <section class="section" id="variance" data-rh={t["country.variance"]}>
+        <h2>{t["country.variance"]}</h2>
+        <ul class="variance measure">{c.variance.map((v) => <li>{v}</li>)}</ul>
       </section>
-    )
-  }
+
+      {
+        THEME_IDS.map((th) => (
+          <section class="section" id={th} data-rh={themeNames[lang][th]}>
+            <h2>
+              {themeNames[lang][th]}
+              <span class="h-aside">{t["home.claims"](c.themes[th].length)}</span>
+            </h2>
+            <ul class="entries">
+              {c.themes[th].map((claim) => (
+                <Claim claim={claim} lang={lang} />
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+
+      <section class="section" id="scales" data-rh={t["nav.scales"]}>
+        <h2>{t["nav.scales"]}</h2>
+        <CountryScales lang={lang} id={id} />
+      </section>
+    </article>
+    <ThumbIndex lang={lang} current={id} />
+  </div>
 </Base>
+
+<style>
+  .entries {
+    padding: 0;
+    margin: 0;
+  }
+  .variance {
+    padding-inline-start: 1.25rem;
+  }
+  .variance li + li {
+    margin-block-start: 0.5rem;
+  }
+</style>

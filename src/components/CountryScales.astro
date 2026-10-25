@@ -1,0 +1,59 @@
+---
+// Interim: plain tables. Replaced by vantage strips (research/design.md, figure A).
+import { type CountryId, CULTURE_MAP_SCALES, HOFSTEDE_DIMENSIONS } from "../data/schema.ts";
+import { dict } from "../i18n/dict.ts";
+import type { Lang } from "../i18n/ui.ts";
+import { countryMeta } from "../lib/content.ts";
+
+interface Props {
+  lang: Lang;
+  id: CountryId;
+}
+const { lang, id } = Astro.props;
+const t = dict[lang];
+const meta = countryMeta(id);
+---
+
+{
+  meta && (
+    <>
+      <h3>{t["country.cultureMap"]}</h3>
+      <div class="table-wrap" tabindex="0">
+        <table>
+          <tbody>
+            {CULTURE_MAP_SCALES.map((s) => (
+              <tr>
+                <th scope="row">{s}</th>
+                <td class="mono">{meta.cultureMap[s].step ?? "—"}</td>
+                <td>{meta.cultureMap[s].note ?? ""}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <h3>{t["country.hofstede"]}</h3>
+      <div class="table-wrap" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <td />
+              {HOFSTEDE_DIMENSIONS.map((d) => (
+                <th scope="col">{d.toUpperCase()}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {meta.hofstede.map((h) => (
+              <tr>
+                <th scope="row">{h.country}</th>
+                {HOFSTEDE_DIMENSIONS.map((d) => (
+                  <td class="mono">{h.scores[d] ?? "—"}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  )
+}
