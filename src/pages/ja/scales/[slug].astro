@@ -1,0 +1,14 @@
+---
+import { ALL_SCALES, scaleBySlug } from "../../../components/strip/data.ts";
+import { scaleSlug } from "../../../i18n/scales.ts";
+import { scaleKind } from "../../../lib/strip.ts";
+import Scale from "../../../views/Scale.astro";
+
+export function getStaticPaths() {
+  return ALL_SCALES.map((k) => ({ params: { slug: scaleSlug(k, scaleKind(k)) } }));
+}
+
+const scale = scaleBySlug(Astro.params.slug)!;
+---
+
+<Scale lang="ja" scale={scale} />
