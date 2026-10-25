@@ -8,7 +8,7 @@
       {
         "id": "jp-design-1",
         "text": "IPA の DX 白書 2021 では、アジャイル開発を活用している企業は日本 19.3%、米国 55.0% だった。DevOps は 10.9% と 52.6%、デザイン思考は 14.7% と 53.2% で、反復型の手法の普及に大きな差がある。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "DXへの取り組みで日本は米国に後れを取っている IPAが「DX白書2021」を発刊（@IT）",
@@ -75,7 +75,7 @@
       {
         "id": "jp-failure-2",
         "text": "メルカリは 2018 年の技術ブログで、障害報告では個人を批判せず原因究明に集中するため「コードを主語として話す」方針を公開した。振り返りには職種を問わず全員が参加していた。",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "メルカリの3つのValueで取り組むインシデント対応",
@@ -101,7 +101,7 @@
       {
         "id": "jp-feedback-1",
         "text": "Erin Meyer の Culture Map は、日本をネガティブフィードバックが極めて間接的で、対立を避ける側に分類している。人前での批判は避けるのが基本とされる。",
-        "confidence": "medium",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Erin Meyer's Culture Map: Where Japan Actually Falls (Accent Language)",
@@ -202,7 +202,7 @@
       {
         "id": "jp-communication-1",
         "text": "Meyer の Communicating 尺度で、日本は韓国・インドネシアと並んで最も高文脈な側に置かれ、象徴的な表現として「空気を読む」が挙げられている。",
-        "confidence": "medium",
+        "confidence": "weak",
         "sources": [
           {
             "title": "The Culture Map Summary (Readingraphics)",

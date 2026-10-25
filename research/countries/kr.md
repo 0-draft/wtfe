@@ -14,7 +14,8 @@ Hofstede（The Culture Factor 現行値）: PDI 60 / IDV 58 / MAS 39 / UAI 85 / 
 
 - Hofstede の UAI 85 は世界でも上位の不確実性回避 [強] ([source](https://www.theculturefactor.com/country-comparison-tool?countries=japan%2Csouth+korea))
 - 反証として、Toss は「失敗への恐れより速い実行」を公式に掲げている。速さを重視するプロダクト企業は UAI のイメージに当てはまらない [中] ([source](https://toss.im/tossfeed/article/toss-dev-conference-2021))
-- 2022 年 10 月の板橋（Pangyo）データセンター火災による Kakao の大規模障害について、Kakao は同年 12 月の if(kakao) dev 2022 で原因分析と再発防止策を公開した。大規模な公開 postmortem の事例 [強] ([source](https://www.kakaocorp.com/page/detail/9843?lang=ENG)) ([source](https://byline.network/2022/12/1208/))
+- 2022 年 10 月の板橋（Pangyo）データセンター火災による Kakao の大規模障害について、Kakao は同年 12 月の if(kakao) dev 2022 で原因分析と再発防止策を公開した。対策にはデータセンターの二重化や運用管理ツールの三重化が含まれる。大規模な公開 postmortem の事例 [強] ([source](https://www.kakaocorp.com/page/detail/9843?lang=ENG)) ([source](https://byline.network/2022/12/1208/))
+  _訂正 2026-10-25: 再発防止策の中身を出典 (Kakao 発表) の記載どおり「DC の二重化・運用管理ツールの三重化」と明記した_
 - 社内の blame 文化に関する一次データはほぼ見つからなかった。手がかりは、ウアハン兄弟（配達の民族）の KPT 振り返りの原則「人のせいにしない」と、SK Devocean の資料「責任者を問責しない段階が最も難しい」程度 [弱] ([source](https://techblog.woowahan.com/2677/)) ([source](https://devocean.sk.com/vlog/seminar/Postmortem.pdf))
 
 ## Feedback & code review
@@ -47,7 +48,8 @@ Hofstede（The Culture Factor 現行値）: PDI 60 / IDV 58 / MAS 39 / UAI 85 / 
 ## OSS & community
 
 - Octoverse 2023 で韓国の開発者は 190 万人超、前年比 22% 増 [強] ([source](https://github.blog/news-insights/research/the-state-of-open-source-and-ai/))
-- 政府主導で貢献者を育てている。NIPA の「オープンソース・コントリビューション・アカデミー」は 2020 年に始まり、2026 年は 11 チーム・約 260 人が 13 週間、グローバル OSS に貢献している [強] ([source](https://zdnet.co.kr/view/?no=20260713162757)) ([source](https://www.nipa.kr/home/2-1/16130))
+- 政府主導で貢献者を育てている。NIPA は「オープンソース・コントリビューション・アカデミー」を運営している。2024 年は 931 人の応募から 282 人が選ばれ、2026 年も発足式が開かれた [強] ([source](https://zdnet.co.kr/view/?no=20260713162757)) ([source](https://www.nipa.kr/home/2-1/16130))
+  _訂正 2026-10-25: 「2020 年開始、2026 年は 11 チーム・約 260 人・13 週間」を、出典で確認できる「2024 年は応募 931 人・選抜 282 人、2026 年も発足式」に差し替えた。前者の数字は引用した 2 ページで確認できなかった_
 - 企業発の OSS には Naver の Pinpoint（APM、約 13.9k stars）や LINE の Armeria（約 5.1k stars）がある。LINE は日韓にまたがる企業 [中] ([source](https://github.com/pinpoint-apm/pinpoint)) ([source](https://github.com/line/armeria))
 - 英語力は EF EPI 2024 で 50 位（Moderate）。日本（92 位）よりはかなり上 [強] ([source](https://www.nippon.com/en/japan-data/h02199/))
 - 調査データの限界として、Stack Overflow Survey 2024 の韓国の回答は 144 件（表記揺れの別項目を足しても約 199 件）しかなく、代表性がない [強] ([source](https://survey.stackoverflow.co/2024/developer-profile))

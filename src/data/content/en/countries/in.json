@@ -8,7 +8,7 @@
       {
         "id": "in-design-1",
         "text": "TCS announced in 2011 that it had been assessed at CMMI Level 5 enterprise-wide for both CMMI-DEV and CMMI-SVC, and says it was the first company in the world to reach enterprise-wide Level 5 for SVC.",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "TCS: First software firm assessed at Level 5 enterprise-wide in software services and development",
@@ -189,7 +189,7 @@
       {
         "id": "in-communication-2",
         "text": "Explainers of Meyer's Trusting scale place India on the relationship-based side, where trust built through personal relationships is needed before work begins.",
-        "confidence": "medium",
+        "confidence": "weak",
         "sources": [
           {
             "title": "The Erin Meyer Culture Map Explained",
@@ -202,7 +202,7 @@
       {
         "id": "in-work-1",
         "text": "NASSCOM estimated India's tech industry revenue for FY2025 at about $282.6 billion, with 5.8 million employees (a net addition of 126,000). A 2026 revision raised these to $297 billion and 5.82 million.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Business Today: Indian tech industry to reach $300 billion revenue milestone in FY26",
@@ -219,7 +219,7 @@
       {
         "id": "in-work-2",
         "text": "According to NASSCOM and Zinnov, India had more than 1,700 global capability centers (GCCs) of foreign companies employing more than 1.9 million people as of FY2024. GCCs are also spreading to tier-2 cities.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "NASSCOM: India GCC Landscape Report — The 5-year Journey",
@@ -235,7 +235,7 @@
       {
         "id": "in-work-3",
         "text": "Attrition at the large IT services firms swings with the business cycle. In Q2 FY23 it was 27.1% at Infosys, 23% at Wipro and 21.5% at TCS; by Q4 FY24 it had fallen to 12.5% at TCS and 12.6% at Infosys.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Business Today: TCS, Infosys, Wipro — How HR issues plague IT sector",
@@ -312,7 +312,7 @@
       {
         "id": "in-oss-3",
         "text": "Zerodha launched FLOSS/fund in October 2024 to give $1 million a year to open source projects worldwide. In 2025 it paid out a total of $1 million to projects including Blender, FFmpeg and OpenSSL.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Entrepreneur: Zerodha launches USD 1 Mn annual fund",

@@ -7,7 +7,8 @@ Hofstede (Culture Factor 現行値): PDI 68 / IDV 47 / MAS 64 / UAI 93 / LTO 49 
 ## Design & quality
 
 - 競技プログラミングの層が厚い。Warsaw 大は ICPC 世界大会で 2003 年と 2007 年に優勝し、2012 年と 2017 年に 2 位、2019 年に 4 位。Jagiellonian 大 (Kraków) も 2006 年に 2 位 [強] ([source](https://cphof.org/contest/icpc), [source](https://en.uw.edu.pl/tag/acm-icpc/))
-- HackerRank (2016、古い) の国別スコアでは Poland は 98 前後で上位 4 か国に入った (中国 100、ロシア 99.9、米国は 28 位で 78) [中] ([source](https://www.hackerrank.com/blog/which-country-would-win-in-the-programming-olympics))
+- HackerRank (2016、古い) の国別スコアでは Poland は 98 前後で、中国 (100)・ロシア (99.9) に次ぐ 3 位 (米国は 28 位で 78) [中] ([source](https://www.hackerrank.com/blog/which-country-would-win-in-the-programming-olympics))
+  _訂正 2026-10-25: 「上位 4 か国」→「3 位」。出典の順位表ではポーランドは 3 位_
 - UAI 93 と不確実性回避が非常に高い。レビュー・承認の場では裏付け資料が期待され、資料なしでは提案が弱くなるという指摘がある [中] ([source](https://www.theculturefactor.com/country-comparison-tool?countries=poland), [source](https://www.talaera.com/culture/polish-business-culture/))
 
 ## Failure & risk
@@ -30,7 +31,8 @@ Hofstede (Culture Factor 現行値): PDI 68 / IDV 47 / MAS 64 / UAI 93 / LTO 49 
 
 ## Work style & careers
 
-- 実態調査 (Bulldogjob 2024) では雇用契約 50.3%、B2B 37.4%。2025 年は雇用契約 53.8%、B2B 38.5%。手取り中央値は B2B が 22,011 PLN、雇用契約が 9,236 PLN [強] ([source](https://bulldogjob.com/it-report/2024/salaries))
+- 実態調査 (Bulldogjob 2024) では雇用契約 50.3%、B2B 37.4%。2025 年は雇用契約 53.8%、B2B 38.5%。フルタイムの平均月収は B2B が 22,011 PLN (請求額ベース)、雇用契約が 9,236 PLN (手取り) [強] ([source](https://bulldogjob.com/it-report/2024/salaries))
+  _訂正 2026-10-25: 「手取り中央値」→「平均月収」。出典の数字は中央値ではなく平均で、B2B は手取りではなく請求額ベース_
 - 求人ベース (No Fluff Jobs 2024 H1) では、シニア求人の 74% が B2B を提示しているのに対し、ジュニア向けは雇用契約が 56% で多数 [強] ([source](https://polandinsight.com/new-regulations-may-force-shift-from-b2b-to-employment-contracts-for-99-of-polish-it-companies-26946/))
 - business services センターの雇用は約 48.9 万人 (2025 Q1、前年比 +6.2%) で、労働者の 19.6% が外国人 (ABSL 2025) [強] ([source](https://absl.pl/en/news/p/absl-report-polands-business-services-sector-grows-value-and-strategic-importance))
 

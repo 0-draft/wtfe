@@ -14,8 +14,10 @@ Hofstede (Culture Factor 現行値): PDI 68 / IDV 74 / MAS 43 / UAI 86 / LTO 60 
 ## Failure & risk
 
 - UAI 86 は西欧で高い部類 (ドイツ 65 より明確に高い)。ルールや手続きで不確実性を減らす志向 [強] ([source](https://www.theculturefactor.com/country-comparison-tool?countries=france%2Cgermany))
-- GEM 2024: 機会があると見ている人のうち 42.7% が「失敗が怖くて起業しない」と回答。世界平均 (47%) よりむしろ低く、ドイツ (約 40%、2025) とも大差ない。「フランスは失敗に不寛容」という通説はデータ上弱い [強] ([source](https://www.gemconsortium.org/news/a-year-of-contrast-for-entrepreneurship-in-france), [source](https://www.gemconsortium.org/country-profile/64))
-- CNIL (データ保護当局) は 2024 年に 87 件の制裁、計約 5,521 万ユーロの罰金を科した (2022 年 21 件→2023 年 42 件→2024 年 87 件)。約 1/3 はセキュリティ義務違反で、小規模事業者向けの簡易手続による制裁が増えている [強] ([source](https://www.cnil.fr/fr/sanctions-et-mesures-correctrices-bilan-2024-de-laction-de-la-cnil))
+- GEM 2024: 機会があると見ている人のうち 42.7% が「失敗が怖くて起業しない」と回答。GEM がドイツについて示す約 5 人に 2 人 (2025) と大差ない。「フランスは失敗に不寛容」という通説はデータ上弱い [強] ([source](https://www.gemconsortium.org/news/a-year-of-contrast-for-entrepreneurship-in-france), [source](https://www.gemconsortium.org/country-profile/64))
+  _訂正 2026-10-25: 「世界平均 (47%) よりむしろ低く」を削除。引用した GEM の 2 ページに世界平均 47% の記載なし。ドイツは出典の表現 (約 5 人に 2 人) に合わせた_
+- CNIL (データ保護当局) は 2024 年に 87 件の制裁、計約 5,521 万ユーロの罰金を科した (2022 年 21 件→2023 年 42 件→2024 年 87 件)。簡易手続による 69 件のうち 11 件がデータセキュリティ義務違反で、小規模事業者向けの簡易手続による制裁が増えている [強] ([source](https://www.cnil.fr/fr/sanctions-et-mesures-correctrices-bilan-2024-de-laction-de-la-cnil))
+  _訂正 2026-10-25: 「約 1/3 はセキュリティ義務違反」→「簡易手続 69 件のうち 11 件」。出典の内訳は簡易手続分についての数字で、全体の 1/3 とは書いていない_
 - 社内の postmortem や blameless 文化について、フランス固有の定量データは見つからなかった [弱] (該当ソースなし)
 
 ## Feedback & code review
@@ -48,8 +50,10 @@ Hofstede (Culture Factor 現行値): PDI 68 / IDV 74 / MAS 43 / UAI 86 / LTO 60 
 ## OSS & community
 
 - 法制度で後押ししている: République numérique 法 (2016 年) で、行政のソースコードが開示請求の対象となる行政文書になり、職員 50 人以上の行政機関には公開義務がある。第 16 条は自由ソフトウェアとオープンフォーマットの利用を奨励 [強] ([source](https://en.wikipedia.org/wiki/Loi_pour_une_R%C3%A9publique_num%C3%A9rique), [source](https://scinfolex.com/2017/12/08/les-logiciels-produits-par-les-administrations-sont-passes-en-open-source-par-defaut-et-voici-pourquoi/))
-- DINUM (省庁横断デジタル局) が運営する SILL (省庁横断の推奨自由ソフトウェア一覧) は 2013 年の 32 本から、2024 年末に 500 本、2026 年に 600 本超へ [強] ([source](https://code.gouv.fr/fr/blog/500-logiciels-libres-au-sill/), [source](https://www.ouvert.numerique.gouv.fr/actualites/socle-interministeriel-logiciels-libres-sill-evolutions-2026/))
-- 独仏の共同開発: DINUM の La Suite numérique と ドイツ ZenDiS の openDesk が 2024 年から協業している。共同エディタ Docs はドイツが共同出資し、オランダも参加中 [強] ([source](https://github.com/suitenumerique/docs), [source](https://program.foss-backstage.de/fossback25/talk/XPGWX8/))
+- DINUM (省庁横断デジタル局) が運営する SILL (省庁横断の推奨自由ソフトウェア一覧) は 2012 年に始まり、2024 年 11 月に 500 本、2026 年の告知ではこれまでの掲載が 600 本超 [強] ([source](https://code.gouv.fr/fr/blog/500-logiciels-libres-au-sill/), [source](https://www.ouvert.numerique.gouv.fr/actualites/socle-interministeriel-logiciels-libres-sill-evolutions-2026/))
+  _訂正 2026-10-25: 「2013 年の 32 本から」を削除し開始年を 2012 年に、500 本到達を「2024 年末」→「2024 年 11 月」に修正。引用した 2 ページに 2013 年 32 本の記載なし_
+- 独仏の共同開発: DINUM の La Suite numérique と ドイツ ZenDiS の openDesk が 2024 年から協業している。共同エディタ Docs は独仏の共同イニシアチブで、オランダも参加しつつある [強] ([source](https://github.com/suitenumerique/docs), [source](https://program.foss-backstage.de/fossback25/talk/XPGWX8/))
+  _訂正 2026-10-25: 「ドイツが共同出資」→「独仏の共同イニシアチブ」。出典 (suitenumerique/docs) の表現に合わせ、出資の有無は断定しない_
 - 代表的プロジェクト: VLC は 1996 年に École Centrale Paris の学生プロジェクトとして始まり、2001 年に GPL 化、2009 年以降は独立 NPO が運営。scikit-learn は Inria が 2010 年から資金と人を出し、2023 年に spin-off の Probabl へ移行 [強] ([source](https://www.videolan.org/videolan/), [source](https://jbkempf.com/blog/15-years-of-VLC/), [source](https://scikit-learn.org/stable/about.html))
 - GitHub の開発者アカウント数: Octoverse 2024 で 280 万超 (前年比 +20%)。Stack Overflow 2025 の回答数は 5 位 (1,408 人、4%) [強] ([source](https://github.blog/news-insights/octoverse/octoverse-2024/), [source](https://survey.stackoverflow.co/2025/developers))
 

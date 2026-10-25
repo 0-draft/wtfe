@@ -8,7 +8,7 @@
       {
         "id": "ua-design-1",
         "text": "ICPC 世界大会では、リヴィウ国立大学が 2008 年に、キーウ国立大学（タラス・シェフチェンコ）が 2010 年に、いずれも 4 位で金メダルを獲得した。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Competitive Programming Hall Of Fame: ICPC World Finals standings",
@@ -20,7 +20,7 @@
       {
         "id": "ua-design-2",
         "text": "Hofstede の不確実性回避（UAI）は 95 と極めて高い。受託企業 N-iX（2019）はこれを、詳細な計画と背景説明を求める傾向に結びつけている。売り手側の記事である。",
-        "confidence": "weak",
+        "confidence": "medium",
         "sources": [
           {
             "title": "The Culture Factor — Country comparison tool",
@@ -62,7 +62,7 @@
       {
         "id": "ua-failure-3",
         "text": "中央銀行の統計（AIN.UA の報道）では、IT サービス輸出は 2022 年の 73 億ドルをピークに、2024 年は約 64 億ドル（前年比 4.2% 減）まで減った。dev.ua によれば、2025 年は約 66.6 億ドルと小幅に回復した。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "AIN: Ukraine's IT services exports decreased 4.2% to $6.4B in 2024",
@@ -119,7 +119,7 @@
       {
         "id": "ua-hierarchy-1",
         "text": "Hofstede の権力格差（PDI）は 92、不確実性回避（UAI）は 95 と、どちらも高い。Edge Executive Services（2024）はこれを、何層にも重なる組織階層やルールの多さと結びつけて説明している。",
-        "confidence": "weak",
+        "confidence": "medium",
         "sources": [
           {
             "title": "The Culture Factor — Country comparison tool",
@@ -192,7 +192,7 @@
       {
         "id": "ua-work-2",
         "text": "2022 年に始まった Diia.City の gig 契約は所得税 5%、軍事税 5%、社会保険料は最低賃金の 22% だ。2026 年 10 月時点で居住企業は 4,600 社超、対象は約 21.7 万人に達する。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "dev.ua: The number of residents of Diia.City exceeded 4,600",
@@ -228,7 +228,7 @@
       {
         "id": "ua-oss-1",
         "text": "GitLab は Dmitriy Zaporozhets が 2011 年にウクライナの自宅で開発を始めた OSS で、2014 年にオランダ出身の Sytse Sijbrandij と事業化した。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "CNBC: Ukraine looks to technology to help rebuild its economy",
@@ -240,7 +240,7 @@
       {
         "id": "ua-oss-2",
         "text": "Grammarly（OSS ではなくプロダクト）は Max Lytvyn、Alex Shevchenko、Dmytro Lider が 2009 年にキーウで創業した。最大の開発拠点は現在もキーウにある。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Wikipedia: Max Lytvyn",
@@ -256,7 +256,7 @@
       {
         "id": "ua-oss-3",
         "text": "開発者コミュニティ DOU.ua の年次調査「Портрет айтівця 2026」には 14,631 人が回答した。給与や契約形態を、コミュニティ自身が毎年公開している。",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "DOU: Портрет айтівця 2026",

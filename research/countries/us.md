@@ -51,7 +51,8 @@ _調査日: 2026-10-25_
 ## OSS とコミュニティ
 
 - Octoverse 2025 で US は開発者数 1 位（2020 年 10.2M → 2025 年 28M）。OSS へのコントリビューター数はインドに次ぐ 2 位、総コントリビューション数では 1 位 [強] ([source](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/))
-- 2020→2025 年の年平均成長率は、上位 5 か国の中で US が最も遅く（20.96%）、2030 年にはインドに抜かれる予測 [中] ([source](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/))
+- 2020→2025 年に US・英国・カナダの開発者数は 2 倍超、インドやブラジルは 4 倍超に増えた。2030 年にはインドに抜かれる予測 [中] ([source](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/))
+  _訂正 2026-10-25: 「上位 5 か国で最も遅い年平均成長率 20.96%」を削除。出典に CAGR の記載はなく、「2 倍超／4 倍超」という表現のみ_
 
 ## 一言で
 

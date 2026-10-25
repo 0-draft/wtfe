@@ -56,7 +56,7 @@
       {
         "id": "gb-failure-2",
         "text": "GOV.UK publishes incident reports, such as one on increased error rates on 5 January 2022. A former GDS staff member wrote in 2018 that publishing them builds trust and an atmosphere where people can learn safely.",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "Inside GOV.UK: Incident report, 5 January 2022",
@@ -73,7 +73,7 @@
       {
         "id": "gb-failure-3",
         "text": "In a 2019 blog post, the London fintech Monzo explained that it runs on-call with two people and records every incident. The Pragmatic Engineer warns against \"blameless buck-passing,\" where blame is shifted while claiming to be blameless.",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "Monzo: How we respond to incidents",
@@ -118,7 +118,7 @@
       {
         "id": "gb-feedback-2",
         "text": "The Anglo-Dutch translation guide that Meyer cites reads \"With all due respect\" as \"I think you are wrong\" and \"Very interesting\" as \"I don't like it.\" The guide is half a joke, and its authorship is disputed.",
-        "confidence": "weak",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Erin Meyer: How To Say \"This Is Crap\" In Different Cultures",
@@ -160,7 +160,7 @@
       {
         "id": "gb-hierarchy-2",
         "text": "In the public sector, the service assessment against the Service Standard acts as a de facto gate. According to DfE guidance, a service can fail its assessment if it does not publish new source code without a good reason.",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "DfE: Service Standard 12 Make new source code open",
@@ -212,7 +212,7 @@
       {
         "id": "gb-communication-3",
         "text": "In 2015, Inside GOV.UK published a blog post describing what happens when something goes wrong on GOV.UK.",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "Inside GOV.UK: What happens when things go wrong on GOV.UK",
@@ -275,7 +275,7 @@
       {
         "id": "gb-oss-1",
         "text": "According to Octoverse 2024, the UK has more than 4 million developers on GitHub, up 19% year over year. Octoverse 2025 projects about 11 million by 2030.",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "GitHub Octoverse 2024",

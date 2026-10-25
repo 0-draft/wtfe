@@ -51,7 +51,7 @@
       {
         "id": "kr-failure-1",
         "text": "Introducing its 2021 developer conference SLASH21, Toss presented a culture that values fast execution over fear of failure.",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "토스가 처음 여는 개발자 컨퍼런스는 어떤 모습일까? : SLASH21 (토스피드)",
@@ -80,7 +80,7 @@
       {
         "id": "kr-failure-3",
         "text": "Woowa Brothers, the company behind Baemin, lists \"don't blame people\" among its principles for KPT retrospectives. An SK Devocean presentation says the hardest step in a postmortem is not holding the person responsible to account.",
-        "confidence": "weak",
+        "confidence": "strong",
         "sources": [
           {
             "title": "팀 문화의 탄생 (우아한형제들 기술블로그)",
@@ -115,7 +115,7 @@
       {
         "id": "kr-feedback-2",
         "text": "One Woowa Brothers team has a rule that reviewers leave a comment praising the author even when they have nothing to correct.",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "공통시스템개발팀 코드 리뷰 문화 개선 이야기 (우아한형제들 기술블로그)",
@@ -152,7 +152,7 @@
       {
         "id": "kr-hierarchy-3",
         "text": "Under Toss's DRI system, discussion is open regardless of rank, but one directly responsible individual makes the final call. Information is shared on a \"100 inside, 0 outside\" principle.",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "토스 문화 - 입사자만 볼 수 있는 문서를 공개합니다 (토스피드)",
@@ -186,7 +186,7 @@
       {
         "id": "kr-communication-1",
         "text": "On Meyer's Communicating scale, South Korea sits with Japan and Indonesia at the most high-context end.",
-        "confidence": "medium",
+        "confidence": "weak",
         "sources": [
           {
             "title": "The Culture Map Summary (Readingraphics)",
@@ -234,7 +234,7 @@
       {
         "id": "kr-work-3",
         "text": "In KOCCA's 2024 survey of game industry workers (n=1,510), 34.3% had experienced crunch and 69.9% were on an all-inclusive wage system, which bundles overtime into a fixed salary. At companies with fewer than 50 employees the share exceeded 90%.",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "게임업계 포괄임금제, 2024년에도 70%였다 (디스이즈게임)",
@@ -280,7 +280,7 @@
       {
         "id": "kr-work-6",
         "text": "In the 2021 Programmers developer survey, 63.1% of respondents worked at companies with 50 or fewer developers.",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "2021 프로그래머스 개발자 설문조사",

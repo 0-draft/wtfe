@@ -206,7 +206,7 @@
       {
         "id": "fr-work-3",
         "text": "Numeum によると、デジタル部門の雇用は約 66.6 万人だ。2024 年の採用は 5.18 万人で前年の 8.38 万人から減り、離職率は 22% から 16% に下がった。大手 ESN の採用減が目立ち、ソフトウェア企業は比較的堅調だった。",
-        "confidence": "strong",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Numeum — Le syndicat",

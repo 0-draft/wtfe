@@ -50,7 +50,8 @@ _調査日: 2026-10-25_
 ## OSS とコミュニティ
 
 - Octoverse で UK は開発者数の上位 5 か国に入る（2024 年時点で 4M 超、前年比 +19%）。2030 年の予測は 11M [中] ([source](https://github.blog/news-insights/octoverse/octoverse-2024/), [source](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/))
-- OpenUK（2023）の推計では、2022 年に OSS が支えた GVA は £13.59bn で、UK テック部門の GVA の 27% にあたる。業界団体による推計なので割り引いて読む [中] ([source](https://openuk.uk/report/state-of-open-the-uk-in-2023-phase-2-part-1/))
+- OpenUK（2023）の推計では、2022 年に OSS が UK テック部門の GVA の 27% を支えた。業界団体による推計なので割り引いて読む [中] ([source](https://openuk.uk/report/state-of-open-the-uk-in-2023-phase-2-part-1/))
+  _訂正 2026-10-25: 「£13.59bn」を削除。引用ページで金額を確認できず、確認できたのは 27% のみ_
 - 公共部門が「デフォルトでコード公開」を制度として持っているのは UK の特徴。GOV.UK の Smart Answers を別の機関が再利用し、2 か月かかる見込みだった開発を 1 週間未満で終えた例がある [強] ([source](https://gds.blog.gov.uk/2017/09/04/the-benefits-of-coding-in-the-open))
 
 ## 一言で

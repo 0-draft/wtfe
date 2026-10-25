@@ -8,7 +8,7 @@
       {
         "id": "us-design-1",
         "text": "Google ではコードを書く前に比較的インフォーマルな design doc を書く。Malte Ubl の 2020 年の解説によると、重視するのは網羅的な仕様ではなく、検討したトレードオフと代替案の記録だ。",
-        "confidence": "medium",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Design Docs at Google (Malte Ubl)",
@@ -20,7 +20,7 @@
       {
         "id": "us-design-2",
         "text": "Ubl は design doc を「必要な分だけ長く、できるだけ短く」書くべきだとし、重いウォーターフォール型の仕様書とは区別している。",
-        "confidence": "medium",
+        "confidence": "weak",
         "sources": [
           {
             "title": "Design docs - A design doc (Malte Ubl)",
@@ -256,7 +256,7 @@
       {
         "id": "us-oss-2",
         "text": "同じ Octoverse 2025 は、米国・英国・カナダの開発者数が 2020〜2025 年に 2 倍超、インドやブラジルは 4 倍超に増えたとしている。2030 年の予測ではインドが米国を上回る。",
-        "confidence": "medium",
+        "confidence": "strong",
         "sources": [
           {
             "title": "GitHub Octoverse 2025",

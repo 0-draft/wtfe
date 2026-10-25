@@ -29,7 +29,8 @@ Hofstede (Culture Factor 現行値): PDI 35 / IDV 79 / MAS 66 / UAI 65 / LTO 57 
 
 - Meyer は、ドイツは米国より階層的なのに、決定前に合意形成する傾向が強い (Deciding scale で consensual 寄り) と明記している [中] ([source](https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf))
 - 事業所組織法 (BetrVG) §87 Abs.1 Nr.6 により、従業員の行動や成績を監視「できる」技術的設備の導入には事業所委員会 (Betriebsrat、事業所単位の従業員代表) の共同決定が必要。連邦労働裁判所 (BAG) は 2022 年 3 月 8 日 (1 ABR 20/21) に MS Office 365 も対象と判断した。実際に監視するかどうかは関係なく、監視に客観的に使えるかどうかで決まる。開発ツールの導入まで労使交渉の対象になりうる [強] ([source](https://www.hensche.de/bag-beschluss-vom-08.03.2022-1-abr-20-21-zustaendigkeit-des-gesamtbetriebsrats-bei-unternehmenseinheitlicher-nutzung-von-microsoft-office-365.html), [source](https://www.lulius.ai/blog/mitbestimmung-87-betrvg))
-- 反例・ばらつき: N26 (Berlin) では 2020 年に創業者が Betriebsrat 選挙に反対し、裁判所の差止めまで争ったが、最終的に選出された (投票率約 30%)。スタートアップでは共同決定が当然ではなく、争点になる [強] ([source](https://www.cnbc.com/2020/08/13/german-digital-bank-n26-faces-outcry-from-staff-over-management.html), [source](https://en.wikipedia.org/wiki/N26))
+- 反例・ばらつき: N26 (Berlin) では 2020 年に経営陣が Betriebsrat 選挙に反対し、裁判所の差止めまで争ったが、同年 11〜12 月に選出された (投票率約 30%)。スタートアップでは共同決定が当然ではなく、争点になる [強] ([source](https://www.cnbc.com/2020/08/13/german-digital-bank-n26-faces-outcry-from-staff-over-management.html), [source](https://en.wikipedia.org/wiki/N26))
+  _訂正 2026-10-25: 「創業者が反対」→「経営陣が反対」。出典 (CNBC) は management として報じている。選出時期 (2020 年 11〜12 月) を追記_
 
 ## Communication & documentation
 
@@ -49,7 +50,8 @@ Hofstede (Culture Factor 現行値): PDI 35 / IDV 79 / MAS 66 / UAI 65 / LTO 57 
 
 - GitHub の開発者アカウント数: Octoverse 2024 で 350 万超 (前年比 +21%)。Octoverse 2025 は、2020〜2025 年で日独とも 3 倍超に増え、欧州の主要市場の一つと記述 [強] ([source](https://github.blog/news-insights/octoverse/octoverse-2024/), [source](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/))
 - Stack Overflow Developer Survey 2025 の回答者数はドイツが米国に次ぐ 2 位 (3,022 人、8.6%)。回答者の偏りの指標で、人口あたりの開発者数ではない [強] ([source](https://survey.stackoverflow.co/2025/developers))
-- 国として OSS のインフラに資金を出している: Sovereign Tech Fund (現 Sovereign Tech Agency) は 2022〜2024 年に 60 超のプロジェクトへ約 2,350 万ユーロを投資 (curl、OpenSSH、systemd、PHP、FFmpeg など)。年間予算は 350 万→1,150 万→1,700 万ユーロ [強] ([source](https://en.wikipedia.org/wiki/Sovereign_Tech_Agency), [source](https://news.slashdot.org/story/24/10/18/2326255/germanys-sovereign-tech-fund-has-invested-over-249m-in-open-source-in-two-years))
+- 国として OSS のインフラに資金を出している: Sovereign Tech Fund (現 Sovereign Tech Agency) は設立から 2 年の 2024 年 10 月までに 60 の OSS 技術へ 2,490 万ドル超を投資 (curl、OpenSSH、systemd、PHP、FFmpeg など) [強] ([source](https://en.wikipedia.org/wiki/Sovereign_Tech_Agency), [source](https://news.slashdot.org/story/24/10/18/2326255/germanys-sovereign-tech-fund-has-invested-over-249m-in-open-source-in-two-years))
+  _訂正 2026-10-25: 「60 超・約 2,350 万ユーロ」→「60・2,490 万ドル超」（出典 Slashdot の表記）。年間予算「350 万→1,150 万→1,700 万ユーロ」は引用元で確認できないため削除_
 - コミュニティ: CCC の Chaos Communication Congress は 38C3 (2024 年 12 月、Hamburg) で約 1.5 万人が参加し、ボランティア約 3,500 人。KDE e.V. は 1997 年に Tübingen で登録され、現在の本部は Berlin。SUSE は 1992 年創業で Nuremberg 拠点 [強] ([source](https://www.scip.ch/en/?labs.20250123=), [source](https://ev.kde.org/corporate/statutes/), [source](https://en.wikipedia.org/wiki/SUSE_S.A.))
 - 公共部門: Schleswig-Holstein 州は行政の 3 万台の PC を LibreOffice/Linux へ移行すると 2024 年に表明し、LibreOffice は 2025 年末に約 80% 完了。連邦は ZenDiS (デジタル主権センター) を通じて openDesk を開発し、1.0 を 2024 年 10 月にリリース [強] ([source](https://blog.documentfoundation.org/blog/2024/04/04/german-state-moving-30000-pcs-to-libreoffice/), [source](https://cybernews.com/news/schleswig-holstein-germany-microsoft-open-source/), [source](https://en.wikipedia.org/wiki/ZenDiS))
 

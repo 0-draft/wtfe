@@ -48,7 +48,8 @@ Hofstede (The Culture Factor 現行値): PDI 77 / IDV 24 / MAS 56 / UAI 40 / LTO
 
 ## OSS とコミュニティ
 
-- Octoverse 2025 によると、India の開発者は 21.9M で世界 2 位 (2020 年の 4.5M から約 4.9 倍)。2025 年の新規は 5.2M 超で、世界の新規の 14% 超を占める。OSS コントリビュータ数ではすでに世界 1 位で、2030 年には 57.5M となり米国を抜くと予測されている。総コントリビューション量はまだ米国が上 [強] ([source](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/))
+- Octoverse 2025 によると、India の開発者は 21.9M で世界 2 位 (2020 年の 4.5M から約 4.9 倍)。2025 年の新規は 5M 超で、世界の新規の 14% 超を占める。OSS コントリビュータ数ではすでに世界 1 位で、2030 年には 57.5M となり米国を抜くと予測されている。総コントリビューション量はまだ米国が上 [強] ([source](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/))
+  _訂正 2026-10-25: 2025 年の新規「5.2M 超」→「5M 超」。出典 (Octoverse 2025) の表記は 500 万人超_
 - Stack Overflow Developer Survey 2024 の回答者のうち、India は 7.2% で国別 3 位 [強] ([source](https://survey.stackoverflow.co/2024/developer-profile))
 - Zerodha は 2024 年 10 月に FLOSS/fund を立ち上げ、年 $1M を世界の OSS に拠出している。2025 年には Blender、FFmpeg、OpenSSL などへ合計 $1M を支払った [強] ([source](https://www.entrepreneur.com/en-in/news-and-trends/zerodha-launches-usd-1-mn-annual-fund-to-support-open/481437), [source](https://www.opensourceforu.com/2025/10/zerodha-announces-final-675000-tranche-for-global-open-source-projects-advocates-sovereign-foss-fund/))
 - 反対側の証拠として、Nadh 本人が「インドは FOSS を大量に使っているが、貢献はほぼ無視できる程度」と述べ、sovereign FOSS fund の設立を求めている。人数の多さと貢献の深さは別物 [中] ([source](https://analyticsindiamag.com/global-tech/indias-foss-contributions-remain-negligible-despite-heavy-adoption-says-zerodha-cto))
