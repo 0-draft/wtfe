@@ -1,0 +1,12 @@
+---
+import { allPairs, type Pair, pairSlug, parsePairSlug } from "../../lib/compare.ts";
+import Compare from "../../views/Compare.astro";
+
+export function getStaticPaths() {
+  return allPairs().map((p) => ({ params: { pair: pairSlug(p) } }));
+}
+
+const pair = parsePairSlug(Astro.params.pair as string) as Pair;
+---
+
+<Compare lang="en" pair={pair} />

@@ -1,0 +1,505 @@
+---
+/**
+ * Signature figure B, the gap ruler (research/design.md). One mini strip per scale: the vantage country (A) as a
+ * filled 朱 dot, the other (B) as a hollow 藍 ring, a bracket between them and a sentence. Static SVG; every strip
+ * has a text equivalent. Meyer's eight scales are grouped and sorted by gap; Hofstede's six follow in their own block.
+ */
+import type { CultureMapScale, HofstedeDimension } from "../../data/schema.ts";
+import { compareDict } from "../../i18n/compare.ts";
+import { cultureMapText, hofstedeText, type ScaleText, scaleSlug } from "../../i18n/scales.ts";
+import { type Lang, localePath } from "../../i18n/ui.ts";
+import { DISPLAY_CODE } from "../../lib/codes.ts";
+import { hofstedeMembers } from "../../lib/compare.ts";
+import {
+  type GapLine,
+  groupLines,
+  hofstedeLines,
+  memberBreakdown,
+  meyerLines,
+  positionsText,
+  regionNote,
+  type Side,
+} from "../../lib/compare-text.ts";
+
+interface Props {
+  lang: Lang;
+  a: Side;
+  b: Side;
+}
+const { lang, a, b } = Astro.props;
+const t = compareDict[lang];
+
+const meyer = groupLines(meyerLines(lang, a, b));
+const hofstede = hofstedeLines(lang, a, b);
+const hofScored = hofstede.filter((l) => l.group !== "none");
+const hofMissing = hofstede.filter((l) => l.group === "none");
+
+/** Percent position on the strip; the line runs from PAD% to (100 - PAD)% so end labels never clip. */
+const PAD = 7;
+const pct = (v: number, lo: number, hi: number) => PAD + ((v - lo) / (hi - lo)) * (100 - 2 * PAD);
+const hofMax = Math.max(100, ...hofstede.flatMap((l) => [l.a ?? 0, l.b ?? 0]));
+
+interface Strip {
+  key: string;
+  kind: "meyer" | "hofstede";
+  text: ScaleText;
+  line: GapLine<string>;
+  /** Mark positions in percent. */
+  xa: number | null;
+  xb: number | null;
+  /** Step ticks in percent. */
+  ticks: number[];
+  codeA: string;
+  codeB: string;
+  /** Member ticks of a region (Hofstede only): [percent, side]. */
+  members: [number, "a" | "b"][];
+  notes: string[];
+}
+
+const secondary = (side: Side, key: CultureMapScale) => side.meta.cultureMap[key].basis === "secondary";
+/** Nordic notes such as "DK -2 / SE -1" say which member a step refers to; free-text notes stay on the scale page. */
+const memberNote = (side: Side, key: CultureMapScale) => {
+  const note = side.meta.cultureMap[key].note;
+  return note && /^[A-Z]{2} [+-]?\d/.test(note)
+    ? t["ruler.members"](DISPLAY_CODE[side.id], note.replaceAll("-", "−"))
+    : null;
+};
+
+function meyerStrip(line: GapLine<CultureMapScale>): Strip {
+  const k = line.key;
+  return {
+    key: k,
+    kind: "meyer",
+    text: cultureMapText[lang][k],
+    line,
+    xa: line.a === null ? null : pct(line.a, -3, 3),
+    xb: line.b === null ? null : pct(line.b, -3, 3),
+    ticks: [-3, -2, -1, 0, 1, 2, 3].map((s) => pct(s, -3, 3)),
+    codeA: DISPLAY_CODE[a.id] + (secondary(a, k) ? "†" : ""),
+    codeB: DISPLAY_CODE[b.id] + (secondary(b, k) ? "†" : ""),
+    members: [],
+    notes: [memberNote(a, k), memberNote(b, k)].filter((n): n is string => n !== null),
+  };
+}
+
+function hofstedeStrip(line: GapLine<HofstedeDimension>): Strip {
+  const k = line.key;
+  const regionTicks = (side: Side, which: "a" | "b"): [number, "a" | "b"][] =>
+    side.meta.hofstede.length > 1 ? hofstedeMembers(side.meta)[k].map((m) => [pct(m.score, 0, hofMax), which]) : [];
+  return {
+    key: k,
+    kind: "hofstede",
+    text: hofstedeText[lang][k],
+    line,
+    xa: line.a === null ? null : pct(line.a, 0, hofMax),
+    xb: line.b === null ? null : pct(line.b, 0, hofMax),
+    ticks: [0, 50, 100].map((v) => pct(v, 0, hofMax)),
+    codeA: DISPLAY_CODE[a.id],
+    codeB: DISPLAY_CODE[b.id],
+    members: [...regionTicks(a, "a"), ...regionTicks(b, "b")],
+    notes: [memberBreakdown(lang, a, k), memberBreakdown(lang, b, k)].filter((n): n is string => n !== null),
+  };
+}
+
+const groups = [
+  ["different", t["group.different"], meyer.different.map(meyerStrip)],
+  ["close", t["group.close"], meyer.close.map(meyerStrip)],
+] as const;
+const hofStrips = hofScored.map(hofstedeStrip);
+const regionNotes = [regionNote(lang, a), regionNote(lang, b)].filter((n): n is string => n !== null);
+const hofSource = a.meta.hofstede[0]?.source ?? b.meta.hofstede[0]?.source;
+const scaleHref = (s: Strip) => localePath(lang, `/scales/${scaleSlug(s.key as CultureMapScale, s.kind)}/`);
+const scaleId = (s: Strip) => `gap-${s.kind}-${s.key}`;
+const polesOf = (s: Strip) =>
+  s.kind === "meyer" ? s.text : { left: `${s.text.left} (0)`, right: `${s.text.right} (100)` };
+---
+
+<figure class="ruler" aria-labelledby="ruler-meyer" data-rh={t["ruler.heading"]}>
+  <h2 id="ruler-meyer" class="ruler-h">{t["ruler.heading"]}</h2>
+  <p class="section-lead">{t["ruler.lead"](a.noun.object, b.noun.object)}</p>
+  <p class="legend">
+    <span class="key">
+      <svg class="key-mark" width="20" height="20" aria-hidden="true"><circle class="m-a" cx="10" cy="10" r="7"></circle></svg>
+      <span>{t["ruler.legendA"](a.noun.object)}</span>
+    </span>
+    <span class="key">
+      <svg class="key-mark" width="24" height="20" aria-hidden="true"><circle class="m-b" cx="12" cy="10" r="7"></circle></svg>
+      <span>{t["ruler.legendB"](b.noun.object)}</span>
+    </span>
+  </p>
+  {
+    groups.map(
+      ([id, heading, strips]) =>
+        strips.length > 0 && (
+          <section class="group" aria-labelledby={`g-${id}`} data-group={id}>
+            <h3 id={`g-${id}`}>
+              {heading}
+              <span class="h-count mono">{strips.length}</span>
+            </h3>
+            <ol class="rows">
+              {strips.map((s) => (
+                <li class="row" aria-labelledby={scaleId(s)}>
+                  <div class="row-text">
+                    <h4 id={scaleId(s)} class="row-scale">
+                      <a href={scaleHref(s)}>{s.text.name}</a>
+                    </h4>
+                    <p class="row-sentence">{s.line.sentence}</p>
+                    {s.notes.map((n) => (
+                      <p class="row-note mono">{n}</p>
+                    ))}
+                  </div>
+                  <div class="row-strip">
+                    <p class="poles" aria-hidden="true">
+                      <span>{s.text.left}</span>
+                      <span>{s.text.right}</span>
+                    </p>
+                    <svg class="strip" width="100%" height="64" aria-hidden="true">
+                      <line class="axis" x1={`${PAD}%`} x2={`${100 - PAD}%`} y1="30" y2="30" />
+                      {s.ticks.map((x) => (
+                        <line class="tick" x1={`${x}%`} x2={`${x}%`} y1="25" y2="35" />
+                      ))}
+                      {s.xa !== null && s.xb !== null && s.xa !== s.xb && (
+                        <g class="bracket">
+                          <line x1={`${Math.min(s.xa, s.xb)}%`} x2={`${Math.max(s.xa, s.xb)}%`} y1="45" y2="45" />
+                          <line x1={`${s.xa}%`} x2={`${s.xa}%`} y1="40" y2="45" />
+                          <line x1={`${s.xb}%`} x2={`${s.xb}%`} y1="40" y2="45" />
+                        </g>
+                      )}
+                      {s.xb !== null && (
+                        <circle class="m-b" cx={`${s.xb}%`} cy="30" r={s.xa === s.xb ? 10 : 7} />
+                      )}
+                      {s.xa !== null && <circle class="m-a" cx={`${s.xa}%`} cy="30" r={s.xa === s.xb ? 5 : 7} />}
+                      {s.xa !== null && (
+                        <text class="c-a" x={`${s.xa}%`} y="15" text-anchor="middle">
+                          {s.codeA}
+                        </text>
+                      )}
+                      {s.xb !== null && (
+                        <text class="c-b" x={`${s.xb}%`} y="61" text-anchor="middle">
+                          {s.codeB}
+                        </text>
+                      )}
+                    </svg>
+                    <p class="sr-only">{positionsText(lang, "meyer", s.line, a, b, s.text)}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ),
+    )
+  }
+  {
+    meyer.none.length > 0 && (
+      <section class="group" aria-labelledby="g-none" data-group="none">
+        <h3 id="g-none">
+          {t["group.none"]}
+          <span class="h-count mono">{meyer.none.length}</span>
+        </h3>
+        <p class="group-lead">{t["group.noneLead"]}</p>
+        <ul class="none-list">
+          {meyer.none.map((l) => (
+            <li>
+              <a href={localePath(lang, `/scales/${scaleSlug(l.key, "meyer")}/`)}>{cultureMapText[lang][l.key].name}</a>
+              <span class="none-sentence">{l.sentence}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+  <figcaption class="prov">
+    {meyer.different.concat(meyer.close).some((l) => secondary(a, l.key) || secondary(b, l.key)) && (
+      <span class="prov-line">{t["ruler.secondary"]}</span>
+    )}
+    <span class="prov-line">
+      {t["ruler.provenance"]} <a href={localePath(lang, "/method/#culture-map")}>{t["ruler.how"]}</a>
+    </span>
+  </figcaption>
+</figure>
+
+<figure class="ruler" aria-labelledby="ruler-hofstede" data-rh={t["hofstede.heading"]}>
+  <h2 id="ruler-hofstede" class="ruler-h">{t["hofstede.heading"]}</h2>
+  <p class="section-lead">{t["hofstede.lead"](a.noun.object, b.noun.object)}</p>
+  <p class="taras">{t["hofstede.caption"]}</p>
+  {regionNotes.map((n) => <p class="region-note">{n}</p>)}
+  <ol class="rows">
+    {
+      hofStrips.map((s) => (
+        <li class="row" aria-labelledby={scaleId(s)}>
+          <div class="row-text">
+            <h3 id={scaleId(s)} class="row-scale">
+              <a href={scaleHref(s)}>{s.text.name}</a>
+            </h3>
+            <p class="row-sentence">{s.line.sentence}</p>
+            {s.notes.map((n) => (
+              <p class="row-note">{n}</p>
+            ))}
+          </div>
+          <div class="row-strip">
+            <p class="poles" aria-hidden="true">
+              <span>
+                <span class="mono">0</span> {s.text.left}
+              </span>
+              <span>
+                {s.text.right} <span class="mono">100</span>
+              </span>
+            </p>
+            <svg class="strip" width="100%" height="64" aria-hidden="true">
+              <line class="axis" x1={`${PAD}%`} x2={`${100 - PAD}%`} y1="30" y2="30" />
+              {s.ticks.map((x) => (
+                <line class="tick" x1={`${x}%`} x2={`${x}%`} y1="25" y2="35" />
+              ))}
+              {s.members.map(([x, which]) => (
+                <line class={`member member-${which}`} x1={`${x}%`} x2={`${x}%`} y1="22" y2="38" />
+              ))}
+              {s.xa !== null && s.xb !== null && s.xa !== s.xb && (
+                <g class="bracket">
+                  <line x1={`${Math.min(s.xa, s.xb)}%`} x2={`${Math.max(s.xa, s.xb)}%`} y1="45" y2="45" />
+                  <line x1={`${s.xa}%`} x2={`${s.xa}%`} y1="40" y2="45" />
+                  <line x1={`${s.xb}%`} x2={`${s.xb}%`} y1="40" y2="45" />
+                </g>
+              )}
+              {s.xb !== null && <circle class="m-b" cx={`${s.xb}%`} cy="30" r={s.xa === s.xb ? 10 : 7} />}
+              {s.xa !== null && <circle class="m-a" cx={`${s.xa}%`} cy="30" r={s.xa === s.xb ? 5 : 7} />}
+              {s.xa !== null && (
+                <text class="c-a" x={`${s.xa}%`} y="15" text-anchor="middle">
+                  {s.codeA}
+                </text>
+              )}
+              {s.xb !== null && (
+                <text class="c-b" x={`${s.xb}%`} y="61" text-anchor="middle">
+                  {s.codeB}
+                </text>
+              )}
+            </svg>
+            <p class="sr-only">{positionsText(lang, "hofstede", s.line, a, b, polesOf(s))}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+  {
+    hofMissing.length > 0 && (
+      <ul class="none-list">
+        {hofMissing.map((l) => (
+          <li>
+            <a href={localePath(lang, `/scales/${scaleSlug(l.key, "hofstede")}/`)}>{hofstedeText[lang][l.key].name}</a>
+            <span class="none-sentence">{l.sentence}</span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+  <figcaption class="prov">
+    {hofSource && <span class="prov-line">{t["hofstede.provenance"](hofSource.title, String(hofSource.year ?? ""))}</span>}
+    <span class="prov-line"><a href={localePath(lang, "/method/#hofstede")}>{t["hofstede.how"]}</a></span>
+  </figcaption>
+</figure>
+
+<style>
+  .ruler {
+    margin: 3.5rem 0 0;
+  }
+  .ruler-h {
+    padding-block-start: 0.75rem;
+    border-block-start: 1px solid var(--ink);
+    margin-block-end: 0.75rem;
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    font-size: var(--s-15);
+    color: var(--ink-2);
+  }
+  .key {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .key-mark {
+    flex: none;
+  }
+  .group {
+    margin-block-start: 2rem;
+  }
+  .group h3 {
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+    font-family: var(--f-head);
+    font-weight: 700;
+  }
+  .h-count {
+    font-size: var(--s-14);
+    font-weight: 500;
+    color: var(--ink-3);
+  }
+  .group-lead {
+    color: var(--ink-2);
+    font-size: var(--s-15);
+    max-inline-size: var(--measure);
+    margin-block: 0.25rem 0.5rem;
+  }
+  .rows {
+    list-style: none;
+    margin: 0.5rem 0 0;
+    padding: 0;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: 0.5rem 2rem;
+    align-items: center;
+    padding-block: 0.875rem;
+    border-block-end: 1px solid var(--rule);
+  }
+  .row:first-child {
+    border-block-start: 1px solid var(--rule);
+  }
+  .row-scale {
+    font-family: var(--f-body);
+    font-size: var(--s-14);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    margin: 0;
+  }
+  .row-scale:lang(ja) {
+    letter-spacing: 0;
+  }
+  .row-scale a {
+    display: inline-block;
+    padding-block: 0.625rem;
+    margin-block: -0.625rem;
+  }
+  .row-sentence {
+    margin: 0.25rem 0 0;
+    font-size: var(--s-17);
+  }
+  .row-note {
+    margin: 0.25rem 0 0;
+    font-size: var(--s-14);
+    color: var(--ink-2);
+  }
+  .row-strip {
+    min-inline-size: 0;
+  }
+  .poles {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0;
+    font-size: var(--s-14);
+    line-height: 1.35;
+    color: var(--ink-2);
+  }
+  .poles {
+    flex-wrap: wrap;
+    gap: 0 1rem;
+  }
+  .poles > span {
+    white-space: nowrap;
+  }
+  .poles > span:last-child {
+    margin-inline-start: auto;
+  }
+  .poles .mono {
+    font-size: inherit;
+  }
+  .strip {
+    display: block;
+    overflow: visible;
+  }
+  .axis {
+    stroke: var(--axis);
+    stroke-width: 1.5;
+  }
+  .tick {
+    stroke: var(--axis);
+    stroke-width: 1;
+  }
+  .member {
+    stroke-width: 1.5;
+  }
+  .member-a {
+    stroke: var(--shu);
+  }
+  .member-b {
+    stroke: var(--ai);
+  }
+  .bracket line {
+    stroke: var(--ink-2);
+    stroke-width: 1.5;
+  }
+  .m-a {
+    fill: var(--shu);
+    stroke: var(--paper);
+    stroke-width: 1.5;
+  }
+  .m-b {
+    fill: var(--paper);
+    stroke: var(--ai);
+    stroke-width: 2.5;
+  }
+  .c-a,
+  .c-b {
+    font-family: var(--f-mono);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .c-a {
+    fill: var(--shu);
+  }
+  .c-b {
+    fill: var(--ai);
+  }
+  .none-list {
+    list-style: none;
+    margin: 0.5rem 0 0;
+    padding: 0;
+  }
+  .none-list li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+    align-items: baseline;
+    padding-block: 0.5rem;
+    border-block-end: 1px dashed var(--rule);
+    color: var(--ink-2);
+  }
+  .none-list a {
+    font-weight: 600;
+    color: var(--ink);
+    padding-block: 0.5rem;
+    margin-block: -0.5rem;
+  }
+  .taras,
+  .region-note {
+    max-inline-size: var(--measure);
+    font-size: var(--s-15);
+    border-inline-start: 3px solid var(--axis);
+    padding-inline-start: 0.75rem;
+    color: var(--ink-2);
+  }
+  .prov {
+    display: grid;
+    gap: 0.25rem;
+    margin-block-start: 1rem;
+    font-size: var(--s-14);
+    color: var(--ink-2);
+    max-inline-size: var(--measure);
+  }
+  .prov a {
+    display: inline-block;
+    padding-block: 0.625rem;
+    margin-block: -0.625rem;
+  }
+  @media (max-width: 44rem) {
+    .row {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>
