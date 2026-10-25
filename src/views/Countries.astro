@@ -1,0 +1,180 @@
+---
+import { browse, readings } from "../i18n/browse.ts";
+import { confidenceNames, dict } from "../i18n/dict.ts";
+import { type Lang, localePath } from "../i18n/ui.ts";
+import Base from "../layouts/Base.astro";
+import { DISPLAY_CODE } from "../lib/codes.ts";
+import { countries, country, isTranslated } from "../lib/content.ts";
+import { countryCounts } from "../lib/evidence.ts";
+import { groupByHead } from "../lib/indexes.ts";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = dict[lang];
+const b = browse[lang];
+const other: Lang = lang === "en" ? "ja" : "en";
+const groups = groupByHead(lang, countries(lang), readings);
+const levels = ["strong", "medium", "weak"] as const;
+---
+
+<Base lang={lang} title={b["countries.title"]} description={b["countries.lead"]} section="countries">
+  <header class="headword">
+    <h1>{b["countries.title"]}</h1>
+    <p class="lead">{b["countries.lead"]}</p>
+  </header>
+
+  <nav class="heads" aria-label={lang === "ja" ? "見出しの索引" : "Index letters"}>
+    {groups.map((g) => <a href={`#idx-${g.head}`}>{g.head}</a>)}
+  </nav>
+
+  {
+    groups.map((g) => (
+      <section class="group" aria-labelledby={`idx-${g.head}`}>
+        <h2 class="group-head" id={`idx-${g.head}`}>
+          {g.head}
+        </h2>
+        <ul class="entries">
+          {g.items.map((c) => {
+            const n = countryCounts(c);
+            const gloss = country(other, c.id)?.name;
+            return (
+              <li class="entry-row" id={c.id} lang={isTranslated(lang, c.id) ? lang : "ja"}>
+                <h3 class="hw">
+                  <a href={localePath(lang, `/countries/${c.id}/`)}>{c.name}</a>
+                </h3>
+                <p class="gloss">
+                  {gloss && <span lang={other}>{gloss}</span>}
+                  <span class="hw-code">{DISPLAY_CODE[c.id]}</span>
+                </p>
+                <p class="one">{c.oneLiner}</p>
+                <p class="counts">
+                  <span>{b["countries.counts"](n.total)}</span>
+                  {levels.map((lv) =>
+                    n[lv] ? (
+                      <span>
+                        <span class="usage" data-level={lv}>
+                          {confidenceNames[lang][lv]}
+                        </span>{" "}
+                        <span class="mono">{n[lv]}</span>
+                      </span>
+                    ) : null,
+                  )}
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    ))
+  }
+  <p class="foot-note">
+    <a href={localePath(lang, "/method/")}>{t["method.title"]} →</a>
+  </p>
+</Base>
+
+<style>
+  .headword h1 {
+    margin-block-end: 0.75rem;
+  }
+  .heads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.25rem;
+    border-block: 1px solid var(--rule);
+    margin-block-end: 1.5rem;
+  }
+  .heads a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-inline-size: 2.75rem;
+    min-block-size: 2.75rem;
+    font-family: var(--f-head);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .heads a:hover {
+    text-decoration: underline;
+  }
+  .group {
+    display: grid;
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    gap: 0 1rem;
+    border-block-start: 2px solid var(--ink);
+    padding-block-start: 0.75rem;
+    margin-block-end: 1.5rem;
+  }
+  .group-head {
+    font-size: var(--s-34);
+    line-height: 1;
+  }
+  .entries {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .entry-row {
+    padding-block-end: 1.25rem;
+    max-inline-size: var(--measure);
+  }
+  .entry-row + .entry-row {
+    border-block-start: 1px solid var(--rule);
+    padding-block-start: 1rem;
+  }
+  .hw {
+    font-family: var(--f-head);
+    font-weight: 800;
+    font-size: var(--s-24);
+    line-height: 1.25;
+  }
+  .hw a {
+    text-decoration: none;
+  }
+  .hw a:hover {
+    text-decoration: underline;
+  }
+  .gloss {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    align-items: baseline;
+    margin: 0.25rem 0 0.5rem;
+    color: var(--ink-2);
+  }
+  .hw-code {
+    font-family: var(--f-mono);
+    font-weight: 500;
+    font-size: var(--s-14);
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 0 0.375rem;
+    border-radius: 2px;
+  }
+  .one {
+    margin-block-end: 0.375rem;
+  }
+  .counts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.125rem 1rem;
+    align-items: baseline;
+    margin: 0;
+    font-size: var(--s-14);
+    color: var(--ink-2);
+  }
+  .foot-note {
+    margin-block-start: 2rem;
+    font-weight: 600;
+  }
+  @media (max-width: 30rem) {
+    .group {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .group-head {
+      font-size: var(--s-24);
+      margin-block-end: 0.5rem;
+    }
+  }
+</style>

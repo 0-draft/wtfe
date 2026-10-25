@@ -1,0 +1,373 @@
+---
+import { CONFIDENCE } from "../data/schema.ts";
+import { browse, readings } from "../i18n/browse.ts";
+import { confidenceNames } from "../i18n/dict.ts";
+import { type Lang, localePath } from "../i18n/ui.ts";
+import Base from "../layouts/Base.astro";
+import { DATED_BEFORE, DISPLAY_CODE } from "../lib/codes.ts";
+import { countries } from "../lib/content.ts";
+import { sortCountries } from "../lib/indexes.ts";
+import { buildCatalogue, claimsByCountry, filterCatalogue } from "../lib/sources.ts";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const b = browse[lang];
+const list = countries(lang);
+const catalogue = buildCatalogue(list, lang);
+const claimCount = new Set(catalogue.flatMap((e) => e.claims.map((c) => c.id))).size;
+const sorted = sortCountries(lang, list, readings);
+const nameOf = Object.fromEntries(list.map((c) => [c.id, c.name]));
+const byCountry = sorted.map((c) => ({ country: c, entries: filterCatalogue(catalogue, { country: c.id }) }));
+const fill = (n: number) => b["sources.shown"].replace("{n}", String(n)).replace("{total}", String(catalogue.length));
+---
+
+<Base lang={lang} title={b["sources.title"]} description={b["sources.lead"](catalogue.length, claimCount)} section="sources">
+  <header class="headword">
+    <h1>{b["sources.title"]}</h1>
+    <p class="lead">{b["sources.lead"](catalogue.length, claimCount)}</p>
+    <p class="note">{b["sources.datedNote"](DATED_BEFORE)}</p>
+  </header>
+
+  <nav class="toc" aria-label={b["sources.title"]}>
+    <a href="#catalogue">{b["sources.catalogue"]}</a>
+    <a href="#by-country">{b["sources.byCountry"]}</a>
+  </nav>
+
+  <section class="section" id="catalogue" aria-labelledby="h-catalogue">
+    <h2 id="h-catalogue">{b["sources.catalogue"]}</h2>
+
+    <form class="filter" data-source-filter hidden aria-labelledby="h-filter">
+      <h3 id="h-filter" class="sr-only">{b["sources.filter"]}</h3>
+      <label class="f-country">
+        <span>{b["sources.filterCountry"]}</span>
+        <select name="country">
+          <option value="">{b["sources.filterAll"]}</option>
+          {sorted.map((c) => <option value={c.id}>{c.name} ({DISPLAY_CODE[c.id]})</option>)}
+        </select>
+      </label>
+      <fieldset class="f-conf">
+        <legend>{b["sources.filterConfidence"]}</legend>
+        <label><input type="radio" name="confidence" value="" checked /> {b["sources.filterAny"]}</label>
+        {
+          CONFIDENCE.map((lv) => (
+            <label>
+              <input type="radio" name="confidence" value={lv} /> <span class="usage" data-level={lv}>{confidenceNames[lang][lv]}</span>
+            </label>
+          ))
+        }
+      </fieldset>
+      <output class="f-count" aria-live="polite" data-template={b["sources.shown"]}>{fill(catalogue.length)}</output>
+    </form>
+
+    <ol class="catalogue" data-total={catalogue.length}>
+      {
+        catalogue.map((e) => (
+          <li
+            id={e.slug}
+            class="src"
+            data-pairs={[...new Set(e.claims.map((c) => `${c.country}:${c.confidence}`))].join(" ")}
+          >
+            <p class="src-title">
+              <a href={e.urls[0]} rel="noopener">
+                {e.title}
+              </a>
+              {e.urls.length > 1 && (
+                <span class="src-more">
+                  {" "}
+                  ({b["sources.links"](e.urls.length)}:{" "}
+                  {e.urls.map((u, i) => (
+                    <>
+                      {i > 0 && " "}
+                      <a href={u} rel="noopener" class="mono">
+                        {i + 1}
+                      </a>
+                    </>
+                  ))}
+                  )
+                </span>
+              )}
+            </p>
+            <p class="src-meta">
+              <span class="mono">{e.host}</span>
+              {e.year !== undefined ? <span class="mono">{e.year}</span> : <span class="no-year">{b["sources.noYear"]}</span>}
+              {e.dated && <span class="dated">{b["sources.dated"]}</span>}
+            </p>
+            <p class="src-cited">
+              <span class="cited-label">{b["sources.citedBy"]}</span>
+              {claimsByCountry(e).map((g) => (
+                <span class="cited-group">
+                  <a class="mono cited-country" href={localePath(lang, `/countries/${g.country}/`)} title={nameOf[g.country]}>
+                    {DISPLAY_CODE[g.country]}
+                    <span class="sr-only"> {nameOf[g.country]}</span>
+                  </a>
+                  {g.claims.map((c) => (
+                    <a class="cited-claim" href={localePath(lang, `/countries/${c.country}/#${c.id}`)} data-level={c.confidence}>
+                      <span class="mono">{c.id}</span>
+                      <span class="sr-only"> {confidenceNames[lang][c.confidence]}</span>
+                    </a>
+                  ))}
+                </span>
+              ))}
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="section" id="by-country" aria-labelledby="h-by-country">
+    <h2 id="h-by-country">{b["sources.byCountry"]}</h2>
+    <p class="section-lead">{b["sources.byCountryLead"]}</p>
+    {
+      byCountry.map(({ country: c, entries }) => (
+        <details class="bc" id={`by-${c.id}`}>
+          <summary>
+            <span class="bc-name">{c.name}</span>
+            <span class="mono bc-code">{DISPLAY_CODE[c.id]}</span>
+            <span class="bc-count">{b["sources.countryCount"](entries.length)}</span>
+          </summary>
+          <ul>
+            {entries.map((e) => (
+              <li>
+                <a href={`#${e.slug}`}>{e.title}</a>
+                {e.year !== undefined && <span class="mono bc-year"> {e.year}</span>}
+              </li>
+            ))}
+          </ul>
+        </details>
+      ))
+    }
+  </section>
+</Base>
+
+<script>
+  // Small enhancement: filter the catalogue by country and by the confidence of the citing claim. The filter state
+  // lives in the query string so a filtered view can be shared; without JS the "By country" section does the job.
+  const form = document.querySelector<HTMLFormElement>("[data-source-filter]");
+  const items = [...document.querySelectorAll<HTMLLIElement>(".catalogue > li")];
+  const out = form?.querySelector<HTMLOutputElement>("output");
+  const shown = (n: number, total: number) =>
+    (out?.dataset.template ?? "{n}/{total}").replace("{n}", String(n)).replace("{total}", String(total));
+
+  if (form && out) {
+    form.hidden = false;
+    const select = form.querySelector<HTMLSelectElement>("select[name=country]")!;
+    const radios = [...form.querySelectorAll<HTMLInputElement>("input[name=confidence]")];
+    const params = new URLSearchParams(location.search);
+    const initC = params.get("country") ?? "";
+    const initL = params.get("confidence") ?? "";
+    if ([...select.options].some((o) => o.value === initC)) select.value = initC;
+    for (const r of radios) r.checked = r.value === initL || (initL === "" && r.value === "");
+    if (!radios.some((r) => r.checked)) radios[0]!.checked = true;
+
+    const apply = () => {
+      const c = select.value;
+      const l = radios.find((r) => r.checked)?.value ?? "";
+      let n = 0;
+      for (const li of items) {
+        const pairs = (li.dataset.pairs ?? "").split(" ");
+        const ok = pairs.some((p) => {
+          const [pc, pl] = p.split(":");
+          return (!c || pc === c) && (!l || pl === l);
+        });
+        li.hidden = !ok;
+        if (ok) n++;
+      }
+      out.textContent = shown(n, items.length);
+      const u = new URL(location.href);
+      if (c) u.searchParams.set("country", c);
+      else u.searchParams.delete("country");
+      if (l) u.searchParams.set("confidence", l);
+      else u.searchParams.delete("confidence");
+      history.replaceState(null, "", u);
+    };
+    form.addEventListener("change", apply);
+    form.addEventListener("submit", (e) => e.preventDefault());
+    apply();
+  }
+</script>
+
+<style>
+  .headword h1 {
+    margin-block-end: 0.75rem;
+  }
+  .note {
+    color: var(--ink-2);
+    font-size: var(--s-15);
+    max-inline-size: var(--measure);
+  }
+  .filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    align-items: flex-end;
+    padding: 0.75rem 0 1rem;
+    margin-block-end: 1rem;
+    border-block-end: 1px solid var(--rule);
+    font-size: var(--s-15);
+  }
+  .filter[hidden] {
+    display: none;
+  }
+  .f-country {
+    display: grid;
+    gap: 0.25rem;
+    font-weight: 600;
+  }
+  .f-country select {
+    font: inherit;
+    font-weight: 400;
+    min-block-size: 2.75rem;
+    padding-inline: 0.5rem;
+    color: var(--ink);
+    background: var(--raised);
+    border: 1px solid var(--axis);
+    border-radius: 2px;
+  }
+  .f-conf {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  .f-conf legend {
+    font-weight: 600;
+    padding: 0;
+    margin-block-end: 0.25rem;
+  }
+  .f-conf label {
+    display: inline-flex;
+    gap: 0.375rem;
+    align-items: center;
+    min-block-size: 2.75rem;
+    cursor: pointer;
+  }
+  .f-conf input {
+    inline-size: 1.125rem;
+    block-size: 1.125rem;
+    accent-color: var(--ink);
+    margin: 0;
+  }
+  .f-count {
+    flex-basis: 100%;
+    color: var(--ink-2);
+    font-size: var(--s-14);
+  }
+
+  .catalogue {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .src {
+    padding-block: 0.75rem;
+    border-block-end: 1px solid var(--rule);
+    max-inline-size: 48rem;
+  }
+  .src[hidden] {
+    display: none;
+  }
+  .src:target {
+    background: var(--selected);
+  }
+  .src p {
+    margin: 0;
+  }
+  .src-title {
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .src-more {
+    font-weight: 400;
+    font-size: var(--s-14);
+    color: var(--ink-2);
+  }
+  .src-more a {
+    display: inline-block;
+    min-inline-size: 1.75rem;
+    text-align: center;
+  }
+  .src-meta,
+  .src-cited {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.125rem 0.875rem;
+    align-items: baseline;
+    font-size: var(--s-14);
+    color: var(--ink-2);
+    margin-block-start: 0.25rem;
+  }
+  .no-year {
+    color: var(--ink-3);
+  }
+  .dated {
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+  .src-meta .dated:lang(en) {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .cited-label {
+    font-weight: 600;
+  }
+  .cited-group {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0 0.625rem;
+    align-items: baseline;
+  }
+  .cited-country {
+    color: var(--ink);
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .cited-claim {
+    color: var(--ink-2);
+    padding-inline-start: 0.375rem;
+    border-inline-start: 3px solid var(--ink);
+  }
+  .cited-claim[data-level="medium"] {
+    border-inline-start: 1.5px solid var(--ink-2);
+  }
+  .cited-claim[data-level="weak"] {
+    border-inline-start: 1.5px dashed var(--ink-3);
+  }
+
+  .bc {
+    border-block-end: 1px solid var(--rule);
+    max-inline-size: 48rem;
+  }
+  .bc summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.75rem;
+    align-items: baseline;
+    min-block-size: 2.75rem;
+    padding-block: 0.625rem;
+    cursor: pointer;
+  }
+  .bc-name {
+    font-weight: 700;
+  }
+  .bc-code,
+  .bc-count {
+    font-size: var(--s-14);
+    color: var(--ink-2);
+  }
+  .bc ul {
+    margin: 0 0 1rem;
+    padding-inline-start: 1.25rem;
+    font-size: var(--s-15);
+  }
+  .bc li + li {
+    margin-block-start: 0.25rem;
+  }
+  .bc-year {
+    color: var(--ink-3);
+  }
+</style>
