@@ -1,98 +1,1166 @@
 ---
-import { dict } from "../i18n/dict.ts";
-import type { Lang } from "../i18n/ui.ts";
+import Claim from "../components/Claim.astro";
+import RunningHead from "../components/RunningHead.astro";
+import { CONFIDENCE, CULTURE_MAP_SCALES, HOFSTEDE_DIMENSIONS } from "../data/schema.ts";
+import { confidenceNames, dict } from "../i18n/dict.ts";
+import { FRAMEWORK_SECTIONS, METHOD_SECTIONS, methodText } from "../i18n/method.ts";
+import { cultureMapText, hofstedeText } from "../i18n/scales.ts";
+import { type Lang, localePath } from "../i18n/ui.ts";
 import Base from "../layouts/Base.astro";
+import { DATED_BEFORE } from "../lib/codes.ts";
+import { country, countryMeta } from "../lib/content.ts";
 
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = dict[lang];
+const m = methodText[lang];
+const en = lang === "en";
+const p = (path: string) => localePath(lang, path);
+
+/** Every external source cited on this page, in one place so EN and JA cite the same URLs. */
+const L = {
+  meyerDeck: "https://www.tfwa.com/sites/tfwa.com/files/2023-10/Erin%20Meyer.pdf",
+  meyerHbr: "https://hbr.org/2014/05/navigating-the-cultural-minefield",
+  meyerTool:
+    "https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf",
+  portman:
+    "https://hennyportman.wordpress.com/2018/11/11/review-the-culture-map-decoding-how-people-think-lead-and-get-things-done-across-cultures/",
+  kimtasso:
+    "https://kimtasso.com/book-review-the-culture-map-by-erin-meyer-decoding-how-people-think-lead-and-get-things-done-across-cultures-diversity-and-cross-cultural-intelligence/",
+  hofstede2011: "https://scholarworks.gvsu.edu/orpc/vol2/iss1/8/",
+  hofstedeDoi: "https://doi.org/10.9707/2307-0919.1014",
+  simplyPsych: "https://www.simplypsychology.org/hofstedes-cultural-dimensions-theory.html",
+  globalIqHofstede: "https://global-iq.org/geert-hofstede/",
+  cultureFactor: "https://www.theculturefactor.com/country-comparison-tool?countries=japan%2Csouth+korea",
+  cyborlinkKr: "https://www.cyborlink.com/besite/korea_south.htm",
+  mcsweeney:
+    "https://www.semanticscholar.org/paper/Hofstede%E2%80%99s-Model-of-National-Cultural-Differences-A-McSweeney/61a7b5b4519277e6d750f76940e051cb72a2980e",
+  mcsweeneyRhul:
+    "https://pure.royalholloway.ac.uk/en/publications/hofstedes-identification-of-national-cultural-differences-and-the/",
+  williamson: "https://journals.sagepub.com/doi/10.1177/00187267025511006",
+  brewerVenaik: "https://journals.sagepub.com/doi/10.1177/0170840613517602",
+  taras: "https://link.springer.com/article/10.1007/s11575-016-0283-x",
+  beugelsdijk: "https://sms.onlinelibrary.wiley.com/doi/abs/10.1002/gsj.1098",
+  beugelsdijkPdf:
+    "https://pure.rug.nl/ws/files/98242804/Are_scores_on_Hofstede_s_dimensions_of_national_culture_stable.pdf",
+  globeIq: "https://global-iq.org/the-globe-study/",
+  globeReview: "https://www.andrews.edu/services/jacl/article_archive/1_1_summer_2006/6_br_globe_(2004).pdf",
+  rastogi:
+    "https://www.microsoft.com/en-us/research/publication/relationship-between-geographical-location-and-evaluation-of-developer-contributions-in-github/",
+  rastogiDelft: "https://repository.tudelft.nl/islandora/object/uuid:3b3ad2bd-d865-4a78-b5f0-cdb849d2ee50",
+  wws2019: "https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf",
+  nadri: "https://arxiv.org/abs/2104.06143",
+  herbsleb: "https://dl.acm.org/doi/10.1109/TSE.2003.1205177",
+  herbslebRetro: "https://dl.acm.org/doi/10.1109/TSE.2025.3533977",
+  neumann: "https://arxiv.org/abs/2404.17009",
+  neumannAcm: "https://dl.acm.org/doi/abs/10.1145/3661167.3661229",
+  lambiase: "https://arxiv.org/abs/2409.05055",
+  khosravi: "https://arxiv.org/abs/2607.12563",
+  mcrSlr: "https://arxiv.org/pdf/2103.08777",
+  so2024: "https://survey.stackoverflow.co/2024/developer-profile",
+  so2025: "https://survey.stackoverflow.co/2025/work",
+  octoverse:
+    "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/",
+  issues: "https://github.com/0-draft/wtfe/issues/new",
+} as const;
+
+// The worked example: a real claim, pulled from the data so it can never drift from the Germany page.
+const exampleId = "de-feedback-1";
+const example = country(lang, "de")?.themes.feedback.find((c) => c.id === exampleId);
+
+// Current Hofstede values come from the data; the older values are hard-coded with their own source.
+const hofstedeNow = (id: "kr" | "de", dim: "idv" | "lto") => countryMeta(id)?.hofstede[0]?.scores[dim] ?? null;
+const revised = [
+  {
+    country: en ? "South Korea" : "韓国",
+    dim: "idv",
+    old: 18,
+    now: hofstedeNow("kr", "idv"),
+    oldSource: { title: "Cyborlink", url: L.cyborlinkKr },
+  },
+  {
+    country: en ? "Germany" : "ドイツ",
+    dim: "idv",
+    old: 67,
+    now: hofstedeNow("de", "idv"),
+    oldSource: { title: "Simply Psychology", url: L.simplyPsych },
+  },
+  {
+    country: en ? "Germany" : "ドイツ",
+    dim: "lto",
+    old: 83,
+    now: hofstedeNow("de", "lto"),
+    oldSource: { title: "Simply Psychology", url: L.simplyPsych },
+  },
+] as const;
+
+// Rastogi et al. 2018, figures as given in the WWS2019 slides (United States = 100).
+const rastogiOdds: ReadonlyArray<readonly [string, string, number]> = [
+  ["Switzerland", "スイス", 146],
+  ["Netherlands", "オランダ", 130],
+  ["Japan", "日本", 128],
+  ["United Kingdom", "英国", 114],
+  ["Canada", "カナダ", 113],
+  ["India", "インド", 102],
+  ["United States", "米国", 100],
+  ["Russia", "ロシア", 94],
+  ["Sweden", "スウェーデン", 81],
+  ["Germany", "ドイツ", 78],
+  ["Brazil", "ブラジル", 76],
+  ["Italy", "イタリア", 73],
+  ["China", "中国", 68],
+];
+
+const steps = [-3, -2, -1, 0, 1, 2, 3] as const;
+const stepLabel = (s: number) => {
+  if (s === -3) return en ? "far left pole" : "左の極";
+  if (s === 3) return en ? "far right pole" : "右の極";
+  if (s === 0) return en ? "middle" : "中間";
+  return s < 0 ? (en ? "leans left" : "左寄り") : en ? "leans right" : "右寄り";
+};
+const signed = (s: number) => (s > 0 ? `+${s}` : s < 0 ? `−${-s}` : "0");
+
+const policy = {
+  strong: en
+    ? "Official statistics, primary documents, large surveys read on the publisher's own page, peer-reviewed quantitative studies, and an organization's own account of its own practice."
+    : "公的統計、一次資料、発行元のページで確認した大規模調査、査読付きの定量研究、組織が自分たちの慣行について書いたもの。",
+  medium: en
+    ? "Frameworks such as the Culture Map, a single reputable news report, Wikipedia, industry associations, qualitative studies, and the EF English Proficiency Index."
+    : "Culture Map などの枠組み、信頼できる報道 1 件、Wikipedia、業界団体、定性研究、EF EPI（英語能力指数）。",
+  weak: en
+    ? "Blogs, forums, vendor and recruiter material, summary sites, and single anecdotes. Kept only when nothing better exists, and labelled so."
+    : "ブログ、掲示板、ベンダーや人材会社の資料、まとめサイト、単発の体験談。ほかに根拠がないときだけ載せ、そうと分かるようにしています。",
+} as const;
 ---
 
-<Base lang={lang} title={t["method.title"]}>
-  <article class="prose">
-    <h1>{t["method.title"]}</h1>
-    {
-      lang === "en" ? (
-        <>
-          <p>
-            Each country page collects findings from public sources: national statistics, large surveys, primary
-            documents, peer-reviewed studies, and engineering blogs. Every finding carries one or more sources and a
-            confidence level.
-          </p>
-          <h2>Confidence</h2>
-          <ul>
-            <li><strong>Strong</strong>: official statistics, large surveys, primary documents, quantitative studies.</li>
-            <li><strong>Medium</strong>: several qualitative sources, a single reputable report, or a framework such as Erin Meyer's Culture Map.</li>
-            <li><strong>Weak</strong>: blogs, forums, vendor material or a single anecdote, kept only when nothing better exists.</li>
-          </ul>
-          <h2>How not to read this site</h2>
-          <ul>
-            <li>
-              About 80% of the variance in cultural values lies within countries (
-              <a href="https://link.springer.com/article/10.1007/s11575-016-0283-x">Taras, Steel &amp; Kirkman 2016</a>
-              ). A country average does not predict an individual.
-            </li>
-            <li>
-              Applying country scores to individuals is the ecological fallacy (
-              <a href="https://journals.sagepub.com/doi/10.1177/0170840613517602">Brewer &amp; Venaik 2014</a>).
-            </li>
-            <li>
-              Team and company culture often dominate: Japanese and German agile teams did not match their national
-              profiles (<a href="https://arxiv.org/abs/2404.17009">Neumann et al. 2024</a>).
-            </li>
-            <li>
-              Positions are relative. Younger cohorts are more individualist with lower power distance, but countries
-              keep their relative order (<a href="https://sms.onlinelibrary.wiley.com/doi/abs/10.1002/gsj.1098">Beugelsdijk et al. 2015</a>).
-            </li>
-          </ul>
-          <h2>Scores</h2>
-          <p>
-            Hofstede scores are The Culture Factor's current values, revised around 2023; older tables differ (for
-            example Japan's individualism moved from 46 to 62). Culture Map positions are read off Erin Meyer's charts
-            on a coarse seven-step grid, because the book publishes no numbers.
-          </p>
-        </>
-      ) : (
-        <>
-          <p>
-            各国のページには、公開された出典から集めた知見を載せています。出典は国の統計、大規模調査、一次資料、査読論文、エンジニアのブログなどです。どの記述にも
-            1 件以上の出典と信頼度が付いています。
-          </p>
-          <h2>信頼度</h2>
-          <ul>
-            <li><strong>強</strong>: 公的統計、大規模調査、一次資料、定量研究。</li>
-            <li><strong>中</strong>: 複数の定性的な資料、信頼できる単独のレポート、Erin Meyer の Culture Map のような枠組み。</li>
-            <li><strong>弱</strong>: ブログ、掲示板、ベンダー資料、単独の逸話。ほかに根拠がない場合に限って載せています。</li>
-          </ul>
-          <h2>このサイトの読み方</h2>
-          <ul>
-            <li>
-              文化的価値のばらつきの約 8 割は国の内部にあります（
-              <a href="https://link.springer.com/article/10.1007/s11575-016-0283-x">Taras, Steel &amp; Kirkman 2016</a>
-              ）。国の平均から個人は予測できません。
-            </li>
-            <li>
-              国のスコアを個人に当てはめるのは生態学的誤謬です（
-              <a href="https://journals.sagepub.com/doi/10.1177/0170840613517602">Brewer &amp; Venaik 2014</a>）。
-            </li>
-            <li>
-              チームや会社の文化のほうが強く出ることがよくあります。日本とドイツのアジャイルチームは、国の典型像と一致しませんでした（
-              <a href="https://arxiv.org/abs/2404.17009">Neumann ほか 2024</a>）。
-            </li>
-            <li>
-              位置づけは相対的なものです。若い世代ほど個人主義的で権力格差が小さい一方、国同士の順位はほぼ変わっていません（
-              <a href="https://sms.onlinelibrary.wiley.com/doi/abs/10.1002/gsj.1098">Beugelsdijk ほか 2015</a>）。
-            </li>
-          </ul>
-          <h2>スコアについて</h2>
-          <p>
-            Hofstede のスコアは The Culture Factor の現行値で、2023 年ごろに改訂されています。古い表とは値が違います（たとえば日本の個人主義は
-            46 から 62 に変わりました）。Culture Map の位置は Erin Meyer の図から読み取ったもので、書籍に数値が載っていないため粗い 7 段階で示しています。
-          </p>
-        </>
-      )
-    }
+<Base lang={lang} title={t["method.title"]} description={m.lead} section="method">
+  <RunningHead slot="running-head" word={t["method.title"]} sub={m.sections["what-this-is"]} />
+  <article class="method">
+    <header class="headword">
+      <h1>{t["method.title"]}</h1>
+      <p class="hw-gloss">{m.gloss}</p>
+      <p class="lead">{m.lead}</p>
+    </header>
+
+    <nav class="toc" aria-label={m.tocLabel}>
+      {METHOD_SECTIONS.map((s) => <a href={`#${s}`}>{m.sections[s]}</a>)}
+    </nav>
+
+    <div class="prose">
+      {/* ---------------------------------------------------------------- 1 */}
+      <section class="section" id="what-this-is" data-rh={m.sections["what-this-is"]}>
+        <h2>{m.sections["what-this-is"]}</h2>
+        {
+          en ? (
+            <>
+              <p>
+                The rule behind every page is <strong>usage, not character</strong>. A claim here says that a tendency
+                has been reported, by whom, and how solid the report is. It does not say what any Japanese, German or
+                Brazilian engineer is like. Most of the variation in cultural values lies inside countries rather than
+                between them (<a href={L.taras}>Taras, Steel &amp; Kirkman 2016</a>), so a country page describes a
+                lean within a wide spread, never a person.
+              </p>
+              <p>The site is built like a usage dictionary, because a dictionary already solves this problem:</p>
+              <dl class="metaphor">
+                <dt>Headwords</dt>
+                <dd>Countries, themes and scales are the entries you look up.</dd>
+                <dt>Usage labels</dt>
+                <dd>
+                  Where a dictionary marks a sense as common or rare, each claim here is marked{" "}
+                  <span class="usage" data-level="strong">{confidenceNames.en.strong}</span>,{" "}
+                  <span class="usage" data-level="medium">{confidenceNames.en.medium}</span> or{" "}
+                  <span class="usage" data-level="weak">{confidenceNames.en.weak}</span> according to its evidence.
+                </dd>
+                <dt>Dated citations</dt>
+                <dd>Every claim lists its sources with the year, and old evidence says that it is old.</dd>
+                <dt>Regional variants</dt>
+                <dd>
+                  Each country page opens with how the country differs inside itself, and where the evidence
+                  contradicts the summary.
+                </dd>
+              </dl>
+              <p>
+                A dictionary does not claim that every speaker uses a word the same way, and this site does not claim
+                that every engineer in a country works the same way.
+              </p>
+            </>
+          ) : (
+            <>
+              <p>
+                すべてのページに通っている原則は<strong>「性格ではなく用法」</strong>です。ここにある記述は、ある傾向が報告されていること、誰が報告したか、その報告がどれだけ確かかを示すものです。日本やドイツやブラジルのエンジニアが「どういう人か」を述べるものではありません。文化的価値のばらつきの大半は国と国の間ではなく国の内部にあります（
+                <a href={L.taras}>Taras, Steel &amp; Kirkman 2016</a>
+                ）。国のページが描いているのは、幅の広い分布の中での「寄り」であって、個人ではありません。
+              </p>
+              <p>サイトは用例辞典の形にしてあります。辞書はこの問題をすでに解いているからです。</p>
+              <dl class="metaphor">
+                <dt>見出し語</dt>
+                <dd>国、テーマ、尺度が、引いて調べる項目です。</dd>
+                <dt>用法ラベル</dt>
+                <dd>
+                  辞書が語義に「まれ」「俗」と付けるように、各記述には根拠に応じて
+                  <span class="usage" data-level="strong">{confidenceNames.ja.strong}</span>
+                  <span class="usage" data-level="medium">{confidenceNames.ja.medium}</span>
+                  <span class="usage" data-level="weak">{confidenceNames.ja.weak}</span>
+                  のいずれかを付けています。
+                </dd>
+                <dt>年付きの用例</dt>
+                <dd>どの記述にも出典と発表年があり、古い根拠には古いと明記しています。</dd>
+                <dt>地域差</dt>
+                <dd>国のページの冒頭には、その国の中のばらつきと、まとめに反する根拠を置いています。</dd>
+              </dl>
+              <p>
+                辞書は、話者全員が同じように言葉を使うとは主張しません。このサイトも、ある国のエンジニア全員が同じように働くとは主張しません。
+              </p>
+            </>
+          )
+        }
+      </section>
+
+      {/* ---------------------------------------------------------------- 2 */}
+      <section class="section" id="reading-a-claim" data-rh={m.sections["reading-a-claim"]}>
+        <h2>{m.sections["reading-a-claim"]}</h2>
+        {
+          en ? (
+            <p>
+              Each claim is one short statement followed by a label line: the usage label, the number of sources, the
+              year of the newest source, and a stable id. The sources are listed underneath, each a link. The label is
+              decided by the strongest source behind the claim, and the rule down the left edge repeats it in a form
+              that does not depend on colour.
+            </p>
+          ) : (
+            <p>
+              記述は短い 1 文と、その下のラベル行でできています。ラベル行には用法ラベル、出典の数、いちばん新しい出典の年、固定の
+              ID が並び、その下に出典がリンクで続きます。ラベルは記述を支える出典のうち最も強いもので決まり、左端の罫が色に頼らずに同じことを示します。
+            </p>
+          )
+        }
+        <div class="table-wrap" tabindex="0" role="region" aria-label={`${m.labelsCaption}. ${m.tableScroll}`}>
+          <table class="labels">
+            <caption>{m.labelsCaption}</caption>
+            <thead>
+              <tr>
+                <th scope="col">{m.labelCol}</th>
+                <th scope="col">{m.countsCol}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                CONFIDENCE.map((c) => (
+                  <tr>
+                    <th scope="row">
+                      <span class="label-cell" data-level={c}>
+                        <span class="usage" data-level={c}>
+                          {confidenceNames[lang][c]}
+                        </span>
+                        <span class="rule-name">
+                          {m.ruleNames[c]}
+                        </span>
+                      </span>
+                    </th>
+                    <td>{policy[c]}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        {
+          en ? (
+            <>
+              <p>
+                <strong>Dated.</strong> When even the newest source behind a claim was published before {DATED_BEFORE},
+                the label line adds <span class="dated">{dict.en["claim.dated"]}</span>. The claim may still hold, but
+                workplaces change and you should look for something newer before relying on it.
+              </p>
+              <p>
+                <strong>Regional variants.</strong> Every country page starts with a section on variation within the
+                country and counter-evidence (for example{" "}
+                <a href={p("/countries/jp/#variance")}>Japan</a>). Read it before the themes: it is where the page
+                argues against its own summary.
+              </p>
+            </>
+          ) : (
+            <>
+              <p>
+                <strong>古い資料。</strong>記述を支える出典がいちばん新しいものでも {DATED_BEFORE} 年より前に出ている場合、ラベル行に
+                <span class="dated">{dict.ja["claim.dated"]}</span>
+                が付きます。内容がいまも当てはまる可能性はありますが、職場は変わるので、頼る前にもっと新しい根拠を探してください。
+              </p>
+              <p>
+                <strong>地域差。</strong>国のページはどれも「国内のばらつきと反証」の節から始まります（例：
+                <a href={p("/countries/jp/#variance")}>日本</a>
+                ）。テーマより先に読んでください。ページが自分のまとめに反論している場所です。
+              </p>
+            </>
+          )
+        }
+        {
+          example && (
+            <figure class="example">
+              <figcaption>{m.exampleCaption}</figcaption>
+              <ul class="entries">
+                <Claim claim={example} lang={lang} />
+              </ul>
+              <p class="example-note">
+                {en ? (
+                  <>
+                    Read it from left to right: the label says one framework-level source supports it, the year says the
+                    source is from 2014, and because 2014 is before {DATED_BEFORE} it is marked dated. The id{" "}
+                    <code>{exampleId}</code> is the same on the Japanese page.{" "}
+                  </>
+                ) : (
+                  <>
+                    左から読みます。ラベルは枠組みレベルの出典 1 件に支えられていることを、年は出典が 2014 年のものであることを示し、
+                    {DATED_BEFORE} 年より前なので古い資料の印が付いています。ID <code>{exampleId}</code>{" "}
+                    は英語のページでも同じです。
+                  </>
+                )}
+                <a href={p(`/countries/de/#${exampleId}`)}>{m.exampleOnPage}</a>
+              </p>
+            </figure>
+          )
+        }
+      </section>
+
+      {/* ---------------------------------------------------------------- 3 */}
+      <section class="section" id="frameworks" data-rh={m.sections.frameworks}>
+        <h2>{m.sections.frameworks}</h2>
+        {
+          en ? (
+            <p>
+              The <a href={p("/scales/")}>scale pages</a> place countries on two published frameworks. Both are
+              country-level averages and both have serious critics; the critiques are part of this section, not a
+              footnote to it.
+            </p>
+          ) : (
+            <p>
+              <a href={p("/scales/")}>尺度のページ</a>
+              では、公開されている 2 つの枠組みの上に国を並べています。どちらも国レベルの平均値で、どちらにも有力な批判があります。批判はこの節の本体の一部であって、脚注ではありません。
+            </p>
+          )
+        }
+
+        <h3 id={FRAMEWORK_SECTIONS[0]}>{m.frameworks["culture-map"]}</h3>
+        {
+          en ? (
+            <p>
+              Erin Meyer's <em>The Culture Map</em> (2014) places countries on eight scales, each running between two
+              poles (<a href={L.meyerHbr}>HBR 2014</a>, <a href={L.meyerTool}>Meyer's eight-scale tool</a>):
+            </p>
+          ) : (
+            <p>
+              Erin Meyer の『The Culture Map』（2014）は、国を 8 つの尺度の上に置きます。どの尺度も 2 つの極の間に伸びています（
+              <a href={L.meyerHbr}>HBR 2014</a>、<a href={L.meyerTool}>Meyer の 8 尺度ツール</a>）。
+            </p>
+          )
+        }
+        <dl class="scales">
+          {
+            CULTURE_MAP_SCALES.map((s) => {
+              const x = cultureMapText[lang][s];
+              return (
+                <div>
+                  <dt>
+                    <a href={p(`/scales/${s}/`)}>{x.name}</a>
+                    <span class="poles">{m.poles(x.left, x.right)}</span>
+                  </dt>
+                  <dd>{x.gloss}</dd>
+                </div>
+              );
+            })
+          }
+        </dl>
+        {
+          en ? (
+            <>
+              <p>
+                <strong>How the positions were read.</strong> The book prints no numbers. We took the positions from
+                the charts in Meyer's own INSEAD slide deck (<a href={L.meyerDeck}>PDF</a>), converted it to text, and
+                read each country's horizontal position relative to the others. Because this is reading by eye, every
+                position is rounded to a deliberately coarse grid of seven steps:
+              </p>
+              <ol class="grid7" aria-label={m.gridLabel}>
+                {steps.map((s) => (
+                  <li>
+                    <span class="mono">{signed(s)}</span>
+                    <span>{stepLabel(s)}</span>
+                  </li>
+                ))}
+              </ol>
+              <p class="grid-caption">{m.gridCaption}.</p>
+              <p>
+                A step says "further toward this pole than that country", not a measured distance. Where only a book
+                review or summary places a country (for example Korea on Trusting, from{" "}
+                <a href={L.kimtasso}>one review</a>), the position is marked as secondary. Meyer treats East Asian
+                countries as holistic rather than placing them on Persuading (<a href={L.portman}>Portman's review</a>),
+                so those cells are empty. Wherever no source places a country, the position is left empty rather than
+                guessed.
+              </p>
+              <p>
+                <strong>What is unknown.</strong> Meyer's maps come from her observation of, and interviews with,
+                participants in her management courses; no sample size or error is published, and the HBR article says
+                only that the scales draw on her research and that of other experts (<a href={L.meyerHbr}>HBR 2014</a>).
+                Treat the Culture Map as a well-informed framework, which is why claims that rest on it are labelled{" "}
+                <span class="usage" data-level="medium">{confidenceNames.en.medium}</span> at most.
+              </p>
+            </>
+          ) : (
+            <>
+              <p>
+                <strong>位置の読み取り方。</strong>書籍には数値が載っていません。そこで Meyer 本人の INSEAD 講演スライド（
+                <a href={L.meyerDeck}>PDF</a>
+                ）をテキストに変換し、図の中で各国が横方向のどこにあるかを、ほかの国との相対で読み取りました。目で読んでいるので、位置はわざと粗い
+                7 段階に丸めています。
+              </p>
+              <ol class="grid7" aria-label={m.gridLabel}>
+                {steps.map((s) => (
+                  <li>
+                    <span class="mono">{signed(s)}</span>
+                    <span>{stepLabel(s)}</span>
+                  </li>
+                ))}
+              </ol>
+              <p class="grid-caption">{m.gridCaption}。</p>
+              <p>
+                1 段の差は「あの国よりこちらの極に近い」という意味で、測った距離ではありません。書評や要約にしか位置が書かれていない場合（たとえば韓国の
+                Trusting は<a href={L.kimtasso}>書評 1 件</a>
+                による）は二次資料として区別しています。Meyer は東アジアの国を Persuading の軸に乗せず「全体的（holistic）」として別扱いにしているので（
+                <a href={L.portman}>Portman の書評</a>）、そのセルは空欄です。どの資料にも位置がない場合も、推測で埋めずに空欄にしています。
+              </p>
+              <p>
+                <strong>分かっていないこと。</strong>Meyer
+                のマップは、彼女の管理職向け研修の受講者の観察とインタビューに基づいています。標本数も誤差も公開されておらず、HBR
+                の記事も「著者とほかの専門家の研究に基づく」としか書いていません（<a href={L.meyerHbr}>HBR 2014</a>
+                ）。Culture Map は事情に通じた人の枠組みとして扱うべきもので、これだけに拠る記述は最高でも
+                <span class="usage" data-level="medium">{confidenceNames.ja.medium}</span>
+                にしています。
+              </p>
+            </>
+          )
+        }
+
+        <h3 id={FRAMEWORK_SECTIONS[1]}>{m.frameworks.hofstede}</h3>
+        {
+          en ? (
+            <p>
+              Geert Hofstede's model scores countries on six dimensions, roughly from 0 to 100 (
+              <a href={L.hofstede2011}>Hofstede 2011</a>, <a href={L.hofstedeDoi}>DOI</a>). Long-term orientation was
+              added in 1991 and indulgence in the 2000s, the latter by Michael Minkov from World Values Survey data (
+              <a href={L.globalIqHofstede}>global-iq</a>, <a href={L.hofstede2011}>Hofstede 2011</a>):
+            </p>
+          ) : (
+            <p>
+              Geert Hofstede のモデルは、国を 6 つの次元でおおむね 0〜100 のスコアにします（
+              <a href={L.hofstede2011}>Hofstede 2011</a>、<a href={L.hofstedeDoi}>DOI</a>
+              ）。長期志向は 1991 年に、人生の楽しみ方（Indulgence）は 2000 年代に Michael Minkov が World Values Survey
+              のデータから加えたものです（<a href={L.globalIqHofstede}>global-iq</a>、
+              <a href={L.hofstede2011}>Hofstede 2011</a>）。
+            </p>
+          )
+        }
+        <dl class="scales">
+          {
+            HOFSTEDE_DIMENSIONS.map((d) => {
+              const x = hofstedeText[lang][d];
+              return (
+                <div>
+                  <dt>
+                    {x.name}
+                    <span class="poles">{m.poles(x.left, x.right)}</span>
+                  </dt>
+                  <dd>{x.gloss}</dd>
+                </div>
+              );
+            })
+          }
+        </dl>
+        {
+          en ? (
+            <p>
+              <strong>Which values.</strong> The scores shown are The Culture Factor's current values (
+              <a href={L.cultureFactor}>country comparison tool</a>, read in October 2026). They differ from the tables
+              in older books and articles, mostly in individualism and long-term orientation. The change appears to
+              date from around 2023; we have not found a public announcement of the revision, so mixing old and new
+              tables is the thing to avoid.
+            </p>
+          ) : (
+            <p>
+              <strong>どの値か。</strong>表示しているのは The Culture Factor の現行値です（
+              <a href={L.cultureFactor}>国別比較ツール</a>、2026 年 10 月に取得）。古い書籍や記事の表とは値が違い、とくに個人主義と長期志向が変わっています。改訂は
+              2023 年ごろと見られますが、改訂の告知そのものは見つけていません。旧版と現行の表を混ぜて引用しないことが肝心です。
+            </p>
+          )
+        }
+        <div class="table-wrap" tabindex="0" role="region" aria-label={`${m.revisedCaption}. ${m.tableScroll}`}>
+          <table>
+            <caption>{m.revisedCaption}</caption>
+            <thead>
+              <tr>
+                <th scope="col">{m.revisedCountry}</th>
+                <th scope="col">{m.revisedDimension}</th>
+                <th scope="col" class="num">{m.revisedOld}</th>
+                <th scope="col" class="num">{m.revisedNew}</th>
+                <th scope="col">{m.revisedOldSource}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                revised.map((r) => (
+                  <tr>
+                    <th scope="row">{r.country}</th>
+                    <td>{hofstedeText[lang][r.dim].name}</td>
+                    <td class="num mono">{r.old}</td>
+                    <td class="num mono">{r.now ?? "—"}</td>
+                    <td>
+                      <a href={r.oldSource.url}>{r.oldSource.title}</a>
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        {
+          en ? (
+            <>
+              <p>
+                Korea is the clearest case: the familiar picture of Korea as strongly collectivist rests on the old
+                individualism score of 18, while the current value is close to the middle.
+              </p>
+              <h4 id="hofstede-critiques">The critiques</h4>
+              <ul>
+                <li>
+                  <strong>Ecological fallacy.</strong> Correlations between country averages do not hold for
+                  individuals, so using a country score to predict a person is an error (
+                  <a href={L.brewerVenaik}>Brewer &amp; Venaik 2014</a>). Hofstede himself warns that the dimensions
+                  depend on the level of aggregation and that country scores must not be read as individual values (<a href={L.hofstede2011}>Hofstede 2011</a>).
+                </li>
+                <li>
+                  <strong>McSweeney 2002.</strong> Brendan McSweeney rejected the assumptions that national culture is
+                  uniform and that it causally determines behaviour, and pointed out that some country samples were
+                  small and drawn mainly from IBM's sales and service staff (
+                  <a href={L.mcsweeney}>Human Relations 55(1)</a>, <a href={L.mcsweeneyRhul}>Royal Holloway</a>).
+                  Williamson replied in the same journal (<a href={L.williamson}>Williamson 2002</a>).
+                </li>
+                <li>
+                  <strong>The IBM sample, 1967–73.</strong> The original data are about 116,000 questionnaires from IBM
+                  employees, collected between 1967 and 1973 (sources give 53 to 72 countries). It may partly measure
+                  IBM's own corporate culture, and it is old (<a href={L.globalIqHofstede}>global-iq</a>,{" "}
+                  <a href={L.simplyPsych}>Simply Psychology</a>).
+                </li>
+                <li>
+                  <strong>Nation is not culture.</strong> A meta-analysis of 558 studies that used Hofstede's framework
+                  found about 80% of the variation in cultural values inside countries; occupation and socio-economic
+                  status are sometimes better units than nationality (<a href={L.taras}>Taras, Steel &amp; Kirkman 2016</a>
+                  ).
+                </li>
+              </ul>
+            </>
+          ) : (
+            <>
+              <p>
+                いちばん分かりやすいのは韓国です。「韓国は強い集団主義」というよく知られた像は旧版の個人主義スコア 18
+                に基づいていますが、現行値は中間に近くなっています。
+              </p>
+              <h4 id="hofstede-critiques">批判</h4>
+              <ul>
+                <li>
+                  <strong>生態学的誤謬。</strong>国の平均どうしの相関は個人のレベルでは成り立たないので、国のスコアで個人を予測するのは誤りです（
+                  <a href={L.brewerVenaik}>Brewer &amp; Venaik 2014</a>）。Hofstede
+                  本人も、次元は集計のレベルに依存し、国の値を個人の価値観と混同してはならないと書いています（<a href={L.hofstede2011}>Hofstede 2011</a>）。
+                </li>
+                <li>
+                  <strong>McSweeney 2002。</strong>Brendan McSweeney
+                  は、国民文化が均質であるという仮定と、国民文化が行動を因果的に決めるという主張を退けました。一部の国は標本が小さく、主に
+                  IBM の営業職とサービス職だったことも指摘しています（<a href={L.mcsweeney}>Human Relations 55(1)</a>、
+                  <a href={L.mcsweeneyRhul}>Royal Holloway</a>）。同じ誌上に Williamson の反論があります（
+                  <a href={L.williamson}>Williamson 2002</a>）。
+                </li>
+                <li>
+                  <strong>IBM の標本（1967〜73 年）。</strong>元のデータは、1967〜73 年に IBM の社員から集めた約 11.6
+                  万件の質問票です（国の数は資料によって 53〜72 と幅があります）。IBM の社風を測っている面があるかもしれず、データも古いものです（
+                  <a href={L.globalIqHofstede}>global-iq</a>、<a href={L.simplyPsych}>Simply Psychology</a>）。
+                </li>
+                <li>
+                  <strong>国＝文化ではない。</strong>Hofstede の枠組みを使った 558 件の研究のメタ分析では、文化的価値のばらつきの約
+                  8 割が国の内部にありました。国籍より職業や社会経済的な階層で区切ったほうがよい場合もあります（
+                  <a href={L.taras}>Taras, Steel &amp; Kirkman 2016</a>）。
+                </li>
+              </ul>
+            </>
+          )
+        }
+
+        <h3 id={FRAMEWORK_SECTIONS[2]}>{m.frameworks.globe}</h3>
+        {
+          en ? (
+            <p>
+              The GLOBE study (House et al. 2004) surveyed about 17,000 middle managers in 62 societies, in three
+              industries: finance, food processing and telecommunications. Its nine dimensions are measured twice,
+              as current practices ("as is") and as values ("should be") (<a href={L.globeIq}>global-iq</a>,{" "}
+              <a href={L.globeReview}>Andrews University review</a>). We do not use it. None of the three industries is
+              software; on many dimensions practices and values correlate negatively, and how to interpret that is
+              still disputed; and its country averages face the same ecological-fallacy critique as Hofstede's (
+              <a href={L.brewerVenaik}>Brewer &amp; Venaik 2014</a>). A third set of national averages would add apparent
+              precision without adding evidence about engineers. That last point is our judgement.
+            </p>
+          ) : (
+            <p>
+              GLOBE 研究（House ほか 2004）は、62 の社会の中間管理職 約 1 万 7 千人を、金融・食品加工・通信の 3 業種で調査したものです。9
+              つの次元を、現在の慣行（as is）とあるべき価値（should be）の 2 通りで測っています（
+              <a href={L.globeIq}>global-iq</a>、<a href={L.globeReview}>Andrews 大学の書評</a>
+              ）。このサイトでは使っていません。3 業種のどれもソフトウェアではないこと、多くの次元で慣行と価値が負の相関を示し、その解釈がいまも争われていること、そして国平均である以上
+              Hofstede と同じ生態学的誤謬の批判が当てはまること（<a href={L.brewerVenaik}>Brewer &amp; Venaik 2014</a>
+              ）が理由です。国平均をもう 1 組足しても、エンジニアについての根拠は増えず、見かけの精度だけが上がる、というのは私たちの判断です。
+            </p>
+          )
+        }
+      </section>
+
+      {/* ---------------------------------------------------------------- 4 */}
+      <section class="section" id="software-evidence" data-rh={m.sections["software-evidence"]}>
+        <h2>{m.sections["software-evidence"]}</h2>
+        {
+          en ? (
+            <>
+              <p>
+                Studies that measure national culture in software work directly are few. These are the ones the site
+                leans on.
+              </p>
+              <h3 id="rastogi-2018">Rastogi et al. 2018: pull requests and the submitter's country</h3>
+              <p>
+                Rastogi, Nagappan, Gousios and van der Hoek analysed 70,740 pull requests from 17 countries in 1,069
+                of the busiest GitHub projects, using logistic regression (
+                <a href={L.rastogi}>ESEM 2018, Microsoft Research</a>, <a href={L.rastogiDelft}>TU Delft</a>). The
+                odds of acceptance differed by the submitter's country:
+              </p>
+            </>
+          ) : (
+            <>
+              <p>ソフトウェア開発の現場で国の文化を直接測った研究は多くありません。このサイトが拠っているのは次のものです。</p>
+              <h3 id="rastogi-2018">Rastogi ほか 2018：PR と投稿者の国</h3>
+              <p>
+                Rastogi、Nagappan、Gousios、van der Hoek は、GitHub で PR の多いプロジェクト 1,069 件から、17 か国の PR
+                70,740 件をロジスティック回帰で分析しました（<a href={L.rastogi}>ESEM 2018、Microsoft Research</a>、
+                <a href={L.rastogiDelft}>TU Delft</a>）。採択のオッズは投稿者の国によって違いました。
+              </p>
+            </>
+          )
+        }
+        <div class="table-wrap" tabindex="0" role="region" aria-label={`${m.rastogiCaption}. ${m.tableScroll}`}>
+          <table class="odds">
+            <caption>{m.rastogiCaption}</caption>
+            <thead>
+              <tr>
+                <th scope="col">{m.rastogiCountry}</th>
+                <th scope="col" class="num">{m.rastogiOdds}</th>
+                <th scope="col" class="bar-col">
+                  <span class="sr-only">{m.rastogiBar}</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                rastogiOdds.map(([e, j, v]) => (
+                  <tr class={v === 100 ? "baseline" : undefined}>
+                    <th scope="row">
+                      {en ? e : j}
+                      {v === 100 && <span class="base-tag">{m.rastogiBase}</span>}
+                    </th>
+                    <td class="num mono">{v}</td>
+                    <td class="bar-col" aria-hidden="true">
+                      <span class="dev">
+                        <span
+                          class={v < 100 ? "dev-bar dev-low" : "dev-bar dev-high"}
+                          style={`--w: ${(Math.abs(v - 100) / 50) * 100}%`}
+                        />
+                      </span>
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">{m.rastogiNote}</p>
+        {
+          en ? (
+            <>
+              <p>
+                The figures are from the <a href={L.wws2019}>Ehime University WWS2019 slides</a> summarising the paper.
+                The study also found that a pull request is more likely to be accepted when the submitter and the person
+                who merges it are in the same country. This held for 16 of the 17 countries (China +13.4%, United States
+                +2.4%); India was the exception at −7.4%. The cause is not known (
+                <a href={L.wws2019}>WWS2019</a>). Acceptance is a judgement made by reviewers, so these numbers describe
+                reviewers as much as submitters.
+              </p>
+              <h3 id="nadri-2021">Nadri et al. 2021: perceived race</h3>
+              <p>
+                Comparing developers by the race a reader would infer from their name, pull requests from developers
+                perceived as white had 6–10% higher odds of acceptance (<a href={L.nadri}>arXiv 2021</a>).
+              </p>
+              <h3 id="herbsleb-mockus-2003">Herbsleb &amp; Mockus 2003: distance</h3>
+              <p>
+                Work that spanned sites took about two and a half times as long as similar work within one site, mainly
+                because more people were involved (<a href={L.herbsleb}>IEEE TSE 2003</a>). In a 2025 retrospective the
+                authors note how much the environment has changed since (<a href={L.herbslebRetro}>TSE 2025</a>).
+              </p>
+              <h3 id="neumann-2024">Neumann et al. 2024: teams that did not match their country</h3>
+              <p>
+                In four case studies, two in Japan and two in Germany, the cultural traits of agile team members
+                differed markedly from what the countries' Hofstede scores predict. The authors argue for analysing each
+                case rather than applying a national label to a team (<a href={L.neumann}>arXiv</a>,{" "}
+                <a href={L.neumannAcm}>EASE 2024</a>).
+              </p>
+              <h3 id="lambiase-2024">Lambiase et al. 2024: LLM adoption</h3>
+              <p>
+                In a survey of 188 software engineers analysed with PLS-SEM, adoption of LLM tools was driven by habit
+                and expected performance; Hofstede's cultural values did not significantly moderate it (
+                <a href={L.lambiase}>arXiv 2024</a>).
+              </p>
+            </>
+          ) : (
+            <>
+              <p>
+                数値は論文を紹介した<a href={L.wws2019}>愛媛大学の WWS2019 スライド</a>
+                によります。同じ研究では、投稿者とマージする人が同じ国だと PR が採択されやすいことも分かりました。17 か国中 16
+                か国でそうで（中国 +13.4%、米国 +2.4%）、例外はインドの −7.4% でした。原因は分かっていません（
+                <a href={L.wws2019}>WWS2019</a>
+                ）。採択はレビュアーの判断なので、この数字は投稿者と同じくらいレビュアーのことも表しています。
+              </p>
+              <h3 id="nadri-2021">Nadri ほか 2021：見た目上の人種</h3>
+              <p>
+                名前から読み手が推測する人種で開発者を分けて比べると、白人と見なされた開発者の PR は採択のオッズが 6〜10%
+                高くなっていました（<a href={L.nadri}>arXiv 2021</a>）。
+              </p>
+              <h3 id="herbsleb-mockus-2003">Herbsleb &amp; Mockus 2003：距離</h3>
+              <p>
+                複数の拠点にまたがる作業は、1 拠点内の同種の作業より約 2.5
+                倍の時間がかかり、主な要因は関わる人数が増えることでした（<a href={L.herbsleb}>IEEE TSE 2003</a>
+                ）。2025 年の回顧論文で、著者たちは当時から環境が大きく変わったと述べています（
+                <a href={L.herbslebRetro}>TSE 2025</a>）。
+              </p>
+              <h3 id="neumann-2024">Neumann ほか 2024：国の像と合わなかったチーム</h3>
+              <p>
+                日本 2 件、ドイツ 2 件の事例研究で、アジャイルチームのメンバーの文化的な特性は、各国の Hofstede
+                スコアから予想される姿と大きく違っていました。著者たちは、国のラベルをチームにそのまま当てはめず、事例ごとに分析すべきだと主張しています（
+                <a href={L.neumann}>arXiv</a>、<a href={L.neumannAcm}>EASE 2024</a>）。
+              </p>
+              <h3 id="lambiase-2024">Lambiase ほか 2024：LLM の導入</h3>
+              <p>
+                ソフトウェアエンジニア 188 人の調査を PLS-SEM で分析したところ、LLM ツールの導入を左右したのは習慣と期待する性能で、Hofstede
+                の文化的価値による調整効果は有意ではありませんでした（<a href={L.lambiase}>arXiv 2024</a>）。
+              </p>
+            </>
+          )
+        }
+      </section>
+
+      {/* ---------------------------------------------------------------- 5 */}
+      <section class="section" id="how-not-to-read" data-rh={m.sections["how-not-to-read"]}>
+        <h2>{m.sections["how-not-to-read"]}</h2>
+        {
+          en ? (
+            <ul class="cautions">
+              <li>
+                <strong>Not as a prediction about a person.</strong> About 80% of the variation in cultural values is
+                within countries (<a href={L.taras}>Taras, Steel &amp; Kirkman 2016</a>). The person you work with may sit
+                anywhere in that spread.
+              </li>
+              <li>
+                <strong>Not by stepping from the average to the individual.</strong> Applying a country score to one
+                person is the ecological fallacy, and Hofstede warns against it himself (
+                <a href={L.brewerVenaik}>Brewer &amp; Venaik 2014</a>, <a href={L.hofstede2011}>Hofstede 2011</a>).
+              </li>
+              <li>
+                <strong>Not over the company.</strong> Company and team culture often outweigh national culture: the
+                Japanese and German teams in <a href={L.neumann}>Neumann et al. 2024</a> did not match their national
+                profiles, and whether code review is adopted depends on the organization, the product and the team (
+                <a href={L.mcrSlr}>modern code review literature review</a>). Engineering is itself an occupational
+                culture that can narrow national differences (<a href={L.taras}>Taras et al. 2016</a>).
+              </li>
+              <li>
+                <strong>Not as fixed.</strong> Cohorts born after 1958 score higher on individualism and indulgence and
+                lower on power distance, but countries keep roughly the same order relative to each other: the gaps
+                shrink while their direction stays (<a href={L.beugelsdijk}>Beugelsdijk et al. 2015</a>,{" "}
+                <a href={L.beugelsdijkPdf}>PDF</a>).
+              </li>
+              <li>
+                <strong>Not from nowhere.</strong> A position only means something relative to where you stand. Seen
+                from Japan the United States is direct; seen from the Netherlands it is diplomatic (
+                <a href={L.meyerHbr}>HBR 2014</a>). The <a href={p("/scales/evaluating/")}>vantage strip</a> on each
+                scale page re-centres the scale on the country you choose.
+              </li>
+              <li>
+                <strong>Not without the reader's bias.</strong> Differences in pull request acceptance and same-country
+                preference are partly differences in reviewers (<a href={L.rastogi}>Rastogi et al. 2018</a>). A 2026
+                study of 48 engineers in four countries found European colleagues systematically underrated East
+                African engineers whose performance matched their own (<a href={L.khosravi}>Khosravi &amp; Payberah 2026</a>
+                ). Whoever reads this site brings their own position too.
+              </li>
+            </ul>
+          ) : (
+            <ul class="cautions">
+              <li>
+                <strong>個人の予測として読まない。</strong>文化的価値のばらつきの約 8 割は国の内部にあります（
+                <a href={L.taras}>Taras, Steel &amp; Kirkman 2016</a>）。一緒に働く相手は、その分布のどこにいてもおかしくありません。
+              </li>
+              <li>
+                <strong>平均から個人へ飛ばない。</strong>国のスコアを 1 人に当てはめるのは生態学的誤謬で、Hofstede 本人も戒めています（
+                <a href={L.brewerVenaik}>Brewer &amp; Venaik 2014</a>、<a href={L.hofstede2011}>Hofstede 2011</a>）。
+              </li>
+              <li>
+                <strong>会社より上に置かない。</strong>会社やチームの文化は国の文化より強く出ることがよくあります。
+                <a href={L.neumann}>Neumann ほか 2024</a>
+                の日独のチームは国の典型像と一致せず、コードレビューを取り入れるかどうかも組織・プロダクト・チームで決まります（
+                <a href={L.mcrSlr}>モダンコードレビューの文献レビュー</a>
+                ）。エンジニアという職業そのものが文化であり、国の差を薄めることもあります（
+                <a href={L.taras}>Taras ほか 2016</a>）。
+              </li>
+              <li>
+                <strong>固定したものとして読まない。</strong>1958
+                年以降に生まれた世代は個人主義と人生の楽しみ方（Indulgence）が高く、権力格差が低くなっています。ただし国同士の相対的な順位はほぼ変わっていません。差は縮んでも、向きは残るということです（
+                <a href={L.beugelsdijk}>Beugelsdijk ほか 2015</a>、<a href={L.beugelsdijkPdf}>PDF</a>）。
+              </li>
+              <li>
+                <strong>どこから見ているかを忘れない。</strong>位置は自分の立ち位置との比較でしか意味を持ちません。日本から見ると米国は直接的ですが、オランダから見ると婉曲です（
+                <a href={L.meyerHbr}>HBR 2014</a>）。尺度のページの<a href={p("/scales/evaluating/")}>視点ストリップ</a>
+                は、選んだ国を中心にして尺度を並べ直します。
+              </li>
+              <li>
+                <strong>読み手の偏りも数に入れる。</strong>PR の採択率の国差や同国びいきは、レビュアー側の差でもあります（
+                <a href={L.rastogi}>Rastogi ほか 2018</a>）。4 か国 48 人を対象にした 2026
+                年の研究では、欧州の同僚が、自分たちと同等の成績だった東アフリカのエンジニアを系統的に低く評価していました（
+                <a href={L.khosravi}>Khosravi &amp; Payberah 2026</a>）。このサイトを読む人も、それぞれの立ち位置を持ち込んでいます。
+              </li>
+            </ul>
+          )
+        }
+      </section>
+
+      {/* ---------------------------------------------------------------- 6 */}
+      <section class="section" id="data-limits" data-rh={m.sections["data-limits"]}>
+        <h2>{m.sections["data-limits"]}</h2>
+        {
+          en ? (
+            <ul>
+              <li>
+                <strong>Stack Overflow survey coverage.</strong> The 2024 Developer Survey had 286 responses from Japan
+                (0.5%) and 144 from South Korea (<a href={L.so2024}>2024 developer profile</a>), far too few to
+                describe either country's developers. The 2025 survey breaks results down only for its five largest
+                countries: the United States, Germany, the United Kingdom, India and France (
+                <a href={L.so2025}>2025 work</a>).
+              </li>
+              <li>
+                <strong>Octoverse uses self-reported location.</strong> GitHub assigns developers to countries by the
+                location on their profile, and the counts include student and hobby accounts (
+                <a href={L.octoverse}>Octoverse 2025</a>). Countries where many developers use other platforms, China
+                for example, may be undercounted; that is our inference, not GitHub's statement.
+              </li>
+              <li>
+                <strong>Ukraine has no Culture Map data.</strong> Meyer's slides do not place Ukraine on any scale (
+                <a href={L.meyerDeck}>Meyer deck</a>), so its scale positions read "no source". Its Hofstede scores do
+                exist (<a href={p("/countries/ua/")}>Ukraine page</a>).
+              </li>
+              <li>
+                <strong>The Nordics are a region.</strong> Denmark, Sweden, Finland and Norway share an entry, and
+                Meyer's charts do not place all four on every scale. Where a position comes from one country, the note
+                says which; Hofstede scores are given per country (<a href={p("/countries/nordics/")}>Nordics page</a>
+                ).
+              </li>
+            </ul>
+          ) : (
+            <ul>
+              <li>
+                <strong>Stack Overflow 調査のカバー範囲。</strong>2024 年の Developer Survey の回答は、日本が 286 件（0.5%）、韓国が
+                144 件でした（<a href={L.so2024}>2024 年 回答者の属性</a>
+                ）。どちらの国の開発者を語るにも少なすぎます。2025 年の調査で国別に集計されているのは回答の多い 5
+                か国（米国・ドイツ・英国・インド・フランス）だけです（<a href={L.so2025}>2025 年 仕事</a>）。
+              </li>
+              <li>
+                <strong>Octoverse の国は自己申告。</strong>GitHub は、プロフィールに本人が書いた所在地で開発者を国に割り振っていて、学生や趣味のアカウントも含みます（
+                <a href={L.octoverse}>Octoverse 2025</a>）。中国のように GitHub
+                以外を使う開発者が多い国は少なく数えられている可能性があります。これは GitHub の説明ではなく私たちの推測です。
+              </li>
+              <li>
+                <strong>ウクライナには Culture Map のデータがない。</strong>Meyer のスライドはウクライナをどの尺度にも置いていないので（
+                <a href={L.meyerDeck}>Meyer のスライド</a>）、尺度上の位置は「出典なし」と表示します。Hofstede のスコアはあります（
+                <a href={p("/countries/ua/")}>ウクライナのページ</a>）。
+              </li>
+              <li>
+                <strong>北欧は地域。</strong>デンマーク、スウェーデン、フィンランド、ノルウェーを 1 項目にまとめていて、Meyer
+                の図には 4 か国すべてがどの尺度にも載っているわけではありません。位置が 1 か国だけに基づく場合はどの国かを注記し、Hofstede
+                のスコアは国ごとに示しています（<a href={p("/countries/nordics/")}>北欧のページ</a>）。
+              </li>
+            </ul>
+          )
+        }
+      </section>
+
+      {/* ---------------------------------------------------------------- 7 */}
+      <section class="section" id="corrections" data-rh={m.sections.corrections}>
+        <h2>{m.sections.corrections}</h2>
+        {
+          en ? (
+            <>
+              <p>
+                If a claim is wrong, out of date or mislabelled, please <a href={L.issues}>open an issue on GitHub</a>{" "}
+                with two things: the claim's id (the small code at the end of its label line, such as{" "}
+                <code>{exampleId}</code>) and a link to the source that shows the problem. A better source is the most
+                useful correction of all.
+              </p>
+              <p>
+                Ids are the same in English and Japanese, so a report filed against either language fixes both. Every
+                id is also an anchor: <a href={p(`/countries/de/#${exampleId}`)}>/countries/de/#{exampleId}</a> links
+                straight to the entry.
+              </p>
+            </>
+          ) : (
+            <>
+              <p>
+                記述の誤り、古さ、ラベルの付け違いに気づいたら、<a href={L.issues}>GitHub に issue を立ててください</a>
+                。書いてほしいのは 2 つです。記述の ID（ラベル行の末尾にある小さな記号、たとえば <code>{exampleId}</code>
+                ）と、問題を示す出典へのリンクです。よりよい出典の提示が、いちばん役に立つ訂正です。
+              </p>
+              <p>
+                ID は英語版と日本語版で共通なので、どちらの言語で報告しても両方が直ります。ID はそのままアンカーにもなっていて、
+                <a href={p(`/countries/de/#${exampleId}`)}>/ja/countries/de/#{exampleId}</a> で記述に直接飛べます。
+              </p>
+            </>
+          )
+        }
+      </section>
+    </div>
   </article>
 </Base>
+
+<style>
+  .method .headword .hw-gloss {
+    font-size: var(--s-17);
+  }
+  .toc {
+    max-inline-size: var(--measure);
+    margin-block-start: 1.5rem;
+  }
+  .toc a {
+    min-block-size: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .prose .section:first-child {
+    margin-block-start: 2.5rem;
+  }
+  .prose .section > h2 {
+    margin-block-start: 0;
+  }
+  .prose h3 {
+    margin-block: 2rem 0.5rem;
+    scroll-margin-block-start: 4rem;
+  }
+  .section {
+    scroll-margin-block-start: 3rem;
+  }
+  .prose h4 {
+    font-size: var(--s-17);
+    font-weight: 700;
+    color: var(--ink);
+    margin-block: 1.5rem 0.5rem;
+  }
+  .metaphor,
+  .scales {
+    margin: 0.5rem 0 1.25rem;
+  }
+  .metaphor dt,
+  .scales dt {
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .metaphor dd,
+  .scales dd {
+    margin: 0 0 0.75rem;
+    color: var(--ink-2);
+  }
+  .scales > div {
+    padding-block: 0.5rem;
+    border-block-end: 1px solid var(--rule);
+  }
+  .scales dd {
+    margin-block-end: 0;
+  }
+  .poles {
+    display: block;
+    font-weight: 400;
+    font-size: var(--s-14);
+    color: var(--ink-2);
+  }
+  .usage + .usage {
+    margin-inline-start: 0.25rem;
+  }
+  .table-wrap {
+    margin-block: 1rem 1.5rem;
+  }
+  .table-wrap:focus-visible {
+    outline-offset: 4px;
+  }
+  caption {
+    caption-side: top;
+    text-align: start;
+    font-size: var(--s-14);
+    color: var(--ink-2);
+    padding-block-end: 0.5rem;
+  }
+  .labels {
+    inline-size: 100%;
+  }
+  .labels th[scope="row"] {
+    inline-size: 11rem;
+    vertical-align: top;
+  }
+  .label-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    padding-inline-start: 0.75rem;
+    border-inline-start: 3px solid var(--ink);
+  }
+  .label-cell[data-level="medium"] {
+    border-inline-start: 1.5px solid var(--ink-2);
+    padding-inline-start: calc(0.75rem + 1.5px);
+  }
+  .label-cell[data-level="weak"] {
+    border-inline-start: 1.5px dashed var(--ink-3);
+    padding-inline-start: calc(0.75rem + 1.5px);
+  }
+  .rule-name {
+    font-size: var(--s-14);
+    font-weight: 400;
+    color: var(--ink-2);
+  }
+  .labels td {
+    vertical-align: top;
+  }
+  td.num,
+  th.num {
+    text-align: end;
+  }
+  .odds {
+    inline-size: 100%;
+  }
+  .odds th[scope="row"] {
+    white-space: nowrap;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  tr.baseline th {
+    font-weight: 600;
+  }
+  .base-tag {
+    font-size: var(--s-14);
+    color: var(--ink-2);
+    margin-inline-start: 0.25rem;
+  }
+  .odds thead th {
+    overflow-wrap: normal;
+    vertical-align: bottom;
+  }
+  .bar-col {
+    inline-size: 40%;
+    min-inline-size: 5rem;
+  }
+  .dev {
+    position: relative;
+    display: block;
+    block-size: 0.75rem;
+    background: linear-gradient(var(--axis), var(--axis)) 50% 0 / 1px 100% no-repeat;
+  }
+  .dev-bar {
+    position: absolute;
+    inset-block: 0;
+    inline-size: calc(var(--w) / 2);
+  }
+  .dev-high {
+    inset-inline-start: 50%;
+    background: var(--ink);
+  }
+  .dev-low {
+    inset-inline-end: 50%;
+    background: transparent;
+    border: 1.5px solid var(--ink-2);
+  }
+  .table-note {
+    font-size: var(--s-14);
+    color: var(--ink-2);
+  }
+  .dated {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .example {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: var(--raised);
+    border: 1px solid var(--rule);
+  }
+  .example figcaption {
+    font-size: var(--s-14);
+    font-weight: 600;
+    color: var(--ink-2);
+    margin-block-end: 0.75rem;
+  }
+  .entries {
+    padding: 0;
+    margin: 0;
+  }
+  .example-note {
+    font-size: var(--s-15);
+    margin-block-end: 0;
+  }
+  .grid7 {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0.25rem;
+    border-block-start: 2px solid var(--axis);
+  }
+  .prose .grid7 li + li {
+    margin-block-start: 0;
+  }
+  .grid7 li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem 0.125rem 0;
+    font-size: var(--s-14);
+    line-height: 1.35;
+    color: var(--ink-2);
+    border-inline-start: 1px solid var(--rule);
+  }
+  .grid7 li:first-child {
+    border-inline-start: 0;
+  }
+  .grid7 .mono {
+    font-size: var(--s-15);
+    color: var(--ink);
+  }
+  .grid-caption {
+    font-size: var(--s-14);
+    color: var(--ink-2);
+  }
+  @media (max-width: 30rem) {
+    .grid7 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      row-gap: 0.75rem;
+    }
+    .grid7 li:nth-child(5) {
+      border-inline-start: 0;
+    }
+  }
+  .cautions li + li {
+    margin-block-start: 0.75rem;
+  }
+</style>
