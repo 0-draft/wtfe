@@ -65,15 +65,39 @@ const en = loadContent("en");
 
 const meta = readDir("meta");
 for (const [id, raw] of meta) {
+  const file = `meta/${id}.json`;
   const r = countryMetaSchema.safeParse(raw);
   if (!r.success) {
-    for (const issue of r.error.issues) fail(`meta/${id}.json`, `${issue.path.join(".")}: ${issue.message}`);
-  } else if (r.data.id !== id) fail(`meta/${id}.json`, `id "${r.data.id}" does not match file name`);
+    for (const issue of r.error.issues) fail(file, `${issue.path.join(".")}: ${issue.message}`);
+    continue;
+  }
+  const m = r.data;
+  if (m.id !== id) fail(file, `id "${m.id}" does not match file name`);
+  // A region lists one Hofstede entry per member country; the figures pair them with `iso` by position.
+  if (m.iso.length !== m.hofstede.length) {
+    fail(file, `iso has ${m.iso.length} codes but hofstede has ${m.hofstede.length} entries`);
+  }
+  for (const [scale, pos] of Object.entries(m.cultureMap)) {
+    if ((pos.step === null) !== (pos.basis === null)) {
+      fail(file, `cultureMap.${scale}: step and basis must both be set or both be null`);
+    }
+    // Region notes carry per-member steps ("DK -3 / SE -2"); every code must be a member.
+    if (m.iso.length > 1 && pos.note) {
+      for (const [, code] of pos.note.matchAll(/\b([A-Z]{2})\s*:?\s*[+\-−–]?\d/g)) {
+        if (!m.iso.includes(code!)) fail(file, `cultureMap.${scale}.note mentions ${code}, which is not in iso`);
+      }
+    }
+  }
 }
+// Every country page needs its metadata: the compare and scale pages dereference it.
+for (const id of ja.keys()) if (!meta.has(id)) fail(`meta/${id}.json`, "missing (required for every country)");
 
+// Source titles may be translated, but urls and years must match: they drive "dated" labels and catalogue anchors.
 function shape(c: CountryContent) {
   return THEME_IDS.flatMap((t) =>
-    c.themes[t].map((cl) => `${cl.id} ${cl.confidence} ${cl.sources.map((s) => s.url).join(",")}`),
+    c.themes[t].map(
+      (cl) => `${cl.id} ${cl.confidence} ${cl.sources.map((s) => `${s.url}@${s.year ?? ""}`).join(",")}`,
+    ),
   );
 }
 
