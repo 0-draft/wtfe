@@ -2,6 +2,8 @@
 
 _調査日: 2026-10-25_
 
+_このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[弱]）と数値の最終版は `src/data/content/{ja,en}/countries/` の JSON が正で、校正で変えた数値は `_訂正_` 行で示している。_
+
 ## Hofstede
 
 - The Culture Factor 現行値（2023 年に IDV・LTO 改訂）：PDI 40 / IDV 60 / MAS 62 / UAI 46 / LTO 50 / IVR 68（比較ツールをブラウザで描画して確認）([The Culture Factor](https://www.theculturefactor.com/country-comparison-tool?countries=united+states))

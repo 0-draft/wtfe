@@ -2,6 +2,8 @@
 
 _調査日: 2026-10-25_
 
+_このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[弱]）と数値の最終版は `src/data/content/{ja,en}/countries/` の JSON が正で、校正で変えた数値は `_訂正_` 行で示している。_
+
 Hofstede (The Culture Factor 現行値): PDI 77 / IDV 24 / MAS 56 / UAI 40 / LTO 51 / IVR 26。旧版では IDV=48 ([source](https://www.theculturefactor.com/country-comparison-tool?countries=india))
 
 - この調査は、途中で WebSearch の上限に達したため、そこで打ち切った。下の URL はすべて、検索結果か WebFetch で実際に取れたもの。

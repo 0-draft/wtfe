@@ -2,6 +2,8 @@
 
 _調査日: 2026-10-25_
 
+_このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[弱]）と数値の最終版は `src/data/content/{ja,en}/countries/` の JSON が正で、校正で変えた数値は `_訂正_` 行で示している。_
+
 Hofstede (Culture Factor 現行値): PDI 68 / IDV 47 / MAS 64 / UAI 93 / LTO 49 / IVR 29 ([source](https://www.theculturefactor.com/country-comparison-tool?countries=poland))。旧版は IDV 60 で、旧版の数字と混ぜて引用しないこと。
 
 ## Design & quality
