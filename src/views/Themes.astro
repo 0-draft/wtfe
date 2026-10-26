@@ -51,7 +51,7 @@ const sep = lang === "ja" ? "、" : ", ";
             <h2 class="hw">
               <a href={localePath(lang, `/themes/${th}/`)}>{themeNames[lang][th]}</a>
             </h2>
-            <p class="gloss">
+            <p class="gloss" data-pagefind-ignore="all">
               <span lang={other}>{themeNames[other][th]}</span>
               <span class={`code${lang === "en" ? " mono" : ""}`}>{themeCodes[lang][th]}</span>
             </p>

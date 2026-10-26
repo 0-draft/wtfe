@@ -32,7 +32,7 @@ const translated = isTranslated(lang, id);
         <p class="measure">{c.intro}</p>
       </Headword>
 
-      <nav class="toc" aria-label={t["nav.themes"]}>
+      <nav class="toc" data-pagefind-ignore aria-label={t["nav.themes"]}>
         <a href="#variance">{t["country.variance"]}</a>
         {THEME_IDS.map((th) => <a href={`#${th}`}>{themeNames[lang][th]}</a>)}
         <a href="#scales">{t["nav.scales"]}</a>
@@ -48,14 +48,14 @@ const translated = isTranslated(lang, id);
           <section class="section" id={th} data-rh={themeNames[lang][th]}>
             <h2>
               {themeNames[lang][th]}
-              <span class="h-aside">{t["home.claims"](c.themes[th].length)}</span>
+              <span class="h-aside" data-pagefind-ignore="all">{t["home.claims"](c.themes[th].length)}</span>
             </h2>
             <ul class="entries">
               {c.themes[th].map((claim) => (
                 <Claim claim={claim} lang={lang} />
               ))}
             </ul>
-            <p class="xref" lang={lang}>
+            <p class="xref" lang={lang} data-pagefind-ignore>
               → <a href={localePath(lang, `/themes/${th}/#${id}`)}>{b["country.compareTheme"](themeNames[lang][th])}</a>
             </p>
           </section>

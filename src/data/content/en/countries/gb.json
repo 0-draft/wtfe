@@ -1,13 +1,13 @@
 {
   "id": "gb",
   "name": "United Kingdom",
-  "oneLiner": "The public sector has written iterate, open, and blameless into its standards, yet the Horizon scandal is a heavy counterexample.",
-  "intro": "This page summarizes tendencies in UK software engineering from published government standards (GDS), company blogs, and survey data. These are country-level tendencies, and practice varies widely within the country, for example between London fintech and legacy public-sector IT. Because the government publishes its own development principles and incident procedures, primary evidence on the public sector is unusually rich.",
+  "oneLiner": "The public sector has written iterate, open and blameless into its standards, but the Horizon scandal is a serious counterexample.",
+  "intro": "The UK government publishes its own development principles and incident procedures through GDS, so primary evidence on the public sector is unusually rich. Company blogs and survey data cover the rest. These are national tendencies, and practice varies widely within the country, for example between London fintech and legacy public-sector IT.",
   "themes": {
     "design": [
       {
         "id": "gb-design-1",
-        "text": "The GDS Government Design Principles (published 2012, updated 2025) include \"Start with user needs,\" \"Do less,\" and \"Iterate. Then iterate again.\" Iterative development is an official principle of the public sector.",
+        "text": "The GDS Government Design Principles (published 2012, updated 2025) include \"Start with user needs,\" \"Do less\" and \"Iterate. Then iterate again.\" The public sector has made iterative development an official principle.",
         "confidence": "strong",
         "sources": [
           {
@@ -19,7 +19,7 @@
       },
       {
         "id": "gb-design-2",
-        "text": "Point 8 of the GOV.UK Service Standard is \"Iterate and improve frequently.\" It states that a service is never finished and that maintenance such as bug fixes is not enough.",
+        "text": "Point 8 of the GOV.UK Service Standard is \"Iterate and improve frequently.\" It says a service is never finished and that maintenance such as bug fixes is not enough.",
         "confidence": "strong",
         "sources": [
           {
@@ -30,7 +30,7 @@
       },
       {
         "id": "gb-design-3",
-        "text": "According to a 2023 NAO report, there have been 11 cross-government digital strategies in the past 25 years. The Police National Computer, introduced in 1974, is still in use.",
+        "text": "A 2023 NAO report counts 11 cross-government digital strategies in the past 25 years. The Police National Computer, introduced in 1974, is still in use.",
         "confidence": "strong",
         "sources": [
           {
@@ -55,7 +55,7 @@
       },
       {
         "id": "gb-failure-2",
-        "text": "GOV.UK publishes incident reports, such as one on increased error rates on 5 January 2022. A former GDS staff member wrote in 2018 that publishing them builds trust and an atmosphere where people can learn safely.",
+        "text": "GOV.UK publishes incident reports, such as one on increased error rates on 5 January 2022. A former GDS staff member wrote in 2018 that publishing them builds trust and makes it safe to learn from mistakes.",
         "confidence": "strong",
         "sources": [
           {
@@ -105,7 +105,7 @@
     "feedback": [
       {
         "id": "gb-feedback-1",
-        "text": "Meyer writes that the British deliver negative feedback less directly than Americans and far less directly than the Dutch. She describes frequent understatement using downgraders such as \"a bit\" and \"slightly.\"",
+        "text": "Meyer writes that the British deliver negative feedback less directly than Americans and much less directly than the Dutch. She says they often use understatement, with downgraders such as \"a bit\" and \"slightly.\"",
         "confidence": "medium",
         "sources": [
           {
@@ -170,7 +170,7 @@
       },
       {
         "id": "gb-hierarchy-3",
-        "text": "The NAO (2023) identifies as a problem that many digital decisions in government are made by generalist leaders without technical expertise.",
+        "text": "The NAO (2023) flags as a problem that many digital decisions in government are made by generalist leaders without technical expertise.",
         "confidence": "strong",
         "sources": [
           {
@@ -184,7 +184,7 @@
     "communication": [
       {
         "id": "gb-communication-1",
-        "text": "According to a book summary, the United Kingdom is on the low-context side of Meyer's Communicating scale but relies on context more than the United States, Canada, Australia, the Netherlands, and Germany.",
+        "text": "A book summary puts the United Kingdom on the low-context side of Meyer's Communicating scale, though it relies on context more than the United States, Canada, Australia, the Netherlands and Germany.",
         "confidence": "weak",
         "sources": [
           {
@@ -211,7 +211,7 @@
       },
       {
         "id": "gb-communication-3",
-        "text": "In 2015, Inside GOV.UK published a blog post describing what happens when something goes wrong on GOV.UK.",
+        "text": "In 2015, Inside GOV.UK published a blog post on what the team does when something goes wrong on GOV.UK.",
         "confidence": "strong",
         "sources": [
           {
@@ -225,7 +225,7 @@
     "work": [
       {
         "id": "gb-work-1",
-        "text": "According to the ONS, full-time workers averaged 36.6 actual hours per week in 2024. The figure covers all occupations, not only engineers.",
+        "text": "The ONS reports that full-time workers averaged 36.6 actual hours per week in 2024. The figure covers all occupations, not only engineers.",
         "confidence": "strong",
         "sources": [
           {
@@ -237,7 +237,7 @@
       },
       {
         "id": "gb-work-2",
-        "text": "In the Stack Overflow Developer Survey 2025, 31.9% of UK respondents work fully remote and 25.8% work hybrid leaning flexible. Median salaries were $136,141 for engineering managers and $108,913 for back-end developers, about 60 to 70% of US levels.",
+        "text": "In the Stack Overflow Developer Survey 2025, 31.9% of UK respondents worked fully remote and 25.8% hybrid leaning flexible. Median salaries were $136,141 for engineering managers and $108,913 for back-end developers, about 60 to 70% of US levels.",
         "confidence": "strong",
         "sources": [
           {
@@ -274,7 +274,7 @@
     "oss": [
       {
         "id": "gb-oss-1",
-        "text": "According to Octoverse 2024, the UK has more than 4 million developers on GitHub, up 19% year over year. Octoverse 2025 projects about 11 million by 2030.",
+        "text": "Octoverse 2024 counts more than 4 million developers in the UK on GitHub, up 19% year over year. Octoverse 2025 projects about 11 million by 2030.",
         "confidence": "strong",
         "sources": [
           {
@@ -303,7 +303,7 @@
       },
       {
         "id": "gb-oss-3",
-        "text": "The public sector has made publishing code the default. The Skills Funding Agency reused GOV.UK's Smart Answers code and finished in under a week work that would otherwise have taken at least two months.",
+        "text": "The public sector has made publishing code the default. The Skills Funding Agency reused GOV.UK's Smart Answers code and finished in under a week work it had expected to take at least two months.",
         "confidence": "strong",
         "sources": [
           {
@@ -316,8 +316,8 @@
     ]
   },
   "variance": [
-    "There is a wide gap between the GDS ideals and the reality of public-sector IT burdened with legacy systems (NAO 2023).",
-    "The Post Office Horizon scandal is an extreme case of the opposite of blameless culture: software defects were turned into individual guilt.",
+    "The GDS ideals and the reality of public-sector IT weighed down by legacy systems are far apart (NAO 2023).",
+    "The Post Office Horizon scandal is an extreme case of the opposite of blameless culture, in which software defects were turned into individual guilt.",
     "Practices at London fintechs such as Monzo do not represent British companies as a whole.",
     "Understatement is a well-known stereotype, but no empirical study of the tone of British code review was found."
   ]

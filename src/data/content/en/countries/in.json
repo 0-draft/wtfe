@@ -1,13 +1,13 @@
 {
   "id": "in",
   "name": "India",
-  "oneLiner": "Meyer rates it hierarchical and top-down with revisable decisions; culture splits by business type",
-  "intro": "This page draws on statistics from NASSCOM and USCIS, GitHub Octoverse and news reports to describe how software engineers in India work. These are country-level tendencies, and culture differs widely between the large IT services firms, foreign-owned global capability centers (GCCs) and product startups. Statistics on developer numbers and employment are rich, but sources on review and retrospective practices are mostly anecdotes and industry articles.",
+  "oneLiner": "Meyer classes India as hierarchical and top-down but open to revising decisions, and culture splits by type of business.",
+  "intro": "India has rich statistics on developer numbers and employment, from NASSCOM, USCIS and GitHub Octoverse, plus news reports. Sources on review and retrospective practice are mostly anecdotes and industry articles. The tendencies are national, and culture differs widely between the large IT services firms, foreign-owned global capability centers (GCCs) and product startups.",
   "themes": {
     "design": [
       {
         "id": "in-design-1",
-        "text": "TCS announced in 2011 that it had been assessed at CMMI Level 5 enterprise-wide for both CMMI-DEV and CMMI-SVC, and says it was the first company in the world to reach enterprise-wide Level 5 for SVC.",
+        "text": "TCS announced in 2011 that it had been assessed at CMMI Level 5 enterprise-wide for both CMMI-DEV and CMMI-SVC. It says it was the first company in the world to reach enterprise-wide Level 5 for SVC.",
         "confidence": "strong",
         "sources": [
           {
@@ -72,7 +72,7 @@
     "failure": [
       {
         "id": "in-failure-1",
-        "text": "According to Meyer's 2017 HBR article, in top-down decision-making cultures, India among them, decisions are made quickly but can change as new input or arguments arise. A decision is treated as a placeholder that can be adjusted later, not a firm commitment.",
+        "text": "Meyer's 2017 HBR article says that in top-down decision-making cultures, India among them, decisions are made quickly but can change as new input or arguments arise. A decision is treated as a placeholder that can be adjusted later, not a firm commitment.",
         "confidence": "medium",
         "sources": [
           {
@@ -84,7 +84,7 @@
       },
       {
         "id": "in-failure-2",
-        "text": "On Meyer's Scheduling scale, India is on the flexible-time side, described as running several things in parallel, accepting interruptions and prioritizing adaptation.",
+        "text": "On Meyer's Scheduling scale, India is on the flexible-time side. People there are described as running several things in parallel, accepting interruptions and putting adaptation first.",
         "confidence": "medium",
         "sources": [
           {
@@ -125,7 +125,7 @@
       },
       {
         "id": "in-feedback-2",
-        "text": "Rastogi et al. (ESEM 2018), analyzing about 70,000 GitHub pull requests, found that in 16 of 17 countries, pull requests were more likely to be accepted when the submitter and reviewer were from the same country. India was the exception: acceptance fell by 7.4% when the maintainer was also from India.",
+        "text": "Rastogi et al. (ESEM 2018) analyzed about 70,000 GitHub pull requests. In 16 of 17 countries, pull requests were more likely to be accepted when submitter and reviewer shared a country. India was the exception, with acceptance 7.4% lower when the maintainer was also Indian.",
         "confidence": "medium",
         "sources": [
           {
@@ -176,7 +176,7 @@
     "communication": [
       {
         "id": "in-communication-1",
-        "text": "In the EF EPI 2024, India ranked 69th of 116 countries and regions. English is widely used as a working language, but India's rank on this test is mid-table.",
+        "text": "In the EF EPI 2024, India ranked 69th of 116 countries and regions. English is widely used as a working language, but India sits mid-table on this test.",
         "confidence": "medium",
         "sources": [
           {
@@ -201,7 +201,7 @@
     "work": [
       {
         "id": "in-work-1",
-        "text": "NASSCOM estimated India's tech industry revenue for FY2025 at about $282.6 billion, with 5.8 million employees (a net addition of 126,000). A 2026 revision raised these to $297 billion and 5.82 million.",
+        "text": "NASSCOM estimated India's tech industry revenue for FY2025 at about $282.6 billion, with 5.8 million employees (a net addition of 126,000). A 2026 revision raised the figures to $297 billion and 5.82 million.",
         "confidence": "medium",
         "sources": [
           {
@@ -218,7 +218,7 @@
       },
       {
         "id": "in-work-2",
-        "text": "According to NASSCOM and Zinnov, India had more than 1,700 global capability centers (GCCs) of foreign companies employing more than 1.9 million people as of FY2024. GCCs are also spreading to tier-2 cities.",
+        "text": "NASSCOM and Zinnov count more than 1,700 global capability centers (GCCs) of foreign companies in India as of FY2024, employing more than 1.9 million people. GCCs are also spreading to tier-2 cities.",
         "confidence": "medium",
         "sources": [
           {
@@ -234,7 +234,7 @@
       },
       {
         "id": "in-work-3",
-        "text": "Attrition at the large IT services firms swings with the business cycle. In Q2 FY23 it was 27.1% at Infosys, 23% at Wipro and 21.5% at TCS; by Q4 FY24 it had fallen to 12.5% at TCS and 12.6% at Infosys.",
+        "text": "Attrition at the large IT services firms swings with the business cycle. In Q2 FY23 it was 27.1% at Infosys, 23% at Wipro and 21.5% at TCS. By Q4 FY24 it had fallen to 12.5% at TCS and 12.6% at Infosys.",
         "confidence": "medium",
         "sources": [
           {
@@ -251,7 +251,7 @@
       },
       {
         "id": "in-work-4",
-        "text": "According to USCIS, 72.3% of H-1B petitions approved in FY2023 were for people born in India; 11.7% were for people born in China.",
+        "text": "USCIS data show that 72.3% of H-1B petitions approved in FY2023 were for people born in India, against 11.7% for people born in China.",
         "confidence": "strong",
         "sources": [
           {
@@ -268,7 +268,7 @@
       },
       {
         "id": "in-work-5",
-        "text": "In 2023, Infosys founder Narayana Murthy said young Indians should work 70 hours a week. The remark drew strong backlash on social media but support from some business leaders, and public opinion split.",
+        "text": "In 2023, Infosys founder Narayana Murthy said young Indians should work 70 hours a week. The remark drew strong backlash on social media but support from some business leaders, and opinion split.",
         "confidence": "medium",
         "sources": [
           {
@@ -287,7 +287,7 @@
     "oss": [
       {
         "id": "in-oss-1",
-        "text": "According to GitHub Octoverse 2025, India has 21.9 million developers, second only to the US (up from 4.5 million in 2020). More than 5 million joined in 2025 alone.",
+        "text": "GitHub Octoverse 2025 counts 21.9 million developers in India, second only to the US and up from 4.5 million in 2020. More than 5 million joined in 2025 alone.",
         "confidence": "strong",
         "sources": [
           {
@@ -340,12 +340,12 @@
     ]
   },
   "variance": [
-    "Process, hierarchy and pace differ greatly between the large IT services firms (TCS, Infosys, Wipro), foreign GCCs and product startups. Moving from a services firm to a GCC is described as a common career path.",
-    "Companies such as Zerodha run very large systems with small teams, a counterexample to the image of India as a country that throws headcount at problems.",
-    "The common claim that an Indian \"yes\" does not mean agreement found no support beyond anecdotes, so this page does not use it.",
+    "Process, hierarchy and pace differ widely between the large IT services firms (TCS, Infosys, Wipro), foreign GCCs and product startups. Moving from a services firm to a GCC is described as a common career path.",
+    "Companies such as Zerodha run huge systems with small teams, which runs against the image of India as a country that throws headcount at problems.",
+    "The common claim that an Indian \"yes\" does not mean agreement has no support beyond anecdotes, so this page leaves it out.",
     "India has one of the largest developer populations, but voices within India say the depth of its open source contribution does not match its numbers.",
     "No systematic data was found on postmortem culture.",
     "In the Stack Overflow Developer Survey 2024, 7.2% of respondents were from India, the third-largest share, so India is far better represented in international surveys than Japan or South Korea.",
-    "Octoverse 2025's 2030 projection is inconsistent: its chart shows 54.7 million developers for the US and 57.5 million for India, while the text puts the US at \"more than 40 million\"."
+    "Octoverse 2025's 2030 projection is inconsistent. Its chart shows 54.7 million developers for the US and 57.5 million for India, but its text puts the US at \"more than 40 million.\""
   ]
 }

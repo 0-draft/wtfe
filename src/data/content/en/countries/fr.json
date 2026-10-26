@@ -1,13 +1,13 @@
 {
   "id": "fr",
   "name": "France",
-  "oneLiner": "Meyer classes it as hierarchical yet openly argumentative. State-led open source and IT-services staffing stand out.",
-  "intro": "This page summarizes tendencies in French software engineering from the Culture Map, Hofstede, statistics, and law. These are country-level tendencies, and work differs widely between Paris startups, research institutes, and developers placed at client sites by IT services firms (ESN). France has abundant primary sources on institutions such as government open source policy and collective agreements, but almost no data was found on review or postmortem practice in engineering teams.",
+  "oneLiner": "Meyer classes France as hierarchical yet openly argumentative, and state-led open source and IT-services staffing stand out.",
+  "intro": "France is described here through the Culture Map, Hofstede, statistics and law. These are national tendencies. Work differs widely between Paris startups, research institutes and developers whom IT services firms (ESN) place at client sites. Primary sources on institutions such as government open source policy and collective agreements are abundant, but almost no data was found on review or postmortem practice in engineering teams.",
   "themes": {
     "design": [
       {
         "id": "fr-design-1",
-        "text": "The Culture Map (2014) places France on the principles-first side of Persuading. Meyer says that Latin European and Germanic cultures prefer deductive arguments that move from principles to conclusions.",
+        "text": "The Culture Map (2014) places France on the principles-first side of Persuading. Meyer says Latin European and Germanic cultures prefer deductive arguments that move from principles to conclusions.",
         "confidence": "medium",
         "sources": [
           {
@@ -35,7 +35,7 @@
       },
       {
         "id": "fr-design-3",
-        "text": "According to Numeum, IT services firms (ESN) accounted for 50% (€34.5 billion) of the €69.4 billion digital market in 2024. Many developers work on client sites under the régie model, in which the ESN is accountable for effort rather than deliverables.",
+        "text": "Numeum reports that IT services firms (ESN) accounted for 50% (€34.5 billion) of the €69.4 billion digital market in 2024. Many developers work on client sites under the régie model, in which the ESN is accountable for effort rather than deliverables.",
         "confidence": "medium",
         "sources": [
           {
@@ -53,7 +53,7 @@
     "failure": [
       {
         "id": "fr-failure-1",
-        "text": "France scores 86 on Hofstede's uncertainty avoidance (UAI), higher than Germany's 65. The Culture Factor explains a high score as a tendency to reduce ambiguity through rules and procedures.",
+        "text": "France scores 86 on Hofstede's uncertainty avoidance (UAI), higher than Germany's 65. The Culture Factor reads a high score as a tendency to reduce ambiguity through rules and procedures.",
         "confidence": "medium",
         "sources": [
           {
@@ -119,7 +119,7 @@
       },
       {
         "id": "fr-feedback-3",
-        "text": "One book review explains that French disagreement is emotionally expressive, unlike the restrained style of German disagreement.",
+        "text": "One book review says French disagreement is emotionally expressive, unlike the restrained style of German disagreement.",
         "confidence": "weak",
         "sources": [
           {
@@ -132,7 +132,7 @@
     "hierarchy": [
       {
         "id": "fr-hierarchy-1",
-        "text": "The Culture Map places France toward the hierarchical end of Leading and the top-down end of Deciding, yet on the confrontational side of Disagreeing. Read together, the scales suggest that the boss decides, but only after vigorous debate.",
+        "text": "The Culture Map places France toward the hierarchical end of Leading and the top-down end of Deciding, yet on the confrontational side of Disagreeing. Taken together, the scales suggest that the boss decides, but only after heated debate.",
         "confidence": "medium",
         "sources": [
           {
@@ -172,7 +172,7 @@
     "work": [
       {
         "id": "fr-work-1",
-        "text": "The statutory working week is 35 hours. The Syntec collective agreement for the IT sector provides a 35-hour arrangement (modalité 1), a 38.5-hour flat arrangement capped at 219 days a year (modalité 2), and forfait jours, a 218-day annual arrangement generally without overtime pay (modalité 3).",
+        "text": "The statutory working week is 35 hours. The Syntec collective agreement for IT offers a 35-hour arrangement (modalité 1), a 38.5-hour flat arrangement capped at 219 days a year (modalité 2), and forfait jours, 218 days a year and generally no overtime pay (modalité 3).",
         "confidence": "medium",
         "sources": [
           {
@@ -205,7 +205,7 @@
       },
       {
         "id": "fr-work-3",
-        "text": "According to Numeum, the digital sector employs about 666,000 people. Hiring fell from 83,800 in 2023 to 51,800 in 2024, and turnover dropped from 22% to 16%. The decline was sharpest at large ESNs, while software publishers held up better.",
+        "text": "Numeum puts digital-sector employment at about 666,000. Hiring fell from 83,800 in 2023 to 51,800 in 2024, and turnover dropped from 22% to 16%. Large ESNs cut hiring the most, while software publishers held up better.",
         "confidence": "medium",
         "sources": [
           {
@@ -222,7 +222,7 @@
       },
       {
         "id": "fr-work-4",
-        "text": "According to industry blogs and a lawyer's article, ESNs structurally generate idle periods between assignments (intercontrat). Isolation and loss of motivation among consultants waiting for an assignment are cited as problems.",
+        "text": "Industry blogs and a lawyer's article say ESNs build idle periods between assignments (intercontrat) into their model. Consultants waiting for an assignment report isolation and loss of motivation.",
         "confidence": "weak",
         "sources": [
           {
@@ -285,7 +285,7 @@
       },
       {
         "id": "fr-oss-3",
-        "text": "DINUM's La Suite numérique and Germany's openDesk from ZenDiS have collaborated since 2024. The collaborative editor Docs is a joint Franco-German initiative that the Netherlands is also joining.",
+        "text": "DINUM's La Suite numérique and Germany's openDesk from ZenDiS have worked together since 2024. The collaborative editor Docs is a joint Franco-German initiative, and the Netherlands is joining it.",
         "confidence": "strong",
         "sources": [
           {
@@ -321,7 +321,7 @@
       },
       {
         "id": "fr-oss-5",
-        "text": "According to Octoverse 2024, France has more than 2.8 million developers on GitHub, up 20% year over year. France ranked fifth by respondents in the Stack Overflow Developer Survey 2025 (1,408, or 4%).",
+        "text": "Octoverse 2024 counts more than 2.8 million developers in France on GitHub, up 20% year over year. France ranked fifth by respondents in the Stack Overflow Developer Survey 2025 (1,408, or 4%).",
         "confidence": "strong",
         "sources": [
           {
@@ -339,8 +339,8 @@
     ]
   },
   "variance": [
-    "Ownership of quality and ways of working differ greatly between Paris startups, research institutes such as Inria, and ESN consultants placed at client sites (régie).",
-    "There is a common belief that France is intolerant of failure. Yet 42.7% cited fear of failure in GEM 2024, close to the roughly two in five GEM reports for Germany in 2025.",
+    "Ownership of quality and ways of working differ widely between Paris startups, research institutes such as Inria and ESN consultants placed at client sites (régie).",
+    "France is commonly said to be intolerant of failure, yet 42.7% cited fear of failure in GEM 2024, close to the roughly two in five GEM reports for Germany in 2025.",
     "The statutory week is 35 hours, but managers and professionals on Syntec forfait jours are tracked in days, and overall actual hours are in line with the EU average.",
     "No quantitative data was found on postmortem or design-document practice specific to France, so this page does not cover it.",
     "One summary site (entiresummary) says the French deliver negative feedback indirectly, but this contradicts Meyer's own chart, so this page does not use it."

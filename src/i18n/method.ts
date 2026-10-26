@@ -49,7 +49,7 @@ interface MethodText {
 export const methodText: Record<Lang, MethodText> = {
   en: {
     gloss: "Front matter: how this dictionary is made and how to read it",
-    lead: "wtfe records how software engineering tends to be done in fourteen countries and regions, the way a usage dictionary records how words are used. This page explains what counts as evidence, how strong each kind is, which frameworks the scale pages rely on, and where all of it runs out.",
+    lead: "wtfe records how software engineering tends to be done in fourteen countries and regions, the way a usage dictionary records how words are used. This page explains what counts as evidence, how strong each kind is, which frameworks the scale pages rely on, and where the evidence runs out.",
     tocLabel: "On this page",
     sections: {
       "what-this-is": "What this site is, and is not",
@@ -82,19 +82,19 @@ export const methodText: Record<Lang, MethodText> = {
     revisedNew: "Current",
     revisedOldSource: "Older value cited by",
     rastogiCaption:
-      "Odds of a pull request being accepted, by the submitter's country, relative to the United States (= 100). Rastogi et al. 2018, as summarised in the Ehime University WWS2019 slides",
+      "Odds of a pull request being accepted, by the submitter's country, relative to the United States (= 100). Rastogi et al. 2018, as summarized in the Ehime University WWS2019 slides",
     rastogiCountry: "Submitter's country",
     rastogiOdds: "Odds",
     rastogiBar: "Difference from the United States, drawn as a bar",
     rastogiBase: "(baseline)",
     rastogiNote:
-      "Solid bars to the right of the centre line: higher odds than the United States. Outlined bars to the left: lower odds. Full bar width is a difference of 50.",
+      "Solid bars to the right of the center line mean higher odds than the United States, and outlined bars to the left mean lower odds. A full-width bar is a difference of 50.",
     tableScroll: "Table, scrolls sideways",
     poles: (left, right) => `${left} ↔ ${right}`,
   },
   ja: {
-    gloss: "凡例 ― この辞書の作り方と読み方",
-    lead: "wtfe は、14 の国と地域でソフトウェア開発がどう行われる傾向にあるかを、用例辞典が言葉の使われ方を記録するのと同じやり方で記録しています。このページでは、何を根拠とみなすか、根拠の種類ごとの確かさ、尺度のページが拠って立つ枠組み、そしてそれらの限界を説明します。",
+    gloss: "凡例：この辞書の作り方と読み方",
+    lead: "wtfe は、14 の国と地域でソフトウェア開発がどう行われる傾向にあるかを、用例辞典が言葉の使われ方を記録するように記録しています。以下では、何を根拠とみなすか、根拠の種類ごとの確かさ、尺度のページの土台にある枠組み、それぞれの限界を説明します。",
     tocLabel: "このページの内容",
     sections: {
       "what-this-is": "このサイトは何で、何でないか",
@@ -131,7 +131,7 @@ export const methodText: Record<Lang, MethodText> = {
     rastogiBar: "米国との差を棒で示したもの",
     rastogiBase: "（基準）",
     rastogiNote:
-      "中央の線より右の塗りつぶしの棒は米国より採択されやすく、左の枠線だけの棒は採択されにくいことを示す。棒の端までの長さが差 50 にあたる。",
+      "中央の線より右にある塗りつぶしの棒は米国より採択されやすいこと、左にある枠線だけの棒は採択されにくいことを示す。棒の幅いっぱいが差 50 にあたる。",
     tableScroll: "表（横にスクロールできます）",
     poles: (left, right) => `${left} ↔ ${right}`,
   },

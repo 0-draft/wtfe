@@ -25,7 +25,7 @@ const options = COUNTRY_IDS.map((c) => ({ id: c, name: country(lang, c)!.name })
 const fallback = from && to ? localePath(lang, `/compare/${from}-vs-${to}/`) : localePath(lang, "/compare/");
 ---
 
-<form class="pp" data-pair-picker data-template={template} aria-label={label} autocomplete="off" hidden>
+<form class="pp" data-pagefind-ignore data-pair-picker data-template={template} aria-label={label} autocomplete="off" hidden>
   <label class="pp-field pp-a">
     <span class="pp-label">{t["pick.from"]}</span>
     <select name="from" data-pick="a" autocomplete="off">

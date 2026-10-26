@@ -2,12 +2,12 @@
   "id": "gb",
   "name": "イギリス",
   "oneLiner": "公共部門は iterate・open・blameless を明文化している。一方で Horizon 事件のような重い反例もある。",
-  "intro": "英国のソフトウェア開発の傾向を、政府の公開標準 (GDS)、企業ブログ、調査データから整理したページです。あくまで国レベルの傾向で、London の fintech と公共部門のレガシー IT のように、国内でも実態は大きく違います。英国は政府自身が開発原則やインシデント対応を公開文書にしているため、公共部門についての一次資料が特に厚いのが特徴です。",
+  "intro": "英国のソフトウェア開発の傾向を、政府の公開標準 (GDS)、企業ブログ、調査データから整理しています。扱うのは国レベルの傾向で、London の fintech と公共部門のレガシー IT のように、国内でも実態は大きく違います。英国は政府自身が開発原則やインシデント対応を文書にして公開しているため、公共部門の一次資料が特に豊富です。",
   "themes": {
     "design": [
       {
         "id": "gb-design-1",
-        "text": "GDS の Government Design Principles (2012 年公開、2025 年更新) は「Start with user needs」「Do less」「Iterate. Then iterate again」などを掲げる。公共部門が iterative な開発を公式の原則にしている。",
+        "text": "GDS の Government Design Principles (2012 年公開、2025 年更新) は「Start with user needs」「Do less」「Iterate. Then iterate again」などを掲げる。公共部門が反復型の開発を公式の原則にしている。",
         "confidence": "strong",
         "sources": [
           {
@@ -159,7 +159,7 @@
       },
       {
         "id": "gb-hierarchy-2",
-        "text": "公共部門では Service Standard に基づく service assessment が実質的なゲートになっている。DfE の解説によると、正当な理由なく新規コードを公開していないと assessment に通らないことがある。",
+        "text": "公共部門では Service Standard に基づく service assessment が、実質的な関門になっている。DfE の解説によると、正当な理由なく新規コードを公開していないと assessment に通らないことがある。",
         "confidence": "strong",
         "sources": [
           {
@@ -170,7 +170,7 @@
       },
       {
         "id": "gb-hierarchy-3",
-        "text": "NAO (2023) は、政府のデジタル関連の意思決定の多くを、技術を専門としないジェネラリストのリーダーが下している点を課題に挙げている。",
+        "text": "NAO (2023) は、政府のデジタル関連の意思決定の多くを、技術を専門としないジェネラリストのリーダーが下していることを課題に挙げている。",
         "confidence": "strong",
         "sources": [
           {
@@ -274,7 +274,7 @@
     "oss": [
       {
         "id": "gb-oss-1",
-        "text": "Octoverse 2024 によると、英国の GitHub 開発者は 400 万人を超え、前年比 +19% だった。Octoverse 2025 は 2030 年に約 1,100 万人になると予測している。",
+        "text": "Octoverse 2024 によると、英国の GitHub 開発者は 400 万人を超え、前年比 19% 増だった。Octoverse 2025 は 2030 年に約 1,100 万人になると予測している。",
         "confidence": "strong",
         "sources": [
           {

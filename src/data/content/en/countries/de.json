@@ -1,13 +1,13 @@
 {
   "id": "de",
   "name": "Germany",
-  "oneLiner": "Meyer classes it as consensual with direct feedback. Institutions such as ASPICE and codetermination underpin quality.",
-  "intro": "This page summarizes tendencies in German software engineering from the Culture Map, Hofstede, statistics, and law. These are country-level tendencies with wide variance inside the country; regulated industries such as automotive and Berlin startups have quite different cultures. Germany has plenty of national surveys on error culture and labor-court rulings that reach into engineering work, but no study was found that examines code review culture directly.",
+  "oneLiner": "Meyer classes Germany as consensual and direct in feedback, and institutions such as ASPICE and codetermination support quality.",
+  "intro": "For Germany, the sources are the Culture Map, Hofstede, official statistics and law. The picture is national, and the spread within the country is wide. Regulated industries such as automotive and Berlin startups, for example, have quite different cultures. Germany has plenty of national surveys on error culture and labor-court rulings that reach into engineering work, but no study was found that looks directly at code review culture.",
   "themes": {
     "design": [
       {
         "id": "de-design-1",
-        "text": "Meyer's Culture Map (2014) places Germany near the principles-first end of Persuading and the linear-time end of Scheduling. She describes this as a preference for reasoning from principles to conclusions and for keeping to the plan.",
+        "text": "Meyer's Culture Map (2014) places Germany near the principles-first end of Persuading and the linear-time end of Scheduling. In her description, Germans prefer to reason from principles to conclusions and to keep to the plan.",
         "confidence": "medium",
         "sources": [
           {
@@ -19,7 +19,7 @@
       },
       {
         "id": "de-design-2",
-        "text": "In the automotive industry, Automotive SPICE, maintained by VDA QMC, is a de facto condition of doing business. According to itemis, OEMs require suppliers to reach Level 2 to 3 with bidirectional traceability between requirements, design, and tests. This is a customer requirement, not a law.",
+        "text": "Automotive SPICE, maintained by VDA QMC, is a de facto condition of doing business in the car industry. According to itemis, OEMs require suppliers to reach Level 2 to 3, with bidirectional traceability between requirements, design and tests. This is a customer requirement, not a law.",
         "confidence": "medium",
         "sources": [
           {
@@ -37,7 +37,7 @@
     "failure": [
       {
         "id": "de-failure-1",
-        "text": "In the Randstad-ifo HR survey (Q3 2026, 469 companies), 28% of firms with 500 or more employees said mistakes are discussed openly, against 62% of firms with 49 or fewer. 34% of large firms see their error culture as a barrier to innovation, while 56% of all firms report no effect.",
+        "text": "A Randstad-ifo HR survey (Q3 2026, 469 companies) found mistakes discussed openly at 28% of firms with 500+ staff and 62% of firms with 49 or fewer. 34% of large firms said their error culture holds back innovation, and 56% of all firms saw no effect.",
         "confidence": "strong",
         "sources": [
           {
@@ -61,7 +61,7 @@
       },
       {
         "id": "de-failure-3",
-        "text": "According to an article on an EY survey (around 2023, about 1,000 people in machinery, automotive, finance, and other sectors), 64% of managers did not admit, or only partly admitted, their own mistakes from the past two years.",
+        "text": "An article on an EY survey (around 2023, about 1,000 people in machinery, automotive, finance and other sectors) reports that 64% of managers did not admit, or only partly admitted, their own mistakes from the past two years.",
         "confidence": "medium",
         "sources": [
           {
@@ -73,7 +73,7 @@
       },
       {
         "id": "de-failure-4",
-        "text": "In a survey by the industry association Bitkom (October 2024), 70% of companies said data protection hinders digitalization. At 63%, innovation projects failed or never started because of data protection rules. A follow-up survey put that share at 77%.",
+        "text": "In a survey by the industry association Bitkom (October 2024), 70% of companies said data protection hinders digitalization. At 63% of companies, innovation projects failed or never started because of data protection rules. A follow-up survey put that share at 77%.",
         "confidence": "medium",
         "sources": [
           {
@@ -103,7 +103,7 @@
     "feedback": [
       {
         "id": "de-feedback-1",
-        "text": "The Culture Map (2014) places Germany on the direct side of Evaluating. Meyer describes this as a tendency to deliver negative feedback without softening it.",
+        "text": "The Culture Map (2014) places Germany on the direct side of Evaluating. Meyer says Germans tend to deliver negative feedback without softening it.",
         "confidence": "medium",
         "sources": [
           {
@@ -115,7 +115,7 @@
       },
       {
         "id": "de-feedback-2",
-        "text": "One book review explains that Germany is on the confrontational side of Disagreeing, but that German disagreement is objective and emotionally restrained, unlike the expressive confrontation found in France.",
+        "text": "One book review says Germany is on the confrontational side of Disagreeing, but that German disagreement is objective and emotionally restrained, unlike the expressive confrontation found in France.",
         "confidence": "weak",
         "sources": [
           {
@@ -152,7 +152,7 @@
       },
       {
         "id": "de-hierarchy-2",
-        "text": "Under BetrVG §87(1) no. 6, introducing technical equipment that can monitor employees' behavior or performance requires codetermination by the works council (Betriebsrat). The test is whether it can be used for monitoring, and in 2022 the Federal Labor Court (1 ABR 20/21) treated Microsoft Office 365 as covered.",
+        "text": "Under BetrVG §87(1) no. 6, the works council (Betriebsrat) has codetermination rights over technical equipment that can monitor employees' behavior or performance. What counts is whether it can be used for monitoring. In 2022 the Federal Labor Court (1 ABR 20/21) applied this to Microsoft Office 365.",
         "confidence": "medium",
         "sources": [
           {
@@ -187,7 +187,7 @@
     "communication": [
       {
         "id": "de-communication-1",
-        "text": "The Culture Map places Germany on the low-context side of Communicating. In Meyer's description, people say things explicitly, repeat points to confirm them, and prefer to put things in writing.",
+        "text": "The Culture Map places Germany on the low-context side of Communicating. Meyer says Germans state things explicitly, repeat points to confirm them and prefer to put things in writing.",
         "confidence": "medium",
         "sources": [
           {
@@ -199,7 +199,7 @@
       },
       {
         "id": "de-communication-2",
-        "text": "SUP.10 in Automotive SPICE requires change requests to be linked to the affected work products and analyzed in advance. In regulated industries, documentation is also a contractual requirement.",
+        "text": "SUP.10 in Automotive SPICE requires change requests to be linked to the affected work products and analyzed in advance. In regulated industries, documentation is a contractual requirement as well.",
         "confidence": "strong",
         "sources": [
           {
@@ -211,7 +211,7 @@
       },
       {
         "id": "de-communication-3",
-        "text": "According to startuprad.io, English is the main working language at Berlin startups. Estimates of the share of foreign employees range from 30% to 49% depending on the source.",
+        "text": "startuprad.io reports that English is the main working language at Berlin startups. Estimates of the share of foreign employees range from 30% to 49%, depending on the source.",
         "confidence": "weak",
         "sources": [
           {
@@ -225,7 +225,7 @@
     "work": [
       {
         "id": "de-work-1",
-        "text": "According to Eurostat, average actual weekly hours in 2024 (ages 20 to 64, full-time and part-time combined) were 33.9 in Germany, below the EU average of 36.0.",
+        "text": "Eurostat puts average actual weekly hours in Germany in 2024 (ages 20 to 64, full-time and part-time combined) at 33.9, below the EU average of 36.0.",
         "confidence": "strong",
         "sources": [
           {
@@ -287,7 +287,7 @@
       },
       {
         "id": "de-work-5",
-        "text": "According to OECD data for 2019, establishments with 10 or fewer employees are exempt from the standard dismissal protection rules. Dismissals must also be notified to the works council beforehand.",
+        "text": "OECD data for 2019 show that establishments with 10 or fewer employees are exempt from the standard dismissal protection rules. Employers must also notify the works council before a dismissal.",
         "confidence": "strong",
         "sources": [
           {
@@ -301,7 +301,7 @@
     "oss": [
       {
         "id": "de-oss-1",
-        "text": "According to Octoverse 2024, Germany has more than 3.5 million developers on GitHub, up 21% year over year. Octoverse 2025 says the number of German developers more than tripled from 2020 to 2025.",
+        "text": "Octoverse 2024 counts more than 3.5 million developers in Germany on GitHub, up 21% year over year. Octoverse 2025 says the number of German developers more than tripled from 2020 to 2025.",
         "confidence": "strong",
         "sources": [
           {
@@ -389,9 +389,9 @@
   },
   "variance": [
     "In regulated industries such as automotive, upfront design and documentation under ASPICE and ISO 26262 are contractual requirements. Berlin's VC-backed startups, by contrast, often run international teams that work in English and should be read as a different culture.",
-    "Openness about mistakes varies sharply with company size. In the Randstad-ifo survey (2026), 28% of large firms said mistakes are discussed openly, against 62% of small firms.",
+    "Openness about mistakes depends heavily on company size. In the Randstad-ifo survey (2026), 28% of large firms said mistakes are discussed openly, against 62% of small firms.",
     "Codetermination through a works council is taken for granted at traditional companies but contested at startups, as the 2020 N26 case shows.",
-    "Germany's Hofstede UAI score is 65, lower than France's 86 and not as high as the common belief that Germans are extremely risk-averse would suggest.",
-    "No study was found that links national culture directly to code review or postmortem practice, so statements in this area rest heavily on inference."
+    "Germany's Hofstede UAI score is 65, below France's 86 and lower than the common image of Germans as extremely risk-averse would suggest.",
+    "No study was found that links national culture directly to code review or postmortem practice, so statements in this area depend heavily on inference."
   ]
 }

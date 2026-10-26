@@ -34,8 +34,8 @@ const [sJp, sNl, sGb] = [step("jp"), step("nl"), step("gb")];
 const relativity =
   sJp !== null && sNl !== null && sGb !== null
     ? lang === "ja"
-      ? `Meyer の Evaluating（${ev.name}）の尺度では、${name("nl")}は「${ev.left}」の端に、${name("jp")}は「${ev.right}」の端に置かれています。${name("gb")}はその中間です。${name("jp")}から見れば${name("gb")}の指摘は ${Math.abs(sJp - sGb)} 段階率直で、${name("nl")}から見れば ${Math.abs(sGb - sNl)} 段階遠回しです。同じ位置でも、どこから読むかで見え方が変わります。`
-      : `On Meyer's Evaluating scale, ${inText("nl")} sits at the “${ev.left.toLowerCase()}” end and ${name("jp")} at the “${ev.right.toLowerCase()}” end, with ${inText("gb")} in between. From Japan, British criticism reads ${steps(Math.abs(sJp - sGb))} more direct; from the Netherlands, ${steps(Math.abs(sGb - sNl))} more indirect. The position is the same; what changes is where you read it from.`
+      ? `Meyer の Evaluating（${ev.name}）の尺度では、${name("nl")}は「${ev.left}」の端に、${name("jp")}は「${ev.right}」の端に置かれ、${name("gb")}はその間にあります。${name("jp")}から見ると${name("gb")}の指摘は ${Math.abs(sJp - sGb)} 段階ぶん率直で、${name("nl")}から見ると ${Math.abs(sGb - sNl)} 段階ぶん遠回しです。${name("gb")}の位置は同じでも、どこから読むかで見え方が変わります。`
+      : `On Meyer's Evaluating scale, ${inText("nl")} sits at the “${ev.left.toLowerCase()}” end and ${name("jp")} at the “${ev.right.toLowerCase()}” end, with ${inText("gb")} in between. Read from Japan, British criticism is ${steps(Math.abs(sJp - sGb))} more direct. Read from the Netherlands, it is ${steps(Math.abs(sGb - sNl))} more indirect. ${inText("gb", true)} stays in the same place, and only the point you read from changes.`
     : "";
 const examples = [
   ["jp", "de"],
@@ -47,7 +47,7 @@ const examples = [
 <Base lang={lang}>
   <header class="hero headword">
     <h1>{b["home.title"]}</h1>
-    <p class="hw-gloss">
+    <p class="hw-gloss" data-pagefind-ignore="all">
       <span lang={other}>{browse[other]["home.title"]}</span>
       <span class="hw-code">{t["site.title"]}</span>
     </p>
@@ -55,7 +55,7 @@ const examples = [
       {b["home.premise"]}{lang === "ja" ? "（" : " ("}<a
         href="https://link.springer.com/article/10.1007/s11575-016-0283-x"
         rel="noopener">{b["home.premiseCite"]}</a
-      >{lang === "ja" ? "）" : ")"}
+      >{lang === "ja" ? "）。" : ")."}
     </p>
   </header>
 

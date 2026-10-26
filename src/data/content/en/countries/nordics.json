@@ -1,13 +1,13 @@
 {
   "id": "nordics",
   "name": "The Nordics",
-  "oneLiner": "Low power distance, with working hours and parental leave backed by policy. Directness and decision speed differ by country.",
-  "intro": "This page summarizes tendencies seen in surveys and statistics for four countries: Sweden, Finland, Denmark and Norway. Differences between these countries and between individuals are large, so key points name the country. Working hours and parental leave are backed by official statistics, but much of what is said about engineering culture rests on single companies such as Spotify, Supercell and Nokia.",
+  "oneLiner": "Power distance is low and policy shapes working hours and parental leave, while directness and decision speed differ by country.",
+  "intro": "Sweden, Finland, Denmark and Norway are grouped here, using surveys and statistics. Differences between the four countries and between individuals are large, so key points name the country. Official statistics back the figures on working hours and parental leave, but much of what is said about engineering culture rests on single companies such as Spotify, Supercell and Nokia.",
   "themes": {
     "design": [
       {
         "id": "nordics-design-1",
-        "text": "Abrahamsson et al. at VTT, the Technical Research Centre of Finland (2002, VTT Publications 478), wrote an early systematic review comparing agile methods, cited more than 200 times in Scopus. It shows that Finland had an early presence in agile research.",
+        "text": "Abrahamsson et al. at VTT, the Technical Research Centre of Finland (2002, VTT Publications 478), wrote an early systematic review comparing agile methods, cited more than 200 times in Scopus. Finland was present in agile research from early on.",
         "confidence": "medium",
         "sources": [
           {
@@ -19,7 +19,7 @@
       },
       {
         "id": "nordics-design-2",
-        "text": "In its 2014 culture write-up, Spotify promoted small, frequent releases and being \"loosely coupled, tightly aligned,\" and made Scrum practices optional. The company itself said this was a journey in progress, not a finished model.",
+        "text": "In its 2014 culture write-up, Spotify promoted small, frequent releases and being \"loosely coupled, tightly aligned,\" and made Scrum practices optional. The company itself stressed that this was a work in progress.",
         "confidence": "strong",
         "sources": [
           {
@@ -45,7 +45,7 @@
     "failure": [
       {
         "id": "nordics-failure-1",
-        "text": "In Kniberg's 2014 video, Spotify called itself fail-friendly and valued fast recovery over failure avoidance. Postmortems dealt with what happened and what to change rather than who was to blame, and systems were designed to keep the blast radius small.",
+        "text": "In Kniberg's 2014 video, Spotify called itself fail-friendly and put fast recovery ahead of avoiding failure. Postmortems asked what happened and what to change, not who was to blame, and systems were designed to keep the blast radius small.",
         "confidence": "medium",
         "sources": [
           {
@@ -165,7 +165,7 @@
       },
       {
         "id": "nordics-hierarchy-3",
-        "text": "Sweden has a practice called förankring: building agreement through informal groundwork before a decision is made. It is often said to slow decisions down but reduce resistance during implementation.",
+        "text": "Swedish förankring means building agreement through informal groundwork before a decision is made. It is often said to slow decisions down but reduce resistance during implementation.",
         "confidence": "weak",
         "sources": [
           {
@@ -188,7 +188,7 @@
       },
       {
         "id": "nordics-hierarchy-5",
-        "text": "The Law of Jante (Sandemose, 1933) is treated as a symbol of Nordic egalitarianism, while some commentators argue that it holds back entrepreneurship.",
+        "text": "The Law of Jante (Sandemose, 1933) is treated as a symbol of Nordic egalitarianism. Some commentators argue that it holds back entrepreneurship.",
         "confidence": "weak",
         "sources": [
           {
@@ -224,7 +224,7 @@
       },
       {
         "id": "nordics-communication-3",
-        "text": "According to a summary of The Culture Map, Swedish consensus building relies on meetings and informal groundwork, and foreign managers can be puzzled by how much back-and-forth precedes a decision.",
+        "text": "A summary of The Culture Map says Swedish consensus building relies on meetings and informal groundwork. Foreign managers can be puzzled by how much back-and-forth comes before a decision.",
         "confidence": "weak",
         "sources": [
           {
@@ -282,7 +282,7 @@
       },
       {
         "id": "nordics-work-4",
-        "text": "Danish flexicurity combines easy dismissal with generous unemployment benefits and active labor market policy, protecting employment rather than any particular job. The IMF (2006) noted a side effect: generous benefits can push up structural unemployment.",
+        "text": "Danish flexicurity combines easy dismissal with generous unemployment benefits and active labor market policy, so it protects employment rather than any particular job. The IMF (2006) noted that generous benefits can push up structural unemployment.",
         "confidence": "medium",
         "sources": [
           {
@@ -366,10 +366,10 @@
     ]
   },
   "variance": [
-    "Differences within the region are large. Hofstede's uncertainty avoidance (UAI) is 23 in Denmark and 29 in Sweden but 50 in Norway and 59 in Finland, so \"the Nordics are risk-tolerant\" does not hold across the board. In decision-making, Finland's fast, authoritarian style is contrasted with Swedish consensus seeking (Lämsä 2010).",
-    "No country-level comparative data was found to support \"Nordic engineers are quality-minded.\" What is said about design and quality relies on single companies such as Spotify and Supercell.",
+    "Differences within the region are large. Hofstede's uncertainty avoidance (UAI) is 23 in Denmark and 29 in Sweden but 50 in Norway and 59 in Finland, so \"the Nordics are risk-tolerant\" does not hold for all four. Lämsä (2010) contrasts Finland's fast, authoritarian decision-making with Swedish consensus seeking.",
+    "No country-level comparative data was found to support \"Nordic engineers are quality-minded.\" Claims about design and quality rely on single companies such as Spotify and Supercell.",
     "Spotify itself never fully implemented the Spotify model, so reading it as typically Nordic is risky (Jeremiah Lee 2020).",
-    "The Nokia case (Vuori & Huy 2016) shows that even in a culture described as egalitarian, fear can stop bad news from reaching the top of a large company. Some critics say the authors' assumptions steered the conclusion.",
+    "The Nokia case (Vuori & Huy 2016) shows that even in a culture described as egalitarian, fear can stop bad news from reaching the top of a large company. Some critics say the authors' assumptions shaped the conclusion.",
     "No primary Meyer source was found for the view that Sweden is less direct than Denmark. Finland's and Norway's positions on the Culture Map could not be confirmed from summary sites either.",
     "No study was found that quantifies how much förankring slows decisions, or that tests the effect of the Law of Jante on entrepreneurship. The evidence is mostly commentary and interviews.",
     "Denmark introduced a father's leave quota in 2022, but sources disagree on its length: 8, 9 or 11 weeks.",

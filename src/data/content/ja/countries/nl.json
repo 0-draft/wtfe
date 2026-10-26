@@ -2,12 +2,12 @@
   "id": "nl",
   "name": "オランダ",
   "oneLiner": "率直なフィードバックと、協議を重ねる合意形成（polder）が同時に語られる。",
-  "intro": "オランダについて、調査や統計から見える傾向をまとめたページです。あくまで集団としての傾向で、国内の個人差は大きく、個々のエンジニアを説明するものではありません。労働時間や在宅勤務は Eurostat や CBS の公的統計で確かめられる一方、職場での率直さは Meyer の観察と実務ガイドが主な根拠で、開発文化は Booking.com や ING などの個社事例に頼っています。",
+  "intro": "オランダについて、調査や統計から見える傾向を書いています。扱うのは集団としての傾向です。国内の個人差は大きく、個々のエンジニアを説明するものではありません。労働時間や在宅勤務は Eurostat や CBS の公的統計で確かめられます。一方、職場での率直さは Meyer の観察と実務ガイドが主な根拠で、開発文化については Booking.com や ING などの個社事例に頼っています。",
   "themes": {
     "design": [
       {
         "id": "nl-design-1",
-        "text": "Python は Guido van Rossum が CWI（アムステルダム）で作った。本人は、ABC の拡張性のなさへの不満と、Amoeba 分散 OS グループでのシステム管理の必要を動機に挙げている。1989 年のクリスマス休暇に実装を始め、1991-02-20 に 0.9.0 を公開した。",
+        "text": "Python は Guido van Rossum が CWI（アムステルダム）で作った。本人は、ABC の拡張性のなさへの不満と、Amoeba 分散 OS グループでのシステム管理の必要を動機に挙げている。1989 年のクリスマス休暇に実装を始め、1991 年 2 月 20 日に 0.9.0 を公開した。",
         "confidence": "strong",
         "sources": [
           {
@@ -184,7 +184,7 @@
     "oss": [
       {
         "id": "nl-oss-1",
-        "text": "Guido van Rossum は 2018-07-12、python-committers への投稿「Transfer of power」で Python の BDFL を退いた。後継者は指名せず、運営の仕組みはコア開発者に委ねた。",
+        "text": "Guido van Rossum は 2018 年 7 月 12 日、python-committers への投稿「Transfer of power」で Python の BDFL を退いた。後継者は指名せず、運営の仕組みはコア開発者に委ねた。",
         "confidence": "strong",
         "sources": [
           {

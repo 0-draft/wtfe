@@ -120,7 +120,7 @@ for (const l of hofMissing) {
 const sepList = lang === "ja" ? "、" : ", ";
 const st = stripText[lang];
 ---
-<figure class="ruler" aria-labelledby="ruler-meyer" data-rh={t["ruler.heading"]}>
+<figure class="ruler" data-pagefind-ignore aria-labelledby="ruler-meyer" data-rh={t["ruler.heading"]}>
   <h2 id="ruler-meyer" class="ruler-h">{t["ruler.heading"]}</h2>
   <p class="section-lead">{t["ruler.lead"](a.noun.object, b.noun.object)}</p>
   <p class="legend">
@@ -198,7 +198,7 @@ const st = stripText[lang];
   </figcaption>
 </figure>
 
-<figure class="ruler" aria-labelledby="ruler-hofstede" data-rh={t["hofstede.heading"]}>
+<figure class="ruler" data-pagefind-ignore aria-labelledby="ruler-hofstede" data-rh={t["hofstede.heading"]}>
   <h2 id="ruler-hofstede" class="ruler-h">{t["hofstede.heading"]}</h2>
   <p class="section-lead">{t["hofstede.lead"](a.noun.object, b.noun.object)}</p>
   {regionNotes.map((n) => <p class="region-note">{n}</p>)}

@@ -1,13 +1,13 @@
 {
   "id": "jp",
   "name": "Japan",
-  "oneLiner": "Frameworks rate it high on uncertainty avoidance and consensus; SIers and web firms differ sharply",
-  "intro": "This page draws on public statistics and surveys from bodies such as IPA and the Japan Fair Trade Commission, plus company engineering blogs, to describe how software engineers in Japan work. These are country-level tendencies with large variance inside the country; system integrators (SIers) and web companies in particular have quite different cultures. Japanese-language public data is plentiful, but international surveys such as Stack Overflow's include very few responses from Japan.",
+  "oneLiner": "Hofstede and Meyer place Japan high on uncertainty avoidance and on the consensual side, and SIers and web companies differ widely.",
+  "intro": "Most figures here come from Japanese public statistics and surveys by bodies such as IPA and the Japan Fair Trade Commission, plus company engineering blogs. They describe the country as a whole, and the spread inside it is large, especially between system integrators (SIers) and web companies. Japanese-language public data is plentiful, but international surveys such as Stack Overflow's get few responses from Japan.",
   "themes": {
     "design": [
       {
         "id": "jp-design-1",
-        "text": "In IPA's DX White Paper 2021, 19.3% of Japanese companies used agile development, against 55.0% in the US. DevOps was 10.9% vs 52.6% and design thinking 14.7% vs 53.2%, a wide gap in the adoption of iterative methods.",
+        "text": "In IPA's DX White Paper 2021, 19.3% of Japanese companies used agile development, against 55.0% in the US. For DevOps the figures were 10.9% and 52.6%, and for design thinking 14.7% and 53.2%. Iterative methods are much less widespread in Japan.",
         "confidence": "medium",
         "sources": [
           {
@@ -100,7 +100,7 @@
     "feedback": [
       {
         "id": "jp-feedback-1",
-        "text": "Erin Meyer's Culture Map places Japan at the very indirect end for negative feedback and on the side that avoids confrontation. Criticizing someone in front of others is generally avoided.",
+        "text": "Erin Meyer's Culture Map places Japan at the indirect extreme for negative feedback and on the side that avoids confrontation. Criticizing someone in front of others is generally avoided.",
         "confidence": "weak",
         "sources": [
           {
@@ -142,7 +142,7 @@
       },
       {
         "id": "jp-feedback-4",
-        "text": "Some teams describe labeling review comments with tags such as must, imo and nits to show how strong each point is and to protect psychological safety.",
+        "text": "Some teams label review comments with tags such as must, imo and nits to show how strongly each point is meant and to protect psychological safety.",
         "confidence": "weak",
         "sources": [
           {
@@ -175,7 +175,7 @@
       },
       {
         "id": "jp-hierarchy-2",
-        "text": "Japan scores 54 on Hofstede's power distance (PDI), a middling value. The Culture Factor describes Japan as a borderline hierarchical society in which decisions are confirmed at each level.",
+        "text": "Japan scores 54 on Hofstede's power distance (PDI), a middling value. The Culture Factor calls Japan a borderline hierarchical society in which decisions are confirmed at each level.",
         "confidence": "medium",
         "sources": [
           {
@@ -264,7 +264,7 @@
       },
       {
         "id": "jp-work-2",
-        "text": "In a 2022 Japan Fair Trade Commission survey, 25.9% of responding companies said they had noticed middlemen that take a margin without doing any work (nakanuki); among companies at the bottom of the subcontracting chain the figure was 33.5%.",
+        "text": "In a 2022 Japan Fair Trade Commission survey, 25.9% of responding companies said they had noticed middlemen who take a margin without doing any work (nakanuki). Among companies at the bottom of the subcontracting chain, the figure was 33.5%.",
         "confidence": "strong",
         "sources": [
           {
@@ -281,7 +281,7 @@
       },
       {
         "id": "jp-work-3",
-        "text": "OECD data put annual working hours in 2023 at 1,611 in Japan and 1,872 in South Korea. Averaged across all industries, Japan is no longer an outlier for long hours among OECD countries.",
+        "text": "OECD data put annual working hours in 2023 at 1,611 in Japan and 1,872 in South Korea. Averaged across all industries, Japan no longer stands out for long hours among OECD countries.",
         "confidence": "medium",
         "sources": [
           {
@@ -305,7 +305,7 @@
       },
       {
         "id": "jp-work-5",
-        "text": "The Ministry of Internal Affairs and Communications' 2018 white paper notes that Japan's IT workforce has low mobility because of differing employment practices. A 2024 LAPRAS survey, however, found a growing group of engineers who were considering a job change but had not acted on it.",
+        "text": "The Ministry of Internal Affairs and Communications' 2018 white paper notes that differing employment practices keep Japan's IT workforce less mobile. A 2024 LAPRAS survey found a growing number of engineers who were considering a job change but had not acted on it.",
         "confidence": "medium",
         "sources": [
           {
@@ -370,7 +370,7 @@
       },
       {
         "id": "jp-oss-4",
-        "text": "Ruby, created by Yukihiro Matsumoto and released in 1995, is the best-known open source project from Japan.",
+        "text": "One of the best-known open source projects from Japan is Ruby, which Yukihiro Matsumoto created and released in 1995.",
         "confidence": "strong",
         "sources": [
           {
@@ -382,10 +382,10 @@
     ]
   },
   "variance": [
-    "About 70% of IT workers are at IT vendors, yet web companies such as Mercari widely use blameless postmortems and remote work. Working styles differ greatly within the country.",
-    "Against the common image of confrontation avoidance, harsh online technical criticism known as \"masakari\" also exists.",
+    "About 70% of IT workers are at IT vendors, while web companies such as Mercari widely use blameless postmortems and remote work. Working styles vary a lot within the country.",
+    "Japan is often pictured as avoiding confrontation, but harsh technical criticism, known online as \"masakari,\" also exists.",
     "Japan's Hofstede individualism score was revised from 46 in the old edition to 62 in the current one, so the picture of Japan as strongly collectivist depends on which edition is cited.",
     "The Stack Overflow Developer Survey 2024 had only 286 responses from Japan (0.5%), so Japanese developers are underrepresented in international surveys.",
-    "Figures on OSS governance in Japanese companies conflict: LF Research (2025) found 41% had an OSPO, while IPA's FY2024 survey found more than 80% had no governance structure."
+    "Figures on OSS governance in Japanese companies conflict. LF Research (2025) found that 41% had an OSPO, while IPA's FY2024 survey found that more than 80% had no governance structure."
   ]
 }

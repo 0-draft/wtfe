@@ -45,7 +45,7 @@ const scales = [
     <article class="theme-page">
       <header class="headword" data-rh={b["theme.definition"]}>
         <h1>{name}</h1>
-        <p class="hw-gloss">
+        <p class="hw-gloss" data-pagefind-ignore="all">
           <span lang={other}>{themeNames[other][theme]}</span>
           <span class={`hw-code${lang === "ja" ? " code-ja" : ""}`}>{themeCodes[lang][theme]}</span>
         </p>
@@ -108,7 +108,7 @@ const scales = [
             >
               <h2 id={`h-${c.id}`}>
                 {c.name}
-                <span class="h-aside">
+                <span class="h-aside" data-pagefind-ignore="all">
                   {gloss && <span lang={other}>{gloss}</span>}
                   <span class="mono sub-code">{DISPLAY_CODE[c.id]}</span>
                   <span>{t["home.claims"](n.total)}</span>

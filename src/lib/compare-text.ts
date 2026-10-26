@@ -94,11 +94,9 @@ export function missingSentence(lang: Lang, m: Missing, count = 1): string {
     }
     if (m.unsourced.length) {
       const where = parts.length ? "on it" : `on ${these}`;
-      parts.push(
-        `${parts.length ? "no" : "No"} source places ${list(lang, names(m.unsourced), "disjunction")} ${where}`,
-      );
+      parts.push(`No source places ${list(lang, names(m.unsourced), "disjunction")} ${where}`);
     }
-    return parts.join("; ");
+    return parts.join(". ");
   }
   const these = count > 1 ? "これらの尺度" : "この尺度";
   if (m.holistic.length) {

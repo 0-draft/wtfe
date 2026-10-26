@@ -25,7 +25,7 @@ const levels = ["strong", "medium", "weak"] as const;
     <p class="lead">{b["countries.lead"]}</p>
   </header>
 
-  <nav class="heads" aria-label={lang === "ja" ? "見出しの索引" : "Index letters"}>
+  <nav class="heads" data-pagefind-ignore aria-label={lang === "ja" ? "見出しの索引" : "Index letters"}>
     {groups.map((g) => <a href={`#idx-${g.head}`}>{g.head}</a>)}
   </nav>
 
@@ -44,7 +44,7 @@ const levels = ["strong", "medium", "weak"] as const;
                 <h3 class="hw">
                   <a href={localePath(lang, `/countries/${c.id}/`)}>{c.name}</a>
                 </h3>
-                <p class="gloss">
+                <p class="gloss" data-pagefind-ignore="all">
                   {gloss && <span lang={other}>{gloss}</span>}
                   <span class="hw-code">{DISPLAY_CODE[c.id]}</span>
                 </p>
