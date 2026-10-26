@@ -1,0 +1,3 @@
+# Hosts that refuse CI link checkers but open in a browser (checked by hand on 2026-10-26).
+# mckinsey.com answers bots with an HTTP/2 protocol error.
+^https://www\.mckinsey\.com/
