@@ -7,7 +7,9 @@ import "@fontsource/ibm-plex-sans-jp/700.css";
 import "@fontsource/ibm-plex-mono/400.css";
 import "@fontsource/ibm-plex-mono/500.css";
 import "../styles/global.css";
+import Search from "../components/Search.astro";
 import { dict } from "../i18n/dict.ts";
+import { searchKind } from "../i18n/search.ts";
 import { type Lang, localePath, stripLocale } from "../i18n/ui.ts";
 
 interface Props {
@@ -23,6 +25,8 @@ const t = dict[lang];
 const here = stripLocale(Astro.url.pathname);
 const other: Lang = lang === "en" ? "ja" : "en";
 const fullTitle = title ? `${title} — ${t["site.title"]}` : `${t["site.title"]} — ${t["site.expansion"]}`;
+// Search: the kind label shown on each result (Search.astro also ranks "compare" pages below the entries).
+const kind = searchKind(section, here);
 const nav = [
   ["countries", "/countries/", t["nav.countries"]],
   ["themes", "/themes/", t["nav.themes"]],
@@ -73,6 +77,7 @@ const nav = [
           }
         </nav>
         <div class="tools">
+          <Search lang={lang} />
           <a
             class="lang-switch"
             href={localePath(other, here)}
@@ -92,13 +97,19 @@ const nav = [
               dark: t["nav.themeDark"],
             })}
           >
-            {t["nav.theme"]}{lang === "ja" ? "：" : ": "}<span class="tt-value" data-theme-label>{t["nav.themeAuto"]}</span>
+            {t["nav.theme"]}{lang === "ja" ? "：" : ":\u00a0"}<span class="tt-value" data-theme-label>{t["nav.themeAuto"]}</span>
           </button>
         </div>
       </div>
     </header>
     <slot name="running-head" />
-    <main id="main" class="frame" data-pagefind-body>
+    <main
+      id="main"
+      class="frame"
+      data-pagefind-body
+      data-pagefind-meta={`kind:${kind}`}
+      data-pagefind-filter={`kind:${kind}`}
+    >
       <slot />
     </main>
     <footer class="site-foot">

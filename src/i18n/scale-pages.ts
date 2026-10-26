@@ -5,51 +5,51 @@ import type { Lang } from "./ui.ts";
 export const builtFrom: Record<Lang, Record<CultureMapScale | HofstedeDimension, string>> = {
   en: {
     communicating:
-      "Whether a message is meant to be taken at face value. Meyer looks at how much people repeat and confirm in writing, whether they summarise what was agreed, and how much they expect the listener to read between the lines.",
+      "Whether a message is meant to be taken at face value. Meyer looks at how much people repeat and confirm in writing, whether they summarize what was agreed, and how much they expect the listener to read between the lines.",
     evaluating:
-      "How negative feedback is worded and where it is given: upgraders such as “absolutely” and “totally” versus downgraders such as “kind of” and “slightly”, and whether criticism is given in front of the group or only one to one. This scale is separate from Communicating: a culture can be high-context and still give blunt criticism.",
+      "How negative feedback is worded and where it is given. Meyer looks at upgraders such as “absolutely” and “totally” versus downgraders such as “kind of” and “slightly,” and at whether criticism is given in front of the group or only one to one. The scale is separate from Communicating, and a culture can be high-context and still give blunt criticism.",
     persuading:
       "Whether a convincing argument starts from the concept and theory and then reaches a conclusion (principles-first, deductive), or starts from facts, examples and the conclusion (applications-first, inductive). Meyer notes that East Asian holistic reasoning sits outside this axis, which is why Japan, China and South Korea have no position here.",
     leading:
-      "The expected distance between a boss and the team: whether skipping a level to talk to someone is acceptable, whether the boss acts as a facilitator among equals or as a strong director, and how much status shows in seating, titles and who speaks first.",
+      "The expected distance between a boss and the team. Signs include whether skipping a level to talk to someone is acceptable, whether the boss acts as a facilitator among equals or as a strong director, and how much status shows in seating, titles and who speaks first.",
     deciding:
-      "Who makes a decision and how final it is. Consensual cultures take longer to decide and then hold the decision fixed; top-down cultures decide quickly through the person in charge and revise later. It differs from Leading: Japan is hierarchical yet strongly consensual.",
+      "Who makes a decision and how final it is. Consensual cultures take longer to decide and then hold the decision fixed. Top-down cultures decide quickly through the person in charge and revise later. The scale differs from Leading, since Japan is hierarchical yet strongly consensual.",
     trusting:
-      "Where trust at work comes from: cognitive trust built by reliable, competent work (task-based) or affective trust built over meals, time together and personal connection (relationship-based).",
+      "Where trust at work comes from. It can be cognitive trust built by reliable, competent work (task-based) or affective trust built over meals, time together and personal connection (relationship-based).",
     disagreeing:
       "Whether open disagreement is good for the team or damages the relationship, and whether disagreeing with an idea is taken as an attack on the person who proposed it.",
     scheduling:
       "Whether deadlines, agendas and plans are fixed and worked through in order (linear time), or treated as a starting point that adapts to people and events (flexible time).",
     pdi: "Originally built from IBM survey items on how often employees are afraid to express disagreement with their managers, and on the decision style they see in, and want from, their boss.",
-    idv: "Originally built from IBM work-goal items: how much people value personal time, freedom and challenge in a job, against training, good physical conditions and the use of their skills.",
-    mas: "Originally built from IBM work-goal items: earnings, recognition, advancement and challenge, against a good relationship with the manager, cooperation, a pleasant living area and job security. The Culture Factor renamed it from masculinity versus femininity.",
+    idv: "Originally built from IBM work-goal items. They ask how much people value personal time, freedom and challenge in a job, against training, good physical conditions and the use of their skills.",
+    mas: "Originally built from IBM work-goal items that weigh earnings, recognition, advancement and challenge, against a good relationship with the manager, cooperation, a pleasant living area and job security. The Culture Factor renamed it from masculinity versus femininity.",
     uai: "Originally built from IBM items on rule orientation (“company rules should not be broken, even when it is in the company's best interest”), intent to stay with the employer, and how often people feel nervous or tense at work.",
     lto: "Added later. It first came from Michael Bond's Chinese Value Survey (thrift, persistence, respect for tradition) and was re-estimated from World Values Survey items by Michael Minkov.",
-    ivr: "Added in 2010 from World Values Survey items analysed by Michael Minkov: how happy people say they are, how much control they feel over their own lives, and how important leisure is to them.",
+    ivr: "Added in 2010 from World Values Survey items that Michael Minkov analyzed. They ask how happy people say they are, how much control they feel over their own lives, and how important leisure is to them.",
   },
   ja: {
     communicating:
-      "メッセージを字義どおりに受け取ってよいかどうか。Meyer は、繰り返しや書面での確認がどれだけ多いか、合意事項を要約して確かめるか、聞き手に行間を読むことをどれだけ求めるかを見ています。",
+      "メッセージを字義どおりに受け取ってよいかを見る尺度です。Meyer は、繰り返しや書面での確認がどれだけ多いか、合意事項を要約して確かめるか、聞き手に行間を読むことをどれだけ求めるかを見ています。",
     evaluating:
-      "否定的なフィードバックの言い回しと場所。「絶対に」「まったく」のように強める言葉を使うか、「少し」「やや」のように弱める言葉を使うか。また、皆の前で指摘するか、一対一でしか言わないか。コミュニケーションの尺度とは別物で、高文脈でも批判ははっきり言う文化があります。",
+      "否定的なフィードバックをどんな言葉で、どんな場で伝えるかを見ます。「絶対に」「まったく」のように強める言葉を使うか、「少し」「やや」のように弱める言葉を使うか。皆の前で指摘するか、一対一でしか言わないか。コミュニケーションの尺度とは別のもので、高文脈でも批判ははっきり言う文化があります。",
     persuading:
-      "説得力のある議論が、概念や理論から始めて結論に至るもの（原理優先・演繹的）か、事実や事例、結論から始めるもの（応用優先・帰納的）か。Meyer は東アジアの全体論的な思考をこの軸の外に置いているため、日本・中国・韓国にはここでの位置がありません。",
+      "説得力のある議論とは、概念や理論から始めて結論に至るもの（原理優先・演繹的）か、事実や事例、結論から始めるもの（応用優先・帰納的）かを見ます。Meyer は東アジアの全体論的な思考をこの軸の外に置いているため、日本・中国・韓国にはここでの位置がありません。",
     leading:
-      "上司とチームの間に想定される距離。階層を飛ばして話してよいか、上司は対等な仲間をまとめる進行役か強い指揮者か、席順や肩書きや発言の順番に地位がどれだけ表れるか。",
+      "上司とチームの間に想定される距離を見ます。階層を飛ばして話してよいか、上司は対等な仲間をまとめる進行役か強い指揮者か、席順や肩書き、発言の順番に地位がどれだけ表れるかが手がかりです。",
     deciding:
-      "誰が決め、その決定がどれだけ確定的か。合意志向の文化は決めるまでに時間をかけ、決めたあとは動かしません。トップダウンの文化は責任者がすばやく決め、あとで修正します。リードの尺度とは別物で、日本は階層的でありながら強く合意志向です。",
+      "誰が決め、その決定がどこまで確定したものとして扱われるかを見ます。合意志向の文化は決めるまでに時間をかけ、決めたあとは動かしません。トップダウンの文化は責任者がすばやく決め、あとで修正します。リードの尺度とは別物で、日本は階層的でありながら強く合意志向です。",
     trusting:
-      "仕事上の信頼がどこから生まれるか。確かな仕事ぶりによる認知的な信頼（タスクベース）か、食事や一緒に過ごす時間、個人的なつながりによる情緒的な信頼（関係ベース）か。",
+      "仕事上の信頼がどこから生まれるかを見ます。確かな仕事ぶりによる認知的な信頼（タスクベース）か、食事や一緒に過ごす時間、個人的なつながりによる情緒的な信頼（関係ベース）かです。",
     disagreeing:
-      "公然と反論することがチームのためになるか、関係を損なうか。また、意見への反論が、その意見を出した人への攻撃と受け取られるかどうか。",
+      "公然と反論することがチームのためになるか、関係を損なうかを見ます。意見への反論が、その意見を出した人への攻撃と受け取られるかどうかも含みます。",
     scheduling:
-      "締め切りや議題、計画を固定して順に進めるもの（直線的な時間）と捉えるか、人や状況に合わせて変わる出発点（柔軟な時間）と捉えるか。",
-    pdi: "もとは IBM の調査項目から作られています。部下が上司への反対意見をどれだけ恐れているか、上司の意思決定スタイルをどう見ているか、どう望んでいるか。",
-    idv: "もとは IBM の「仕事の目標」の項目から作られています。私生活の時間、自由、やりがいを重んじるか、研修、良い労働環境、技能を生かせることを重んじるか。",
-    mas: "もとは IBM の「仕事の目標」の項目から作られています。収入、評価、昇進、やりがいを重んじるか、上司との良い関係、協力、住みよい環境、雇用の安定を重んじるか。The Culture Factor は旧称「男性性／女性性」から名前を変えています。",
-    uai: "もとは IBM の調査項目から作られています。規則の重視（「会社のためになる場合でも、会社の規則は破るべきではない」）、今の勤め先に長くとどまるつもりか、職場で緊張や不安をどれだけ感じるか。",
+      "締め切りや議題、計画を、固定して順に進めるもの（直線的な時間）と捉えるか、人や状況に合わせて変わる出発点（柔軟な時間）と捉えるかを見ます。",
+    pdi: "もとは IBM の調査項目から作られています。部下が上司に反対することをどれだけ恐れているか、上司の意思決定スタイルをどう見ているか、どうあってほしいかを尋ねる項目です。",
+    idv: "もとは IBM の「仕事の目標」の項目から作られています。私生活の時間、自由、やりがいを重んじるか、研修、良い労働環境、技能を生かせることを重んじるかを尋ねます。",
+    mas: "もとは IBM の「仕事の目標」の項目から作られています。収入、評価、昇進、やりがいを重んじるか、上司との良い関係、協力、住みよい環境、雇用の安定を重んじるかを尋ねます。The Culture Factor は旧称「男性性／女性性」から名前を変えています。",
+    uai: "もとは IBM の調査項目から作られています。規則を重んじるか（「会社のためになる場合でも、会社の規則は破るべきではない」）、今の勤め先に長くとどまるつもりか、職場で緊張や不安をどれだけ感じるかを尋ねます。",
     lto: "あとから加わった次元です。はじめは Michael Bond の中国的価値観調査（倹約、粘り強さ、伝統の尊重）から作られ、のちに Michael Minkov が世界価値観調査の項目から推定し直しました。",
-    ivr: "2010 年に加わった次元で、Michael Minkov が世界価値観調査の項目を分析して作りました。自分が幸せだと答えるか、自分の人生をどれだけ思いどおりにできると感じるか、余暇をどれだけ大切にするか。",
+    ivr: "2010 年に加わった次元で、Michael Minkov が世界価値観調査の項目を分析して作りました。自分が幸せだと答えるか、自分の人生をどれだけ思いどおりにできると感じるか、余暇をどれだけ大切にするかを尋ねます。",
   },
 };
 
@@ -65,8 +65,8 @@ export const poleNotes: Record<Lang, Record<CultureMapScale | HofstedeDimension,
       "Negative feedback is soft and diplomatic, wrapped in positive messages, softened with words like “slightly”, and given only in private.",
     ],
     persuading: [
-      "People want the why first: the theory or concept comes before the facts and the conclusion.",
-      "People want the what and the how first: facts, examples and the conclusion come first, theory only if needed.",
+      "People want the why first, so the theory or concept comes before the facts and the conclusion.",
+      "People want the what and the how first. Facts, examples and the conclusion come first, and theory only if needed.",
     ],
     leading: [
       "The ideal distance between boss and team is small. The best boss is a facilitator among equals, and skipping levels is normal.",
@@ -77,7 +77,7 @@ export const poleNotes: Record<Lang, Record<CultureMapScale | HofstedeDimension,
       "Decisions are made by individuals, usually the boss. It is fast, and the decision stays open to change.",
     ],
     trusting: [
-      "Trust is built through work: deliver reliably and people trust you. Work relationships are easy to start and to end.",
+      "Trust is built through work. Deliver reliably and people trust you. Work relationships are easy to start and to end.",
       "Trust is built over meals, time together and personal connection. Work relationships build slowly and last.",
     ],
     disagreeing: [
@@ -85,7 +85,7 @@ export const poleNotes: Record<Lang, Record<CultureMapScale | HofstedeDimension,
       "Disagreement and debate are bad for the team and the relationship. Open confrontation breaks group harmony.",
     ],
     scheduling: [
-      "Work runs in steps, one task at a time, without interruption. Deadlines and the plan come first; organisation beats flexibility.",
+      "Work runs in steps, one task at a time, without interruption. Deadlines and the plan come first, and organization beats flexibility.",
       "Work is fluid, many things are handled at once, and interruptions are accepted. Adapting beats sticking to the plan.",
     ],
     pdi: [
@@ -97,8 +97,8 @@ export const poleNotes: Record<Lang, Record<CultureMapScale | HofstedeDimension,
       "People are expected to look after themselves and their immediate family. Personal goals and “I” come first.",
     ],
     mas: [
-      "Caring for others and quality of life are the marks of success; standing out from the crowd is not admired.",
-      "Competition, achievement and success drive people; winning and being the best are admired.",
+      "Caring for others and quality of life mark success, and standing out from the crowd is not admired.",
+      "Competition, achievement and success drive people, and winning and being the best are admired.",
     ],
     uai: [
       "Ambiguity is tolerated. Fewer rules are preferred, and what is different is interesting rather than threatening.",
@@ -106,7 +106,7 @@ export const poleNotes: Record<Lang, Record<CultureMapScale | HofstedeDimension,
     ],
     lto: [
       "Traditions and established norms are kept, change is viewed with suspicion, and quick results are expected.",
-      "Pragmatic: traditions are adapted to new conditions, people save and invest, and they persevere for future results.",
+      "People are pragmatic. Traditions are adapted to new conditions, people save and invest, and they persevere for future results.",
     ],
     ivr: [
       "Gratification of desires is curbed by strict social norms, and leisure matters less.",
@@ -115,8 +115,8 @@ export const poleNotes: Record<Lang, Record<CultureMapScale | HofstedeDimension,
   },
   ja: {
     communicating: [
-      "よい伝え方は正確で簡潔、明示的なもの。言葉は額面どおりに受け取られ、繰り返しや書面での確認が歓迎される。",
-      "よい伝え方は繊細で含みのあるもの。言いたいことははっきり言わずに伝えることが多く、聞き手は行間を読むことを期待される。",
+      "よい伝え方とは、正確で簡潔、明示的な伝え方だ。言葉は額面どおりに受け取られ、繰り返しや書面での確認が歓迎される。",
+      "よい伝え方とは、繊細で含みのある伝え方だ。言いたいことははっきり言わずに伝えることが多く、聞き手は行間を読むことを期待される。",
     ],
     evaluating: [
       "否定的なフィードバックは率直かつ単刀直入に伝え、人前でもかまわない。「絶対に」のような強める言葉を添える。",
@@ -135,7 +135,7 @@ export const poleNotes: Record<Lang, Record<CultureMapScale | HofstedeDimension,
       "決定は個人、たいていは上司が行う。速いが、決めたあとも変更されうる。",
     ],
     trusting: [
-      "信頼は仕事を通じて築かれる。確かな仕事を続ければ信頼される。仕事上の関係は始めるのも終えるのも容易。",
+      "信頼は仕事を通じて築かれる。確かな仕事を続ければ信頼される。仕事上の関係は始めるのも終えるのも容易だ。",
       "信頼は食事や一緒に過ごす時間、個人的なつながりから築かれる。仕事上の関係はゆっくり育ち、長く続く。",
     ],
     disagreeing: [
@@ -147,7 +147,7 @@ export const poleNotes: Record<Lang, Record<CultureMapScale | HofstedeDimension,
       "仕事の進め方は流動的で、多くのことを同時にこなし、中断も受け入れる。計画を守るより状況に合わせることが評価される。",
     ],
     pdi: [
-      "権力は平等に分かれているべきもの。部下は相談されることを期待し、上司には話しかけやすい。",
+      "権力は平等に分かれているべきだとされる。部下は相談されることを期待し、上司には話しかけやすい。",
       "不平等は自然な秩序として受け入れられる。部下は指示されることを期待し、地位がはっきり表に出る。",
     ],
     idv: [
@@ -159,12 +159,12 @@ export const poleNotes: Record<Lang, Record<CultureMapScale | HofstedeDimension,
       "競争、達成、成功が動機になり、勝つことや一番になることが評価される。",
     ],
     uai: [
-      "曖昧さに寛容。規則は少ないほうがよいとされ、異質なものは脅威ではなく興味の対象になる。",
+      "曖昧さに寛容で、規則は少ないほうがよいとされる。異質なものは脅威ではなく興味の対象になる。",
       "曖昧さは落ち着かない。規則や構造、正確さが求められ、うまく機能しそうにない規則でさえ欲しがられる。",
     ],
     lto: [
       "伝統や既存の規範を守り、変化には疑いの目を向け、すぐに成果が出ることを期待する。",
-      "実利的。状況が変われば伝統も合わせて変え、倹約と投資を重んじ、将来の成果のために粘り強く取り組む。",
+      "実利的で、状況が変われば伝統も合わせて変える。倹約と投資を重んじ、将来の成果のために粘り強く取り組む。",
     ],
     ivr: [
       "欲求を満たすことは厳しい社会規範で抑えられ、余暇はあまり重視されない。",

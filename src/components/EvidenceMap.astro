@@ -30,7 +30,7 @@ const snippet = (text: string) => {
 ---
 
 <figure class="em" data-evidence-map>
-  <div class="em-scroll" tabindex="0" role="region" aria-label={b["map.scroll"]}>
+  <div class="em-scroll" data-pagefind-ignore tabindex="0" role="region" aria-label={b["map.scroll"]}>
     <table class="em-table" aria-labelledby={`em-caption-${lang}`}>
       <colgroup>
         <col class="em-col-row" />
@@ -97,7 +97,7 @@ const snippet = (text: string) => {
     </table>
   </div>
 
-  <figcaption class="em-caption">
+  <figcaption class="em-caption" data-pagefind-ignore>
     <p id={`em-caption-${lang}`}>{b["map.caption"](map.counts.total, map.counts.strong, map.counts.medium, map.counts.weak)}</p>
     <p>{thin.length ? b["map.thinCells"](thin.join(sep)) : b["map.noThinCells"]}</p>
     <div class="em-keys">

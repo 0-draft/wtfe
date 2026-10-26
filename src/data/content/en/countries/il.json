@@ -1,13 +1,13 @@
 {
   "id": "il",
   "name": "Israel",
-  "oneLiner": "Very low power distance and a well-studied plain-speaking style, but high-tech skews toward an elite.",
-  "intro": "This page summarizes tendencies in Israel's software industry drawn from surveys, news reports and research. Variation within the country is large, and none of this predicts how an individual engineer thinks or works. Employment and exports can be tracked through Israel Innovation Authority statistics, while the cultural evidence rests mostly on Katriel's linguistic research and promotional books, and high-tech itself is a world skewed toward the country's elite.",
+  "oneLiner": "Israel has one of the world's lowest power distance scores and a well-studied plain-speaking style, but its high-tech sector skews toward an elite.",
+  "intro": "Israel Innovation Authority statistics track the industry's employment and exports. The cultural evidence rests mostly on Katriel's linguistic research and on promotional books, with surveys and news reports filling in the rest. Variation within the country is large, and none of this predicts how an individual engineer thinks or works. High-tech itself is a world skewed toward the country's elite.",
   "themes": {
     "design": [
       {
         "id": "il-design-1",
-        "text": "In Chutzpah (2019), Inbal Arieli argues in chapters such as \"Failure Is an Option,\" \"Certain Uncertainty\" and \"Resourcefulness\" that growing up amid chaos (balagan) builds improvisation and resourcefulness. The argument is not based on quantitative data.",
+        "text": "In Chutzpah (2019), Inbal Arieli argues that growing up amid chaos (balagan) builds improvisation and resourcefulness, in chapters such as \"Failure Is an Option,\" \"Certain Uncertainty\" and \"Resourcefulness.\" She does not base the argument on quantitative data.",
         "confidence": "weak",
         "sources": [
           {
@@ -19,7 +19,7 @@
       },
       {
         "id": "il-design-2",
-        "text": "Hofstede's uncertainty avoidance (UAI) is high at 81. The Culture Factor describes a culture that wants rules, punctuality and precision, yet is good at improvising under pressure.",
+        "text": "Israel scores 81 on Hofstede's uncertainty avoidance (UAI), a high value. The Culture Factor describes a culture that wants rules, punctuality and precision but improvises well under pressure.",
         "confidence": "medium",
         "sources": [
           {
@@ -31,7 +31,7 @@
       },
       {
         "id": "il-design-3",
-        "text": "According to Haaretz (2012), rosh gadol (\"big head\") started out as an Israeli army term. It is praise for someone who sees the wider picture, takes responsibility and acts on their own initiative beyond their role.",
+        "text": "According to Haaretz (2012), rosh gadol (\"big head\") started out as an Israeli army term. It praises someone who sees the wider picture, takes responsibility and acts on their own initiative beyond their role.",
         "confidence": "medium",
         "sources": [
           {
@@ -45,7 +45,7 @@
     "failure": [
       {
         "id": "il-failure-1",
-        "text": "Arieli argues that Israel is a society that does not shy away from risk and that children are raised to accept failure as part of learning. The Publishers Weekly review criticized the book for being unsure whether it is a parenting guide or a cultural analysis.",
+        "text": "Arieli argues that Israeli society does not shy away from risk and that children are raised to accept failure as part of learning. The Publishers Weekly review said the book cannot decide whether it is a parenting guide or a cultural analysis.",
         "confidence": "weak",
         "sources": [
           {
@@ -74,7 +74,7 @@
       },
       {
         "id": "il-failure-3",
-        "text": "According to Calcalist, reserve duty delayed Wix's AI design product by one quarter, and Intel moved some work to teams in India.",
+        "text": "Calcalist reports that reserve duty delayed Wix's AI design product by one quarter and that Intel moved some work to teams in India.",
         "confidence": "medium",
         "sources": [
           {
@@ -85,7 +85,7 @@
       },
       {
         "id": "il-failure-4",
-        "text": "2025 brought a series of large acquisitions: Wiz ($32 billion, Google), CyberArk ($25 billion, Palo Alto Networks) and Armis ($7.75 billion, ServiceNow). Calcalist estimates the total value of acquisitions of Israeli-founded companies at about $80 billion.",
+        "text": "In 2025 there were several large acquisitions, of Wiz by Google ($32 billion), CyberArk by Palo Alto Networks ($25 billion) and Armis by ServiceNow ($7.75 billion). Calcalist estimates the total value of acquisitions of Israeli-founded companies at about $80 billion.",
         "confidence": "medium",
         "sources": [
           {
@@ -99,7 +99,7 @@
     "feedback": [
       {
         "id": "il-feedback-1",
-        "text": "Dugri (\"straight talk\") is a language ideology that treats bluntness as a sign of courage and sincerity, studied by Tamar Katriel in a 1986 book. Katriel says dugri presupposes mutual trust.",
+        "text": "Dugri (\"straight talk\") is a language ideology that treats bluntness as a sign of courage and sincerity. Tamar Katriel studied it in a 1986 book and says dugri presupposes mutual trust.",
         "confidence": "medium",
         "sources": [
           {
@@ -139,7 +139,7 @@
     "hierarchy": [
       {
         "id": "il-hierarchy-1",
-        "text": "Hofstede's power distance (PDI) is 13, among the lowest in the world. The Culture Factor describes bosses as easy to approach and managers as relying on their team's expertise. A Culture Map review also puts Israel at the most egalitarian end of the Leading scale.",
+        "text": "Israel scores 13 on Hofstede's power distance (PDI), among the lowest in the world. The Culture Factor says bosses are easy to approach and managers rely on their team's expertise. A Culture Map review also puts Israel at the most egalitarian end of Leading.",
         "confidence": "medium",
         "sources": [
           {
@@ -171,7 +171,7 @@
       },
       {
         "id": "il-hierarchy-3",
-        "text": "Drop Site News has reported critically on the 8200 alumni network as a closed club and on the export of surveillance technology by firms such as NSO.",
+        "text": "Drop Site News has criticized the 8200 alumni network as a closed club and reported critically on the export of surveillance technology by firms such as NSO.",
         "confidence": "medium",
         "sources": [
           {
@@ -184,7 +184,7 @@
     "communication": [
       {
         "id": "il-communication-1",
-        "text": "A review of The Culture Map classifies Israel as an unusual combination: high-context, yet direct with criticism.",
+        "text": "A review of The Culture Map classifies Israel as both high-context and direct with criticism, an unusual combination.",
         "confidence": "weak",
         "sources": [
           {
@@ -209,7 +209,7 @@
     "work": [
       {
         "id": "il-work-1",
-        "text": "High-tech employed about 400,000 people in 2025, 11.4% of the employed workforce. Exports hit a record $85 billion, 58% of all exports. Employment grew 2.5%, well below the roughly 6% annual average of the previous decade.",
+        "text": "High-tech employed about 400,000 people in 2025, 11.4% of the employed workforce. Exports reached a record $85 billion, 58% of all exports. Employment grew 2.5%, well below the roughly 6% annual average of the previous decade.",
         "confidence": "strong",
         "sources": [
           {
@@ -273,7 +273,7 @@
       },
       {
         "id": "il-oss-2",
-        "text": "According to SecurityWeek, VCs with 8200 alumni such as Team8 and Cyberstarts invest in startups founded by fellow alumni, and money from exits flows back into new investments.",
+        "text": "SecurityWeek reports that VCs with 8200 alumni, such as Team8 and Cyberstarts, invest in startups founded by fellow alumni, and money from exits flows back into new investments.",
         "confidence": "medium",
         "sources": [
           {
@@ -286,10 +286,10 @@
   },
   "variance": [
     "Dugri is the style of the European-origin Sabra generation, and speech varies within the country, including the indirect Arab style musayara. Katriel herself has noted dugri's decline.",
-    "High-tech skews toward men and graduates of top schools and elite units, and Arab and ultra-Orthodox participation is low. A startup temperament cannot be generalized to the whole country.",
-    "Improvisation and tolerance of failure are often cited, yet Hofstede's uncertainty avoidance (UAI) is high at 81.",
+    "High-tech skews toward men and graduates of top schools and elite units, and few Arab or ultra-Orthodox citizens work in it. A startup temperament cannot be generalized to the whole country.",
+    "Accounts often stress improvisation and tolerance of failure, yet Israel scores a high 81 on Hofstede's uncertainty avoidance (UAI).",
     "War and reserve mobilization are pushing R&D abroad, so the pre-2023 picture is going out of date.",
-    "Arieli and Senor & Singer wrote promotional books with weak quantitative support.",
+    "Arieli and Senor & Singer wrote books that promote Israel's startup scene, and their quantitative support is weak.",
     "Israel's positions on Meyer's Communicating, Persuading and Deciding scales could not be confirmed from her own charts. No quantitative study of documentation culture was found either.",
     "GitHub Octoverse does not provide country-level open-source contribution figures for Israel, so the open-source picture is limited to individual company projects."
   ]

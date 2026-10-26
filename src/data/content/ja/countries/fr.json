@@ -1,8 +1,8 @@
 {
   "id": "fr",
   "name": "フランス",
-  "oneLiner": "Meyer は階層的でも議論では率直に反論すると分類する。国主導の OSS と ESN の常駐構造が目立つ。",
-  "intro": "フランスのソフトウェア開発の傾向を、Culture Map・Hofstede・統計・法制度から整理したページです。あくまで国レベルの傾向で、Paris のスタートアップ、研究機関、ESN (IT サービス企業) の客先常駐では働き方が大きく違います。フランスは行政の OSS 政策や労働協約といった制度の一次資料が多い一方、開発現場のレビューや postmortem の慣行を調べたデータはほとんど見つかりませんでした。",
+  "oneLiner": "Meyer の分類では、階層的だが議論の場では率直に反論する。国主導の OSS と ESN の客先常駐が目立つ。",
+  "intro": "フランスについては、Culture Map・Hofstede・統計・法制度をもとに、ソフトウェア開発の傾向を書いています。扱うのは国レベルの傾向で、Paris のスタートアップ、研究機関、ESN (IT サービス企業) の客先常駐とでは働き方が大きく違います。行政の OSS 政策や労働協約など制度の一次資料は多い一方で、開発現場のレビューや postmortem の慣行を調べたデータはほとんど見つかりませんでした。",
   "themes": {
     "design": [
       {
@@ -158,7 +158,7 @@
     "communication": [
       {
         "id": "fr-communication-1",
-        "text": "Culture Map はフランスを、Communicating でドイツより高文脈 (中国よりは低文脈)、Trusting でドイツより関係重視寄りに置いている。Meyer の枠組みでは、行間や前提の共有に頼り、信頼を人間関係からも築く傾向を意味する。",
+        "text": "Culture Map はフランスを、Communicating でドイツより高文脈 (中国よりは低文脈)、Trusting でドイツより関係重視寄りに置いている。Meyer の枠組みでは、これは行間や前提の共有に頼り、人間関係からも信頼を築く傾向を表す。",
         "confidence": "medium",
         "sources": [
           {
@@ -321,7 +321,7 @@
       },
       {
         "id": "fr-oss-5",
-        "text": "Octoverse 2024 によると、GitHub 上のフランスの開発者は 280 万人を超え、前年比 +20% だった。Stack Overflow Developer Survey 2025 の回答者数ではフランスは 5 位 (1,408 人、4%) である。",
+        "text": "Octoverse 2024 によると、GitHub 上のフランスの開発者は 280 万人を超え、前年比 20% 増だった。Stack Overflow Developer Survey 2025 の回答者数ではフランスは 5 位 (1,408 人、4%) である。",
         "confidence": "strong",
         "sources": [
           {

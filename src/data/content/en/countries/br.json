@@ -1,8 +1,8 @@
 {
   "id": "br",
   "name": "Brazil",
-  "oneLiner": "Birthplace of Lua and Elixir, fourth on GitHub by developer count, with a reported relationship-first workplace culture.",
-  "intro": "This page collects tendencies reported for Brazil's software industry in surveys, research and industry-association statistics. Variance within the country is large: startups and multinationals work very differently from family-owned or state-linked organizations. Open source and the labor market have quantitative data from GitHub and Brasscom, while descriptions of feedback and hierarchy rest mostly on observations by a training company.",
+  "oneLiner": "Lua and Elixir came from Brazil, which ranks fourth on GitHub by developer count and is reported to put relationships first at work.",
+  "intro": "GitHub and Brasscom provide quantitative data on Brazil's open source activity and labor market, alongside other surveys and research. Descriptions of feedback and hierarchy rest mostly on observations by a training company. Variance within the country is large, and startups and multinationals work quite differently from family-owned or state-linked organizations.",
   "themes": {
     "design": [
       {
@@ -19,7 +19,7 @@
       },
       {
         "id": "br-design-2",
-        "text": "A study using data from around 2013 found that agile adoption in Brazil was mostly bottom-up, led by developers and team leads. This differs from the global pattern, where top-down adoption was more common.",
+        "text": "A study using data from around 2013 found that agile adoption in Brazil was mostly bottom-up, led by developers and team leads. Worldwide, top-down adoption was more common.",
         "confidence": "medium",
         "sources": [
           {
@@ -52,7 +52,7 @@
     "feedback": [
       {
         "id": "br-feedback-1",
-        "text": "The training company Talaera, citing Meyer, writes that negative feedback tends to be wrapped in warmth and delivered in private, and that public criticism easily damages relationships. The behavioral descriptions rest mainly on the authors' own observations.",
+        "text": "The training company Talaera, citing Meyer, writes that negative feedback tends to be wrapped in warmth and given in private, and that public criticism easily damages relationships. These descriptions of behavior rest mainly on the authors' own observations.",
         "confidence": "weak",
         "sources": [
           {
@@ -90,7 +90,7 @@
     "hierarchy": [
       {
         "id": "br-hierarchy-1",
-        "text": "Talaera says decisions tend to be made top-down and junior staff tend to wait until invited before speaking. The basis is the company's own observations as a trainer.",
+        "text": "Talaera says decisions tend to be made top-down and junior staff tend to wait to be invited before speaking. The company bases this on its own observations as a trainer.",
         "confidence": "weak",
         "sources": [
           {
@@ -121,7 +121,7 @@
     "communication": [
       {
         "id": "br-communication-1",
-        "text": "A summary of Meyer's Culture Map places Brazil on the side where trust is built through personal relationships, close to China and Saudi Arabia. Small talk at the start of a meeting is described as part of the work.",
+        "text": "A summary of Meyer's Culture Map places Brazil on the side where trust is built through personal relationships, close to China and Saudi Arabia. Small talk at the start of a meeting counts as part of the work.",
         "confidence": "weak",
         "sources": [
           {
@@ -242,7 +242,7 @@
     ]
   },
   "variance": [
-    "Accounts that explain Brazilian development culture through \"gambiarra\" or \"jeitinho\" (improvised workarounds) have no empirical research behind them and remain stereotypes.",
+    "Accounts that explain Brazilian development culture through \"gambiarra\" or \"jeitinho\" (improvised workarounds) have no empirical research behind them. They remain stereotypes.",
     "Talaera writes that tech startups and multinationals are flat, while family-owned and state-linked organizations are more hierarchical.",
     "Most descriptions of feedback and communication come from observations by the training company Talaera, not from quantitative data.",
     "No study was found that directly examines how engineering organizations handle failure or postmortems. Brazil's Hofstede uncertainty avoidance (UAI) score is fairly high at 76, but that alone says little about attitudes to failure.",

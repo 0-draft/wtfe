@@ -135,19 +135,19 @@ export const hofstedeText: Record<Lang, Record<HofstedeDimension, ScaleText>> = 
       left: "Consensus-oriented",
       right: "Decisive",
       gloss:
-        "Formerly masculinity/femininity: whether competition and achievement or care and quality of life drive people.",
+        "Formerly called masculinity/femininity. It asks whether competition and achievement or care and quality of life drive people.",
     },
     uai: {
       name: "Uncertainty avoidance",
       left: "Tolerant of ambiguity",
       right: "Avoids ambiguity",
-      gloss: "How threatened people feel by ambiguous or unknown situations. Not the same as risk avoidance.",
+      gloss: "How threatened people feel by ambiguous or unknown situations. It is not the same as risk avoidance.",
     },
     lto: {
       name: "Long-term orientation",
       left: "Short-term",
       right: "Long-term",
-      gloss: "Whether a society favours tradition and quick results or pragmatism and future rewards.",
+      gloss: "Whether a society favors tradition and quick results or pragmatism and future rewards.",
     },
     ivr: {
       name: "Indulgence",

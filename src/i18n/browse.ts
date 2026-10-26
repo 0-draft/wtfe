@@ -7,17 +7,17 @@ import type { Lang } from "./ui.ts";
 
 const en = {
   "home.premise":
-    "wtfe describes how software engineers in fourteen countries and regions tend to design, review, decide and work, the way a usage dictionary describes how a language is used. Every statement points to a public source and carries a label for how well that source supports it. Read the entries as tendencies, not traits: about 80% of the variation in cultural values lies between people inside a country, not between countries.",
+    "wtfe describes how software engineers in 14 countries and regions tend to design, review, decide and work, in the way a usage dictionary describes how a language is used. Every statement cites a public source and is labeled with how well that source supports it. The entries describe tendencies, not personal traits. About 80% of the variation in cultural values lies between people in the same country, not between countries",
   "home.title": "Ways They Frame Engineering",
   "home.premiseCite": "Taras, Steel & Kirkman 2016",
   "home.mapTitle": "How much we know",
   "home.mapLead":
-    "Each cell stacks one rule per claim. A thick rule is well attested, a thin rule is attested, a dashed rule is thin. The map shows the weight of the evidence, not anything about the countries themselves.",
+    "Each cell stacks one rule per claim. A thick rule is well attested, a thin rule is attested and a dashed rule is thin. The map shows how much evidence there is and says nothing about the countries themselves.",
   "home.scalesTitle": "Read a scale from where you stand",
   "home.scalesLink": (_name: string) => "Open the Evaluating scale",
   "home.compareTitle": "Compare two countries",
   "home.compareBody":
-    "A comparison is read in one direction: “Germany as seen from Japan” lists where the gap is largest first, then the claims side by side, theme by theme.",
+    "A comparison runs in one direction. “Germany as seen from Japan” lists the largest gaps first, then sets the claims side by side, theme by theme.",
   "home.compareLink": "Choose two countries",
   "home.compareExample": (from: string, to: string) => `${to} as seen from ${from}`,
   "home.allCountries": "All countries, with one-line summaries",
@@ -44,16 +44,16 @@ const en = {
 
   "countries.title": "Countries and regions",
   "countries.lead":
-    "Fourteen entries, sorted alphabetically. The Nordics are one region entry; where a claim or a score applies to only one Nordic country, the entry says which.",
+    "Fourteen entries, sorted alphabetically. The Nordics are a single region entry, and when a claim or score applies to only one Nordic country, the entry names it.",
   "countries.counts": (total: number) => (total === 1 ? "1 claim" : `${total} claims`),
   "themes.title": "Themes",
   "themes.lead":
-    "The seven themes every country entry is organised by. Each theme page lists all countries' claims on it, followed by the scales that bear on it.",
+    "Every country entry is organized by these seven themes. Each theme page lists every country's claims on that theme, followed by the scales that bear on it.",
   "themes.counts": (claims: number, countries: number) => `${claims} claims from ${countries} countries and regions`,
   "theme.definition": "Definition",
   "theme.scales": "Related scales",
   "theme.scalesLead":
-    "These scales describe national averages that bear on this theme. They place countries relative to one another; they say nothing about any one engineer.",
+    "These scales describe national averages that bear on this theme. They place countries relative to one another and say nothing about any one engineer.",
   "theme.meyer": "Culture Map",
   "theme.hofstede": "Hofstede",
   "theme.noScales":
@@ -64,7 +64,7 @@ const en = {
 
   "sources.title": "Sources",
   "sources.lead": (n: number, claims: number) =>
-    `${n} sources, each listed once, cited by ${claims} claims. Titles are kept as each claim cites them; where two links lead to the same document they are merged.`,
+    `${n} sources, each listed once, cited by ${claims} claims. Titles appear as each claim cites them, and links that lead to the same document are merged.`,
   "sources.dated": "Dated",
   "sources.datedNote": (year: number) => `Sources published before ${year} carry a “dated” label.`,
   "sources.noYear": "Year unknown",
@@ -87,7 +87,7 @@ type Dict = { [K in keyof typeof en]: (typeof en)[K] extends (...a: infer A) => 
 
 const ja: Dict = {
   "home.premise":
-    "wtfe は、14 の国と地域のソフトウェアエンジニアが、どう設計し、どうレビューし、どう決め、どう働く傾向にあるかを記述します。用法辞典がことばの使われ方を記述するのと同じ書き方です。どの記述にも公開された出典があり、その出典がどこまで裏付けているかをラベルで示しています。書かれているのは傾向で、その国の人の性質ではありません。文化的価値のばらつきの約 8 割は、国と国の間ではなく、同じ国の人どうしの間にあります。",
+    "wtfe は、14 の国と地域のソフトウェアエンジニアが設計、レビュー、意思決定、日々の仕事をどう進める傾向にあるかを、用法辞典がことばの使われ方を書くように記述しています。どの記述にも公開された出典を付け、その出典がどこまで裏付けているかをラベルで示しています。書いてあるのは傾向で、その国の人の性質ではありません。文化的価値のばらつきの約 8 割は、国と国の間ではなく、同じ国の人どうしの間にあります",
   "home.title": "エンジニアの作法を国ごとに引く",
   "home.premiseCite": "Taras, Steel & Kirkman 2016",
   "home.mapTitle": "どこまでわかっているか",
@@ -104,7 +104,7 @@ const ja: Dict = {
   "home.allThemes": "すべてのテーマ（定義つき）",
 
   "map.caption": (claims: number, strong: number, medium: number, weak: number) =>
-    `根拠の地図。14 の国と地域、7 つのテーマにわたる ${claims} 件の記述のうち、裏付け十分が ${strong} 件、裏付けありが ${medium} 件、裏付け薄が ${weak} 件。`,
+    `根拠の地図です。14 の国と地域、7 つのテーマにわたる記述 ${claims} 件のうち、裏付け十分が ${strong} 件、裏付けありが ${medium} 件、裏付け薄が ${weak} 件です。`,
   "map.thinCells": (cells: string) => `すべての記述が裏付け薄のマス: ${cells}。`,
   "map.noThinCells": "裏付け薄の記述だけでできているマスはありません。",
   "map.corner": "国・地域",
@@ -123,7 +123,7 @@ const ja: Dict = {
 
   "countries.title": "国と地域",
   "countries.lead":
-    "14 の見出し語を五十音順に並べています。北欧は 1 つの地域として扱い、記述やスコアが北欧の一部の国だけに当てはまる場合は、どの国かを明記しています。",
+    "14 の項目を五十音順に並べています。北欧は 1 つの地域として扱い、記述やスコアが北欧の一部の国だけに当てはまる場合は、どの国かを明記しています。",
   "countries.counts": (total: number) => `記述 ${total} 件`,
   "themes.title": "テーマ",
   "themes.lead":
@@ -132,11 +132,11 @@ const ja: Dict = {
   "theme.definition": "定義",
   "theme.scales": "関係する尺度",
   "theme.scalesLead":
-    "以下の尺度は、このテーマに関わる国ごとの平均的な傾向を表します。国どうしの相対的な位置を示すもので、個々のエンジニアについては何も語りません。",
+    "以下の尺度は、このテーマに関わる国ごとの平均的な傾向を表します。国どうしの相対的な位置を示すもので、個々のエンジニアのことはわかりません。",
   "theme.meyer": "Culture Map",
   "theme.hofstede": "Hofstede",
   "theme.noScales":
-    "このテーマに十分近い Culture Map や Hofstede の尺度はないため、載せていません。下の記述はそれぞれの出典だけに基づいています。",
+    "Culture Map にも Hofstede にも、このテーマを十分に測る尺度がないため、尺度は載せていません。下の記述はそれぞれの出典だけに基づいています。",
   "theme.countryLink": (country: string) => `${country}の項目をすべて読む`,
   "theme.jump": "国へ移動",
   "country.compareTheme": (theme: string) => `ほかの国と比べる: ${theme}`,
@@ -189,29 +189,31 @@ export const themeCodes: Record<Lang, Record<ThemeId, string>> = {
 export const themeDefinitions: Record<Lang, Record<ThemeId, string>> = {
   en: {
     design:
-      "How teams decide what good software is: specifications, architecture, testing, process standards and who signs off on quality.",
+      "How teams decide what good software is, covering specifications, architecture, testing, process standards and who signs off on quality.",
     failure:
-      "How mistakes, incidents and risk are handled: whether errors are spoken about, how postmortems work, and how cautious organisations are with new technology and data.",
+      "How mistakes, incidents and risk are handled, including whether people talk about errors, how postmortems run and how cautious organizations are with new technology and data.",
     feedback:
-      "How criticism travels between engineers: code review, pull request decisions, and how disagreement is voiced.",
+      "How criticism passes between engineers, through code review, pull request decisions and the way disagreement is voiced.",
     hierarchy:
-      "Who decides and how: the distance between managers and teams, consensus versus top-down calls, and the legal and organisational rules around them.",
+      "Who decides and how, including the distance between managers and teams, consensus versus top-down decisions, and the legal and organizational rules around them.",
     communication:
-      "How information is passed on: how much is said explicitly, what gets written down, meetings, and which language a team works in.",
-    work: "The conditions around the work: hours, remote work, employment contracts, company size, pay and how careers move.",
-    oss: "How engineers take part in open source and the wider community: contribution numbers, public funding, conferences and government use.",
+      "How information is passed on, including how much is said explicitly, what gets written down, how meetings run and which language a team works in.",
+    work: "The conditions around the work, such as hours, remote work, employment contracts, company size, pay and how careers move.",
+    oss: "How engineers take part in open source and the wider community, covering contribution numbers, public funding, conferences and government use.",
   },
   ja: {
     design:
-      "よいソフトウェアとは何かをチームがどう決めるか。仕様、アーキテクチャ、テスト、プロセス標準、品質の承認者などを扱います。",
+      "よいソフトウェアの基準をチームがどう決めるかを扱います。仕様、アーキテクチャ、テスト、プロセス標準、品質を誰が承認するかなどが含まれます。",
     failure:
-      "ミス、障害、リスクをどう扱うか。誤りを口にできるか、ポストモーテムの進め方、新しい技術やデータに組織がどこまで慎重かを扱います。",
-    feedback: "エンジニアの間で指摘がどう伝わるか。コードレビュー、プルリクエストの判断、反対意見の出し方を扱います。",
+      "ミスや障害、リスクの扱い方です。誤りを口にできるか、ポストモーテムをどう進めるか、新しい技術やデータに組織がどこまで慎重かを見ます。",
+    feedback:
+      "エンジニアの間で指摘がどう伝わるかを扱います。コードレビュー、プルリクエストの採否、反対意見の出し方が含まれます。",
     hierarchy:
-      "誰がどう決めるか。上司とチームの距離、合意型かトップダウンか、それを取り巻く法律や組織のルールを扱います。",
-    communication: "情報をどう伝えるか。どこまで明示的に言うか、何を文書に残すか、会議、チームの作業言語を扱います。",
-    work: "仕事を取り巻く条件。労働時間、リモートワーク、雇用契約、企業規模、報酬、キャリアの動き方を扱います。",
-    oss: "OSS や広いコミュニティへの関わり方。コントリビューションの規模、公的な資金、カンファレンス、行政での利用を扱います。",
+      "誰がどう決めるかを扱います。上司とチームの距離、合意で決めるかトップダウンで決めるか、それを取り巻く法律や組織のルールが含まれます。",
+    communication:
+      "情報の伝え方です。どこまで明示的に言うか、何を文書に残すか、会議のあり方、チームがどの言語で働くかを見ます。",
+    work: "仕事を取り巻く条件を扱います。労働時間、リモートワーク、雇用契約、企業規模、報酬、キャリアの移り方が含まれます。",
+    oss: "OSS や広いコミュニティへの関わり方です。コントリビューションの規模、公的な資金、カンファレンス、行政での利用を見ます。",
   },
 };
 

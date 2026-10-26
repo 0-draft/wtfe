@@ -13,7 +13,7 @@ interface Props {
 const { lang, current, href = "/countries/{id}/" } = Astro.props;
 ---
 
-<nav class="thumb-index" aria-label={lang === "ja" ? "国の索引" : "Country index"}>
+<nav class="thumb-index" data-pagefind-ignore aria-label={lang === "ja" ? "国の索引" : "Country index"}>
   {
     COUNTRY_IDS.map((id) => (
       <a

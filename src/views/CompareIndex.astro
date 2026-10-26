@@ -75,7 +75,7 @@ const suggested = SUGGESTED.map((p) => {
   <section class="section" aria-labelledby="all-h">
     <h2 id="all-h">{t["index.all"]}</h2>
     <p class="section-lead">{t["index.allLead"]}</p>
-    <div class="matrix">
+    <div class="matrix" data-pagefind-ignore>
       <p class="m-head" aria-hidden="true">
         <span></span>
         {COUNTRY_IDS.map((id) => <span class="mono">{DISPLAY_CODE[id]}</span>)}

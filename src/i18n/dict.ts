@@ -5,7 +5,7 @@ const en = {
   "site.title": "wtfe",
   "site.expansion": "Ways They Frame Engineering",
   "site.desc":
-    "How software engineers in different countries tend to think and work — every claim sourced and rated for confidence.",
+    "How software engineers in different countries tend to think and work. Every claim cites a source and is rated for confidence.",
   "nav.skip": "Skip to content",
   "nav.countries": "Countries",
   "nav.themes": "Themes",
@@ -20,9 +20,9 @@ const en = {
   "nav.lang": "日本語",
   "nav.langLabel": "Switch to Japanese",
   "home.lead":
-    "Fourteen countries and regions, seven themes, one rule: every statement points to a public source and says how strong that source is.",
+    "The site covers 14 countries and regions in seven themes. Each statement cites a public source and says how strong that source is.",
   "home.caveat":
-    "These are tendencies, not traits. Most of the variation in cultural values lies within countries, not between them.",
+    "These describe tendencies, not personal traits. Most of the variation in cultural values lies within countries rather than between them.",
   "home.countries": "Countries",
   "home.themes": "Themes",
   "home.claims": (n: number) => (n === 1 ? "1 claim" : `${n} claims`),
@@ -30,8 +30,8 @@ const en = {
   "country.variance": "Within-country variance and counter-evidence",
   "country.hofstede": "Hofstede dimensions",
   "country.cultureMap": "Culture Map positions",
-  "country.untranslated": "This page has not been translated yet; showing the Japanese original.",
-  "theme.lead": (theme: string) => `${theme}: what the sources say, country by country.`,
+  "country.untranslated": "This page has not been translated yet, so the Japanese original is shown.",
+  "theme.lead": (theme: string) => `What the sources say about ${theme.toLowerCase()}, country by country.`,
   sources: "Sources",
   "claim.dated": "Dated",
   "claim.sourceCount": (n: number) => (n === 1 ? "1 source" : `${n} sources`),
@@ -47,7 +47,7 @@ const ja: Dict = {
   "site.title": "wtfe",
   "site.expansion": "Ways They Frame Engineering",
   "site.desc":
-    "世界各国のソフトウェアエンジニアがどう考え、どう働く傾向にあるか。すべての記述に出典と信頼度を付けています。",
+    "世界各国のソフトウェアエンジニアがどう考え、どう働く傾向にあるかをまとめたサイトです。すべての記述に出典と信頼度を付けています。",
   "nav.skip": "本文へ移動",
   "nav.countries": "国",
   "nav.themes": "テーマ",
@@ -62,7 +62,7 @@ const ja: Dict = {
   "nav.lang": "English",
   "nav.langLabel": "英語に切り替える",
   "home.lead":
-    "14 の国と地域、7 つのテーマ。どの記述にも公開された出典があり、その出典がどれだけ確かかを示しています。",
+    "14 の国と地域を 7 つのテーマで扱います。どの記述にも公開された出典を付け、その出典がどれだけ確かかを示しています。",
   "home.caveat":
     "ここにあるのは傾向で、その国の人の性質ではありません。文化的価値のばらつきの大半は、国と国の間ではなく国の内部にあります。",
   "home.countries": "国と地域",
@@ -73,7 +73,7 @@ const ja: Dict = {
   "country.hofstede": "Hofstede の 6 次元",
   "country.cultureMap": "Culture Map 上の位置",
   "country.untranslated": "このページはまだ翻訳されていません。日本語の原文を表示しています。",
-  "theme.lead": (theme: string) => `${theme}について、各国の出典が示していること。`,
+  "theme.lead": (theme: string) => `${theme}について、出典が示す内容を国ごとに並べています。`,
   sources: "出典",
   "claim.dated": "【古い資料】",
   "claim.sourceCount": (n: number) => `出典 ${n} 件`,

@@ -1,8 +1,8 @@
 {
   "id": "kr",
   "name": "South Korea",
-  "oneLiner": "Rated hierarchical and high-context, with Toss-style delegation alongside chaebol and SI firms",
-  "intro": "This page draws on statistics, news reports and company engineering blogs to describe how software engineers in South Korea work. These are country-level tendencies with large variance inside the country; product companies such as Toss and chaebol or SI (system integration) firms have quite different cultures. Korean-language company blogs and news coverage are plentiful, but almost no quantitative data was found on blame culture or reporting practices inside companies.",
+  "oneLiner": "In a culture described as hierarchical and high-context, Toss-style delegation coexists with chaebol and SI firms.",
+  "intro": "Statistics, news reports and company engineering blogs are the sources for South Korea. Korean-language blogs and news coverage are plentiful, but almost no quantitative data was found on blame culture or reporting practices inside companies. The tendencies are national, and the spread inside the country is large. Product companies such as Toss and chaebol or SI (system integration) firms have quite different cultures.",
   "themes": {
     "design": [
       {
@@ -19,7 +19,7 @@
       },
       {
         "id": "kr-design-2",
-        "text": "A columnist who worked with Korean teams as an outside partner observed that developers make up about 80% of a team and testers are few. He adds that this is not necessarily a weakness in an agile setting.",
+        "text": "A columnist who worked with Korean teams as an outside partner saw that developers made up about 80% of a team and testers were few. He adds that in an agile setting this is not necessarily a weakness.",
         "confidence": "weak",
         "sources": [
           {
@@ -31,7 +31,7 @@
       },
       {
         "id": "kr-design-3",
-        "text": "SPRi (2014) and a ZDNet Korea op-ed (2023) argue that multi-tier subcontracting persists in public-sector SI projects, locking smaller firms into low-value coding so that they never build planning and design skills.",
+        "text": "SPRi (2014) and a ZDNet Korea op-ed (2023) argue that multi-tier subcontracting persists in public-sector SI projects. Smaller firms are locked into low-value coding and never build planning and design skills.",
         "confidence": "medium",
         "sources": [
           {
@@ -62,7 +62,7 @@
       },
       {
         "id": "kr-failure-2",
-        "text": "After a fire at the Pangyo data center caused a major outage in October 2022, Kakao presented its root cause analysis and prevention measures at if(kakao) dev 2022 that December. The measures include data center redundancy and triple redundancy for operations tooling.",
+        "text": "A fire at the Pangyo data center caused a major Kakao outage in October 2022. That December, at if(kakao) dev 2022, Kakao presented its root cause analysis and prevention measures, including data center redundancy and triple redundancy for operations tooling.",
         "confidence": "strong",
         "sources": [
           {
@@ -79,7 +79,7 @@
       },
       {
         "id": "kr-failure-3",
-        "text": "Woowa Brothers, the company behind Baemin, lists \"don't blame people\" among its principles for KPT retrospectives. An SK Devocean presentation says the hardest step in a postmortem is not holding the person responsible to account.",
+        "text": "Woowa Brothers, the company behind Baemin, lists \"don't blame people\" among its principles for KPT retrospectives. An SK Devocean presentation says the hardest step in a postmortem is not holding the responsible person to account.",
         "confidence": "strong",
         "sources": [
           {
@@ -128,7 +128,7 @@
     "hierarchy": [
       {
         "id": "kr-hierarchy-1",
-        "text": "On Meyer's Leading scale, South Korea is placed toward the hierarchical end. The evidence is a secondary excerpt from the book.",
+        "text": "On Meyer's Leading scale, South Korea is placed toward the hierarchical end. The source is a secondary excerpt from the book.",
         "confidence": "medium",
         "sources": [
           {
@@ -167,7 +167,7 @@
       },
       {
         "id": "kr-hierarchy-4",
-        "text": "Kakao has had staff call each other by English names since its founding in 2006, but its affiliate Kakao Games returned to the honorific \"-nim\" in 2024. News coverage also quotes industry voices saying many companies have flat forms of address but not a flat culture.",
+        "text": "Kakao staff have called each other by English names since the company's founding in 2006, but its affiliate Kakao Games went back to the honorific \"-nim\" in 2024. News coverage quotes industry voices saying many companies have flat forms of address but not a flat culture.",
         "confidence": "medium",
         "sources": [
           {
@@ -221,7 +221,7 @@
       },
       {
         "id": "kr-work-2",
-        "text": "News reports say working conditions in the IT and game industries improved substantially after the 52-hour workweek cap took effect in 2018.",
+        "text": "News reports say working conditions in the IT and game industries improved a great deal after the 52-hour workweek cap took effect in 2018.",
         "confidence": "medium",
         "sources": [
           {
@@ -267,7 +267,7 @@
       },
       {
         "id": "kr-work-5",
-        "text": "After the scramble for developers in 2021, the market reversed: in a 2024 Grepp survey, 34% of companies said they would hire fewer developers.",
+        "text": "Hiring reversed after the scramble for developers in 2021. In a 2024 Grepp survey, 34% of companies said they would hire fewer developers.",
         "confidence": "medium",
         "sources": [
           {
@@ -368,9 +368,9 @@
   },
   "variance": [
     "Some product companies build explicitness and delegation into their rules, as with Toss's DRI system and the Pn rule, while top-down management and multi-tier subcontracting persist in chaebol and public-sector SI.",
-    "Moves toward flatter, more flexible work, such as Kakao's English names and Naver's continued remote work, have seen reversals, such as Kakao's 2024 return to the office and Kakao Games' change in forms of address.",
+    "Moves toward flatter, more flexible work, such as Kakao's English names and Naver's continued remote work, have partly reversed, with Kakao's 2024 return to the office and Kakao Games' change in forms of address.",
     "No reliable quantitative data was found on reporting (bogo) culture or on reliance on written versus spoken communication, so the communication section leans on general placements such as the Culture Map.",
-    "South Korea's Hofstede individualism score was revised from 18 in the old edition to 58 in the current one; the classic picture of Korea as strongly collectivist rests on the old value.",
+    "South Korea's Hofstede individualism score was revised from 18 in the old edition to 58 in the current one. The classic picture of Korea as strongly collectivist rests on the old value.",
     "The 52-hour cap has reduced overall working hours, but reports say crunch and unpaid overtime persist in the game industry under all-inclusive wage contracts.",
     "Primary data on blame culture inside companies is scarce, so the section on failure relies on a few companies' engineering blogs and presentations.",
     "The Stack Overflow Developer Survey 2024 had only 144 responses from South Korea (199 including a separately listed variant of the country name), so it does not represent Korean developers."

@@ -34,7 +34,7 @@ const groups = [
     <p class="lead">{t["scales.lead"]}</p>
   </header>
 
-  <nav class="toc" aria-label={t["scales.title"]}>
+  <nav class="toc" data-pagefind-ignore aria-label={t["scales.title"]}>
     {groups.map((g) => <a href={`#${g.id}`}>{g.name}</a>)}
     <a href={localePath(lang, "/method/")}>{t["scales.method"]}</a>
   </nav>

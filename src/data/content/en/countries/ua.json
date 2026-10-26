@@ -1,8 +1,8 @@
 {
   "id": "ua",
   "name": "Ukraine",
-  "oneLiner": "Built around outsourcing and remote work for Western clients, and kept IT service exports going through the war.",
-  "intro": "This page collects tendencies reported for Ukraine's software industry in surveys by industry bodies and the developer community, and in news coverage. Practice differs a lot between outsourcing and product companies, and between people living in Ukraine and those working from abroad. Contracts and exports have figures from DOU and the central bank, while material on feedback and hierarchy comes mostly from outsourcing vendors and recruiters and often contradicts itself.",
+  "oneLiner": "Ukraine's IT industry is built around outsourcing and remote work for Western clients, and it kept service exports going through the war.",
+  "intro": "The figures on Ukraine's software industry come from the developer community DOU, industry bodies, the central bank and news coverage. Material on feedback and hierarchy is mostly written by outsourcing vendors and recruiters, and these sources often contradict each other. Practice differs a lot between outsourcing and product companies, and between people living in Ukraine and those working from abroad.",
   "themes": {
     "design": [
       {
@@ -19,7 +19,7 @@
       },
       {
         "id": "ua-design-2",
-        "text": "Ukraine's Hofstede uncertainty avoidance (UAI) score is extremely high at 95. The outsourcing firm N-iX (2019) links this to a preference for detailed plans and background explanations. The article is written from the seller's side.",
+        "text": "Ukraine's Hofstede uncertainty avoidance (UAI) score is high, at 95. The outsourcing firm N-iX (2019) links this to a preference for detailed plans and background explanations. The article is written from the seller's side.",
         "confidence": "medium",
         "sources": [
           {
@@ -50,7 +50,7 @@
       },
       {
         "id": "ua-failure-2",
-        "text": "IT companies are reported to have handled blackouts by setting up coworking spaces with generators and Starlink and by subsidizing employees' backup power.",
+        "text": "IT companies are reported to have handled blackouts by opening coworking spaces with generators and Starlink and by subsidizing employees' backup power.",
         "confidence": "weak",
         "sources": [
           {
@@ -78,7 +78,7 @@
       },
       {
         "id": "ua-failure-4",
-        "text": "An article by the outsourcing firm Alcor, citing DOU surveys, says 38% of IT workers feel burned out at work. Thirty percent of IT specialists serving in the army receive payments from their IT employer.",
+        "text": "An article by the outsourcing firm Alcor, citing DOU surveys, says 38% of IT workers feel burned out. Thirty percent of IT specialists serving in the army receive payments from their IT employer.",
         "confidence": "weak",
         "sources": [
           {
@@ -118,7 +118,7 @@
     "hierarchy": [
       {
         "id": "ua-hierarchy-1",
-        "text": "Ukraine scores high on both Hofstede power distance (PDI 92) and uncertainty avoidance (UAI 95). Edge Executive Services (2024) links this to multi-layered organizational hierarchies and a large number of rules.",
+        "text": "Ukraine scores high on both Hofstede power distance (PDI 92) and uncertainty avoidance (UAI 95). Edge Executive Services (2024) links this to many-layered hierarchies and a large number of rules.",
         "confidence": "medium",
         "sources": [
           {
@@ -270,7 +270,7 @@
   "variance": [
     "Most material on feedback and hierarchy comes from outsourcing vendors and recruiters, and no primary research was found.",
     "Vendor and recruiter articles contradict each other. employsome (2026), unlike unicrew, says developers are comfortable with technical disagreement, and nCube, unlike Jappware, says formal hierarchy is respected.",
-    "Hofstede's individualism (IDV) score was revised sharply from 25 in the older edition to 55 today, and older material still uses the old value.",
+    "Hofstede's individualism (IDV) score for Ukraine was revised from 25 in the older edition to 55 today, and older material still uses the old value.",
     "About 20% of IT workers work from abroad, so \"Ukrainian developers\" includes both residents and emigrants.",
     "At outstaffing companies and small and medium firms, more than 65% of workers were FOP (2025), and both contracts and culture differ from product companies.",
     "Erin Meyer's Culture Map does not place Ukraine."

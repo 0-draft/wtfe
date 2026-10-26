@@ -98,8 +98,8 @@ const en = {
   "title.join": "vs",
   "pick.from": "Seen from",
   "pick.to": "Compared with",
-  seenFrom: (a: string, b: string) => `Seen from ${a}: each line below describes ${b} relative to ${a}.`,
-  swap: (a: string, b: string) => `Swap: see ${a} from ${b}`,
+  seenFrom: (a: string, b: string) => `The view here is from ${a}. Each line below compares ${b} with ${a}.`,
+  swap: (a: string, b: string) => `See ${a} from ${b} instead`,
   "ruler.heading": "Culture Map: eight scales",
   "ruler.lead": (a: string, b: string) =>
     `Erin Meyer's eight scales, sorted by how far apart ${a} and ${b} sit, largest gap first.`,
@@ -107,14 +107,14 @@ const en = {
   "ruler.legendB": (b: string) => `Hollow ring: ${b}`,
   "ruler.secondary": "† position taken from a review or summary, not from Meyer's own chart.",
   "ruler.provenance":
-    "Positions are read by eye from Erin Meyer's published charts and rounded to seven steps. A step means “further towards that pole”, not a measured distance.",
+    "Positions are read by eye from Erin Meyer's published charts and rounded to seven steps. A step means “further toward that pole,” not a measured distance.",
   "ruler.how": "How the positions were read",
   "ruler.members": (code: string, note: string) => `${code} by country: ${note}`,
   "group.different": "Where you will notice the difference",
   "group.close": "Where you are close",
   "group.none": "Not placed",
   "group.noneLead":
-    "These scales are left unmarked: either Meyer leaves a country off the scale or no source places it, and drawing it anyway would be guessing.",
+    "These scales are left unmarked because Meyer leaves a country off the scale or no source places it. Drawing a position anyway would be guessing.",
   "group.count": (n: number) => `${n} ${n === 1 ? "scale" : "scales"}`,
   "hofstede.heading": "Hofstede: six dimensions",
   "hofstede.lead": (a: string, b: string) =>
@@ -122,7 +122,7 @@ const en = {
   "hofstede.provenance": (title: string, year: string) => `Source: ${title} (${year}).`,
   "hofstede.how": "About the Hofstede dimensions",
   description: (a: string, b: string) =>
-    `${b} as seen from ${a}: where the two differ on Erin Meyer's eight scales and Hofstede's six dimensions, and what the sources say on each theme.`,
+    `How ${b} looks from ${a} on Erin Meyer's eight scales and Hofstede's six dimensions, with what the sources say on each theme.`,
   "themes.heading": "What the sources say, theme by theme",
   "themes.lead": (a: string, b: string) =>
     `Entries for ${a} and ${b}, side by side on wide screens. Each keeps its own confidence label and citations.`,
@@ -150,13 +150,13 @@ const ja: Dict = {
   "title.join": "と",
   "pick.from": "視点",
   "pick.to": "比較相手",
-  seenFrom: (a: string, b: string) => `${a}から見た${b}。以下の各行は、${b}が${a}とどう違うかを書いています。`,
+  seenFrom: (a: string, b: string) => `${a}から見た${b}です。以下の各行は、${b}が${a}とどう違うかを示しています。`,
   swap: (a: string, b: string) => `入れ替える：${b}から見た${a}`,
   "ruler.heading": "Culture Map の 8 尺度",
   "ruler.lead": (a: string, b: string) => `Erin Meyer の 8 つの尺度を、${a}と${b}の差が大きい順に並べています。`,
   "ruler.legendA": (a: string) => `塗りつぶしの点：${a}（見ている側）`,
   "ruler.legendB": (b: string) => `白抜きの輪：${b}`,
-  "ruler.secondary": "† Meyer 自身の図ではなく、書評や要約から読み取った位置。",
+  "ruler.secondary": "† Meyer 自身の図ではなく、書評や要約から読み取った位置です。",
   "ruler.provenance":
     "位置は Erin Meyer が公開している図から目で読み取り、7 段階に丸めたものです。1 段階は「その極に一歩近い」という意味で、測った距離ではありません。",
   "ruler.how": "位置の読み取り方",
@@ -165,7 +165,7 @@ const ja: Dict = {
   "group.close": "近いところ",
   "group.none": "位置のない尺度",
   "group.noneLead":
-    "Meyer がその国を尺度に位置づけていないか、位置を示す出典がない尺度です。推測で置くことはせず、印を付けていません。",
+    "Meyer がその国を位置づけていないか、位置を示す出典がない尺度です。推測では置かず、印を付けていません。",
   "group.count": (n: number) => `${n} 尺度`,
   "hofstede.heading": "Hofstede の 6 次元",
   "hofstede.lead": (a: string, b: string) =>
@@ -173,7 +173,7 @@ const ja: Dict = {
   "hofstede.provenance": (title: string, year: string) => `出典：${title}（${year}）。`,
   "hofstede.how": "Hofstede の次元について",
   description: (a: string, b: string) =>
-    `${a}から見た${b}。Erin Meyer の 8 尺度と Hofstede の 6 次元での違いと、テーマごとの出典付きの記述。`,
+    `${a}から見た${b}の比較です。Erin Meyer の 8 尺度と Hofstede の 6 次元での違いを示し、テーマごとに出典付きの記述を並べます。`,
   "themes.heading": "テーマごとの記述",
   "themes.lead": (a: string, b: string) =>
     `${a}と${b}の記述を、広い画面では左右に並べています。各記述には信頼度と出典がそのまま付いています。`,

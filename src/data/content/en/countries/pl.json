@@ -1,8 +1,8 @@
 {
   "id": "pl",
   "name": "Poland",
-  "oneLiner": "A strong ICPC record, with B2B contracts and foreign-owned centers shaping how IT work is organized.",
-  "intro": "This page collects tendencies reported for Poland's software industry in statistics, surveys and industry reports. Practice differs a lot between foreign-owned centers and domestic companies, and between senior and junior staff. Contracts and employment have large-sample figures from Bulldogjob and ABSL, while descriptions of feedback and communication come mostly from training-company guides.",
+  "oneLiner": "Poland has a strong ICPC record, and B2B contracts and foreign-owned centers shape how IT work is organized.",
+  "intro": "Bulldogjob and ABSL publish large-sample figures on contracts and employment in Poland's software industry. Descriptions of feedback and communication come mostly from training-company guides, and the rest from statistics, surveys and industry reports. Practice differs a lot between foreign-owned centers and domestic companies, and between senior and junior staff.",
   "themes": {
     "design": [
       {
@@ -35,7 +35,7 @@
       },
       {
         "id": "pl-design-3",
-        "text": "Poland's Hofstede uncertainty avoidance (UAI) score is very high at 93. The training company Talaera notes that reviews and approvals are expected to come with supporting documents, and proposals without them have a harder time.",
+        "text": "Poland's Hofstede uncertainty avoidance (UAI) score is high, at 93. The training company Talaera says reviews and approvals are expected to come with supporting documents, and proposals without them have a harder time.",
         "confidence": "medium",
         "sources": [
           {
@@ -54,7 +54,7 @@
     "failure": [
       {
         "id": "pl-failure-1",
-        "text": "In GEM data, 52% of people who saw a business opportunity held back from starting a business for fear of failure (2023), above the European average of 45%. Only 2.6% of non-entrepreneurs intend to start a business within three years, far below the European average of 12%.",
+        "text": "In GEM data for 2023, 52% of people who saw a business opportunity did not start a business for fear of failure, above the European average of 45%. Only 2.6% of non-entrepreneurs plan to start one within three years, against a European average of 12%.",
         "confidence": "strong",
         "sources": [
           {
@@ -96,7 +96,7 @@
       },
       {
         "id": "pl-feedback-2",
-        "text": "English written by Polish speakers is said to use few softeners and many imperatives, so it can read as more direct than intended. The evidence comes mainly from studies of learners' English writing.",
+        "text": "English written by Polish speakers tends to use few softeners and many imperatives, so it can read as more direct than intended. The evidence comes mainly from studies of learners' English writing.",
         "confidence": "weak",
         "sources": [
           {
@@ -141,7 +141,7 @@
     "communication": [
       {
         "id": "pl-communication-1",
-        "text": "Consultancy guides describe Polish business communication as relatively low-context and direct. They add that very blunt phrasing comes across as needlessly harsh, and that email tends to be more formal than chat.",
+        "text": "Consultancy guides describe Polish business communication as relatively low-context and direct. They add that overly blunt phrasing comes across as needlessly harsh, and that email tends to be more formal than chat.",
         "confidence": "weak",
         "sources": [
           {

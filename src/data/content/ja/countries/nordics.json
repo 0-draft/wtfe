@@ -2,12 +2,12 @@
   "id": "nordics",
   "name": "北欧",
   "oneLiner": "権力格差は低く、労働時間や育休は制度が支える。率直さや決め方の速さは国ごとに違う。",
-  "intro": "スウェーデン・フィンランド・デンマーク・ノルウェーの 4 か国について、調査や統計から見える傾向をまとめたページです。国ごとの差も個人差も大きいため、要所では国名を分けて書いています。労働時間や育休は公的統計で裏づけられますが、開発文化については Spotify・Supercell・Nokia など個社の事例に頼る部分が大きい点に注意してください。",
+  "intro": "スウェーデン・フィンランド・デンマーク・ノルウェーの 4 か国について、調査や統計から見える傾向を書いています。国ごとの差も個人差も大きいので、必要な箇所では国名を分けています。労働時間や育休は公的統計で裏づけられます。一方、開発文化については Spotify・Supercell・Nokia などの個社事例に頼る部分が大きいことに注意してください。",
   "themes": {
     "design": [
       {
         "id": "nordics-design-1",
-        "text": "VTT（フィンランド国立技術研究センター）の Abrahamsson ら（2002, VTT Publications 478）は、agile 手法を体系的に比較した初期のレビューで、Scopus での被引用は 200 件を超える。フィンランドが agile 研究で早くから存在感を持っていたことを示す。",
+        "text": "VTT（フィンランド国立技術研究センター）の Abrahamsson ら（2002, VTT Publications 478）は、agile 手法を体系的に比較した初期のレビューで、Scopus での被引用は 200 件を超える。この被引用数は、フィンランドが早くから agile 研究で存在感を持っていたことを示している。",
         "confidence": "medium",
         "sources": [
           {
@@ -137,7 +137,7 @@
     "hierarchy": [
       {
         "id": "nordics-hierarchy-1",
-        "text": "Hofstede の権力格差（PDI）は 4 か国とも低く、最も低いのはデンマークの 18。Meyer も Leading スケールでデンマークとスウェーデンを平等主義の例に挙げている。",
+        "text": "Hofstede の権力格差（PDI）は 4 か国とも低く、最も低いのはデンマークの 18 だ。Meyer も Leading スケールでデンマークとスウェーデンを平等主義の例に挙げている。",
         "confidence": "medium",
         "sources": [
           {
@@ -300,7 +300,7 @@
     "oss": [
       {
         "id": "nordics-oss-1",
-        "text": "Linux は 1991-08-25、ヘルシンキ大学の学生だった Linus Torvalds が comp.os.minix に「just a hobby, won't be big and professional like gnu」と投稿したことに始まる。",
+        "text": "Linux は 1991 年 8 月 25 日、ヘルシンキ大学の学生だった Linus Torvalds が comp.os.minix に「just a hobby, won't be big and professional like gnu」と投稿したことに始まる。",
         "confidence": "medium",
         "sources": [
           {
@@ -311,7 +311,7 @@
       },
       {
         "id": "nordics-oss-2",
-        "text": "MySQL AB は 1995 年に創業したスウェーデンの企業で、本社の一つをウプサラに置いた。創業者の一人で MySQL の主な作者 Michael Widenius はヘルシンキ出身のフィンランド人。2008 年に Sun が約 10 億ドルで買収し、後に MariaDB が派生した。",
+        "text": "MySQL AB は 1995 年に創業したスウェーデンの企業で、本社の一つをウプサラに置いた。創業者の一人で MySQL の主な作者の Michael Widenius は、ヘルシンキ出身のフィンランド人だ。2008 年に Sun が約 10 億ドルで買収し、後に MariaDB が派生した。",
         "confidence": "medium",
         "sources": [
           {
@@ -371,7 +371,7 @@
     "Spotify モデルは Spotify 自身も完全には実装しなかった理想像で、北欧の典型として読むのは危うい（Jeremiah Lee 2020）。",
     "Nokia の事例（Vuori & Huy 2016）は、平等とされる文化の大企業でも、恐怖から悪い知らせが上がらなくなりうることを示す。ただし著者の前提が結論を誘導したという批判もある。",
     "スウェーデンが率直さでデンマークより穏当だという見方を裏づける Meyer の一次資料は確認できなかった。フィンランドとノルウェーの Culture Map 上の位置も、要約サイトでは確認できていない。",
-    "förankring による決定の遅さを定量化した研究や、Jante の掟が起業に与える影響を実証した研究は見つからず、根拠は論評とインタビューが中心。",
+    "förankring による決定の遅さを定量化した研究や、Jante の掟が起業に与える影響を実証した研究は見つからなかった。根拠は論評とインタビューが中心だ。",
     "デンマークは 2022 年に父親の育休枠を導入したが、その週数は資料によって 8・9・11 週と食い違う。",
     "DHH の Rails や Basecamp の働き方論は米国企業での実践で、デンマークの開発文化の産物とは言いにくい。"
   ]

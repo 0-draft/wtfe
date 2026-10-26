@@ -130,7 +130,7 @@ const policy = {
     ? "Frameworks such as the Culture Map, a single reputable news report, Wikipedia, industry associations, qualitative studies, and the EF English Proficiency Index."
     : "Culture Map などの枠組み、信頼できる報道 1 件、Wikipedia、業界団体、定性研究、EF EPI（英語能力指数）。",
   weak: en
-    ? "Blogs, forums, vendor and recruiter material, summary sites, and single anecdotes. Kept only when nothing better exists, and labelled so."
+    ? "Blogs, forums, vendor and recruiter material, summary sites, and single anecdotes. Kept only when nothing better exists, and labeled as such."
     : "ブログ、掲示板、ベンダーや人材会社の資料、まとめサイト、単発の体験談。ほかに根拠がないときだけ載せ、そうと分かるようにしています。",
 } as const;
 ---
@@ -140,11 +140,11 @@ const policy = {
   <article class="method">
     <header class="headword">
       <h1>{t["method.title"]}</h1>
-      <p class="hw-gloss">{m.gloss}</p>
+      <p class="hw-gloss" data-pagefind-ignore="all">{m.gloss}</p>
       <p class="lead">{m.lead}</p>
     </header>
 
-    <nav class="toc" aria-label={m.tocLabel}>
+    <nav class="toc" data-pagefind-ignore aria-label={m.tocLabel}>
       {METHOD_SECTIONS.map((s) => <a href={`#${s}`}>{m.sections[s]}</a>)}
     </nav>
 
@@ -189,11 +189,11 @@ const policy = {
           ) : (
             <>
               <p>
-                すべてのページに通っている原則は<strong>「性格ではなく用法」</strong>です。ここにある記述は、ある傾向が報告されていること、誰が報告したか、その報告がどれだけ確かかを示すものです。日本やドイツやブラジルのエンジニアが「どういう人か」を述べるものではありません。文化的価値のばらつきの大半は国と国の間ではなく国の内部にあります（
+                すべてのページに共通する原則は「<strong>性格ではなく用法</strong>」です。ここにある記述は、ある傾向が報告されていること、誰が報告したか、その報告がどれだけ確かかを示すものです。日本やドイツやブラジルのエンジニアが「どういう人か」を述べるものではありません。文化的価値のばらつきの大半は国と国の間ではなく国の内部にあります（
                 <a href={L.taras}>Taras, Steel &amp; Kirkman 2016</a>
                 ）。国のページが描いているのは、幅の広い分布の中での「寄り」であって、個人ではありません。
               </p>
-              <p>サイトは用例辞典の形にしてあります。辞書はこの問題をすでに解いているからです。</p>
+              <p>サイトは用例辞典の形にしています。同じ問題を、辞書はすでに解決しているからです。</p>
               <dl class="metaphor">
                 <dt>見出し語</dt>
                 <dd>国、テーマ、尺度が、引いて調べる項目です。</dd>
@@ -227,7 +227,7 @@ const policy = {
               Each claim is one short statement followed by a label line: the usage label, the number of sources, the
               year of the newest source, and a stable id. The sources are listed underneath, each a link. The label is
               decided by the strongest source behind the claim, and the rule down the left edge repeats it in a form
-              that does not depend on colour.
+              that does not depend on color.
             </p>
           ) : (
             <p>
@@ -277,7 +277,7 @@ const policy = {
               <p>
                 <strong>Regional variants.</strong> Every country page starts with a section on variation within the
                 country and counter-evidence (for example{" "}
-                <a href={p("/countries/jp/#variance")}>Japan</a>). Read it before the themes: it is where the page
+                <a href={p("/countries/jp/#variance")}>Japan</a>). Read it before the themes, because that is where the page
                 argues against its own summary.
               </p>
             </>
@@ -291,7 +291,7 @@ const policy = {
               <p>
                 <strong>地域差。</strong>国のページはどれも「国内のばらつきと反証」の節から始まります（例：
                 <a href={p("/countries/jp/#variance")}>日本</a>
-                ）。テーマより先に読んでください。ページが自分のまとめに反論している場所です。
+                ）。テーマより先に読んでください。その節で、ページは自分のまとめに反論しています。
               </p>
             </>
           )
@@ -306,7 +306,7 @@ const policy = {
               <p class="example-note">
                 {en ? (
                   <>
-                    Read it from left to right: the label says one framework-level source supports it, the year says the
+                    Read it from left to right. The label says one framework-level source supports it, the year says the
                     source is from 2014, and because 2014 is before {DATED_BEFORE} it is marked dated. The id{" "}
                     <code>{exampleId}</code> is the same on the Japanese page.{" "}
                   </>
@@ -331,13 +331,12 @@ const policy = {
           en ? (
             <p>
               The <a href={p("/scales/")}>scale pages</a> place countries on two published frameworks. Both are
-              country-level averages and both have serious critics; the critiques are part of this section, not a
-              footnote to it.
+              country-level averages, and both have serious critics. The critiques belong to this section and are not relegated to a footnote.
             </p>
           ) : (
             <p>
               <a href={p("/scales/")}>尺度のページ</a>
-              では、公開されている 2 つの枠組みの上に国を並べています。どちらも国レベルの平均値で、どちらにも有力な批判があります。批判はこの節の本体の一部であって、脚注ではありません。
+              では、公開されている 2 つの枠組みの上に国を並べています。どちらも国レベルの平均値で、どちらにも有力な批判があります。批判は脚注に回さず、この節の本文で扱います。
             </p>
           )
         }
@@ -400,9 +399,9 @@ const policy = {
               </p>
               <p>
                 <strong>What is unknown.</strong> Meyer's maps come from her observation of, and interviews with,
-                participants in her management courses; no sample size or error is published, and the HBR article says
+                participants in her management courses. No sample size or error is published, and the HBR article says
                 only that the scales draw on her research and that of other experts (<a href={L.meyerHbr}>HBR 2014</a>).
-                Treat the Culture Map as a well-informed framework, which is why claims that rest on it are labelled{" "}
+                Treat the Culture Map as a well-informed framework, which is why claims that rest on it are labeled{" "}
                 <span class="usage" data-level="medium">{confidenceNames.en.medium}</span> at most.
               </p>
             </>
@@ -482,14 +481,13 @@ const policy = {
               <strong>Which values.</strong> The scores shown are The Culture Factor's current values (
               <a href={L.cultureFactor}>country comparison tool</a>, read in October 2026). They differ from the tables
               in older books and articles, mostly in individualism and long-term orientation. The change appears to
-              date from around 2023; we have not found a public announcement of the revision, so mixing old and new
-              tables is the thing to avoid.
+              date from around 2023. We have not found a public announcement of the revision, so do not mix old and new tables.
             </p>
           ) : (
             <p>
               <strong>どの値か。</strong>表示しているのは The Culture Factor の現行値です（
               <a href={L.cultureFactor}>国別比較ツール</a>、2026 年 10 月に取得）。古い書籍や記事の表とは値が違い、とくに個人主義と長期志向が変わっています。改訂は
-              2023 年ごろと見られますが、改訂の告知そのものは見つけていません。旧版と現行の表を混ぜて引用しないことが肝心です。
+              2023 年ごろと見られますが、改訂の告知そのものは見つけていません。旧版と現行の表を混ぜて引用するのは避けてください。
             </p>
           )
         }
@@ -526,7 +524,7 @@ const policy = {
           en ? (
             <>
               <p>
-                Korea is the clearest case: the familiar picture of Korea as strongly collectivist rests on the old
+                Korea is the clearest case. The familiar picture of Korea as strongly collectivist rests on the old
                 individualism score of 18, while the current value is close to the middle.
               </p>
               <h4 id="hofstede-critiques">The critiques</h4>
@@ -539,7 +537,7 @@ const policy = {
                 </li>
                 <li>
                   <strong>McSweeney 2002.</strong> Brendan McSweeney rejected the assumptions that national culture is
-                  uniform and that it causally determines behaviour, and pointed out that some country samples were
+                  uniform and that it causally determines behavior, and pointed out that some country samples were
                   small and drawn mainly from IBM's sales and service staff (
                   <a href={L.mcsweeney}>Human Relations 55(1)</a>, <a href={L.mcsweeneyRhul}>Royal Holloway</a>).
                   Williamson replied in the same journal (<a href={L.williamson}>Williamson 2002</a>).
@@ -552,7 +550,7 @@ const policy = {
                 </li>
                 <li>
                   <strong>Nation is not culture.</strong> A meta-analysis of 558 studies that used Hofstede's framework
-                  found about 80% of the variation in cultural values inside countries; occupation and socio-economic
+                  found about 80% of the variation in cultural values inside countries. Occupation and socioeconomic
                   status are sometimes better units than nationality (<a href={L.taras}>Taras, Steel &amp; Kirkman 2016</a>
                   ).
                 </li>
@@ -600,11 +598,9 @@ const policy = {
               The GLOBE study (House et al. 2004) surveyed about 17,000 middle managers in 62 societies, in three
               industries: finance, food processing and telecommunications. Its nine dimensions are measured twice,
               as current practices ("as is") and as values ("should be") (<a href={L.globeIq}>global-iq</a>,{" "}
-              <a href={L.globeReview}>Andrews University review</a>). We do not use it. None of the three industries is
-              software; on many dimensions practices and values correlate negatively, and how to interpret that is
-              still disputed; and its country averages face the same ecological-fallacy critique as Hofstede's (
+              <a href={L.globeReview}>Andrews University review</a>). We do not use it, for three reasons. None of the three industries is software. On many dimensions practices and values correlate negatively, and how to interpret that is still disputed. Its country averages also face the same ecological-fallacy critique as Hofstede's (
               <a href={L.brewerVenaik}>Brewer &amp; Venaik 2014</a>). A third set of national averages would add apparent
-              precision without adding evidence about engineers. That last point is our judgement.
+              precision without adding evidence about engineers. That last point is our judgment.
             </p>
           ) : (
             <p>
@@ -613,7 +609,7 @@ const policy = {
               <a href={L.globeIq}>global-iq</a>、<a href={L.globeReview}>Andrews 大学の書評</a>
               ）。このサイトでは使っていません。3 業種のどれもソフトウェアではないこと、多くの次元で慣行と価値が負の相関を示し、その解釈がいまも争われていること、そして国平均である以上
               Hofstede と同じ生態学的誤謬の批判が当てはまること（<a href={L.brewerVenaik}>Brewer &amp; Venaik 2014</a>
-              ）が理由です。国平均をもう 1 組足しても、エンジニアについての根拠は増えず、見かけの精度だけが上がる、というのは私たちの判断です。
+              ）が理由です。国平均をもう 1 組足しても、エンジニアについての根拠は増えず、見かけの精度が上がるだけです。この最後の点は私たちの判断です。
             </p>
           )
         }
@@ -631,7 +627,7 @@ const policy = {
               </p>
               <h3 id="rastogi-2018">Rastogi et al. 2018: pull requests and the submitter's country</h3>
               <p>
-                Rastogi, Nagappan, Gousios and van der Hoek analysed 70,740 pull requests from 17 countries in 1,069
+                Rastogi, Nagappan, Gousios and van der Hoek analyzed 70,740 pull requests from 17 countries in 1,069
                 of the busiest GitHub projects, using logistic regression (
                 <a href={L.rastogi}>ESEM 2018, Microsoft Research</a>, <a href={L.rastogiDelft}>TU Delft</a>). The
                 odds of acceptance differed by the submitter's country:
@@ -689,11 +685,10 @@ const policy = {
           en ? (
             <>
               <p>
-                The figures are from the <a href={L.wws2019}>Ehime University WWS2019 slides</a> summarising the paper.
+                The figures are from the <a href={L.wws2019}>Ehime University WWS2019 slides</a> summarizing the paper.
                 The study also found that a pull request is more likely to be accepted when the submitter and the person
-                who merges it are in the same country. This held for 16 of the 17 countries (China +13.4%, United States
-                +2.4%); India was the exception at −7.4%. The cause is not known (
-                <a href={L.wws2019}>WWS2019</a>). Acceptance is a judgement made by reviewers, so these numbers describe
+                who merges it are in the same country. This held for 16 of the 17 countries (China +13.4%, United States +2.4%), and India was the exception at −7.4%. The cause is not known (
+                <a href={L.wws2019}>WWS2019</a>). Acceptance is a judgment made by reviewers, so these numbers describe
                 reviewers as much as submitters.
               </p>
               <h3 id="nadri-2021">Nadri et al. 2021: perceived race</h3>
@@ -710,14 +705,13 @@ const policy = {
               <h3 id="neumann-2024">Neumann et al. 2024: teams that did not match their country</h3>
               <p>
                 In four case studies, two in Japan and two in Germany, the cultural traits of agile team members
-                differed markedly from what the countries' Hofstede scores predict. The authors argue for analysing each
+                differed markedly from what the countries' Hofstede scores predict. The authors argue for analyzing each
                 case rather than applying a national label to a team (<a href={L.neumann}>arXiv</a>,{" "}
                 <a href={L.neumannAcm}>EASE 2024</a>).
               </p>
               <h3 id="lambiase-2024">Lambiase et al. 2024: LLM adoption</h3>
               <p>
-                In a survey of 188 software engineers analysed with PLS-SEM, adoption of LLM tools was driven by habit
-                and expected performance; Hofstede's cultural values did not significantly moderate it (
+                In a survey of 188 software engineers analyzed with PLS-SEM, adoption of LLM tools was driven by habit and expected performance, and Hofstede's cultural values did not significantly moderate it (
                 <a href={L.lambiase}>arXiv 2024</a>).
               </p>
             </>
@@ -775,23 +769,21 @@ const policy = {
                 <a href={L.brewerVenaik}>Brewer &amp; Venaik 2014</a>, <a href={L.hofstede2011}>Hofstede 2011</a>).
               </li>
               <li>
-                <strong>Not over the company.</strong> Company and team culture often outweigh national culture: the
-                Japanese and German teams in <a href={L.neumann}>Neumann et al. 2024</a> did not match their national
+                <strong>Not over the company.</strong> Company and team culture often outweigh national culture. The Japanese and German teams in <a href={L.neumann}>Neumann et al. 2024</a> did not match their national
                 profiles, and whether code review is adopted depends on the organization, the product and the team (
                 <a href={L.mcrSlr}>modern code review literature review</a>). Engineering is itself an occupational
                 culture that can narrow national differences (<a href={L.taras}>Taras et al. 2016</a>).
               </li>
               <li>
                 <strong>Not as fixed.</strong> Cohorts born after 1958 score higher on individualism and indulgence and
-                lower on power distance, but countries keep roughly the same order relative to each other: the gaps
-                shrink while their direction stays (<a href={L.beugelsdijk}>Beugelsdijk et al. 2015</a>,{" "}
+                lower on power distance, but countries keep roughly the same order relative to each other. The gaps shrink, but their direction stays the same (<a href={L.beugelsdijk}>Beugelsdijk et al. 2015</a>,{" "}
                 <a href={L.beugelsdijkPdf}>PDF</a>).
               </li>
               <li>
                 <strong>Not from nowhere.</strong> A position only means something relative to where you stand. Seen
                 from Japan the United States is direct; seen from the Netherlands it is diplomatic (
                 <a href={L.meyerHbr}>HBR 2014</a>). The <a href={p("/scales/evaluating/")}>vantage strip</a> on each
-                scale page re-centres the scale on the country you choose.
+                scale page re-centers the scale on the country you choose.
               </li>
               <li>
                 <strong>Not without the reader's bias.</strong> Differences in pull request acceptance and same-country
@@ -816,12 +808,12 @@ const policy = {
                 <a href={L.neumann}>Neumann ほか 2024</a>
                 の日独のチームは国の典型像と一致せず、コードレビューを取り入れるかどうかも組織・プロダクト・チームで決まります（
                 <a href={L.mcrSlr}>モダンコードレビューの文献レビュー</a>
-                ）。エンジニアという職業そのものが文化であり、国の差を薄めることもあります（
+                ）。エンジニアという職業にもそれ自体の文化があり、国の差を薄めることもあります（
                 <a href={L.taras}>Taras ほか 2016</a>）。
               </li>
               <li>
                 <strong>固定したものとして読まない。</strong>1958
-                年以降に生まれた世代は個人主義と人生の楽しみ方（Indulgence）が高く、権力格差が低くなっています。ただし国同士の相対的な順位はほぼ変わっていません。差は縮んでも、向きは残るということです（
+                年以降に生まれた世代は個人主義と人生の楽しみ方（Indulgence）が高く、権力格差が低くなっています。ただし国同士の相対的な順位はほぼ変わっていません。差は縮んでいますが、向きは残っています（
                 <a href={L.beugelsdijk}>Beugelsdijk ほか 2015</a>、<a href={L.beugelsdijkPdf}>PDF</a>）。
               </li>
               <li>
@@ -857,7 +849,7 @@ const policy = {
                 <strong>Octoverse uses self-reported location.</strong> GitHub assigns developers to countries by the
                 location on their profile, and the counts include student and hobby accounts (
                 <a href={L.octoverse}>Octoverse 2025</a>). Countries where many developers use other platforms, China
-                for example, may be undercounted; that is our inference, not GitHub's statement.
+                for example, may be undercounted. That is our inference, not GitHub's statement.
               </li>
               <li>
                 <strong>Ukraine has no Culture Map data.</strong> Meyer's slides do not place Ukraine on any scale (
@@ -906,14 +898,14 @@ const policy = {
           en ? (
             <>
               <p>
-                If a claim is wrong, out of date or mislabelled, please <a href={L.issues}>open an issue on GitHub</a>{" "}
+                If a claim is wrong, out of date or mislabeled, please <a href={L.issues}>open an issue on GitHub</a>{" "}
                 with two things: the claim's id (the small code at the end of its label line, such as{" "}
                 <code>{exampleId}</code>) and a link to the source that shows the problem. A better source is the most
                 useful correction of all.
               </p>
               <p>
                 Ids are the same in English and Japanese, so a report filed against either language fixes both. Every
-                id is also an anchor: <a href={p(`/countries/de/#${exampleId}`)}>/countries/de/#{exampleId}</a> links
+                id is also an anchor, so <a href={p(`/countries/de/#${exampleId}`)}>/countries/de/#{exampleId}</a> links
                 straight to the entry.
               </p>
             </>
@@ -921,8 +913,8 @@ const policy = {
             <>
               <p>
                 記述の誤り、古さ、ラベルの付け違いに気づいたら、<a href={L.issues}>GitHub に issue を立ててください</a>
-                。書いてほしいのは 2 つです。記述の ID（ラベル行の末尾にある小さな記号、たとえば <code>{exampleId}</code>
-                ）と、問題を示す出典へのリンクです。よりよい出典の提示が、いちばん役に立つ訂正です。
+                。その際、記述の ID（ラベル行の末尾にある小さな記号、たとえば <code>{exampleId}</code>
+                ）と、問題を示す出典へのリンクの 2 つを書いてください。いちばん役に立つ訂正は、よりよい出典を示してもらうことです。
               </p>
               <p>
                 ID は英語版と日本語版で共通なので、どちらの言語で報告しても両方が直ります。ID はそのままアンカーにもなっていて、

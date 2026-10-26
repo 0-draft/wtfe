@@ -143,7 +143,7 @@ describe("meyer sentences", () => {
   it("tells 'outside the axis' apart from 'no source'", () => {
     const en = meyerLines("en", side("en", "jp"), side("en", "ua"));
     expect(en.find((l) => l.key === "persuading")?.sentence).toBe(
-      "Meyer leaves Japan off this scale and describes its reasoning as holistic; no source places Ukraine on it",
+      "Meyer leaves Japan off this scale and describes its reasoning as holistic. No source places Ukraine on it",
     );
     expect(en.find((l) => l.key === "leading")?.sentence).toBe("No source places Ukraine on this scale");
     const ja = meyerLines("ja", side("ja", "de"), side("ja", "jp"));

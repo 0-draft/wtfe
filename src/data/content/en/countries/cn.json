@@ -1,8 +1,8 @@
 {
   "id": "cn",
   "name": "China",
-  "oneLiner": "Meyer rates it among the most top-down; pushback on 996 and the age-35 problem has moved policy",
-  "intro": "This page draws on court rulings and officially published cases, news reports and research papers to describe how software engineers in mainland China work. These are country-level tendencies, and practice differs widely between big tech firms, process-heavy companies such as Huawei, and smaller firms and startups. Activity on domestic platforms such as Gitee, and Chinese-language sources, are poorly captured by international surveys.",
+  "oneLiner": "Meyer places China among the most top-down cultures, and pushback against 996 and the age-35 problem has changed policy.",
+  "intro": "Court rulings, officially published cases, news reports and research papers are the main sources for mainland China. They show national tendencies, and practice differs widely between big tech firms, process-heavy companies such as Huawei, and smaller firms and startups. International surveys capture little of the activity on domestic platforms such as Gitee, or of Chinese-language sources.",
   "themes": {
     "design": [
       {
@@ -23,7 +23,7 @@
       },
       {
         "id": "cn-design-2",
-        "text": "From around 1998–99, Huawei adopted IBM's IPD (Integrated Product Development), required teams to follow the templates exactly, and enforced a heavy stage-gate process.",
+        "text": "From around 1998–99, Huawei adopted IBM's IPD (Integrated Product Development), required teams to follow its templates exactly and enforced a heavy stage-gate process.",
         "confidence": "medium",
         "sources": [
           {
@@ -85,7 +85,7 @@
     "feedback": [
       {
         "id": "cn-feedback-1",
-        "text": "Explainers of Meyer's Culture Map place China on the high-context side and describe negative feedback as tending to be indirect, especially when it could cost someone face.",
+        "text": "Explainers of Meyer's Culture Map place China on the high-context side and say negative feedback tends to be indirect, especially when it could cost someone face.",
         "confidence": "weak",
         "sources": [
           {
@@ -122,7 +122,7 @@
       },
       {
         "id": "cn-feedback-3",
-        "text": "In Rastogi et al. (ESEM 2018), which analyzed GitHub pull request acceptance by country, pull requests from China fell in the lower-acceptance group. The cause of the gap was not identified; nationality bias and English proficiency are possible factors.",
+        "text": "In Rastogi et al. (ESEM 2018), which analyzed GitHub pull request acceptance by country, pull requests from China fell in the lower-acceptance group. The study did not identify the cause. Nationality bias and English proficiency are possible factors.",
         "confidence": "medium",
         "sources": [
           {
@@ -165,7 +165,7 @@
     "communication": [
       {
         "id": "cn-communication-1",
-        "text": "In 2022, the Beijing No. 3 Intermediate People's Court ruled that handling work on WeChat outside working hours counted as overtime and ordered the former employer to pay 30,000 yuan. In January 2024, the Supreme People's Court and other bodies published a similar case as a model case.",
+        "text": "In 2022, the Beijing No. 3 Intermediate People's Court ruled that handling work on WeChat after hours was overtime and ordered the former employer to pay 30,000 yuan. In January 2024, the Supreme People's Court and other bodies published a similar case as a model case.",
         "confidence": "medium",
         "sources": [
           {
@@ -193,7 +193,7 @@
       },
       {
         "id": "cn-communication-3",
-        "text": "In the EF EPI 2024, China ranked 91st of 116 countries and regions (score 455), but city scores such as Beijing (518) and Shanghai (511) are far above the national figure.",
+        "text": "In the EF EPI 2024, China ranked 91st of 116 countries and regions (score 455), but Beijing (518) and Shanghai (511) score well above the national figure.",
         "confidence": "medium",
         "sources": [
           {
@@ -219,7 +219,7 @@
     "work": [
       {
         "id": "cn-work-1",
-        "text": "In March 2019, the GitHub repository 996.ICU went up in protest against overwork and passed 1,000 stars within its first hour. In August 2021, the Supreme People's Court and the Ministry of Human Resources and Social Security published typical cases stating that the 996 schedule is illegal.",
+        "text": "The GitHub repository 996.ICU went up in March 2019 to protest overwork and passed 1,000 stars within an hour. In August 2021, the Supreme People's Court and the Ministry of Human Resources and Social Security published typical cases stating that the 996 schedule is illegal.",
         "confidence": "medium",
         "sources": [
           {
@@ -258,7 +258,7 @@
       },
       {
         "id": "cn-work-3",
-        "text": "News reports describe a \"curse of 35\" in which people over 35 are disadvantaged in layoffs and hiring. In a recruitment platform's survey, 87% of programmers were worried about losing their job or finding a new one after 35. Chinese labor law does not explicitly ban age discrimination.",
+        "text": "News reports describe a \"curse of 35,\" under which people over 35 lose out in layoffs and hiring. In a recruitment platform's survey, 87% of programmers feared losing a job or struggling to find one after 35. Chinese labor law does not explicitly ban age discrimination.",
         "confidence": "medium",
         "sources": [
           {
@@ -280,7 +280,7 @@
       },
       {
         "id": "cn-work-4",
-        "text": "As a reaction to neijuan (involution), reports describe tangping (lying flat), people leaving high-paying jobs for a 10-to-6, five-day schedule, and runxue (emigrating). Layoffs at big tech firms are also said to be pushing new graduates toward civil service jobs.",
+        "text": "Reports describe several reactions to neijuan (involution): tangping (lying flat), leaving high-paying jobs for a 10-to-6, five-day schedule, and runxue (emigrating). Layoffs at big tech firms are also said to push new graduates toward civil service jobs.",
         "confidence": "medium",
         "sources": [
           {
@@ -332,7 +332,7 @@
       },
       {
         "id": "cn-oss-3",
-        "text": "A CUHK study found that commits on Gitee dropped sharply after the platform introduced pre-publication review of public code.",
+        "text": "A CUHK study found that commits on Gitee fell sharply after the platform began reviewing public code before publication.",
         "confidence": "strong",
         "sources": [
           {
@@ -383,8 +383,8 @@
   "variance": [
     "Speed-focused internet companies coexist with process-heavy large firms such as Huawei, which enforced IBM's IPD.",
     "Ending the alternating six-day week removed overtime pay and cut income, and about 30% of ByteDance employees wanted to keep the long hours. Attitudes toward working hours are not uniform.",
-    "English proficiency is low on the national average, but Beijing and Shanghai score far higher, and the gap between cities is large.",
-    "Rankings of developer numbers depend on how developers are counted. Counting only GitHub accounts misses activity on domestic platforms such as Gitee and AtomGit and undercounts China.",
+    "English proficiency is low on the national average, but Beijing and Shanghai score much higher, so the gap between cities is large.",
+    "Rankings of developer numbers depend on how developers are counted. A count of GitHub accounts alone misses activity on domestic platforms such as Gitee and AtomGit, so it undercounts China.",
     "Public sources did not show whether anyone was held accountable or disciplined after the major outages of 2023.",
     "The 2023 Alibaba Cloud and Didi outages are individual incidents and do not support generalizing about software quality across the country."
   ]

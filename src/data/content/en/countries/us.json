@@ -1,13 +1,13 @@
 {
   "id": "us",
   "name": "United States",
-  "oneLiner": "Meyer classes it as egalitarian in manner but quick and top-down in decisions. Written docs and blameless reviews stand out.",
-  "intro": "This page summarizes tendencies in US software engineering from public documents and survey data. These are country-level tendencies, and organizations and individuals within the country vary widely. Most of the evidence comes from primary documents published by large tech companies such as Google and Amazon, plus national statistics, so regulated industries and smaller companies are underrepresented.",
+  "oneLiner": "Meyer finds it egalitarian in manner but fast and top-down in decisions, and many of the examples involve written docs and blameless reviews.",
+  "intro": "Most of the evidence for the United States comes from documents that large tech companies such as Google and Amazon published themselves, plus national statistics and surveys. Regulated industries and smaller companies are underrepresented as a result. The patterns below are country-level tendencies, and organizations and individuals vary widely.",
   "themes": {
     "design": [
       {
         "id": "us-design-1",
-        "text": "At Google, engineers write a relatively informal design doc before writing code. According to Malte Ubl (2020), the point is not an exhaustive specification but a record of the trade-offs and alternatives considered.",
+        "text": "At Google, engineers write a relatively informal design doc before they write code. Malte Ubl (2020) says its purpose is to record the trade-offs and alternatives the team considered, and that it is not meant to be an exhaustive specification.",
         "confidence": "weak",
         "sources": [
           {
@@ -31,7 +31,7 @@
       },
       {
         "id": "us-design-3",
-        "text": "Meyer places the United States on the applications-first side of the Persuading scale. A book summary describes this as starting from conclusions and examples and favoring the practical how over the theoretical why.",
+        "text": "Meyer places the United States on the applications-first side of the Persuading scale. A book summary says this means starting from conclusions and examples, and caring more about the practical how than the theoretical why.",
         "confidence": "weak",
         "sources": [
           {
@@ -56,7 +56,7 @@
       },
       {
         "id": "us-failure-2",
-        "text": "At F8 in 2014, Zuckerberg changed Facebook's motto from \"Move fast and break things\" to \"Move fast with stable infra.\" His reason was that at Facebook's scale, the time spent fixing breakage outweighed the gain in speed.",
+        "text": "At F8 in 2014, Zuckerberg changed Facebook's motto from \"Move fast and break things\" to \"Move fast with stable infra.\" He said that at Facebook's scale, the time spent fixing breakage outweighed the gain in speed.",
         "confidence": "medium",
         "sources": [
           {
@@ -70,7 +70,7 @@
     "feedback": [
       {
         "id": "us-feedback-1",
-        "text": "According to Meyer, Americans are often taught to wrap negative messages in positive ones (the feedback sandwich). For this reason she places the United States in the middle of the scale for delivering negative feedback.",
+        "text": "According to Meyer, Americans are often taught to wrap negative messages in positive ones (the feedback sandwich). She therefore places the United States in the middle of the scale for delivering negative feedback.",
         "confidence": "medium",
         "sources": [
           {
@@ -82,7 +82,7 @@
       },
       {
         "id": "us-feedback-2",
-        "text": "A blog explainer on Meyer's evaluating scale notes a common mismatch: Dutch and German colleagues take American praise at face value, while Americans find Dutch and German criticism too harsh.",
+        "text": "A blog explainer on Meyer's Evaluating scale describes a common mismatch. Dutch and German colleagues take American praise at face value, and Americans find Dutch and German criticism too harsh.",
         "confidence": "weak",
         "sources": [
           {
@@ -108,7 +108,7 @@
     "hierarchy": [
       {
         "id": "us-hierarchy-1",
-        "text": "Meyer classifies the United States as egalitarian but top-down (HBR, 2017). People use first names and are encouraged to speak up, but the boss decides quickly, and the decision can be revisited when new arguments appear.",
+        "text": "Meyer classifies the United States as egalitarian but top-down (HBR, 2017). People use first names and are encouraged to speak up, but the boss decides quickly, and the decision can be reopened when new arguments appear.",
         "confidence": "medium",
         "sources": [
           {
@@ -134,7 +134,7 @@
     "communication": [
       {
         "id": "us-communication-1",
-        "text": "Meyer places the United States at the most low-context end of the Communicating scale. A book summary describes a preference for saying things explicitly and for repeating and summarizing key points.",
+        "text": "Meyer places the United States at the most low-context end of the Communicating scale. A book summary says Americans prefer to say things explicitly and to repeat and summarize key points.",
         "confidence": "weak",
         "sources": [
           {
@@ -157,7 +157,7 @@
       },
       {
         "id": "us-communication-3",
-        "text": "According to CNBC (2018), the practice began with a 2004 email from Bezos. He explained that a good four-page memo is harder to write than a 20-page slide deck because the narrative structure forces better thinking.",
+        "text": "CNBC (2018) traces the practice to a 2004 email from Bezos. He wrote that a good four-page memo is harder to write than a 20-page slide deck, because the narrative structure forces better thinking.",
         "confidence": "medium",
         "sources": [
           {
@@ -169,7 +169,7 @@
       },
       {
         "id": "us-communication-4",
-        "text": "According to a blog post by Slab, Stripe also rarely uses slides. Meetings begin with silent reading of a memo, followed by comments on the document.",
+        "text": "A blog post by Slab says Stripe also rarely uses slides. Meetings begin with silent reading of a memo, followed by comments on the document.",
         "confidence": "weak",
         "sources": [
           {
@@ -269,8 +269,8 @@
   },
   "variance": [
     "Most of the evidence comes from large tech companies such as Google, Amazon, and Facebook. No data was found on how far design docs or blameless postmortems have spread in regulated industries or in corporate IT departments.",
-    "\"Move fast\" is often treated as the banner of US tech, yet Facebook itself shifted to \"stable infra\" in 2014.",
-    "Layoff counts differ by nearly a factor of two between trackers such as layoffs.fyi and TrueUp.",
+    "\"Move fast\" is often called the motto of US tech, but Facebook itself switched to \"stable infra\" in 2014.",
+    "Layoff trackers such as layoffs.fyi and TrueUp give counts that differ by nearly a factor of two.",
     "Some practices described as American come from companies whose founders are not American, such as Stripe. The memo culture is better read as a practice of the US tech industry than of the country as a whole.",
     "The Stack Overflow survey uses a self-selected sample, so its salary and work-arrangement figures depend on who chose to respond."
   ]
