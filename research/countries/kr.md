@@ -42,6 +42,7 @@ Hofstede（The Culture Factor 現行値）: PDI 60 / IDV 58 / MAS 39 / UAI 85 / 
 ## Work style & careers
 
 - 2023 年の年間労働時間は 1,872 時間で、OECD 平均より約 200 時間長い。2018 年の勤労基準法改正（週 52 時間制）以降、IT やゲーム業界の労働環境は大きく改善したと報じられている [強] ([source](https://www.visualcapitalist.com/annual-working-hours-in-countries-2023/)) ([source](https://www.seoulfn.com/news/articleView.html?idxno=481404))
+  _訂正 2026-10-26: 「OECD 平均より約 200 時間長い」→「OECD 平均 (1,745 時間) より約 130 時間長い」。出典も Visual Capitalist (2021 年の値しか載っていない) から OECD の指標ページ (<https://www.oecd.org/en/data/indicators/hours-worked.html>) に差し替えた。週 52 時間制以降の改善はソウル経済の記事で確認した (KOCCA 2021 年調査で週平均 41.3 時間、クランチ経験者 60.6%→15.4%)_
 - ゲーム業界の 2024 年の実態調査（KOCCA、n=1,510）では、クランチ経験は 34.3%、包括賃金制の適用は 69.9%（50 人未満の企業では 90% 超）だった。週 52 時間制の裏で無給残業が「影の労働」になっているという報道もある [強] ([source](https://www.thisisgame.com/articles/203826)) ([source](https://www.hankyung.com/article/202509105494i))
 - リモートは企業ごとに分かれている。Naver は Connected Work を続け、6 か月ごとに完全リモート（Type R）か週 3 日出社（Type O）かを選べる。Kakao は 2024 年から事実上の全面出社に切り替え、労組がリモートの復活を要求している [中] ([source](https://v.daum.net/v/20240307181837999)) ([source](https://www.ddaily.co.kr/page/view/2024103014225505515))
 - 2021 年の「開発者の年俸戦争」から一転し、2024 年には企業の 34% が開発者採用を減らすと答えた（Grepp 調査）。開発者の 63.1% は開発者 50 人以下の企業に勤めている（2021 年のプログラマーズ調査）[中] ([source](https://www.hankyung.com/article/202411293961g)) ([source](https://programmers.co.kr/pages/2021-dev-survey))
@@ -85,7 +86,7 @@ Hofstede（The Culture Factor 現行値）: PDI 60 / IDV 58 / MAS 39 / UAI 85 / 
 - [뉴시스: 카카오게임즈 호칭](https://www.newsis.com/view/NISX20240421_0002707370)
 - [아이뉴스24: 레벨제](https://www.inews24.com/view/1323268)
 - [서울 에일리언 #87](https://seoulalien.substack.com/p/87)
-- [Visual Capitalist: OECD hours 2023](https://www.visualcapitalist.com/annual-working-hours-in-countries-2023/)
+- [OECD: Hours worked](https://www.oecd.org/en/data/indicators/hours-worked.html)
 - [서울파이낸스: 69시간제](https://www.seoulfn.com/news/articleView.html?idxno=481404)
 - [디스이즈게임: 포괄임금제 2024](https://www.thisisgame.com/articles/203826)
 - [한국경제: 그림자 노동](https://www.hankyung.com/article/202509105494i)

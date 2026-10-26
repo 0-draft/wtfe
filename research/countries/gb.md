@@ -12,7 +12,8 @@ _このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[
 ## 設計と品質
 
 - GDS の Government Design Principles（2012 年公開、2025 年更新）は「Start with user needs」「Do less」「Iterate. Then iterate again」などを掲げている。公共部門が iterative な開発を公式の原則にしている [強] ([source](https://www.gov.uk/guidance/government-design-principles))
-- GOV.UK Service Standard の point 8 は「Iterate and improve frequently」。サービスに「完成はない」とし、バグ修正などの保守だけでは足りないとしている [強] ([source](https://apply-the-service-standard.education.gov.uk/service-standard/8-iterate-and-improve-frequently))
+- GOV.UK Service Standard の point 8 は「Iterate and improve frequently」。サービスに「完成はない」とし、バグ修正などの保守だけでは足りないとしている [強] ([source](https://deliver-good-services.education.gov.uk/guides/apply-the-service-standard/8-iterate-and-improve-frequently))
+  _訂正 2026-10-26: DfE の解説サイトが deliver-good-services.education.gov.uk に移ったため、URL を移転先に変えた。内容は同じ_
 - 反証と国内差：NAO（2023）によると、過去 25 年で省庁横断のデジタル戦略が 11 回出され、1974 年導入の Police National Computer がいまも現役。デジタル関連の意思決定の多くは、技術を専門としないジェネラリストのリーダーが行っている。GDS の理想とレガシーを抱えた公共 IT の現実には大きな差がある [強] ([source](https://www.nao.org.uk/wp-content/uploads/2023/03/digital-transformation-in-government.pdf))
 - Hofstede の UAI は低く、曖昧さや「まず試す」ことへの許容度が高い（UAI 35。国全体の値からの推論）[中] ([source](https://www.theculturefactor.com/country-comparison-tool?countries=united+kingdom))
 
@@ -34,12 +35,14 @@ _このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[
 
 - Meyer の HBR 2017 の図で、UK は US・Canada・Australia と同じ「egalitarian かつ top-down」の象限に置かれている [中] ([source](https://erinmeyer.com/wp-content/uploads/2019/11/Being-the-Boss-HBR.pdf))
 - Hofstede の PDI は低い（PDI 35）[強] ([source](https://www.theculturefactor.com/country-comparison-tool?countries=united+kingdom))
-- 公共部門では、GDS の Service Standard に基づく service assessment が実質的なゲートになっている。正当な理由なくコードを公開していないと assessment に落ちうる。一方で NAO は、意思決定者の技術的な専門性が足りないことを問題視している [中] ([source](https://apply-the-service-standard.education.gov.uk/service-standard/12-make-new-source-code-open.html), [source](https://www.nao.org.uk/wp-content/uploads/2023/03/digital-transformation-in-government.pdf))
+- 公共部門では、GDS の Service Standard に基づく service assessment が実質的なゲートになっている。正当な理由なくコードを公開していないと assessment に落ちうる。一方で NAO は、意思決定者の技術的な専門性が足りないことを問題視している [中] ([source](https://deliver-good-services.education.gov.uk/guides/apply-the-service-standard/12-make-new-source-code-open), [source](https://www.nao.org.uk/wp-content/uploads/2023/03/digital-transformation-in-government.pdf))
+  _訂正 2026-10-26: DfE の point 12 のページが 404 (移転) だったため、移転先 <https://deliver-good-services.education.gov.uk/guides/apply-the-service-standard/12-make-new-source-code-open> に差し替えた。「without good reason, could fail an assessment」の記述は移転先にもある。NAO 2023 の「デジタルの意思決定は主にビジネス側のリーダーが下す」「意思決定者のデジタルの知識が足りない」は PDF 本文で確認した_
 
 ## コミュニケーションとドキュメント
 
 - Meyer の Communicating 軸で、UK は low-context 側だが US ほど極端ではない（US、Canada、Australia、Netherlands、Germany の後に UK が来る）。表面上は明示的でも、評価の場面では婉曲になる [中] ([source](https://lifeclub.org/books/the-culture-map-erin-meyer-review-summary))
 - 公共部門には「Make things open: it makes things better」という design principle がある。新規コードの公開は Service Standard の point 12 で、GDS は 2017 年に coding in the open の利点（秘密情報をコードから分離する習慣が付くなど）をブログで説明している [強] ([source](https://gds.blog.gov.uk/2017/09/04/the-benefits-of-coding-in-the-open))
+  _訂正 2026-10-26: point 12 の DfE のリンクを移転先に差し替えた (上と同じ)_
 - GDS や Inside GOV.UK などの公開ブログで、設計や障害の経緯を説明する文化が公共部門にある。民間について同様のデータはない [中] ([source](https://insidegovuk.blog.gov.uk/2015/11/18/what-happens-when-things-go-wrong-on-gov-uk/))
 
 ## 働き方とキャリア
@@ -63,8 +66,8 @@ _このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[
 ## Sources
 
 - [GOV.UK Government Design Principles](https://www.gov.uk/guidance/government-design-principles)
-- [DfE: Service Standard 8 iterate and improve frequently](https://apply-the-service-standard.education.gov.uk/service-standard/8-iterate-and-improve-frequently)
-- [DfE: Service Standard 12 make new source code open](https://apply-the-service-standard.education.gov.uk/service-standard/12-make-new-source-code-open.html)
+- [DfE: Service Standard 8 iterate and improve frequently](https://deliver-good-services.education.gov.uk/guides/apply-the-service-standard/8-iterate-and-improve-frequently)
+- [DfE: Service Standard 12 make new source code open](https://deliver-good-services.education.gov.uk/guides/apply-the-service-standard/12-make-new-source-code-open)
 - [GDS Way: incident management](https://gds-way.digital.cabinet-office.gov.uk/standards/incident-management.html)
 - [Inside GOV.UK: incident report Jan 2022](https://insidegovuk.blog.gov.uk/2022/02/25/incident-report-increased-error-rate-on-gov-uk-on-5-january-2022/)
 - [Inside GOV.UK: What happens when things go wrong (2015)](https://insidegovuk.blog.gov.uk/2015/11/18/what-happens-when-things-go-wrong-on-gov-uk/)

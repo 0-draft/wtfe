@@ -35,7 +35,8 @@ Culture Factor 比較ツール（2026-10 取得）: PDI 38 / IDV 100 / MAS 14 / 
 ## 階層と意思決定
 
 - PDI は 38 で低い。Meyer の Leading スケールでは egalitarian、Deciding スケールでは consensual（スウェーデン・日本と同じ側）[中] ([source](https://mind.li/explore/37057-the-culture-map-by-erin-meyer-study-analysis-guide))
-- 協議と議論を重ねて実利的な合意に至る「polderen」の影響を、管理職 808 人を構造方程式モデリングで分析した研究がある（Contemporary Management Research, 2018）[中] ([source](https://www.cmr-journal.org/article/download/18279/pdf))
+- 協議と議論を重ねて実利的な合意に至る「polderen」の影響を、管理職 808 人を構造方程式モデリングで分析した研究がある（Contemporary Management Research, 2018）[中] ([source](https://www.cmr-journal.org/index.php/CMR/article/download/18279/pdf))
+  _訂正 2026-10-26: PDF の URL が 404 になっていたため、index.php を含む URL (<https://www.cmr-journal.org/index.php/CMR/article/download/18279/pdf>) に変えた。808 人・SEM は本文で確認した_
 - 反証として、polder model は過大評価されているという議論もある。Woldendorp & Keman（2007）は 1965〜2000 年を検証し、労使の交渉は厳しく、中央協約が結ばれた割合は低かったとしている [中] ([source](https://research.vu.nl/en/publications/the-polder-model-reviewed-dutch-corporatism-1965-2000/))
   _訂正 2026-10-25: 「1980 年代に合意があった証拠は乏しい」→ 1965〜2000 年の検証で中央協約の割合が低かった、に修正。サイト本文（出典の要旨）に合わせた_
 
@@ -74,7 +75,7 @@ Culture Factor 比較ツール（2026-10 取得）: PDI 38 / IDV 100 / MAS 14 / 
 - [Jeremiah Lee – Spotify's Failed #SquadGoals (2020)](https://www.jeremiahlee.com/posts/failed-squad-goals/)
 - [Welcome to the Jungle – Erin Meyer 8 keys](https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams)
 - [Mindli – The Culture Map study guide](https://mind.li/explore/37057-the-culture-map-by-erin-meyer-study-analysis-guide)
-- [Contemporary Management Research 2018 – Dutch managerial leadership / polder](https://www.cmr-journal.org/article/download/18279/pdf)
+- [Contemporary Management Research 2018 – Dutch managerial leadership / polder](https://www.cmr-journal.org/index.php/CMR/article/download/18279/pdf)
 - [Woldendorp & Keman 2007 – Polder model reviewed](https://research.vu.nl/en/publications/the-polder-model-reviewed-dutch-corporatism-1965-2000/)
 - [ExpatRepublic – Poldermodel](https://www.expatrepublic.com/poldermodel/)
 - [NL Compass – Dutch working culture](https://www.nlcompass.com/guides/dutch-working-culture)

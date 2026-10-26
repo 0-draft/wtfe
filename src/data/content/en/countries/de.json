@@ -211,7 +211,7 @@
       },
       {
         "id": "de-communication-3",
-        "text": "startuprad.io reports that English is the main working language at Berlin startups. Estimates of the share of foreign employees range from 30% to 49%, depending on the source.",
+        "text": "Citing the Deutscher Startup Monitor 2024, startuprad.io reports that English is the main working language at over 55.8% of Berlin startups. For the share of employees from abroad, the same article gives two figures, 30.8% and 42.3%.",
         "confidence": "weak",
         "sources": [
           {
@@ -241,8 +241,8 @@
         "confidence": "medium",
         "sources": [
           {
-            "title": "KAV-NW — BAG, Beschluss vom 13.09.2022, 1 ABR 22/21",
-            "url": "https://www.kav-nw.de/de/Aktuelles/Rechtsprechung-Rechtsfragen/Rechtsprechung-Rechtsfragen1/BAG-Beschluss-vom-13.09.2022-1-ABR-22-21-Arbeitszeiterfassungspflicht-des-Arbeitgebers-.html",
+            "title": "Federal Labour Court (BAG): 1 ABR 22/21, decision of 13 September 2022",
+            "url": "https://www.bundesarbeitsgericht.de/entscheidung/1-abr-22-21/",
             "year": 2022
           },
           {
@@ -360,7 +360,7 @@
           },
           {
             "title": "Wikipedia — SUSE S.A.",
-            "url": "https://en.wikipedia.org/wiki/SUSE_S.A."
+            "url": "https://en.wikipedia.org/wiki/SUSE_S.A%2E"
           }
         ]
       },

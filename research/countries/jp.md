@@ -46,7 +46,9 @@ Hofstede（The Culture Factor 現行値）: PDI 54 / IDV 62 / MAS 95 / UAI 92 / 
 - 多重下請けについて、公取委の 2022 年の調査（法人 4,739 社と SE 2,316 人が回答）では、「中抜き」事業者の存在を感じたことがある事業者は 25.9%、最終下請けに限ると 33.5% だった [強] ([source](https://it.impress.co.jp/articles/-/23838)) ([source](https://www.jftc.go.jp/houdou/pressrelease/2022/jun/220629_software.html))
   _訂正 2026-10-25: 「下請けの 25%」→「事業者の 25.9%（最終下請けは 33.5%）」。出典では 25.9% で、母数は下請けに限らない回答事業者全体_
 - 2023 年の年間労働時間は日本 1,611 時間、韓国 1,872 時間（OECD）。「日本 = 長時間労働」というステレオタイプは、統計上はもう当てはまらない（全業種の値）[強] ([source](https://www.visualcapitalist.com/annual-working-hours-in-countries-2023/))
+  _訂正 2026-10-26: 出典を Visual Capitalist から OECD の指標ページ (<https://www.oecd.org/en/data/indicators/hours-worked.html>) に差し替えた。Visual Capitalist の記事は 2021 年の値 (韓国 1,910、日本 1,607) で、2023 年の値は載っていない。OECD のページで 2023 年は日本 1,611、韓国 1,872、OECD 平均 1,745 と確認した。OECD はこの指標を国どうしの水準比較には向かないと注記しているので、その一文を本文に足した_
 - リモートについて、国交省の令和 5 年度調査では雇用型テレワーカーの割合が最も高い業種は情報通信業で 72.8% だった。ファインディの 2024 年の調査では、リモートが減ったら 71.5% が転職やフリーランス転向を検討すると答えた。ただし転職サービスの登録者が母集団なので偏りがある [中] ([source](https://www.mlit.go.jp/toshi/kankyo/content/001735166.pdf)) ([source](https://note.lapras.com/it-news/remote-work_2024/))
+  _訂正 2026-10-26: 71.5% はファインディの「IT/Web エンジニア調査レポート 2024 年 9 月版」(2024 年 7〜8 月、n=681) の値で、リンク先の LAPRAS の記事 (2024 年 10 月、n=387) は別の調査だ。LAPRAS 側の結果は「約 6 割がフルリモート、週 5 日出社になったら約半数が転職」。ファインディの PDF は 2026-10 時点で 404 になっており、本文で再確認できない。JSON にはこの数字を載せていない_
 - 流動性は上がりつつある。LAPRAS の 2024 年の調査では「転職を考えているが動いていない」潜在層が拡大している。総務省は「雇用慣習の違いから人材流動性が低い」と注記している [中] ([source](https://news.mynavi.jp/techplus/article/20240529-2954780/)) ([source](https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/h30/html/nd114140.html))
 
 ## OSS & community
@@ -83,7 +85,7 @@ Hofstede（The Culture Factor 現行値）: PDI 54 / IDV 62 / MAS 95 / UAI 92 / 
 - [YOKU: レビューのフィードバック分類](https://build.yoku.co.jp/articles/lbh02jlffz)
 - [Qiita 150万人](https://corp.qiita.com/releases/2025/04/one-million-five-hundred-thousand/)
 - [Zenn: Qiita/Zenn比較](https://zenn.dev/mima_ita/articles/f78dcbef2a81d3)
-- [Visual Capitalist: OECD hours 2023](https://www.visualcapitalist.com/annual-working-hours-in-countries-2023/)
+- [OECD: Hours worked](https://www.oecd.org/en/data/indicators/hours-worked.html)
 - [国交省 令和5年度テレワーク調査](https://www.mlit.go.jp/toshi/kankyo/content/001735166.pdf)
 - [LAPRAS リモート調査2024](https://note.lapras.com/it-news/remote-work_2024/)
 - [マイナビ: ITエンジニア実態調査2024](https://news.mynavi.jp/techplus/article/20240529-2954780/)

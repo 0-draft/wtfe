@@ -281,13 +281,13 @@
       },
       {
         "id": "jp-work-3",
-        "text": "OECD のデータでは、2023 年の年間労働時間は日本 1,611 時間、韓国 1,872 時間だった。全業種の平均で見る限り、日本は OECD 諸国の中で突出した長時間労働国ではない。",
+        "text": "OECD のデータでは、2023 年の年間労働時間は日本 1,611 時間、韓国 1,872 時間、OECD 平均 1,745 時間だった。全業種の平均で見る限り、日本は OECD 諸国の中で突出した長時間労働国ではない。ただし OECD は、この指標は国どうしの水準の比較には向かないと注記している。",
         "confidence": "medium",
         "sources": [
           {
-            "title": "Visualizing Annual Working Hours in OECD Countries (Visual Capitalist)",
-            "url": "https://www.visualcapitalist.com/annual-working-hours-in-countries-2023/",
-            "year": 2024
+            "title": "OECD: Hours worked（指標ページ）",
+            "url": "https://www.oecd.org/en/data/indicators/hours-worked.html",
+            "year": 2026
           }
         ]
       },

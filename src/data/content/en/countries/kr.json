@@ -209,13 +209,13 @@
     "work": [
       {
         "id": "kr-work-1",
-        "text": "OECD data put South Korea's annual working hours in 2023 at 1,872, about 200 hours above the OECD average.",
+        "text": "OECD data put South Korea's annual working hours in 2023 at 1,872, about 130 hours above the OECD average of 1,745.",
         "confidence": "medium",
         "sources": [
           {
-            "title": "Visualizing Annual Working Hours in OECD Countries (Visual Capitalist)",
-            "url": "https://www.visualcapitalist.com/annual-working-hours-in-countries-2023/",
-            "year": 2024
+            "title": "OECD: Hours worked (indicator)",
+            "url": "https://www.oecd.org/en/data/indicators/hours-worked.html",
+            "year": 2026
           }
         ]
       },

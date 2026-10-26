@@ -42,9 +42,12 @@ Hofstede (Culture Factor 現行値): PDI 13 / IDV 56 / MAS 47 / UAI 81 / LTO 47 
 ## Work style & careers
 
 - High-tech は国内雇用の約 11.4% (約 40 万人、2025) を占め、輸出の 58% (約 $85B) を担う。雇用の伸びは年 2.5% で、過去 10 年平均の約 6% から鈍化している [強] ([source](https://www.ynetnews.com/business/article/bkjjywylge), [source](https://innovationisrael.org.il/en/press_release/innovation-report-2025/))
+  _訂正 2026-10-26: 数字は Ynetnews と一致する。2 本目の出典 IIA 2025 年版のプレスリリースは前年の報告で、値が違う (2025 年上半期 40.3 万人・11.5%、2024 年輸出 780 億ドル)。2026 年版のプレスリリース (<https://innovationisrael.org.il/en/press_release/israeli-high-tech-report-2026/>) に差し替え、約 40 万人・11.4%・850 億ドル・58%・伸び 2.5% (過去 10 年平均約 6%) を確認した_
 - R&D 人員は 2025 年に約 3,500 人減り、10 年以上ぶりの減少となった。R&D は東欧と米国へ移っており、国外の雇用 (約 44 万人) は国内 (約 40 万人) を上回る [強] ([source](https://www.ynetnews.com/business/article/bkjjywylge), [source](https://innovationisrael.org.il/en/wp-content/uploads/sites/3/2025/04/Innovation-Authority-High-Tech-Employment-Report-English-Final.pdf))
+  _訂正 2026-10-26: 確認のみ。約 3,500 人減は IIA 2026 年版と Ynetnews、国外約 44 万人と「民間企業の R&D の約半数が国外」は IIA の 2025 年 4 月の雇用報告 PDF で確かめた_
 - 「Start-up Nation」への批判として「二つの経済」論がある。Bank of Israel (2016) によれば労働生産性は先進国平均を 14% 下回る。tech は男性・名門校・エリート部隊出身者に偏り、アラブ系や超正統派の参加は少ない [強] ([source](https://adva.org/en/not-exactly-a-start-up-nation/), [source](https://mei.nus.edu.sg/publication/book-review-dark-sides-of-the-startup-nation/))
   _訂正 2026-10-25: 「アラブ系約 2%、超正統派約 2.2% (IIA 2023)」を削除。引用した出典 (Adva・NUS MEI) に記載がなく、IIA 2023 の原典も確認できていない_
+  _訂正 2026-10-26: Adva Center の記事は 2015 年 9 月 21 日付 (Shlomo Swirski)。8% 以下・男性 65%・名門高校/エリート部隊/有力大学は本文どおり。JSON の記述の「当時」を「2015 年」と明記し、出典に year を入れた_
 
 ## OSS & community
 
@@ -78,6 +81,7 @@ Hofstede (Culture Factor 現行値): PDI 13 / IDV 56 / MAS 47 / UAI 81 / LTO 47 
 - [Drop Site News: 8200 in Big Tech](https://www.dropsitenews.com/p/israel-technology-palo-alto-networks-microsoft-unit-8200)
 - [Ynet: brain drain / 2026 IIA report](https://www.ynetnews.com/business/article/bkjjywylge)
 - [IIA 2025 report press release](https://innovationisrael.org.il/en/press_release/innovation-report-2025/)
+- [IIA 2026 report press release](https://innovationisrael.org.il/en/press_release/israeli-high-tech-report-2026/)
 - [IIA Employment Report Apr 2025](https://innovationisrael.org.il/en/wp-content/uploads/sites/3/2025/04/Innovation-Authority-High-Tech-Employment-Report-English-Final.pdf)
 - [Adva Center: Not Exactly a Start-Up Nation](https://adva.org/en/not-exactly-a-start-up-nation/)
 - [NUS MEI: Dark Sides of the Startup Nation review](https://mei.nus.edu.sg/publication/book-review-dark-sides-of-the-startup-nation/)
