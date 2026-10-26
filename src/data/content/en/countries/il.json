@@ -218,9 +218,9 @@
             "year": 2026
           },
           {
-            "title": "Israel Innovation Authority: 2025 High-Tech Report",
-            "url": "https://innovationisrael.org.il/en/press_release/innovation-report-2025/",
-            "year": 2025
+            "title": "Israel Innovation Authority: 2026 High-Tech Status Report (press release)",
+            "url": "https://innovationisrael.org.il/en/press_release/israeli-high-tech-report-2026/",
+            "year": 2026
           }
         ]
       },
@@ -243,12 +243,13 @@
       },
       {
         "id": "il-work-3",
-        "text": "The Adva Center criticizes the \"Start-up Nation\" image, noting that high-tech then employed no more than 8% of the workforce. It reports that 65% of high-tech employees are men and that they come disproportionately from top high schools, elite military units and leading universities.",
+        "text": "In 2015 the Adva Center criticized the \"Start-up Nation\" image, noting that high-tech employed no more than 8% of the workforce. It reported that 65% of high-tech employees were men and that they came disproportionately from top high schools, elite military units and leading universities.",
         "confidence": "medium",
         "sources": [
           {
             "title": "Adva Center: Not Exactly a Start-Up Nation",
-            "url": "https://adva.org/en/not-exactly-a-start-up-nation/"
+            "url": "https://adva.org/en/not-exactly-a-start-up-nation/",
+            "year": 2015
           }
         ]
       }

@@ -16,6 +16,7 @@ Hofstede (Culture Factor 現行値): PDI 69 / IDV 36 / MAS 49 / UAI 76 / LTO 28 
 
 - UAI 76 で不確実性回避は高め。ただしエンジニアリング組織での失敗やポストモーテムの扱いについての直接的な研究は見当たらない [弱] ([source](https://www.theculturefactor.com/country-comparison-tool?countries=brazil))
 - 人材難を自社開発・買収でしのぐ実例がある。Nubank は 2020 年 1 月に Plataformatec (Elixir の母体) を、同年 7 月に Cognitect (Clojure/Datomic) を買収した。買収時点で Clojure 開発者 600 人、500 のマイクロサービスを抱えていた [強] ([source](https://www.finextra.com/newsarticle/36297/nubank-buys-firm-behind-clojure-programming-language), [source](https://clojureverse.org/t/cognitect-joins-nubank/6280))
+  _訂正 2026-10-26: Finextra (2020-07-28) で Cognitect 買収と「600 人の Clojure 開発者、500 のマイクロサービス」を確認した。数字の主語を「Cognitect によれば」から「Finextra の報道では」に直した。Plataformatec の 2020 年 1 月の買収は Finextra にも ClojureVerse にも日付がないため、FinTech Global (2020-01-07) を出典に足した_
 
 ## Feedback & code review
 
@@ -28,6 +29,7 @@ Hofstede (Culture Factor 現行値): PDI 69 / IDV 36 / MAS 49 / UAI 76 / LTO 28 
 - PDI 69 で階層的 [強] ([source](https://www.theculturefactor.com/country-comparison-tool?countries=brazil))
 - 意思決定はトップダウンで、ジュニアは発言を促されるまで待つ傾向があるとされる。一方で tech スタートアップや多国籍企業はフラットで、伝統的な家族経営や政府系は階層的とされる [中] ([source](https://www.talaera.com/culture/brazilian-work-culture/))
 - 反証として、Rio の金融系アジャイル 2 チームを対象にした研究 (SBQS '24) では、高い権力格差の影響は「ほぼ見られない」だった。予備的研究で n は小さい [中] ([source](https://dl.acm.org/doi/10.1145/3701625.3701653))
+  _訂正 2026-10-26: ACM DL で本文を確認し、記述を正確にした。対象は英国本社のグローバルコンサルが Rio の大手金融機関向けにモバイルアプリを作る 2 チーム (各 5 人)。影響が「ほぼない」のは組織文化と人的要因についてで、プロセスの実行と改善には高い権力格差が影響している可能性があると書かれている_
 
 ## Communication & documentation
 

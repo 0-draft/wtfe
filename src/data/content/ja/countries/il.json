@@ -218,9 +218,9 @@
             "year": 2026
           },
           {
-            "title": "Israel Innovation Authority: 2025 High-Tech Report",
-            "url": "https://innovationisrael.org.il/en/press_release/innovation-report-2025/",
-            "year": 2025
+            "title": "Israel Innovation Authority: 2026 High-Tech Status Report（プレスリリース）",
+            "url": "https://innovationisrael.org.il/en/press_release/israeli-high-tech-report-2026/",
+            "year": 2026
           }
         ]
       },
@@ -243,12 +243,13 @@
       },
       {
         "id": "il-work-3",
-        "text": "Adva Center は「Start-up Nation」像を批判し、当時の high-tech の雇用は就業者の 8% 以下にとどまると指摘した。従業員の 65% は男性で、名門高校・エリート部隊・有力大学の出身者に偏っているという。",
+        "text": "Adva Center は 2015 年に「Start-up Nation」像を批判し、high-tech の雇用は就業者の 8% 以下にとどまると指摘した。従業員の 65% は男性で、名門高校・エリート部隊・有力大学の出身者に偏っているという。",
         "confidence": "medium",
         "sources": [
           {
             "title": "Adva Center: Not Exactly a Start-Up Nation",
-            "url": "https://adva.org/en/not-exactly-a-start-up-nation/"
+            "url": "https://adva.org/en/not-exactly-a-start-up-nation/",
+            "year": 2015
           }
         ]
       }

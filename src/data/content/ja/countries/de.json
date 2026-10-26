@@ -211,7 +211,7 @@
       },
       {
         "id": "de-communication-3",
-        "text": "startuprad.io によると、Berlin のスタートアップでは英語が主な業務言語になっている。外国籍社員の比率は出典により 30〜49% とばらつく。",
+        "text": "startuprad.io は Deutscher Startup Monitor 2024 を引き、Berlin のスタートアップの 55.8% 超で英語が主な業務言語だとしている。外国出身の社員の比率は、同じ記事の中で 30.8% と 42.3% の 2 つの値が出てくる。",
         "confidence": "weak",
         "sources": [
           {
@@ -241,8 +241,8 @@
         "confidence": "medium",
         "sources": [
           {
-            "title": "KAV-NW — BAG, Beschluss vom 13.09.2022, 1 ABR 22/21",
-            "url": "https://www.kav-nw.de/de/Aktuelles/Rechtsprechung-Rechtsfragen/Rechtsprechung-Rechtsfragen1/BAG-Beschluss-vom-13.09.2022-1-ABR-22-21-Arbeitszeiterfassungspflicht-des-Arbeitgebers-.html",
+            "title": "Bundesarbeitsgericht: 1 ABR 22/21（Beschluss vom 13.09.2022）",
+            "url": "https://www.bundesarbeitsgericht.de/entscheidung/1-abr-22-21/",
             "year": 2022
           },
           {
@@ -360,7 +360,7 @@
           },
           {
             "title": "Wikipedia — SUSE S.A.",
-            "url": "https://en.wikipedia.org/wiki/SUSE_S.A."
+            "url": "https://en.wikipedia.org/wiki/SUSE_S.A%2E"
           }
         ]
       },

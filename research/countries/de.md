@@ -39,11 +39,13 @@ Hofstede (Culture Factor 現行値): PDI 35 / IDV 79 / MAS 66 / UAI 65 / LTO 57 
 - Meyer のチャートでドイツは low-context 寄り (明示的、繰り返しは確認のため、書面化を好む)。仏・中・日と比べて最も low-context 側 [中] ([source](https://intlacac.memberclicks.net/assets/DiversityInitiative/Eight-scale%20Tool%20for%20Mapping%20Cultural%20Differences%20by%20Erin%20Meyer%20.pdf))
 - ASPICE の SUP.10 は、変更要求を関連成果物に紐づけて事前に分析することを求める。規制産業では文書化が「文化」というより契約要件になっている [強] ([source](https://vda-qmc.de/wp-content/uploads/2023/12/Automotive-SPICE-PAM-v40.pdf))
 - Berlin のスタートアップは英語が主な業務言語。外国籍社員の比率は 30〜49% と出典によってばらつき、二次情報も自己矛盾しているので要検証 [弱] ([source](https://www.startuprad.io/post/the-rise-of-berlin-startups-germany-s-startup-powerhouse))
+  _訂正 2026-10-26: startuprad.io の記事を開いて確認した。英語が主な業務言語なのは「55.8% 超」、外国出身の社員比率は同じ記事の中で 30.8% と 42.3% が併記されている。49% はこの記事にないので、本文をこの 2 つの値に直した_
 
 ## Work style & careers
 
 - Eurostat 2024: 実労働時間の週平均 (フルタイム+パートタイム、20〜64 歳) はドイツ 33.9h で、EU 平均 36.0h を下回る。パートタイム比率の高さが効いている [強] ([source](https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250514-1))
-- BAG は 2022 年 9 月 13 日 (1 ABR 22/21) に使用者の労働時間記録義務を認めた。Vertrauensarbeitszeit (時間管理を本人に任せる信頼労働時間制) 自体は合法のまま。労働時間法 (ArbZG) の改正はなお未成立とされる [強] ([source](https://www.kav-nw.de/de/Aktuelles/Rechtsprechung-Rechtsfragen/Rechtsprechung-Rechtsfragen1/BAG-Beschluss-vom-13.09.2022-1-ABR-22-21-Arbeitszeiterfassungspflicht-des-Arbeitgebers-.html), [source](https://kpmg-law.de/das-ende-der-vertrauensarbeitszeit-das-stechuhr-urteil-des-eugh-und-die-gesetzliche-verpflichtung-zur-einfuehrung-eines-zeiterfassungssystems-nach-dem-bag/))
+- BAG は 2022 年 9 月 13 日 (1 ABR 22/21) に使用者の労働時間記録義務を認めた。Vertrauensarbeitszeit (時間管理を本人に任せる信頼労働時間制) 自体は合法のまま。労働時間法 (ArbZG) の改正はなお未成立とされる [強] ([source](https://www.bundesarbeitsgericht.de/entscheidung/1-abr-22-21/), [source](https://kpmg-law.de/das-ende-der-vertrauensarbeitszeit-das-stechuhr-urteil-des-eugh-und-die-gesetzliche-verpflichtung-zur-einfuehrung-eines-zeiterfassungssystems-nach-dem-bag/))
+  _訂正 2026-10-26: KAV-NW のリンク切れ (404) のため、出典を連邦労働裁判所の判決ページ (<https://www.bundesarbeitsgericht.de/entscheidung/1-abr-22-21/>) に差し替えた。要旨 1 で使用者の記録義務を確認した_
 - 中小企業 (KMU) は EU 定義で全企業の 99.3%、雇用の 54% (Destatis 2024)。「Mittelstand」は規模ではなく所有と経営の一致で定義される別概念 (IfM Bonn)。KfW の 71.5% は売上上限が 5 億ユーロと広い定義によるもので、数字を混ぜないこと [強] ([source](https://www.destatis.de/EN/Themes/Economic-Sectors-Enterprises/Enterprises/Small-Sized-Enterprises-Medium-Sized-Enterprises/_node.html), [source](https://www.ifm-bonn.org/en/statistics/overview-mittelstand/key-indicators-based-on-sme-definition-by-ifm-bonn/germany))
 - 在宅勤務: 「通常在宅」の比率は 2025 年で約 13.2% (EU 平均より上)。「時々在宅」を含めると、Destatis は 2024 年に約 24% としている [中] ([source](https://apiardata.com/statistics/eu-usually-works-from-home-rate/), [source](https://www.euronews.com/2026/06/12/working-from-home-in-europe-why-your-chances-vary-so-much-depending-on-where-you-live))
 - 解雇規制: OECD の 2019 年データでは、従業員 10 人以下の事業所は通常の解雇規制の適用外で、解雇の前に Betriebsrat への通知が必要 [強] ([source](https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/10/employment-protection-information-2019-country-notes_c421e786/germany_f22c31fc/68e58f6d-en.pdf))
@@ -54,7 +56,8 @@ Hofstede (Culture Factor 現行値): PDI 35 / IDV 79 / MAS 66 / UAI 65 / LTO 57 
 - Stack Overflow Developer Survey 2025 の回答者数はドイツが米国に次ぐ 2 位 (3,022 人、8.6%)。回答者の偏りの指標で、人口あたりの開発者数ではない [強] ([source](https://survey.stackoverflow.co/2025/developers))
 - 国として OSS のインフラに資金を出している: Sovereign Tech Fund (現 Sovereign Tech Agency) は設立から 2 年の 2024 年 10 月までに 60 の OSS 技術へ 2,490 万ドル超を投資 (curl、OpenSSH、systemd、PHP、FFmpeg など) [強] ([source](https://en.wikipedia.org/wiki/Sovereign_Tech_Agency), [source](https://news.slashdot.org/story/24/10/18/2326255/germanys-sovereign-tech-fund-has-invested-over-249m-in-open-source-in-two-years))
   _訂正 2026-10-25: 「60 超・約 2,350 万ユーロ」→「60・2,490 万ドル超」（出典 Slashdot の表記）。年間予算「350 万→1,150 万→1,700 万ユーロ」は引用元で確認できないため削除_
-- コミュニティ: CCC の Chaos Communication Congress は 38C3 (2024 年 12 月、Hamburg) で約 1.5 万人が参加し、ボランティア約 3,500 人。KDE e.V. は 1997 年に Tübingen で登録され、現在の本部は Berlin。SUSE は 1992 年創業で Nuremberg 拠点 [強] ([source](https://www.scip.ch/en/?labs.20250123=), [source](https://ev.kde.org/corporate/statutes/), [source](https://en.wikipedia.org/wiki/SUSE_S.A.))
+- コミュニティ: CCC の Chaos Communication Congress は 38C3 (2024 年 12 月、Hamburg) で約 1.5 万人が参加し、ボランティア約 3,500 人。KDE e.V. は 1997 年に Tübingen で登録され、現在の本部は Berlin。SUSE は 1992 年創業で Nuremberg 拠点 [強] ([source](https://www.scip.ch/en/?labs.20250123=), [source](https://ev.kde.org/corporate/statutes/), [source](https://en.wikipedia.org/wiki/SUSE_S.A%2E))
+  _訂正 2026-10-26: Wikipedia SUSE S.A. のリンクは末尾の「.」がリンク検査で落ちて 404 になるため、<https://en.wikipedia.org/wiki/SUSE_S.A%2E> に変えた。1992 年創業、Nuremberg 拠点は同項目で確認した_
 - 公共部門: Schleswig-Holstein 州は行政の 3 万台の PC を LibreOffice/Linux へ移行すると 2024 年に表明し、LibreOffice は 2025 年末に約 80% 完了。連邦は ZenDiS (デジタル主権センター) を通じて openDesk を開発し、1.0 を 2024 年 10 月にリリース [強] ([source](https://blog.documentfoundation.org/blog/2024/04/04/german-state-moving-30000-pcs-to-libreoffice/), [source](https://cybernews.com/news/schleswig-holstein-germany-microsoft-open-source/), [source](https://en.wikipedia.org/wiki/ZenDiS))
 
 ## 一言で
@@ -89,7 +92,7 @@ Hofstede (Culture Factor 現行値): PDI 35 / IDV 79 / MAS 66 / UAI 65 / LTO 57 
 - [Migaku Berlin English jobs](https://migaku.com/blog/language-fun/how-to-find-english-speaking-jobs-in-berlins-tech-scene)
 - [startuprad Berlin](https://www.startuprad.io/post/the-rise-of-berlin-startups-germany-s-startup-powerhouse)
 - [Eurostat 36 hours/week 2024](https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250514-1)
-- [KAV-NW BAG 1 ABR 22/21](https://www.kav-nw.de/de/Aktuelles/Rechtsprechung-Rechtsfragen/Rechtsprechung-Rechtsfragen1/BAG-Beschluss-vom-13.09.2022-1-ABR-22-21-Arbeitszeiterfassungspflicht-des-Arbeitgebers-.html)
+- [BAG 1 ABR 22/21](https://www.bundesarbeitsgericht.de/entscheidung/1-abr-22-21/)
 - [KPMG Law Vertrauensarbeitszeit](https://kpmg-law.de/das-ende-der-vertrauensarbeitszeit-das-stechuhr-urteil-des-eugh-und-die-gesetzliche-verpflichtung-zur-einfuehrung-eines-zeiterfassungssystems-nach-dem-bag/)
 - [Destatis SMEs](https://www.destatis.de/EN/Themes/Economic-Sectors-Enterprises/Enterprises/Small-Sized-Enterprises-Medium-Sized-Enterprises/_node.html)
 - [IfM Bonn Germany](https://www.ifm-bonn.org/en/statistics/overview-mittelstand/key-indicators-based-on-sme-definition-by-ifm-bonn/germany)
@@ -103,7 +106,7 @@ Hofstede (Culture Factor 現行値): PDI 35 / IDV 79 / MAS 66 / UAI 65 / LTO 57 
 - [Slashdot STF 2024](https://news.slashdot.org/story/24/10/18/2326255/germanys-sovereign-tech-fund-has-invested-over-249m-in-open-source-in-two-years)
 - [scip.ch 38C3](https://www.scip.ch/en/?labs.20250123=)
 - [KDE e.V. statutes](https://ev.kde.org/corporate/statutes/)
-- [Wikipedia SUSE S.A.](https://en.wikipedia.org/wiki/SUSE_S.A.)
+- [Wikipedia SUSE S.A.](https://en.wikipedia.org/wiki/SUSE_S.A%2E)
 - [TDF blog Schleswig-Holstein 2024](https://blog.documentfoundation.org/blog/2024/04/04/german-state-moving-30000-pcs-to-libreoffice/)
 - [Cybernews Schleswig-Holstein](https://cybernews.com/news/schleswig-holstein-germany-microsoft-open-source/)
 - [Wikipedia ZenDiS](https://en.wikipedia.org/wiki/ZenDiS)

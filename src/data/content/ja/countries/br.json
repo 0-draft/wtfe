@@ -33,7 +33,7 @@
     "failure": [
       {
         "id": "br-failure-1",
-        "text": "Nubank は 2020 年 1 月に Plataformatec（Elixir の母体）を、同年 7 月に Cognitect（Clojure/Datomic）を買収し、自社の技術基盤を担う企業を取り込んだ。Cognitect によれば、当時 Nubank では 600 人の Clojure 開発者が 500 のマイクロサービスを動かしていた。",
+        "text": "Nubank は 2020 年 1 月に Plataformatec（Elixir の母体）を、同年 7 月に Cognitect（Clojure/Datomic）を買収し、自社の技術基盤を担う企業を取り込んだ。Finextra の報道では、当時 Nubank では 600 人の Clojure 開発者が 500 のマイクロサービスを動かしていた。",
         "confidence": "medium",
         "sources": [
           {
@@ -44,6 +44,11 @@
           {
             "title": "ClojureVerse: Cognitect joins Nubank",
             "url": "https://clojureverse.org/t/cognitect-joins-nubank/6280",
+            "year": 2020
+          },
+          {
+            "title": "FinTech Global: Nubank acquires Plataformatec",
+            "url": "https://fintech.global/2020/01/07/nubank-acquires-plataformatec-as-it-faces-several-challenges-in-2020/",
             "year": 2020
           }
         ]
@@ -102,7 +107,7 @@
       },
       {
         "id": "br-hierarchy-2",
-        "text": "Hofstede の権力格差（PDI）は 69 と高い。ただしリオデジャネイロの金融系アジャイル 2 チームを調べた研究（SBQS '24）では、高い権力格差の影響はほとんど見られなかった。これは小規模な予備的研究である。",
+        "text": "Hofstede の権力格差（PDI）は 69 と高い。ただし SBQS '24 の研究で、リオデジャネイロの大手金融機関向けにモバイルアプリを開発する 2 チーム（各 5 人）を調べたところ、組織文化と人的要因には高い権力格差の影響がほとんど見られなかった。一方、プロセスの実行と改善には影響している可能性があるという。小規模な予備的研究である。",
         "confidence": "medium",
         "sources": [
           {

@@ -44,7 +44,9 @@ Hofstede (Culture Factor 現行値): PDI 92 / IDV 55 / MAS 27 / UAI 95 / LTO 51 
 ## OSS & community
 
 - GitLab は Dmitriy Zaporozhets が 2011 年にウクライナの自宅で開発を始めた OSS で、2014 年に Sytse Sijbrandij と事業化した [強] ([source](https://www.cnbc.com/amp/2022/11/07/ukraine-looks-to-tech-to-rebuild-economy-after-russia-invasion-.html))
+  _訂正 2026-10-26: CNBC の記事は Zaporozhets がウクライナ出身の創業者だと書くだけで、2011 年・自宅・2014 年の事業化は載っていない。GitLab Handbook の沿革 (<https://handbook.gitlab.com/handbook/company/history/>) を出典に足し、「2014 年に Sijbrandij と事業化」を「2013 年にオランダの Sijbrandij と組み、2014 年に法人化」に直した_
 - Grammarly (OSS ではなくプロダクト) は Lytvyn・Shevchenko・Lider が 2009 年にキーウで創業し、最大の開発拠点は現在もキーウにある [強] ([source](https://en.wikipedia.org/wiki/Max_Lytvyn), [source](https://www.cnbc.com/amp/2022/11/07/ukraine-looks-to-tech-to-rebuild-economy-after-russia-invasion-.html))
+  _訂正 2026-10-26: 「キーウで創業」「最大の開発拠点は現在もキーウ」を引用元で確認できなかった (Wikipedia の Max Lytvyn と CNBC にはない)。本文を「2009 年に創業。ウクライナで開発が始まり、現在もキーウにオフィスがある」に弱め、Wikipedia の Grammarly 項目を出典に足した_
 - 開発者コミュニティ DOU.ua の年次調査「Портрет айтівця 2026」には 14,631 人が回答しており、給与・契約形態などをコミュニティ自身が継続的に可視化している [中] ([source](https://dou.ua/lenta/articles/portrait-2026/))
 
 ## 一言で

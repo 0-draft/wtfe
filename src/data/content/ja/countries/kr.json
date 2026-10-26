@@ -209,13 +209,13 @@
     "work": [
       {
         "id": "kr-work-1",
-        "text": "OECD のデータでは、2023 年の韓国の年間労働時間は 1,872 時間で、OECD 平均より約 200 時間長い。",
+        "text": "OECD のデータでは、2023 年の韓国の年間労働時間は 1,872 時間で、OECD 平均（1,745 時間）より約 130 時間長い。",
         "confidence": "medium",
         "sources": [
           {
-            "title": "Visualizing Annual Working Hours in OECD Countries (Visual Capitalist)",
-            "url": "https://www.visualcapitalist.com/annual-working-hours-in-countries-2023/",
-            "year": 2024
+            "title": "OECD: Hours worked（指標ページ）",
+            "url": "https://www.oecd.org/en/data/indicators/hours-worked.html",
+            "year": 2026
           }
         ]
       },

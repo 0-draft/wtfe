@@ -46,6 +46,7 @@ Hofstede (The Culture Factor 現行値): PDI 80 / IDV 43 / MAS 66 / UAI 30 / LTO
   _訂正 2026-10-25: 「数週間で 20 万スター」→「最初の 1 時間で 1,000 スター超」。引用した出典 (Sixth Tone・Quartz) で確認できるのは後者で、20 万の数字は出典に記載なし_
 - 2021 年に Kuaishou と ByteDance が「大小周」(隔週の日曜出勤) を廃止した。ByteDance では残業代がなくなって平均 17% の実質減給になり、社内投票では約 30% が長時間労働の継続を望んでいた [中] ([source](https://technode.com/2021/07/09/bytedance-to-end-weekend-work-in-blow-to-996-culture/), [source](https://daoinsights.com/news/bytedance-cuts-pay-after-abandoing-six-day-working-week/))
 - 「35 歳の呪い」: 35 歳を超えるとリストラや採用で狙われやすい。採用プラットフォームの調査では、プログラマーの 87% が不安を感じていた。中国の労働法は年齢差別を明示的には禁じていない [中] ([source](https://www.scmp.com/tech/article/3308921/why-turning-35-feels-career-death-sentence-some-chinese-tech-workers), [source](https://slashdot.org/story/24/04/23/154206/chinas-ageing-tech-workers-hit-by-curse-of-35), [source](https://www.rfa.org/english/news/china/china-ageism-07052023161538.html))
+  _訂正 2026-10-26: 「プログラマーの 87% が不安」を削除した。引用した SCMP (2025)・Slashdot (FT, 2024)・RFA (2023) のいずれにもこの数字はない (VnExpress が社名不明の 2022 年の調査として引くのみ)。代わりに、SCMP が書いている「公務員を含む多くの求人が 35 歳以下を条件にしている」を本文に入れた。SCMP 記事の年 (2025 年 5 月 4 日) は正しい_
 - 内卷 (involution) と 躺平 (lying flat): 限られた昇進枠をめぐる消耗戦への反動として、高給職を離れて 1065 勤務を選ぶ人や、润学 (国外脱出) が出ている。大手の人員削減で、新卒の公務員志向も強まっている [中] ([source](https://dissentmagazine.org/article/tech-workers-lie-flat/), [source](https://www.taipeitimes.com/News/feat/archives/2024/12/25/2003829068), [source](https://www.caixinglobal.com/2025-08-01/chinas-tech-giants-spook-a-generation-of-workers-with-job-cuts-102347727.html))
 
 ## OSS とコミュニティ

@@ -281,13 +281,13 @@
       },
       {
         "id": "jp-work-3",
-        "text": "OECD data put annual working hours in 2023 at 1,611 in Japan and 1,872 in South Korea. Averaged across all industries, Japan no longer stands out for long hours among OECD countries.",
+        "text": "OECD data put annual working hours in 2023 at 1,611 in Japan, 1,872 in South Korea and 1,745 on the OECD average. Averaged across all industries, Japan does not stand out for long hours among OECD countries. The OECD notes, however, that the indicator is not meant for comparing levels between countries.",
         "confidence": "medium",
         "sources": [
           {
-            "title": "Visualizing Annual Working Hours in OECD Countries (Visual Capitalist)",
-            "url": "https://www.visualcapitalist.com/annual-working-hours-in-countries-2023/",
-            "year": 2024
+            "title": "OECD: Hours worked (indicator)",
+            "url": "https://www.oecd.org/en/data/indicators/hours-worked.html",
+            "year": 2026
           }
         ]
       },

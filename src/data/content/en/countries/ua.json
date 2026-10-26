@@ -227,19 +227,23 @@
     "oss": [
       {
         "id": "ua-oss-1",
-        "text": "GitLab is an open source project that Dmitriy Zaporozhets started at his home in Ukraine in 2011. In 2014 he turned it into a company with Sytse Sijbrandij from the Netherlands.",
+        "text": "GitLab is an open source project that Dmitriy Zaporozhets started at his home in Ukraine in 2011. He teamed up with Sytse Sijbrandij in the Netherlands in 2013, and GitLab was incorporated in 2014.",
         "confidence": "medium",
         "sources": [
           {
             "title": "CNBC: Ukraine looks to technology to help rebuild its economy",
             "url": "https://www.cnbc.com/amp/2022/11/07/ukraine-looks-to-tech-to-rebuild-economy-after-russia-invasion-.html",
             "year": 2022
+          },
+          {
+            "title": "GitLab Handbook: History of GitLab",
+            "url": "https://handbook.gitlab.com/handbook/company/history/"
           }
         ]
       },
       {
         "id": "ua-oss-2",
-        "text": "Grammarly (a product, not open source) was founded in Kyiv in 2009 by Max Lytvyn, Alex Shevchenko and Dmytro Lider. Its largest engineering hub is still in Kyiv.",
+        "text": "Grammarly (a product, not open source) was founded in 2009 by Max Lytvyn, Alex Shevchenko and Dmytro Lider. It was first developed in Ukraine and still has an office in Kyiv.",
         "confidence": "medium",
         "sources": [
           {
@@ -250,6 +254,10 @@
             "title": "CNBC: Ukraine looks to technology to help rebuild its economy",
             "url": "https://www.cnbc.com/amp/2022/11/07/ukraine-looks-to-tech-to-rebuild-economy-after-russia-invasion-.html",
             "year": 2022
+          },
+          {
+            "title": "Wikipedia: Grammarly",
+            "url": "https://en.wikipedia.org/wiki/Grammarly"
           }
         ]
       },

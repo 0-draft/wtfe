@@ -33,7 +33,7 @@
     "failure": [
       {
         "id": "br-failure-1",
-        "text": "Nubank acquired Plataformatec (the company behind Elixir) in January 2020 and Cognitect (Clojure/Datomic) in July 2020, bringing in the firms behind its own technology stack. According to Cognitect, Nubank then had 600 Clojure developers running 500 microservices.",
+        "text": "Nubank acquired Plataformatec (the company behind Elixir) in January 2020 and Cognitect (Clojure/Datomic) in July 2020, bringing in the firms behind its own technology stack. Finextra reported that Nubank then had 600 Clojure developers running 500 microservices.",
         "confidence": "medium",
         "sources": [
           {
@@ -44,6 +44,11 @@
           {
             "title": "ClojureVerse: Cognitect joins Nubank",
             "url": "https://clojureverse.org/t/cognitect-joins-nubank/6280",
+            "year": 2020
+          },
+          {
+            "title": "FinTech Global: Nubank acquires Plataformatec",
+            "url": "https://fintech.global/2020/01/07/nubank-acquires-plataformatec-as-it-faces-several-challenges-in-2020/",
             "year": 2020
           }
         ]
@@ -102,7 +107,7 @@
       },
       {
         "id": "br-hierarchy-2",
-        "text": "Brazil's Hofstede power distance (PDI) score is high at 69. Yet a study of two agile teams at financial firms in Rio de Janeiro (SBQS '24) found almost no effect of high power distance. It is a small, preliminary study.",
+        "text": "Brazil's Hofstede power distance (PDI) score is high at 69. Yet an SBQS '24 study of two five-person teams building mobile apps for a major financial client in Rio de Janeiro found little to no effect of high power distance on organizational culture and human factors, though it may affect how processes are run and improved. It is a small, preliminary study.",
         "confidence": "medium",
         "sources": [
           {

@@ -227,19 +227,23 @@
     "oss": [
       {
         "id": "ua-oss-1",
-        "text": "GitLab は Dmitriy Zaporozhets が 2011 年にウクライナの自宅で開発を始めた OSS で、2014 年にオランダ出身の Sytse Sijbrandij と事業化した。",
+        "text": "GitLab は Dmitriy Zaporozhets が 2011 年にウクライナの自宅で開発を始めた OSS だ。2013 年にオランダの Sytse Sijbrandij と組み、2014 年に法人化した。",
         "confidence": "medium",
         "sources": [
           {
             "title": "CNBC: Ukraine looks to technology to help rebuild its economy",
             "url": "https://www.cnbc.com/amp/2022/11/07/ukraine-looks-to-tech-to-rebuild-economy-after-russia-invasion-.html",
             "year": 2022
+          },
+          {
+            "title": "GitLab Handbook: History of GitLab",
+            "url": "https://handbook.gitlab.com/handbook/company/history/"
           }
         ]
       },
       {
         "id": "ua-oss-2",
-        "text": "Grammarly（OSS ではなくプロダクト）は Max Lytvyn、Alex Shevchenko、Dmytro Lider が 2009 年にキーウで創業した。最大の開発拠点は現在もキーウにある。",
+        "text": "Grammarly（OSS ではなくプロダクト）は Max Lytvyn、Alex Shevchenko、Dmytro Lider が 2009 年に創業した。ウクライナで開発が始まり、現在もキーウにオフィスがある。",
         "confidence": "medium",
         "sources": [
           {
@@ -250,6 +254,10 @@
             "title": "CNBC: Ukraine looks to technology to help rebuild its economy",
             "url": "https://www.cnbc.com/amp/2022/11/07/ukraine-looks-to-tech-to-rebuild-economy-after-russia-invasion-.html",
             "year": 2022
+          },
+          {
+            "title": "Wikipedia: Grammarly",
+            "url": "https://en.wikipedia.org/wiki/Grammarly"
           }
         ]
       },
