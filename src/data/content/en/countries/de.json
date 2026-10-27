@@ -318,13 +318,13 @@
       },
       {
         "id": "de-oss-2",
-        "text": "Germany had the second-largest number of respondents to the Stack Overflow Developer Survey 2025 after the United States (3,022, or 8.6%). This measures participation in the survey, not developers per capita.",
+        "text": "Germany had the second-largest number of respondents to the Stack Overflow Developer Survey 2026 after the United States (1,983, or 9.3% of the 21,370 who gave a country). This measures participation in the survey, not developers per capita.",
         "confidence": "strong",
         "sources": [
           {
-            "title": "Stack Overflow Developer Survey 2025 — Developers",
-            "url": "https://survey.stackoverflow.co/2025/developers",
-            "year": 2025
+            "title": "Stack Overflow Developer Survey 2026: Work data",
+            "url": "https://survey.stackoverflow.co/2026/work/data",
+            "year": 2026
           }
         ]
       },

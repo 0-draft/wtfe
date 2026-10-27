@@ -217,13 +217,13 @@
       },
       {
         "id": "us-work-4",
-        "text": "Stack Overflow Developer Survey 2025 では、米国の回答者のフルリモート比率は 45% で、回答数上位の国の中で最も高い。給与の中央値は Engineering Manager が $200k、back-end が $175k、full-stack が $138k だった。",
+        "text": "Stack Overflow Developer Survey 2026 では、米国の回答者 (n=3,940) のフルリモート比率は 47.9% で、国別の集計がある 5 か国の中で最も高い。給与の中央値は Engineering Manager が $212,500、back-end が $180,000、full-stack が $140,000 だった。",
         "confidence": "strong",
         "sources": [
           {
-            "title": "Stack Overflow Developer Survey 2025: Work",
-            "url": "https://survey.stackoverflow.co/2025/work",
-            "year": 2025
+            "title": "Stack Overflow Developer Survey 2026: Work data",
+            "url": "https://survey.stackoverflow.co/2026/work/data",
+            "year": 2026
           }
         ]
       },

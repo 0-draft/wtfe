@@ -83,10 +83,12 @@ _調査日: 2026-10-25_
 - 2030 年予測はインド 5,750 万、ブラジル 1,960 万、日本 1,170 万、英国 1,100 万。米国は図では 5,470 万なのに本文では「4,000 万超」と食い違っている [強]（同上）
 - Octoverse の限界：国はプロフィールの自己申告所在地で決まり、学生や趣味のアカウントも含む。中国は GitHub 以外（Gitee など）を使う人が多く過小評価されている可能性がある（ここは推論）[中]
 - Stack Overflow 2025：国別データは回答の多い上位 5 か国（米・独・英・印・仏）だけ。日本と韓国は個別の集計が無い [強] ([SO 2025 Work](https://survey.stackoverflow.co/2025/work))
+  _訂正 2026-10-27: Stack Overflow 2026 (n=30,903) でも働き方の国別タブは米・独・印・英・仏の 5 か国。給与の国別タブは米・独・英・印・加で、フランスが外れカナダが入った ([SO 2026 Work data](https://survey.stackoverflow.co/2026/work/data))_
 - フルリモートの割合：米国 45%、英国 31.9%、インド 25.6%、ドイツ 22.5%、フランス 18.1% [強]（同上）
 - フル出社の割合はインド 30.5%、米国 16.2%、ドイツ 10.5%。ハイブリッドはドイツとフランスで多い [強]（同上）
 - 全体のリモート比率は 2023 年 41% → 2024 年 38% → 2025 年 32.4% と下がっている [中] ([二次: techrecruiting.io](https://techrecruiting.io/en/stack-overflow-developer-survey-2025-usa/))
 - Engineering Manager の給与中央値：米国 $200,000、英国 $136,141、ドイツ $118,335、フランス $92,812、インド $52,308 [強] ([SO 2025 Work](https://survey.stackoverflow.co/2025/work))
+  _訂正 2026-10-27: Stack Overflow 2026 では米国 $212,500、英国 $136,322、ドイツ $131,356。フランスは給与の国別タブが無く、インドは EM の行が出ていない ([SO 2026 Work data](https://survey.stackoverflow.co/2026/work/data))_
 - 労働時間の国別データは SO 2025 に無い [強]（同上）
 
 ## ステレオタイプにしないための読み方
@@ -141,4 +143,5 @@ _調査日: 2026-10-25_
 - [Octoverse 2025](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/)
 - [Second Talent (Octoverse 二次集計)](https://www.secondtalent.com/resources/countries-with-most-software-developers/)
 - [Stack Overflow 2025 Work](https://survey.stackoverflow.co/2025/work)
+- [Stack Overflow Developer Survey 2026: Work data](https://survey.stackoverflow.co/2026/work/data)
 - [techrecruiting.io SO 2025 summary](https://techrecruiting.io/en/stack-overflow-developer-survey-2025-usa/)

@@ -54,6 +54,7 @@ Hofstede (Culture Factor 現行値): PDI 35 / IDV 79 / MAS 66 / UAI 65 / LTO 57 
 
 - GitHub の開発者アカウント数: Octoverse 2024 で 350 万超 (前年比 +21%)。Octoverse 2025 は、2020〜2025 年で日独とも 3 倍超に増え、欧州の主要市場の一つと記述 [強] ([source](https://github.blog/news-insights/octoverse/octoverse-2024/), [source](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/))
 - Stack Overflow Developer Survey 2025 の回答者数はドイツが米国に次ぐ 2 位 (3,022 人、8.6%)。回答者の偏りの指標で、人口あたりの開発者数ではない [強] ([source](https://survey.stackoverflow.co/2025/developers))
+  _訂正 2026-10-27: Stack Overflow 2026 に差し替え。「3,022 人、8.6%」→「1,983 人、国を答えた 21,370 人の 9.3%」。順位は 2 位のまま。2026 版には developers ページが無く、国の内訳は /work/data にある_
 - 国として OSS のインフラに資金を出している: Sovereign Tech Fund (現 Sovereign Tech Agency) は設立から 2 年の 2024 年 10 月までに 60 の OSS 技術へ 2,490 万ドル超を投資 (curl、OpenSSH、systemd、PHP、FFmpeg など) [強] ([source](https://en.wikipedia.org/wiki/Sovereign_Tech_Agency), [source](https://news.slashdot.org/story/24/10/18/2326255/germanys-sovereign-tech-fund-has-invested-over-249m-in-open-source-in-two-years))
   _訂正 2026-10-25: 「60 超・約 2,350 万ユーロ」→「60・2,490 万ドル超」（出典 Slashdot の表記）。年間予算「350 万→1,150 万→1,700 万ユーロ」は引用元で確認できないため削除_
 - コミュニティ: CCC の Chaos Communication Congress は 38C3 (2024 年 12 月、Hamburg) で約 1.5 万人が参加し、ボランティア約 3,500 人。KDE e.V. は 1997 年に Tübingen で登録され、現在の本部は Berlin。SUSE は 1992 年創業で Nuremberg 拠点 [強] ([source](https://www.scip.ch/en/?labs.20250123=), [source](https://ev.kde.org/corporate/statutes/), [source](https://en.wikipedia.org/wiki/SUSE_S.A%2E))
@@ -102,6 +103,7 @@ Hofstede (Culture Factor 現行値): PDI 35 / IDV 79 / MAS 66 / UAI 65 / LTO 57 
 - [GitHub Octoverse 2024](https://github.blog/news-insights/octoverse/octoverse-2024/)
 - [GitHub Octoverse 2025](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/)
 - [Stack Overflow Survey 2025 Developers](https://survey.stackoverflow.co/2025/developers)
+- [Stack Overflow Developer Survey 2026: Work data](https://survey.stackoverflow.co/2026/work/data)
 - [Wikipedia Sovereign Tech Agency](https://en.wikipedia.org/wiki/Sovereign_Tech_Agency)
 - [Slashdot STF 2024](https://news.slashdot.org/story/24/10/18/2326255/germanys-sovereign-tech-fund-has-invested-over-249m-in-open-source-in-two-years)
 - [scip.ch 38C3](https://www.scip.ch/en/?labs.20250123=)

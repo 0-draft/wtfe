@@ -49,6 +49,7 @@ _このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[
 
 - ONS によると、フルタイム労働者の実労働時間は週平均 36.6 時間（2024 年）。全職種の数値でエンジニアに限らない [強] ([source](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/timeseries/ybuy/lms))
 - Stack Overflow 2025 では、UK はフルリモート 31.9%、ハイブリッド（柔軟寄り）25.8% で、US よりハイブリッドが多い。給与中央値は EM $136k、back-end $109k、full-stack $85k で、US の 6〜7 割 [強] ([source](https://survey.stackoverflow.co/2025/work))
+  _訂正 2026-10-27: Stack Overflow 2026 に差し替え。「フルリモート 31.9%、柔軟寄りハイブリッド 25.8%、EM $136k、back-end $109k、full-stack $85k、US の 6〜7 割」→「37.5%、21.7% (n=1,175)、EM $136,322、back-end $114,378、full-stack $86,448、US の 62〜64%」_
 - 解雇規制は US より重い。20 人以上を整理解雇するには集団協議が必要で、100 人以上なら解雇の 45 日前までに協議を始めなければならない [強] ([source](https://www.gov.uk/redundancy-your-rights/consultation))
 - 2022 年の週 4 日勤務の試行（61 社、約 2,900 人）では 56 社が継続し、71% が燃え尽きの減少を報告した。小規模企業が中心で、テック業界に限った試行ではない [中] ([source](https://autonomy.work/portfolio/uk4dwpilotresults/))
 
@@ -88,6 +89,7 @@ _このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[
 - [ultimate-leadership-training: Hofstede UK](https://www.ultimate-leadership-training.co.uk/hofstedes-cultural-dimensions.html)
 - [ONS: Average actual weekly hours (YBUY)](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/timeseries/ybuy/lms)
 - [Stack Overflow Developer Survey 2025: Work](https://survey.stackoverflow.co/2025/work)
+- [Stack Overflow Developer Survey 2026: Work data](https://survey.stackoverflow.co/2026/work/data)
 - [GOV.UK: Redundancy consultation](https://www.gov.uk/redundancy-your-rights/consultation)
 - [Autonomy: UK four-day week pilot results](https://autonomy.work/portfolio/uk4dwpilotresults/)
 - [GitHub Octoverse 2024](https://github.blog/news-insights/octoverse/octoverse-2024/)

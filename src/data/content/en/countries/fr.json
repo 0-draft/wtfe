@@ -321,7 +321,7 @@
       },
       {
         "id": "fr-oss-5",
-        "text": "Octoverse 2024 counts more than 2.8 million developers in France on GitHub, up 20% year over year. France ranked fifth by respondents in the Stack Overflow Developer Survey 2025 (1,408, or 4%).",
+        "text": "Octoverse 2024 counts more than 2.8 million developers in France on GitHub, up 20% year over year. France ranked sixth by respondents in the Stack Overflow Developer Survey 2026 (794, or 3.7%).",
         "confidence": "strong",
         "sources": [
           {
@@ -330,9 +330,9 @@
             "year": 2024
           },
           {
-            "title": "Stack Overflow Developer Survey 2025 — Developers",
-            "url": "https://survey.stackoverflow.co/2025/developers",
-            "year": 2025
+            "title": "Stack Overflow Developer Survey 2026: Work data",
+            "url": "https://survey.stackoverflow.co/2026/work/data",
+            "year": 2026
           }
         ]
       }
