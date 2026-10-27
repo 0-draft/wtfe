@@ -48,6 +48,7 @@ Hofstede (Culture Factor 現行値): PDI 13 / IDV 56 / MAS 47 / UAI 81 / LTO 47 
 - 「Start-up Nation」への批判として「二つの経済」論がある。Bank of Israel (2016) によれば労働生産性は先進国平均を 14% 下回る。tech は男性・名門校・エリート部隊出身者に偏り、アラブ系や超正統派の参加は少ない [強] ([source](https://adva.org/en/not-exactly-a-start-up-nation/), [source](https://mei.nus.edu.sg/publication/book-review-dark-sides-of-the-startup-nation/))
   _訂正 2026-10-25: 「アラブ系約 2%、超正統派約 2.2% (IIA 2023)」を削除。引用した出典 (Adva・NUS MEI) に記載がなく、IIA 2023 の原典も確認できていない_
   _訂正 2026-10-26: Adva Center の記事は 2015 年 9 月 21 日付 (Shlomo Swirski)。8% 以下・男性 65%・名門高校/エリート部隊/有力大学は本文どおり。JSON の記述の「当時」を「2015 年」と明記し、出典に year を入れた_
+  _訂正 2026-10-27: Israel Innovation Authority「The State of High-Tech 2025」の現行値を追加。2025 年上半期の high-tech 雇用は就業者の 11.5% (2024 年 11.3%、2023 年 11.6%)、女性 34%。Adva の 2015 年の値は当時の批判として残す_
 
 ## OSS & community
 

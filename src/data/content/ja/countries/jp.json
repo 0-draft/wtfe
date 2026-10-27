@@ -247,7 +247,7 @@
     "work": [
       {
         "id": "jp-work-1",
-        "text": "2020 年の国勢調査では、日本の IT 人材の 73.6% が IT 企業に所属していた。米国（2021 年）は 35.1% で、約 65% がユーザー企業など IT 企業以外にいる。",
+        "text": "2020 年の国勢調査では、日本の IT 人材の 73.6% が IT 企業に所属していた。米国（2021 年）は 35.1% で、約 65% がユーザー企業など IT 企業以外にいる。IPA の DX 動向 2024 は米国側を 2023 年の職業別統計で更新し、日本 74:26、米国 35:65 としている。",
         "confidence": "strong",
         "sources": [
           {
@@ -259,12 +259,17 @@
             "title": "総務省 平成30年版 情報通信白書: 日米のICT人材の比較",
             "url": "https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/h30/html/nd114140.html",
             "year": 2018
+          },
+          {
+            "title": "IPA: DX動向2024 – 深刻化するDXを推進する人材不足と課題",
+            "url": "https://www.ipa.go.jp/digital/chousa/discussion-paper/f55m8k00000039kf-att/dx-talent-shortage.pdf",
+            "year": 2024
           }
         ]
       },
       {
         "id": "jp-work-2",
-        "text": "公正取引委員会の 2022 年の調査では、「中抜き」事業者の存在を感じたことがあると答えた事業者は 25.9% で、最終下請けに限ると 33.5% だった。",
+        "text": "公正取引委員会の 2022 年の調査では、「中抜き」事業者の存在を感じたことがあると答えた事業者は 25.9% で、最終下請けに限ると 33.5% だった。2026 年 1 月 1 日に下請法は取適法に改められ、資本金に加えて従業員数（製造委託等は 300 人、役務提供委託等は 100 人）でも対象を判断するようになった。",
         "confidence": "strong",
         "sources": [
           {
@@ -276,6 +281,11 @@
             "title": "ソフトウェア業の下請取引等に関する実態調査報告書について（公正取引委員会）",
             "url": "https://www.jftc.go.jp/houdou/pressrelease/2022/jun/220629_software.html",
             "year": 2022
+          },
+          {
+            "title": "公正取引委員会: 取適法・振興法",
+            "url": "https://www.jftc.go.jp/toriteki_2025/",
+            "year": 2025
           }
         ]
       },
@@ -353,13 +363,13 @@
       },
       {
         "id": "jp-oss-3",
-        "text": "EF EPI 2024 で日本は 116 か国・地域中 92 位で、5 段階の下から 2 番目の Low だった。IPA の 2024 年度の報告書も、OSS 貢献の障壁として英語への心理的なハードルを挙げている。",
+        "text": "EF EPI 2025 で日本は 123 か国・地域中 96 位（スコア 446、前年比 -8）で、5 段階の最下位の Very low だった。IPA の 2024 年度の報告書も、OSS 貢献の障壁として英語への心理的なハードルを挙げている。",
         "confidence": "medium",
         "sources": [
           {
-            "title": "Japan ranked 31st in digital competitiveness, 92nd for English skills (The Japan Times)",
-            "url": "https://www.japantimes.co.jp/business/2024/11/15/economy/japan-digital-competitiveness-english-ranking/",
-            "year": 2024
+            "title": "EF EPI 2025: Japan",
+            "url": "https://www.ef.com/wwen/epi/regions/asia/japan/",
+            "year": 2025
           },
           {
             "title": "IPAレポート(2024年度版)が示す日本のオープンソース戦略の課題（vonxai blog）",

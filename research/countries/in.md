@@ -38,6 +38,7 @@ Hofstede (The Culture Factor 現行値): PDI 77 / IDV 24 / MAS 56 / UAI 40 / LTO
 ## コミュニケーションとドキュメント
 
 - 英語は業務言語として普及しているが、EF EPI 2024 では 116 カ国中 69 位。「英語ネイティブ並み」という前提は危うい [中] ([source](https://www.nippon.com/en/japan-data/h02199/))
+  _訂正 2026-10-27: EF EPI 2025 に差し替え。「116 カ国中 69 位」→「123 カ国中 74 位 (484、世界平均 488)」。出典を EF の国別ページに変えた_
 - Meyer の Trusting 尺度では relationship-based 側。仕事の前に、人間関係による信頼 (affective trust) が要る [中] ([source](https://numinoscoaching.com/erin-meyer-culture-map-explained))
 
 ## 働き方とキャリア
@@ -48,6 +49,7 @@ Hofstede (The Culture Factor 現行値): PDI 77 / IDV 24 / MAS 56 / UAI 40 / LTO
   _訂正 2026-10-26: 数字はそのまま。FY23 Q2 の 3 社の値は Business Today で、Infosys 12.6% は Business Standard で確認した。TCS 12.5% は Business Standard の記事になかったので、TCS の Q4 FY24 決算プレスリリース (<https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q4-fy-2024>) を出典に足した_
 - 米国への移住ルートが太い。FY2023 に承認された H-1B のうち 72% がインド生まれ (中国生まれは 12%) [強] ([source](https://www.uscis.gov/sites/default/files/document/reports/OLA_Signed_H-1B_Characteristics_Congressional_Report_FY2023.pdf), [source](https://www.pewresearch.org/short-reads/2025/03/04/what-we-know-about-the-us-h-1b-visa-program/))
 - 長時間労働をめぐって世論が割れている。Narayana Murthy (Infosys 創業者) が 2023 年に「若者は週 70 時間働け」と発言し、SNS では「slave culture」と反発された。一方で経営者層には支持もあった [中] ([source](https://www.cnbc.com/2023/11/07/india-debate-on-70-hour-workweek-illegal-or-road-to-greatness.html), [source](https://www.businesstoday.in/latest/in-focus/story/indias-youth-should-work-70-hours-a-week-narayana-murthys-remark-on-productivity-leaves-internet-divided-403427-2023-10-26))
+  _訂正 2026-10-27: L&T 会長 S.N. Subrahmanyan の週 90 時間発言 (2025-01、Gulf News/IANS) を追加。発言は社内会議の動画が元の報道_
 
 ## OSS とコミュニティ
 

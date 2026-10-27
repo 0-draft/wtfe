@@ -39,6 +39,7 @@ Hofstede (The Culture Factor 現行値): PDI 80 / IDV 43 / MAS 66 / UAI 30 / LTO
 - 業務コミュニケーションは WeChat などのチャットが中心。勤務時間外の WeChat 対応が「隠れ残業」として争われ、北京の裁判所が 2022 年に 3 万元の支払いを命じた。2024 年には最高人民法院もモデルケースとして取り上げた [強] ([source](https://www.sixthtone.com/news/1012704), [source](https://www.sixthtone.com/news/1014551))
 - Feishu は文書・会議・IM・OKR を一体化した「組織 OS」として売られた。ドキュメント文化を製品化した例と言える [中] ([source](https://daoinsights.com/works/how-does-bytedances-enterprise-collaboration-platform-create-the-future-of-work/))
 - 英語は EF EPI 2024 で 116 カ国中 91 位だが、都市差が大きい (北京 518、上海 511)。BAT の OSS 調査では、国際化の取り組みとして最も多いのが「英語の README を用意する」だった [強] ([source](https://www.ef.com/assetscdn/WIBIwq6RdJvcD9bc8RMd/cefcom-epi-site/fact-sheets/2024/ef-epi-fact-sheet-china-english.pdf), [source](https://arxiv.org/pdf/2103.01590))
+  _訂正 2026-10-27: EF EPI 2025 に差し替え。「91 位 (455)、北京 518、上海 511」→「123 カ国中 86 位 (464)、北京 514、上海 508」 (<https://www.ef.com/wwen/epi/regions/asia/china/>)_
 
 ## 働き方とキャリア
 
@@ -55,6 +56,7 @@ Hofstede (The Culture Factor 現行値): PDI 80 / IDV 43 / MAS 66 / UAI 30 / LTO
 - 2020 年、MIIT は Gitee が率いる企業・大学のコンソーシアムに国産 OSS ホスティング基盤の整備を委託した。2022 年 5 月に公開コードを事前審査制にして大量のリポジトリをロックし、CUHK の研究によるとその後コミットが急減した [強] ([source](https://www.technologyreview.com/2022/05/30/1052879/censoring-china-open-source-backfire/), [source](https://www.theregister.com/2022/05/20/gitee_code_review/), [source](https://cssl.socsc.cuhk.edu.hk/2025/05/02/the-impact-of-regulation-on-open-source-development-evidence-from-gitee/))
   _訂正 2026-10-25: 「Gitee が MIIT に選ばれた」→「MIIT が Gitee 主導のコンソーシアムに委託」。出典 (MIT Technology Review) では委託先は Gitee 単独ではなくコンソーシアム_
 - 企業発の OSS が国際的な財団に入っている。ASF の incubating プロジェクト 28 件のうち 10 件が中国企業発。TiDB (PingCAP、2015 年北京創業) は GitHub スター 40k、コントリビュータ 1,200 人超 [中] ([source](https://www.thestack.technology/why-china-is-forging-closer-ties-with-open-source-foundations/), [source](https://www.thestack.technology/new-top-level-asf-projects-open-source-chinese/), [source](https://github.com/pingcap/tidb))
+  _訂正 2026-10-27: 「2023 年時点」と明記。2026-10 の Incubator は 24 件で、出自の内訳は公表されていない。TiDB のスターは 40,684 (2026-10-27)。コントリビュータ 1,200 人超は API (1,092) と合わず確認できないため削った_
 - OpenHarmony は、Huawei が 2020〜21 年に OpenAtom 財団へ寄贈したコードがもと。2025 年 1 月時点でエコシステムパートナーは 401 社あるが、コントリビュータ上位は Huawei 系に偏っている [中] ([source](https://en.wikipedia.org/wiki/OpenAtom_Foundation), [source](https://www.harmony-developers.com/p/openharmony-community-as-of-january))
 
 ## 一言で

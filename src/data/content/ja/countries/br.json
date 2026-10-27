@@ -175,13 +175,18 @@
       },
       {
         "id": "br-work-3",
-        "text": "Brasscom（2021）は、2021〜25 年の技術人材の需要を 79.7 万人と見積もった。関連課程の卒業者は年約 5.3 万人で、年約 10.6 万人が不足する計算になる。",
+        "text": "Brasscom（2021）は、2021〜25 年の技術人材の需要を 79.7 万人と見積もった。2025 年の報告書では、需要の増加 66.5 万人（2019〜24 年）に対し供給の増加は 46.5 万人（2018〜23 年）で、30.2% の不一致がある。2023 年の関連課程の卒業者は約 10.6 万人だった。",
         "confidence": "medium",
         "sources": [
           {
             "title": "Brasscom: Estudo aponta demanda de 797 mil profissionais de tecnologia até 2025",
             "url": "https://brasscom.org.br/estudo-da-brasscom-aponta-demanda-de-797-mil-profissionais-de-tecnologia-ate-2025/",
             "year": 2021
+          },
+          {
+            "title": "Brasscom: Relatório Perspectivas do Mercado de Trabalho do Macrossetor TIC (2025)",
+            "url": "https://brasscom.org.br/wp-content/uploads/2025/02/Relatorio-Perspectivas-do-Mercado-de-Trabalho.pdf",
+            "year": 2025
           }
         ]
       },

@@ -176,13 +176,13 @@
     "communication": [
       {
         "id": "in-communication-1",
-        "text": "EF EPI 2024 でインドは 116 か国・地域中 69 位だった。英語は業務言語として広く使われているが、このテストでの順位は中位にとどまる。",
+        "text": "EF EPI 2025 でインドは 123 か国・地域中 74 位（スコア 484）で、世界平均 488 をわずかに下回った。英語は業務言語として広く使われているが、このテストでの順位は中位にとどまる。",
         "confidence": "medium",
         "sources": [
           {
-            "title": "Nippon.com: Japan Slides Further in English Proficiency Ranking",
-            "url": "https://www.nippon.com/en/japan-data/h02199/",
-            "year": 2024
+            "title": "EF EPI 2025: India",
+            "url": "https://www.ef.com/wwen/epi/regions/asia/india/",
+            "year": 2025
           }
         ]
       },
@@ -273,7 +273,7 @@
       },
       {
         "id": "in-work-5",
-        "text": "2023 年、Infosys 創業者の Narayana Murthy が「若者は週 70 時間働くべきだ」と発言した。SNS では強い反発を受けたが経営者層には支持もあり、世論は割れた。",
+        "text": "2023 年、Infosys 創業者の Narayana Murthy が「若者は週 70 時間働くべきだ」と発言した。SNS では強い反発を受けたが経営者層には支持もあり、世論は割れた。2025 年 1 月には L&T 会長の S.N. Subrahmanyan が日曜を含めて週 90 時間働くよう促したと報じられ、議論が再燃した。",
         "confidence": "medium",
         "sources": [
           {
@@ -285,6 +285,11 @@
             "title": "Business Today: Narayana Murthy's remark leaves internet divided",
             "url": "https://www.businesstoday.in/latest/in-focus/story/indias-youth-should-work-70-hours-a-week-narayana-murthys-remark-on-productivity-leaves-internet-divided-403427-2023-10-26",
             "year": 2023
+          },
+          {
+            "title": "Gulf News: L&T chairman suggests 90-hour work week",
+            "url": "https://gulfnews.com/world/asia/india/how-long-can-you-stare-at-your-wife-at-home-come-to-office-and-work-90-hr-a-week-lt-chairman-1.500013235",
+            "year": 2025
           }
         ]
       }

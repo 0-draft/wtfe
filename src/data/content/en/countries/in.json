@@ -176,13 +176,13 @@
     "communication": [
       {
         "id": "in-communication-1",
-        "text": "In the EF EPI 2024, India ranked 69th of 116 countries and regions. English is widely used as a working language, but India sits mid-table on this test.",
+        "text": "In the EF EPI 2025, India ranked 74th of 123 countries and regions (score 484), just below the global average of 488. English is widely used as a working language, but India sits mid-table on this test.",
         "confidence": "medium",
         "sources": [
           {
-            "title": "Nippon.com: Japan Slides Further in English Proficiency Ranking",
-            "url": "https://www.nippon.com/en/japan-data/h02199/",
-            "year": 2024
+            "title": "EF EPI 2025: India",
+            "url": "https://www.ef.com/wwen/epi/regions/asia/india/",
+            "year": 2025
           }
         ]
       },
@@ -273,7 +273,7 @@
       },
       {
         "id": "in-work-5",
-        "text": "In 2023, Infosys founder Narayana Murthy said young Indians should work 70 hours a week. The remark drew strong backlash on social media but support from some business leaders, and opinion split.",
+        "text": "In 2023 Infosys founder Narayana Murthy said young people should work 70 hours a week. The remark drew strong backlash on social media but some support among executives, and opinion was split. In January 2025, L&T chairman S.N. Subrahmanyan was reported to have urged employees to work 90 hours a week, Sundays included, reviving the debate.",
         "confidence": "medium",
         "sources": [
           {
@@ -285,6 +285,11 @@
             "title": "Business Today: Narayana Murthy's remark leaves internet divided",
             "url": "https://www.businesstoday.in/latest/in-focus/story/indias-youth-should-work-70-hours-a-week-narayana-murthys-remark-on-productivity-leaves-internet-divided-403427-2023-10-26",
             "year": 2023
+          },
+          {
+            "title": "Gulf News: L&T chairman suggests 90-hour work week",
+            "url": "https://gulfnews.com/world/asia/india/how-long-can-you-stare-at-your-wife-at-home-come-to-office-and-work-90-hr-a-week-lt-chairman-1.500013235",
+            "year": 2025
           }
         ]
       }

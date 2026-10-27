@@ -193,13 +193,13 @@
       },
       {
         "id": "cn-communication-3",
-        "text": "In the EF EPI 2024, China ranked 91st of 116 countries and regions (score 455), but Beijing (518) and Shanghai (511) score well above the national figure.",
+        "text": "In the EF EPI 2025, China ranked 86th of 123 countries and regions (score 464), but Beijing (514) and Shanghai (508) score well above the national figure.",
         "confidence": "medium",
         "sources": [
           {
-            "title": "EF EPI 2024 fact sheet: China",
-            "url": "https://www.ef.com/assetscdn/WIBIwq6RdJvcD9bc8RMd/cefcom-epi-site/fact-sheets/2024/ef-epi-fact-sheet-china-english.pdf",
-            "year": 2024
+            "title": "EF EPI 2025: China",
+            "url": "https://www.ef.com/wwen/epi/regions/asia/china/",
+            "year": 2025
           }
         ]
       },
@@ -344,7 +344,7 @@
       },
       {
         "id": "cn-oss-4",
-        "text": "Ten of 28 projects in the ASF incubator came from Chinese companies. TiDB, from PingCAP (founded in Beijing in 2015), has about 40,000 GitHub stars and more than 1,200 contributors.",
+        "text": "As of 2023, 10 of the 28 projects in the ASF incubator came from Chinese companies. TiDB (PingCAP, founded in Beijing in 2015) has about 40,000 GitHub stars (October 2026).",
         "confidence": "medium",
         "sources": [
           {
@@ -358,7 +358,8 @@
           },
           {
             "title": "GitHub: pingcap/tidb",
-            "url": "https://github.com/pingcap/tidb"
+            "url": "https://github.com/pingcap/tidb",
+            "year": 2026
           }
         ]
       },

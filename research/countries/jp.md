@@ -43,8 +43,10 @@ Hofstede（The Culture Factor 現行値）: PDI 54 / IDV 62 / MAS 95 / UAI 92 / 
 ## Work style & careers
 
 - 日本の IT 人材の 73.6% が IT 企業（ベンダー）に所属している（2020 年国勢調査）。米国は 35.1% で、65% 前後がユーザー企業側にいる。これが SIer 中心の構造を示す最重要データ [強] ([source](https://www.ipa.go.jp/archive/press/2022/press20230316-2.html)) ([source](https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/h30/html/nd114140.html))
+  _訂正 2026-10-27: IPA「DX動向2024」(2024-07) を追加。米国側を 2023 年 OES で更新し、日本 74:26、米国 35:65。DX動向2025 の「73.6%」は別の指標なので混ぜない_
 - 多重下請けについて、公取委の 2022 年の調査（法人 4,739 社と SE 2,316 人が回答）では、「中抜き」事業者の存在を感じたことがある事業者は 25.9%、最終下請けに限ると 33.5% だった [強] ([source](https://it.impress.co.jp/articles/-/23838)) ([source](https://www.jftc.go.jp/houdou/pressrelease/2022/jun/220629_software.html))
   _訂正 2026-10-25: 「下請けの 25%」→「事業者の 25.9%（最終下請けは 33.5%）」。出典では 25.9% で、母数は下請けに限らない回答事業者全体_
+  _訂正 2026-10-27: 公取委にこれより新しいソフトウェア業の下請調査は無い (2026-10 時点)。2026-01-01 に下請法が取適法に変わり、従業員数基準 (製造委託等 300 人、役務提供委託等 100 人) が加わったことを追記_
 - 2023 年の年間労働時間は日本 1,611 時間、韓国 1,872 時間（OECD）。「日本 = 長時間労働」というステレオタイプは、統計上はもう当てはまらない（全業種の値）[強] ([source](https://www.visualcapitalist.com/annual-working-hours-in-countries-2023/))
   _訂正 2026-10-26: 出典を Visual Capitalist から OECD の指標ページ (<https://www.oecd.org/en/data/indicators/hours-worked.html>) に差し替えた。Visual Capitalist の記事は 2021 年の値 (韓国 1,910、日本 1,607) で、2023 年の値は載っていない。OECD のページで 2023 年は日本 1,611、韓国 1,872、OECD 平均 1,745 と確認した。OECD はこの指標を国どうしの水準比較には向かないと注記しているので、その一文を本文に足した_
 - リモートについて、国交省の令和 5 年度調査では雇用型テレワーカーの割合が最も高い業種は情報通信業で 72.8% だった。ファインディの 2024 年の調査では、リモートが減ったら 71.5% が転職やフリーランス転向を検討すると答えた。ただし転職サービスの登録者が母集団なので偏りがある [中] ([source](https://www.mlit.go.jp/toshi/kankyo/content/001735166.pdf)) ([source](https://note.lapras.com/it-news/remote-work_2024/))
@@ -56,6 +58,7 @@ Hofstede（The Culture Factor 現行値）: PDI 54 / IDV 62 / MAS 95 / UAI 92 / 
 - 開発者人口は急増している。GitHub Octoverse によると、2023 年は 280 万人超で前年比 31%、2024 年は 350 万人超で前年比 23%。2020〜2025 年で 3 倍以上に増えた [強] ([source](https://github.blog/news-insights/research/the-state-of-open-source-and-ai/)) ([source](https://github.blog/jp/2024-12-17-octoverse-2024/))
 - 企業の OSS 貢献は弱い。LF Research の 2025 年の調査では、貢献の障壁として IP の懸念 52%、社内ポリシーの欠如 51%（世界平均 28%）が挙がり、OSPO の設置は 41%。IPA の 2024 年度調査では 8 割以上がガバナンス体制を持っていない。両者の数字は大きく食い違っている [強] ([source](https://thinkit.co.jp/article/38820)) ([source](https://blog.vonxai.co.jp/post/ipa-oss-report-2024-strategy/))
 - 言語の壁について、EF EPI 2024 で日本は 116 か国中 92 位（Low）で、過去最低だった。IPA も OSS 貢献の障壁に「英語への心理的バイアス」を挙げている [強] ([source](https://www.japantimes.co.jp/business/2024/11/15/economy/japan-digital-competitiveness-english-ranking/)) ([source](https://blog.vonxai.co.jp/post/ipa-oss-report-2024-strategy/))
+  _訂正 2026-10-27: EF EPI 2025 に差し替え。「116 か国中 92 位 (Low)」→「123 か国中 96 位、446、Very low」。出典を Japan Times から EF の国別ページに変えた (<https://www.ef.com/wwen/epi/regions/asia/japan/>)_
 - 代表的なプロジェクトは Ruby（まつもとゆきひろ、1995 年公開）。日本語圏でコミュニティが自己完結しやすいことは利点でもあり、孤立の要因でもある（後半は推論）[中] ([source](https://www.ruby-lang.org/en/about/))
 - 調査データの限界として、Stack Overflow Survey 2024 の日本の回答は 286 件（0.5%）しかなく、日本の開発者像をこの調査から語るのは無理 [強] ([source](https://survey.stackoverflow.co/2024/developer-profile))
 

@@ -260,13 +260,18 @@
       },
       {
         "id": "gb-work-4",
-        "text": "2022 年の週 4 日勤務の試行 (61 社、約 2,900 人) では、56 社が試行後も継続し、従業員の 71% が燃え尽きの減少を報告した。小規模企業が中心で、テック業界に限った試行ではない。",
+        "text": "2022 年の週 4 日勤務の試行 (61 社、約 2,900 人) では、56 社が試行後も継続し、従業員の 71% が燃え尽きの減少を報告した。1 年後の追跡では少なくとも 54 社 (89%) が続けており、31 社が恒久化した。小規模企業が中心で、テック業界に限った試行ではない。",
         "confidence": "medium",
         "sources": [
           {
             "title": "Autonomy: The results are in: the UK's four-day week pilot",
             "url": "https://autonomy.work/portfolio/uk4dwpilotresults/",
             "year": 2023
+          },
+          {
+            "title": "Autonomy: Making It Stick — The UK Four-Day Week Pilot One Year On",
+            "url": "https://autonomy.work/portfolio/making-it-stick/",
+            "year": 2024
           }
         ]
       }

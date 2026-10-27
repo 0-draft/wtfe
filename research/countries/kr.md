@@ -43,6 +43,7 @@ Hofstede（The Culture Factor 現行値）: PDI 60 / IDV 58 / MAS 39 / UAI 85 / 
 
 - 2023 年の年間労働時間は 1,872 時間で、OECD 平均より約 200 時間長い。2018 年の勤労基準法改正（週 52 時間制）以降、IT やゲーム業界の労働環境は大きく改善したと報じられている [強] ([source](https://www.visualcapitalist.com/annual-working-hours-in-countries-2023/)) ([source](https://www.seoulfn.com/news/articleView.html?idxno=481404))
   _訂正 2026-10-26: 「OECD 平均より約 200 時間長い」→「OECD 平均 (1,745 時間) より約 130 時間長い」。出典も Visual Capitalist (2021 年の値しか載っていない) から OECD の指標ページ (<https://www.oecd.org/en/data/indicators/hours-worked.html>) に差し替えた。週 52 時間制以降の改善はソウル経済の記事で確認した (KOCCA 2021 年調査で週平均 41.3 時間、クランチ経験者 60.6%→15.4%)_
+  _訂正 2026-10-27: 雇用労働部の 2025-12-30 の労使政共同宣言を追加 (2030 年までに実労働時間を OECD 平均の 1,700 時間台へ)。週 52 時間の上限は不変。半導体特別法 (2026-01) は 52 時間の例外条項を削って成立した_
 - ゲーム業界の 2024 年の実態調査（KOCCA、n=1,510）では、クランチ経験は 34.3%、包括賃金制の適用は 69.9%（50 人未満の企業では 90% 超）だった。週 52 時間制の裏で無給残業が「影の労働」になっているという報道もある [強] ([source](https://www.thisisgame.com/articles/203826)) ([source](https://www.hankyung.com/article/202509105494i))
 - リモートは企業ごとに分かれている。Naver は Connected Work を続け、6 か月ごとに完全リモート（Type R）か週 3 日出社（Type O）かを選べる。Kakao は 2024 年から事実上の全面出社に切り替え、労組がリモートの復活を要求している [中] ([source](https://v.daum.net/v/20240307181837999)) ([source](https://www.ddaily.co.kr/page/view/2024103014225505515))
 - 2021 年の「開発者の年俸戦争」から一転し、2024 年には企業の 34% が開発者採用を減らすと答えた（Grepp 調査）。開発者の 63.1% は開発者 50 人以下の企業に勤めている（2021 年のプログラマーズ調査）[中] ([source](https://www.hankyung.com/article/202411293961g)) ([source](https://programmers.co.kr/pages/2021-dev-survey))
@@ -51,10 +52,12 @@ Hofstede（The Culture Factor 現行値）: PDI 60 / IDV 58 / MAS 39 / UAI 85 / 
 ## OSS & community
 
 - Octoverse 2023 で韓国の開発者は 190 万人超、前年比 22% 増 [強] ([source](https://github.blog/news-insights/research/the-state-of-open-source-and-ai/))
+  _訂正 2026-10-27: GitHub Innovation Graph の値を追加。KR の開発者数は 2025Q4 で 2,900,539 (2026Q1 3,145,730)。Octoverse とは数え方が違うので別の文にした。Octoverse 2025 の韓国 266 万人は韓国メディアの二次報道にしかなく使わなかった_
 - 政府主導で貢献者を育てている。NIPA は「オープンソース・コントリビューション・アカデミー」を運営している。2024 年は 931 人の応募から 282 人が選ばれ、2026 年も発足式が開かれた [強] ([source](https://zdnet.co.kr/view/?no=20260713162757)) ([source](https://www.nipa.kr/home/2-1/16130))
   _訂正 2026-10-25: 「2020 年開始、2026 年は 11 チーム・約 260 人・13 週間」を、出典で確認できる「2024 年は応募 931 人・選抜 282 人、2026 年も発足式」に差し替えた。前者の数字は引用した 2 ページで確認できなかった_
 - 企業発の OSS には Naver の Pinpoint（APM、約 13.9k stars）や LINE の Armeria（約 5.1k stars）がある。LINE は日韓にまたがる企業 [中] ([source](https://github.com/pinpoint-apm/pinpoint)) ([source](https://github.com/line/armeria))
 - 英語力は EF EPI 2024 で 50 位（Moderate）。日本（92 位）よりはかなり上 [強] ([source](https://www.nippon.com/en/japan-data/h02199/))
+  _訂正 2026-10-27: EF EPI 2025 に差し替え。「50 位、日本 92 位」→「123 か国中 48 位 (522)、日本 96 位 (446)」。出典を EF の国別ページに変えた_
 - 調査データの限界として、Stack Overflow Survey 2024 の韓国の回答は 144 件（表記揺れの別項目を足しても約 199 件）しかなく、代表性がない [強] ([source](https://survey.stackoverflow.co/2024/developer-profile))
 
 ## 一言で

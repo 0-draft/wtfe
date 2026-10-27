@@ -221,13 +221,18 @@
       },
       {
         "id": "kr-work-2",
-        "text": "News reports say working conditions in the IT and game industries improved a great deal after the 52-hour workweek cap took effect in 2018.",
+        "text": "Working conditions in the IT and game industries are reported to have improved considerably since the 52-hour week was introduced in 2018. In December 2025 the government, unions and employers issued a joint declaration aiming to bring actual working hours down to the OECD average (the 1,700s per year) by 2030. The 52-hour cap itself is unchanged.",
         "confidence": "medium",
         "sources": [
           {
             "title": "IT·게임업계, 주 최대 69시간 근로 추진에 \"과로사 재현될 것\" (서울파이낸스)",
             "url": "https://www.seoulfn.com/news/articleView.html?idxno=481404",
             "year": 2023
+          },
+          {
+            "title": "Ministry of Employment and Labor: Tripartite joint declaration on reducing actual working hours (2025-12-30)",
+            "url": "https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=18805",
+            "year": 2025
           }
         ]
       },
@@ -310,13 +315,18 @@
     "oss": [
       {
         "id": "kr-oss-1",
-        "text": "In GitHub Octoverse 2023, South Korea had more than 1.9 million developers, up 22% year on year.",
+        "text": "In GitHub Octoverse 2023, South Korea had more than 1.9 million developers, up 22% year over year. GitHub's Innovation Graph, which counts differently, puts the figure at about 2.9 million in the fourth quarter of 2025.",
         "confidence": "strong",
         "sources": [
           {
             "title": "GitHub Octoverse 2023: The state of open source and rise of AI",
             "url": "https://github.blog/news-insights/research/the-state-of-open-source-and-ai/",
             "year": 2023
+          },
+          {
+            "title": "GitHub Innovation Graph: developers by economy (data/developers.csv)",
+            "url": "https://github.com/github/innovationgraph/blob/main/data/developers.csv",
+            "year": 2026
           }
         ]
       },
@@ -354,13 +364,18 @@
       },
       {
         "id": "kr-oss-4",
-        "text": "In the EF EPI 2024, South Korea ranked 50th of 116 countries and regions, well ahead of Japan (92nd).",
+        "text": "In the EF EPI 2025, South Korea ranked 48th of 123 countries and regions (score 522), well ahead of Japan (96th, 446).",
         "confidence": "medium",
         "sources": [
           {
-            "title": "Japan Slides Further in English Proficiency Ranking (Nippon.com)",
-            "url": "https://www.nippon.com/en/japan-data/h02199/",
-            "year": 2024
+            "title": "EF EPI 2025: South Korea",
+            "url": "https://www.ef.com/wwen/epi/regions/asia/south-korea/",
+            "year": 2025
+          },
+          {
+            "title": "EF EPI 2025: Japan",
+            "url": "https://www.ef.com/wwen/epi/regions/asia/japan/",
+            "year": 2025
           }
         ]
       }

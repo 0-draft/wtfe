@@ -221,13 +221,18 @@
       },
       {
         "id": "kr-work-2",
-        "text": "2018 年に週 52 時間制が導入されて以降、IT・ゲーム業界の労働環境は大きく改善したと報じられている。",
+        "text": "2018 年に週 52 時間制が導入されて以降、IT・ゲーム業界の労働環境は大きく改善したと報じられている。2025 年 12 月には政府と労使が、2030 年までに実労働時間を OECD 平均（年 1,700 時間台）まで縮めるよう努める共同宣言を出した。週 52 時間の上限自体は変わっていない。",
         "confidence": "medium",
         "sources": [
           {
             "title": "IT·게임업계, 주 최대 69시간 근로 추진에 \"과로사 재현될 것\" (서울파이낸스)",
             "url": "https://www.seoulfn.com/news/articleView.html?idxno=481404",
             "year": 2023
+          },
+          {
+            "title": "고용노동부: 실노동시간 단축을 위한 노사정 공동선언 (2025-12-30)",
+            "url": "https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=18805",
+            "year": 2025
           }
         ]
       },
@@ -310,13 +315,18 @@
     "oss": [
       {
         "id": "kr-oss-1",
-        "text": "GitHub Octoverse 2023 で、韓国の開発者は 190 万人超、前年比 22% 増だった。",
+        "text": "GitHub Octoverse 2023 で、韓国の開発者は 190 万人超、前年比 22% 増だった。数え方の異なる GitHub Innovation Graph では、2025 年第 4 四半期に約 290 万人である。",
         "confidence": "strong",
         "sources": [
           {
             "title": "GitHub Octoverse 2023: The state of open source and rise of AI",
             "url": "https://github.blog/news-insights/research/the-state-of-open-source-and-ai/",
             "year": 2023
+          },
+          {
+            "title": "GitHub Innovation Graph: developers by economy (data/developers.csv)",
+            "url": "https://github.com/github/innovationgraph/blob/main/data/developers.csv",
+            "year": 2026
           }
         ]
       },
@@ -354,13 +364,18 @@
       },
       {
         "id": "kr-oss-4",
-        "text": "EF EPI 2024 で韓国は 116 か国・地域中 50 位で、日本（92 位）を大きく上回った。",
+        "text": "EF EPI 2025 で韓国は 123 か国・地域中 48 位（スコア 522）で、日本（96 位、446）を大きく上回った。",
         "confidence": "medium",
         "sources": [
           {
-            "title": "Japan Slides Further in English Proficiency Ranking (Nippon.com)",
-            "url": "https://www.nippon.com/en/japan-data/h02199/",
-            "year": 2024
+            "title": "EF EPI 2025: South Korea",
+            "url": "https://www.ef.com/wwen/epi/regions/asia/south-korea/",
+            "year": 2025
+          },
+          {
+            "title": "EF EPI 2025: Japan",
+            "url": "https://www.ef.com/wwen/epi/regions/asia/japan/",
+            "year": 2025
           }
         ]
       }

@@ -247,7 +247,7 @@
     "work": [
       {
         "id": "jp-work-1",
-        "text": "In the 2020 census, 73.6% of Japan's IT workers were employed by IT companies. In the US (2021) the figure was 35.1%, with about 65% working outside IT companies, such as at user companies.",
+        "text": "In Japan's 2020 census, 73.6% of IT professionals worked at IT companies. In the US (2021) the share was 35.1%, with about 65% at user companies and other non-IT employers. IPA's DX Trends 2024 updates the US side with 2023 occupational statistics and gives 74:26 for Japan and 35:65 for the US.",
         "confidence": "strong",
         "sources": [
           {
@@ -259,12 +259,17 @@
             "title": "MIC White Paper on Information and Communications 2018: Comparing ICT workers in Japan and the US",
             "url": "https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/h30/html/nd114140.html",
             "year": 2018
+          },
+          {
+            "title": "IPA: DX Trends 2024 — the deepening shortage of DX talent",
+            "url": "https://www.ipa.go.jp/digital/chousa/discussion-paper/f55m8k00000039kf-att/dx-talent-shortage.pdf",
+            "year": 2024
           }
         ]
       },
       {
         "id": "jp-work-2",
-        "text": "In a 2022 Japan Fair Trade Commission survey, 25.9% of responding companies said they had noticed middlemen who take a margin without doing any work (nakanuki). Among companies at the bottom of the subcontracting chain, the figure was 33.5%.",
+        "text": "In a 2022 Japan Fair Trade Commission survey, 25.9% of businesses said they had seen middlemen who add no value in the subcontracting chain, rising to 33.5% among businesses at the bottom of the chain. On 1 January 2026 the Subcontract Act was replaced by the Toriteki Act, which also uses employee counts (300 for manufacturing-type contracts, 100 for service contracts) alongside capital to decide which deals it covers.",
         "confidence": "strong",
         "sources": [
           {
@@ -276,6 +281,11 @@
             "title": "Report on the survey of subcontracting in the software industry (Japan Fair Trade Commission)",
             "url": "https://www.jftc.go.jp/houdou/pressrelease/2022/jun/220629_software.html",
             "year": 2022
+          },
+          {
+            "title": "Japan Fair Trade Commission: the Act on Appropriate Transactions with Small and Medium Contractors (Toriteki Act)",
+            "url": "https://www.jftc.go.jp/toriteki_2025/",
+            "year": 2025
           }
         ]
       },
@@ -353,13 +363,13 @@
       },
       {
         "id": "jp-oss-3",
-        "text": "In the EF EPI 2024, Japan ranked 92nd of 116 countries and regions, in the \"Low\" band, the second lowest of five. IPA's FY2024 report also lists a psychological barrier around English as an obstacle to contributing to open source.",
+        "text": "In the EF EPI 2025, Japan ranked 96th of 123 countries and regions (score 446, down 8 points), in the \"Very low\" band, the lowest of five. IPA's FY2024 report also lists a psychological barrier around English as an obstacle to contributing to open source.",
         "confidence": "medium",
         "sources": [
           {
-            "title": "Japan ranked 31st in digital competitiveness, 92nd for English skills (The Japan Times)",
-            "url": "https://www.japantimes.co.jp/business/2024/11/15/economy/japan-digital-competitiveness-english-ranking/",
-            "year": 2024
+            "title": "EF EPI 2025: Japan",
+            "url": "https://www.ef.com/wwen/epi/regions/asia/japan/",
+            "year": 2025
           },
           {
             "title": "Challenges for Japan's open source strategy shown in the IPA report (FY2024 edition) (vonxai blog)",

@@ -287,9 +287,17 @@
       },
       {
         "id": "de-work-5",
-        "text": "OECD data for 2019 show that establishments with 10 or fewer employees are exempt from the standard dismissal protection rules. Employers must also notify the works council before a dismissal.",
+        "text": "Germany's Dismissal Protection Act (KSchG) does not apply its standard dismissal rules to establishments with 10 or fewer employees (5 or fewer for staff hired before 2004). The works council must be heard before any dismissal, and a dismissal without that hearing is void.",
         "confidence": "strong",
         "sources": [
+          {
+            "title": "Dismissal Protection Act (KSchG), section 23 (gesetze-im-internet.de)",
+            "url": "https://www.gesetze-im-internet.de/kschg/__23.html"
+          },
+          {
+            "title": "Works Constitution Act (BetrVG), section 102 (gesetze-im-internet.de)",
+            "url": "https://www.gesetze-im-internet.de/betrvg/__102.html"
+          },
           {
             "title": "OECD EPL Database, update 2019 — Germany",
             "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/10/employment-protection-information-2019-country-notes_c421e786/germany_f22c31fc/68e58f6d-en.pdf",

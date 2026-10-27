@@ -243,13 +243,18 @@
       },
       {
         "id": "il-work-3",
-        "text": "Adva Center は 2015 年に「Start-up Nation」像を批判し、high-tech の雇用は就業者の 8% 以下にとどまると指摘した。従業員の 65% は男性で、名門高校・エリート部隊・有力大学の出身者に偏っているという。",
+        "text": "Adva Center は 2015 年に「Start-up Nation」像を批判し、high-tech の雇用は就業者の 8% 以下にとどまると指摘した。従業員の 65% は男性で、名門高校・エリート部隊・有力大学の出身者に偏っているという。Israel Innovation Authority によると、2025 年上半期の high-tech 雇用は就業者の 11.5% で、女性は 34% だった。",
         "confidence": "medium",
         "sources": [
           {
             "title": "Adva Center: Not Exactly a Start-Up Nation",
             "url": "https://adva.org/en/not-exactly-a-start-up-nation/",
             "year": 2015
+          },
+          {
+            "title": "Israel Innovation Authority: The State of High-Tech 2025",
+            "url": "https://innovationisrael.org.il/wp-content/uploads/2025/12/Annual-Report-The-State-of-High-Tech-2025.pdf",
+            "year": 2025
           }
         ]
       }
