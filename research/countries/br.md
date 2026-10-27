@@ -41,6 +41,7 @@ Hofstede (Culture Factor 現行値): PDI 69 / IDV 36 / MAS 49 / UAI 76 / LTO 28 
 - PJ(法人契約、1099 相当)は CLT(雇用契約)より 30-40% 高い報酬で提示されることが多い。ただし PJ と CLT の比率を示す調査値は見つからず、偽装請負 (pejotização) は裁判で雇用と再認定されるリスクがある [中] ([source](https://talenlio.ai/blogs/brazil-tech-salary-guide-2026))
 - 2026 年の Código Fonte TV 調査 (n=17,046、自己選択サンプル) では、CLT の平均が +14.4% だったのに対し PJ は +0.7% で頭打ちだった [中] ([source](https://talenlio.ai/blogs/brazil-tech-salary-guide-2026))
 - 人材不足は構造的。Brasscom (2021) は 2021-25 年の需要を 79.7 万人、年間の育成を約 5.3 万人と見積もり、年約 10.6 万人の不足とした。データはやや古い [強] ([source](https://brasscom.org.br/estudo-da-brasscom-aponta-demanda-de-797-mil-profissionais-de-tecnologia-ate-2025/))
+  _訂正 2026-10-27: Brasscom 2025 年の報告書を追加。需要の増加 665,403 人 (2019〜24) に対し供給の増加 464,569 人 (2018〜23)、不一致 30.2%。2023 年の卒業者は 105,706 人 (高等教育 89,696、連邦技術教育 16,010)。旧推計は並べて残す (<https://brasscom.org.br/wp-content/uploads/2025/02/Relatorio-Perspectivas-do-Mercado-de-Trabalho.pdf>)_
 - 海外企業向けリモートで報酬は約 3 倍になる (現地 $18.4k から $56.3k)。海外雇用主の 70% が米英 (Arc.dev、採用業者のデータでバイアスの可能性あり) [中] ([source](https://arc.dev/talent-blog/remote-software-developer-salary-report-latin-america-2022/))
 
 ## OSS & community

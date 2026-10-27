@@ -287,9 +287,17 @@
       },
       {
         "id": "de-work-5",
-        "text": "OECD の 2019 年の資料によると、従業員 10 人以下の事業所には通常の解雇規制が適用されない。また、解雇の前には Betriebsrat への通知が必要とされる。",
+        "text": "解雇制限法 (KSchG) の通常の解雇規制は、従業員 10 人以下の事業所には適用されない（2003 年以前に雇われた人については 5 人以下）。解雇の前には Betriebsrat の意見を聴く必要があり、聴取なしの解雇は無効になる。",
         "confidence": "strong",
         "sources": [
+          {
+            "title": "Kündigungsschutzgesetz § 23 (gesetze-im-internet.de)",
+            "url": "https://www.gesetze-im-internet.de/kschg/__23.html"
+          },
+          {
+            "title": "Betriebsverfassungsgesetz § 102 (gesetze-im-internet.de)",
+            "url": "https://www.gesetze-im-internet.de/betrvg/__102.html"
+          },
           {
             "title": "OECD EPL Database, update 2019 — Germany",
             "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/10/employment-protection-information-2019-country-notes_c421e786/germany_f22c31fc/68e58f6d-en.pdf",

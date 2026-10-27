@@ -193,13 +193,13 @@
       },
       {
         "id": "cn-communication-3",
-        "text": "EF EPI 2024 で中国は 116 か国・地域中 91 位（スコア 455）だったが、都市別では北京 518、上海 511 と全国値を大きく上回る。",
+        "text": "EF EPI 2025 で中国は 123 か国・地域中 86 位（スコア 464）だったが、都市別では北京 514、上海 508 と全国値を大きく上回る。",
         "confidence": "medium",
         "sources": [
           {
-            "title": "EF EPI 2024 fact sheet: China",
-            "url": "https://www.ef.com/assetscdn/WIBIwq6RdJvcD9bc8RMd/cefcom-epi-site/fact-sheets/2024/ef-epi-fact-sheet-china-english.pdf",
-            "year": 2024
+            "title": "EF EPI 2025: China",
+            "url": "https://www.ef.com/wwen/epi/regions/asia/china/",
+            "year": 2025
           }
         ]
       },
@@ -344,7 +344,7 @@
       },
       {
         "id": "cn-oss-4",
-        "text": "ASF でインキュベーション中のプロジェクト 28 件のうち 10 件が中国企業発だった。TiDB (PingCAP、2015 年北京創業) は GitHub スター約 4 万、コントリビュータ 1,200 人超を持つ。",
+        "text": "2023 年時点で、ASF でインキュベーション中のプロジェクト 28 件のうち 10 件が中国企業発だった。TiDB (PingCAP、2015 年北京創業) の GitHub スターは約 4 万 (2026 年 10 月) である。",
         "confidence": "medium",
         "sources": [
           {
@@ -358,7 +358,8 @@
           },
           {
             "title": "GitHub: pingcap/tidb",
-            "url": "https://github.com/pingcap/tidb"
+            "url": "https://github.com/pingcap/tidb",
+            "year": 2026
           }
         ]
       },

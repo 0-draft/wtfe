@@ -49,6 +49,7 @@ Hofstede (Culture Factor 現行値): PDI 35 / IDV 79 / MAS 66 / UAI 65 / LTO 57 
 - 中小企業 (KMU) は EU 定義で全企業の 99.3%、雇用の 54% (Destatis 2024)。「Mittelstand」は規模ではなく所有と経営の一致で定義される別概念 (IfM Bonn)。KfW の 71.5% は売上上限が 5 億ユーロと広い定義によるもので、数字を混ぜないこと [強] ([source](https://www.destatis.de/EN/Themes/Economic-Sectors-Enterprises/Enterprises/Small-Sized-Enterprises-Medium-Sized-Enterprises/_node.html), [source](https://www.ifm-bonn.org/en/statistics/overview-mittelstand/key-indicators-based-on-sme-definition-by-ifm-bonn/germany))
 - 在宅勤務: 「通常在宅」の比率は 2025 年で約 13.2% (EU 平均より上)。「時々在宅」を含めると、Destatis は 2024 年に約 24% としている [中] ([source](https://apiardata.com/statistics/eu-usually-works-from-home-rate/), [source](https://www.euronews.com/2026/06/12/working-from-home-in-europe-why-your-chances-vary-so-much-depending-on-where-you-live))
 - 解雇規制: OECD の 2019 年データでは、従業員 10 人以下の事業所は通常の解雇規制の適用外で、解雇の前に Betriebsrat への通知が必要 [強] ([source](https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/10/employment-protection-information-2019-country-notes_c421e786/germany_f22c31fc/68e58f6d-en.pdf))
+  _訂正 2026-10-27: 法令の本文で確認し直した。KSchG §23 は 10 人以下 (2003 年 12 月 31 日以前に雇われた人については 5 人以下)。BetrVG §102 は Betriebsrat への「通知」ではなく意見聴取で、聴取なしの解雇は無効。記述を書き換え、法令を出典に足した_
 
 ## OSS & community
 

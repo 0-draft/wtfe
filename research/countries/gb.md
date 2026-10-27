@@ -52,6 +52,7 @@ _このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[
   _訂正 2026-10-27: Stack Overflow 2026 に差し替え。「フルリモート 31.9%、柔軟寄りハイブリッド 25.8%、EM $136k、back-end $109k、full-stack $85k、US の 6〜7 割」→「37.5%、21.7% (n=1,175)、EM $136,322、back-end $114,378、full-stack $86,448、US の 62〜64%」_
 - 解雇規制は US より重い。20 人以上を整理解雇するには集団協議が必要で、100 人以上なら解雇の 45 日前までに協議を始めなければならない [強] ([source](https://www.gov.uk/redundancy-your-rights/consultation))
 - 2022 年の週 4 日勤務の試行（61 社、約 2,900 人）では 56 社が継続し、71% が燃え尽きの減少を報告した。小規模企業が中心で、テック業界に限った試行ではない [中] ([source](https://autonomy.work/portfolio/uk4dwpilotresults/))
+  _訂正 2026-10-27: 1 年後の追跡 (Autonomy, 2024-02) を追加。少なくとも 54 社 (89%) が継続、31 社 (51%) が恒久化 (<https://autonomy.work/portfolio/making-it-stick/>)_
 
 ## OSS とコミュニティ
 

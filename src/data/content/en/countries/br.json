@@ -175,13 +175,18 @@
       },
       {
         "id": "br-work-3",
-        "text": "Brasscom (2021) estimated demand for 797,000 tech professionals over 2021-25. With about 53,000 graduates a year from relevant programs, that implies a shortfall of about 106,000 a year.",
+        "text": "Brasscom (2021) estimated demand for 797,000 tech professionals over 2021-25. Its 2025 report counts demand growth of 665,000 (2019-24) against supply growth of 465,000 (2018-23), a 30.2% mismatch. About 106,000 students graduated from relevant programs in 2023.",
         "confidence": "medium",
         "sources": [
           {
             "title": "Brasscom: Estudo aponta demanda de 797 mil profissionais de tecnologia até 2025",
             "url": "https://brasscom.org.br/estudo-da-brasscom-aponta-demanda-de-797-mil-profissionais-de-tecnologia-ate-2025/",
             "year": 2021
+          },
+          {
+            "title": "Brasscom: Relatório Perspectivas do Mercado de Trabalho do Macrossetor TIC (2025)",
+            "url": "https://brasscom.org.br/wp-content/uploads/2025/02/Relatorio-Perspectivas-do-Mercado-de-Trabalho.pdf",
+            "year": 2025
           }
         ]
       },

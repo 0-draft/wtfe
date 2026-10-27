@@ -260,13 +260,18 @@
       },
       {
         "id": "gb-work-4",
-        "text": "In a 2022 four-day week pilot (61 companies, about 2,900 employees), 56 companies continued afterward and 71% of employees reported less burnout. Most participants were small companies, and the pilot was not limited to tech.",
+        "text": "In a 2022 four-day week pilot (61 companies, about 2,900 employees), 56 companies continued afterward and 71% of employees reported less burnout. A year later at least 54 (89%) were still running it and 31 had made it permanent. Most participants were small companies, and the pilot was not limited to tech.",
         "confidence": "medium",
         "sources": [
           {
             "title": "Autonomy: The results are in: the UK's four-day week pilot",
             "url": "https://autonomy.work/portfolio/uk4dwpilotresults/",
             "year": 2023
+          },
+          {
+            "title": "Autonomy: Making It Stick — The UK Four-Day Week Pilot One Year On",
+            "url": "https://autonomy.work/portfolio/making-it-stick/",
+            "year": 2024
           }
         ]
       }
