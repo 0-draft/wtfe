@@ -217,13 +217,13 @@
       },
       {
         "id": "us-work-4",
-        "text": "In the Stack Overflow Developer Survey 2025, 45% of US respondents work fully remote, the highest share among the top responding countries. Median salaries were $200k for engineering managers, $175k for back-end developers, and $138k for full-stack developers.",
+        "text": "In the Stack Overflow Developer Survey 2026, 47.9% of US respondents (n=3,940) work fully remote, the highest share among the five countries the survey breaks out. Median salaries were $212,500 for engineering managers, $180,000 for back-end developers, and $140,000 for full-stack developers.",
         "confidence": "strong",
         "sources": [
           {
-            "title": "Stack Overflow Developer Survey 2025: Work",
-            "url": "https://survey.stackoverflow.co/2025/work",
-            "year": 2025
+            "title": "Stack Overflow Developer Survey 2026: Work data",
+            "url": "https://survey.stackoverflow.co/2026/work/data",
+            "year": 2026
           }
         ]
       },

@@ -321,7 +321,7 @@
       },
       {
         "id": "fr-oss-5",
-        "text": "Octoverse 2024 によると、GitHub 上のフランスの開発者は 280 万人を超え、前年比 20% 増だった。Stack Overflow Developer Survey 2025 の回答者数ではフランスは 5 位 (1,408 人、4%) である。",
+        "text": "Octoverse 2024 によると、GitHub 上のフランスの開発者は 280 万人を超え、前年比 20% 増だった。Stack Overflow Developer Survey 2026 の回答者数ではフランスは 6 位 (794 人、3.7%) である。",
         "confidence": "strong",
         "sources": [
           {
@@ -330,9 +330,9 @@
             "year": 2024
           },
           {
-            "title": "Stack Overflow Developer Survey 2025 — Developers",
-            "url": "https://survey.stackoverflow.co/2025/developers",
-            "year": 2025
+            "title": "Stack Overflow Developer Survey 2026: Work data",
+            "url": "https://survey.stackoverflow.co/2026/work/data",
+            "year": 2026
           }
         ]
       }

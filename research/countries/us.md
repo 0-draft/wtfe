@@ -48,6 +48,7 @@ _このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[
 - Montana を除く全州で at-will employment がデフォルト。違法な理由でなければ、雇用主も従業員もいつでも雇用関係を終了できる。layoff が速い制度的な背景のひとつ [強] ([source](https://www.usa.gov/termination-for-employers))
 - layoffs.fyi の集計では、テック業界の layoff は 2023 年に約 26 万人、2024 年に約 15 万人（549 社）。トラッカーによって数値が倍近く違うので注意 [中] ([source](https://techcrunch.com/2024/12/31/a-comprehensive-archive-of-2024-tech-layoffs/))
 - Stack Overflow 2025 では、フルリモートの割合が US 45% で、上位回答国の中で最も高い。給与中央値は EM $200k、back-end $175k、full-stack $138k（自己選択サンプル）[強] ([source](https://survey.stackoverflow.co/2025/work))
+  _訂正 2026-10-27: Stack Overflow 2026 に差し替え。「フルリモート 45%、EM $200k、back-end $175k、full-stack $138k」→「47.9% (n=3,940、国別集計のある 5 か国で最高)、EM $212,500、back-end $180,000、full-stack $140,000」。2026 版は /work/data にまとまっている_
 - マネージャーにならない IC トラックの Staff+ 職が制度として確立している。Will Larson は Tech Lead / Architect / Solver / Right Hand の 4 類型を示した（2021）[中] ([source](https://staffeng.com/book/))
 
 ## OSS とコミュニティ
@@ -78,6 +79,7 @@ _このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[
 - [clearlycultural: Power Distance](https://clearlycultural.com/geert-hofstede-cultural-dimensions/power-distance-index/)
 - [cyborlink: Hofstede](https://www.cyborlink.com/besite/hofstede.htm)
 - [Stack Overflow Developer Survey 2025: Work](https://survey.stackoverflow.co/2025/work)
+- [Stack Overflow Developer Survey 2026: Work data](https://survey.stackoverflow.co/2026/work/data)
 - [GitHub Octoverse 2025](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/)
 - [BLS Employee Tenure 2024](https://www.bls.gov/news.release/archives/tenure_09262024.htm)
 - [USA.gov: Termination guidance for employers](https://www.usa.gov/termination-for-employers)

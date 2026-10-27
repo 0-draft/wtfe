@@ -237,13 +237,13 @@
       },
       {
         "id": "gb-work-2",
-        "text": "Stack Overflow Developer Survey 2025 では、英国の回答者のフルリモート比率は 31.9%、柔軟寄りのハイブリッドは 25.8% だった。給与の中央値は Engineering Manager が $136,141、back-end が $108,913 で、米国の 6〜7 割程度である。",
+        "text": "Stack Overflow Developer Survey 2026 では、英国の回答者 (n=1,175) のフルリモート比率は 37.5%、柔軟寄りのハイブリッドは 21.7% だった。給与の中央値は Engineering Manager が $136,322、back-end が $114,378 で、米国の 6 割余り (62〜64%) である。",
         "confidence": "strong",
         "sources": [
           {
-            "title": "Stack Overflow Developer Survey 2025: Work",
-            "url": "https://survey.stackoverflow.co/2025/work",
-            "year": 2025
+            "title": "Stack Overflow Developer Survey 2026: Work data",
+            "url": "https://survey.stackoverflow.co/2026/work/data",
+            "year": 2026
           }
         ]
       },

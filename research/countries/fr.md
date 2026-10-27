@@ -58,6 +58,7 @@ Hofstede (Culture Factor 現行値): PDI 68 / IDV 74 / MAS 43 / UAI 86 / LTO 60 
   _訂正 2026-10-25: 「ドイツが共同出資」→「独仏の共同イニシアチブ」。出典 (suitenumerique/docs) の表現に合わせ、出資の有無は断定しない_
 - 代表的プロジェクト: VLC は 1996 年に École Centrale Paris の学生プロジェクトとして始まり、2001 年に GPL 化、2009 年以降は独立 NPO が運営。scikit-learn は Inria が 2010 年から資金と人を出し、2023 年に spin-off の Probabl へ移行 [強] ([source](https://www.videolan.org/videolan/), [source](https://jbkempf.com/blog/15-years-of-VLC/), [source](https://scikit-learn.org/stable/about.html))
 - GitHub の開発者アカウント数: Octoverse 2024 で 280 万超 (前年比 +20%)。Stack Overflow 2025 の回答数は 5 位 (1,408 人、4%) [強] ([source](https://github.blog/news-insights/octoverse/octoverse-2024/), [source](https://survey.stackoverflow.co/2025/developers))
+  _訂正 2026-10-27: Stack Overflow 2026 に差し替え。「5 位 (1,408 人、4%)」→「6 位 (794 人、3.7%)」。カナダ (851 人) が 5 位に入った_
 
 ## 一言で
 
@@ -105,3 +106,4 @@ Hofstede (Culture Factor 現行値): PDI 68 / IDV 74 / MAS 43 / UAI 86 / LTO 60 
 - [J-B Kempf 15 years of VLC](https://jbkempf.com/blog/15-years-of-VLC/)
 - [GitHub Octoverse 2024](https://github.blog/news-insights/octoverse/octoverse-2024/)
 - [Stack Overflow Survey 2025 Developers](https://survey.stackoverflow.co/2025/developers)
+- [Stack Overflow Developer Survey 2026: Work data](https://survey.stackoverflow.co/2026/work/data)

@@ -237,13 +237,13 @@
       },
       {
         "id": "gb-work-2",
-        "text": "In the Stack Overflow Developer Survey 2025, 31.9% of UK respondents worked fully remote and 25.8% hybrid leaning flexible. Median salaries were $136,141 for engineering managers and $108,913 for back-end developers, about 60 to 70% of US levels.",
+        "text": "In the Stack Overflow Developer Survey 2026, 37.5% of UK respondents (n=1,175) worked fully remote and 21.7% hybrid leaning flexible. Median salaries were $136,322 for engineering managers and $114,378 for back-end developers, about 62 to 64% of US levels.",
         "confidence": "strong",
         "sources": [
           {
-            "title": "Stack Overflow Developer Survey 2025: Work",
-            "url": "https://survey.stackoverflow.co/2025/work",
-            "year": 2025
+            "title": "Stack Overflow Developer Survey 2026: Work data",
+            "url": "https://survey.stackoverflow.co/2026/work/data",
+            "year": 2026
           }
         ]
       },

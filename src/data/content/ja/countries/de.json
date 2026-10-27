@@ -318,13 +318,13 @@
       },
       {
         "id": "de-oss-2",
-        "text": "Stack Overflow Developer Survey 2025 の回答者数は、ドイツが米国に次ぐ 2 位 (3,022 人、8.6%) だった。回答の多さを示す指標で、人口あたりの開発者数ではない。",
+        "text": "Stack Overflow Developer Survey 2026 の回答者数は、ドイツが米国に次ぐ 2 位 (1,983 人、国を答えた 21,370 人の 9.3%) だった。回答の多さを示す指標で、人口あたりの開発者数ではない。",
         "confidence": "strong",
         "sources": [
           {
-            "title": "Stack Overflow Developer Survey 2025 — Developers",
-            "url": "https://survey.stackoverflow.co/2025/developers",
-            "year": 2025
+            "title": "Stack Overflow Developer Survey 2026: Work data",
+            "url": "https://survey.stackoverflow.co/2026/work/data",
+            "year": 2026
           }
         ]
       },
