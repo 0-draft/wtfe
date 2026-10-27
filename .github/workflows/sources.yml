@@ -21,5 +21,6 @@ jobs:
       - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
           # Paywalled and bot-hostile publishers answer 403/429 to CI runners; those are not dead links.
-          args: --no-progress --accept 200..=299,403,429 --max-concurrency 4 --timeout 30 'src/data/content/**/*.json' 'research/**/*.md'
+          # Slow academic and personal hosts time out from runners now and then, so allow 60s and retry.
+          args: --no-progress --accept 200..=299,403,429 --max-concurrency 4 --timeout 60 --max-retries 4 --retry-wait-time 10 'src/data/content/**/*.json' 'research/**/*.md'
           fail: true
