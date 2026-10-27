@@ -62,7 +62,8 @@ Culture Factor 比較ツール（2026-10 取得）。PDI / IDV / MAS / UAI / LTO
 - 育休: スウェーデンは 480 日で、うち各親に 90 日を割り当て。ノルウェーは 100% 支給なら 49 週で、父親枠 15 週。フィンランドは 2022 年改革で各親 160 日。デンマークも 2022 年に父親枠を導入したが、週数は資料によって 8・9・11 週と食い違う [中] ([source](https://pub.norden.org/temanord2025-547/parental-leave-in-finland.html)), ([source](https://www.nordiclabourjournal.org/work-and-wage-levels-are-obstacles-to-fathers-leave/))
 - リモート: フィンランドは「普段から在宅勤務」の割合が 2025 年に 21.1%。この数字は Eurostat の lfsa_ehomp を集計した二次サイト経由 [中] ([source](https://apiardata.com/statistics/fi-usually-works-from-home-rate/))
   _訂正 2026-10-25: 「約 20%、EU 最高水準（EU 平均約 9%）」→「2025 年に 21.1%」。出典の値は 21.1%（2025 年）で、EU 平均約 9% と「最高水準」はこの出典では確認できない_
-- デンマークのフレキシキュリティ: 解雇しやすい代わりに手厚い失業給付と積極的な労働市場政策がある。「仕事（job）の保障」はないが「雇用（employment）の保障」はある、という考え方。IMF（2006）は、手厚い給付が構造的失業を押し上げるという副作用も指摘している [中] ([source](https://denmark.dk/society-and-business/the-danish-labour-market/)), ([source](https://www.elibrary.imf.org/view/journals/023/0035/020/article-A009-en.xml?rskey=aDCGFc&result=5))
+- デンマークのフレキシキュリティ: 解雇しやすい代わりに手厚い失業給付と積極的な労働市場政策がある。「仕事（job）の保障」はないが「雇用（employment）の保障」はある、という考え方。IMF（2006）は、手厚い給付が構造的失業を押し上げるという副作用も指摘している [中] ([source](https://denmark.dk/society-and-business/the-danish-labour-market/)), ([source](https://www.elibrary.imf.org/view/journals/023/0035/020/article-A009-en.xml))
+  _訂正 2026-10-27: IMF eLibrary の URL から検索由来のクエリ (`rskey`, `result`) を外した。本文の「generous unemployment benefits increase structural unemployment」はブラウザで確認した_
 
 ## OSS とコミュニティ
 
@@ -101,7 +102,7 @@ Culture Factor 比較ツール（2026-10 取得）。PDI / IDV / MAS / UAI / LTO
 - [Nordic Labour Journal – fathers' leave](https://www.nordiclabourjournal.org/work-and-wage-levels-are-obstacles-to-fathers-leave/)
 - [Apiar Data – Finland WFH rate](https://apiardata.com/statistics/fi-usually-works-from-home-rate/)
 - [denmark.dk – Danish labour market](https://denmark.dk/society-and-business/the-danish-labour-market/)
-- [IMF 2006 – Danish flexicurity](https://www.elibrary.imf.org/view/journals/023/0035/020/article-A009-en.xml?rskey=aDCGFc&result=5)
+- [IMF 2006 – Danish flexicurity](https://www.elibrary.imf.org/view/journals/023/0035/020/article-A009-en.xml)
 - [Wikipedia – Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel)
 - [Wikipedia – MySQL AB](https://en.wikipedia.org/wiki/MySQL_AB)
 - [Armstrong 2007 – A History of Erlang (HOPL III)](https://lfe.io/papers/[2007]%20Armstrong%20-%20HOPL%20III%20A%20History%20of%20Erlang.pdf)
