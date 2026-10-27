@@ -12,8 +12,10 @@ _このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[
 ## 設計と品質
 
 - Google ではコードを書く前に「比較的インフォーマルな」design doc を書く文化があり、重視するのは網羅的な仕様ではなく、検討したトレードオフと代替案の記録（Malte Ubl, 2020）[中] ([source](https://www.industrialempathy.com/posts/design-docs-at-google/))
+  _訂正 2026-10-27: Software Engineering at Google 10 章「Most teams at Google require an approved design document before starting work on any major project」を出典に追加し [強] に上げた。「くだけた形式」は Ubl の解説のまま_
 - design doc は「必要な分だけ長く、できるだけ短く」が理想とされ、重いウォーターフォール型の仕様書とは別物 [中] ([source](https://www.industrialempathy.com/posts/design-doc-a-design-doc/))
 - Meyer の Persuading 軸で US は applications-first（結論と事例から入る）。「why より how」を好むので、理論的な設計の正当化よりも動くものや具体例で説得する傾向につながる（推論）[中] ([source](https://www.theinvestorspodcast.com/billionaire-book-club-executive-summary/the-culture-map/))
+  _訂正 2026-10-27: Meyer の Team Mapping Tool Report「Americans and British managers typically prefer an inductive style」に出典を変え、要約サイト由来の後半を削った (us-design-3)_
 - 国内差：上記の「design doc を書いて iterate」は大手テック企業の例で、規制業種や大企業 IT 部門に同じことが言えるデータは見つけられなかった [弱] (データなし)
 
 ## 失敗とリスク
@@ -38,6 +40,7 @@ _このノートは調査時点の記録。各記述の信頼度（[強]/[中]/[
 ## コミュニケーションとドキュメント
 
 - Meyer の Communicating 軸で、US は最も low-context な極にいる（明示的で、繰り返しや要約を好む）[中] ([source](https://lifeclub.org/books/the-culture-map-erin-meyer-review-summary))
+  _訂正 2026-10-27: Meyer 本人の Team Mapping Tool Report で確認。最も低文脈な側の例は米・独・蘭の 3 か国で、米国だけが極ではない。記述を直し、出典を Meyer のページに変えた_
 - Amazon では「PowerPoint は使わない」。6 ページのナラティブ memo を会議の冒頭に全員で黙読し、memo に著者名は書かずチームのものとして扱う（Bezos 2017 年株主書簡）[強] ([source](https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders))
 - 起源は 2004 年の Bezos のメールで、「良い 4 ページの memo は 20 ページのスライドより難しい。ナラティブ構造が思考を強制するから」と書いている [中] ([source](https://www.cnbc.com/2018/04/23/what-jeff-bezos-learned-from-requiring-6-page-memos-at-amazon.html))
 - Stripe も memo 文化で、スライドはほぼ使わず、会議冒頭に黙読してドキュメントにコメントする。ただし創業者は Irish なので、US 文化というより US テック界の文化と見るべき [中] ([source](https://slab.com/blog/stripe-writing-culture/))

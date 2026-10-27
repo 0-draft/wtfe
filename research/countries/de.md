@@ -40,6 +40,7 @@ Hofstede (Culture Factor 現行値): PDI 35 / IDV 79 / MAS 66 / UAI 65 / LTO 57 
 - ASPICE の SUP.10 は、変更要求を関連成果物に紐づけて事前に分析することを求める。規制産業では文書化が「文化」というより契約要件になっている [強] ([source](https://vda-qmc.de/wp-content/uploads/2023/12/Automotive-SPICE-PAM-v40.pdf))
 - Berlin のスタートアップは英語が主な業務言語。外国籍社員の比率は 30〜49% と出典によってばらつき、二次情報も自己矛盾しているので要検証 [弱] ([source](https://www.startuprad.io/post/the-rise-of-berlin-startups-germany-s-startup-powerhouse))
   _訂正 2026-10-26: startuprad.io の記事を開いて確認した。英語が主な業務言語なのは「55.8% 超」、外国出身の社員比率は同じ記事の中で 30.8% と 42.3% が併記されている。49% はこの記事にないので、本文をこの 2 つの値に直した_
+  _訂正 2026-10-27: Deutscher Startup Monitor 2024 の PDF で確認。2 つの値は矛盾ではなく全国と Berlin の違い。全国: 外国出身 30.8%・英語 34.9%、Berlin: 42.3%・55.8%。出典を DSM に変え [強] に上げた_
 
 ## Work style & careers
 

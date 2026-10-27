@@ -40,6 +40,7 @@ Hofstede (The Culture Factor 現行値): PDI 77 / IDV 24 / MAS 56 / UAI 40 / LTO
 - 英語は業務言語として普及しているが、EF EPI 2024 では 116 カ国中 69 位。「英語ネイティブ並み」という前提は危うい [中] ([source](https://www.nippon.com/en/japan-data/h02199/))
   _訂正 2026-10-27: EF EPI 2025 に差し替え。「116 カ国中 69 位」→「123 カ国中 74 位 (484、世界平均 488)」。出典を EF の国別ページに変えた_
 - Meyer の Trusting 尺度では relationship-based 側。仕事の前に、人間関係による信頼 (affective trust) が要る [中] ([source](https://numinoscoaching.com/erin-meyer-culture-map-explained))
+  _訂正 2026-10-27: 出典を Meyer の Team Mapping Tool Report に変えた (Brazil, Japan, India が関係ベースの例)_
 
 ## 働き方とキャリア
 

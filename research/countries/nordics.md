@@ -46,8 +46,10 @@ Culture Factor 比較ツール（2026-10 取得）。PDI / IDV / MAS / UAI / LTO
 - 権力格差（PDI）は全般に低い（DK 18、SE・NO 31、FI 33）。Meyer の Leading スケールでもデンマークとスウェーデンは egalitarian の典型として挙げられている [強] ([source](https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams))
 - 域内の差もはっきりしている。Lämsä（2010, Review of International Comparative Management）は、フィンランドの管理スタイルを「Management by perkele」（速く権威的）、スウェーデンを「Management by ack herreguuden」（合意志向で遅め）と対比した。GLOBE データを使った研究でも「スウェーデン人の合意形成は遅い」という見方が出ている [中] ([source](https://www.rmci.ase.ro/no11vol1/Vol11_No1_Article13.pdf))
 - スウェーデンには「förankring」（事前の根回しで合意を固めること）という慣行がある。決定までは遅いが、実行段階での抵抗が減るという説明が一般的。ただしどれだけ遅いかを定量化した研究は見つからなかった [弱] ([source](https://johnalexandersweden.com/pdf/CONSENSUS.pdf))
+  _訂正 2026-10-27: VINNOVA VR 2009:33 (中国人管理職から見たスウェーデンの経営) を追加。早期の情報共有と参加で「buy-in」を得るという記述。förankring という語自体は Alexander の資料のまま。[弱]→[中]_
 - 「Spotify モデル」への批判: Jeremiah Lee（元 Spotify PM、2020-04）は、このモデルが Spotify 社内でも完全には実装されなかった理想像だと書いた。チームごとに働き方を作り直すことになり、エンジニアリングの遂行に責任を持つ人がいなかった。元 Spotify の agile コーチ Joakim Sundén も「当時から part ambition, part approximation だった」と述べている [中] ([source](https://www.jeremiahlee.com/posts/failed-squad-goals/))
   _訂正 2026-10-25: Sundén の肩書き「共著者側」→「元 Spotify の agile コーチ」。Spotify モデルの資料の共著者は Kniberg と Ivarsson で、Sundén は含まれない_
+  _訂正 2026-10-27: Sundén の発言を記録したトーク・ノート (Thinking Labs) と Spotify 自身のブログ (2014「journey in progress」) を出典に追加。[弱]→[中]_
 - Jante の掟（Sandemose, 1933）は平等主義の象徴とされる一方、起業を阻むとも言われる。ただしスタートアップへの影響を実証した研究は見つからず、論評とインタビューが中心 [弱] ([source](https://thenextweb.com/news/1110732))
 
 ## コミュニケーションとドキュメント

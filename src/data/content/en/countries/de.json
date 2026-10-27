@@ -211,13 +211,13 @@
       },
       {
         "id": "de-communication-3",
-        "text": "Citing the Deutscher Startup Monitor 2024, startuprad.io reports that English is the main working language at over 55.8% of Berlin startups. For the share of employees from abroad, the same article gives two figures, 30.8% and 42.3%.",
-        "confidence": "weak",
+        "text": "According to the German Startup Monitor 2024, 55.8% of Berlin startups use English as their working language and 42.3% of their staff come from abroad. Nationally the figures are 34.9% and 30.8%.",
+        "confidence": "strong",
         "sources": [
           {
-            "title": "startuprad.io — The rise of Berlin startups",
-            "url": "https://www.startuprad.io/post/the-rise-of-berlin-startups-germany-s-startup-powerhouse",
-            "year": 2026
+            "title": "Startup Association: German Startup Monitor 2024",
+            "url": "https://startupverband.de/fileadmin/startupverband/mediaarchiv/research/dsm/Deutscher_Startup_Monitor_2024.pdf",
+            "year": 2024
           }
         ]
       }

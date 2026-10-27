@@ -188,12 +188,12 @@
       },
       {
         "id": "in-communication-2",
-        "text": "Meyer の Trusting 尺度の解説では、インドは関係ベースの側に置かれ、仕事の前に人間関係による信頼づくりが要るとされる。",
-        "confidence": "weak",
+        "text": "Meyer は Trusting 尺度で、インドをブラジル・日本と並ぶ関係ベースの社会の例に挙げ、信頼は個人的・感情的なつながりを積み重ねて生まれるとしている。",
+        "confidence": "medium",
         "sources": [
           {
-            "title": "The Erin Meyer Culture Map Explained",
-            "url": "https://numinoscoaching.com/erin-meyer-culture-map-explained"
+            "title": "Erin Meyer: Team Mapping Tool Report",
+            "url": "https://erinmeyer.com/team-culture-mapping-report/"
           }
         ]
       }

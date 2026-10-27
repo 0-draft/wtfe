@@ -211,13 +211,13 @@
       },
       {
         "id": "de-communication-3",
-        "text": "startuprad.io は Deutscher Startup Monitor 2024 を引き、Berlin のスタートアップの 55.8% 超で英語が主な業務言語だとしている。外国出身の社員の比率は、同じ記事の中で 30.8% と 42.3% の 2 つの値が出てくる。",
-        "confidence": "weak",
+        "text": "Deutscher Startup Monitor 2024 によると、Berlin のスタートアップでは 55.8% が英語を業務言語とし、外国出身の社員の比率は 42.3% だった。全国ではそれぞれ 34.9% と 30.8% である。",
+        "confidence": "strong",
         "sources": [
           {
-            "title": "startuprad.io — The rise of Berlin startups",
-            "url": "https://www.startuprad.io/post/the-rise-of-berlin-startups-germany-s-startup-powerhouse",
-            "year": 2026
+            "title": "Startup-Verband: Deutscher Startup Monitor 2024",
+            "url": "https://startupverband.de/fileadmin/startupverband/mediaarchiv/research/dsm/Deutscher_Startup_Monitor_2024.pdf",
+            "year": 2024
           }
         ]
       }

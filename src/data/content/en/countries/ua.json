@@ -51,8 +51,13 @@
       {
         "id": "ua-failure-2",
         "text": "IT companies are reported to have handled blackouts by opening coworking spaces with generators and Starlink and by subsidizing employees' backup power.",
-        "confidence": "weak",
+        "confidence": "medium",
         "sources": [
+          {
+            "title": "DOU: How IT specialists and companies are preparing for possible blackouts",
+            "url": "https://dou.ua/lenta/articles/preparation-for-blackouts/",
+            "year": 2023
+          },
           {
             "title": "IT-Dimension: Ukraine IT Industry During Blackouts",
             "url": "https://it-dimension.com/blog/ukraine-it-blackouts/"
@@ -78,12 +83,12 @@
       },
       {
         "id": "ua-failure-4",
-        "text": "An article by the outsourcing firm Alcor, citing DOU surveys, says 38% of IT workers feel burned out. Thirty percent of IT specialists serving in the army receive payments from their IT employer.",
-        "confidence": "weak",
+        "text": "DOU's 2026 survey found that 38% of IT workers feel burned out by their work. Of IT specialists serving in the military, only 7% receive their full salary from IT companies, and another 28% have their jobs held for them without pay.",
+        "confidence": "strong",
         "sources": [
           {
-            "title": "Alcor: IT and Software Outsourcing to Ukraine",
-            "url": "https://alcor.com/outsourcing-to-ukraine/",
+            "title": "DOU: How Ukrainian IT changed in a year — IT specialist portrait 2026",
+            "url": "https://dou.ua/lenta/articles/portrait-2026/",
             "year": 2026
           }
         ]
@@ -148,12 +153,12 @@
     "communication": [
       {
         "id": "ua-communication-1",
-        "text": "An Alcor article citing DOU surveys says 66% of IT workers work fully remotely.",
-        "confidence": "weak",
+        "text": "DOU's 2026 survey found that 66% of IT workers work fully remotely.",
+        "confidence": "strong",
         "sources": [
           {
-            "title": "Alcor: IT and Software Outsourcing to Ukraine",
-            "url": "https://alcor.com/outsourcing-to-ukraine/",
+            "title": "DOU: How Ukrainian IT changed in a year — IT specialist portrait 2026",
+            "url": "https://dou.ua/lenta/articles/portrait-2026/",
             "year": 2026
           }
         ]
