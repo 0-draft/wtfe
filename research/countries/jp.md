@@ -19,6 +19,7 @@ Hofstede（The Culture Factor 現行値）: PDI 54 / IDV 62 / MAS 95 / UAI 92 / 
 - Hofstede の UAI 92 は世界でも最上位級の不確実性回避で、MAS 95 も非常に高い [強] ([source](https://www.theculturefactor.com/country-comparison-tool?countries=japan%2Csouth+korea))
 - 反証として、Web 系では blameless な postmortem が定着している。メルカリは 2018 年の時点で「批判をせず原因究明に集中するためにコードを主語として話す」方針を公開し、振り返りには職種を問わず全員で参加する運用だった（2018 年の記事なので古い）[中] ([source](https://engineering.mercari.com/blog/entry/2018-04-10-090453/))
 - メルカリでは postmortem を書けることがエンジニアラダー（評価基準）に入っている、とイベントの LT で報告された [弱] ([source](https://togetter.com/li/2073603?page=4))
+  _訂正 2026-10-27: メルカリ公開のエンジニアリングラダー (jp/MG3.md) を確認。ポストモーテムは評価項目そのものではなく、Professionalism の情報共有の「例」として挙がっている。記述を直し、出典をラダー本体に変えて [強] に上げた_
 
 ## Feedback & code review
 
@@ -26,6 +27,7 @@ Hofstede（The Culture Factor 現行値）: PDI 54 / IDV 62 / MAS 95 / UAI 92 / 
 - 日本人開発者の体験談では、「なんか違和感がある」がそれだけでレビューコメントとして成立し、規約は明文化されないままレビューで暗黙に強制されるという。個人の経験談 [弱] ([source](https://dev.to/yun_bow/why-high-context-culture-makes-ai-coding-harder-a-japanese-developers-perspective-123a))
 - 反証として、ネット上には「マサカリを投げる」（鋭く強い技術的指摘）というスラングと文化がある。オンラインでは直接的で辛辣な指摘も珍しくない。ただしこれを日本特有と見るかについては異論もある [弱] ([source](https://bootcamp.fjord.jp/articles/70)) ([source](https://anond.hatelabo.jp/20200623222321))
 - must / imo / nits といったコメントタグで指摘の強さを明示し、心理的安全性を保つ実践も広がっている [弱] ([source](https://build.yoku.co.jp/articles/lbh02jlffz))
+  _訂正 2026-10-27: 組織自身の公開資料に差し替え: ハコベル (Zenn, 2023) と フューチャーのコードレビューガイドライン (MUST/IMO/NITS)。[弱]→[強]_
 
 ## Hierarchy & decision-making
 
@@ -36,6 +38,7 @@ Hofstede（The Culture Factor 現行値）: PDI 54 / IDV 62 / MAS 95 / UAI 92 / 
 ## Communication & documentation
 
 - Meyer の Communicating 尺度で、日本は最も高コンテクストな国の一つ（Korea、Indonesia と並ぶ）。「空気を読む」がキーワード [中] ([source](https://readingraphics.com/book-summary-the-culture-map-erin-meyer/)) ([source](https://www.deployyourself.com/book-review/the-culture-map-erin-meyer-eight-scales/))
+  _訂正 2026-10-27: Meyer 本人の資料では高文脈の例は「Japan, India, and France」。Korea・Indonesia と並ぶという点は確認できず削った。「空気を読む」は erinmeyer.com/book/ で確認_
 - DX 白書 2023 で「社内の風通しがよく、情報共有がうまくいっている」と答えた企業は日本 17.3%、米国 66.8% [中]（二次引用） ([source](https://dx.genetec.co.jp/column/0025-dx/))
 - 反証として、Meyer は日本を時間感覚が linear（時間厳守、アジェンダに従う）側に置いている。その点では「ドイツ型」と言える [中] ([source](https://accent-language.com/en/blog/erin-meyers-culture-map-japan))
 - 外向きの文書発信は活発。Qiita は 2025 年 3 月に会員 150 万人を超え、月間 UU は 800 万。2024 年には良質記事の数で Zenn が Qiita を逆転したという個人分析もある [中] ([source](https://corp.qiita.com/releases/2025/04/one-million-five-hundred-thousand/)) ([source](https://zenn.dev/mima_ita/articles/f78dcbef2a81d3))

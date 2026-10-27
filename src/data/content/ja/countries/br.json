@@ -126,12 +126,12 @@
     "communication": [
       {
         "id": "br-communication-1",
-        "text": "Meyer の Culture Map の要約によれば、ブラジルは信頼を個人的な関係を通じて築く側にあり、中国やサウジアラビアと近い。会議冒頭の雑談も仕事の一部とされる。",
-        "confidence": "weak",
+        "text": "Meyer は Trusting 尺度で、ブラジルを日本・インドと並ぶ関係ベースの社会の例に挙げ、信頼は個人的・感情的なつながりを積み重ねて生まれるとしている。",
+        "confidence": "medium",
         "sources": [
           {
-            "title": "Mindli: The Culture Map study guide",
-            "url": "https://mind.li/explore/37057-the-culture-map-by-erin-meyer-study-analysis-guide"
+            "title": "Erin Meyer: Team Mapping Tool Report",
+            "url": "https://erinmeyer.com/team-culture-mapping-report/"
           }
         ]
       },
@@ -163,12 +163,12 @@
       },
       {
         "id": "br-work-2",
-        "text": "2026 年の Código Fonte TV 給与調査（回答 17,046 人、自己選択サンプル）では、CLT の平均報酬が前年比 14.4% 増えたのに対し、PJ は 0.7% 増だった。数値は Talenlio の要約による。",
-        "confidence": "weak",
+        "text": "2026 年の Código Fonte TV 給与調査（公開の匿名フォーム、回答 17,046 人）では、CLT の平均報酬は R$10,165.98（前回 R$8,886.72）、PJ は R$13,436.23（前回 R$13,344.77）だった。公表された平均から計算すると、CLT は 14.4% 増、PJ は 0.7% 増になる。",
+        "confidence": "strong",
         "sources": [
           {
-            "title": "Talenlio: Brazil Tech Salary Guide 2026 (PJ vs CLT)",
-            "url": "https://talenlio.ai/blogs/brazil-tech-salary-guide-2026",
+            "title": "Código Fonte TV: Pesquisa Salarial de Programadores 2026",
+            "url": "https://pesquisa.codigofonte.com.br/2026",
             "year": 2026
           }
         ]
@@ -199,6 +199,18 @@
             "title": "Arc.dev: Latin American developers 2.2X their income via global remote work",
             "url": "https://arc.dev/talent-blog/remote-software-developer-salary-report-latin-america-2022/",
             "year": 2022
+          }
+        ]
+      },
+      {
+        "id": "br-work-5",
+        "text": "PJ 契約が実態として雇用かどうかの争いについて、STF（連邦最高裁）は 2025 年 4 月に Tema 1389 として一般的影響を認め、審理に入った。PJ 契約の適法性と立証責任の判断はまだ出ていない。",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "STF: Tema 1389 (ARE 1532603) — licitude da contratação de pessoa jurídica",
+            "url": "https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=1389",
+            "year": 2025
           }
         ]
       }

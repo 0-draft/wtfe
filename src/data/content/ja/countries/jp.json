@@ -86,13 +86,12 @@
       },
       {
         "id": "jp-failure-3",
-        "text": "メルカリではポストモーテムを書けることがエンジニアラダー（評価基準）に含まれている、とイベントの LT で報告された。",
-        "confidence": "weak",
+        "text": "メルカリが公開するエンジニアリングラダーでは、MG3 の Professionalism で情報共有の例としてインシデント時のポストモーテムが挙げられている。",
+        "confidence": "strong",
         "sources": [
           {
-            "title": "みんなで学ぶポストモーテム Lunch LT #LT_findy（Togetter）",
-            "url": "https://togetter.com/li/2073603?page=4",
-            "year": 2023
+            "title": "メルカリ エンジニアリングラダー: MG3",
+            "url": "https://github.com/mercari/mercari-engineering-ladder/blob/main/jp/MG3.md"
           }
         ]
       }
@@ -142,12 +141,17 @@
       },
       {
         "id": "jp-feedback-4",
-        "text": "must / imo / nits などのタグでコメントの強さを明示し、心理的安全性を保とうとするレビュー実践が紹介されている。",
-        "confidence": "weak",
+        "text": "ハコベルやフューチャーは、must / imo / nits などのラベルでレビューコメントの強さを明示する運用を公開している。ハコベルはこれでチームの心理的安全性と開発効率が上がったと報告している。",
+        "confidence": "strong",
         "sources": [
           {
-            "title": "コードレビューにおけるフィードバックの分類と心理的安全性の強化（BuildersIO）",
-            "url": "https://build.yoku.co.jp/articles/lbh02jlffz"
+            "title": "ハコベル: コードレビューにラベルを付けるだけでチームの心理的安全性を高めた話",
+            "url": "https://zenn.dev/hacobell_dev/articles/code-review-comment-prefix",
+            "year": 2023
+          },
+          {
+            "title": "フューチャー: コードレビューガイドライン",
+            "url": "https://future-architect.github.io/arch-guidelines/documents/forCodeReview/code_review.html"
           }
         ]
       }
@@ -201,16 +205,17 @@
     "communication": [
       {
         "id": "jp-communication-1",
-        "text": "Meyer の Communicating 尺度で、日本は韓国・インドネシアと並んで最も高文脈な側に置かれている。その象徴的な表現として「空気を読む」が挙げられている。",
-        "confidence": "weak",
+        "text": "Meyer は日本をインド・フランスと並ぶ高文脈文化の例に挙げ、日本のコミュニケーションを象徴する表現として「空気を読む」を紹介している。",
+        "confidence": "medium",
         "sources": [
           {
-            "title": "The Culture Map Summary (Readingraphics)",
-            "url": "https://readingraphics.com/book-summary-the-culture-map-erin-meyer/"
+            "title": "Erin Meyer: Team Mapping Tool Report",
+            "url": "https://erinmeyer.com/team-culture-mapping-report/"
           },
           {
-            "title": "The Culture Map by Erin Meyer (Deploy Yourself)",
-            "url": "https://www.deployyourself.com/book-review/the-culture-map-erin-meyer-eight-scales/"
+            "title": "Erin Meyer: The Culture Map (book)",
+            "url": "https://erinmeyer.com/book/",
+            "year": 2014
           }
         ]
       },

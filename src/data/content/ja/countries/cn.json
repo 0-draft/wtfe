@@ -85,17 +85,13 @@
     "feedback": [
       {
         "id": "cn-feedback-1",
-        "text": "Meyer の Culture Map の解説記事では、中国は高文脈の側に置かれ、否定的なフィードバックは間接的になりやすいとされる。面子を潰すおそれがある場面では特にそうだという。",
-        "confidence": "weak",
+        "text": "Meyer は、中国の管理職は同僚を公然と、あるいは人前で批判しないよう学ぶと書いている。",
+        "confidence": "medium",
         "sources": [
           {
-            "title": "The Erin Meyer Culture Map Explained",
-            "url": "https://numinoscoaching.com/erin-meyer-culture-map-explained"
-          },
-          {
-            "title": "DMB Shanghai: The Culture Map by Erin Meyer",
-            "url": "https://dmb-shanghai.com/language/culture-map-erin-meyer-cross-cultural-business-review/",
-            "year": 2026
+            "title": "Erin Meyer: How to Say \"This Is Crap\" in Different Cultures",
+            "url": "https://erinmeyer.com/how-to-say-this-is-crap-in-different-cultures/",
+            "year": 2014
           }
         ]
       },

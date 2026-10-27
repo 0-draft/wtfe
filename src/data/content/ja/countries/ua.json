@@ -51,8 +51,13 @@
       {
         "id": "ua-failure-2",
         "text": "IT 企業は、発電機や Starlink を備えたコワーキングの用意や、社員の電源確保の補助で停電に対応したと報告されている。",
-        "confidence": "weak",
+        "confidence": "medium",
         "sources": [
+          {
+            "title": "DOU: Як айтівці та компанії готуються до можливих блекаутів",
+            "url": "https://dou.ua/lenta/articles/preparation-for-blackouts/",
+            "year": 2023
+          },
           {
             "title": "IT-Dimension: Ukraine IT Industry During Blackouts",
             "url": "https://it-dimension.com/blog/ukraine-it-blackouts/"
@@ -78,12 +83,12 @@
       },
       {
         "id": "ua-failure-4",
-        "text": "DOU の調査を引く受託企業 Alcor の記事によれば、IT 従事者の 38% が仕事で燃え尽きを感じている。従軍中の IT 人材の 30% は IT 雇用主から支払いを受けている。",
-        "confidence": "weak",
+        "text": "DOU の 2026 年の調査では、IT 従事者の 38% が仕事で燃え尽きを感じている。従軍中の IT 人材のうち IT 企業から給与を全額受け取っているのは 7% で、28% は無給のまま職を確保されている。",
+        "confidence": "strong",
         "sources": [
           {
-            "title": "Alcor: IT and Software Outsourcing to Ukraine",
-            "url": "https://alcor.com/outsourcing-to-ukraine/",
+            "title": "DOU: Як змінилося українське ІТ за рік. Портрет айтівця 2026",
+            "url": "https://dou.ua/lenta/articles/portrait-2026/",
             "year": 2026
           }
         ]
@@ -148,12 +153,12 @@
     "communication": [
       {
         "id": "ua-communication-1",
-        "text": "DOU の調査を引く Alcor の記事によれば、IT 従事者の 66% が完全リモートで働いている。",
-        "confidence": "weak",
+        "text": "DOU の 2026 年の調査では、IT 従事者の 66% が完全リモートで働いている。",
+        "confidence": "strong",
         "sources": [
           {
-            "title": "Alcor: IT and Software Outsourcing to Ukraine",
-            "url": "https://alcor.com/outsourcing-to-ukraine/",
+            "title": "DOU: Як змінилося українське ІТ за рік. Портрет айтівця 2026",
+            "url": "https://dou.ua/lenta/articles/portrait-2026/",
             "year": 2026
           }
         ]

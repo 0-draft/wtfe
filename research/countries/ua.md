@@ -15,9 +15,11 @@ Hofstede (Culture Factor 現行値): PDI 92 / IDV 55 / MAS 27 / UAI 95 / LTO 51 
 
 - 戦時下の事業継続が常態化している。Deloitte/AmCham (2024 年 7〜8 月、経営層 139 人) の調査では、76% が停電の影響を受けつつ 88% が備えがあると回答し、94% が BCP を持つか策定中。発電機・Starlink 付きのコワーキングや、社員の電源確保の補助も広く行われた [中] ([source](https://www.deloitte.com/ua/en/about/press-room/deloitte-acc-winter-resilience-strategy.html), [source](https://it-dimension.com/blog/ukraine-it-blackouts/))
   _訂正 2026-10-25: 調査時期「2024/9」→「2024 年 7〜8 月」。出典では 9 月は公表時期で、実施は 7〜8 月 (n=139)_
+  _訂正 2026-10-27: ua-failure-2 の出典に DOU (2023-08-25)「Як айтівці та компанії готуються до можливих блекаутів」を追加 (発電機・Starlink・機器購入の補助)。[弱]→[中]_
 - IT サービス輸出は中央銀行の統計 (AIN.UA の報道) で 2022 年の $7.3B をピークに、2024 年は $6.4B (-4.2%) まで減った。崩壊ではなく緩やかな減少で、2025 年は約 $6.66B と小幅に回復 (dev.ua) [強] ([source](https://en.ain.ua/2025/01/31/ukraines-it-services-exports-decreased-42-to-64b-in-2024/), [source](https://dev.ua/en/news/yaki-10-krain-zabezpechyly-80-it-eksportu-ukrainy-u-2025-rotsi-1771584442))
   _訂正 2026-10-25: 「-4.3%」→「-4.2%」(出典 AIN.UA の見出しどおり)。2025 年の数字の出所を「Lviv IT Cluster、要検証」→「dev.ua」に修正 (引用元は dev.ua の記事)_
 - 代償もある。DOU 調査 (Alcor 経由) では燃え尽きが 38%。従軍中の IT 人材の 30% に雇用主から給与が支払われている [中] ([source](https://alcor.com/outsourcing-to-ukraine/))
+  _訂正 2026-10-27: DOU「Портрет айтівця 2026」を直接確認。燃え尽き 38% は正しい。「従軍中の 30% に雇用主から給与」→「IT 企業から全額支給は 7%、無給で職を確保が 28%」。出典を Alcor から DOU に変え [強] に上げた (<https://dou.ua/lenta/articles/portrait-2026/>)_
 
 ## Feedback & code review
 
@@ -33,6 +35,7 @@ Hofstede (Culture Factor 現行値): PDI 92 / IDV 55 / MAS 27 / UAI 95 / LTO 51 
 ## Communication & documentation
 
 - 完全リモートが 66% (DOU 調査、Alcor 経由)。海外クライアント・分散チームが前提なので、文書と非同期のやり取りが重くなる (後半は構造からの推論) [中] ([source](https://alcor.com/outsourcing-to-ukraine/))
+  _訂正 2026-10-27: DOU 2026 本文で「66% айтівців працюють повністю віддалено」を確認。出典を DOU に変え [強] に上げた_
 - N-iX (2019) は、初対面での形式張った態度は敬意の表れであり、欧州とは 1-2 時間の時差で重なりやすいとする。売り手側の記述 [弱] ([source](https://www.n-ix.com/ukrainian-software-developers-culture-communication-outsourcing/))
 
 ## Work style & careers

@@ -126,12 +126,12 @@
     "communication": [
       {
         "id": "br-communication-1",
-        "text": "A summary of Meyer's Culture Map places Brazil on the side where trust is built through personal relationships, close to China and Saudi Arabia. Small talk at the start of a meeting counts as part of the work.",
-        "confidence": "weak",
+        "text": "On the Trusting scale, Meyer names Brazil, along with Japan and India, as a relationship-based society where trust comes from building a personal, affective connection.",
+        "confidence": "medium",
         "sources": [
           {
-            "title": "Mindli: The Culture Map study guide",
-            "url": "https://mind.li/explore/37057-the-culture-map-by-erin-meyer-study-analysis-guide"
+            "title": "Erin Meyer: Team Mapping Tool Report",
+            "url": "https://erinmeyer.com/team-culture-mapping-report/"
           }
         ]
       },
@@ -163,12 +163,12 @@
       },
       {
         "id": "br-work-2",
-        "text": "In the 2026 Código Fonte TV salary survey (17,046 respondents, self-selected sample), average CLT pay rose 14.4% year on year, while PJ pay rose 0.7%. The figures come from Talenlio's summary.",
-        "confidence": "weak",
+        "text": "In Código Fonte TV's 2026 salary survey (an open anonymous form, 17,046 responses), average pay was R$10,165.98 under CLT (previous edition R$8,886.72) and R$13,436.23 under PJ (previously R$13,344.77). From those published averages, CLT pay rose 14.4% and PJ pay 0.7%.",
+        "confidence": "strong",
         "sources": [
           {
-            "title": "Talenlio: Brazil Tech Salary Guide 2026 (PJ vs CLT)",
-            "url": "https://talenlio.ai/blogs/brazil-tech-salary-guide-2026",
+            "title": "Código Fonte TV: Programmer Salary Survey 2026",
+            "url": "https://pesquisa.codigofonte.com.br/2026",
             "year": 2026
           }
         ]
@@ -199,6 +199,18 @@
             "title": "Arc.dev: Latin American developers 2.2X their income via global remote work",
             "url": "https://arc.dev/talent-blog/remote-software-developer-salary-report-latin-america-2022/",
             "year": 2022
+          }
+        ]
+      },
+      {
+        "id": "br-work-5",
+        "text": "In April 2025 Brazil's Supreme Court (STF) took up, as Theme 1389 with general repercussion, the question of when PJ contracts are disguised employment. It has not yet ruled on the lawfulness of PJ hiring or on who bears the burden of proof.",
+        "confidence": "strong",
+        "sources": [
+          {
+            "title": "Brazilian Supreme Court (STF): Theme 1389 (ARE 1532603) — lawfulness of hiring workers as legal entities",
+            "url": "https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=1389",
+            "year": 2025
           }
         ]
       }

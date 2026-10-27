@@ -85,17 +85,13 @@
     "feedback": [
       {
         "id": "cn-feedback-1",
-        "text": "Explainers of Meyer's Culture Map place China on the high-context side and say negative feedback tends to be indirect, especially when it could cost someone face.",
-        "confidence": "weak",
+        "text": "Meyer writes that Chinese managers learn never to criticize a colleague openly or in front of others.",
+        "confidence": "medium",
         "sources": [
           {
-            "title": "The Erin Meyer Culture Map Explained",
-            "url": "https://numinoscoaching.com/erin-meyer-culture-map-explained"
-          },
-          {
-            "title": "DMB Shanghai: The Culture Map by Erin Meyer",
-            "url": "https://dmb-shanghai.com/language/culture-map-erin-meyer-cross-cultural-business-review/",
-            "year": 2026
+            "title": "Erin Meyer: How to Say \"This Is Crap\" in Different Cultures",
+            "url": "https://erinmeyer.com/how-to-say-this-is-crap-in-different-cultures/",
+            "year": 2014
           }
         ]
       },

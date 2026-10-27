@@ -7,9 +7,14 @@
     "design": [
       {
         "id": "us-design-1",
-        "text": "Google ではコードを書く前に、比較的くだけた形式の design doc を書く。Malte Ubl の 2020 年の解説によると、重視するのは網羅的な仕様ではなく、検討したトレードオフと代替案の記録だ。",
-        "confidence": "weak",
+        "text": "Software Engineering at Google によると、Google の多くのチームは大きなプロジェクトの着手前に承認済みの design doc を求める。Malte Ubl の 2020 年の解説では、形式は比較的くだけていて、重視するのは網羅的な仕様ではなく、検討したトレードオフと代替案の記録だという。",
+        "confidence": "strong",
         "sources": [
+          {
+            "title": "Software Engineering at Google, ch. 10: Documentation",
+            "url": "https://abseil.io/resources/swe-book/html/ch10.html",
+            "year": 2020
+          },
           {
             "title": "Design Docs at Google (Malte Ubl)",
             "url": "https://www.industrialempathy.com/posts/design-docs-at-google/",
@@ -31,12 +36,12 @@
       },
       {
         "id": "us-design-3",
-        "text": "Meyer は米国を Persuading 軸の applications-first 側に置いている。要約サイトの解説では、結論や事例から入り、理論的な why より実践的な how を重視する傾向とされる。",
-        "confidence": "weak",
+        "text": "Meyer によると、米国と英国の管理職は一般に帰納的（applications-first）な説得のスタイルを好む。",
+        "confidence": "medium",
         "sources": [
           {
-            "title": "The Investor's Podcast: The Culture Map Summary",
-            "url": "https://www.theinvestorspodcast.com/billionaire-book-club-executive-summary/the-culture-map/"
+            "title": "Erin Meyer: Team Mapping Tool Report",
+            "url": "https://erinmeyer.com/team-culture-mapping-report/"
           }
         ]
       }
@@ -134,12 +139,12 @@
     "communication": [
       {
         "id": "us-communication-1",
-        "text": "Meyer は Communicating 軸で米国を最も低文脈な極に置いている。要約サイトの解説では、明示的に言い、要点を繰り返したり要約したりすることが好まれるとされる。",
-        "confidence": "weak",
+        "text": "Meyer は Communicating 尺度の最も低文脈な側に米国・ドイツ・オランダを挙げ、良いコミュニケーションは正確・簡潔・明示的で、繰り返しや文書化が好まれるとしている。",
+        "confidence": "medium",
         "sources": [
           {
-            "title": "lifeclub: The Culture Map Summary",
-            "url": "https://lifeclub.org/books/the-culture-map-erin-meyer-review-summary"
+            "title": "Erin Meyer: Team Mapping Tool Report",
+            "url": "https://erinmeyer.com/team-culture-mapping-report/"
           }
         ]
       },

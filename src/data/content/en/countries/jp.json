@@ -86,13 +86,12 @@
       },
       {
         "id": "jp-failure-3",
-        "text": "A lightning talk at an industry event reported that Mercari's engineering ladder (its evaluation criteria) includes the ability to write postmortems.",
-        "confidence": "weak",
+        "text": "Mercari's public engineering ladder lists postmortems after incidents as an example of information sharing under Professionalism at level MG3.",
+        "confidence": "strong",
         "sources": [
           {
-            "title": "Learning postmortems together: Lunch LT #LT_findy (Togetter)",
-            "url": "https://togetter.com/li/2073603?page=4",
-            "year": 2023
+            "title": "Mercari Engineering Ladder: MG3 (Japanese)",
+            "url": "https://github.com/mercari/mercari-engineering-ladder/blob/main/jp/MG3.md"
           }
         ]
       }
@@ -142,12 +141,17 @@
       },
       {
         "id": "jp-feedback-4",
-        "text": "Some teams label review comments with tags such as must, imo and nits to show how strongly each point is meant and to protect psychological safety.",
-        "confidence": "weak",
+        "text": "Hacobell and Future publish review practices that mark how strong a comment is with labels such as must, imo and nits. Hacobell reports that this raised its team's psychological safety and development efficiency.",
+        "confidence": "strong",
         "sources": [
           {
-            "title": "Classifying feedback in code review and strengthening psychological safety (BuildersIO)",
-            "url": "https://build.yoku.co.jp/articles/lbh02jlffz"
+            "title": "Hacobell: Raising psychological safety just by labelling code review comments",
+            "url": "https://zenn.dev/hacobell_dev/articles/code-review-comment-prefix",
+            "year": 2023
+          },
+          {
+            "title": "Future: Code review guidelines",
+            "url": "https://future-architect.github.io/arch-guidelines/documents/forCodeReview/code_review.html"
           }
         ]
       }
@@ -201,16 +205,17 @@
     "communication": [
       {
         "id": "jp-communication-1",
-        "text": "On Meyer's Communicating scale, Japan sits with South Korea and Indonesia at the most high-context end, and \"reading the air\" (kuuki wo yomu) is given as the emblematic phrase.",
-        "confidence": "weak",
+        "text": "Meyer names Japan, along with India and France, as an example of a high-context culture, and cites \"reading the air\" as emblematic of Japanese communication.",
+        "confidence": "medium",
         "sources": [
           {
-            "title": "The Culture Map Summary (Readingraphics)",
-            "url": "https://readingraphics.com/book-summary-the-culture-map-erin-meyer/"
+            "title": "Erin Meyer: Team Mapping Tool Report",
+            "url": "https://erinmeyer.com/team-culture-mapping-report/"
           },
           {
-            "title": "The Culture Map by Erin Meyer (Deploy Yourself)",
-            "url": "https://www.deployyourself.com/book-review/the-culture-map-erin-meyer-eight-scales/"
+            "title": "Erin Meyer: The Culture Map (book)",
+            "url": "https://erinmeyer.com/book/",
+            "year": 2014
           }
         ]
       },

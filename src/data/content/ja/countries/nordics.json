@@ -166,23 +166,38 @@
       {
         "id": "nordics-hierarchy-3",
         "text": "スウェーデンには、決定の前に非公式な調整で合意を固める förankring という慣行がある。決定までは遅くなるが、実行段階での抵抗は減ると説明されることが多い。",
-        "confidence": "weak",
+        "confidence": "medium",
         "sources": [
           {
             "title": "John Alexander — Consensus: The Hidden Codes of Swedish Leadership",
             "url": "https://johnalexandersweden.com/pdf/CONSENSUS.pdf"
+          },
+          {
+            "title": "VINNOVA: Chinese Views on Swedish Management (VR 2009:33)",
+            "url": "https://www.vinnova.se/contentassets/151eb7f63f5248b7891025cbfa0f33ad/vr-09-33.pdf",
+            "year": 2009
           }
         ]
       },
       {
         "id": "nordics-hierarchy-4",
         "text": "元 Spotify PM の Jeremiah Lee（2020）は、squad モデルは社内でも完全には実装されなかった理想像で、エンジニアリングの遂行に責任を持つ人がいなかったと書いた。元 agile コーチの Joakim Sundén も「part ambition, part approximation」だったと述べている。",
-        "confidence": "weak",
+        "confidence": "medium",
         "sources": [
           {
             "title": "Jeremiah Lee — Spotify's Failed #SquadGoals",
             "url": "https://www.jeremiahlee.com/posts/failed-squad-goals/",
             "year": 2020
+          },
+          {
+            "title": "Thinking Labs: notes on Joakim Sundén, \"You can do better than the Spotify Model\"",
+            "url": "https://thinkinglabs.io/notes/2021/12/29/lascot-you-can-do-better-than-the-spotify-model-joakim-sunden.html",
+            "year": 2021
+          },
+          {
+            "title": "Spotify Engineering: Spotify engineering culture (part 1)",
+            "url": "https://engineering.atspotify.com/2014/03/spotify-engineering-culture-part-1",
+            "year": 2014
           }
         ]
       },

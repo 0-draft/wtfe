@@ -7,9 +7,14 @@
     "design": [
       {
         "id": "us-design-1",
-        "text": "At Google, engineers write a relatively informal design doc before they write code. Malte Ubl (2020) says its purpose is to record the trade-offs and alternatives the team considered, and that it is not meant to be an exhaustive specification.",
-        "confidence": "weak",
+        "text": "According to Software Engineering at Google, most teams at Google require an approved design doc before starting work on any major project. Malte Ubl's 2020 write-up describes the format as relatively informal, focused on recording the trade-offs and alternatives considered rather than on an exhaustive specification.",
+        "confidence": "strong",
         "sources": [
+          {
+            "title": "Software Engineering at Google, ch. 10: Documentation",
+            "url": "https://abseil.io/resources/swe-book/html/ch10.html",
+            "year": 2020
+          },
           {
             "title": "Design Docs at Google (Malte Ubl)",
             "url": "https://www.industrialempathy.com/posts/design-docs-at-google/",
@@ -31,12 +36,12 @@
       },
       {
         "id": "us-design-3",
-        "text": "Meyer places the United States on the applications-first side of the Persuading scale. A book summary says this means starting from conclusions and examples, and caring more about the practical how than the theoretical why.",
-        "confidence": "weak",
+        "text": "According to Meyer, American and British managers typically prefer an inductive (applications-first) style of persuasion.",
+        "confidence": "medium",
         "sources": [
           {
-            "title": "The Investor's Podcast: The Culture Map Summary",
-            "url": "https://www.theinvestorspodcast.com/billionaire-book-club-executive-summary/the-culture-map/"
+            "title": "Erin Meyer: Team Mapping Tool Report",
+            "url": "https://erinmeyer.com/team-culture-mapping-report/"
           }
         ]
       }
@@ -134,12 +139,12 @@
     "communication": [
       {
         "id": "us-communication-1",
-        "text": "Meyer places the United States at the most low-context end of the Communicating scale. A book summary says Americans prefer to say things explicitly and to repeat and summarize key points.",
-        "confidence": "weak",
+        "text": "Meyer places the US, Germany and the Netherlands at the low-context end of the Communicating scale, where good communication is precise, simple and explicit, and repetition and putting things in writing are appreciated.",
+        "confidence": "medium",
         "sources": [
           {
-            "title": "lifeclub: The Culture Map Summary",
-            "url": "https://lifeclub.org/books/the-culture-map-erin-meyer-review-summary"
+            "title": "Erin Meyer: Team Mapping Tool Report",
+            "url": "https://erinmeyer.com/team-culture-mapping-report/"
           }
         ]
       },

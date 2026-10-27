@@ -21,6 +21,7 @@ Hofstede (The Culture Factor 現行値): PDI 80 / IDV 43 / MAS 66 / UAI 30 / LTO
 - Hofstede の UAI は 30 とかなり低く、曖昧さへの耐性が高い [強] ([source](https://www.theculturefactor.com/country-comparison-tool?countries=china))
 - 振り返りの土着の実践として 复盘 (fupan、碁の打ち直しが語源) がある。Lenovo の文化の柱とされ、柳传志の「自分に情けをかけずに考え抜け」が指針。blameless postmortem とは別の系譜 [中] ([source](https://www.linkedin.com/pulse/growing-from-change-30-year-career-viewed-through-fu-pan-gina-qiao), [source](https://medium.com/@jessicalu/keep-learning-and-keep-growing-with-fu-pan-e21feffa6764))
 - 面子との関係では、Meyer が「中国の manager は同僚を公に批判しないことを学ぶ」と例示している [中] ([source](https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams))
+  _訂正 2026-10-27: cn-feedback-1 の出典を Meyer 本人の記事 (How to Say "This Is Crap" in Different Cultures) に変え、要約サイト由来の「高文脈の側」を削った_
 
 ## フィードバックとコードレビュー
 
