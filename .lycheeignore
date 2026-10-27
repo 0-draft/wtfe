@@ -1,3 +1,8 @@
 # Hosts that refuse CI link checkers but open in a browser (checked by hand on 2026-10-26).
 # mckinsey.com answers bots with an HTTP/2 protocol error.
 ^https://www\.mckinsey\.com/
+# elibrary.imf.org answers bots with 403/405; the IMF Survey 2006 flexicurity article opens in a browser (checked 2026-10-27).
+^https://www\.elibrary\.imf\.org/
+# cmr-journal.org serves its certificate without the Let's Encrypt intermediate, so rustls-based checkers reject it;
+# browsers fetch the intermediate and open the PDF (checked 2026-10-27).
+^https://www\.cmr-journal\.org/
