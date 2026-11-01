@@ -1,6 +1,6 @@
 # Design research and direction
 
-_Researched: 2026-10-25. Screenshots (desktop 1280px, mobile 412px) are in `/private/tmp/claude-501/-HOME-wtfe/1670987c-ac36-4cc4-b2de-06b57750fd19/scratchpad/design/`, named `NN-site-desktop.png` / `NN-site-mobile.png`. They are not committed._
+_Researched: 2026-10-25. Screenshots (desktop 1280px, mobile 412px) are in `/private/tmp/claude-501/-Users-<user>-wtfe/1670987c-ac36-4cc4-b2de-06b57750fd19/scratchpad/design/`, named `NN-site-desktop.png` / `NN-site-mobile.png`. They are not committed._
 
 ## Summary
 
