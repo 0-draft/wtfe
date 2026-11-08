@@ -27,7 +27,8 @@ Hofstede (The Culture Factor 現行値): PDI 77 / IDV 24 / MAS 56 / UAI 40 / LTO
 ## フィードバックとコードレビュー
 
 - Meyer の要約では、India は「対立を避ける」側かつ high-context 側に置かれている。原典ではなく二次要約から [中] ([source](https://www.welcometothejungle.com/en/articles/keys-managing-multicultural-teams))
-- GitHub の PR 7 万件を分析した Rastogi et al. (ESEM 2018) では、17 カ国中 16 カ国で「レビュアーと投稿者が同じ国だと PR が通りやすい」傾向が出た。India だけが例外で、同国のメンテナが相手だと受理率がむしろ下がった (-7.4%)。数字は日本語の要約スライドから [中] ([source](https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf))
+- GitHub の PR 7 万件を分析した Rastogi et al. (ESEM 2018) では、17 カ国中 16 カ国で「レビュアーと投稿者が同じ国だと PR が通りやすい」傾向が出た。India だけが例外で、同国のメンテナが相手だと受理率がむしろ下がった (-7.4%)。数字は日本語の要約スライドから [中] ([source](https://web.archive.org/web/20240414155816/https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf))
+  _訂正 2026-11-08: se.cite.ehime-u.ac.jp が GitHub Actions のランナーから繰り返しタイムアウトするため、スライドのリンクを 2024-04-14 の Wayback Machine スナップショットに変えた。スナップショットの SHA-1 は現行のファイルと一致し、数値はスライド 9・10 で確認した_
 
 ## 階層と意思決定
 
@@ -95,5 +96,5 @@ Hofstede (The Culture Factor 現行値): PDI 77 / IDV 24 / MAS 56 / UAI 40 / LTO
 - [Entrepreneur: Zerodha FLOSS fund](https://www.entrepreneur.com/en-in/news-and-trends/zerodha-launches-usd-1-mn-annual-fund-to-support-open/481437)
 - [OSFY: Zerodha final tranche](https://www.opensourceforu.com/2025/10/zerodha-announces-final-675000-tranche-for-global-open-source-projects-advocates-sovereign-foss-fund/)
 - [AIM: India FOSS contributions negligible](https://analyticsindiamag.com/global-tech/indias-foss-contributions-remain-negligible-despite-heavy-adoption-says-zerodha-cto)
-- [Rastogi et al. 2018 summary (WWS2019)](https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf)
+- [Rastogi et al. 2018 summary (WWS2019)](https://web.archive.org/web/20240414155816/https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf)
 - [Nippon.com: EF EPI 2024](https://www.nippon.com/en/japan-data/h02199/)
