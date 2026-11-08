@@ -59,7 +59,7 @@ const scaleKeys = [...THEME_SCALES[theme].meyer, ...THEME_SCALES[theme].hofstede
       <section class="section" id="scales" data-rh={b["theme.glance"]} aria-labelledby="h-scales">
         <h2 id="h-scales">{b["theme.glance"]}</h2>
         <p class="section-lead">{scaleKeys.length ? b["theme.glanceLead"] : b["theme.glanceNoScales"]}</p>
-        <MeyerGrid lang={lang} theme={theme} scales={scaleKeys} />
+        <MeyerGrid lang={lang} theme={theme} scales={scaleKeys} labelledby="h-scales" />
       </section>
 
       {

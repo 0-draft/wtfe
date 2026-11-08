@@ -580,11 +580,18 @@ thead th {
   background: transparent;
 }
 @media (forced-colors: active) {
-  .pip {
+  .pip,
+  .pip[data-level] {
     forced-color-adjust: none;
     border-color: CanvasText;
   }
   .pip[data-level="strong"] {
     background: CanvasText;
+  }
+  .pip[data-level="medium"] {
+    background: linear-gradient(to top right, CanvasText 50%, Canvas 50%);
+  }
+  .pip[data-level="weak"] {
+    background: Canvas;
   }
 }

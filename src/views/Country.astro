@@ -2,11 +2,12 @@
 import Claim from "../components/Claim.astro";
 import Fingerprint from "../components/Fingerprint.astro";
 import Headword from "../components/Headword.astro";
+import Pips from "../components/Pips.astro";
 import RunningHead from "../components/RunningHead.astro";
 import ThumbIndex from "../components/ThumbIndex.astro";
 import { type CountryId, CULTURE_MAP_SCALES, HOFSTEDE_DIMENSIONS, THEME_IDS } from "../data/schema.ts";
 import { browse } from "../i18n/browse.ts";
-import { confidenceNames, dict, themeNames } from "../i18n/dict.ts";
+import { dict, themeNames } from "../i18n/dict.ts";
 import { glance } from "../i18n/glance.ts";
 import { type Lang, localePath } from "../i18n/ui.ts";
 import Base from "../layouts/Base.astro";
@@ -22,11 +23,7 @@ const b = browse[lang];
 const c = country(lang, id)!;
 const translated = isTranslated(lang, id);
 const g = glance[lang];
-const order = { strong: 0, medium: 1, weak: 2 } as const;
-const themeRows = THEME_IDS.map((th) => ({
-  th,
-  levels: c.themes[th].map((cl) => cl.confidence).sort((a, b) => order[a] - order[b]),
-}));
+const themeRows = THEME_IDS.map((th) => ({ th, levels: c.themes[th].map((cl) => cl.confidence) }));
 ---
 
 <Base lang={lang} title={c.name} description={c.oneLiner} section="countries">
@@ -57,20 +54,13 @@ const themeRows = THEME_IDS.map((th) => ({
                   <li>
                     <a href={`#${r.th}`}>
                       <span class="tg-name">{themeNames[lang][r.th]}</span>
-                      <span class="tg-pips" aria-hidden="true">
-                        {r.levels.map((lv) => (
-                          <span class="pip" data-level={lv} />
-                        ))}
-                      </span>
-                      <span class="sr-only">
-                        {r.levels.map((lv) => confidenceNames[lang][lv]).join(lang === "ja" ? "、" : ", ")}
-                      </span>
+                      <Pips lang={lang} levels={r.levels} />
                     </a>
                   </li>
                 ))
               }
             </ul>
-            <p class="glance-note">{g["glance.themesLead"]}</p>
+            <p class="glance-note">{g["glance.pips"]}</p>
           </div>
         </div>
         <details class="about measure">
@@ -160,11 +150,6 @@ const themeRows = THEME_IDS.map((th) => ({
     font-size: var(--s-15);
     font-weight: 600;
     line-height: 1.35;
-  }
-  .tg-pips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
   }
   .about {
     margin-block-start: 1.5rem;

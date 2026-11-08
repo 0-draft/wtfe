@@ -49,6 +49,17 @@ const dated = newest !== undefined && newest < DATED_BEFORE;
   }
 </li>
 
+<script>
+  // Arriving at a claim anchor (from the sources page or an evidence-map popover) should show its sources.
+  const openTarget = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const entry = id ? document.getElementById(id) : null;
+    entry?.querySelector<HTMLDetailsElement>("details.entry-src")?.setAttribute("open", "");
+  };
+  openTarget();
+  addEventListener("hashchange", openTarget);
+</script>
+
 <style>
   .entry {
     list-style: none;
@@ -105,7 +116,7 @@ const dated = newest !== undefined && newest < DATED_BEFORE;
   .entry-src summary {
     display: inline-flex;
     align-items: center;
-    min-block-size: 2rem;
+    min-block-size: 2.75rem;
     font-size: var(--s-14);
     color: var(--ink-2);
     cursor: pointer;
@@ -115,12 +126,12 @@ const dated = newest !== undefined && newest < DATED_BEFORE;
     display: none;
   }
   .entry-src summary::before {
-    content: "▸";
+    content: "▸" / "";
     inline-size: 1em;
     color: var(--ink-3);
   }
   .entry-src[open] summary::before {
-    content: "▾";
+    content: "▾" / "";
   }
   .entry-src summary:hover {
     color: var(--ink);

@@ -172,10 +172,10 @@ test("a theme page has every country as a sub-headword and links to scales", asy
   await page.goto("themes/feedback/");
   await expect(page.locator("section.sub")).toHaveCount(14);
   await expect(page.locator("#jp .entry").first()).toBeVisible();
-  await expect(page.locator('#scales a[href$="/scales/evaluating/"]')).toBeVisible();
-  await expect(page.locator('#scales a[href$="/scales/disagreeing/"]')).toBeVisible();
+  await expect(page.locator('#scales thead a[href$="/scales/evaluating/"]')).toBeVisible();
+  await expect(page.locator('#scales thead a[href$="/scales/disagreeing/"]')).toBeVisible();
   await page.goto("ja/themes/hierarchy/");
-  await expect(page.locator('#scales a[href$="/ja/scales/hofstede-pdi/"]')).toBeVisible();
+  await expect(page.locator('#scales thead a[href$="/ja/scales/hofstede-pdi/"]')).toBeVisible();
 });
 
 test.describe("sources", () => {

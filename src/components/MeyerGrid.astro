@@ -6,44 +6,25 @@
  * With `theme`, a first column shows that theme's claims as confidence pips and rows link to the theme page sections.
  */
 import { CULTURE_MAP_SCALES, type ThemeId } from "../data/schema.ts";
-import { confidenceNames } from "../i18n/dict.ts";
-import { shortPoles } from "../i18n/glance.ts";
+import { browse } from "../i18n/browse.ts";
+import { glance, shortPoles } from "../i18n/glance.ts";
 import { type Lang, localePath } from "../i18n/ui.ts";
 import { DISPLAY_CODE } from "../lib/codes.ts";
 import { countries } from "../lib/content.ts";
-import { type StripKey, scaleKind, spreadDomain } from "../lib/strip.ts";
+import { formatValue, regionSpan, type StripKey, scaleKind, spreadDomain } from "../lib/strip.ts";
+import Pips from "./Pips.astro";
 import { scaleHref, scaleItems, scaleText } from "./strip/data.ts";
 
 interface Props {
   lang: Lang;
   scales?: readonly StripKey[];
   theme?: ThemeId;
+  /** id of the heading that names the figure; the table points at it. */
+  labelledby?: string;
 }
-const { lang, scales = CULTURE_MAP_SCALES, theme } = Astro.props;
-
-const text = {
-  en: {
-    meyer:
-      "Culture Map cells are Erin Meyer's seven-step line, left pole to right pole. A hollow dot is placed from reviews, not her own chart; a bar spans a region's members. Positions are approximate and relative.",
-    hofstede: "Hofstede cells run 0 to 100 and are country averages; most variation in values is within countries.",
-    pips: "Claims: one square each. Filled = well attested, half = attested, outline = thin.",
-    claims: "Claims",
-    none: "no source",
-    corner: "Country or region",
-    cell: (scale: string, pos: string) => `${scale}: ${pos}`,
-  },
-  ja: {
-    meyer:
-      "Culture Map のマスは Erin Meyer の 7 段階の線で、左右がそれぞれの端です。白抜きの点は Meyer 本人の図ではなく書評などから置いた位置、横棒は地域内の国の幅。位置はおおよそで、相対的なものです。",
-    hofstede: "Hofstede のマスは 0〜100 の国の平均値です。価値観のばらつきの大半は国の内側にあります。",
-    pips: "記述：1 件につき四角 1 つ。塗り＝裏付け十分、半分＝裏付けあり、枠だけ＝裏付け薄。",
-    claims: "記述",
-    none: "出典なし",
-    corner: "国・地域",
-    cell: (scale: string, pos: string) => `${scale}：${pos}`,
-  },
-}[lang];
-const fmtStep = (s: number) => (s > 0 ? `+${s}` : s < 0 ? `−${Math.abs(s)}` : "0");
+const { lang, scales = CULTURE_MAP_SCALES, theme, labelledby } = Astro.props;
+const g = glance[lang];
+const corner = browse[lang]["map.corner"];
 const cols = scales.map((key) => {
   const t = scaleText(lang, key);
   const kind = scaleKind(key);
@@ -51,31 +32,29 @@ const cols = scales.map((key) => {
   const items = scaleItems(key);
   const { lo, hi } = spreadDomain(kind, items);
   const pct = (v: number) => ((v - lo) / (hi - lo)) * 100;
-  const fmt = (v: number) => (kind === "meyer" ? fmtStep(v) : String(Math.round(v)));
   const byId = new Map(items.map((i) => [i.id, i]));
-  return { key, kind, name: t.name, left, right, href: scaleHref(lang, key), byId, pct, fmt };
+  return { key, kind, name: t.name, left, right, href: scaleHref(lang, key), byId, pct, hi };
 });
-const order = { strong: 0, medium: 1, weak: 2 } as const;
 const rows = countries(lang).map((c) => ({
   id: c.id,
   name: c.name,
-  levels: theme ? c.themes[theme].map((cl) => cl.confidence).sort((a, b) => order[a] - order[b]) : [],
+  levels: theme ? c.themes[theme].map((cl) => cl.confidence) : [],
 }));
 const rowHref = (id: string) => (theme ? `#${id}` : localePath(lang, `/countries/${id}/`));
 const minWidth = `${10 + (theme ? 7 : 0) + cols.length * 6}rem`;
 const hasMeyer = cols.some((c) => c.kind === "meyer");
-const hasHofstede = cols.some((c) => c.kind === "hofstede");
+const hofstedeMax = Math.max(0, ...cols.filter((c) => c.kind === "hofstede").map((c) => c.hi));
 ---
 
 <figure class="mg">
-  <div class="mg-scroll" tabindex="0" role="region" aria-label={text.corner}>
-    <table class="mg-table" style={`min-inline-size:${minWidth}`}>
+  <div class="mg-scroll">
+    <table class="mg-table" style={`min-inline-size:${minWidth}`} aria-labelledby={labelledby}>
       <thead>
         <tr>
-          <td class="mg-corner"><span class="sr-only">{text.corner}</span></td>
+          <td class="mg-corner"><span class="sr-only">{corner}</span></td>
           {theme && (
             <th scope="col" class="mg-claims-h">
-              {text.claims}
+              {g["grid.claims"]}
             </th>
           )}
           {
@@ -105,32 +84,23 @@ const hasHofstede = cols.some((c) => c.kind === "hofstede");
               </th>
               {theme && (
                 <td class="mg-claims">
-                  <span class="mg-pips" aria-hidden="true">
-                    {r.levels.map((lv) => (
-                      <span class="pip" data-level={lv} />
-                    ))}
-                  </span>
-                  <span class="sr-only">
-                    {r.levels.map((lv) => confidenceNames[lang][lv]).join(lang === "ja" ? "、" : ", ")}
-                  </span>
+                  <Pips lang={lang} levels={r.levels} />
                 </td>
               )}
               {cols.map((c) => {
                 const it = c.byId.get(r.id);
                 const v = it?.value ?? null;
-                const span =
-                  it && it.members.length > 1
-                    ? [Math.min(...it.members.map((m) => m.value)), Math.max(...it.members.map((m) => m.value))]
-                    : null;
+                const span = it ? regionSpan(it) : null;
+                const pos = v === null ? g["glance.noSource"] : `${formatValue(c.kind, v, lang)}${it?.secondary ? "†" : ""}`;
                 return (
                   <td>
                     <a
                       class="mg-cell"
-                      href={`${c.href}?from=${r.id}`}
-                      aria-label={text.cell(c.name, v === null ? text.none : c.fmt(v))}
+                      href={v === null ? c.href : `${c.href}?from=${r.id}`}
+                      aria-label={g["grid.cell"](r.name, c.name, pos)}
                     >
                       <span class="mg-line" aria-hidden="true">
-                        {span && <span class="mg-span" style={`--a:${c.pct(span[0]!)}%;--b:${c.pct(span[1]!)}%`} />}
+                        {span && <span class="mg-span" style={`--a:${c.pct(span.min)}%;--b:${c.pct(span.max)}%`} />}
                         {v !== null ? (
                           <span class:list={["mg-dot", { "is-secondary": it?.secondary }]} style={`--x:${c.pct(v)}%`} />
                         ) : (
@@ -148,9 +118,9 @@ const hasHofstede = cols.some((c) => c.kind === "hofstede");
     </table>
   </div>
   <figcaption class="mg-caption">
-    {theme && <p>{text.pips}</p>}
-    {hasMeyer && <p>{text.meyer}</p>}
-    {hasHofstede && <p>{text.hofstede}</p>}
+    {theme && <p>{g["glance.pips"]}</p>}
+    {hasMeyer && <p>{g["grid.meyer"]}</p>}
+    {hofstedeMax > 0 && <p>{g["grid.hofstede"](hofstedeMax)}</p>}
   </figcaption>
 </figure>
 
@@ -175,6 +145,12 @@ const hasHofstede = cols.some((c) => c.kind === "hofstede");
   .mg-corner,
   .mg-table tbody th {
     inline-size: 10rem;
+  }
+  .mg-corner {
+    position: sticky;
+    inset-inline-start: 0;
+    z-index: 2;
+    background: var(--paper);
   }
   .mg-table thead th {
     vertical-align: bottom;
@@ -214,7 +190,7 @@ const hasHofstede = cols.some((c) => c.kind === "hofstede");
     display: flex;
     align-items: baseline;
     gap: 0.5rem;
-    min-block-size: 2.5rem;
+    min-block-size: 2.75rem;
     padding: 0.5rem 0.5rem 0.5rem 0;
     font-size: var(--s-15);
     font-weight: 600;
@@ -239,7 +215,7 @@ const hasHofstede = cols.some((c) => c.kind === "hofstede");
   .mg-cell {
     display: flex;
     align-items: center;
-    block-size: 2.5rem;
+    block-size: 2.75rem;
     padding-inline: 0.625rem;
     border-inline-start: 1px solid var(--rule);
     background: linear-gradient(to right, var(--wash-left) 50%, var(--wash-right) 50%);
@@ -298,11 +274,6 @@ const hasHofstede = cols.some((c) => c.kind === "hofstede");
     padding-inline: 0.5rem !important;
     border-inline-start: 1px solid var(--rule);
   }
-  .mg-pips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3px;
-  }
   .mg-caption p {
     margin: 0 0 0.25rem;
   }
@@ -331,8 +302,12 @@ const hasHofstede = cols.some((c) => c.kind === "hofstede");
     }
   }
   @media (forced-colors: active) {
-    .mg-dot {
+    .mg-dot,
+    .mg-span {
       background: CanvasText;
+    }
+    .mg-dot.is-secondary {
+      background: Canvas;
     }
   }
 </style>

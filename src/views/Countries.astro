@@ -1,6 +1,8 @@
 ---
+import Pips from "../components/Pips.astro";
 import { browse, readings } from "../i18n/browse.ts";
-import { confidenceNames, dict } from "../i18n/dict.ts";
+import { dict } from "../i18n/dict.ts";
+import { glance } from "../i18n/glance.ts";
 import { type Lang, localePath } from "../i18n/ui.ts";
 import Base from "../layouts/Base.astro";
 import { DISPLAY_CODE } from "../lib/codes.ts";
@@ -23,6 +25,7 @@ const levels = ["strong", "medium", "weak"] as const;
   <header class="headword">
     <h1>{b["countries.title"]}</h1>
     <p class="lead">{b["countries.lead"]}</p>
+    <p class="pip-key">{glance[lang]["glance.pips"]}</p>
   </header>
 
   <nav class="heads" data-pagefind-ignore aria-label={lang === "ja" ? "見出しの索引" : "Index letters"}>
@@ -50,18 +53,8 @@ const levels = ["strong", "medium", "weak"] as const;
                 </p>
                 <p class="one">{c.oneLiner}</p>
                 <p class="counts">
-                  <span class="pips" aria-hidden="true">
-                    {levels.flatMap((lv) => Array.from({ length: n[lv] }, () => <span class="pip" data-level={lv} />))}
-                  </span>
-                  <span>
-                    {b["countries.counts"](n.total)}
-                    <span class="sr-only">
-                      {levels
-                        .filter((lv) => n[lv])
-                        .map((lv) => `${confidenceNames[lang][lv]} ${n[lv]}`)
-                        .join(lang === "ja" ? "、" : ", ")}
-                    </span>
-                  </span>
+                  <Pips lang={lang} levels={levels.flatMap((lv) => Array.from({ length: n[lv] }, () => lv))} class="ci-pips" />
+                  <span>{b["countries.counts"](n.total)}</span>
                 </p>
               </li>
             );
@@ -76,11 +69,13 @@ const levels = ["strong", "medium", "weak"] as const;
 </Base>
 
 <style>
-  .pips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3px;
+  .counts :global(.ci-pips) {
     max-inline-size: 30rem;
+  }
+  .pip-key {
+    margin: 0.5rem 0 0;
+    font-size: var(--s-14);
+    color: var(--ink-2);
   }
   .headword h1 {
     margin-block-end: 0.75rem;
