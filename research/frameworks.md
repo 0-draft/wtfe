@@ -64,8 +64,9 @@ _調査日: 2026-10-25_
 
 - Rastogi, Nagappan, Gousios, van der Hoek（ESEM 2018）。PR の多い上位 1% の 1,069 プロジェクトから、17 か国の PR 70,740 件をロジスティック回帰で分析した [強] ([MSR](https://www.microsoft.com/en-us/research/publication/relationship-between-geographical-location-and-evaluation-of-developer-contributions-in-github/), [TU Delft](https://web.archive.org/web/20240415135230/https://repository.tudelft.nl/islandora/object/uuid%3A3b3ad2bd-d865-4a78-b5f0-cdb849d2ee50))
   _訂正 2026-10-27: repository.tudelft.nl がサイトごと応答しなくなったため、TU Delft のリンクを 2024-04-15 の Wayback Machine スナップショットに変えた。タイトルと著者はスナップショットで確認した_
-- 同論文の結果その1：採択オッズ（米国=100）はスイス 146、オランダ 130、日本 128、英国 114、カナダ 113。低いほうはスウェーデン 81、ドイツ 78、ブラジル 76、イタリア 73、中国 68。インド 102、ロシア 94 [強]（愛媛大の論文紹介スライドの数値。論文本体とも突き合わせるのが望ましい）([WWS2019 slides](https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf))
-- 同論文の結果その2：投稿者とマージ担当者が同じ国だと採択されやすい。17 か国中 16 か国でそうで、中国 +13.4%、米国 +2.4%、例外のインドは −7.4%。原因はまだ解明されていない [強] ([WWS2019 slides](https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf))
+- 同論文の結果その1：採択オッズ（米国=100）はスイス 146、オランダ 130、日本 128、英国 114、カナダ 113。低いほうはスウェーデン 81、ドイツ 78、ブラジル 76、イタリア 73、中国 68。インド 102、ロシア 94 [強]（愛媛大の論文紹介スライドの数値。論文本体とも突き合わせるのが望ましい）([WWS2019 slides](https://web.archive.org/web/20240414155816/https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf))
+- 同論文の結果その2：投稿者とマージ担当者が同じ国だと採択されやすい。17 か国中 16 か国でそうで、中国 +13.4%、米国 +2.4%、例外のインドは −7.4%。原因はまだ解明されていない [強] ([WWS2019 slides](https://web.archive.org/web/20240414155816/https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf))
+  _訂正 2026-11-08: se.cite.ehime-u.ac.jp が GitHub Actions のランナーから繰り返しタイムアウトするため、スライドのリンクを 2024-04-14 の Wayback Machine スナップショットに変えた。スナップショットの SHA-1 は現行のファイルと一致し、数値はスライド 9・10 で確認した_
 - Nadri, Rodríguez-Pérez, Nagappan（arXiv 2021）。名前から推定した「見た目上の人種」で比べると、白人と見なされた開発者の PR の採択オッズが 6〜10% 高かった [強] ([arXiv](https://arxiv.org/abs/2104.06143))
 - Herbsleb & Mockus（IEEE TSE 2003）。複数拠点にまたがる作業は、同じ拠点での同種作業より約 2.5 倍時間がかかり、主な要因は関わる人数の増加だった。2025 年に著者自身が回顧論文を出し、環境が大きく変わったと述べている [強] ([ACM](https://dl.acm.org/doi/10.1109/TSE.2003.1205177), [Retrospective](https://dl.acm.org/doi/10.1109/TSE.2025.3533977))
 - Neumann, Schmid, Baumann（EASE 2024）。日本 2 件・ドイツ 2 件の事例研究で、参加者の文化特性は Hofstede の国スコアから予想される姿と大きく違った。国のラベルをそのままチームに当てはめず、事例ごとに分析すべきだと主張している [強] ([arXiv](https://arxiv.org/abs/2404.17009), [ACM](https://dl.acm.org/doi/abs/10.1145/3661167.3661229))
@@ -126,7 +127,7 @@ _調査日: 2026-10-25_
 - [Andrews University GLOBE review](https://www.andrews.edu/services/jacl/article_archive/1_1_summer_2006/6_br_globe_(2004).pdf)
 - [Rastogi et al. 2018 (MSR)](https://www.microsoft.com/en-us/research/publication/relationship-between-geographical-location-and-evaluation-of-developer-contributions-in-github/)
 - [Rastogi et al. 2018 (TU Delft)](https://web.archive.org/web/20240415135230/https://repository.tudelft.nl/islandora/object/uuid%3A3b3ad2bd-d865-4a78-b5f0-cdb849d2ee50)
-- [WWS2019 Ehime slides](https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf)
+- [WWS2019 Ehime slides](https://web.archive.org/web/20240414155816/https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf)
 - [Nadri et al. 2021](https://arxiv.org/abs/2104.06143)
 - [Herbsleb & Mockus 2003](https://dl.acm.org/doi/10.1109/TSE.2003.1205177)
 - [Herbsleb & Mockus Retrospective 2025](https://dl.acm.org/doi/10.1109/TSE.2025.3533977)

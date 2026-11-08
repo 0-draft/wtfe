@@ -27,7 +27,8 @@ Hofstede (The Culture Factor 現行値): PDI 80 / IDV 43 / MAS 66 / UAI 30 / LTO
 
 - Meyer は China を high-context 側に置いている。否定的なフィードバックは間接的で、面子を潰すおそれがあると特にそうなる [中] ([source](https://numinoscoaching.com/erin-meyer-culture-map-explained), [source](https://dmb-shanghai.com/language/culture-map-erin-meyer-cross-cultural-business-review/))
 - 中国のサンプルを使った実証研究では、上司の強制力 (coercive power) を強く感じるほど、また権威主義的なリーダーシップの下にいるほど、部下の沈黙が増える。面子・关系・中庸が発言を抑える要因として論じられている [中] ([source](https://econtent.hogrefe.com/doi/10.1027/1866-5888/a000357), [source](https://www.cambridge.org/core/journals/journal-of-management-and-organization/article/abs/authoritarian-leadership-and-employee-silence-in-china/7BA708133A7360F1BA41CDE596F2E16C), [source](https://link.springer.com/chapter/10.1007/978-3-031-31127-7_5))
-- GitHub の PR 受理率では、China は低い側のグループに入った (Rastogi et al. 2018)。文化だけでなく、国籍バイアスや英語の問題が混ざっている可能性がある [中] ([source](https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf))
+- GitHub の PR 受理率では、China は低い側のグループに入った (Rastogi et al. 2018)。文化だけでなく、国籍バイアスや英語の問題が混ざっている可能性がある [中] ([source](https://web.archive.org/web/20240414155816/https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf))
+  _訂正 2026-11-08: se.cite.ehime-u.ac.jp が GitHub Actions のランナーから繰り返しタイムアウトするため、スライドのリンクを 2024-04-14 の Wayback Machine スナップショットに変えた。スナップショットの SHA-1 は現行のファイルと一致し、数値はスライド 9・10 で確認した_
 
 ## 階層と意思決定
 
@@ -82,7 +83,7 @@ Hofstede (The Culture Factor 現行値): PDI 80 / IDV 43 / MAS 66 / UAI 30 / LTO
 - [J. Personnel Psychology 2025: supervisor power and silence](https://econtent.hogrefe.com/doi/10.1027/1866-5888/a000357)
 - [JMO: Authoritarian leadership and silence in China](https://www.cambridge.org/core/journals/journal-of-management-and-organization/article/abs/authoritarian-leadership-and-employee-silence-in-china/7BA708133A7360F1BA41CDE596F2E16C)
 - [Springer: Patterns of Employee Voice in China](https://link.springer.com/chapter/10.1007/978-3-031-31127-7_5)
-- [Rastogi et al. 2018 summary (WWS2019)](https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf)
+- [Rastogi et al. 2018 summary (WWS2019)](https://web.archive.org/web/20240414155816/https://se.cite.ehime-u.ac.jp/wws2019/pdf/p10.pdf)
 - [Baidu Baike: ByteDance Values](https://baike.baidu.com/en/item/ByteDance%20Values/3212121)
 - [Wikipedia: Lark](https://en.wikipedia.org/wiki/Lark_(software))
 - [Dao Insights: Feishu](https://daoinsights.com/works/how-does-bytedances-enterprise-collaboration-platform-create-the-future-of-work/)
