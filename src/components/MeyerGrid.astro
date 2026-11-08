@@ -62,7 +62,7 @@ const rows = countries(lang).map((c) => ({
   levels: theme ? c.themes[theme].map((cl) => cl.confidence).sort((a, b) => order[a] - order[b]) : [],
 }));
 const rowHref = (id: string) => (theme ? `#${id}` : localePath(lang, `/countries/${id}/`));
-const minWidth = `${8.5 + (theme ? 7 : 0) + cols.length * 6}rem`;
+const minWidth = `${10 + (theme ? 7 : 0) + cols.length * 6}rem`;
 const hasMeyer = cols.some((c) => c.kind === "meyer");
 const hasHofstede = cols.some((c) => c.kind === "hofstede");
 ---
@@ -174,7 +174,7 @@ const hasHofstede = cols.some((c) => c.kind === "hofstede");
   }
   .mg-corner,
   .mg-table tbody th {
-    inline-size: 8.5rem;
+    inline-size: 10rem;
   }
   .mg-table thead th {
     vertical-align: bottom;
@@ -220,6 +220,11 @@ const hasHofstede = cols.some((c) => c.kind === "hofstede");
     font-weight: 600;
     color: var(--ink);
     text-decoration: none;
+  }
+  .mg-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .mg-code {
     flex: none;
