@@ -29,10 +29,15 @@ interface Props {
   heading?: "h2" | "h3" | "h4";
   /** Link to the scale page in the provenance line (off on the scale page itself). */
   about?: boolean;
+  /**
+   * Per-strip source line and Hofstede caption. The scales index turns it off and states both once per section,
+   * so fourteen strips do not repeat the same two paragraphs.
+   */
+  provenance?: boolean;
   id?: string;
 }
 
-const { lang, scale, focus, size = "normal", heading, about = true, id } = Astro.props;
+const { lang, scale, focus, size = "normal", heading, about = true, provenance = true, id } = Astro.props;
 const t = stripText[lang];
 const kind = scaleKind(scale);
 const text = scaleText(lang, scale);
@@ -98,17 +103,21 @@ const fmt = (v: number) => formatValue(kind, v, lang);
       )
     }
     {hasSecondary && <p>{t["strip.secondary"]}</p>}
-    {kind === "hofstede" && <p>{t["strip.taras"]}</p>}
+    {provenance && kind === "hofstede" && <p>{t["strip.taras"]}</p>}
     {dom.extended && <p>{t["strip.extended"](dom.hi)}</p>}
-    <p>
-      {kind === "meyer" ? t["strip.provMeyer"] : t["strip.provHofstede"]}
-      {about && (
-        <>
-          {" "}
-          <a href={scaleHref(lang, scale)}>{t["strip.about"]}</a>
-        </>
-      )}
-    </p>
+    {
+      provenance && (
+        <p>
+          {kind === "meyer" ? t["strip.provMeyer"] : t["strip.provHofstede"]}
+          {about && (
+            <>
+              {" "}
+              <a href={scaleHref(lang, scale)}>{t["strip.about"]}</a>
+            </>
+          )}
+        </p>
+      )
+    }
     <details class="vs-text">
       <summary>{t["strip.asText"]}</summary>
       <table>

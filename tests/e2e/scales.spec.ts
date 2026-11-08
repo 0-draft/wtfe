@@ -39,6 +39,9 @@ test("index shows all 14 strips with no focus, grouped by framework", async ({ p
     await expect(page.locator("#hofstede .vs-fig")).toHaveCount(6);
     await expect(page.locator(".vs-mark.is-focus")).toHaveCount(0);
     await expect(page.locator(`a[href$="/method/"]`).first()).toBeVisible();
+    // Source line and the Taras caption are stated once per section, not under each of the 14 strips.
+    await expect(page.locator(".vs-fig .vs-cap a", { hasText: /About this scale|この尺度について/ })).toHaveCount(0);
+    await expect(page.locator("#hofstede .intro")).toContainText(path === "scales/" ? "Taras" : "Taras ほか 2016");
   }
 });
 
