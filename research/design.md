@@ -292,7 +292,7 @@ For `/compare/jp-vs-de/`, the 8 Meyer scales are listed **sorted by gap size**, 
 
 #### C. Evidence map (home)
 
-A 14 by 7 grid, countries as rows, themes as columns. Each cell shows its claims as short horizontal rules stacked top to bottom: one thick solid rule per well-attested claim, one thin solid per attested, one dashed per thin. Cell height is fixed, so the reader sees evidence weight at a glance, and a cell with only dashed rules looks thin because it is. Hover or tap opens the list of claims for that cell. It is explicitly an evidence map ("how much we know"), never coloured by any cultural score.
+A 14 by 7 grid, countries as rows, themes as columns. Each cell shows its claims as confidence pips, one small square per claim: filled for well attested, half-filled for attested, dashed outline for thin. The cell ground darkens with the number of claims (ink mixed at about 1.6% per claim, capped at 7), so a reader sees where the evidence is thick from across the room, and a cell of outlines looks thin because it is. The first version stacked horizontal rules (thick / thin / dashed); on review they read as a texture rather than a count, and the owner found the map hard to read. Hover or tap opens the list of claims for that cell. It is explicitly an evidence map ("how much we know"), never coloured by any cultural score.
 
 Mobile: 7 columns at 44px fit in 412px with a 72px row header of codes (JP, KR ...). Column headers are 2-character Japanese (設計, 失敗, 指摘, 階層, 伝達, 働方, OSS) or 3-letter English codes (DES, FAIL, REV, HIER, COMM, WORK, OSS) in a sticky header; tapping a header shows the full theme name in the running head. Row and column headers both sticky. No rotated text.
 
@@ -306,6 +306,15 @@ Mobile: 7 columns at 44px fit in 412px with a 72px row header of codes (JP, KR .
 ```
 
 The left rule is the confidence mark (thick solid / thin solid / dashed). The label line repeats it in words. In Japanese the label is 【裏付け十分】【裏付けあり】【裏付け薄】. Sources older than the threshold get a "dated" / 【古い資料】 label in ink-2.
+
+#### E. Fingerprint (country page) and scale grid (home, theme pages)
+
+Added 2026-11 after the owner said the site was too text-heavy. The research behind it: GlobeSmart / Aperian profile gap charts (several profiles on the same bipolar sliders), Cochrane GRADE summary-of-findings certainty glyphs, Datawrapper heatmap tables, NN/g mobile and comparison tables, NN/g progressive disclosure (two levels at most), GOV.UK details ("do not hide what most users need").
+
+- **Fingerprint.** The country page opens with "At a glance": one short row per scale (8 Meyer, 6 Hofstede). Each row is a mini strip: other countries as small grey dots (stacked per step on Meyer), this country as a large 朱 dot, a region as a 朱 span over its members, the value in 朱 mono at the end, and the pole words under the line. The row links to the full strip read from this country (`?from=`). It replaces the 14 full-size strips that used to close the page (about 7,000px on Japan).
+- **Theme evidence.** Next to the fingerprint, the 7 themes with one pip per claim, linking to the theme section.
+- **Scale grid.** Countries as rows, scales as columns, each cell a mini line with one dot (hollow for a secondary basis, a bar for a region's members, a dash for no source). Left and right halves carry the two washes so the poles read without a legend. Home shows all 8 Meyer scales; a theme page shows a pips column for that theme plus only the scales in `THEME_SCALES`. Phones scroll it sideways with the country code column sticky.
+- **Sources folded.** A claim keeps its text and usage label visible; its citations sit behind "▸ 2 sources". The country intro paragraph sits behind "About this page".
 
 ### Typography
 
@@ -353,11 +362,11 @@ Checks (WCAG 2.x relative luminance, computed): every text token is at least 4.5
 
 Confidence tokens (no hue):
 
-| Level | Rule | Label EN | Label JA |
-| --- | --- | --- | --- |
-| strong | 3px solid `--ink` | WELL ATTESTED | 【裏付け十分】 |
-| medium | 1.5px solid `--ink-2` | ATTESTED | 【裏付けあり】 |
-| weak | 1.5px dashed `--ink-3` (4px dash, 3px gap) | THIN | 【裏付け薄】 |
+| Level | Rule (claim entry) | Pip (maps, glance) | Label EN | Label JA |
+| --- | --- | --- | --- | --- |
+| strong | 3px solid `--ink` | filled `--ink` square | WELL ATTESTED | 【裏付け十分】 |
+| medium | 1.5px solid `--ink-2` | `--ink-2` square, lower half filled diagonally | ATTESTED | 【裏付けあり】 |
+| weak | 1.5px dashed `--ink-3` (4px dash, 3px gap) | dashed `--ink-3` outline | THIN | 【裏付け薄】 |
 
 Scale poles: position and words carry the pole; the washes are optional, low-chroma (contrast with paper about 1.1), and the two washes are blue-grey versus warm-grey, not two "team" colours.
 

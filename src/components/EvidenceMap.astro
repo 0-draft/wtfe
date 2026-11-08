@@ -1,6 +1,6 @@
 ---
 /**
- * Evidence map (research/design.md, figure C): countries × themes, one rule per claim, weight = confidence.
+ * Evidence map (research/design.md, figure C): countries × themes, one confidence pip per claim, cell shade = count.
  * A real table with counts in text. Without JavaScript each cell links to the country section; with it, a cell
  * opens a popover listing the claims, and the popover links on.
  */
@@ -69,6 +69,7 @@ const snippet = (text: string) => {
                 <td>
                   <a
                     class="em-cell"
+                    style={`--n:${Math.min(cell.counts.total, 7)}`}
                     href={localePath(lang, `/countries/${cell.country}/#${cell.theme}`)}
                     data-pop={popId(cell.country, cell.theme)}
                   >
@@ -84,7 +85,7 @@ const snippet = (text: string) => {
                     </span>
                     <span class="em-rules" aria-hidden="true">
                       {cell.claims.map((c) => (
-                        <span class="em-rule" data-level={c.confidence} />
+                        <span class="em-rule pip" data-level={c.confidence} />
                       ))}
                     </span>
                   </a>
@@ -106,7 +107,7 @@ const snippet = (text: string) => {
           CONFIDENCE.map((lv) => (
             <div>
               <dt>
-                <span class="em-rule" data-level={lv} />
+                <span class="em-rule pip" data-level={lv} />
               </dt>
               <dd class="usage" data-level={lv}>
                 {confidenceNames[lang][lv]}
@@ -373,22 +374,17 @@ const snippet = (text: string) => {
   .em-rules {
     flex: 1;
     display: flex;
-    flex-direction: column;
-    gap: 3px;
-    padding-block-start: 0.125rem;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 4px;
+    padding-block-start: 0.0625rem;
   }
-  /* Same visual language as the Claim entry's left rule: thick solid / thin solid / dashed. Borders survive forced colours. */
-  .em-rule {
-    display: block;
-    inline-size: 100%;
-    block-size: 0;
-    border-block-start: 3px solid var(--ink);
+  /* Cell ground darkens with the number of claims, so thin cells read as thin from across the room. */
+  .em-cell {
+    background: color-mix(in srgb, var(--ink) calc(var(--n, 0) * 1.6%), transparent);
   }
-  .em-rule[data-level="medium"] {
-    border-block-start: 1.5px solid var(--ink-2);
-  }
-  .em-rule[data-level="weak"] {
-    border-block-start: 1.5px dashed var(--ink-3);
+  .em-legend .em-rule {
+    margin-inline: auto;
   }
 
   .em-caption {
@@ -421,7 +417,8 @@ const snippet = (text: string) => {
     margin: 0;
   }
   .em-legend dt {
-    inline-size: 2rem;
+    display: flex;
+    inline-size: 1rem;
   }
   .em-keys .em-codes {
     display: none;
@@ -558,6 +555,15 @@ const snippet = (text: string) => {
       gap: 0.375rem;
       block-size: 4rem;
       padding: 0.375rem 0.375rem 0.25rem;
+    }
+    /* Seven 44px columns: smaller pips so up to nine fit (3 × 3) inside the 4rem cell. */
+    .em-cell .em-rule {
+      inline-size: 0.5rem;
+      block-size: 0.5rem;
+      border-width: 1px;
+    }
+    .em-rules {
+      gap: 2px;
     }
     .em-keys .em-codes {
       display: grid;

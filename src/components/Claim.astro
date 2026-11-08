@@ -21,23 +21,25 @@ const dated = newest !== undefined && newest < DATED_BEFORE;
   <p class="entry-text">{claim.text}</p>
   <p class="entry-label">
     <span class="usage" data-level={claim.confidence}>{confidenceNames[lang][claim.confidence]}</span>
-    <span class="entry-count">{t["claim.sourceCount"](claim.sources.length)}</span>
     {newest !== undefined && <span class="mono entry-year">{newest}</span>}
     {dated && <span class="entry-dated">{t["claim.dated"]}</span>}
     <a class="entry-id mono" href={`#${claim.id}`} aria-label={`${claim.id}`}>{claim.id}</a>
   </p>
-  <ul class="citations">
-    {
-      claim.sources.map((s) => (
-        <li>
-          <a href={s.url} rel="noopener">
-            {s.title}
-          </a>
-          {s.year && <span class="mono"> ({s.year})</span>}
-        </li>
-      ))
-    }
-  </ul>
+  <details class="entry-src">
+    <summary class="entry-count">{t["claim.sourceCount"](claim.sources.length)}</summary>
+    <ul class="citations">
+      {
+        claim.sources.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener">
+              {s.title}
+            </a>
+            {s.year && <span class="mono"> ({s.year})</span>}
+          </li>
+        ))
+      }
+    </ul>
+  </details>
   {
     compare && (
       <p class="entry-xref">
@@ -46,6 +48,17 @@ const dated = newest !== undefined && newest < DATED_BEFORE;
     )
   }
 </li>
+
+<script>
+  // Arriving at a claim anchor (from the sources page or an evidence-map popover) should show its sources.
+  const openTarget = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const entry = id ? document.getElementById(id) : null;
+    entry?.querySelector<HTMLDetailsElement>("details.entry-src")?.setAttribute("open", "");
+  };
+  openTarget();
+  addEventListener("hashchange", openTarget);
+</script>
 
 <style>
   .entry {
@@ -98,6 +111,30 @@ const dated = newest !== undefined && newest < DATED_BEFORE;
     font-size: var(--s-14);
   }
   .entry-id:hover {
+    text-decoration: underline;
+  }
+  .entry-src summary {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
+    font-size: var(--s-14);
+    color: var(--ink-2);
+    cursor: pointer;
+    list-style: none;
+  }
+  .entry-src summary::-webkit-details-marker {
+    display: none;
+  }
+  .entry-src summary::before {
+    content: "▸" / "";
+    inline-size: 1em;
+    color: var(--ink-3);
+  }
+  .entry-src[open] summary::before {
+    content: "▾" / "";
+  }
+  .entry-src summary:hover {
+    color: var(--ink);
     text-decoration: underline;
   }
   .citations {

@@ -16,6 +16,7 @@ const groups = [
     name: t["scales.meyer"],
     intro: t["scales.meyerIntro"],
     limits: t["scales.meyerLimits"],
+    notes: [t["strip.provMeyer"]],
     keys: CULTURE_MAP_SCALES,
   },
   {
@@ -23,6 +24,7 @@ const groups = [
     name: t["scales.hofstede"],
     intro: t["scales.hofstedeIntro"],
     limits: t["scales.hofstedeLimits"],
+    notes: [t["strip.provHofstede"], t["strip.taras"]],
     keys: HOFSTEDE_DIMENSIONS,
   },
 ] as const;
@@ -48,9 +50,12 @@ const groups = [
           <p>
             {g.limits} <a href={localePath(lang, "/method/")}>{t["scales.method"]}</a>
           </p>
+          {g.notes.map((n) => (
+            <p class="note">{n}</p>
+          ))}
         </div>
         {g.keys.map((k) => (
-          <Strip lang={lang} scale={k} heading="h3" id={`strip-${k}`} />
+          <Strip lang={lang} scale={k} heading="h3" id={`strip-${k}`} provenance={false} />
         ))}
       </section>
     ))
@@ -61,7 +66,10 @@ const groups = [
   .intro {
     margin-block-end: 2rem;
   }
-  .intro p:last-child {
+  .intro p:not(:first-child) {
     color: var(--ink-2);
+  }
+  .intro .note {
+    font-size: var(--s-15);
   }
 </style>

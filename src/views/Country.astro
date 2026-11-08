@@ -1,12 +1,14 @@
 ---
 import Claim from "../components/Claim.astro";
-import CountryScales from "../components/CountryScales.astro";
+import Fingerprint from "../components/Fingerprint.astro";
 import Headword from "../components/Headword.astro";
+import Pips from "../components/Pips.astro";
 import RunningHead from "../components/RunningHead.astro";
 import ThumbIndex from "../components/ThumbIndex.astro";
-import { type CountryId, THEME_IDS } from "../data/schema.ts";
+import { type CountryId, CULTURE_MAP_SCALES, HOFSTEDE_DIMENSIONS, THEME_IDS } from "../data/schema.ts";
 import { browse } from "../i18n/browse.ts";
 import { dict, themeNames } from "../i18n/dict.ts";
+import { glance } from "../i18n/glance.ts";
 import { type Lang, localePath } from "../i18n/ui.ts";
 import Base from "../layouts/Base.astro";
 import { country, isTranslated } from "../lib/content.ts";
@@ -20,6 +22,8 @@ const t = dict[lang];
 const b = browse[lang];
 const c = country(lang, id)!;
 const translated = isTranslated(lang, id);
+const g = glance[lang];
+const themeRows = THEME_IDS.map((th) => ({ th, levels: c.themes[th].map((cl) => cl.confidence) }));
 ---
 
 <Base lang={lang} title={c.name} description={c.oneLiner} section="countries">
@@ -29,13 +33,45 @@ const translated = isTranslated(lang, id);
       <Headword lang={lang} id={id}>
         <p class="lead">{c.oneLiner}</p>
         {!translated && <p class="notice" lang={lang}>{t["country.untranslated"]}</p>}
-        <p class="measure">{c.intro}</p>
       </Headword>
+
+      <section class="section glance" id="glance" data-rh={g["glance.title"]} aria-labelledby="h-glance">
+        <h2 id="h-glance">{g["glance.title"]}</h2>
+        <p class="section-lead">{g["glance.lead"]}</p>
+        <div class="glance-grid">
+          <div class="glance-scales">
+            <h3>{g["glance.meyer"]}</h3>
+            <Fingerprint lang={lang} focus={id} scales={CULTURE_MAP_SCALES} />
+            <h3>{g["glance.hofstede"]}</h3>
+            <Fingerprint lang={lang} focus={id} scales={HOFSTEDE_DIMENSIONS} />
+            <p class="glance-note">{g["glance.taras"]}</p>
+          </div>
+          <div class="glance-themes">
+            <h3>{g["glance.themes"]}</h3>
+            <ul class="tg" role="list">
+              {
+                themeRows.map((r) => (
+                  <li>
+                    <a href={`#${r.th}`}>
+                      <span class="tg-name">{themeNames[lang][r.th]}</span>
+                      <Pips lang={lang} levels={r.levels} />
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+            <p class="glance-note">{g["glance.pips"]}</p>
+          </div>
+        </div>
+        <details class="about measure">
+          <summary>{g["glance.about"]}</summary>
+          <p>{c.intro}</p>
+        </details>
+      </section>
 
       <nav class="toc" data-pagefind-ignore aria-label={t["nav.themes"]}>
         <a href="#variance">{t["country.variance"]}</a>
         {THEME_IDS.map((th) => <a href={`#${th}`}>{themeNames[lang][th]}</a>)}
-        <a href="#scales">{t["nav.scales"]}</a>
       </nav>
 
       <section class="section" id="variance" data-rh={t["country.variance"]}>
@@ -62,16 +98,78 @@ const translated = isTranslated(lang, id);
         ))
       }
 
-      <section class="section" id="scales" data-rh={t["nav.scales"]}>
-        <h2>{t["nav.scales"]}</h2>
-        <CountryScales lang={lang} id={id} />
-      </section>
     </article>
     <ThumbIndex lang={lang} current={id} />
   </div>
 </Base>
 
 <style>
+  .glance-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 17rem;
+    gap: 1.5rem 3rem;
+    align-items: start;
+  }
+  .glance h3 {
+    margin-block: 1.5rem 0.5rem;
+    font-size: var(--s-17);
+  }
+  .glance-scales h3:first-child,
+  .glance-themes h3:first-child {
+    margin-block-start: 0.5rem;
+  }
+  .glance-note {
+    margin: 0.75rem 0 0;
+    font-size: var(--s-14);
+    color: var(--ink-3);
+    line-height: 1.5;
+  }
+  .tg {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .tg li + li {
+    border-block-start: 1px solid var(--rule);
+  }
+  .tg a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-block: 0.5rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .tg a:hover {
+    background: var(--selected);
+  }
+  .tg a:hover .tg-name {
+    text-decoration: underline;
+  }
+  .tg-name {
+    font-size: var(--s-15);
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .about {
+    margin-block-start: 1.5rem;
+    font-size: var(--s-15);
+    color: var(--ink-2);
+  }
+  .about summary {
+    cursor: pointer;
+    min-block-size: 2.75rem;
+    display: flex;
+    align-items: center;
+  }
+  .about p {
+    margin: 0;
+  }
+  @media (max-width: 52rem) {
+    .glance-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
   .entries {
     padding: 0;
     margin: 0;

@@ -1,0 +1,313 @@
+---
+/**
+ * Every country on several scales in one figure: countries as rows, scales as columns, each cell a mini track with
+ * one dot (Meyer: seven steps; Hofstede: 0-100). Small multiples replace reading strips one after another.
+ * Same StripItem data as the vantage strip; cells link to the full strip read from that country.
+ * With `theme`, a first column shows that theme's claims as confidence pips and rows link to the theme page sections.
+ */
+import { CULTURE_MAP_SCALES, type ThemeId } from "../data/schema.ts";
+import { browse } from "../i18n/browse.ts";
+import { glance, shortPoles } from "../i18n/glance.ts";
+import { type Lang, localePath } from "../i18n/ui.ts";
+import { DISPLAY_CODE } from "../lib/codes.ts";
+import { countries } from "../lib/content.ts";
+import { formatValue, regionSpan, type StripKey, scaleKind, spreadDomain } from "../lib/strip.ts";
+import Pips from "./Pips.astro";
+import { scaleHref, scaleItems, scaleText } from "./strip/data.ts";
+
+interface Props {
+  lang: Lang;
+  scales?: readonly StripKey[];
+  theme?: ThemeId;
+  /** id of the heading that names the figure; the table points at it. */
+  labelledby?: string;
+}
+const { lang, scales = CULTURE_MAP_SCALES, theme, labelledby } = Astro.props;
+const g = glance[lang];
+const corner = browse[lang]["map.corner"];
+const cols = scales.map((key) => {
+  const t = scaleText(lang, key);
+  const kind = scaleKind(key);
+  const [left, right] = shortPoles[lang][key] ?? [t.left, t.right];
+  const items = scaleItems(key);
+  const { lo, hi } = spreadDomain(kind, items);
+  const pct = (v: number) => ((v - lo) / (hi - lo)) * 100;
+  const byId = new Map(items.map((i) => [i.id, i]));
+  return { key, kind, name: t.name, left, right, href: scaleHref(lang, key), byId, pct, hi };
+});
+const rows = countries(lang).map((c) => ({
+  id: c.id,
+  name: c.name,
+  levels: theme ? c.themes[theme].map((cl) => cl.confidence) : [],
+}));
+const rowHref = (id: string) => (theme ? `#${id}` : localePath(lang, `/countries/${id}/`));
+const minWidth = `${10 + (theme ? 7 : 0) + cols.length * 6}rem`;
+const hasMeyer = cols.some((c) => c.kind === "meyer");
+const hofstedeMax = Math.max(0, ...cols.filter((c) => c.kind === "hofstede").map((c) => c.hi));
+---
+
+<figure class="mg">
+  <div class="mg-scroll">
+    <table class="mg-table" style={`min-inline-size:${minWidth}`} aria-labelledby={labelledby}>
+      <thead>
+        <tr>
+          <td class="mg-corner"><span class="sr-only">{corner}</span></td>
+          {theme && (
+            <th scope="col" class="mg-claims-h">
+              {g["grid.claims"]}
+            </th>
+          )}
+          {
+            cols.map((c) => (
+              <th scope="col">
+                <a href={c.href}>{c.name}</a>
+                <span class="mg-poles">
+                  <span>← {c.left}</span>
+                  <span>{c.right} →</span>
+                </span>
+              </th>
+            ))
+          }
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map((r) => (
+            <tr>
+              <th scope="row">
+                <a href={rowHref(r.id)}>
+                  <span class="mg-name">{r.name}</span>
+                  <span class="mg-code mono" aria-hidden="true">
+                    {DISPLAY_CODE[r.id]}
+                  </span>
+                </a>
+              </th>
+              {theme && (
+                <td class="mg-claims">
+                  <Pips lang={lang} levels={r.levels} />
+                </td>
+              )}
+              {cols.map((c) => {
+                const it = c.byId.get(r.id);
+                const v = it?.value ?? null;
+                const span = it ? regionSpan(it) : null;
+                const pos = v === null ? g["glance.noSource"] : `${formatValue(c.kind, v, lang)}${it?.secondary ? "†" : ""}`;
+                return (
+                  <td>
+                    <a
+                      class="mg-cell"
+                      href={v === null ? c.href : `${c.href}?from=${r.id}`}
+                      aria-label={g["grid.cell"](r.name, c.name, pos)}
+                    >
+                      <span class="mg-line" aria-hidden="true">
+                        {span && <span class="mg-span" style={`--a:${c.pct(span.min)}%;--b:${c.pct(span.max)}%`} />}
+                        {v !== null ? (
+                          <span class:list={["mg-dot", { "is-secondary": it?.secondary }]} style={`--x:${c.pct(v)}%`} />
+                        ) : (
+                          <span class="mg-none">—</span>
+                        )}
+                      </span>
+                    </a>
+                  </td>
+                );
+              })}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <figcaption class="mg-caption">
+    {theme && <p>{g["glance.pips"]}</p>}
+    {hasMeyer && <p>{g["grid.meyer"]}</p>}
+    {hofstedeMax > 0 && <p>{g["grid.hofstede"](hofstedeMax)}</p>}
+  </figcaption>
+</figure>
+
+<style>
+  .mg {
+    margin: 0;
+  }
+  .mg-scroll {
+    overflow-x: auto;
+  }
+  .mg-table {
+    inline-size: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .mg-table th,
+  .mg-table td {
+    padding: 0;
+    border-block-end: 1px solid var(--rule);
+  }
+  .mg-corner,
+  .mg-table tbody th {
+    inline-size: 10rem;
+  }
+  .mg-corner {
+    position: sticky;
+    inset-inline-start: 0;
+    z-index: 2;
+    background: var(--paper);
+  }
+  .mg-table thead th {
+    vertical-align: bottom;
+    padding: 0 0.375rem 0.5rem;
+    border-block-end: 2px solid var(--ink);
+    text-align: start;
+    font-size: var(--s-14);
+    line-height: 1.35;
+  }
+  .mg-table thead th a {
+    display: block;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    padding-block: 0.25rem;
+  }
+  .mg-table thead th a:hover {
+    text-decoration: underline;
+  }
+  .mg-poles {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    color: var(--ink-3);
+  }
+  .mg-poles span:last-child {
+    text-align: end;
+  }
+  .mg-table tbody th {
+    position: sticky;
+    inset-inline-start: 0;
+    z-index: 1;
+    background: var(--paper);
+    text-align: start;
+  }
+  .mg-table tbody th a {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    min-block-size: 2.75rem;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    font-size: var(--s-15);
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .mg-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .mg-code {
+    flex: none;
+    white-space: nowrap;
+    color: var(--ink-3);
+    font-weight: 400;
+    font-size: var(--s-14);
+  }
+  .mg-table tbody tr:hover > * {
+    background: var(--selected);
+  }
+  .mg-cell {
+    display: flex;
+    align-items: center;
+    block-size: 2.75rem;
+    padding-inline: 0.625rem;
+    border-inline-start: 1px solid var(--rule);
+    background: linear-gradient(to right, var(--wash-left) 50%, var(--wash-right) 50%);
+  }
+  .mg-table tbody tr:hover .mg-cell {
+    background: var(--selected);
+  }
+  .mg-cell:focus-visible {
+    outline-offset: -2px;
+  }
+  .mg-line {
+    position: relative;
+    display: block;
+    inline-size: 100%;
+    block-size: 0;
+    border-block-start: 1px solid var(--axis);
+  }
+  .mg-dot {
+    position: absolute;
+    inset-block-start: -6.5px;
+    inset-inline-start: var(--x);
+    translate: -50% 0;
+    inline-size: 12px;
+    block-size: 12px;
+    border-radius: 50%;
+    background: var(--ink);
+  }
+  .mg-dot.is-secondary {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+  }
+  .mg-span {
+    position: absolute;
+    inset-block-start: -2.5px;
+    inset-inline-start: var(--a);
+    inline-size: calc(var(--b) - var(--a));
+    block-size: 4px;
+    background: var(--ink-2);
+  }
+  .mg-none {
+    position: absolute;
+    inset-block-start: -0.75rem;
+    inset-inline-start: 50%;
+    translate: -50% 0;
+    padding-inline: 0.25rem;
+    font-size: var(--s-14);
+    line-height: 1.5rem;
+    color: var(--ink-3);
+    background: var(--paper);
+  }
+  .mg-claims-h {
+    inline-size: 7rem;
+  }
+  .mg-claims {
+    vertical-align: middle;
+    padding-inline: 0.5rem !important;
+    border-inline-start: 1px solid var(--rule);
+  }
+  .mg-caption p {
+    margin: 0 0 0.25rem;
+  }
+  .mg-caption {
+    margin-block-start: 0.75rem;
+    max-inline-size: var(--measure);
+    font-size: var(--s-14);
+    color: var(--ink-3);
+    line-height: 1.6;
+  }
+  @media (max-width: 40rem) {
+    .mg-name {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .mg-corner,
+    .mg-table tbody th {
+      inline-size: 3.25rem;
+    }
+    .mg-cell {
+      padding-inline: 0.5rem;
+    }
+  }
+  @media (forced-colors: active) {
+    .mg-dot,
+    .mg-span {
+      background: CanvasText;
+    }
+    .mg-dot.is-secondary {
+      background: Canvas;
+    }
+  }
+</style>

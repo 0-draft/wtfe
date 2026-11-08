@@ -1,6 +1,8 @@
 ---
+import Pips from "../components/Pips.astro";
 import { browse, readings } from "../i18n/browse.ts";
-import { confidenceNames, dict } from "../i18n/dict.ts";
+import { dict } from "../i18n/dict.ts";
+import { glance } from "../i18n/glance.ts";
 import { type Lang, localePath } from "../i18n/ui.ts";
 import Base from "../layouts/Base.astro";
 import { DISPLAY_CODE } from "../lib/codes.ts";
@@ -23,6 +25,7 @@ const levels = ["strong", "medium", "weak"] as const;
   <header class="headword">
     <h1>{b["countries.title"]}</h1>
     <p class="lead">{b["countries.lead"]}</p>
+    <p class="pip-key">{glance[lang]["glance.pips"]}</p>
   </header>
 
   <nav class="heads" data-pagefind-ignore aria-label={lang === "ja" ? "見出しの索引" : "Index letters"}>
@@ -50,17 +53,8 @@ const levels = ["strong", "medium", "weak"] as const;
                 </p>
                 <p class="one">{c.oneLiner}</p>
                 <p class="counts">
+                  <Pips lang={lang} levels={levels.flatMap((lv) => Array.from({ length: n[lv] }, () => lv))} class="ci-pips" />
                   <span>{b["countries.counts"](n.total)}</span>
-                  {levels.map((lv) =>
-                    n[lv] ? (
-                      <span>
-                        <span class="usage" data-level={lv}>
-                          {confidenceNames[lang][lv]}
-                        </span>{" "}
-                        <span class="mono">{n[lv]}</span>
-                      </span>
-                    ) : null,
-                  )}
                 </p>
               </li>
             );
@@ -75,6 +69,14 @@ const levels = ["strong", "medium", "weak"] as const;
 </Base>
 
 <style>
+  .counts :global(.ci-pips) {
+    max-inline-size: 30rem;
+  }
+  .pip-key {
+    margin: 0.5rem 0 0;
+    font-size: var(--s-14);
+    color: var(--ink-2);
+  }
   .headword h1 {
     margin-block-end: 0.75rem;
   }
@@ -159,7 +161,7 @@ const levels = ["strong", "medium", "weak"] as const;
     display: flex;
     flex-wrap: wrap;
     gap: 0.125rem 1rem;
-    align-items: baseline;
+    align-items: center;
     margin: 0;
     font-size: var(--s-14);
     color: var(--ink-2);

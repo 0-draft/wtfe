@@ -7,12 +7,12 @@ import type { Lang } from "./ui.ts";
 
 const en = {
   "home.premise":
-    "wtfe describes how software engineers in 14 countries and regions tend to design, review, decide and work, in the way a usage dictionary describes how a language is used. Every statement cites a public source and is labeled with how well that source supports it. The entries describe tendencies, not personal traits. About 80% of the variation in cultural values lies between people in the same country, not between countries",
+    "wtfe describes how software engineers in 14 countries and regions tend to design, review, decide and work. Every claim cites a public source. The entries describe tendencies across a country, and about 80% of the variation in cultural values lies between people in the same country",
   "home.title": "Ways They Frame Engineering",
   "home.premiseCite": "Taras, Steel & Kirkman 2016",
   "home.mapTitle": "How much we know",
   "home.mapLead":
-    "Each cell stacks one rule per claim. A thick rule is well attested, a thin rule is attested and a dashed rule is thin. The map shows how much evidence there is and says nothing about the countries themselves.",
+    "Each square is one claim, and cells with more claims are shaded more heavily. The map shows how much evidence there is and says nothing about the countries themselves.",
   "home.scalesTitle": "Read a scale from where you stand",
   "home.scalesLink": (_name: string) => "Open the Evaluating scale",
   "home.compareTitle": "Compare two countries",
@@ -36,7 +36,7 @@ const en = {
   "map.empty": "no claims",
   /** Rest of a cell's accessible name after the visible count. */
   "map.cellName": (counts: string, where: string) => `(${counts}): ${where}`,
-  "map.legend": "Rules",
+  "map.legend": "Confidence",
   "map.keyTitle": "Column codes",
   "map.readAll": (country: string, theme: string) => `Read all of ${country} · ${theme}`,
   "map.close": "Close",
@@ -52,14 +52,14 @@ const en = {
   "themes.counts": (claims: number, countries: number) => `${claims} claims from ${countries} countries and regions`,
   "theme.definition": "Definition",
   "theme.scales": "Related scales",
-  "theme.scalesLead":
-    "These scales describe national averages that bear on this theme. They place countries relative to one another and say nothing about any one engineer.",
+  "theme.glance": "All countries and regions on this theme",
+  "theme.glanceLead":
+    "Rows are countries. The first column is the claims on this theme; the rest are the scales that bear on it. A name jumps to that country's claims below, a cell to the full scale.",
+  "theme.glanceNoScales":
+    "Rows are countries, with the claims on this theme. No Culture Map or Hofstede scale measures this theme closely, so none is shown.",
   "theme.meyer": "Culture Map",
   "theme.hofstede": "Hofstede",
-  "theme.noScales":
-    "No Culture Map or Hofstede scale measures this theme closely enough to list here. The claims below rest on their own sources.",
   "theme.countryLink": (country: string) => `${country}: the full entry`,
-  "theme.jump": "Jump to a country",
   "country.compareTheme": (theme: string) => `Compare with other countries: ${theme}`,
 
   "sources.title": "Sources",
@@ -87,12 +87,12 @@ type Dict = { [K in keyof typeof en]: (typeof en)[K] extends (...a: infer A) => 
 
 const ja: Dict = {
   "home.premise":
-    "wtfe は、14 の国と地域のソフトウェアエンジニアが設計、レビュー、意思決定、日々の仕事をどう進める傾向にあるかを、用法辞典がことばの使われ方を書くように記述しています。どの記述にも公開された出典を付け、その出典がどこまで裏付けているかをラベルで示しています。書いてあるのは傾向で、その国の人の性質ではありません。文化的価値のばらつきの約 8 割は、国と国の間ではなく、同じ国の人どうしの間にあります",
+    "wtfe は、14 の国と地域のソフトウェアエンジニアが、設計、レビュー、意思決定、日々の仕事をどう進めることが多いかをまとめています。記述にはすべて公開された出典を付けています。書いているのは国全体の傾向で、文化的価値のばらつきの約 8 割は、同じ国の人どうしの間にあります",
   "home.title": "エンジニアの作法を国ごとに引く",
   "home.premiseCite": "Taras, Steel & Kirkman 2016",
   "home.mapTitle": "どこまでわかっているか",
   "home.mapLead":
-    "各マスには記述 1 件につき 1 本の線を引いています。太い実線は裏付け十分、細い実線は裏付けあり、破線は裏付け薄です。この図が示すのは根拠の厚さで、国そのものの評価ではありません。",
+    "記述 1 件につき四角を 1 つ置き、記述が多いマスほど濃く塗っています。示しているのは根拠の量で、国そのものの評価ではありません。",
   "home.scalesTitle": "尺度は自分の立ち位置から読む",
   "home.scalesLink": (name: string) => `Evaluating（${name}）の尺度を開く`,
   "home.compareTitle": "2 つの国を比べる",
@@ -115,7 +115,7 @@ const ja: Dict = {
       .join("、"),
   "map.empty": "記述なし",
   "map.cellName": (counts: string, where: string) => `（${counts}）${where}`,
-  "map.legend": "線の種類",
+  "map.legend": "裏付けの度合い",
   "map.keyTitle": "列の略号",
   "map.readAll": (country: string, theme: string) => `${country}・${theme}をすべて読む`,
   "map.close": "閉じる",
@@ -131,14 +131,14 @@ const ja: Dict = {
   "themes.counts": (claims: number, countries: number) => `${countries} の国と地域から記述 ${claims} 件`,
   "theme.definition": "定義",
   "theme.scales": "関係する尺度",
-  "theme.scalesLead":
-    "以下の尺度は、このテーマに関わる国ごとの平均的な傾向を表します。国どうしの相対的な位置を示すもので、個々のエンジニアのことはわかりません。",
+  "theme.glance": "国と地域の一覧",
+  "theme.glanceLead":
+    "行は国。最初の列がこのテーマの記述、残りがこのテーマに関わる尺度です。国名を押すと下のその国の記述へ、マスを押すと尺度のページへ移ります。",
+  "theme.glanceNoScales":
+    "行は国で、このテーマの記述の量を並べています。このテーマを十分に測る Culture Map や Hofstede の尺度はないので、尺度の列はありません。",
   "theme.meyer": "Culture Map",
   "theme.hofstede": "Hofstede",
-  "theme.noScales":
-    "Culture Map にも Hofstede にも、このテーマを十分に測る尺度がないため、尺度は載せていません。下の記述はそれぞれの出典だけに基づいています。",
   "theme.countryLink": (country: string) => `${country}の項目をすべて読む`,
-  "theme.jump": "国へ移動",
   "country.compareTheme": (theme: string) => `ほかの国と比べる: ${theme}`,
 
   "sources.title": "出典",

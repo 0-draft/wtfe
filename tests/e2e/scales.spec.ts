@@ -39,6 +39,9 @@ test("index shows all 14 strips with no focus, grouped by framework", async ({ p
     await expect(page.locator("#hofstede .vs-fig")).toHaveCount(6);
     await expect(page.locator(".vs-mark.is-focus")).toHaveCount(0);
     await expect(page.locator(`a[href$="/method/"]`).first()).toBeVisible();
+    // Source line and the Taras caption are stated once per section, not under each of the 14 strips.
+    await expect(page.locator(".vs-fig .vs-cap a", { hasText: /About this scale|この尺度について/ })).toHaveCount(0);
+    await expect(page.locator("#hofstede .intro")).toContainText(path === "scales/" ? "Taras" : "Taras ほか 2016");
   }
 });
 
@@ -63,15 +66,20 @@ test("every scale page exists in both languages", async ({ request }) => {
   }
 });
 
-test("country page draws 14 strips with the country in 朱 and links each to its scale page", async ({ page }) => {
+test("country page shows a compact fingerprint with the country in 朱 and links each row to its scale", async ({
+  page,
+}) => {
   await page.goto("countries/jp/");
-  const figs = page.locator("#scales .vs-fig");
-  await expect(figs).toHaveCount(14);
-  const visibleFocus = page.locator("#strip-evaluating .vs-svg:visible .vs-mark.is-focus");
-  await expect(visibleFocus).toHaveAttribute("data-id", "jp");
-  await expect(page.locator("#strip-evaluating .vs-svg:visible .vs-name")).toHaveText("Japan");
-  await page.locator("#strip-evaluating .vs-title a").click();
-  await expect(page).toHaveURL(/\/wtfe\/scales\/evaluating\/$/);
+  const rows = page.locator("#glance .fp-row");
+  await expect(rows).toHaveCount(14);
+  const ev = page.locator('#glance .fp-row[data-scale="evaluating"]');
+  await expect(ev.locator(".fp-me")).toHaveCount(1);
+  await expect(ev.locator(".fp-val")).toHaveText("+3");
+  // Persuading has no source for Japan: no 朱 dot, said in words.
+  await expect(page.locator('#glance .fp-row[data-scale="persuading"] .fp-me')).toHaveCount(0);
+  await expect(page.locator('#glance .fp-row[data-scale="persuading"]')).toContainText("no source");
+  await ev.click();
+  await expect(page).toHaveURL(/\/wtfe\/scales\/evaluating\/\?from=jp$/);
 });
 
 test("spread strip lists unsourced countries in words, marks secondary basis, and spans the Nordics", async ({

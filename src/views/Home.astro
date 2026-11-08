@@ -1,8 +1,10 @@
 ---
 import EvidenceMap from "../components/EvidenceMap.astro";
+import MeyerGrid from "../components/MeyerGrid.astro";
 import { THEME_IDS } from "../data/schema.ts";
 import { browse, readings, themeCodes } from "../i18n/browse.ts";
 import { dict, themeNames } from "../i18n/dict.ts";
+import { glance } from "../i18n/glance.ts";
 import { cultureMapText } from "../i18n/scales.ts";
 import { type Lang, localePath } from "../i18n/ui.ts";
 import Base from "../layouts/Base.astro";
@@ -58,6 +60,11 @@ const examples = [
       >{lang === "ja" ? "）。" : ")."}
     </p>
   </header>
+
+  <section class="section" id="positions" aria-labelledby="h-positions">
+    <h2 id="h-positions">{glance[lang]["grid.homeTitle"]}</h2>
+    <MeyerGrid lang={lang} labelledby="h-positions" />
+  </section>
 
   <section class="section" id="evidence" aria-labelledby="h-evidence">
     <h2 id="h-evidence">{b["home.mapTitle"]}</h2>

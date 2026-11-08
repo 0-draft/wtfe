@@ -1,0 +1,32 @@
+---
+/**
+ * Confidence pips: one square per claim, strongest first, with the counts in words for screen readers.
+ * Styles for `.pip` live in global.css so the evidence map legend can share them.
+ */
+import { CONFIDENCE, type Confidence } from "../data/schema.ts";
+import { browse } from "../i18n/browse.ts";
+import type { Lang } from "../i18n/ui.ts";
+import { countConfidence } from "../lib/evidence.ts";
+
+interface Props {
+  lang: Lang;
+  levels: readonly Confidence[];
+  class?: string;
+}
+const { lang, levels, class: cls } = Astro.props;
+const sorted = [...levels].sort((a, b) => CONFIDENCE.indexOf(a) - CONFIDENCE.indexOf(b));
+const n = countConfidence(levels.map((confidence) => ({ confidence })));
+---
+
+<span class:list={["pips", cls]}>
+  <span class="pips-row" aria-hidden="true">{sorted.map((lv) => <span class="pip" data-level={lv} />)}</span>
+  <span class="sr-only">{browse[lang]["map.counts"](n.strong, n.medium, n.weak)}</span>
+</span>
+
+<style>
+  .pips-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+</style>

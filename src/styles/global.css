@@ -561,3 +561,37 @@ thead th {
     animation-duration: 0s !important;
   }
 }
+
+/* Confidence pip: one square per claim. Filled = well attested, half = attested, outline = thin. No hue. */
+.pip {
+  display: inline-block;
+  flex: none;
+  inline-size: 0.75rem;
+  block-size: 0.75rem;
+  border: 1.5px solid var(--ink);
+  background: var(--ink);
+}
+.pip[data-level="medium"] {
+  border-color: var(--ink-2);
+  background: linear-gradient(to top right, var(--ink-2) 50%, transparent 50%);
+}
+.pip[data-level="weak"] {
+  border: 1.5px dashed var(--ink-3);
+  background: transparent;
+}
+@media (forced-colors: active) {
+  .pip,
+  .pip[data-level] {
+    forced-color-adjust: none;
+    border-color: CanvasText;
+  }
+  .pip[data-level="strong"] {
+    background: CanvasText;
+  }
+  .pip[data-level="medium"] {
+    background: linear-gradient(to top right, CanvasText 50%, Canvas 50%);
+  }
+  .pip[data-level="weak"] {
+    background: Canvas;
+  }
+}
