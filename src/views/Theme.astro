@@ -1,11 +1,11 @@
 ---
 import Claim from "../components/Claim.astro";
+import MeyerGrid from "../components/MeyerGrid.astro";
 import RunningHead from "../components/RunningHead.astro";
 import ThumbIndex from "../components/ThumbIndex.astro";
 import type { ThemeId } from "../data/schema.ts";
 import { browse, themeCodes, themeDefinitions } from "../i18n/browse.ts";
 import { confidenceNames, dict, themeNames } from "../i18n/dict.ts";
-import { cultureMapText, hofstedeText, scaleSlug } from "../i18n/scales.ts";
 import { type Lang, localePath } from "../i18n/ui.ts";
 import Base from "../layouts/Base.astro";
 import { DISPLAY_CODE } from "../lib/codes.ts";
@@ -25,18 +25,7 @@ const name = themeNames[lang][theme];
 const groups = claimsByTheme(lang, theme);
 const total = countConfidence(groups.flatMap((g) => g.claims));
 const levels = ["strong", "medium", "weak"] as const;
-const scales = [
-  ...THEME_SCALES[theme].meyer.map((s) => ({
-    kind: b["theme.meyer"],
-    href: `/scales/${scaleSlug(s, "meyer")}/`,
-    text: cultureMapText[lang][s],
-  })),
-  ...THEME_SCALES[theme].hofstede.map((d) => ({
-    kind: b["theme.hofstede"],
-    href: `/scales/${scaleSlug(d, "hofstede")}/`,
-    text: hofstedeText[lang][d],
-  })),
-];
+const scaleKeys = [...THEME_SCALES[theme].meyer, ...THEME_SCALES[theme].hofstede];
 ---
 
 <Base lang={lang} title={name} description={themeDefinitions[lang][theme]} section="themes">
@@ -67,31 +56,10 @@ const scales = [
         </p>
       </header>
 
-      <section class="section" id="scales" data-rh={b["theme.scales"]} aria-labelledby="h-scales">
-        <h2 id="h-scales">{b["theme.scales"]}</h2>
-        {
-          scales.length ? (
-            <>
-              <p class="section-lead">{b["theme.scalesLead"]}</p>
-              <ul class="scale-list">
-                {scales.map((s) => (
-                  <li>
-                    <a href={localePath(lang, s.href)}>
-                      <span class="sl-kind">{s.kind}</span>
-                      <span class="sl-name">{s.text.name}</span>
-                    </a>
-                    <span class="sl-poles">
-                      {s.text.left} ↔ {s.text.right}
-                    </span>
-                    <span class="sl-gloss">{s.text.gloss}</span>
-                  </li>
-                ))}
-              </ul>
-            </>
-          ) : (
-            <p class="section-lead">{b["theme.noScales"]}</p>
-          )
-        }
+      <section class="section" id="scales" data-rh={b["theme.glance"]} aria-labelledby="h-scales">
+        <h2 id="h-scales">{b["theme.glance"]}</h2>
+        <p class="section-lead">{scaleKeys.length ? b["theme.glanceLead"] : b["theme.glanceNoScales"]}</p>
+        <MeyerGrid lang={lang} theme={theme} scales={scaleKeys} />
       </section>
 
       {
@@ -144,42 +112,6 @@ const scales = [
   .code-ja {
     font-family: var(--f-body);
     font-weight: 600;
-  }
-  .scale-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
-    gap: 1rem 2rem;
-  }
-  .scale-list li {
-    display: grid;
-    gap: 0.125rem;
-    border-inline-start: 1px solid var(--axis);
-    padding-inline-start: 0.75rem;
-  }
-  .scale-list a {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 0.5rem;
-    align-items: baseline;
-    min-block-size: 2.75rem;
-    padding-block: 0.5rem 0;
-    font-weight: 700;
-  }
-  .sl-kind {
-    font-size: var(--s-14);
-    font-weight: 600;
-    color: var(--ink-2);
-  }
-  .sl-poles {
-    font-size: var(--s-14);
-    color: var(--ink);
-  }
-  .sl-gloss {
-    font-size: var(--s-14);
-    color: var(--ink-2);
   }
   .sub > h2 .h-aside {
     display: inline-flex;

@@ -1,55 +1,83 @@
 ---
 /**
- * Every country on every Culture Map scale in one figure: countries as rows, scales as columns, each cell a
- * seven-step mini track with one dot. Small multiples replace reading eight strips one after another.
+ * Every country on several scales in one figure: countries as rows, scales as columns, each cell a mini track with
+ * one dot (Meyer: seven steps; Hofstede: 0-100). Small multiples replace reading strips one after another.
  * Same StripItem data as the vantage strip; cells link to the full strip read from that country.
+ * With `theme`, a first column shows that theme's claims as confidence pips and rows link to the theme page sections.
  */
-import { CULTURE_MAP_SCALES } from "../data/schema.ts";
+import { CULTURE_MAP_SCALES, type ThemeId } from "../data/schema.ts";
+import { confidenceNames } from "../i18n/dict.ts";
 import { shortPoles } from "../i18n/glance.ts";
 import { type Lang, localePath } from "../i18n/ui.ts";
 import { DISPLAY_CODE } from "../lib/codes.ts";
 import { countries } from "../lib/content.ts";
-import { MEYER_RANGE } from "../lib/strip.ts";
+import { type StripKey, scaleKind, spreadDomain } from "../lib/strip.ts";
 import { scaleHref, scaleItems, scaleText } from "./strip/data.ts";
 
 interface Props {
   lang: Lang;
+  scales?: readonly StripKey[];
+  theme?: ThemeId;
 }
-const { lang } = Astro.props;
+const { lang, scales = CULTURE_MAP_SCALES, theme } = Astro.props;
 
 const text = {
   en: {
-    caption:
-      "Each cell is a seven-step line from Erin Meyer's Culture Map: left pole to right pole. A hollow dot is placed from reviews, not her own chart; a bar is a region's members. Positions are approximate and relative.",
+    meyer:
+      "Culture Map cells are Erin Meyer's seven-step line, left pole to right pole. A hollow dot is placed from reviews, not her own chart; a bar spans a region's members. Positions are approximate and relative.",
+    hofstede: "Hofstede cells run 0 to 100 and are country averages; most variation in values is within countries.",
+    pips: "Claims: one square each. Filled = well attested, half = attested, outline = thin.",
+    claims: "Claims",
     none: "no source",
     corner: "Country or region",
     cell: (scale: string, pos: string) => `${scale}: ${pos}`,
   },
   ja: {
-    caption:
-      "各マスは Erin Meyer の Culture Map の 7 段階の線で、左右がそれぞれの端です。白抜きの点は Meyer 本人の図ではなく書評などから置いた位置、横棒は地域内の国の幅。位置はおおよそで、相対的なものです。",
+    meyer:
+      "Culture Map のマスは Erin Meyer の 7 段階の線で、左右がそれぞれの端です。白抜きの点は Meyer 本人の図ではなく書評などから置いた位置、横棒は地域内の国の幅。位置はおおよそで、相対的なものです。",
+    hofstede: "Hofstede のマスは 0〜100 の国の平均値です。価値観のばらつきの大半は国の内側にあります。",
+    pips: "記述：1 件につき四角 1 つ。塗り＝裏付け十分、半分＝裏付けあり、枠だけ＝裏付け薄。",
+    claims: "記述",
     none: "出典なし",
     corner: "国・地域",
     cell: (scale: string, pos: string) => `${scale}：${pos}`,
   },
 }[lang];
-const fmt = (s: number) => (s > 0 ? `+${s}` : s < 0 ? `−${Math.abs(s)}` : "0");
-const pct = (v: number) => ((v + MEYER_RANGE) / (MEYER_RANGE * 2)) * 100;
-const cols = CULTURE_MAP_SCALES.map((key) => {
+const fmtStep = (s: number) => (s > 0 ? `+${s}` : s < 0 ? `−${Math.abs(s)}` : "0");
+const cols = scales.map((key) => {
   const t = scaleText(lang, key);
+  const kind = scaleKind(key);
   const [left, right] = shortPoles[lang][key] ?? [t.left, t.right];
-  const byId = new Map(scaleItems(key).map((i) => [i.id, i]));
-  return { key, name: t.name, left, right, href: scaleHref(lang, key), byId };
+  const items = scaleItems(key);
+  const { lo, hi } = spreadDomain(kind, items);
+  const pct = (v: number) => ((v - lo) / (hi - lo)) * 100;
+  const fmt = (v: number) => (kind === "meyer" ? fmtStep(v) : String(Math.round(v)));
+  const byId = new Map(items.map((i) => [i.id, i]));
+  return { key, kind, name: t.name, left, right, href: scaleHref(lang, key), byId, pct, fmt };
 });
-const rows = countries(lang);
+const order = { strong: 0, medium: 1, weak: 2 } as const;
+const rows = countries(lang).map((c) => ({
+  id: c.id,
+  name: c.name,
+  levels: theme ? c.themes[theme].map((cl) => cl.confidence).sort((a, b) => order[a] - order[b]) : [],
+}));
+const rowHref = (id: string) => (theme ? `#${id}` : localePath(lang, `/countries/${id}/`));
+const minWidth = `${8.5 + (theme ? 7 : 0) + cols.length * 6}rem`;
+const hasMeyer = cols.some((c) => c.kind === "meyer");
+const hasHofstede = cols.some((c) => c.kind === "hofstede");
 ---
 
 <figure class="mg">
   <div class="mg-scroll" tabindex="0" role="region" aria-label={text.corner}>
-    <table class="mg-table">
+    <table class="mg-table" style={`min-inline-size:${minWidth}`}>
       <thead>
         <tr>
           <td class="mg-corner"><span class="sr-only">{text.corner}</span></td>
+          {theme && (
+            <th scope="col" class="mg-claims-h">
+              {text.claims}
+            </th>
+          )}
           {
             cols.map((c) => (
               <th scope="col">
@@ -68,13 +96,25 @@ const rows = countries(lang);
           rows.map((r) => (
             <tr>
               <th scope="row">
-                <a href={localePath(lang, `/countries/${r.id}/`)}>
+                <a href={rowHref(r.id)}>
                   <span class="mg-name">{r.name}</span>
                   <span class="mg-code mono" aria-hidden="true">
                     {DISPLAY_CODE[r.id]}
                   </span>
                 </a>
               </th>
+              {theme && (
+                <td class="mg-claims">
+                  <span class="mg-pips" aria-hidden="true">
+                    {r.levels.map((lv) => (
+                      <span class="pip" data-level={lv} />
+                    ))}
+                  </span>
+                  <span class="sr-only">
+                    {r.levels.map((lv) => confidenceNames[lang][lv]).join(lang === "ja" ? "、" : ", ")}
+                  </span>
+                </td>
+              )}
               {cols.map((c) => {
                 const it = c.byId.get(r.id);
                 const v = it?.value ?? null;
@@ -87,12 +127,12 @@ const rows = countries(lang);
                     <a
                       class="mg-cell"
                       href={`${c.href}?from=${r.id}`}
-                      aria-label={text.cell(c.name, v === null ? text.none : fmt(v))}
+                      aria-label={text.cell(c.name, v === null ? text.none : c.fmt(v))}
                     >
                       <span class="mg-line" aria-hidden="true">
-                        {span && <span class="mg-span" style={`--a:${pct(span[0]!)}%;--b:${pct(span[1]!)}%`} />}
+                        {span && <span class="mg-span" style={`--a:${c.pct(span[0]!)}%;--b:${c.pct(span[1]!)}%`} />}
                         {v !== null ? (
-                          <span class:list={["mg-dot", { "is-secondary": it?.secondary }]} style={`--x:${pct(v)}%`} />
+                          <span class:list={["mg-dot", { "is-secondary": it?.secondary }]} style={`--x:${c.pct(v)}%`} />
                         ) : (
                           <span class="mg-none">—</span>
                         )}
@@ -107,7 +147,11 @@ const rows = countries(lang);
       </tbody>
     </table>
   </div>
-  <figcaption class="mg-caption">{text.caption}</figcaption>
+  <figcaption class="mg-caption">
+    {theme && <p>{text.pips}</p>}
+    {hasMeyer && <p>{text.meyer}</p>}
+    {hasHofstede && <p>{text.hofstede}</p>}
+  </figcaption>
 </figure>
 
 <style>
@@ -119,7 +163,6 @@ const rows = countries(lang);
   }
   .mg-table {
     inline-size: 100%;
-    min-inline-size: 46rem;
     table-layout: fixed;
     border-collapse: separate;
     border-spacing: 0;
@@ -179,6 +222,8 @@ const rows = countries(lang);
     text-decoration: none;
   }
   .mg-code {
+    flex: none;
+    white-space: nowrap;
     color: var(--ink-3);
     font-weight: 400;
     font-size: var(--s-14);
@@ -240,6 +285,22 @@ const rows = countries(lang);
     color: var(--ink-3);
     background: var(--paper);
   }
+  .mg-claims-h {
+    inline-size: 7rem;
+  }
+  .mg-claims {
+    vertical-align: middle;
+    padding-inline: 0.5rem !important;
+    border-inline-start: 1px solid var(--rule);
+  }
+  .mg-pips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+  .mg-caption p {
+    margin: 0 0 0.25rem;
+  }
   .mg-caption {
     margin-block-start: 0.75rem;
     max-inline-size: var(--measure);
@@ -261,7 +322,7 @@ const rows = countries(lang);
       inline-size: 3.25rem;
     }
     .mg-cell {
-      padding-inline: 0.375rem;
+      padding-inline: 0.5rem;
     }
   }
   @media (forced-colors: active) {

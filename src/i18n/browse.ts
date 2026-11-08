@@ -52,12 +52,13 @@ const en = {
   "themes.counts": (claims: number, countries: number) => `${claims} claims from ${countries} countries and regions`,
   "theme.definition": "Definition",
   "theme.scales": "Related scales",
-  "theme.scalesLead":
-    "These scales describe national averages that bear on this theme. They place countries relative to one another and say nothing about any one engineer.",
+  "theme.glance": "Every country on this theme",
+  "theme.glanceLead":
+    "Rows are countries. The first column is the claims on this theme; the rest are the scales that bear on it. A name jumps to that country's claims below, a cell to the full scale.",
+  "theme.glanceNoScales":
+    "Rows are countries, with the claims on this theme. No Culture Map or Hofstede scale measures this theme closely, so none is shown.",
   "theme.meyer": "Culture Map",
   "theme.hofstede": "Hofstede",
-  "theme.noScales":
-    "No Culture Map or Hofstede scale measures this theme closely enough to list here. The claims below rest on their own sources.",
   "theme.countryLink": (country: string) => `${country}: the full entry`,
   "theme.jump": "Jump to a country",
   "country.compareTheme": (theme: string) => `Compare with other countries: ${theme}`,
@@ -130,12 +131,13 @@ const ja: Dict = {
   "themes.counts": (claims: number, countries: number) => `${countries} の国と地域から記述 ${claims} 件`,
   "theme.definition": "定義",
   "theme.scales": "関係する尺度",
-  "theme.scalesLead":
-    "以下の尺度は、このテーマに関わる国ごとの平均的な傾向を表します。国どうしの相対的な位置を示すもので、個々のエンジニアのことはわかりません。",
+  "theme.glance": "全部の国を並べる",
+  "theme.glanceLead":
+    "行は国。最初の列がこのテーマの記述、残りがこのテーマに関わる尺度です。国名を押すと下のその国の記述へ、マスを押すと尺度のページへ移ります。",
+  "theme.glanceNoScales":
+    "行は国で、このテーマの記述の量を並べています。このテーマを十分に測る Culture Map や Hofstede の尺度はないので、尺度の列はありません。",
   "theme.meyer": "Culture Map",
   "theme.hofstede": "Hofstede",
-  "theme.noScales":
-    "Culture Map にも Hofstede にも、このテーマを十分に測る尺度がないため、尺度は載せていません。下の記述はそれぞれの出典だけに基づいています。",
   "theme.countryLink": (country: string) => `${country}の項目をすべて読む`,
   "theme.jump": "国へ移動",
   "country.compareTheme": (theme: string) => `ほかの国と比べる: ${theme}`,

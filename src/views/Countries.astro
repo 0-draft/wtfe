@@ -50,17 +50,18 @@ const levels = ["strong", "medium", "weak"] as const;
                 </p>
                 <p class="one">{c.oneLiner}</p>
                 <p class="counts">
-                  <span>{b["countries.counts"](n.total)}</span>
-                  {levels.map((lv) =>
-                    n[lv] ? (
-                      <span>
-                        <span class="usage" data-level={lv}>
-                          {confidenceNames[lang][lv]}
-                        </span>{" "}
-                        <span class="mono">{n[lv]}</span>
-                      </span>
-                    ) : null,
-                  )}
+                  <span class="pips" aria-hidden="true">
+                    {levels.flatMap((lv) => Array.from({ length: n[lv] }, () => <span class="pip" data-level={lv} />))}
+                  </span>
+                  <span>
+                    {b["countries.counts"](n.total)}
+                    <span class="sr-only">
+                      {levels
+                        .filter((lv) => n[lv])
+                        .map((lv) => `${confidenceNames[lang][lv]} ${n[lv]}`)
+                        .join(lang === "ja" ? "、" : ", ")}
+                    </span>
+                  </span>
                 </p>
               </li>
             );
@@ -75,6 +76,12 @@ const levels = ["strong", "medium", "weak"] as const;
 </Base>
 
 <style>
+  .pips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    max-inline-size: 30rem;
+  }
   .headword h1 {
     margin-block-end: 0.75rem;
   }
@@ -159,7 +166,7 @@ const levels = ["strong", "medium", "weak"] as const;
     display: flex;
     flex-wrap: wrap;
     gap: 0.125rem 1rem;
-    align-items: baseline;
+    align-items: center;
     margin: 0;
     font-size: var(--s-14);
     color: var(--ink-2);
