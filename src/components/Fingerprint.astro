@@ -1,0 +1,260 @@
+---
+/**
+ * Compact "fingerprint" of one country on every scale: one short row per scale, all other countries as grey dots,
+ * the focus country as a 朱 dot. Replaces 14 full-size strips on the country page; each row links to the full strip.
+ * Built from the same StripItem data as the vantage strip, so positions never disagree.
+ */
+import type { CountryId } from "../data/schema.ts";
+import { glance, shortPoles } from "../i18n/glance.ts";
+import type { Lang } from "../i18n/ui.ts";
+import { country } from "../lib/content.ts";
+import { MEYER_RANGE, type StripKey, scaleKind, spreadDomain } from "../lib/strip.ts";
+import { scaleHref, scaleItems, scaleText } from "./strip/data.ts";
+
+interface Props {
+  lang: Lang;
+  focus: CountryId;
+  scales: readonly StripKey[];
+}
+const { lang, focus, scales } = Astro.props;
+const g = glance[lang];
+const focusName = country(lang, focus)?.name ?? focus;
+const fmtStep = (s: number) => (s > 0 ? `+${s}` : s < 0 ? `−${Math.abs(s)}` : "0");
+
+const rows = scales.map((key) => {
+  const kind = scaleKind(key);
+  const items = scaleItems(key);
+  const { lo, hi } = spreadDomain(kind, items);
+  const pct = (v: number) => ((v - lo) / (hi - lo)) * 100;
+  const me = items.find((i) => i.id === focus);
+  const others = items.filter((i) => i.id !== focus && i.value !== null);
+  const full = scaleText(lang, key);
+  const [left, right] = shortPoles[lang][key] ?? [full.left, full.right];
+  const text = { ...full, left, right };
+  // Meyer: stack the other countries per step. Hofstede: one dot each on a continuous line.
+  const steps =
+    kind === "meyer"
+      ? Array.from({ length: MEYER_RANGE * 2 + 1 }, (_, k) => k - MEYER_RANGE).map((s) => ({
+          s,
+          ids: others.filter((o) => o.value === s).map((o) => o.code),
+        }))
+      : [];
+  const value = me?.value ?? null;
+  const span =
+    me && me.members.length > 1
+      ? { min: Math.min(...me.members.map((m) => m.value)), max: Math.max(...me.members.map((m) => m.value)) }
+      : null;
+  const pos = value === null ? g["glance.noSource"] : kind === "meyer" ? fmtStep(value) : String(Math.round(value));
+  return { key, kind, text, pct, others, steps, value, span, pos, href: `${scaleHref(lang, key)}?from=${focus}` };
+});
+---
+
+<ul class="fp" role="list">
+  {
+    rows.map((r) => (
+      <li>
+        <a class="fp-row" href={r.href} data-scale={r.key} data-kind={r.kind}>
+          <span class="fp-name">{r.text.name}</span>
+          <span class="sr-only">{g["glance.rowLabel"](r.text.name, focusName, r.pos)}</span>
+          <span class="fp-plot" aria-hidden="true">
+            <span class="fp-track">
+              {r.kind === "meyer" &&
+                r.steps.map((st) => (
+                  <span class="fp-step" style={`--x:${r.pct(st.s)}%`}>
+                    <span class="fp-tick" />
+                    <span class="fp-stack" title={st.ids.join(" ")}>
+                      {st.ids.map(() => (
+                        <span class="fp-dot" />
+                      ))}
+                    </span>
+                  </span>
+                ))}
+              {r.kind === "hofstede" &&
+                r.others.map((o) => (
+                  <span class="fp-dot fp-dot-h" style={`--x:${r.pct(o.value!)}%`} title={`${o.code} ${o.value}`} />
+                ))}
+              {r.span && (
+                <span class="fp-span" style={`--a:${r.pct(r.span.min)}%;--b:${r.pct(r.span.max)}%`} />
+              )}
+              {r.value !== null && <span class="fp-me" style={`--x:${r.pct(r.value)}%`} />}
+              {r.value === null && <span class="fp-none">{g["glance.noSource"]}</span>}
+            </span>
+            <span class="fp-poles">
+              <span>{r.text.left}</span>
+              <span>{r.text.right}</span>
+            </span>
+          </span>
+          <span class="fp-val mono" aria-hidden="true">
+            {r.value === null ? "—" : r.pos}
+          </span>
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .fp {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .fp li + li {
+    border-block-start: 1px solid var(--rule);
+  }
+  .fp-row {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr 3rem;
+    gap: 0 1rem;
+    align-items: end;
+    padding-block: 0.5rem 0.375rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .fp-row:hover {
+    background: var(--selected);
+  }
+  .fp-row:hover .fp-name {
+    text-decoration: underline;
+  }
+  .fp-row:focus-visible {
+    outline-offset: 2px;
+  }
+  .fp-name {
+    align-self: center;
+    font-weight: 600;
+    font-size: var(--s-15);
+    line-height: 1.35;
+  }
+  .fp-val {
+    align-self: center;
+    text-align: end;
+    font-size: var(--s-15);
+    font-weight: 500;
+    color: var(--shu);
+  }
+  .fp-plot {
+    display: block;
+    min-inline-size: 0;
+  }
+  .fp-track {
+    position: relative;
+    display: block;
+    block-size: 3rem;
+    margin-inline: 7px;
+    border-block-end: 1.5px solid var(--axis);
+  }
+  .fp-row[data-kind="hofstede"] .fp-track {
+    block-size: 1.5rem;
+  }
+  .fp-step {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: var(--x);
+    translate: -50% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .fp-tick {
+    order: 2;
+    inline-size: 1px;
+    block-size: 5px;
+    background: var(--axis);
+  }
+  .fp-stack {
+    order: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2px;
+    padding-block-end: 3px;
+  }
+  .fp-dot {
+    display: block;
+    inline-size: 7px;
+    block-size: 7px;
+    border-radius: 50%;
+    background: var(--ink-3);
+    opacity: 0.55;
+  }
+  .fp-dot-h {
+    position: absolute;
+    inset-block-end: -4px;
+    inset-inline-start: var(--x);
+    translate: -50% 0;
+    opacity: 0.4;
+  }
+  .fp-me {
+    position: absolute;
+    inset-block-end: -8px;
+    inset-inline-start: var(--x);
+    inline-size: 15px;
+    block-size: 15px;
+    border-radius: 50%;
+    background: var(--shu);
+    border: 2px solid var(--paper);
+    box-sizing: content-box;
+    translate: -50% 2px;
+  }
+  .fp-span {
+    position: absolute;
+    inset-block-end: -2.5px;
+    inset-inline-start: var(--a);
+    inline-size: calc(var(--b) - var(--a));
+    block-size: 4px;
+    background: var(--shu);
+  }
+  .fp-none {
+    position: absolute;
+    inset-block-end: 0.25rem;
+    inset-inline-start: 50%;
+    translate: -50% 0;
+    font-size: var(--s-14);
+    color: var(--ink-3);
+    white-space: nowrap;
+    padding-inline: 0.375rem;
+    background: var(--paper);
+  }
+  .fp-poles {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-block-start: 0.5rem;
+    font-size: var(--s-14);
+    line-height: 1.35;
+    color: var(--ink-3);
+  }
+  .fp-poles span:last-child {
+    text-align: end;
+  }
+  .fp-row:hover .fp-dot {
+    opacity: 0.8;
+  }
+  @media (max-width: 40rem) {
+    .fp-row {
+      grid-template-columns: 1fr auto;
+      row-gap: 0.25rem;
+    }
+    .fp-plot {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+    .fp-name {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .fp-val {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+  @media (forced-colors: active) {
+    .fp-me,
+    .fp-span {
+      background: Highlight;
+    }
+    .fp-dot {
+      background: CanvasText;
+    }
+  }
+</style>

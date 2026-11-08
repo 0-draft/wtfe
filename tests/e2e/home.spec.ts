@@ -141,7 +141,7 @@ test("home keeps the countries and themes anchors and teaser links", async ({ pa
   await page.goto("./");
   await expect(page.locator("#countries .country-grid li")).toHaveCount(14);
   await expect(page.locator("#themes .theme-list li")).toHaveCount(7);
-  await expect(page.locator('a[href$="/scales/evaluating/"]')).toBeVisible();
+  await expect(page.locator('.teaser a[href$="/scales/evaluating/"]')).toBeVisible();
   await expect(page.locator('a[href$="/compare/"]').last()).toBeVisible();
 });
 

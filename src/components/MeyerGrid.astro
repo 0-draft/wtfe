@@ -1,0 +1,272 @@
+---
+/**
+ * Every country on every Culture Map scale in one figure: countries as rows, scales as columns, each cell a
+ * seven-step mini track with one dot. Small multiples replace reading eight strips one after another.
+ * Same StripItem data as the vantage strip; cells link to the full strip read from that country.
+ */
+import { CULTURE_MAP_SCALES } from "../data/schema.ts";
+import { shortPoles } from "../i18n/glance.ts";
+import { type Lang, localePath } from "../i18n/ui.ts";
+import { DISPLAY_CODE } from "../lib/codes.ts";
+import { countries } from "../lib/content.ts";
+import { MEYER_RANGE } from "../lib/strip.ts";
+import { scaleHref, scaleItems, scaleText } from "./strip/data.ts";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+
+const text = {
+  en: {
+    caption:
+      "Each cell is a seven-step line from Erin Meyer's Culture Map: left pole to right pole. A hollow dot is placed from reviews, not her own chart; a bar is a region's members. Positions are approximate and relative.",
+    none: "no source",
+    corner: "Country or region",
+    cell: (scale: string, pos: string) => `${scale}: ${pos}`,
+  },
+  ja: {
+    caption:
+      "各マスは Erin Meyer の Culture Map の 7 段階の線で、左右がそれぞれの端です。白抜きの点は Meyer 本人の図ではなく書評などから置いた位置、横棒は地域内の国の幅。位置はおおよそで、相対的なものです。",
+    none: "出典なし",
+    corner: "国・地域",
+    cell: (scale: string, pos: string) => `${scale}：${pos}`,
+  },
+}[lang];
+const fmt = (s: number) => (s > 0 ? `+${s}` : s < 0 ? `−${Math.abs(s)}` : "0");
+const pct = (v: number) => ((v + MEYER_RANGE) / (MEYER_RANGE * 2)) * 100;
+const cols = CULTURE_MAP_SCALES.map((key) => {
+  const t = scaleText(lang, key);
+  const [left, right] = shortPoles[lang][key] ?? [t.left, t.right];
+  const byId = new Map(scaleItems(key).map((i) => [i.id, i]));
+  return { key, name: t.name, left, right, href: scaleHref(lang, key), byId };
+});
+const rows = countries(lang);
+---
+
+<figure class="mg">
+  <div class="mg-scroll" tabindex="0" role="region" aria-label={text.corner}>
+    <table class="mg-table">
+      <thead>
+        <tr>
+          <td class="mg-corner"><span class="sr-only">{text.corner}</span></td>
+          {
+            cols.map((c) => (
+              <th scope="col">
+                <a href={c.href}>{c.name}</a>
+                <span class="mg-poles">
+                  <span>← {c.left}</span>
+                  <span>{c.right} →</span>
+                </span>
+              </th>
+            ))
+          }
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map((r) => (
+            <tr>
+              <th scope="row">
+                <a href={localePath(lang, `/countries/${r.id}/`)}>
+                  <span class="mg-name">{r.name}</span>
+                  <span class="mg-code mono" aria-hidden="true">
+                    {DISPLAY_CODE[r.id]}
+                  </span>
+                </a>
+              </th>
+              {cols.map((c) => {
+                const it = c.byId.get(r.id);
+                const v = it?.value ?? null;
+                const span =
+                  it && it.members.length > 1
+                    ? [Math.min(...it.members.map((m) => m.value)), Math.max(...it.members.map((m) => m.value))]
+                    : null;
+                return (
+                  <td>
+                    <a
+                      class="mg-cell"
+                      href={`${c.href}?from=${r.id}`}
+                      aria-label={text.cell(c.name, v === null ? text.none : fmt(v))}
+                    >
+                      <span class="mg-line" aria-hidden="true">
+                        {span && <span class="mg-span" style={`--a:${pct(span[0]!)}%;--b:${pct(span[1]!)}%`} />}
+                        {v !== null ? (
+                          <span class:list={["mg-dot", { "is-secondary": it?.secondary }]} style={`--x:${pct(v)}%`} />
+                        ) : (
+                          <span class="mg-none">—</span>
+                        )}
+                      </span>
+                    </a>
+                  </td>
+                );
+              })}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <figcaption class="mg-caption">{text.caption}</figcaption>
+</figure>
+
+<style>
+  .mg {
+    margin: 0;
+  }
+  .mg-scroll {
+    overflow-x: auto;
+  }
+  .mg-table {
+    inline-size: 100%;
+    min-inline-size: 46rem;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .mg-table th,
+  .mg-table td {
+    padding: 0;
+    border-block-end: 1px solid var(--rule);
+  }
+  .mg-corner,
+  .mg-table tbody th {
+    inline-size: 8.5rem;
+  }
+  .mg-table thead th {
+    vertical-align: bottom;
+    padding: 0 0.375rem 0.5rem;
+    border-block-end: 2px solid var(--ink);
+    text-align: start;
+    font-size: var(--s-14);
+    line-height: 1.35;
+  }
+  .mg-table thead th a {
+    display: block;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    padding-block: 0.25rem;
+  }
+  .mg-table thead th a:hover {
+    text-decoration: underline;
+  }
+  .mg-poles {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    color: var(--ink-3);
+  }
+  .mg-poles span:last-child {
+    text-align: end;
+  }
+  .mg-table tbody th {
+    position: sticky;
+    inset-inline-start: 0;
+    z-index: 1;
+    background: var(--paper);
+    text-align: start;
+  }
+  .mg-table tbody th a {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    min-block-size: 2.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    font-size: var(--s-15);
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .mg-code {
+    color: var(--ink-3);
+    font-weight: 400;
+    font-size: var(--s-14);
+  }
+  .mg-table tbody tr:hover > * {
+    background: var(--selected);
+  }
+  .mg-cell {
+    display: flex;
+    align-items: center;
+    block-size: 2.5rem;
+    padding-inline: 0.625rem;
+    border-inline-start: 1px solid var(--rule);
+    background: linear-gradient(to right, var(--wash-left) 50%, var(--wash-right) 50%);
+  }
+  .mg-table tbody tr:hover .mg-cell {
+    background: var(--selected);
+  }
+  .mg-cell:focus-visible {
+    outline-offset: -2px;
+  }
+  .mg-line {
+    position: relative;
+    display: block;
+    inline-size: 100%;
+    block-size: 0;
+    border-block-start: 1px solid var(--axis);
+  }
+  .mg-dot {
+    position: absolute;
+    inset-block-start: -6.5px;
+    inset-inline-start: var(--x);
+    translate: -50% 0;
+    inline-size: 12px;
+    block-size: 12px;
+    border-radius: 50%;
+    background: var(--ink);
+  }
+  .mg-dot.is-secondary {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+  }
+  .mg-span {
+    position: absolute;
+    inset-block-start: -2.5px;
+    inset-inline-start: var(--a);
+    inline-size: calc(var(--b) - var(--a));
+    block-size: 4px;
+    background: var(--ink-2);
+  }
+  .mg-none {
+    position: absolute;
+    inset-block-start: -0.75rem;
+    inset-inline-start: 50%;
+    translate: -50% 0;
+    padding-inline: 0.25rem;
+    font-size: var(--s-14);
+    line-height: 1.5rem;
+    color: var(--ink-3);
+    background: var(--paper);
+  }
+  .mg-caption {
+    margin-block-start: 0.75rem;
+    max-inline-size: var(--measure);
+    font-size: var(--s-14);
+    color: var(--ink-3);
+    line-height: 1.6;
+  }
+  @media (max-width: 40rem) {
+    .mg-name {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .mg-corner,
+    .mg-table tbody th {
+      inline-size: 3.25rem;
+    }
+    .mg-cell {
+      padding-inline: 0.375rem;
+    }
+  }
+  @media (forced-colors: active) {
+    .mg-dot {
+      background: CanvasText;
+    }
+  }
+</style>

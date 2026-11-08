@@ -7,12 +7,12 @@ import type { Lang } from "./ui.ts";
 
 const en = {
   "home.premise":
-    "wtfe describes how software engineers in 14 countries and regions tend to design, review, decide and work, in the way a usage dictionary describes how a language is used. Every statement cites a public source and is labeled with how well that source supports it. The entries describe tendencies, not personal traits. About 80% of the variation in cultural values lies between people in the same country, not between countries",
+    "How software engineers in 14 countries and regions tend to design, review, decide and work, with a public source on every claim. These are tendencies, not traits: about 80% of the variation in cultural values lies within countries",
   "home.title": "Ways They Frame Engineering",
   "home.premiseCite": "Taras, Steel & Kirkman 2016",
   "home.mapTitle": "How much we know",
   "home.mapLead":
-    "Each cell stacks one rule per claim. A thick rule is well attested, a thin rule is attested and a dashed rule is thin. The map shows how much evidence there is and says nothing about the countries themselves.",
+    "One square per claim; darker cells have more. It shows how much evidence there is, not anything about the countries.",
   "home.scalesTitle": "Read a scale from where you stand",
   "home.scalesLink": (_name: string) => "Open the Evaluating scale",
   "home.compareTitle": "Compare two countries",
@@ -87,12 +87,11 @@ type Dict = { [K in keyof typeof en]: (typeof en)[K] extends (...a: infer A) => 
 
 const ja: Dict = {
   "home.premise":
-    "wtfe は、14 の国と地域のソフトウェアエンジニアが設計、レビュー、意思決定、日々の仕事をどう進める傾向にあるかを、用法辞典がことばの使われ方を書くように記述しています。どの記述にも公開された出典を付け、その出典がどこまで裏付けているかをラベルで示しています。書いてあるのは傾向で、その国の人の性質ではありません。文化的価値のばらつきの約 8 割は、国と国の間ではなく、同じ国の人どうしの間にあります",
+    "14 の国と地域のエンジニアが、設計・レビュー・意思決定・働き方をどう進める傾向にあるか。全記述に公開された出典付き。書いてあるのは傾向で、人の性質ではありません。価値観のばらつきの約 8 割は国の内側にあります",
   "home.title": "エンジニアの作法を国ごとに引く",
   "home.premiseCite": "Taras, Steel & Kirkman 2016",
   "home.mapTitle": "どこまでわかっているか",
-  "home.mapLead":
-    "各マスには記述 1 件につき 1 本の線を引いています。太い実線は裏付け十分、細い実線は裏付けあり、破線は裏付け薄です。この図が示すのは根拠の厚さで、国そのものの評価ではありません。",
+  "home.mapLead": "記述 1 件につき四角 1 つ。記述が多いマスほど濃い。示すのは根拠の厚さで、国の評価ではありません。",
   "home.scalesTitle": "尺度は自分の立ち位置から読む",
   "home.scalesLink": (name: string) => `Evaluating（${name}）の尺度を開く`,
   "home.compareTitle": "2 つの国を比べる",
