@@ -86,6 +86,7 @@ const strings = {
     url: string;
     excerpt: string;
     meta: Record<string, string | undefined>;
+    filters?: Record<string, string[] | undefined>;
     sub_results?: { title: string; url: string; excerpt: string }[];
   }
   interface PagefindResult {
@@ -113,7 +114,8 @@ const strings = {
   const DEBOUNCE = 130;
   /**
    * 364 compare pages repeat both countries' names in their headings and are short, so Pagefind ranks them above the
-   * country entries for a bare country name. Scale their scores down; a query naming both countries still finds its pair.
+   * country entries for a bare country name. Scale their scores down, except for a pair whose two countries the query
+   * names (each compare page carries a `side` filter per country), so "germany japan" still finds its pair.
    */
   const COMPARE_WEIGHT = 0.1;
 
@@ -226,6 +228,19 @@ const strings = {
       select(-1);
     };
 
+    /** Ids of the compare results whose two countries both appear in the query. */
+    const namedPairs = async (q: string, compares: PagefindResult[]) => {
+      const lower = q.toLocaleLowerCase();
+      const names = (side: string) => side.toLocaleLowerCase().replace(/^the\s+/, "");
+      const hits = await Promise.all(
+        compares.slice(0, LIMIT).map(async (r) => {
+          const sides = (await r.data()).filters?.side ?? [];
+          return sides.length === 2 && sides.every((side) => lower.includes(names(side))) ? r.id : null;
+        }),
+      );
+      return new Set(hits.filter((id): id is string => id !== null));
+    };
+
     const run = async (q: string) => {
       const mine = ++seq;
       if (!q.trim()) {
@@ -238,8 +253,11 @@ const strings = {
       const [res, cmp] = await Promise.all([pf.search(q), pf.search(q, { filters: { kind: "compare" } })]);
       if (!res || mine !== seq) return;
       const isCompare = new Set(cmp?.results.map((r) => r.id));
+      const named = await namedPairs(q, cmp?.results ?? []);
+      if (mine !== seq) return;
+      const demote = (id: string) => isCompare.has(id) && !named.has(id);
       const ranked = res.results
-        .map((r) => ({ r, score: r.score * (isCompare.has(r.id) ? COMPARE_WEIGHT : 1) }))
+        .map((r) => ({ r, score: r.score * (demote(r.id) ? COMPARE_WEIGHT : 1) }))
         .sort((a, b) => b.score - a.score);
       const data = await Promise.all(ranked.slice(0, LIMIT).map(({ r }) => r.data()));
       if (mine !== seq) return;

@@ -49,6 +49,9 @@ const columns = [
         <span class="join">{t["title.join"]}</span>
         <span class="name-b">{b.noun.object}</span>
       </h1>
+      {/* Search.astro: a query naming both countries keeps this page's full rank. */}
+      <span hidden data-pagefind-filter={`side:${ca.name}`}></span>
+      <span hidden data-pagefind-filter={`side:${cb.name}`}></span>
       <p class="hw-gloss" data-pagefind-ignore="all">
         <span lang={other}>{glossTitle}</span>
         <span class="hw-code">{DISPLAY_CODE[idA]}</span>
