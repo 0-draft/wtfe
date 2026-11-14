@@ -6,3 +6,7 @@ overrides:
   # micromark-extension-math asks for ^0.16; the fix is 0.18.2.
   katex: ^0.18.2
   re2js: ^2.8.7
+  # rolldown's wasm binding (via astro 7.4.7) accepts @emnapi 2.0.0-beta, which breaks
+  # astro check in astro2tsx: "this.bridge.setLastError is not a function". Hold both to 1.x.
+  "@emnapi/core": ^1.11.3
+  "@emnapi/runtime": ^1.11.3
