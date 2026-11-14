@@ -2,6 +2,8 @@
 
 [日本語](README.ja.md)
 
+> **Archived (2026-11-15).** This repository is read-only and no longer updated. The site stays online, but its statistics and survey figures will age. The name lives on in [wtfe2](https://github.com/0-draft/wtfe2), a different project: comics about building software, in English and Japanese.
+
 wtfe describes how software engineers in different countries tend to think and work. It covers seven themes: design and quality, failure and risk, feedback and code review, hierarchy and decisions, communication and documentation, work and careers, and open source. Every claim cites a source and carries a confidence level.
 
 Site: <https://0-draft.github.io/wtfe/> (English) · <https://0-draft.github.io/wtfe/ja/> (日本語)
